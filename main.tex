@@ -1,0 +1,1465 @@
+% Compile with pdfLaTeX and BibTeX; official Automatica class.
+% PaperCept requires PDF 1.4 for files produced with pdfLaTeX.
+\ifdefined\pdfminorversion
+\pdfminorversion=4
+\fi
+\documentclass[twocolumn]{autart}
+% The legacy class references the standard part counter without creating it.
+\newcounter{part}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{graphicx,booktabs,array,algpseudocode,enumitem}
+% The original class does not initialize PDF paper dimensions.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalize,nameinlink]{cleveref}
+\allowdisplaybreaks
+\crefname{thm}{Theorem}{Theorems}
+\Crefname{thm}{Theorem}{Theorems}
+\crefname{lem}{Lemma}{Lemmas}
+\Crefname{lem}{Lemma}{Lemmas}
+\crefname{prop}{Proposition}{Propositions}
+\Crefname{prop}{Proposition}{Propositions}
+\crefname{cor}{Corollary}{Corollaries}
+\Crefname{cor}{Corollary}{Corollaries}
+\crefname{defn}{Definition}{Definitions}
+\Crefname{defn}{Definition}{Definitions}
+\crefname{exmp}{Example}{Examples}
+\Crefname{exmp}{Example}{Examples}
+\crefname{rem}{Remark}{Remarks}
+\Crefname{rem}{Remark}{Remarks}
+
+\begin{document}
+\begin{frontmatter}
+\title{A Unified Kalman-Type Classification of Controllability for Linear Stochastic Systems}
+\author[scu]{Qi L\unexpanded{\"u}}\ead{lu@scu.edu.cn},
+\author[swjtu]{Yu Wang}\ead{yuwangmath@163.com}
+\address[scu]{School of Mathematics, Sichuan University, Chengdu 610064, China}
+\address[swjtu]{School of Mathematics, Southwest Jiaotong University, Chengdu 611756, China}
+% Confirm the single corresponding author before submission.
+\begin{keyword}
+Stochastic control; Controllability;
+State feedback; Rank conditions
+\end{keyword}
+\begin{abstract}
+We provide a unified algebraic classification of approximate controllability,
+approximate null controllability, exact null controllability, and exact
+controllability for finite-dimensional linear stochastic control systems with
+constant coefficients and multidimensional Brownian noise. The controls may
+enter both the drift and the diffusion terms, and the joint diffusion-control
+matrix may have arbitrary rank. A finite decreasing sequence of subspaces
+defines a common geometric obstruction. Its vanishing characterizes the two
+approximate properties and exact null controllability. Exact controllability to
+arbitrary random targets additionally requires the joint diffusion-control
+matrix to be surjective. The codimension of the obstruction is given by a rank
+difference of explicit polynomial block matrices, yielding finite tests in the
+original coefficients. When the joint diffusion-control matrix is surjective,
+we obtain a finite Kalman-type full-rank condition for exact controllability.
+If the obstruction vanishes, a linear state feedback with a deterministic
+time-dependent gain drives every initial state to zero at any prescribed positive time with finite energy and
+polynomial small-time cost. An equivalent orthogonal elimination algorithm
+computes the rank differences, avoiding
+exponentially large block matrices.
+\end{abstract}
+\end{frontmatter}
+% Compact paragraphs; keep the autart font, line spacing, and page geometry.
+\setlength{\parskip}{2pt plus 1pt minus 1pt}
+\setlength{\parindent}{1em}
+
+\section{Introduction}\label{sec:intro}
+
+Linear stochastic systems with state- and control-dependent diffusion give a tractable setting for feedback design under multiplicative uncertainty, e.g., with actuation through uncertain input channels \cite{NandanooriDiwadkarVaidya2018}. In multi-input systems, channel organization and allocation also shape control design, as in scheduling/control co-design over shared stochastic channels \cite{ChenYaoQiu2019}. The model links mean-square stabilization to generalized Riccati equations \cite{ZhangChen2004}. This motivates a structural finite-horizon question: which input configurations admit a finite-energy adapted control meeting a prescribed terminal requirement? Reaching the origin at a prescribed time differs from reaching an arbitrary random terminal state in how control affects drift and diffusion terms.
+
+
+
+\subsection{Formulation of the controllability problems}
+
+Let $W=(W^1,\dots,W^m)$ be an $m$-dimensional Brownian motion on a
+complete probability space $(\Omega,\mathcal F,\mathbb P)$, and let
+$\{\mathcal F_t\}_{t\geq0}$ be the usual augmentation of its natural
+filtration. Write $\mathbb F$ for the progressive $\sigma$-algebra and
+$\mathbb E$ for expectation.
+
+For a Euclidean space $H$, let $L^2_{\mathcal F_t}(\Omega;H)$ denote
+the square-integrable $\mathcal F_t$-measurable random variables.
+For $T>0$, the space $L^2_{\mathbb F}(0,T;H)$ consists of progressively
+measurable processes with $\mathbb E\int_0^T|v(t)|_H^2\,dt<\infty$.
+We use $L^2_{\mathbb F}(\Omega;C([0,T];H))$ for continuous adapted
+processes with $\mathbb E\sup\limits_{0\leq t\leq T}|v(t)|_H^2<\infty$.
+
+For $t\in[0,T]$, consider the linear control system\vspace{-2mm}
+\begin{equation}\label{eq:system}
+\!\!\!\begin{cases}
+dy(t) \!=\!\big(\!Ay(t)\!+\!Bu(t)\big) dt \!+\!\!\sum\limits_{j=1}^m\!\!\big(C_jy(t)\!+\!D_ju(t)\big) dW^j(t),\\[2pt]
+y(0) =y_0, 
+\end{cases}\vspace{-1mm}
+\end{equation}
+%
+where $A,C_j\in\mathbb R^{n\times n}$,
+$B,D_j\in\mathbb R^{n\times r}$, $n,r,m\in\{1,2,\dots\}$, $j=1,\dots,m$. The control
+$u\in\mathcal U_T:=L^2_{\mathbb F}(0,T;\mathbb R^r)$.
+
+By \cite[Theorem~3.2]{Lue2021a}, for every $y_0\in\mathbb R^n$ and
+$u\in\mathcal U_T$, the control system \eqref{eq:system} has a unique solution
+$y(\cdot;y_0,u)\in L^2_{\mathbb F}(\Omega;C([0,T];\mathbb R^n))$
+satisfying\vspace{-2mm}
+\begin{equation}\label{eq:state-estimate}
+\mathbb E\!\sup_{0\leq t\leq T}\!|y(t;y_0,\!u)|^2\!
+\leq\! c(T)\Bigl(|y_0|^2\!+\!\mathbb E\!\int_0^T\!|u(t)|^2\,dt\Bigr).\vspace{-2mm}
+\end{equation}
+
+Let us recall the following definition.
+%
+\begin{defn}\label[defn]{def:control}
+For $T>0$, system \eqref{eq:system} is said to be:
+\begin{itemize}
+\item (EC)  \emph{exactly controllable} if, for every
+$y_0\in\mathbb R^n$ and
+$\xi\in L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$, there is
+$u\in\mathcal U_T$ such that $y(T;y_0,u)=\xi$, $\mathbb P$-a.s.;
+\item (AC)  \emph{approximately controllable} if, for every
+$y_0\in\mathbb R^n$,
+$\xi\in L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$, and
+$\varepsilon>0$, there is $u\in\mathcal U_T$ such that $
+\mathbb E|y(T;y_0,u)-\xi|^2<\varepsilon$; 
+%
+\item (ENC) \emph{exactly null controllable} if, for every
+$y_0\in\mathbb R^n$, there is $u\in\mathcal U_T$ such that
+$y(T;y_0,u)=0$, $\mathbb P$-a.s.;
+\item (ANC) \emph{approximately null controllable} if, for every
+$y_0\in\mathbb R^n$ and $\varepsilon>0$, there is
+$u\in\mathcal U_T$ such that $
+\mathbb E|y(T;y_0,u)|^2<\varepsilon.$
+\end{itemize}
+%
+\end{defn}
+%
+
+Write $\mathcal C=[C_1^\top\ \cdots\ C_m^\top]^\top
+\in\mathbb R^{mn\times n}$ and define the joint diffusion-control matrix\vspace{-2mm}
+\begin{equation}\label{10.1-eq1}
+\mathcal D=[D_1^\top\ \cdots\ D_m^\top]^\top
+\in\mathbb R^{mn\times r}.\vspace{-3mm}
+\end{equation}
+%
+
+For deterministic linear constant-coefficient systems, the Kalman rank condition characterizes controllability, and exact, null, and approximate controllability coincide for deterministic controls and targets.
+
+The stochastic counterpart is less complete: for linear constant-coefficient SDEs with controls in drift and diffusion, the deterministic equivalences and rank condition do not carry over. For \cref{eq:system}, two questions concern the relations among controllability notions and their algebraic characterization.
+
+First, for scalar Brownian noise, Goreac \cite{Goreac} characterized AC and ANC by a common conditional-invariance obstruction. AC does not imply exact controllability to arbitrary random targets, as in \cref{ex:singular-diffusion}. We ask whether ANC also guarantees finite-energy ENC at every prescribed \(T>0\) for \cref{eq:system}. The gap is not merely technical: the terminal control map takes values in an infinite-dimensional space of random variables. ANC places the negative uncontrolled terminal state in the closure of the range, whereas ENC requires it in the range. Since approximately null controls need not have uniformly bounded energy, ENC is not automatic even in finite dimensions. We also ask what extra condition ensures exact attainment of arbitrary random targets.
+
+Second, we seek a Kalman-type rank characterization in the original coefficients. For scalar noise with a full-row-rank diffusion-control matrix, Peng \cite[pp.~281--282 and Theorem~3.2]{Peng1994} gave a necessary and sufficient rank condition involving products of coefficient matrices after an equivalent change of controls. L\"u and Zhang \cite[Theorem~6.10]{Lue2021a} showed that products of length at most \(n-1\) suffice and raised the problem of a direct characterization for the original system \cite[Remark~6.11]{Lue2021a}. We seek a unified finite-rank characterization in the original coefficients for multidimensional noise and arbitrary \(\operatorname{rank}\mathcal D\), within the same adapted \(L^2\) control class.
+
+We resolve these questions by identifying a common geometric obstruction and expressing its codimension as the rank difference of explicit polynomial block matrices in \(A,B,(C_j,D_j)_{j=1}^m\).
+
+From a design perspective, an original-coefficient criterion can test candidate input configurations before controller construction. Our results distinguish exact return to the origin at a prescribed time from attaining arbitrary square-integrable random terminal states. They also reveal an input-structure restriction: every controllability property considered here requires \(B\ker\mathcal D\neq\{0\}\), so some input combination must affect the drift without adding diffusion. Exact controllability further requires \(\operatorname{rank}\mathcal D=mn\), hence \(r\geq mn+1\); see \cref{rem:input-structure}. The criteria in \cref{cor:rank-control} can thus test feasibility before solving a minimum-energy steering problem.
+
+ 
+
+\subsection{Main results of this paper}\label{sec:geometry}
+
+We first state the geometric classification and feedback result, then express the classification as finite rank conditions in the original coefficient matrices.
+
+In this paper, \(\langle\cdot,\cdot\rangle\) and \(|\cdot|\) denote the Euclidean inner product and norm, while \(\lVert\cdot\rVert\) and \(\lVert\cdot\rVert_F\) denote matrix operator and Frobenius norms. Let \(e_1,\dots,e_n\) be the coordinate vectors, \(\top\) the transpose, and \(\otimes\) the Kronecker product. For a subspace \(V\), \(V^\perp\) is its Euclidean orthogonal complement and \(\Pi_V\) its orthogonal projector. Intermediate matrices with zero rows or columns are allowed under the usual rank, range, and kernel conventions; the system dimensions \(n,r,m\) remain positive. Throughout, \(c\) is a positive constant depending only on \(A,B,(C_j,D_j)_{j=1}^m\), and \(c(T)\) may also depend on \(T\); such generic constants may change between formulas. Constants used later are named separately.
+
+
+
+To describe the obstruction to controllability, for $\eta\in L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$,
+consider the adjoint BSDE\vspace{-2mm}
+%
+\begin{equation}\label{eq:adjoint}
+\!\!\!\begin{cases}\!
+dz(t)\! =\!-\Bigl(\!A^{\top}z(t)\!+\!\!\sum\limits_{j=1}^mC_j^{\top}Z_j(t)\!\Bigr) dt\! +\!\!\sum\limits_{j=1}^m\! Z_j(t) dW^j(t),\\[2pt]
+\!z(T) =\eta.
+\end{cases}\vspace{-1mm}
+\end{equation}
+%
+Here $Z=(Z_1,\dots,Z_m)$. By \cite[Theorem~4.2]{Lue2021a},
+\cref{eq:adjoint} has a unique solution with
+$(z,Z)\in L^2_{\mathbb F}(\Omega;C([0,T];\mathbb R^n))\times L^2_{\mathbb F}(0,T;(\mathbb R^n)^m)$.
+%
+Applying It\^o's formula to $\langle y,z\rangle$ and taking expectations
+gives the duality identity\vspace{-3mm}
+%
+\begin{equation}
+\label{eq:duality}
+\mathbb E\langle y(T),\eta\rangle \!-\! \langle y_0,z(0)\rangle \!=\!\mathbb E\!\int_0^T\!\!
+\Bigl\langle u,B^{\top}z +\!\sum_{j=1}^m\!D_j^{\top}Z_j\Bigr\rangle dt.\vspace{-2mm}
+\end{equation}
+%
+Thus $B^{\top}z+\sum\limits_{j=1}^mD_j^{\top}Z_j$ is the observation
+associated with the control. An adjoint solution with zero observation is
+undetected by every admissible control in \cref{eq:duality}.
+
+For such an adjoint motion to remain in a subspace $V\subset\mathbb R^n$,
+each martingale coefficient $w_j$ and the drift must belong to $V$.
+We therefore define $\mathcal R(V)$ as the set of $v\in V$ for which
+some $w_1,\dots,w_m\in V$ satisfy\vspace{-3mm}
+\begin{equation}\label{eq:map}
+B^{\top}v+\sum_{j=1}^mD_j^{\top}w_j =0,\quad
+A^{\top}v+\sum_{j=1}^mC_j^{\top}w_j \in V. \vspace{-3mm}
+\end{equation}
+%
+Starting from $\mathcal V_0=\mathbb R^n$, set\vspace{-3mm}
+%
+\begin{equation}\label{eq:flag}
+\mathcal V_{k+1}=\mathcal R(\mathcal V_k)\quad(k\geq0).\vspace{-3mm}
+\end{equation}
+%
+We denote $\mathcal V_n$ by $\mathcal V_*$.
+
+The next lemma gives an intrinsic characterization of the limiting space.
+%
+\begin{lem}\label[lem]{lem:flag}
+The sequence $(\mathcal V_k)_{k\geq0}$ decreases and is stationary from
+step $n$ onward. Its limit $\mathcal V_*$ is the largest subspace $V$
+for which some $\Gamma_1,\dots,\Gamma_m\in\mathbb R^{n\times n}$ satisfy\vspace{-2mm}
+%
+\begin{equation}\label{eq:invariance} 
+\begin{aligned}
+\Gamma_jV&\subset V\quad(j=1,\dots,m), \\
+\Bigl(A^{\top}\!\!+\!\sum_{j=1}^m\!C_j^{\top}\!\Gamma_j\Bigr)V&\!\subset\! V,\;\, \Bigl(B^{\top}\!\!+\!\sum_{j=1}^m\!D_j^{\top}\!\Gamma_j\Bigr)V \!=\!\{0\}.
+\end{aligned}\vspace{-4mm}
+\end{equation}
+%
+\end{lem}
+%
+\vspace{-2mm}
+%
+\begin{pf}
+For every subspace $V$, the linear conditions in \cref{eq:map} make
+$\mathcal R(V)$ a subspace of $V$. Thus
+$\mathcal V_{k+1}\subset\mathcal V_k$ for every $k\geq0$.
+If equality holds at some step, then
+the sequence is stationary from that step onward. Otherwise, the dimension
+strictly decreases at each step; since the ambient space has dimension $n$,
+stationarity must occur no later than step $n$.
+
+Next we identify the limit $\mathcal V_*$. At this fixed point, for each
+basis vector $v\in\mathcal V_*$, choose $w_1,\dots,w_m$ satisfying
+\cref{eq:map}. Since the defining condition is linear, extending these
+assignments linearly on $\mathcal V_*$ and then to $\mathbb R^n$ defines
+matrices $\Gamma_1,\dots,\Gamma_m$ satisfying \cref{eq:invariance}
+with $V=\mathcal V_*$.
+
+Conversely, suppose that a subspace $V$ satisfies \cref{eq:invariance}
+for some $\Gamma_1,\dots,\Gamma_m$. We show by induction on $k$ that
+$V\subset\mathcal V_k$. For $k=0$, this holds since $\mathcal V_0$ is
+the ambient space. Assume $V\subset\mathcal V_k$. For $v\in V$, set
+$w_j=\Gamma_jv$. Then the invariance conditions ensure that
+$v\in\mathcal V_{k+1}$, because the defining condition for
+$\mathcal V_{k+1}$ is satisfied with these $w_j$. Hence
+$V\subset\mathcal V_{k+1}$. Therefore $V\subset\mathcal V_k$ for all
+$k$, and thus $V\subset\mathcal V_*$. This proves that $\mathcal V_*$
+is the largest subspace with the stated property.
+\end{pf}
+%
+
+\vspace{-3mm}
+
+ 
+
+The following theorem classifies the four controllability properties through
+the obstruction space and the joint diffusion rank.
+%
+\begin{thm}\label[thm]{thm:geometry}
+For system \eqref{eq:system}, the following statements hold.
+%
+\begin{enumerate}[label=(\roman*)]
+\item For every $T>0$, approximate controllability, approximate null
+controllability, and exact null controllability are equivalent, and each
+holds if and only if $\mathcal V_*=\{0\}$.
+
+\item For every $T>0$, exact controllability to arbitrary targets in
+$ L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$ holds if and only if\vspace{-3mm}
+%
+\begin{equation}\label{eq:exact-condition}
+\mathcal V_*=\{0\}\qquad\text{and}\qquad
+\operatorname{rank}\mathcal D=mn.\vspace{-2mm}
+\end{equation}
+%
+\end{enumerate}
+%
+\end{thm}
+%
+
+In particular, each of the four controllability properties is independent
+of the positive time horizon.
+
+The next theorem achieves exact null controllability via deterministic linear feedback at each prescribed terminal time, with a polynomial small-time energy bound.
+%
+\begin{thm}
+\label[thm]{thm:null-feedback}
+Assume that $\mathcal V_*=\{0\}$. Then for every $T>0$ there exists a
+deterministic, piecewise-constant matrix function
+$K_T:[0,T)\to\mathbb R^{r\times n}$, locally bounded on $[0,T)$, such
+that, for every $y_0\in\mathbb R^n$, the feedback control
+$u(\cdot)=K_T(\cdot)y(\cdot)\in\mathcal U_T$ and its state satisfies
+$y(T;y_0,u)=0$, $\mathbb P$-a.s. Moreover, there exist $c_0>0$ and an
+integer $N\geq1$, depending only on $A,B,(C_j,D_j)_{j=1}^m$, such that\vspace{-3mm}
+%
+\begin{equation}\label{eq:cost}
+\mathbb E\int_0^T|u(t)|^2\,dt\leq c_0T^{-N}|y_0|^2,
+\qquad 0<T\leq1.\vspace{-3mm}
+\end{equation}
+%
+\end{thm}
+%
+
+The gain $K_T$ may become unbounded as $t\uparrow T$, with switching
+times accumulating at $T$. The energy bound concerns the control $u=K_Ty$.
+
+\begin{table}[tb]
+\centering
+\caption{The only possible joint regimes under the standing assumptions.}
+\label{tab:classification-regimes}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$\mathcal V_*$ & $\operatorname{rank}\mathcal D$ & Properties\\
+\midrule
+$\neq\{0\}$ & arbitrary & none\\
+$\{0\}$ & $<mn$ & AC, ANC, ENC\\
+$\{0\}$ & $mn$ & AC, ANC, ENC, EC\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The following example illustrates the role of the joint diffusion rank in
+\cref{tab:classification-regimes}.
+
+\begin{exmp}\label[exmp]{ex:singular-diffusion}
+Take $n=1$, $r=3$, $m=2$, $A=C_1=C_2=0$, and
+$B=(1,0,0)$, $D_1=(0,1,0)$, $D_2=(0,1,\varepsilon)$, where
+$\varepsilon\in\mathbb R$. Then \cref{eq:system} becomes\vspace{-3mm}
+\begin{equation*}
+dy=u_1\,dt+u_2\,dW^1+(u_2+\varepsilon u_3)\,dW^2.\vspace{-2mm}
+\end{equation*}
+The zero-observation constraint is\vspace{-3mm}
+\begin{equation*}
+B^{\top}v+D_1^{\top}w_1+D_2^{\top}w_2
+=\begin{pmatrix}v\\[-7pt]w_1+w_2\\[-7pt]\varepsilon w_2\end{pmatrix}=0.\vspace{-3mm}
+\end{equation*}
+Thus $\mathcal V_1=\{0\}$ for every $\varepsilon$. By
+\cref{thm:geometry}, AC, ANC and ENC hold at every $T>0$, whereas EC
+holds if and only if $\varepsilon\neq0$: the rank of $\mathcal D$ is
+one at $\varepsilon=0$ and two otherwise. Both $D_1$ and $D_2$, as
+well as their horizontal concatenation, have full row rank even at
+$\varepsilon=0$.
+\end{exmp}
+
+ 
+
+
+Recall the definition of $\mathcal D$ in \cref{10.1-eq1}. Set\vspace{-3mm}
+\begin{equation}\label{eq:pair-start}
+\mathsf K_1=B^{\top},\qquad
+\mathsf N_1=\mathcal D^{\top}.\vspace{-3mm}
+\end{equation}
+For $k\geq1$, write $\mathsf K_k\in\mathbb R^{a_k\times n}$ and
+$\mathsf N_k\in\mathbb R^{a_k\times b_k}$, and form\vspace{-2mm}
+\begin{equation}\label{eq:pair}
+\!\!\!\mathsf K_{k+1} \!=\!\!
+\begin{pmatrix}
+\!B^{\top}\!\\[-4pt]
+\!0_{ma_k\times n}\!\\[-3pt]
+\!\mathsf K_kA^{\top}\!
+\end{pmatrix},\;\,
+\mathsf N_{k+1} \!=\!\!
+\begin{pmatrix}
+\!\mathcal D^{\top}\!&0&0\\[-3pt]
+\!I_m\!\otimes\!\mathsf K_k&I_m\!\!\otimes\!\mathsf N_k&0\\[-4pt]
+\!\mathsf K_k \mathcal C^{\top}&0&\mathsf N_k
+\end{pmatrix},\vspace{-2mm}
+\end{equation}
+where $a_k=r\sum\limits_{\ell=0}^{k-1}(m+1)^\ell$ and
+$b_k=mn\sum\limits_{\ell=0}^{k-1}(m+1)^\ell$.
+The three column blocks of $\mathsf N_{k+1}$ have widths $mn$, $mb_k$
+and $b_k$, and its three row blocks have heights $r$, $ma_k$ and
+$a_k$. Put $\delta_0=0$ and, for $k\geq1$,\vspace{-2mm}
+\begin{equation}\label{eq:delta}
+\delta_k=\operatorname{rank}[\,\mathsf N_k\ \mathsf K_k\,]
+-\operatorname{rank}\mathsf N_k.\vspace{-2mm}
+\end{equation}
+The block pair represents each obstruction space and determines its
+codimension.
+
+\begin{thm}\label[thm]{thm:rank}
+For every $k\geq1$,\vspace{-2mm}
+\begin{equation}\label{eq:rank-identity}
+\mathcal V_k
+=\bigl\{v\in\mathbb R^n:\exists\alpha\in\mathbb R^{b_k},\quad
+\mathsf K_kv+\mathsf N_k\alpha=0\bigr\},\vspace{-2mm}
+\end{equation}
+and\vspace{-2mm}
+\begin{equation}\label{eq:rank-codimension}
+\delta_k=n-\dim\mathcal V_k.\vspace{-2mm}
+\end{equation}
+\end{thm}
+
+At step $n$, this identity yields the controllability criterion.
+
+\begin{cor}\label[cor]{cor:rank-control}
+For every $T>0$, approximate controllability, approximate null
+controllability, and exact null controllability are each equivalent to\vspace{-2mm}
+\begin{equation}\label{eq:rank-test}
+\operatorname{rank}[\mathsf N_n\ \mathsf K_n]
+-\operatorname{rank}\mathsf N_n=n.\vspace{-2mm}
+\end{equation}
+Exact controllability is equivalent to \cref{eq:rank-test} together with
+$\operatorname{rank}\mathcal D=mn$.
+\end{cor} 
+\vspace{-2mm}
+\begin{pf}
+Apply \cref{thm:geometry,thm:rank} with $\mathcal V_*=\mathcal V_n$.
+\end{pf}
+ \vspace{-2mm}
+When $\operatorname{rank}\mathcal D=mn$, let
+$J=\mathcal D^\top(\mathcal D\mathcal D^\top)^{-1}$ and partition
+$J=[J_1\ \cdots\ J_m]$, where $J_j\in\mathbb R^{r\times n}$. Define
+$E_j=BJ_j$, $F=A-BJ\mathcal C$, and $H=B(I_r-J\mathcal D)$.
+Set $H_0=H$ and, for $k\geq0$, define\vspace{-2mm}
+\begin{equation}\label{eq:word-blocks}
+H_{k+1}=[\,E_1H_k\ \cdots\ E_mH_k\ FH_k\,].\vspace{-2mm}
+\end{equation}
+The matrix $H_k$ has $n$ rows and $r(m+1)^k$ columns, corresponding
+to all products of exactly $k$ factors from $\{E_1,\dots,E_m,F\}$
+followed by $H$. Thus the concatenation of $H_0,\dots,H_{n-1}$ has
+$r\sum\limits_{k=0}^{n-1}(m+1)^k$ columns.
+
+These matrices give a Kalman-type rank condition for exact controllability.
+
+\begin{thm}\label[thm]{prop:exact-rank}
+Assume that $\operatorname{rank}\mathcal D=mn$. At every $T>0$, system
+\eqref{eq:system} is exactly controllable if and only if\vspace{-2mm}
+\begin{equation}\label{eq:exact-rank}
+\operatorname{rank}[\,H_0\ H_1\ \cdots\ H_{n-1}\,]=n.\vspace{-2mm}
+\end{equation}
+\end{thm}
+
+\subsection{Relation to previous work}\label{intro:comparison}
+
+
+The spaces in \cref{eq:map,eq:flag} extend Goreac's finite subspace iteration for AC and ANC \cite[Theorem~3 and Remark~4]{Goreac} from scalar to multidimensional Brownian noise and arbitrary rank of \(\mathcal D\). \Cref{thm:geometry} further shows that the vanishing of the same obstruction characterizes ENC for every prescribed \(T>0\).
+
+Guo, Yu, and Zhang \cite{GYZ} characterize stabilizability through approximate null controllability with cost, with horizon \(T=T(\delta)\) for each contraction factor \(\delta\). In contrast, \cref{thm:null-feedback} achieves exact null control at every prescribed \(T>0\) by deterministic linear state feedback, with finite energy and a polynomial small-time bound.
+
+For scalar noise and a surjective diffusion-control matrix, Liu and Peng \cite{LiuPeng2002} prove that, for the equivalent system with freely chosen diffusion, exact controllability is equivalent to arbitrary exponential convergence-index assignment by linear state feedback. Our classification also covers arbitrary joint diffusion rank, where ENC need not imply EC.
+
+%S\^{\i}rbu and Tessitore \cite{ST} characterize exact null controllability in Hilbert spaces via a singular Riccati equation and an observability inequality, and obtain optimal null controls in feedback form. On the common finite-dimensional constant-coefficient class, our result gives a finite algebraic test for this property. Their model uses independent Brownian families for state and control noise; \cref{eq:system} also allows shared Brownian channels.
+
+For scalar noise and \(\operatorname{rank}D_1=n\), the matrices \(E_1,F,H\) before \cref{prop:exact-rank} express Peng's reduced criterion \cite[Theorem~3.2]{Peng1994}, together with L\"u and Zhang's finite truncation \cite[Theorem~6.10]{Lue2021a}, directly in \(A,B,C_1,D_1\) without choosing a basis of \(\ker D_1\). For the original system, L\"u and Zhang prove sufficiency but leave necessity open, and ask in \cite[Remark~6.11]{Lue2021a} for a rank characterization directly in the original coefficients. \Cref{prop:exact-rank} gives the requested formulation and also covers multidimensional noise.
+
+ 
+%
+%Goreac, Li, and Zhang \cite{GoreacLiZhang2026} study reduced-rank mean-field systems by allowing weaker control integrability or Gaussian terminal laws; our classification retains \(\mathcal U_T=L^2_{\mathbb F}(0,T;\mathbb R^r)\) and the four controllability requirements in \cref{def:control} for the constant-coefficient system \cref{eq:system}.
+
+For broader background, see  \cite{BuckdahnQuincampoixTessitore2006} for invariant-subspace criteria with drift-only control. Gramian and duality characterizations appear in \cite{Liu2010,WYYY}; other terminal requirements include finite-chaos approximation \cite{Dou2019}, exact output control \cite{WangYu2020}, and partial controllability with terminal constraints \cite{Song2023}.
+
+The remainder is organized as follows. \Cref{sec:proof} proves the classification and feedback theorems. \cref{sec:rank} proves the rank criteria and discusses their deterministic reduction and nonrobustness. \cref{sec:algorithm} presents the orthogonal elimination algorithm.
+
+
+\section{Proofs of \texorpdfstring{\Cref{thm:geometry,thm:null-feedback}}{the classification and feedback theorems}}\label{sec:proof}
+
+We first prove in \Cref{sec:approximate} that AC, ANC, and \(\mathcal V_*=\{0\}\) are equivalent. We then prove \cref{thm:null-feedback}, yielding the ENC implication needed for \Cref{thm:geometry}(i).
+
+The feedback construction has three steps. In \Cref{sec:strict-alternative}, separation of the positive definite cone gives stabilizing feedbacks with any prescribed mean-square decay rate when the obstruction subspace vanishes. In \Cref{sec:feedback-growth}, a semialgebraic argument bounds their gains and Lyapunov condition numbers polynomially in this rate. In \Cref{sec:switching}, these feedbacks are applied on intervals accumulating at \(T\); exponential state decay dominates polynomial growth, making the control energy summable and proving \cref{thm:null-feedback}. \Cref{sec:switching} then completes the proof of \Cref{thm:geometry}.
+
+\subsection{Approximate controllability and the obstruction space}
+\label{sec:approximate}
+
+We prove the geometric characterization of AC and ANC using the
+conditional-invariance approach of Goreac \cite[Theorem~3]{Goreac}.
+
+\begin{lem}\label[lem]{lem:approximate}
+At every $T>0$, system \eqref{eq:system} is approximately controllable if
+and only if it is approximately null controllable, and these properties hold
+if and only if $\mathcal V_*=\{0\}$.
+\end{lem}
+\vspace{-4mm}
+\begin{pf}
+Fix $T>0$ and define
+$M_T:\mathcal U_T\to L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$ by
+$M_Tu=y(T;0,u)$. This linear map is bounded by
+\cref{eq:state-estimate}, and \cref{eq:duality} gives $
+M_T^*\eta=B^{\top}z+\sum_{j=1}^mD_j^{\top}Z_j,$
+where $(z,Z)$ solves \cref{eq:adjoint}. By linearity of the control system \eqref{eq:system}, AC is equivalent to density of the range of $M_T$ in
+$L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$, or equivalently to
+$\ker M_T^*=\{0\}$.
+
+Suppose that $\mathcal V_*=\{0\}$ and $M_T^*\eta=0$. We show by
+induction that $z(t)\in\mathcal V_k$ for all $t\in[0,T]$, $\mathbb P$-a.s.
+For $k=0$ this is trivial. Assume it holds for some $k$. Since
+$z(t)\in\mathcal V_k$, its projection onto $\mathcal V_k^\perp$
+vanishes. Hence the projection of \cref{eq:adjoint} onto
+$\mathcal V_k^\perp$ has zero drift and zero martingale part.
+Consequently, the projected diffusion coefficients satisfy\vspace{-2mm}
+\begin{equation*}
+\sum_{j=1}^m\int_0^T
+\bigl|\Pi_{\mathcal V_k^\perp}Z_j(t)\bigr|^2\,dt=0,
+\quad\mathbb P\text{-a.s.}\vspace{-2mm}
+\end{equation*}
+Thus $Z_j(t)\in\mathcal V_k$ for every $j$, while the drift condition
+is $
+A^{\top}z(t)+\sum\limits_{j=1}^mC_j^{\top}Z_j(t)\in\mathcal V_k$
+almost everywhere with respect to the product measure
+$dt\otimes d\mathbb P$. Together with
+$
+B^{\top}z+\sum\limits_{j=1}^mD_j^{\top}Z_j=0,
+$
+\cref{eq:map,eq:flag} give $z(t)\in\mathcal V_{k+1}$ almost everywhere.
+Since $z$ is continuous and $\mathcal V_{k+1}$ is closed, this inclusion
+holds for all $t\in[0,T]$, $\mathbb P$-a.s.  At $k=n$, we obtain $z=0$
+and hence $\eta=z(T)=0$. Thus AC holds, and ANC follows by taking the
+target to be zero.
+
+Conversely, suppose that $\mathcal V_*\neq\{0\}$. Choose
+$0\neq v\in\mathcal V_*$ and matrices $\Gamma_1,\dots,\Gamma_m$ as in
+\cref{lem:flag}, and let $z$ solve\vspace{-3mm}
+\begin{equation*}
+\begin{cases}
+dz(t)\! =\!-\Bigl(A^{\top}\!+\!\sum\limits_{j=1}^m\!C_j^{\top}\Gamma_j\Bigr)z(t) dt +\!\sum\limits_{j=1}^m\Gamma_jz(t) dW^j(t),\\[2pt] z(0)=v.
+\end{cases}\vspace{-3mm}
+\end{equation*}
+The solution $z$ belongs to
+$L^2_{\mathbb F}\bigl(\Omega;C([0,T];\mathbb R^n)\bigr)$ and remains in
+$\mathcal V_*$ by \cref{eq:invariance}. Thus 
+$Z=(\Gamma_1z,\dots,\Gamma_mz)
+\in L^2_{\mathbb F}\bigl(0,T;(\mathbb R^n)^m\bigr)$
+and $\eta=z(T)\in L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$. The pair
+$(z,Z)$ solves \cref{eq:adjoint} and satisfies
+$B^{\top}z+\sum\limits_{j=1}^mD_j^{\top}Z_j=0$. Taking $y_0=v$ in
+\cref{eq:duality} gives\vspace{-2mm}
+\begin{equation*}
+\mathbb E\langle y(T;v,u),\eta\rangle=|v|^2
+\qquad\text{for every }u\in\mathcal U_T.\vspace{-2mm}
+\end{equation*}
+If ANC held, there would be controls $u_\ell\in\mathcal U_T$ with
+$y(T;v,u_\ell)\to0$ in $L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$.
+The Cauchy--Schwarz inequality would then force the left-hand side to tend
+to zero, contradicting $v\neq0$. Hence ANC fails, which proves the
+converse implication.
+\end{pf}
+
+\vspace{-3mm}
+
+\subsection{Arbitrary-rate stabilizability}\label{sec:strict-alternative}
+
+We first obtain stabilizing feedbacks with any prescribed mean-square decay
+rate. We write $H>0$ (respectively, $H\geq 0$) when a symmetric
+matrix $H$ is positive definite (respectively, positive semidefinite), and
+use $<,\leq $ analogously.
+
+For the $m\times m$ identity matrix $I_m$ and any matrix $M$, the
+Kronecker product is\vspace{-3mm}
+\begin{equation*}
+I_m\otimes M=
+\begin{pmatrix}
+M&0&\cdots&0\\[-8pt]
+0&M&\ddots&\vdots\\[-8pt]
+\vdots&\ddots&\ddots&0\\[-8pt]
+0&\cdots&0&M
+\end{pmatrix},\vspace{-2mm}
+\end{equation*}
+with $m$ copies of $M$ on the diagonal.
+
+For $\rho>0$, a symmetric $P\in\mathbb R^{n\times n}$, and
+$U\in\mathbb R^{r\times n}$, put\vspace{-2mm}
+\begin{equation}\label{eq:lmi}
+\mathcal M_\rho(P,U)\!=\!
+\begin{pmatrix}
+\begin{gathered}AP\!+\!PA^{\top}\!+\!BU\\+U^{\top}B^{\top}+\rho P\end{gathered} & (\mathcal CP+\mathcal DU)^\top\\
+\mathcal CP\!+\!\mathcal DU & -I_m\otimes P
+\end{pmatrix}.\vspace{-2mm}
+\end{equation}
+The matrix $\mathcal M_\rho(P,U)$ has size $(m+1)n$. A pair $(P,U)$
+is called feasible at rate $\rho$ if $\mathcal M_\rho(P,U)<0$; its
+lower-right block then gives $P>0$. We prove feasibility at every positive
+rate directly from the vanishing of the obstruction subspace.
+
+\begin{lem}\label[lem]{lem:arbitrary-rate}
+If $\mathcal V_*=\{0\}$, then for every $\rho>0$ there exist a symmetric
+matrix $P\in\mathbb R^{n\times n}$ and a matrix
+$U\in\mathbb R^{r\times n}$ such that
+$\mathcal M_\rho(P,U)<0$.
+\end{lem}
+\vspace{-2mm}
+\begin{pf}
+Fix $\rho>0$. Suppose that the linear space
+$\{-\mathcal M_\rho(P,U):P=P^\top,\ U\in\mathbb R^{r\times n}\}$
+is disjoint from the open cone of positive definite matrices.
+Finite-dimensional separation gives a nonzero symmetric matrix $Z\geq0$
+such that $\operatorname{tr}(Z\mathcal M_\rho(P,U))=0$ for every $P=P^\top$
+and every $U$. Indeed, the separating functional annihilates the linear
+space, and its trace representative is positive semidefinite by testing
+on $vv^\top+\varepsilon I$, $\varepsilon>0$, and letting
+$\varepsilon\downarrow0$.
+
+Write $Q=Z_{00}$, $S_j=Z_{j0}$, and $R_{ij}=Z_{ij}$, with the head block
+indexed by $0$ and the noise blocks by $1,\dots,m$.
+The free symmetric variable $P$ and the free variable $U$ give
+\begin{align}
+A^\top Q+QA+\rho Q
++\sum_{j=1}^m(C_j^\top S_j+S_j^\top C_j)
+&=\sum_{j=1}^mR_{jj},\label{eq:cone-state}\\
+B^\top Q+\sum_{j=1}^mD_j^\top S_j&=0.\label{eq:cone-input}
+\end{align}
+Here the trace pairing with $P$ has the symmetric coefficient displayed
+in \cref{eq:cone-state}, while that with $U$ is twice the pairing with
+the transpose of the coefficient in \cref{eq:cone-input}.
+
+We use the elementary implication $H\geq0$, $x^\top Hx=0\Rightarrow Hx=0$.
+For $x\in\ker Q$, positivity of $Z$ applied to $(x,0,\dots,0)$ gives
+$S_jx=0$ for every $j$. Thus $Qx\mapsto S_jx$ is a well-defined linear
+map on $\operatorname{im}Q$. Extend it linearly to
+$\Gamma_j:\mathbb R^n\to\mathbb R^n$, so that $S_j=\Gamma_jQ$.
+Testing the principal block
+$\left(\begin{smallmatrix}Q&S_j^\top\\S_j&R_{jj}\end{smallmatrix}\right)$
+on $(-\Gamma_j^\top y,y)$ shows that
+\begin{equation}\label{eq:cone-residual}
+R_{jj}-\Gamma_jQ\Gamma_j^\top\geq0.
+\end{equation}
+This construction also applies when $Q$ is singular.
+
+If $Q=0$, then every $S_j=0$, and \cref{eq:cone-state} gives
+$\sum\limits_{j=1}^mR_{jj}=0$. Since each $R_{jj}\geq0$, all these
+diagonal blocks vanish. Applying the same zero-quadratic-form implication
+to vectors supported in a single block then gives $Z=0$, a contradiction.
+Consequently $Q\ne0$.
+
+Put $F=A^\top+\sum\limits_{j=1}^mC_j^\top\Gamma_j$ and
+$R=\sum\limits_{j=1}^mR_{jj}\geq0$. By \cref{eq:cone-state},
+\begin{equation}\label{eq:cone-balance}
+FQ+QF^\top+\rho Q=R.
+\end{equation}
+For $x\in\ker Q$, taking its quadratic form in \cref{eq:cone-balance}
+gives $x^\top Rx=0$, hence $Rx=0$ and $x^\top R_{jj}x=0$ for every $j$.
+By \cref{eq:cone-residual},
+$(\Gamma_j^\top x)^\top Q(\Gamma_j^\top x)=0$, so
+$Q\Gamma_j^\top x=0$.
+Applying \cref{eq:cone-balance} to $x$ also gives $QF^\top x=0$.
+Thus $\ker Q$ is invariant under $F^\top$ and all $\Gamma_j^\top$.
+Since $Q$ is symmetric, $V=\operatorname{im}Q=(\ker Q)^\perp$ is
+invariant under $F$ and all $\Gamma_j$.
+By \cref{eq:cone-input},
+$(B^\top+\sum\limits_{j=1}^mD_j^\top\Gamma_j)V=\{0\}$.
+The maximality assertion in \cref{lem:flag} therefore yields
+$\{0\}\ne V\subset\mathcal V_*$, contrary to the hypothesis.
+The two sets cannot be disjoint, proving strict feasibility.
+\end{pf}
+
+\vspace{-3mm}
+
+\subsection{Polynomially bounded stabilizing feedbacks}
+\label{sec:feedback-growth}
+
+We now seek feasible pairs for which the feedback gain and the condition
+number $\kappa(P)=\lambda_{\max}(P)/\lambda_{\min}(P)$ grow at most
+polynomially with the decay rate.
+
+We use semialgebraic sets, i.e., finite Boolean combinations of polynomial equalities and inequalities with real coefficients; a function is semialgebraic if its graph is. The Tarski--Seidenberg theorem allows projection and elimination of real quantifiers \cite[Theorem~2.2.1 and Proposition~2.2.4]{BCR}.
+
+\begin{lem}\label[lem]{lem:tarski-seidenberg}
+The image of a semialgebraic subset of $\mathbb R^{a+b}$ under
+coordinate projection onto $\mathbb R^a$ is semialgebraic. More generally,
+a set defined by polynomial equalities and inequalities, finite Boolean
+operations and finitely many real existential or universal quantifiers
+is semialgebraic.
+\end{lem}
+
+We also use the polynomial growth bound for continuous semialgebraic
+functions on closed semialgebraic sets
+\cite[Proposition~2.6.2, p.~43]{BCR}, in the following form.
+
+\begin{lem}\label[lem]{lem:semialgebraic-growth}
+If $f:[1,\infty)\to\mathbb R$ is continuous and semialgebraic, then
+there exist $M\geq1$ and an integer $p\geq1$ such that\vspace{-2mm}
+\begin{equation*}
+|f(\rho)|\leq M\rho^p,\qquad \rho\geq1.\vspace{-1mm}
+\end{equation*}
+\end{lem}
+
+Related real-algebraic methods have been used in output-feedback and
+stabilization problems \cite{AndersonBoseJury1975,FardigolaSheveleva2002}.
+We apply these lemmas to the minimum of
+$\lVert P\rVert_F^2+\lVert U\rVert_F^2$ over a normalized feasible set
+for \cref{eq:lmi}. The normalization bounds $P^{-1}$, while the minimum
+bounds both $\kappa(P)$ and $\lVert UP^{-1}\rVert^2$.
+
+\begin{lem}\label[lem]{lem:growth}
+Suppose that a feasible pair exists for every $\rho\geq1$. There exist a
+constant $M\geq1$ and an integer $p\geq1$, depending only on
+$A,B,(C_j,D_j)_{j=1}^m$, such that for every $\rho\geq1$ one can choose
+a feasible pair $\bigl(P(\rho),U(\rho)\bigr)$ satisfying\vspace{-2mm}
+\begin{equation}\label{eq:growth}
+\kappa\bigl(P(\rho)\bigr)\leq M\rho^p\vspace{-2mm}
+\end{equation}
+and\vspace{-2mm}
+\begin{equation}\label{eq:gain-growth}
+\bigl\lVert U(\rho)P(\rho)^{-1}\bigr\rVert^2\leq M\rho^p.\vspace{-2mm}
+\end{equation}
+\end{lem}
+
+\begin{pf}
+\emph{Step 1: a semialgebraic minimum.}
+For $\rho\geq1$, define the closed set\vspace{-2mm}
+\begin{equation*}
+\mathscr F_\rho=
+\bigl\{(P,U):P=P^{\top},\ \mathcal M_\rho(P,U)\leq -I_{(m+1)n}\bigr\}\vspace{-2mm}
+\end{equation*}
+and put $g(P,U)=\lVert P\rVert_F^2+\lVert U\rVert_F^2$. By the
+feasibility assumption and the homogeneity\vspace{-2mm}
+\begin{equation*}
+\mathcal M_\rho(cP,cU)=c\mathcal M_\rho(P,U),\qquad c>0,\vspace{-2mm}
+\end{equation*}
+$\mathscr F_\rho$ is nonempty. Its lower-right block gives
+$I_m\otimes P\geq  I_{mn}$, hence $P\geq  I_n$. Since $g$ is
+coercive, it attains the finite minimum\vspace{-3mm}
+\begin{equation*}
+\mu(\rho)=\min_{(P,U)\in\mathscr F_\rho}g(P,U).\vspace{-3mm}
+\end{equation*}
+
+We first show that $\mu$ is semialgebraic. The set of triples
+$(\rho,P,U)$ with $\rho\geq1$ and $(P,U)\in\mathscr F_\rho$ is
+semialgebraic: the matrix inequality is equivalent to nonnegativity of all
+principal minors of $-\mathcal M_\rho(P,U)-I_{(m+1)n}$. For
+$\rho\geq1$, a point $(\rho,s)$ belongs to the graph of $\mu$
+precisely when some $(P,U)\in\mathscr F_\rho$ satisfies $g(P,U)=s$ and
+no $(P',U')\in\mathscr F_\rho$ satisfies $g(P',U')<s$.
+By \cref{lem:tarski-seidenberg}, this graph is semialgebraic.
+
+ 
+
+\emph{Step 2: continuity of the minimum.}
+Let $\rho_j\to\rho$ in $[1,\infty)$. To prove lower semicontinuity,
+it suffices to consider $\liminf_j\mu(\rho_j)<\infty$. Pass to a
+subsequence realizing this lower limit and choose minimizing pairs
+$(P_j,U_j)\in\mathscr F_{\rho_j}$. Coercivity gives a further
+subsequence converging to a pair $(P,U)$. Passing to the limit in the
+matrix inequality gives $(P,U)\in\mathscr F_\rho$, and hence\vspace{-2mm}
+\begin{equation*}
+\mu(\rho)\leq g(P,U)=\liminf_{j\to\infty}\mu(\rho_j).\vspace{-2mm}
+\end{equation*}
+For upper semicontinuity, choose a minimizing pair $(P,U)$ at $\rho$
+and fix $c>1$. For $\rho'$ near $\rho$,\vspace{-2mm}
+\begin{align*}
+\mathcal M_{\rho'}(cP,cU)
+&=c\mathcal M_\rho(P,U)
++c(\rho'-\rho)\begin{pmatrix}P&0\\[-5pt]0&0_{mn}\end{pmatrix}\\
+&\leq -cI_{(m+1)n}
++c(\rho'-\rho)\begin{pmatrix}P&0\\[-5pt]0&0_{mn}\end{pmatrix}.
+\end{align*}
+Thus $(cP,cU)\in\mathscr F_{\rho'}$ whenever $\rho'\geq1$ is
+sufficiently close to $\rho$, so\vspace{-2mm}
+\begin{equation*}
+\limsup_{\rho'\to\rho}\mu(\rho')\leq c^2\mu(\rho).\vspace{-2mm}
+\end{equation*}
+Letting $c\downarrow1$ proves upper semicontinuity.
+
+ 
+
+\emph{Step 3: polynomial bounds.}
+Applying \cref{lem:semialgebraic-growth} to the continuous
+semialgebraic function $\mu:[1,\infty)\to\mathbb R$, we obtain
+a constant $M\geq1$ and an integer $p\geq1$ such that\vspace{-2mm}
+\begin{equation*}
+\mu(\rho)\leq M\rho^p,\qquad \rho\geq1.\vspace{-2mm}
+\end{equation*}
+For any minimizing pair $(\bar P,\bar U)$, we have $\bar P\geq  I_n$
+and $\mu(\rho)\geq n\geq1$. In particular,
+$\lVert\bar P^{-1}\rVert\leq1$, so\vspace{-3mm}
+\begin{equation*}
+\kappa(\bar P)\leq\lVert\bar P\rVert_F
+\leq\sqrt{\mu(\rho)}\leq\mu(\rho).\vspace{-3mm}
+\end{equation*}
+The gain satisfies $
+\bigl\lVert\bar U\bar P^{-1}\bigr\rVert^2
+\leq\lVert\bar U\rVert_F^2\leq\mu(\rho).$
+Taking $P(\rho)=\bar P$ and $U(\rho)=\bar U$ proves
+\cref{eq:growth,eq:gain-growth}.
+\end{pf}
+
+\vspace{-4mm}
+
+We next record the decay estimate that will be used on each switching
+interval. For a feasible pair $(P,U)$ at rate $\rho$, set
+$K=UP^{-1}$. The Schur complement of \cref{eq:lmi}, followed by
+multiplication on both sides by $P^{-1}$, gives\vspace{-3mm}
+\begin{equation}\label{eq:lyapunov}
+\begin{aligned}
+&(A+BK)^{\top}P^{-1}+P^{-1}(A+BK)+\rho P^{-1} \\
+& +\sum_{j=1}^m(C_j+D_jK)^{\top}P^{-1}(C_j+D_jK)<0.
+\end{aligned}\vspace{-3mm}
+\end{equation}
+Define $V(x)=\langle P^{-1}x,x\rangle$ and apply the feedback $u=Ky$.
+The initial state $y(t)$ may be any square-integrable
+$\mathcal F_t$-measurable vector. On the switching interval, write
+$Y_s=y(t+s)$, put $f(s)=\mathbb EV(Y_s)$, and\vspace{-2mm}
+\begin{equation*}
+\begin{aligned}
+g(s)=\mathbb E\Bigl[&2\langle P^{-1}Y_s,(A+BK)Y_s\rangle\\
+&+\sum_{j=1}^m\langle P^{-1}(C_j+D_jK)Y_s,(C_j+D_jK)Y_s\rangle\Bigr].
+\end{aligned}\vspace{-2mm}
+\end{equation*}
+The expected-product identity for the integral equation gives
+$f(s)=f(0)+\int_0^s g(a)\,da$. The continuous $S^2$ solution makes
+these quadratic terms integrable and, by dominated convergence, makes
+$g$ continuous. By \cref{eq:lyapunov}, $g(s)\leq-\rho f(s)$.
+Consequently,
+$\frac{d}{ds}(e^{\rho s}f(s))=e^{\rho s}(g(s)+\rho f(s))\leq0$
+in the interior of the interval, and continuity gives\vspace{-3mm}
+\begin{equation*}
+\mathbb EV(y(t+s))\leq e^{-\rho s}\mathbb EV(y(t)).\vspace{-3mm}
+\end{equation*}
+Finally, the eigenvalue bounds
+$
+\frac{|x|^2}{\lambda_{\max}(P)}
+\leq V(x)\leq\frac{|x|^2}{\lambda_{\min}(P)}
+$
+give\vspace{-4mm}
+\begin{equation}\label{eq:decay}
+\mathbb E|y(t+s)|^2\leq\kappa(P)e^{-\rho s}\mathbb E|y(t)|^2.\vspace{-2mm}
+\end{equation}
+Both $K$ and $P$ are deterministic, so \cref{eq:decay} applies without
+changing the feedback when $y(t)$ is random.
+
+\subsection{Feedback construction and exact controllability}
+\label{sec:switching}
+
+\vspace{-3mm} 
+
+\begin{pf*}{Proof of \cref{thm:null-feedback}}
+Assume $\mathcal V_*=\{0\}$. We first consider $0<T\leq1$ and treat
+$T>1$ at the end of the construction. By
+\cref{lem:arbitrary-rate,lem:growth}, we may choose feedbacks satisfying
+\cref{eq:growth,eq:gain-growth} at every rate $\rho\geq1$. We will
+shorten the switching intervals while increasing the decay rates fast
+enough that the factor $e^{-\rho s}$ in \cref{eq:decay} compensates for
+both polynomial factors in \cref{eq:growth,eq:gain-growth}.
+
+\emph{Step 1: choosing the intervals and decay rates.}
+Choose $L\geq\max(1,4p)$ so large that
+$
+4^{2p}ML^pe^{-L/2}\leq\frac12,
+$
+which is possible because $e^{-L/2}$ decays faster than $L^p$. Set\vspace{-2mm}
+\begin{equation}\label{eq:switch}
+t_j=T(1-2^{-j}),\qquad j\geq0.\vspace{-2mm}
+\end{equation}
+The interval lengths are $\ell_j=t_{j+1}-t_j=T2^{-j-1}$. Choose
+$\lambda_j=LT^{-2}4^j$ and
+$K_j=U(\lambda_j)P(\lambda_j)^{-1}$, and define\vspace{-2mm}
+\begin{equation*}
+K_T(t)=K_j,\qquad t\in[t_j,t_{j+1}),\quad j\geq0.\vspace{-2mm}
+\end{equation*}
+In particular, $K_T(t_j)=K_j$ at every switching time.
+On each interval, we solve the linear SDE with drift matrix
+$A+BK_j$ and diffusion matrices $C_i+D_iK_j$, $i=1,\dots,m$,
+using the terminal state from the preceding interval as its
+initial state, starting with $y(0)=y_0$.
+By \cite[Theorem~3.2, p.~132]{Lue2021a}, these equations have
+unique square-integrable continuous adapted solutions.
+They therefore join continuously at the switching times.
+Since $K_T$ is bounded on every $[0,s]$ with $s<T$, this gives
+a unique continuous adapted state on $[0,T)$, with
+$u(t)=K_T(t)y(t)$ locally square-integrable.
+Although
+$\ell_j\to0$, the products $\lambda_j\ell_j=L2^{j-1}/T$ tend to
+infinity. Writing $a_j=\mathbb E|y(t_j)|^2$,
+\cref{eq:decay,eq:growth} give\vspace{-2mm}
+\begin{equation}\label{eq:state-step}
+a_{j+1}\leq M\lambda_j^pe^{-\lambda_j\ell_j}a_j.\vspace{-2mm}
+\end{equation}
+
+\emph{Step 2: summability of the control energy.}
+The energy on $[t_j,t_{j+1}]$ contains the product of
+$\lVert K_j\rVert^2$ and $\kappa(P(\lambda_j))$. Indeed,
+\cref{eq:decay,eq:growth,eq:gain-growth} imply\vspace{-2mm}
+\begin{equation}\label{eq:interval-energy}
+\begin{aligned}
+\mathbb E\int_{t_j}^{t_{j+1}}|u(t)|^2 dt
+&\leq\lVert K_j\rVert^2\kappa(P(\lambda_j))a_j\!
+\int_0^{\ell_j}\!e^{-\lambda_js} ds\\[-2pt]
+&\leq M^2\lambda_j^{2p-1}a_j.
+\end{aligned}\vspace{-2mm}
+\end{equation}
+This motivates the definition $b_j=\lambda_j^{2p}a_j$, for which
+\cref{eq:interval-energy} is bounded by $M^2b_j/\lambda_j$. Since
+$\lambda_{j+1}=4\lambda_j$, \cref{eq:state-step} gives\vspace{-3mm}
+\begin{equation}\label{eq:aj}
+b_{j+1}
+=\lambda_{j+1}^{2p}a_{j+1}
+\leq 4^{2p}M\lambda_j^pe^{-\lambda_j\ell_j}b_j
+\leq\frac12b_j.\vspace{-3mm}
+\end{equation}
+To verify the last inequality, put $x_j=2^j/T\geq1$. Then\vspace{-2mm}
+\begin{equation*}
+4^{2p}M\lambda_j^pe^{-\lambda_j\ell_j}
+\!\!=\!4^{2p}ML^px_j^{2p}e^{-Lx_j/2} \!\leq\!4^{2p}ML^pe^{-L/2}\!\leq\!\frac12.\vspace{-2mm}
+\end{equation*}
+Here $x\mapsto x^{2p}e^{-Lx/2}$ is nonincreasing on $[1,\infty)$
+because $L\geq4p$. It follows from \cref{eq:aj} that
+$b_j\leq2^{-j}b_0$.  This, together with $\lambda_j=4^j\lambda_0$,
+gives
+$
+\frac{b_j}{\lambda_j}\leq8^{-j}\frac{b_0}{\lambda_0}.
+$
+Summing \cref{eq:interval-energy}, we therefore obtain\vspace{-2mm}
+\begin{equation}\label{eq:switching-energy}
+\begin{aligned}
+&\mathbb E\int_0^T|u(t)|^2\,dt
+\leq M^2\sum_{j=0}^\infty\frac{b_j}{\lambda_j}
+\leq\frac{M^2b_0}{\lambda_0}\sum_{j=0}^\infty8^{-j} \\
+&=\frac{8M^2b_0}{7\lambda_0}
+=\frac87M^2L^{2p-1}T^{-(4p-2)}|y_0|^2,
+\end{aligned}\vspace{-2mm}
+\end{equation}
+where we used $b_0=\lambda_0^{2p}|y_0|^2$ and
+$\lambda_0=LT^{-2}$.
+
+\emph{Step 3: extending the state to the terminal time.}
+So far, $(y,u)$ has been constructed on $[0,T)$ by solving the
+feedback equation on successive intervals. Set $u(T)=0$; this
+single endpoint value does not affect the integrals.
+The resulting control is progressively measurable, and
+\cref{eq:switching-energy} gives $u\in\mathcal U_T$.
+Regarding $u$ as a fixed admissible control, we apply
+\cite[Theorem~3.2, p.~132]{Lue2021a} to \cref{eq:system} on $[0,T]$.
+The resulting solution belongs to
+$L^2_{\mathbb F}(\Omega;C([0,T];\mathbb R^n))$ and, by uniqueness,
+agrees with the successively constructed state on every $[0,t_j]$.
+We retain the notation $y$ for this extension.
+Any other continuous adapted closed-loop solution agrees with $y$
+on every $[0,t_j]$ by local uniqueness, and hence also at $T$
+by continuity. Since $\lambda_j\geq1$, \cref{eq:aj} implies
+$
+a_j=\lambda_j^{-2p}b_j\leq2^{-j}b_0\longrightarrow0.
+$
+In particular, $y$ is continuous in $L^2(\Omega;\mathbb R^n)$
+at $T$. Consequently,\vspace{-2mm}
+\begin{equation*}
+\mathbb E|y(T)|^2=\lim_{j\to\infty}\mathbb E|y(t_j)|^2
+=\lim_{j\to\infty}a_j=0.\vspace{-2mm}
+\end{equation*}
+The deterministic gain schedule is independent of $y_0$, so the
+resulting null-control map is linear and bounded. Together with
+\cref{eq:switching-energy}, the identity $y(T)=0$ proves the theorem for
+$0<T\leq1$, with $N=4p-2$ in \cref{eq:cost}.
+
+For $T>1$, let $\widehat K$ be the feedback schedule constructed above
+for the unit horizon. Set $K_T(t)=0$ on $[0,T-1)$ and
+$K_T(t)=\widehat K(t-T+1)$ on $[T-1,T)$. The uncontrolled state
+$y(T-1)$ is square-integrable. Since \cref{eq:decay} applies to
+square-integrable $\mathcal F_{T-1}$-measurable initial states, the
+preceding estimates apply on the last unit interval with $|y_0|^2$
+replaced by $\mathbb E|y(T-1)|^2$. They give finite control energy and
+$y(T)=0$. This schedule is locally bounded on $[0,T)$ and independent
+of $y_0$, completing the proof.
+\end{pf*}
+
+\vspace{-4mm}
+
+\begin{pf*}{Proof of \cref{thm:geometry}, part \textup{(i)}}
+By \cref{lem:approximate}, AC and ANC are each equivalent to
+$\mathcal V_*=\{0\}$. By \cref{thm:null-feedback}, this condition implies
+ENC. Conversely, ENC implies ANC, completing the equivalence.
+\end{pf*}
+
+\vspace{-4mm}
+
+\begin{pf*}{Proof of \cref{thm:geometry}, part \textup{(ii)}}
+Fix $T>0$. Exact controllability implies approximate null controllability
+and hence $\mathcal V_*=\{0\}$. It also makes the map
+$M_T:\mathcal U_T\to L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$,
+$M_Tu=y(T;0,u)$, surjective. Hilbert-space duality therefore gives a
+constant $c(T)>0$ such that every adjoint solution satisfies\vspace{-2mm}
+\begin{equation}\label{eq:exact-observation}
+\mathbb E|\eta|^2\leq c(T)\mathbb E\int_0^T
+\Bigl|B^\top z(t)+\sum_{j=1}^mD_j^\top Z_j(t)\Bigr|^2\,dt.\vspace{-2mm}
+\end{equation}
+We show that this requires $\operatorname{rank}\mathcal D=mn$.
+Otherwise, choose
+$q=[q_1^\top\ \cdots\ q_m^\top]^\top\in\ker\mathcal D^\top$ with
+$|q|^2=\sum\limits_{j=1}^m|q_j|^2=1$. For $0<\varepsilon<\min(T,1)$,
+prescribe\vspace{-2mm}
+\begin{equation*}
+Z_j^\varepsilon(t)=\varepsilon^{-1/2}q_j
+\mathbf1_{[T-\varepsilon,T]}(t),\qquad j=1,\dots,m,\vspace{-2mm}
+\end{equation*}
+solve the adjoint differential equation forward from
+$z^\varepsilon(0)=0$, and put $\eta_\varepsilon=z^\varepsilon(T)$.
+By uniqueness, this is the adjoint solution for terminal value
+$\eta_\varepsilon$. Set $g=\sum\limits_{j=1}^mC_j^\top q_j$. The solution is zero before
+$T-\varepsilon$. On the last interval, write $\alpha,\beta,\Delta_j$
+for the coordinate matrices of the maps $-A^\top$,
+$x\mapsto-xg$, and $x\mapsto xq_j$, respectively, using the standard
+orthonormal bases and regarding the last two maps as maps from
+$\mathbb R$ to $\mathbb R^n$. For a real matrix $M$, set
+$s(M)=\sum_{k,\ell}|M_{k\ell}|$. The scalar input
+$\varepsilon^{-1/2}$ on this interval has $L^2$ norm one.
+The integral equation, the Cauchy--Schwarz inequality for the drift,
+and the It\^o isometry give, with
+$H_\varepsilon=\max_k\|z_k^\varepsilon\|_{L^2((T-\varepsilon,T)\times\Omega)}$,
+\begin{equation*}
+H_\varepsilon\leq
+\varepsilon s(\alpha)H_\varepsilon+
+\varepsilon s(\beta)+\sqrt{\varepsilon}\sum_{j=1}^m s(\Delta_j).
+\end{equation*}
+Consequently, for $\varepsilon s(\alpha)<1$, zero extension of the
+actual local solution gives
+\begin{align*}
+\|z^\varepsilon\|_{L^2((0,T)\times\Omega)}&\leq r(\varepsilon),\\
+r(\varepsilon)&:=\frac{n\bigl(\varepsilon s(\beta)+\sqrt{\varepsilon}
+\sum_{j=1}^m s(\Delta_j)\bigr)}{1-\varepsilon s(\alpha)}
+\longrightarrow0.
+\end{align*}
+All coefficients in this bound are independent of $\varepsilon$.
+Let $M_\varepsilon=\sum_{j=1}^m\int_0^T
+Z_j^\varepsilon(t)\,dW^j(t)$. Independence of the Brownian channels and
+the It\^o isometry give $\|M_\varepsilon\|_{L^2(\Omega)}=1$.
+The actual terminal integral equation is
+\begin{equation*}
+\eta_\varepsilon=M_\varepsilon-
+\int_0^T A^\top z^\varepsilon(t)\,dt-
+\int_0^T\sum_{j=1}^m C_j^\top Z_j^\varepsilon(t)\,dt.
+\end{equation*}
+Hence the triangle and Cauchy--Schwarz inequalities imply
+\begin{equation*}
+1\leq\|\eta_\varepsilon\|_{L^2(\Omega)}+
+\sqrt T\,\|A^\top\|r(\varepsilon)+\sqrt\varepsilon\,|g|.
+\end{equation*}
+On the other hand, $\sum_{j=1}^mD_j^\top Z_j^\varepsilon=0$, so
+\begin{equation*}
+\Bigl\|B^\top z^\varepsilon+
+\sum_{j=1}^mD_j^\top Z_j^\varepsilon\Bigr\|_{L^2((0,T)\times\Omega)}
+\leq\|B^\top\|r(\varepsilon).
+\end{equation*}
+Taking square roots in \cref{eq:exact-observation} and combining these
+bounds yields
+\begin{equation*}
+1\leq\bigl(\sqrt{c(T)}\,\|B^\top\|+
+\sqrt T\,\|A^\top\|\bigr)r(\varepsilon)
++\sqrt\varepsilon\,|g|\longrightarrow0,
+\end{equation*}
+a contradiction. Thus $\mathcal D$ is onto.
+
+Conversely, suppose that $\mathcal V_*=\{0\}$ and $\mathcal D$ is onto.
+Set $J=\mathcal D^\top(\mathcal D\mathcal D^\top)^{-1}$. For
+$\xi\in L^2_{\mathcal F_T}(\Omega;\mathbb R^n)$, let
+$(x,\zeta_1,\dots,\zeta_m)$ solve\vspace{-3mm}
+\begin{equation*}
+\begin{cases}
+dx(t) =\bigl[(A\!-\!BJ\mathcal C)x(t)\!+BJ\boldsymbol\zeta(t)\bigr]dt \!+\!\sum\limits_{j=1}^m\!\zeta_j(t) dW^j(t),\\[2pt] x(T)=\xi.
+\end{cases}\vspace{-2mm}
+\end{equation*}
+where $\boldsymbol\zeta=[\zeta_1^\top\ \cdots\ \zeta_m^\top]^\top$.
+By \cite[Theorem~4.2]{Lue2021a}, this BSDE has a square-integrable
+solution. Define $\widehat u=J(\boldsymbol\zeta-\mathcal Cx)\in\mathcal U_T$.
+Since $\mathcal DJ=I_{mn}$, its diffusion coefficients satisfy
+$
+\mathcal Cx+\mathcal D\widehat u=\boldsymbol\zeta.
+$
+The drift coefficient is
+$
+Ax+B\widehat u=(A-BJ\mathcal C)x+BJ\boldsymbol\zeta.
+$
+Thus $(x,\widehat u)$ solves \cref{eq:system} with terminal state $\xi$.
+Since $\mathcal F_0$ is trivial modulo null sets, $x(0)$ is
+deterministic. \Cref{thm:null-feedback} supplies a control $u^0$ whose
+trajectory $y^0$ starts from $y_0-x(0)$ and satisfies $y^0(T)=0$.
+By linearity, $y=x+y^0$ is the state corresponding to
+$u=\widehat u+u^0$, with initial state
+$
+y(0)=x(0)+\bigl(y_0-x(0)\bigr)=y_0.
+$
+Its terminal state is $y(T)=x(T)+y^0(T)=\xi$. This proves
+\cref{eq:exact-condition}, and hence part~(ii).
+\end{pf*}
+
+\vspace{-2mm}
+
+\begin{rem}\label[rem]{rem:terminal-interpretation}
+Following \cite{LiuPeng2002}, exact terminal controllability allows choosing a deterministic \(x_\xi\) with the control for each target \(\xi\in L^2_{\mathcal F_T}(\Omega;\mathbb R^n)\), instead of fixing the initial state. When \(\mathcal D\) is onto, the BSDE construction yields \(x_\xi=x(0)\); exact null controllability then corrects \(y_0-x_\xi\) without changing the target. Thus, by linearity, exact controllability is equivalent to exact terminal plus exact null controllability. Here \(x_\xi\) is deterministic, not noise-dependent.
+\end{rem}
+
+\section{Proofs of \texorpdfstring{\Cref{thm:rank,prop:exact-rank}}{the rank criteria}}\label{sec:rank}
+
+We now prove the criteria in the original coefficients stated in
+\cref{thm:rank,prop:exact-rank}.
+
+\vspace{-2mm}
+
+\begin{pf*}{Proof of \Cref{thm:rank}}
+We prove \cref{eq:rank-identity} by induction. For $k=1$, the drift
+condition in \cref{eq:map} is unrestricted, so \cref{eq:pair-start} gives
+the representation. At step $k+1$, the conditions
+$w_j\in\mathcal V_k$ are represented by\vspace{-2mm}
+%
+\begin{equation}\label{10.3-eq1}
+\mathsf K_kw_j+\mathsf N_k\alpha_j=0,\qquad j=1,\dots,m.\vspace{-2mm}
+\end{equation}
+%
+The drift constraint is\vspace{-2mm}
+%
+\begin{equation}\label{10.3-eq2}
+\mathsf K_k\Bigl(A^{\top}v+\sum_{j=1}^mC_j^{\top}w_j\Bigr)
++\mathsf N_k\beta=0.\vspace{-3mm}
+\end{equation}
+Combining \cref{10.3-eq1,10.3-eq2} with
+$B^{\top}v+\sum\limits_{j=1}^mD_j^{\top}w_j=0$, we obtain\vspace{-2mm}
+\begin{equation*}
+\mathsf K_{k+1}v+\mathsf N_{k+1}
+\bigl[w_1^\top\ \cdots\ w_m^\top\ \alpha_1^\top\ \cdots\ \alpha_m^\top  \beta^\top\bigr]^\top=0,\vspace{-2mm}
+\end{equation*}
+with the block matrices from \cref{eq:pair}.
+
+Conversely, the block equation imposes the zero-observation constraint and
+places every $w_j$ and the drift
+$A^{\top}v+\sum\limits_{j=1}^mC_j^{\top}w_j$ in $\mathcal V_k$.
+These conditions also imply $v\in\mathcal V_k$. Indeed, starting with
+$v\in\mathcal V_0$, if $v\in\mathcal V_\ell$ for $0\leq\ell<k$,
+then $\mathcal V_k\subset\mathcal V_\ell$ and \cref{eq:map,eq:flag}
+give $v\in\mathcal V_{\ell+1}$. The same constraints therefore yield
+$v\in\mathcal V_{k+1}$, proving \cref{eq:rank-identity}.
+
+For matrices $K,N$ with the same number of rows, the linear map
+$v\mapsto Kv+\operatorname{im}N$ into the quotient by
+$\operatorname{im}N$ has kernel
+$\{v:Kv\in\operatorname{im}N\}$ and rank
+$(\operatorname{rank}[N\ K]-\operatorname{rank}N)$. This proves
+\cref{eq:rank-codimension}.
+\end{pf*}
+
+\vspace{-2mm}
+
+Every block is polynomial in $A,B,(C_j,D_j)_{j=1}^m$, so the criterion
+does not require computing the obstruction spaces or inverting a coefficient
+matrix.
+
+\begin{rem}\label[rem]{rem:deterministic-reduction}
+When the diffusion coefficients vanish, \cref{cor:rank-control} recovers the classical Kalman rank condition. The distinction between deterministic and random terminal targets explains why EC is not equivalent to the other three properties here.
+
+If \(C_j=D_j=0\) for all \(j\), \cref{eq:map} yields\vspace{-4mm}
+\[
+\mathcal V_k=\bigcap_{\ell=0}^{k-1}\ker\{B^\top(A^\top)^\ell\},\quad k\ge1,\vspace{-3mm}
+\]
+so
+$
+\delta_n=\operatorname{rank}[B\ AB\ \cdots\ A^{n-1}B].
+$
+Thus \cref{eq:rank-test} becomes the Kalman rank condition for AC, ANC, and ENC. In the classical deterministic-control, deterministic-target problem, this condition is equivalent to all four controllability properties. Here, however, controls lie in \(\mathcal U_T\) and targets range over \(L^2_{\mathcal F_T}(\Omega;\mathbb R^n)\): adapted controls can generate random terminal states even without diffusion. Exact controllability to all such targets fails since \(\mathcal D=0\) violates the necessary condition in \cref{cor:rank-control}.
+
+Adapted controls approximate arbitrary random targets even when diffusion vanishes as follows. Assume the Kalman condition. For \(\xi\in L^2_{\mathcal F_T}(\Omega;\mathbb R^n)\) and \(0<h<T\), let \(\xi_h=\mathbb E[\xi\mid\mathcal F_{T-h}]\), which is known at time \(T-h\). With zero control on \([0,T-h]\), the deterministic Gramian formula gives an adapted control on \([T-h,T]\) reaching \(\xi_h\) exactly; its expected energy is finite for each \(h\), since \(\xi_h\) is \(\mathcal F_{T-h}\)-measurable and square-integrable. Under the Brownian natural filtration, \(\xi_h\to\xi\) in \(L^2_{\mathcal F_T}(\Omega;\mathbb R^n)\) as \(h\downarrow0\), yielding AC. The corresponding control energies need not stay bounded.
+\end{rem}
+
+\begin{rem}\label[rem]{rem:input-structure}
+The first iterate is
+$
+\mathcal V_1=(B\ker\mathcal D)^\perp.
+$
+If \(B\ker\mathcal D=\{0\}\), the iteration is stationary from the start. Hence all four controllability properties require \(B\ker\mathcal D\neq\{0\}\). Exact controllability also requires \(\operatorname{rank}\mathcal D=mn\), so \(r\geq mn+1\). Thus, beyond enough input directions to prescribe all diffusion channels, at least one input combination vanishing in every diffusion channel must act nontrivially through the drift.
+\end{rem}
+%
+Adapted from \cite[Section~6.3 and Remark~6.24]{Lue2021a}, the following example shows that arbitrarily small diffusion perturbations can destroy AC, ANC, and ENC, ruling out any full-rank characterization by a fixed-size matrix depending continuously on the coefficients.
+
+\begin{exmp}\label[exmp]{rem:nonrobustness}
+For fixed $m\geq1$, take $n=2$, $r=1$ and consider\vspace{-3mm}
+\begin{equation*}
+dy_1=y_2\,dt+\varepsilon y_2\,dW^1(t),\qquad dy_2=u\,dt.\vspace{-3mm}
+\end{equation*}
+Its drift coefficients are $B=(0,1)^\top$ and 
+$A=\begin{pmatrix}0&1\\0&0\end{pmatrix}.$
+The diffusion coefficients are $C_1=\varepsilon A$, $C_j=0$ for
+$j\geq2$, and $D_j=0$ for every $j$. Since $B^\top v=v_2$, the
+first step of \cref{eq:flag} gives
+$\mathcal V_1=\operatorname{span}\{e_1\}$ for every $\varepsilon$.
+At the second step, write $v=ae_1$ and $w_j=b_je_1$. The remaining
+constraint is\vspace{-2mm}
+\begin{equation*}
+A^\top v+\sum_{j=1}^mC_j^\top w_j=(a+\varepsilon b_1)e_2
+\in\operatorname{span}\{e_1\},\vspace{-2mm}
+\end{equation*}
+or equivalently $a+\varepsilon b_1=0$. If $\varepsilon=0$, this forces
+$a=0$; if $\varepsilon\neq0$, every $a$ is admissible by choosing
+$b_1=-a/\varepsilon$ and $b_j=0$ for $j\geq2$. Since $n=2$, it
+follows that\vspace{-2mm}
+\begin{equation*}
+\mathcal V_*=\mathcal V_2=
+\begin{cases}
+\{0\},&\varepsilon=0,\\
+\operatorname{span}\{e_1\},&\varepsilon\neq0.
+\end{cases}\vspace{-2mm}
+\end{equation*}
+%
+By \cref{thm:geometry}, AC, ANC and ENC hold at every $T>0$ when
+$\varepsilon=0$, and all three fail at every $T>0$ when
+$\varepsilon\neq0$. Exact controllability fails throughout this family
+because $\mathcal D=0$.
+
+For fixed $n,r,m$, maximal rank of a fixed-size matrix depending
+continuously on the coefficient matrices is an open condition. The family
+above therefore precludes such a full-rank characterization of AC, ANC or
+ENC in general. For the rank-difference criterion,
+\cref{eq:rank-codimension} gives $\delta_2=2$ when $\varepsilon=0$ and
+$\delta_2=1$ otherwise. Thus the condition $\delta_2=n$ in
+\cref{eq:rank-test} is not open along this family.
+\end{exmp}
+
+\begin{pf*}{Proof of \Cref{prop:exact-rank}}
+Put $w=[w_1^\top\ \cdots\ w_m^\top]^\top$.
+Since $J\mathcal D$ is the orthogonal projector onto
+$\operatorname{im}\mathcal D^\top$, we have
+$(I_r-J\mathcal D)\mathcal D^\top=0$ and
+$J^\top\mathcal D^\top=I_{mn}$. Multiplying
+$B^\top v+\mathcal D^\top w=0$ by $I_r-J\mathcal D$ and $J^\top$
+therefore gives
+$
+H^\top v=0$ and $w=-J^\top B^\top v$. 
+Conversely, these conditions imply\vspace{-2mm}
+\begin{equation*}
+B^\top v+\mathcal D^\top w
+=(I_r-\mathcal D^\top J^\top)B^\top v=H^\top v=0.\vspace{-2mm}
+\end{equation*}
+The second condition reads $w_j=-E_j^\top v$ for every $j$, and the
+drift becomes\vspace{-3mm}
+\begin{equation*}
+A^\top v+\sum_{j=1}^mC_j^\top w_j
+=(A^\top-\mathcal C^\top J^\top B^\top)v=F^\top v.\vspace{-3mm}
+\end{equation*}
+By \cref{lem:flag}, $\mathcal V_*$ is therefore the largest common
+$(E_1^\top,\dots,E_m^\top,F^\top)$-invariant subspace contained in
+$\ker H^\top$.
+
+Put $S_k=\operatorname{im}[\,H_0\ H_1\ \cdots\ H_k\,]$.
+By \cref{eq:word-blocks},\vspace{-3mm}
+\begin{equation*}
+S_{k+1}=S_k+\sum_{j=1}^mE_jS_k+FS_k.\vspace{-3mm}
+\end{equation*}
+Thus the sequence is increasing, and an equality $S_{k+1}=S_k$
+implies invariance under every $E_j$ and $F$, so all subsequent
+spaces coincide. If $H=0$, all these spaces are zero.
+Otherwise $\dim S_0\geq1$; if no equality occurs before $S_{n-1}$,
+then $\dim S_{n-1}\geq\dim S_0+n-1\geq n$.
+In either case, $S:=S_{n-1}$ is invariant under all these matrices.
+If $U$ is any other common invariant subspace containing
+$\operatorname{im}H$, the recursion gives $S_k\subset U$ by
+induction. Hence $S$ is the smallest such subspace.
+
+For $v\in S^\perp$, $x\in S$, and
+$M\in\{E_1,\dots,E_m,F\}$, we have
+$
+\langle M^\top v,x\rangle=\langle v,Mx\rangle=0.
+$
+Consequently, $S^\perp$ is invariant under
+$E_1^\top,\dots,E_m^\top,F^\top$. Since $\operatorname{im}H\subset S$,
+it is also contained in $\ker H^\top$.
+The maximality of $\mathcal V_*$ therefore gives
+$S^\perp\subset\mathcal V_*$.
+Conversely, the same inner-product identity shows that
+$\mathcal V_*^\perp$ is invariant under every $E_j$ and $F$,
+and $\mathcal V_*\subset\ker H^\top$ implies
+$\operatorname{im}H\subset\mathcal V_*^\perp$.
+The minimality of $S$ gives $S\subset\mathcal V_*^\perp$,
+and hence $\mathcal V_*\subset S^\perp$.
+We conclude that $S_{n-1}^\perp=\mathcal V_*$.
+Thus \cref{eq:exact-rank} is equivalent to $\mathcal V_*=\{0\}$,
+and the conclusion follows from \cref{thm:geometry}.
+\end{pf*}
+
+\begin{rem}\label[rem]{rem:surjective-diffusion}
+Since $I_r-J\mathcal D$ is the orthogonal projector onto
+$\ker\mathcal D$, $
+\operatorname{im}H=B\ker\mathcal D.$
+Thus $H$ represents the drift-control directions left after the diffusion
+has been prescribed, without choosing a basis of $\ker\mathcal D$. For
+$m=1$, the matrices $E_1,F,H$ express Peng's reduced word criterion
+\cite[Theorem~3.2]{Peng1994} directly in the original
+coefficients, with the finite truncation in
+\cite[Theorem~6.10]{Lue2021a}. Related finite-word characterizations for
+backward-structured systems are given in
+\cite[Propositions~3.2--3.3]{Sun}.
+\end{rem}
+
+The block dimensions in \cref{eq:pair} grow exponentially.
+\Cref{sec:algorithm} gives an equivalent reduced computation.
+
+\section{Computational method}\label{sec:algorithm}
+
+The rank differences in \cref{eq:delta} can be computed by orthogonal elimination on the current obstruction space. We give the exact algebraic algorithm and prove its equivalence to subspace iteration, then describe a QR/SVD implementation, avoiding the exponentially large matrices in \cref{eq:pair}.
+
+\subsection{Orthogonal elimination}
+
+Suppose $[\,Q_k\ V_k\,]$ is orthogonal, with
+$\operatorname{im}V_k=\mathcal V_k$ and
+$\operatorname{im}Q_k=\mathcal V_k^\perp$. Write
+$q_k=\dim\mathcal V_k^\perp$ and $d_k=n-q_k$, so that
+$Q_k\in\mathbb R^{n\times q_k}$ and $V_k\in\mathbb R^{n\times d_k}$.
+Initially, $Q_0$ has no columns and $V_0=I_n$. By \cref{lem:flag},
+$\mathcal V_{k+1}\subset\mathcal V_k$, so a candidate for the next space
+has the form $v=V_kb$, with $b\in\mathbb R^{d_k}$. Write the auxiliary
+vectors as $w_j=V_ka_j$, with $a_j\in\mathbb R^{d_k}$, and put
+$a=[a_1^\top\ \cdots\ a_m^\top]^\top$. Since a vector belongs to
+$\mathcal V_k$ precisely when $Q_k^\top$ annihilates it, the input and
+drift constraints become\vspace{-3mm}
+\begin{align*}
+& B^\top V_kb+\sum_{j=1}^mD_j^\top V_ka_j =0,\\
+& Q_k^\top A^\top V_kb+\sum_{j=1}^mQ_k^\top C_j^\top V_ka_j =0.
+\end{align*}
+The reduced block multiplying $b$ is\vspace{-2mm}
+\begin{equation}\label{eq:reduced-blocks}
+L_k=
+\begin{pmatrix}
+B^\top V_k\\
+Q_k^\top A^\top V_k
+\end{pmatrix}
+\in\mathbb R^{(r+q_k)\times d_k},\vspace{-2mm}
+\end{equation}
+and the block multiplying $a$ is\vspace{-2mm}
+\begin{equation}\label{eq:elimination-block}
+M_k\!=\!
+\begin{pmatrix}
+D_1^\top V_k&\cdots&D_m^\top V_k\\
+Q_k^\top C_1^\top V_k&\cdots&Q_k^\top C_m^\top V_k
+\end{pmatrix}
+\!\in\!\mathbb R^{(r+q_k)\times(md_k)}.\vspace{-2mm}
+\end{equation}
+The constraints read\vspace{-3mm}
+\begin{equation}\label{eq:reduced-constraint}
+L_kb+M_ka=0.\vspace{-2mm}
+\end{equation}
+The coordinates of $a$ already impose $w_j\in\mathcal V_k$ for every
+$j$, so these membership conditions require no additional equations.
+
+To eliminate $a$ from \cref{eq:reduced-constraint}, let $U_{0,k}$ have
+orthonormal columns spanning $\ker M_k^\top$ and set\vspace{-2mm}
+\begin{equation}\label{eq:residual}
+R_k=U_{0,k}^\top L_k.\vspace{-2mm}
+\end{equation}
+Because $(\ker M_k^\top)^\perp=\operatorname{im}M_k$, eliminating $a$ from \cref{eq:reduced-constraint} gives\vspace{-2mm}
+\begin{align*}
+V_kb\in\mathcal V_{k+1}
+&\,\Longleftrightarrow\, L_kb\in\operatorname{im}M_k \Longleftrightarrow\, U_{0,k}^\top L_kb=0\\
+&\,\Longleftrightarrow\, b\in\ker R_k.
+\end{align*}
+Thus $\mathcal V_{k+1}=V_k\ker R_k$. Let
+$\Delta q_k=\operatorname{rank}R_k$, and choose an orthogonal matrix
+$O_k=[\,O_{1,k}\ O_{0,k}\,]$ whose first $\Delta q_k$ columns span
+$(\ker R_k)^\perp$ and whose remaining columns span $\ker R_k$. The
+update is\vspace{-2mm}
+\begin{equation}\label{eq:update}
+Q_{k+1}=[\,Q_k\ V_kO_{1,k}\,],\qquad
+V_{k+1}=V_kO_{0,k}.\vspace{-2mm}
+\end{equation}
+The columns of $V_kO_{1,k}$ are the directions removed at this stage;
+they are appended to the orthogonal complement already computed.
+
+This construction computes exactly the rank differences of the prescribed
+block pair.
+
+\begin{prop}\label[prop]{prop:staircase}
+In exact arithmetic, the updates in
+\cref{eq:reduced-blocks,eq:elimination-block,eq:residual,eq:update}
+preserve orthogonality of $[Q_k\ V_k]$ and satisfy
+$\operatorname{im}V_k=\mathcal V_k$, $q_k=\delta_k$, and
+$\Delta q_k=\delta_{k+1}-\delta_k$. The iteration reaches a stationary
+space or the zero space after at most $n$ stages, and returns the
+classification in \cref{tab:classification-regimes} after checking
+$\operatorname{rank}\mathcal D$.
+\end{prop}
+
+\vspace{-2mm}
+
+\begin{pf}
+The elimination above gives
+$\operatorname{im}V_{k+1}=V_k\ker R_k=\mathcal V_{k+1}$. Since $V_k$
+is an isometry on $\mathbb R^{d_k}$, the two blocks $V_kO_{1,k}$ and
+$V_kO_{0,k}$ are orthonormal and mutually orthogonal. Both are orthogonal
+to $Q_k$, so \cref{eq:update} preserves a complete orthogonal state basis
+and gives $q_{k+1}=q_k+\Delta q_k$. Starting from
+$q_0=\delta_0=0$, \cref{eq:rank-codimension} yields $q_k=\delta_k$ and
+the asserted increment identity.
+
+If $\Delta q_k=0$, then $\ker R_k=\mathbb R^{d_k}$ and
+$\mathcal V_{k+1}=\mathcal V_k$; by \cref{lem:flag}, all subsequent
+spaces coincide. Otherwise the dimension drops by at least one. Hence the
+algorithm terminates within $n$ stages. The returned space is
+$\mathcal V_*$, and \cref{thm:geometry} gives the classification.
+\end{pf}
+
+\vspace{-2mm}
+
+%\Cref{alg:staircase} summarizes the exact-arithmetic computation.
+
+\vspace{-2mm}
+
+\begin{algorithm}[htbp]
+\caption{Orthogonal elimination for the controllability criterion (exact arithmetic)}
+\label{alg:staircase}
+\begin{algorithmic}[1]
+\Require $A,C_j\in\mathbb R^{n\times n}$, $B,D_j\in\mathbb R^{n\times r}$,
+$j=1,\dots,m$.
+\State $Q\gets[\,]$, $V\gets I_n$; form
+$\mathcal D=[D_1^\top\ \cdots\ D_m^\top]^\top$.
+\For{$k=0,\dots,n-1$}
+\State Form $L$ and $M$ from $Q,V$ by
+\cref{eq:reduced-blocks,eq:elimination-block}.
+\State Reduce $M$ by left orthogonal transformations and apply the same
+transformations to $L$.
+\State Let $R$ consist of the rows of the transformed $L$ corresponding
+to the zero rows of the transformed $M$.
+\State Find $\Delta q=\operatorname{rank}R$ and an orthogonal matrix
+$O=[O_1\ O_0]$, with $\operatorname{im}O_0=\ker R$.
+\If{$\Delta q=0$}
+\State \textbf{return} nonzero subspace $\operatorname{im}V$; all four
+controllability properties fail.
+\EndIf
+\State $Q\gets[Q\ VO_1]$, $V\gets VO_0$ (using the old $V$ on
+both right sides).
+\If{$V$ has no columns}
+\State \textbf{return} AC, ANC and ENC hold; EC holds if and only if
+$\operatorname{rank}\mathcal D=mn$.
+\EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Numerical realization}
+
+The elimination uses Householder QR and SVD \cite{LAPACK}. At a stage, set \(p=r+q\), \(d=n-q\), \(h=md\), \(s=\operatorname{rank}M\), with \(M\in\mathbb R^{p\times h}\), \(L\in\mathbb R^{p\times d}\). If \(p\ge h\), apply Householder QR to \([M\ L]\), then SVD to the leading \(h\times h\) triangular block of the transformed \(M\). Apply the same left transformations to \(L\) and keep the \(p-s\) rows corresponding to zero rows of \(M\); these form \(R\). Reflectors avoid storing a full \(p\times p\) factor. If \(p<h\), a full left singular-vector matrix of \(M\) gives these rows directly; its full right factor is unnecessary.
+
+An SVD of \(R\) gives \cref{eq:update}. Its full \(d\times d\) right factor is required when \(R\) is wide, since a thin SVD omits part of the nullspace. If \(R\) has no rows, its kernel is \(\mathbb R^d\) and the iteration stops. After updating, Householder QR may reorthogonalize \([Q\ V]\) in its existing order.
+
+The residual $R_k$ is formed through the orthogonal transformations of $L_k$, and its singular values are computed directly. In floating-point arithmetic, the numerical rank of each matrix $X$ is the number of singular values above $\tau_{\mathrm{abs}}+\tau_{\mathrm{rel}}\lVert X\rVert$, with tolerances chosen for the data scale and precision.
+
+%Storage for coefficient matrices, current orthogonal basis, and work arrays is \(O(mn(n+r))\). Since \(p\le r+n\) and \(h\le mn\), the tall branch avoids a full \(p\times p\) factor, while the wide branch satisfies \(p^2<ph\). Factoring \(M\) costs \(O(ph\min(p,h))\le O(ph^2)\) operations. Including matrix products, \(R\)-decomposition, and reorthogonalization, each stage costs \(O(m^2n^2(n+r))\). Hence at most \(n\) stages plus the final SVD of \(\mathcal D\) cost \(O(m^2n^3(n+r))\) in dense real arithmetic. By contrast, for \(n=14\), \(r=2\), and \(m=1\), \(\mathsf N_n\) alone would require about \(56\) GiB of dense storage at eight bytes per entry, by the dimensions in \cref{eq:pair}.
+
+
+
+%\section{Conclusions}\label{sec:conclusion}
+%We have obtained a unified finite algebraic classification of four
+%controllability properties for constant-coefficient linear stochastic
+%systems with multidimensional Brownian noise and arbitrary joint
+%diffusion rank. A common geometric obstruction characterizes
+%approximate controllability, approximate null controllability and
+%exact null controllability, while exact controllability additionally
+%requires surjective diffusion control. The feedback construction
+%provides finite-energy null control at any prescribed positive time,
+%and orthogonal elimination makes the rank tests computable without
+%forming exponentially large block matrices. The numerical example
+%relates this classification to the terminal-error and energy behavior
+%of penalized LQ controls under successive additions of input channels.
+%Quantifying the effects of bounded gains
+%and finite switching resolution is a natural direction for further work.
+
+\begin{ack}
+Qi L\"u was supported by the National Natural Science Foundation of China
+under grant 12625102. Yu Wang was supported by the National Natural Science
+Foundation of China under grant 12401589 and the Sichuan Science and
+Technology Program under grant 2026NSFSC0777.
+\end{ack}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

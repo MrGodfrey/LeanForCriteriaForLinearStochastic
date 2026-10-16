@@ -1,0 +1,1006 @@
+⚠ [8726/9166] Replayed BrownianMotion.StochasticIntegral.DoobLp
+warning: BrownianMotion/StochasticIntegral/DoobLp.lean:508:8: declaration uses `sorry`
+warning: BrownianMotion/StochasticIntegral/DoobLp.lean:514:8: declaration uses `sorry`
+ℹ [8728/9166] Replayed LinearStochastic.ContinuousSubspace
+info: LinearStochastic/ContinuousSubspace.lean:55:0: 'LinearStochastic.ContinuousSubspace.process_mem_subspace_every_time' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8735/9166] Replayed LinearStochastic.OpenConeAlternative
+warning: LinearStochastic/OpenConeAlternative.lean:37:4: Try `simp at this` instead of `simpa using this`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [8736/9166] Replayed LinearStochastic.SemialgebraicTail
+info: LinearStochastic/SemialgebraicTail.lean:323:0: 'LinearStochastic.SemialgebraicTail.continuous_semialgebraic_growth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/SemialgebraicTail.lean:324:0: 'LinearStochastic.SemialgebraicTail.Formula.tail_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/SemialgebraicTail.lean:325:0: 'LinearStochastic.SemialgebraicTail.upward_formula_polynomial_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/SemialgebraicTail.lean:326:0: 'LinearStochastic.SemialgebraicTail.bivariate_eventually_no_roots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/SemialgebraicTail.lean:327:0: 'LinearStochastic.SemialgebraicTail.positive_iff_on_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/SemialgebraicTail.lean:328:0: 'LinearStochastic.SemialgebraicTail.polynomial_ratio_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/SemialgebraicTail.lean:329:0: 'LinearStochastic.SemialgebraicTail.root_abs_lt_ratio_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8737/9166] Replayed LinearStochastic.SemialgebraicCoordinates
+info: LinearStochastic/SemialgebraicCoordinates.lean:91:0: 'LinearStochastic.SemialgebraicCoordinates.evaluate_toBivariate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/SemialgebraicCoordinates.lean:92:0: 'LinearStochastic.SemialgebraicCoordinates.continuous_semialgebraic_growth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8739/9166] Replayed LinearStochastic.QuadraticMinimum
+info: LinearStochastic/QuadraticMinimum.lean:58:0: 'LinearStochastic.QuadraticMinimum.matrix_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8740/9166] Replayed LinearStochastic.RealQEFiniteCells
+info: LinearStochastic/RealQEFiniteCells.lean:177:0: 'LinearStochastic.RealQEFiniteCells.gap_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQEFiniteCells.lean:178:0: 'LinearStochastic.RealQEFiniteCells.finite_sign_table_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEFiniteCells.lean:179:0: 'LinearStochastic.RealQEFiniteCells.exists_iff_finite_samples' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8741/9166] Replayed LinearStochastic.RealQECutTransport
+info: LinearStochastic/RealQECutTransport.lean:258:0: 'LinearStochastic.RealQECutTransport.pruneSignTable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQECutTransport.lean:279:0: 'LinearStochastic.RealQECutTransport.same_position_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQECutTransport.lean:280:0: 'LinearStochastic.RealQECutTransport.restrictOrderIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQECutTransport.lean:281:0: 'LinearStochastic.RealQECutTransport.polynomial_roots_separated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECutTransport.lean:282:0: 'LinearStochastic.RealQECutTransport.exists_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQECutTransport.lean:283:0: 'LinearStochastic.RealQECutTransport.refineOrderIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQECutTransport.lean:284:0: 'LinearStochastic.RealQECutTransport.refineOrderIso_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8742/9166] Replayed LinearStochastic.RealQESignCells
+info: LinearStochastic/RealQESignCells.lean:159:0: 'LinearStochastic.RealQESignCells.positive_infinity_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQESignCells.lean:160:0: 'LinearStochastic.RealQESignCells.increasing_right_cell_root_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQESignCells.lean:161:0: 'LinearStochastic.RealQESignCells.increasing_cell_trichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQESignCells.lean:162:0: 'LinearStochastic.RealQESignCells.decreasing_cell_root_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8743/9166] Replayed LinearStochastic.RealQEPseudoDivision
+info: LinearStochastic/RealQEPseudoDivision.lean:112:0: 'LinearStochastic.RealQEPseudoDivision.exists_sign_preserving_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEPseudoDivision.lean:113:0: 'LinearStochastic.RealQEPseudoDivision.exists_even_pseudodivision' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEPseudoDivision.lean:114:0: 'LinearStochastic.RealQEPseudoDivision.signs_of_even_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEPseudoDivision.lean:115:0: 'LinearStochastic.RealQEPseudoDivision.evaluate_eraseLead_of_leading_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8744/9166] Replayed LinearStochastic.RealQEProjection
+info: LinearStochastic/RealQEProjection.lean:209:0: 'LinearStochastic.RealQEProjection.branchClosure_tail_degree_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEProjection.lean:210:0: 'LinearStochastic.RealQEProjection.branchClosure_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQEProjection.lean:211:0: 'LinearStochastic.RealQEProjection.branchClosure_specialization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEProjection.lean:212:0: 'LinearStochastic.RealQEProjection.remainderChain_length_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQEProjection.lean:213:0: 'LinearStochastic.RealQEProjection.remainderChain_boundary_signs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEProjection.lean:214:0: 'LinearStochastic.RealQEProjection.projectionClosure_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8745/9166] Replayed LinearStochastic.RealQERecursiveProjection
+info: LinearStochastic/RealQERecursiveProjection.lean:243:0: 'LinearStochastic.RealQERecursiveProjection.coeff_mem_projectionCoefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQERecursiveProjection.lean:244:0: 'LinearStochastic.RealQERecursiveProjection.projectionCoefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQERecursiveProjection.lean:245:0: 'LinearStochastic.RealQERecursiveProjection.projectionCoefficients_induction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQERecursiveProjection.lean:247:0: 'LinearStochastic.RealQERecursiveProjection.lowerFamily_degree_descent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQERecursiveProjection.lean:248:0: 'LinearStochastic.RealQERecursiveProjection.lowerFamily_closed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8746/9166] Replayed LinearStochastic.RealQECellComposition
+info: LinearStochastic/RealQECellComposition.lean:254:0: 'LinearStochastic.RealQECellComposition.increasing_left_cells_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECellComposition.lean:255:0: 'LinearStochastic.RealQECellComposition.increasing_line_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECellComposition.lean:256:0: 'LinearStochastic.RealQECellComposition.projected_natDegree_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECellComposition.lean:257:0: 'LinearStochastic.RealQECellComposition.projected_leading_signs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECellComposition.lean:258:0: 'LinearStochastic.RealQECellComposition.boundary_signs_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECellComposition.lean:259:0: 'LinearStochastic.RealQECellComposition.zero_leading_branch_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECellComposition.lean:260:0: 'LinearStochastic.RealQECellComposition.increasing_cells_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQECellComposition.lean:261:0: 'LinearStochastic.RealQECellComposition.bounded_cell_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8747/9166] Replayed LinearStochastic.RealQEGapIntervals
+info: LinearStochastic/RealQEGapIntervals.lean:201:0: 'LinearStochastic.RealQEGapIntervals.polynomial_position_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEGapIntervals.lean:202:0: 'LinearStochastic.RealQEGapIntervals.gapBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQEGapIntervals.lean:203:0: 'LinearStochastic.RealQEGapIntervals.position_iff_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQEGapIntervals.lean:204:0: 'LinearStochastic.RealQEGapIntervals.increasing_position_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8748/9166] Replayed LinearStochastic.RealQETableRefinement
+info: LinearStochastic/RealQETableRefinement.lean:231:0: 'LinearStochastic.RealQETableRefinement.addPolynomialTable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQETableRefinement.lean:232:0: 'LinearStochastic.RealQETableRefinement.RefinedCuts.signs_on_positions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQETableRefinement.lean:233:0: 'LinearStochastic.RealQETableRefinement.polynomialRefinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQETableRefinement.lean:234:0: 'LinearStochastic.RealQETableRefinement.RefinedCuts.base_position' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQETableRefinement.lean:235:0: 'LinearStochastic.RealQETableRefinement.RefinedCuts.zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8749/9166] Replayed LinearStochastic.RealQEProjectionCorrectness
+info: LinearStochastic/RealQEProjectionCorrectness.lean:206:0: 'LinearStochastic.RealQEProjectionCorrectness.projection_sign_table' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEProjectionCorrectness.lean:207:0: 'LinearStochastic.RealQEProjectionCorrectness.projection_sign_witness' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEProjectionCorrectness.lean:208:0: 'LinearStochastic.RealQEProjectionCorrectness.nonzero_family_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEProjectionCorrectness.lean:209:0: 'LinearStochastic.RealQEProjectionCorrectness.represented_table' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEProjectionCorrectness.lean:210:0: 'LinearStochastic.RealQEProjectionCorrectness.constant_family_table' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8750/9166] Replayed LinearStochastic.RealQEExistential
+info: LinearStochastic/RealQEExistential.lean:168:0: 'LinearStochastic.RealQEExistential.finite_sign_determined_semialgebraic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEExistential.lean:169:0: 'LinearStochastic.RealQEExistential.existential_truth_same_signs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/RealQEExistential.lean:170:0: 'LinearStochastic.RealQEExistential.exists_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/RealQEExistential.lean:171:0: 'LinearStochastic.RealQEExistential.exists_option' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8761/9166] Replayed BrownianMotion.StochasticIntegral.UniformIntegrable
+warning: BrownianMotion/StochasticIntegral/UniformIntegrable.lean:375:6: declaration uses `sorry`
+warning: BrownianMotion/StochasticIntegral/UniformIntegrable.lean:439:8: declaration uses `sorry`
+warning: BrownianMotion/StochasticIntegral/UniformIntegrable.lean:470:8: declaration uses `sorry`
+warning: BrownianMotion/StochasticIntegral/UniformIntegrable.lean:477:8: declaration uses `sorry`
+⚠ [8763/9166] Replayed BrownianMotion.StochasticIntegral.OptionalSampling
+warning: BrownianMotion/StochasticIntegral/OptionalSampling.lean:281:8: declaration uses `sorry`
+⚠ [8764/9166] Replayed BrownianMotion.StochasticIntegral.LocalMartingale
+warning: BrownianMotion/StochasticIntegral/LocalMartingale.lean:89:6: declaration uses `sorry`
+ℹ [8766/9166] Replayed LinearStochastic.PrincipalMinors
+info: LinearStochastic/PrincipalMinors.lean:92:0: 'LinearStochastic.PrincipalMinors.psd_iff_principal_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8770/9166] Replayed LinearStochastic.DriftMartingaleDuality
+info: LinearStochastic/DriftMartingaleDuality.lean:119:0: 'LinearStochastic.DriftMartingaleDuality.drift_martingale_cross_expectation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8771/9166] Replayed LinearStochastic.DriftProduct
+info: LinearStochastic/DriftProduct.lean:133:0: 'LinearStochastic.DriftProduct.inner_integral_product_Ioc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/DriftProduct.lean:134:0: 'LinearStochastic.DriftProduct.l2_expected_drift_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/DriftProduct.lean:135:0: 'LinearStochastic.DriftProduct.inner_integral_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8772/9166] Replayed LinearStochastic.DriftProductExpectation
+info: LinearStochastic/DriftProductExpectation.lean:119:0: 'LinearStochastic.DriftProductExpectation.terminal_drift_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/DriftProductExpectation.lean:120:0: 'LinearStochastic.DriftProductExpectation.drift_product_expectation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/DriftProductExpectation.lean:121:0: 'LinearStochastic.DriftProductExpectation.cross_product_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8773/9166] Replayed LinearStochastic.DriftPairIntegrability
+info: LinearStochastic/DriftPairIntegrability.lean:126:0: 'LinearStochastic.DriftPairIntegrability.terminal_product_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/DriftPairIntegrability.lean:127:0: 'LinearStochastic.DriftPairIntegrability.past_pair_expectation_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/DriftPairIntegrability.lean:128:0: 'LinearStochastic.DriftPairIntegrability.martingale_pair_sections' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8777/9166] Replayed LinearStochastic.AlgebraFlag
+info: LinearStochastic/AlgebraFlag.lean:206:0: 'LinearStochastic.AdjointCoefficients.flag_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraFlag.lean:246:0: 'LinearStochastic.AdjointCoefficients.matrix_flag_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8778/9166] Replayed LinearStochastic.AlgebraRank
+info: LinearStochastic/AlgebraRank.lean:85:0: 'LinearStochastic.rank_difference_eq_codimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8779/9166] Replayed LinearStochastic.InputStructure
+warning: LinearStochastic/InputStructure.lean:45:0: automatically included section variable(s) unused in theorem `LinearStochastic.InputStructure.input_dimension_lower_bound`:
+  [FiniteDimensional ℝ E]
+  [FiniteDimensional ℝ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/InputStructure.lean:60:0: automatically included section variable(s) unused in theorem `LinearStochastic.InputStructure.range_id_sub_rightInverse_comp`:
+  [FiniteDimensional ℝ U]
+  [FiniteDimensional ℝ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ U] [FiniteDimensional ℝ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/InputStructure.lean:77:0: automatically included section variable(s) unused in theorem `LinearStochastic.InputStructure.effective_drift_range`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/InputStructure.lean:84:0: automatically included section variable(s) unused in theorem `LinearStochastic.InputStructure.id_sub_rightInverse_comp_idempotent`:
+  [FiniteDimensional ℝ U]
+  [FiniteDimensional ℝ W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ U] [FiniteDimensional ℝ W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [8780/9166] Replayed LinearStochastic.AlgebraBlocks
+info: LinearStochastic/AlgebraBlocks.lean:197:0: 'LinearStochastic.AdjointCoefficients.blockPair_represents_flag' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraBlocks.lean:198:0: 'LinearStochastic.AdjointCoefficients.blockPair_rank_codimension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8781/9166] Replayed LinearStochastic.AlgebraWords
+info: LinearStochastic/AlgebraWords.lean:202:0: 'LinearStochastic.Words.finite_word_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraWords.lean:249:0: 'LinearStochastic.Words.orthogonal_wordRange_greatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8784/9166] Replayed LinearStochastic.ConeCertificate
+warning: LinearStochastic/ConeCertificate.lean:20:0: automatically included section variable(s) unused in theorem `LinearStochastic.ConeCertificate.positive_quadratic_zero_iff`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8785/9166] Replayed LinearStochastic.PositiveBlock
+warning: LinearStochastic/PositiveBlock.lean:17:0: automatically included section variable(s) unused in theorem `LinearStochastic.PositiveBlock.factor_of_kernel_le`:
+  [FiniteDimensional ℝ E]
+  [FiniteDimensional ℝ F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/PositiveBlock.lean:32:0: automatically included section variable(s) unused in theorem `LinearStochastic.PositiveBlock.positive_block_kernel_le`:
+  [FiniteDimensional ℝ E]
+  [FiniteDimensional ℝ F]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8790/9166] Replayed LinearStochastic.PositiveCone
+warning: LinearStochastic/PositiveCone.lean:20:0: automatically included section variable(s) unused in theorem `LinearStochastic.PositiveCone.uniformPositive_strict`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/PositiveCone.lean:25:0: automatically included section variable(s) unused in theorem `LinearStochastic.PositiveCone.uniformPositive_id`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/PositiveCone.lean:28:8: This simp argument is unused:
+  real_inner_self_eq_norm_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/PositiveCone.lean:38:13: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+warning: LinearStochastic/PositiveCone.lean:31:0: automatically included section variable(s) unused in theorem `LinearStochastic.PositiveCone.uniformPositive_of_norm_sub_lt`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/PositiveCone.lean:32:5: Variable name `hε` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hε
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/PositiveCone.lean:73:13: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+warning: LinearStochastic/PositiveCone.lean:73:44: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+⚠ [8791/9166] Replayed LinearStochastic.PositiveDual
+warning: LinearStochastic/PositiveDual.lean:104:13: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+warning: LinearStochastic/PositiveDual.lean:104:44: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+warning: LinearStochastic/PositiveDual.lean:105:4: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+⚠ [8794/9166] Replayed LinearStochastic.CommonItoIsometry
+warning: LinearStochastic/CommonItoIsometry.lean:66:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoIsometry.adapted_indepFun_increment`:
+  hB
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hB in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoIsometry.lean:284:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoIsometry.adapted_indepFun_forward`:
+  hB
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hB in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8795/9166] Replayed LinearStochastic.CommonItoL2
+warning: LinearStochastic/CommonItoL2.lean:28:40: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoL2.lean:50:29: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoL2.lean:227:28: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoL2.lean:244:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoL2.memLp_rectTerm`:
+  [CommonItoIsometry.ForwardIndependent B 𝓕 μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommonItoIsometry.ForwardIndependent B 𝓕 μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoL2.lean:286:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoL2.uncurry_ae_eq_sum_rectTerm`:
+  [CommonItoIsometry.ForwardIndependent B 𝓕 μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommonItoIsometry.ForwardIndependent B 𝓕 μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoL2.lean:323:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoL2.integral_rectTerm_mul`:
+  [CommonItoIsometry.ForwardIndependent B 𝓕 μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommonItoIsometry.ForwardIndependent B 𝓕 μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoL2.lean:423:23: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoL2.lean:429:24: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8796/9166] Replayed LinearStochastic.CommonItoProcess
+warning: LinearStochastic/CommonItoProcess.lean:31:36: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoProcess.lean:110:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoProcess.memLp_value`:
+  hFwd
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit hFwd in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoProcess.lean:110:21: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8798/9166] Replayed LinearStochastic.CommonItoCLM
+warning: LinearStochastic/CommonItoCLM.lean:51:5: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoCLM.lean:77:21: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoCLM.lean:136:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoCLM.trimMeasure_T_eq_restrict`:
+  [CommonItoIsometry.ForwardIndependent B 𝓕 μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommonItoIsometry.ForwardIndependent B 𝓕 μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoCLM.lean:181:26: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8801/9166] Replayed LinearStochastic.CommonItoContinuousVersion
+warning: LinearStochastic/CommonItoContinuousVersion.lean:81:33: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonItoContinuousVersion.lean:85:8: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoContinuousVersion.augFiltration_apply`:
+  [CommonItoIsometry.ForwardIndependent B 𝓕 μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommonItoIsometry.ForwardIndependent B 𝓕 μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [8804/9166] Replayed LinearStochastic.ExpectedProduct
+info: LinearStochastic/ExpectedProduct.lean:105:0: 'LinearStochastic.ExpectedProduct.drift_state_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/ExpectedProduct.lean:106:0: 'LinearStochastic.ExpectedProduct.expected_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8806/9166] Replayed LinearStochastic.ProgressivePredictable
+info: LinearStochastic/ProgressivePredictable.lean:313:0: 'LinearStochastic.ProgressivePredictable.exists_predictable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/ProgressivePredictable.lean:314:0: 'LinearStochastic.ProgressivePredictable.exists_predictable_Lp_of_progressive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8830/9166] Replayed LinearStochastic.CommonDriftPredictable
+warning: LinearStochastic/CommonDriftPredictable.lean:56:38: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/CommonDriftPredictable.lean:191:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonDriftPredictable.memLp_uncurry_driftSimpleProcess`:
+  [CommonItoIsometry.ForwardIndependent B 𝓕 μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CommonItoIsometry.ForwardIndependent B 𝓕 μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonDriftPredictable.lean:213:31: Variable name `hBmeas` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBmeas
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8831/9166] Replayed LinearStochastic.CommonItoCross
+warning: LinearStochastic/CommonItoCross.lean:29:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoCross.PairForwardIndependent.symm`:
+  [IsProbabilityMeasure μ]
+  hFB
+  hFC
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] hFB hFC in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoCross.lean:37:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoCross.adapted_indepFun_pair`:
+  [IsProbabilityMeasure μ]
+  hFB
+  hFC
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] hFB hFC in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoCross.lean:50:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoCross.integral_cross_increment`:
+  [IsProbabilityMeasure μ]
+  hC
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] hC in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/CommonItoCross.lean:66:0: automatically included section variable(s) unused in theorem `LinearStochastic.CommonItoCross.integrable_bdd_cross_increment`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [8838/9166] Replayed LinearStochastic.CommonContinuousUniqueness
+info: LinearStochastic/CommonContinuousUniqueness.lean:47:0: 'LinearStochastic.CommonContinuousUniqueness.indistinguishable_of_spacetime_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8856/9166] Replayed LinearStochastic.InitialExpectedProduct
+info: LinearStochastic/InitialExpectedProduct.lean:153:0: 'LinearStochastic.InitialExpectedProduct.expected_vector_ito_product_initial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8872/9166] Replayed LinearStochastic.LpFiniteTensor
+info: LinearStochastic/LpFiniteTensor.lean:82:0: 'LinearStochastic.LpFiniteTensor.lift_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8873/9166] Replayed LinearStochastic.VectorItoNaturality
+info: LinearStochastic/VectorItoNaturality.lean:91:0: 'LinearStochastic.VectorItoNaturality.vectorProcess_comp_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8874/9166] Replayed LinearStochastic.VectorItoMap
+info: LinearStochastic/VectorItoMap.lean:65:0: 'LinearStochastic.VectorItoMap.vectorProcess_map_ae' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8875/9166] Replayed LinearStochastic.LpOrthonormalCoordinates
+info: LinearStochastic/LpOrthonormalCoordinates.lean:56:0: 'LinearStochastic.LpOrthonormalCoordinates.assemble_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8876/9166] Replayed LinearStochastic.LinearDuality
+info: LinearStochastic/LinearDuality.lean:211:0: 'LinearStochastic.LinearDuality.forward_backward_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8877/9166] Replayed LinearStochastic.SectionLinearDuality
+info: LinearStochastic/SectionLinearDuality.lean:146:0: 'LinearStochastic.SectionLinearDuality.forward_backward_duality_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8878/9166] Replayed LinearStochastic.CoordinateIntegralReconstruction
+info: LinearStochastic/CoordinateIntegralReconstruction.lean:88:0: 'LinearStochastic.CoordinateIntegralReconstruction.state_integral_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8880/9166] Replayed LinearStochastic.CoordinateSectionSolution
+info: LinearStochastic/CoordinateSectionSolution.lean:103:0: 'LinearStochastic.CoordinateSectionSolution.section_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8881/9166] Replayed LinearStochastic.HilbertLocalSolution
+info: LinearStochastic/HilbertLocalSolution.lean:140:0: 'LinearStochastic.HilbertLocalSolution.exists_section_solution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8882/9166] Replayed LinearStochastic.SectionSolutionMap
+info: LinearStochastic/SectionSolutionMap.lean:108:0: 'LinearStochastic.SectionSolutionMap.SectionIntegralSolution.map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8889/9166] Replayed LinearStochastic.SectionSolutionNaturality
+info: LinearStochastic/SectionSolutionNaturality.lean:86:0: 'LinearStochastic.SectionSolutionNaturality.SectionIntegralSolution.map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8895/9166] Replayed LinearStochastic.ZeroIntegralSolution
+info: LinearStochastic/ZeroIntegralSolution.lean:73:0: 'LinearStochastic.ZeroIntegralSolution.drift_zero_of_primitive_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/ZeroIntegralSolution.lean:74:0: 'LinearStochastic.ZeroIntegralSolution.diffusion_zero_of_zero_solution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8896/9166] Replayed LinearStochastic.ZeroIntegralDrift
+info: LinearStochastic/ZeroIntegralDrift.lean:144:0: 'LinearStochastic.ZeroIntegralDrift.zero_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8897/9166] Replayed LinearStochastic.SectionZeroDecomposition
+info: LinearStochastic/SectionZeroDecomposition.lean:70:0: 'LinearStochastic.SectionZeroDecomposition.zero_decomposition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8898/9166] Replayed LinearStochastic.SubspaceIntegralSolution
+info: LinearStochastic/SubspaceIntegralSolution.lean:100:0: 'LinearStochastic.SubspaceIntegralSolution.coefficients_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8899/9166] Replayed LinearStochastic.ZeroObservationFlag
+info: LinearStochastic/ZeroObservationFlag.lean:103:0: 'LinearStochastic.ZeroObservationFlag.terminal_zero_of_flag_bot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8900/9166] Replayed LinearStochastic.InvariantAdjointDynamics
+info: LinearStochastic/InvariantAdjointDynamics.lean:66:0: 'LinearStochastic.InvariantAdjointDynamics.exists_terminal_dynamics' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8901/9166] Replayed LinearStochastic.InvariantSolutionLift
+info: LinearStochastic/InvariantSolutionLift.lean:95:0: 'LinearStochastic.InvariantSolutionLift.backward_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8902/9166] Replayed LinearStochastic.ZeroObservationSeparation
+info: LinearStochastic/ZeroObservationSeparation.lean:84:0: 'LinearStochastic.ZeroObservationSeparation.positive_terminal_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8903/9166] Replayed LinearStochastic.GlobalInvariantObstruction
+info: LinearStochastic/GlobalInvariantObstruction.lean:100:0: 'LinearStochastic.GlobalInvariantObstruction.positive_horizon_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8905/9166] Replayed LinearStochastic.ActualObservationDuality
+info: LinearStochastic/ActualObservationDuality.lean:122:0: 'LinearStochastic.ActualObservationDuality.local_annihilator_terminal_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8914/9166] Replayed LinearStochastic.ActualTerminalDensity
+warning: LinearStochastic/ActualTerminalDensity.lean:60:0: automatically included section variable(s) unused in theorem `LinearStochastic.ActualTerminalDensity.approximate_iff_dense`:
+  [CompleteSpace U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [8919/9166] Replayed LinearStochastic.AlgebraCoordinates
+info: LinearStochastic/AlgebraCoordinates.lean:324:0: 'LinearStochastic.Coordinates.finitePair_feasible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraCoordinates.lean:325:0: 'LinearStochastic.Coordinates.finitePair_rank_codimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8920/9166] Replayed LinearStochastic.AlgebraSurjective
+info: LinearStochastic/AlgebraSurjective.lean:138:0: 'LinearStochastic.SurjectiveReduction.flag_eq_orthogonal_wordSpan' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraSurjective.lean:280:0: 'LinearStochastic.SurjectiveReduction.canonical_flag_eq_orthogonal_words' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8921/9166] Replayed LinearStochastic.AlgebraWordMatrices
+info: LinearStochastic/AlgebraWordMatrices.lean:159:0: 'LinearStochastic.WordMatrices.cumulativeMatrix_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraWordMatrices.lean:160:0: 'LinearStochastic.WordMatrices.cumulativeMatrix_finite_envelope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8922/9166] Replayed LinearStochastic.AlgebraWordTransport
+info: LinearStochastic/AlgebraWordTransport.lean:68:0: 'LinearStochastic.WordMatrices.cumulativeMatrix_full_rank_iff_euclidean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8923/9166] Replayed LinearStochastic.AlgebraSurjectiveMatrices
+info: LinearStochastic/AlgebraSurjectiveMatrices.lean:97:0: 'LinearStochastic.SurjectiveMatrices.flag_bot_iff_word_matrix_full_rank' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8924/9166] Replayed LinearStochastic.AlgebraFlagTransport
+info: LinearStochastic/AlgebraFlagTransport.lean:134:0: 'LinearStochastic.AdjointCoefficients.matrix_flag_eq_euclidean_map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraFlagTransport.lean:135:0: 'LinearStochastic.AdjointCoefficients.matrix_flag_bot_iff_euclidean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraFlagTransport.lean:136:0: 'LinearStochastic.AdjointCoefficients.matrix_flag_bot_iff_canonical_word_rank' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8925/9166] Replayed LinearStochastic.AlgebraDeterministic
+info: LinearStochastic/AlgebraDeterministic.lean:107:0: 'LinearStochastic.Deterministic.flag_eq_kernel_intersection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraDeterministic.lean:108:0: 'LinearStochastic.Deterministic.kalman_transpose_ker' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraDeterministic.lean:109:0: 'LinearStochastic.Deterministic.kalman_rank_codimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8926/9166] Replayed LinearStochastic.AlgebraExamples
+info: LinearStochastic/AlgebraExamples.lean:117:0: 'LinearStochastic.Examples.SingularDiffusion.flag_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraExamples.lean:118:0: 'LinearStochastic.Examples.SingularDiffusion.joint_rank_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraExamples.lean:119:0: 'LinearStochastic.Examples.SingularDiffusion.joint_rank_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraExamples.lean:272:0: 'LinearStochastic.Examples.Nonrobustness.flag_two_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraExamples.lean:273:0: 'LinearStochastic.Examples.Nonrobustness.flag_two_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraExamples.lean:274:0: 'LinearStochastic.Examples.Nonrobustness.delta_two_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8927/9166] Replayed LinearStochastic.AlgebraNonrobustTopology
+info: LinearStochastic/AlgebraNonrobustTopology.lean:141:0: 'LinearStochastic.NonrobustTopology.actual_coefficient_flag_not_open' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraNonrobustTopology.lean:142:0: 'LinearStochastic.NonrobustTopology.actual_coefficient_rank_difference_not_open' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraNonrobustTopology.lean:143:0: 'LinearStochastic.NonrobustTopology.no_continuous_coefficient_rank_test' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraNonrobustTopology.lean:144:0: 'LinearStochastic.NonrobustTopology.actual_rank_difference_not_open' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/AlgebraNonrobustTopology.lean:145:0: 'LinearStochastic.NonrobustTopology.isOpen_maximal_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraNonrobustTopology.lean:146:0: 'LinearStochastic.NonrobustTopology.no_continuous_maximal_rank_test' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8928/9166] Replayed LinearStochastic.ReducedElimination
+warning: LinearStochastic/ReducedElimination.lean:80:0: automatically included section variable(s) unused in theorem `LinearStochastic.ReducedElimination.feasible_eq_residual_ker`:
+  [FiniteDimensional ℝ X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [8929/9166] Replayed LinearStochastic.AlgebraStaircase
+info: LinearStochastic/AlgebraStaircase.lean:324:0: 'LinearStochastic.Staircase.residual_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:325:0: 'LinearStochastic.Staircase.nextComplement_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:326:0: 'LinearStochastic.Staircase.sum_stepRank_eq_prescribedDelta' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:327:0: 'LinearStochastic.Staircase.stepRank_zero_at_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:456:0: 'LinearStochastic.Staircase.iterate_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:457:0: 'LinearStochastic.Staircase.iterate_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:458:0: 'LinearStochastic.Staircase.iterate_residual_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:459:0: 'LinearStochastic.Staircase.iterate_stationary_at_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/AlgebraStaircase.lean:494:0: 'LinearStochastic.Staircase.iterate_residual_zero_at_dimension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8930/9166] Replayed LinearStochastic.AlgebraStaircaseTermination
+info: LinearStochastic/AlgebraStaircaseTermination.lean:36:0: 'LinearStochastic.Staircase.stops_within_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8935/9166] Replayed LinearStochastic.BSDEHilbertLocal
+info: LinearStochastic/BSDEHilbertLocal.lean:100:0: 'LinearStochastic.BSDEHilbertLocal.exists_section_backward' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8950/9166] Replayed LinearStochastic.JointCylinderGeneration
+warning: LinearStochastic/JointCylinderGeneration.lean:17:8: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/JointCylinderGeneration.lean:17:10: Variable name `t` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _t
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/JointCylinderGeneration.lean:28:0: Definition `LinearStochastic.JointCylinderGeneration.cylinderSigma` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+warning: LinearStochastic/JointCylinderGeneration.lean:33:8: Variable name `k` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _k
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/JointCylinderGeneration.lean:33:10: Variable name `l` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _l
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/JointCylinderGeneration.lean:50:0: automatically included section variable(s) unused in theorem `LinearStochastic.JointCylinderGeneration.cylinderSigma_eq_coordinates`:
+  mΩ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit mΩ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8951/9166] Replayed LinearStochastic.JointBrownianDirections
+warning: LinearStochastic/JointBrownianDirections.lean:18:0: automatically included section variable(s) unused in theorem `LinearStochastic.JointBrownianDirections.direction_gaussian`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/JointBrownianDirections.lean:32:0: automatically included section variable(s) unused in theorem `LinearStochastic.JointBrownianDirections.direction_centered`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/JointBrownianDirections.lean:80:0: automatically included section variable(s) unused in theorem `LinearStochastic.JointBrownianDirections.direction_continuous`:
+  mΩ
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit mΩ in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8953/9166] Replayed LinearStochastic.CommonNaturalIntegral
+warning: LinearStochastic/CommonNaturalIntegral.lean:11:0: Definition `LinearStochastic.CommonNaturalIntegral.naturalForward` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+warning: LinearStochastic/CommonNaturalIntegral.lean:11:0: Definition `naturalForward` is a proposition; use `theorem` instead of `def`
+
+Note: This linter can be disabled with `set_option linter.defProp false`
+⚠ [8988/9166] Replayed LinearStochastic.UsualVersionFiltration
+warning: LinearStochastic/UsualVersionFiltration.lean:82:0: automatically included section variable(s) unused in theorem `LinearStochastic.UsualVersionFiltration.usual_eq_of_ae`:
+  [Fintype ι]
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9027/9166] Replayed LinearStochastic.ConeBlocks
+warning: LinearStochastic/ConeBlocks.lean:15:8: automatically included section variable(s) unused in theorem `LinearStochastic.ConeBlocks.inject_apply`:
+  [FiniteDimensional ℝ E]
+  [Fintype ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [Fintype ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/ConeBlocks.lean:16:8: automatically included section variable(s) unused in theorem `LinearStochastic.ConeBlocks.project_apply`:
+  [FiniteDimensional ℝ E]
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/ConeBlocks.lean:26:0: automatically included section variable(s) unused in theorem `LinearStochastic.ConeBlocks.sum_inject_project`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/ConeBlocks.lean:102:0: automatically included section variable(s) unused in theorem `LinearStochastic.ConeBlocks.positive_sum`:
+  [FiniteDimensional ℝ E]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/ConeBlocks.lean:107:0: automatically included section variable(s) unused in theorem `LinearStochastic.ConeBlocks.positive_summands_zero`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [9031/9166] Replayed LinearStochastic.ZeroObservationMatrices
+info: LinearStochastic/ZeroObservationMatrices.lean:58:0: 'LinearStochastic.ZeroObservationMatrices.terminal_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9055/9166] Replayed LinearStochastic.ProcessQuadraticInner
+warning: LinearStochastic/ProcessQuadraticInner.lean:62:0: automatically included section variable(s) unused in theorem `LinearStochastic.ProcessQuadraticInner.continuous_expected_product_clamped`:
+  [IsProbabilityMeasure μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsProbabilityMeasure μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9061/9166] Replayed LinearStochastic.LMICoefficients
+warning: LinearStochastic/LMICoefficients.lean:39:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.liftBlock_add`:
+  [FiniteDimensional ℝ E]
+  [Fintype ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [Fintype ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMICoefficients.lean:43:67: This simp argument is unused:
+  LinearMap.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [liftBlock, LinearMap.comp_apply, LinearMap.add_apply, map_add, map_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:43:98: This simp argument is unused:
+  map_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [liftBlock, LinearMap.comp_apply, LinearMap.add_apply, LinearMap.smul_apply, map_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:45:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.liftBlock_smul`:
+  [FiniteDimensional ℝ E]
+  [Fintype ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [Fintype ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMICoefficients.lean:49:46: This simp argument is unused:
+  LinearMap.add_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [liftBlock, LinearMap.comp_apply, LinearMap.smul_apply, map_add, map_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:49:89: This simp argument is unused:
+  map_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [liftBlock, LinearMap.comp_apply, LinearMap.add_apply, LinearMap.smul_apply, map_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:88:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.trace_comp_add`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMICoefficients.lean:93:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.trace_comp_sub`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMICoefficients.lean:98:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.trace_comp_sum`:
+  [FiniteDimensional ℝ E]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMICoefficients.lean:142:80: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [lmi, liftBlock, LinearMap.add_apply, LinearMap.sub_apply, LinearMap.comp_apply,
+    LinearMap.sum_apply, LinearMap.smul_apply, LinearMap.adjoint_comp, map_add, map_sum, map_smul, smul_add,
+    Finset.sum_add_distrib, Finset.sum_sub_distrib]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:142:89: This simp argument is unused:
+  map_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [lmi, liftBlock, LinearMap.add_apply, LinearMap.sub_apply, LinearMap.comp_apply,
+    LinearMap.sum_apply, LinearMap.smul_apply, LinearMap.adjoint_comp, map_add, map_sub, map_smul, smul_add,
+    Finset.sum_add_distrib, Finset.sum_sub_distrib]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:151:80: This simp argument is unused:
+  map_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [lmi, liftBlock, LinearMap.add_apply, LinearMap.sub_apply, LinearMap.comp_apply,
+    LinearMap.sum_apply, LinearMap.smul_apply, LinearMap.adjoint_comp, map_add, map_sum, map_smul, smul_add, smul_sub,
+    Finset.smul_sum, smul_comm ρ c]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:151:89: This simp argument is unused:
+  map_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [lmi, liftBlock, LinearMap.add_apply, LinearMap.sub_apply, LinearMap.comp_apply,
+    LinearMap.sum_apply, LinearMap.smul_apply, LinearMap.adjoint_comp, map_add, map_sub, map_smul, smul_add, smul_sub,
+    Finset.smul_sum, smul_comm ρ c]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LinearStochastic/LMICoefficients.lean:209:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.trace_add_comp`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMICoefficients.lean:214:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.trace_sub_comp`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMICoefficients.lean:219:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.trace_sum_comp`:
+  [FiniteDimensional ℝ E]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: LinearStochastic/LMICoefficients.lean:368:0: 'LinearStochastic.LMICoefficients.arbitrary_rate_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+warning: LinearStochastic/LMICoefficients.lean:388:0: automatically included section variable(s) unused in theorem `LinearStochastic.LMICoefficients.inject_norm`:
+  [FiniteDimensional ℝ E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: LinearStochastic/LMICoefficients.lean:412:0: 'LinearStochastic.LMICoefficients.positive_lyapunov_of_negative_lmi' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9062/9166] Replayed LinearStochastic.LMIMatrixCoordinates
+info: LinearStochastic/LMIMatrixCoordinates.lean:224:0: 'LinearStochastic.LMIMatrixCoordinates.arbitrary_rate_positive_matrix_feasible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/LMIMatrixCoordinates.lean:225:0: 'LinearStochastic.LMIMatrixCoordinates.lmi_coordinate_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/LMIMatrixCoordinates.lean:226:0: 'LinearStochastic.LMIMatrixCoordinates.arbitrary_rate_matrix_feasible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9063/9166] Replayed LinearStochastic.PositiveFinite
+info: LinearStochastic/PositiveFinite.lean:79:0: 'LinearStochastic.PositiveFinite.uniformPositive_of_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/PositiveFinite.lean:80:0: 'LinearStochastic.PositiveFinite.blockMatrix_uniformPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9064/9166] Replayed LinearStochastic.LMIFeedback
+warning: LinearStochastic/LMIFeedback.lean:96:8: automatically included section variable(s) unused in theorem `LinearStochastic.LMIFeedback.project_test_none`:
+  [FiniteDimensional ℝ E]
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LinearStochastic/LMIFeedback.lean:99:8: automatically included section variable(s) unused in theorem `LinearStochastic.LMIFeedback.project_test_some`:
+  [FiniteDimensional ℝ E]
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℝ E] [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: LinearStochastic/LMIFeedback.lean:204:0: 'LinearStochastic.LMIFeedback.arbitrary_rate_feedback' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/LMIFeedback.lean:205:0: 'LinearStochastic.LMIFeedback.inverse_uniformPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/LMIFeedback.lean:206:0: 'LinearStochastic.LMIFeedback.closed_loop_lyapunov' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9065/9166] Replayed LinearStochastic.MatrixFeedback
+info: LinearStochastic/MatrixFeedback.lean:148:0: 'LinearStochastic.MatrixFeedback.arbitrary_rate_matrix_feedback' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/MatrixFeedback.lean:149:0: 'LinearStochastic.MatrixFeedback.inverse_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/MatrixFeedback.lean:150:0: 'LinearStochastic.MatrixFeedback.lmi_uniformPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/MatrixFeedback.lean:151:0: 'LinearStochastic.MatrixFeedback.matrix_closed_loop_quadratic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/MatrixFeedback.lean:152:0: 'LinearStochastic.MatrixFeedback.matrix_closed_loop_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9066/9166] Replayed LinearStochastic.LMINormalization
+info: LinearStochastic/LMINormalization.lean:92:0: 'LinearStochastic.LMINormalization.feasible_inverse_norm_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/LMINormalization.lean:93:0: 'LinearStochastic.LMINormalization.normalize_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/LMINormalization.lean:94:0: 'LinearStochastic.LMINormalization.feasible_of_zero_flag' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/LMINormalization.lean:95:0: 'LinearStochastic.LMINormalization.feasible_lyapunov_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9067/9166] Replayed LinearStochastic.MatrixNormalization
+info: LinearStochastic/MatrixNormalization.lean:154:0: 'LinearStochastic.MatrixNormalization.feasible_inverse_norm_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/MatrixNormalization.lean:155:0: 'LinearStochastic.MatrixNormalization.feasible_strict_lmi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/MatrixNormalization.lean:156:0: 'LinearStochastic.MatrixNormalization.feasible_of_zero_flag' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/MatrixNormalization.lean:157:0: 'LinearStochastic.MatrixNormalization.feasible_ge_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9068/9166] Replayed LinearStochastic.MatrixMinimum
+info: LinearStochastic/MatrixMinimum.lean:84:0: 'LinearStochastic.MatrixMinimum.zero_flag_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: LinearStochastic/MatrixMinimum.lean:85:0: 'LinearStochastic.MatrixMinimum.isClosed_feasible_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9082/9166] Replayed LinearStochastic.ParametricMinimum
+info: LinearStochastic/ParametricMinimum.lean:95:0: 'LinearStochastic.MatrixValue.lowerSemicontinuous_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9083/9166] Replayed LinearStochastic.LMIStability
+info: LinearStochastic/LMIStability.lean:131:0: 'LinearStochastic.MatrixStability.scaled_feasible_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9084/9166] Replayed LinearStochastic.MinimumContinuity
+info: LinearStochastic/MinimumContinuity.lean:64:0: 'LinearStochastic.MatrixValue.continuous_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9130/9166] Replayed LinearStochastic.JointUsualShiftRepresentation
+warning: LinearStochastic/JointUsualShiftRepresentation.lean:29:53: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LinearStochastic/JointUsualShiftRepresentation.lean:29:55: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [9132/9166] Replayed LinearStochastic.LocalInvariantObstruction
+info: LinearStochastic/LocalInvariantObstruction.lean:77:0: 'LinearStochastic.LocalInvariantObstruction.exists_positive_horizon_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9139/9166] Replayed LinearStochastic.MatrixDimensionObjective
+info: LinearStochastic/MatrixDimensionObjective.lean:45:0: 'LinearStochastic.MatrixDimensionObjective.dimension_le_frobenius_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: LinearStochastic/MatrixDimensionObjective.lean:46:0: 'LinearStochastic.MatrixDimensionObjective.feasible_dimension_le_objective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [9149/9166] Replayed LinearStochastic.RawStateLinearity
+warning: LinearStochastic/RawStateLinearity.lean:24:0: automatically included section variable(s) unused in theorem `LinearStochastic.RawStateLinearity.linear_combination`:
+  [CompleteSpace U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Build completed successfully (9166 jobs).

@@ -1,0 +1,5120 @@
+import LinearStochastic
+set_option format.width 120
+#check @LinearStochastic.ActualAdjointIdentity.terminalFact
+#print axioms LinearStochastic.ActualAdjointIdentity.terminalFact
+#check @LinearStochastic.ActualAdjointIdentity.adjoint_eq
+#print axioms LinearStochastic.ActualAdjointIdentity.adjoint_eq
+#check @LinearStochastic.ActualAdjointIdentity.adjoint_zero_iff
+#print axioms LinearStochastic.ActualAdjointIdentity.adjoint_zero_iff
+#check @LinearStochastic.ActualApproximation.approximation_from_initial
+#print axioms LinearStochastic.ActualApproximation.approximation_from_initial
+#check @LinearStochastic.ActualControlProperties.ControlledTerminal
+#print axioms LinearStochastic.ActualControlProperties.ControlledTerminal
+#check @LinearStochastic.ActualControlProperties.Approximate
+#print axioms LinearStochastic.ActualControlProperties.Approximate
+#check @LinearStochastic.ActualControlProperties.ApproximateNull
+#print axioms LinearStochastic.ActualControlProperties.ApproximateNull
+#check @LinearStochastic.ActualControlProperties.Exact
+#print axioms LinearStochastic.ActualControlProperties.Exact
+#check @LinearStochastic.ActualControlProperties.ExactNull
+#print axioms LinearStochastic.ActualControlProperties.ExactNull
+#check @LinearStochastic.ActualControlProperties.norm_error_sq
+#print axioms LinearStochastic.ActualControlProperties.norm_error_sq
+#check @LinearStochastic.ActualControlProperties.exact_implies_approximate
+#print axioms LinearStochastic.ActualControlProperties.exact_implies_approximate
+#check @LinearStochastic.ActualControlProperties.exact_implies_exactNull
+#print axioms LinearStochastic.ActualControlProperties.exact_implies_exactNull
+#check @LinearStochastic.ActualControlProperties.exactNull_implies_approximateNull
+#print axioms LinearStochastic.ActualControlProperties.exactNull_implies_approximateNull
+#check @LinearStochastic.ActualControlProperties.approximate_implies_approximateNull
+#print axioms LinearStochastic.ActualControlProperties.approximate_implies_approximateNull
+#check @LinearStochastic.ActualControlProperties.flag_zero_of_approximateNull
+#print axioms LinearStochastic.ActualControlProperties.flag_zero_of_approximateNull
+#check @LinearStochastic.ActualControlProperties.approximate_of_dense
+#print axioms LinearStochastic.ActualControlProperties.approximate_of_dense
+#check @LinearStochastic.ActualNullRange.terminalFact
+#print axioms LinearStochastic.ActualNullRange.terminalFact
+#check @LinearStochastic.ActualNullRange.exists_uncontrolled
+#print axioms LinearStochastic.ActualNullRange.exists_uncontrolled
+#check @LinearStochastic.ActualNullRange.affine_solution
+#print axioms LinearStochastic.ActualNullRange.affine_solution
+#check @LinearStochastic.ActualNullRange.endpoint_eq
+#print axioms LinearStochastic.ActualNullRange.endpoint_eq
+#check @LinearStochastic.ActualNullRange.exact_iff_range
+#print axioms LinearStochastic.ActualNullRange.exact_iff_range
+#check @LinearStochastic.ActualNullRange.approximate_iff_closure
+#print axioms LinearStochastic.ActualNullRange.approximate_iff_closure
+#check @LinearStochastic.ActualObservationBound.bound_of_exact
+#print axioms LinearStochastic.ActualObservationBound.bound_of_exact
+#check @LinearStochastic.ActualObservationDuality.AnnihilatesForwardTerminals
+#print axioms LinearStochastic.ActualObservationDuality.AnnihilatesForwardTerminals
+#check @LinearStochastic.ActualObservationDuality.annihilates_of_observation_zero
+#print axioms LinearStochastic.ActualObservationDuality.annihilates_of_observation_zero
+#check @LinearStochastic.ActualObservationDuality.observation_zero_of_test_solution
+#print axioms LinearStochastic.ActualObservationDuality.observation_zero_of_test_solution
+#check @LinearStochastic.ActualObservationDuality.local_annihilator_iff
+#print axioms LinearStochastic.ActualObservationDuality.local_annihilator_iff
+#check @LinearStochastic.ActualObservationDuality.local_annihilator_terminal_zero
+#print axioms LinearStochastic.ActualObservationDuality.local_annihilator_terminal_zero
+#check @LinearStochastic.ActualReachability.terminals
+#print axioms LinearStochastic.ActualReachability.terminals
+#check @LinearStochastic.ActualReachability.terminals_le_terminalSpace
+#print axioms LinearStochastic.ActualReachability.terminals_le_terminalSpace
+#check @LinearStochastic.ActualReachableDensity.relativeTerminals
+#print axioms LinearStochastic.ActualReachableDensity.relativeTerminals
+#check @LinearStochastic.ActualReachableDensity.orthogonal_iff_annihilates
+#print axioms LinearStochastic.ActualReachableDensity.orthogonal_iff_annihilates
+#check @LinearStochastic.ActualReachableDensity.dense_of_annihilator_zero
+#print axioms LinearStochastic.ActualReachableDensity.dense_of_annihilator_zero
+#check @LinearStochastic.ActualReachableDensity.approximation_of_dense
+#print axioms LinearStochastic.ActualReachableDensity.approximation_of_dense
+#check @LinearStochastic.ActualTerminalDensity.terminalFact
+#print axioms LinearStochastic.ActualTerminalDensity.terminalFact
+#check @LinearStochastic.ActualTerminalDensity.range_eq
+#print axioms LinearStochastic.ActualTerminalDensity.range_eq
+#check @LinearStochastic.ActualTerminalDensity.repaired_relative_eq
+#print axioms LinearStochastic.ActualTerminalDensity.repaired_relative_eq
+#check @LinearStochastic.ActualTerminalDensity.approximate_iff_dense
+#print axioms LinearStochastic.ActualTerminalDensity.approximate_iff_dense
+#check @LinearStochastic.ActualTerminalDensity.approximate_iff_adjoint_ker
+#print axioms LinearStochastic.ActualTerminalDensity.approximate_iff_adjoint_ker
+#check @LinearStochastic.ActualTerminalDensity.raw_approximate_iff_adjoint_ker
+#print axioms LinearStochastic.ActualTerminalDensity.raw_approximate_iff_adjoint_ker
+#check @LinearStochastic.ActualTerminalOperator.exists_terminal
+#print axioms LinearStochastic.ActualTerminalOperator.exists_terminal
+#check @LinearStochastic.ActualTerminalOperator.terminal
+#print axioms LinearStochastic.ActualTerminalOperator.terminal
+#check @LinearStochastic.ActualTerminalOperator.terminal_spec
+#print axioms LinearStochastic.ActualTerminalOperator.terminal_spec
+#check @LinearStochastic.ActualTerminalOperator.terminal_eq
+#print axioms LinearStochastic.ActualTerminalOperator.terminal_eq
+#check @LinearStochastic.ActualTerminalOperator.terminalLinear
+#print axioms LinearStochastic.ActualTerminalOperator.terminalLinear
+#check @LinearStochastic.ActualTerminalOperator.terminalLinear_bounded
+#print axioms LinearStochastic.ActualTerminalOperator.terminalLinear_bounded
+#check @LinearStochastic.ActualTerminalOperator.terminalCLM
+#print axioms LinearStochastic.ActualTerminalOperator.terminalCLM
+#check @LinearStochastic.ActualTerminalOperator.surjective_of_exact
+#print axioms LinearStochastic.ActualTerminalOperator.surjective_of_exact
+#check @LinearStochastic.BlockPair
+#print axioms LinearStochastic.BlockPair
+#check @LinearStochastic.AdjointCoefficients.firstPair
+#print axioms LinearStochastic.AdjointCoefficients.firstPair
+#check @LinearStochastic.AdjointCoefficients.nextPair
+#print axioms LinearStochastic.AdjointCoefficients.nextPair
+#check @LinearStochastic.AdjointCoefficients.blockPair
+#print axioms LinearStochastic.AdjointCoefficients.blockPair
+#check @LinearStochastic.AdjointCoefficients.flag_mem_of_constraints
+#print axioms LinearStochastic.AdjointCoefficients.flag_mem_of_constraints
+#check @LinearStochastic.AdjointCoefficients.blockPair_represents_flag
+#print axioms LinearStochastic.AdjointCoefficients.blockPair_represents_flag
+#check @LinearStochastic.AdjointCoefficients.blockPair_rank_codimension
+#print axioms LinearStochastic.AdjointCoefficients.blockPair_rank_codimension
+#check @LinearStochastic.AdjointCoefficients.nextPair_rows_finrank
+#print axioms LinearStochastic.AdjointCoefficients.nextPair_rows_finrank
+#check @LinearStochastic.AdjointCoefficients.nextPair_aux_finrank
+#print axioms LinearStochastic.AdjointCoefficients.nextPair_aux_finrank
+#check @LinearStochastic.AdjointCoefficients.blockPair_rows_finrank
+#print axioms LinearStochastic.AdjointCoefficients.blockPair_rows_finrank
+#check @LinearStochastic.AdjointCoefficients.blockPair_aux_finrank
+#print axioms LinearStochastic.AdjointCoefficients.blockPair_aux_finrank
+#check @LinearStochastic.AdjointCoefficients.matrix_blockPair_rank_codimension
+#print axioms LinearStochastic.AdjointCoefficients.matrix_blockPair_rank_codimension
+#check @LinearStochastic.Coordinates.RowIndex
+#print axioms LinearStochastic.Coordinates.RowIndex
+#check @LinearStochastic.Coordinates.AuxIndex
+#print axioms LinearStochastic.Coordinates.AuxIndex
+#check @LinearStochastic.Coordinates.rowIndexFintype
+#print axioms LinearStochastic.Coordinates.rowIndexFintype
+#check @LinearStochastic.Coordinates.auxIndexFintype
+#print axioms LinearStochastic.Coordinates.auxIndexFintype
+#check @LinearStochastic.Coordinates.joint
+#print axioms LinearStochastic.Coordinates.joint
+#check @LinearStochastic.Coordinates.joint_mulVec
+#print axioms LinearStochastic.Coordinates.joint_mulVec
+#check @LinearStochastic.Coordinates.identity_kronecker_mulVec
+#print axioms LinearStochastic.Coordinates.identity_kronecker_mulVec
+#check @LinearStochastic.Coordinates.nextK
+#print axioms LinearStochastic.Coordinates.nextK
+#check @LinearStochastic.Coordinates.nextN
+#print axioms LinearStochastic.Coordinates.nextN
+#check @LinearStochastic.Coordinates.next_action
+#print axioms LinearStochastic.Coordinates.next_action
+#check @LinearStochastic.Coordinates.matrixPair
+#print axioms LinearStochastic.Coordinates.matrixPair
+#check @LinearStochastic.Coordinates.matrixPair_feasible_iff
+#print axioms LinearStochastic.Coordinates.matrixPair_feasible_iff
+#check @LinearStochastic.Coordinates.range_fromCols
+#print axioms LinearStochastic.Coordinates.range_fromCols
+#check @LinearStochastic.Coordinates.matrix_rank_difference
+#print axioms LinearStochastic.Coordinates.matrix_rank_difference
+#check @LinearStochastic.Coordinates.matrixPair_rank_codimension
+#print axioms LinearStochastic.Coordinates.matrixPair_rank_codimension
+#check @LinearStochastic.Coordinates.rowWidth
+#print axioms LinearStochastic.Coordinates.rowWidth
+#check @LinearStochastic.Coordinates.auxWidth
+#print axioms LinearStochastic.Coordinates.auxWidth
+#check @LinearStochastic.Coordinates.rowWidth_zero
+#print axioms LinearStochastic.Coordinates.rowWidth_zero
+#check @LinearStochastic.Coordinates.auxWidth_zero
+#print axioms LinearStochastic.Coordinates.auxWidth_zero
+#check @LinearStochastic.Coordinates.rowWidth_succ
+#print axioms LinearStochastic.Coordinates.rowWidth_succ
+#check @LinearStochastic.Coordinates.auxWidth_succ
+#print axioms LinearStochastic.Coordinates.auxWidth_succ
+#check @LinearStochastic.Coordinates.rowIndexEquivFin
+#print axioms LinearStochastic.Coordinates.rowIndexEquivFin
+#check @LinearStochastic.Coordinates.auxIndexEquivFin
+#print axioms LinearStochastic.Coordinates.auxIndexEquivFin
+#check @LinearStochastic.Coordinates.rowIndex_card
+#print axioms LinearStochastic.Coordinates.rowIndex_card
+#check @LinearStochastic.Coordinates.auxIndex_card
+#print axioms LinearStochastic.Coordinates.auxIndex_card
+#check @LinearStochastic.Coordinates.reindex_mulVec
+#print axioms LinearStochastic.Coordinates.reindex_mulVec
+#check @LinearStochastic.Coordinates.reindex_feasible_iff
+#print axioms LinearStochastic.Coordinates.reindex_feasible_iff
+#check @LinearStochastic.Coordinates.fromCols_reindex
+#print axioms LinearStochastic.Coordinates.fromCols_reindex
+#check @LinearStochastic.Coordinates.finitePair
+#print axioms LinearStochastic.Coordinates.finitePair
+#check @LinearStochastic.Coordinates.finitePair_feasible_iff
+#print axioms LinearStochastic.Coordinates.finitePair_feasible_iff
+#check @LinearStochastic.Coordinates.finitePair_rank_codimension
+#print axioms LinearStochastic.Coordinates.finitePair_rank_codimension
+#check @LinearStochastic.Deterministic.coefficients
+#print axioms LinearStochastic.Deterministic.coefficients
+#check @LinearStochastic.Deterministic.mem_obstruction
+#print axioms LinearStochastic.Deterministic.mem_obstruction
+#check @LinearStochastic.Deterministic.mem_flag
+#print axioms LinearStochastic.Deterministic.mem_flag
+#check @LinearStochastic.Deterministic.flag_eq_kernel_intersection
+#print axioms LinearStochastic.Deterministic.flag_eq_kernel_intersection
+#check @LinearStochastic.Deterministic.kalman
+#print axioms LinearStochastic.Deterministic.kalman
+#check @LinearStochastic.Deterministic.matrix_mem_flag
+#print axioms LinearStochastic.Deterministic.matrix_mem_flag
+#check @LinearStochastic.Deterministic.kalman_transpose_ker
+#print axioms LinearStochastic.Deterministic.kalman_transpose_ker
+#check @LinearStochastic.Deterministic.kalman_rank_codimension
+#print axioms LinearStochastic.Deterministic.kalman_rank_codimension
+#check @LinearStochastic.Deterministic.finitePair_rank_difference_eq_kalman
+#print axioms LinearStochastic.Deterministic.finitePair_rank_difference_eq_kalman
+#check @LinearStochastic.Examples.SingularDiffusion.B
+#print axioms LinearStochastic.Examples.SingularDiffusion.B
+#check @LinearStochastic.Examples.SingularDiffusion.D
+#print axioms LinearStochastic.Examples.SingularDiffusion.D
+#check @LinearStochastic.Examples.SingularDiffusion.coefficients
+#print axioms LinearStochastic.Examples.SingularDiffusion.coefficients
+#check @LinearStochastic.Examples.SingularDiffusion.observation
+#print axioms LinearStochastic.Examples.SingularDiffusion.observation
+#check @LinearStochastic.Examples.SingularDiffusion.flag_one
+#print axioms LinearStochastic.Examples.SingularDiffusion.flag_one
+#check @LinearStochastic.Examples.SingularDiffusion.each_diffusion_range
+#print axioms LinearStochastic.Examples.SingularDiffusion.each_diffusion_range
+#check @LinearStochastic.Examples.SingularDiffusion.each_diffusion_rank
+#print axioms LinearStochastic.Examples.SingularDiffusion.each_diffusion_rank
+#check @LinearStochastic.Examples.SingularDiffusion.horizontal_diffusion_rank
+#print axioms LinearStochastic.Examples.SingularDiffusion.horizontal_diffusion_rank
+#check @LinearStochastic.Examples.SingularDiffusion.joint_rank_zero
+#print axioms LinearStochastic.Examples.SingularDiffusion.joint_rank_zero
+#check @LinearStochastic.Examples.SingularDiffusion.joint_rank_ne_zero
+#print axioms LinearStochastic.Examples.SingularDiffusion.joint_rank_ne_zero
+#check @LinearStochastic.Examples.SingularDiffusion.joint_rank
+#print axioms LinearStochastic.Examples.SingularDiffusion.joint_rank
+#check @LinearStochastic.Examples.Nonrobustness.A
+#print axioms LinearStochastic.Examples.Nonrobustness.A
+#check @LinearStochastic.Examples.Nonrobustness.B
+#print axioms LinearStochastic.Examples.Nonrobustness.B
+#check @LinearStochastic.Examples.Nonrobustness.C
+#print axioms LinearStochastic.Examples.Nonrobustness.C
+#check @LinearStochastic.Examples.Nonrobustness.coefficients
+#print axioms LinearStochastic.Examples.Nonrobustness.coefficients
+#check @LinearStochastic.Examples.Nonrobustness.firstAxis
+#print axioms LinearStochastic.Examples.Nonrobustness.firstAxis
+#check @LinearStochastic.Examples.Nonrobustness.mem_firstAxis
+#print axioms LinearStochastic.Examples.Nonrobustness.mem_firstAxis
+#check @LinearStochastic.Examples.Nonrobustness.observation
+#print axioms LinearStochastic.Examples.Nonrobustness.observation
+#check @LinearStochastic.Examples.Nonrobustness.drift
+#print axioms LinearStochastic.Examples.Nonrobustness.drift
+#check @LinearStochastic.Examples.Nonrobustness.flag_one
+#print axioms LinearStochastic.Examples.Nonrobustness.flag_one
+#check @LinearStochastic.Examples.Nonrobustness.flag_two_zero
+#print axioms LinearStochastic.Examples.Nonrobustness.flag_two_zero
+#check @LinearStochastic.Examples.Nonrobustness.flag_two_ne_zero
+#print axioms LinearStochastic.Examples.Nonrobustness.flag_two_ne_zero
+#check @LinearStochastic.Examples.Nonrobustness.firstAxis_finrank
+#print axioms LinearStochastic.Examples.Nonrobustness.firstAxis_finrank
+#check @LinearStochastic.Examples.Nonrobustness.delta_two_zero
+#print axioms LinearStochastic.Examples.Nonrobustness.delta_two_zero
+#check @LinearStochastic.Examples.Nonrobustness.delta_two_ne_zero
+#print axioms LinearStochastic.Examples.Nonrobustness.delta_two_ne_zero
+#check @LinearStochastic.Examples.Nonrobustness.finitePair_delta_two_zero
+#print axioms LinearStochastic.Examples.Nonrobustness.finitePair_delta_two_zero
+#check @LinearStochastic.Examples.Nonrobustness.finitePair_delta_two_ne_zero
+#print axioms LinearStochastic.Examples.Nonrobustness.finitePair_delta_two_ne_zero
+#check @LinearStochastic.Examples.Nonrobustness.joint_diffusion_rank
+#print axioms LinearStochastic.Examples.Nonrobustness.joint_diffusion_rank
+#check @LinearStochastic.AdjointCoefficients
+#print axioms LinearStochastic.AdjointCoefficients
+#check @LinearStochastic.AdjointCoefficients.obstruction
+#print axioms LinearStochastic.AdjointCoefficients.obstruction
+#check @LinearStochastic.AdjointCoefficients.mem_obstruction
+#print axioms LinearStochastic.AdjointCoefficients.mem_obstruction
+#check @LinearStochastic.AdjointCoefficients.obstruction_le
+#print axioms LinearStochastic.AdjointCoefficients.obstruction_le
+#check @LinearStochastic.AdjointCoefficients.obstruction_mono
+#print axioms LinearStochastic.AdjointCoefficients.obstruction_mono
+#check @LinearStochastic.AdjointCoefficients.flag
+#print axioms LinearStochastic.AdjointCoefficients.flag
+#check @LinearStochastic.AdjointCoefficients.flag_zero
+#print axioms LinearStochastic.AdjointCoefficients.flag_zero
+#check @LinearStochastic.AdjointCoefficients.flag_succ
+#print axioms LinearStochastic.AdjointCoefficients.flag_succ
+#check @LinearStochastic.AdjointCoefficients.flag_step_le
+#print axioms LinearStochastic.AdjointCoefficients.flag_step_le
+#check @LinearStochastic.AdjointCoefficients.flag_antitone
+#print axioms LinearStochastic.AdjointCoefficients.flag_antitone
+#check @LinearStochastic.AdjointCoefficients.stationary_of_step_eq
+#print axioms LinearStochastic.AdjointCoefficients.stationary_of_step_eq
+#check @LinearStochastic.AdjointCoefficients.witnessSpace
+#print axioms LinearStochastic.AdjointCoefficients.witnessSpace
+#check @LinearStochastic.AdjointCoefficients.HasInvariantSelectors
+#print axioms LinearStochastic.AdjointCoefficients.HasInvariantSelectors
+#check @LinearStochastic.AdjointCoefficients.selectors_of_fixed
+#print axioms LinearStochastic.AdjointCoefficients.selectors_of_fixed
+#check @LinearStochastic.AdjointCoefficients.fixed_of_selectors
+#print axioms LinearStochastic.AdjointCoefficients.fixed_of_selectors
+#check @LinearStochastic.AdjointCoefficients.fixed_iff_selectors
+#print axioms LinearStochastic.AdjointCoefficients.fixed_iff_selectors
+#check @LinearStochastic.AdjointCoefficients.flag_stable_at_finrank
+#print axioms LinearStochastic.AdjointCoefficients.flag_stable_at_finrank
+#check @LinearStochastic.AdjointCoefficients.flag_stationary
+#print axioms LinearStochastic.AdjointCoefficients.flag_stationary
+#check @LinearStochastic.AdjointCoefficients.fixed_le_flag
+#print axioms LinearStochastic.AdjointCoefficients.fixed_le_flag
+#check @LinearStochastic.AdjointCoefficients.flag_greatest_fixed_point
+#print axioms LinearStochastic.AdjointCoefficients.flag_greatest_fixed_point
+#check @LinearStochastic.AdjointCoefficients.flag_lemma
+#print axioms LinearStochastic.AdjointCoefficients.flag_lemma
+#check @LinearStochastic.AdjointCoefficients.fromMatrices
+#print axioms LinearStochastic.AdjointCoefficients.fromMatrices
+#check @LinearStochastic.AdjointCoefficients.matrix_flag_lemma
+#print axioms LinearStochastic.AdjointCoefficients.matrix_flag_lemma
+#check @LinearStochastic.AdjointCoefficients.zero_obstruction
+#print axioms LinearStochastic.AdjointCoefficients.zero_obstruction
+#check @LinearStochastic.AdjointCoefficients.transport
+#print axioms LinearStochastic.AdjointCoefficients.transport
+#check @LinearStochastic.AdjointCoefficients.obstruction_transport
+#print axioms LinearStochastic.AdjointCoefficients.obstruction_transport
+#check @LinearStochastic.AdjointCoefficients.flag_transport
+#print axioms LinearStochastic.AdjointCoefficients.flag_transport
+#check @LinearStochastic.AdjointCoefficients.flag_transport_bot_iff
+#print axioms LinearStochastic.AdjointCoefficients.flag_transport_bot_iff
+#check @LinearStochastic.AdjointCoefficients.transport_fromForward_euclidean
+#print axioms LinearStochastic.AdjointCoefficients.transport_fromForward_euclidean
+#check @LinearStochastic.AdjointCoefficients.matrix_flag_eq_euclidean_map
+#print axioms LinearStochastic.AdjointCoefficients.matrix_flag_eq_euclidean_map
+#check @LinearStochastic.AdjointCoefficients.matrix_flag_bot_iff_euclidean
+#print axioms LinearStochastic.AdjointCoefficients.matrix_flag_bot_iff_euclidean
+#check @LinearStochastic.AdjointCoefficients.matrix_flag_finrank_eq_euclidean
+#print axioms LinearStochastic.AdjointCoefficients.matrix_flag_finrank_eq_euclidean
+#check @LinearStochastic.AdjointCoefficients.finitePair_rank_codimension_euclidean
+#print axioms LinearStochastic.AdjointCoefficients.finitePair_rank_codimension_euclidean
+#check @LinearStochastic.AdjointCoefficients.matrix_flag_bot_iff_canonical_word_rank
+#print axioms LinearStochastic.AdjointCoefficients.matrix_flag_bot_iff_canonical_word_rank
+#check @LinearStochastic.NonrobustTopology.full_row_rank_iff
+#print axioms LinearStochastic.NonrobustTopology.full_row_rank_iff
+#check @LinearStochastic.NonrobustTopology.isOpen_full_row_rank
+#print axioms LinearStochastic.NonrobustTopology.isOpen_full_row_rank
+#check @LinearStochastic.NonrobustTopology.isOpen_maximal_rank
+#print axioms LinearStochastic.NonrobustTopology.isOpen_maximal_rank
+#check @LinearStochastic.NonrobustTopology.actual_flag_bot_iff
+#print axioms LinearStochastic.NonrobustTopology.actual_flag_bot_iff
+#check @LinearStochastic.NonrobustTopology.actual_flag_not_open
+#print axioms LinearStochastic.NonrobustTopology.actual_flag_not_open
+#check @LinearStochastic.NonrobustTopology.no_continuous_maximal_rank_test
+#print axioms LinearStochastic.NonrobustTopology.no_continuous_maximal_rank_test
+#check @LinearStochastic.NonrobustTopology.CoefficientSpace
+#print axioms LinearStochastic.NonrobustTopology.CoefficientSpace
+#check @LinearStochastic.NonrobustTopology.coefficientFamily
+#print axioms LinearStochastic.NonrobustTopology.coefficientFamily
+#check @LinearStochastic.NonrobustTopology.coefficientFamily_continuous
+#print axioms LinearStochastic.NonrobustTopology.coefficientFamily_continuous
+#check @LinearStochastic.NonrobustTopology.actual_coefficient_flag_not_open
+#print axioms LinearStochastic.NonrobustTopology.actual_coefficient_flag_not_open
+#check @LinearStochastic.NonrobustTopology.no_continuous_coefficient_rank_test
+#print axioms LinearStochastic.NonrobustTopology.no_continuous_coefficient_rank_test
+#check @LinearStochastic.NonrobustTopology.actualRankDifference
+#print axioms LinearStochastic.NonrobustTopology.actualRankDifference
+#check @LinearStochastic.NonrobustTopology.actual_rank_difference_iff
+#print axioms LinearStochastic.NonrobustTopology.actual_rank_difference_iff
+#check @LinearStochastic.NonrobustTopology.actual_rank_difference_not_open
+#print axioms LinearStochastic.NonrobustTopology.actual_rank_difference_not_open
+#check @LinearStochastic.NonrobustTopology.actual_coefficient_rank_difference_not_open
+#print axioms LinearStochastic.NonrobustTopology.actual_coefficient_rank_difference_not_open
+#check @LinearStochastic.feasibleSpace
+#print axioms LinearStochastic.feasibleSpace
+#check @LinearStochastic.mem_feasibleSpace
+#print axioms LinearStochastic.mem_feasibleSpace
+#check @LinearStochastic.rank_difference_eq_codimension
+#print axioms LinearStochastic.rank_difference_eq_codimension
+#check @LinearStochastic.Staircase.frame
+#print axioms LinearStochastic.Staircase.frame
+#check @LinearStochastic.Staircase.frame_range
+#print axioms LinearStochastic.Staircase.frame_range
+#check @LinearStochastic.Staircase.append
+#print axioms LinearStochastic.Staircase.append
+#check @LinearStochastic.Staircase.append_apply
+#print axioms LinearStochastic.Staircase.append_apply
+#check @LinearStochastic.Staircase.append_range
+#print axioms LinearStochastic.Staircase.append_range
+#check @LinearStochastic.Staircase.retained
+#print axioms LinearStochastic.Staircase.retained
+#check @LinearStochastic.Staircase.removed
+#print axioms LinearStochastic.Staircase.removed
+#check @LinearStochastic.Staircase.retained_range
+#print axioms LinearStochastic.Staircase.retained_range
+#check @LinearStochastic.Staircase.removed_range
+#print axioms LinearStochastic.Staircase.removed_range
+#check @LinearStochastic.Staircase.removed_orthogonal_old
+#print axioms LinearStochastic.Staircase.removed_orthogonal_old
+#check @LinearStochastic.Staircase.nextComplement
+#print axioms LinearStochastic.Staircase.nextComplement
+#check @LinearStochastic.Staircase.nextComplement_range
+#print axioms LinearStochastic.Staircase.nextComplement_range
+#check @LinearStochastic.Staircase.removed_dimension
+#print axioms LinearStochastic.Staircase.removed_dimension
+#check @LinearStochastic.Staircase.nextComplement_dimension
+#print axioms LinearStochastic.Staircase.nextComplement_dimension
+#check @LinearStochastic.Staircase.splitFrame
+#print axioms LinearStochastic.Staircase.splitFrame
+#check @LinearStochastic.Staircase.splitFrame_range
+#print axioms LinearStochastic.Staircase.splitFrame_range
+#check @LinearStochastic.Staircase.rowL
+#print axioms LinearStochastic.Staircase.rowL
+#check @LinearStochastic.Staircase.rowM
+#print axioms LinearStochastic.Staircase.rowM
+#check @LinearStochastic.Staircase.residual
+#print axioms LinearStochastic.Staircase.residual
+#check @LinearStochastic.Staircase.feasible_rows
+#print axioms LinearStochastic.Staircase.feasible_rows
+#check @LinearStochastic.Staircase.residual_exact
+#print axioms LinearStochastic.Staircase.residual_exact
+#check @LinearStochastic.Staircase.retained_exact
+#print axioms LinearStochastic.Staircase.retained_exact
+#check @LinearStochastic.Staircase.complement_exact
+#print axioms LinearStochastic.Staircase.complement_exact
+#check @LinearStochastic.Staircase.residual_dimension_drop
+#print axioms LinearStochastic.Staircase.residual_dimension_drop
+#check @LinearStochastic.Staircase.codimension_increment
+#print axioms LinearStochastic.Staircase.codimension_increment
+#check @LinearStochastic.Staircase.stepRank
+#print axioms LinearStochastic.Staircase.stepRank
+#check @LinearStochastic.Staircase.flag_frames_complement
+#print axioms LinearStochastic.Staircase.flag_frames_complement
+#check @LinearStochastic.Staircase.stepRank_dimension_drop
+#print axioms LinearStochastic.Staircase.stepRank_dimension_drop
+#check @LinearStochastic.Staircase.codimension_step
+#print axioms LinearStochastic.Staircase.codimension_step
+#check @LinearStochastic.Staircase.sum_stepRank
+#print axioms LinearStochastic.Staircase.sum_stepRank
+#check @LinearStochastic.Staircase.prescribedDelta
+#print axioms LinearStochastic.Staircase.prescribedDelta
+#check @LinearStochastic.Staircase.prescribedDelta_eq_codimension
+#print axioms LinearStochastic.Staircase.prescribedDelta_eq_codimension
+#check @LinearStochastic.Staircase.complement_dimension_eq_prescribedDelta
+#print axioms LinearStochastic.Staircase.complement_dimension_eq_prescribedDelta
+#check @LinearStochastic.Staircase.stepRank_eq_prescribedDelta_increment
+#print axioms LinearStochastic.Staircase.stepRank_eq_prescribedDelta_increment
+#check @LinearStochastic.Staircase.sum_stepRank_eq_prescribedDelta
+#print axioms LinearStochastic.Staircase.sum_stepRank_eq_prescribedDelta
+#check @LinearStochastic.Staircase.stepRank_zero_iff_stationary
+#print axioms LinearStochastic.Staircase.stepRank_zero_iff_stationary
+#check @LinearStochastic.Staircase.stepRank_zero_at_dimension
+#print axioms LinearStochastic.Staircase.stepRank_zero_at_dimension
+#check @LinearStochastic.Staircase.stationary_after_zero
+#print axioms LinearStochastic.Staircase.stationary_after_zero
+#check @LinearStochastic.Staircase.staircase_step
+#print axioms LinearStochastic.Staircase.staircase_step
+#check @LinearStochastic.Staircase.FrameState
+#print axioms LinearStochastic.Staircase.FrameState
+#check @LinearStochastic.Staircase.FrameState.assembled
+#print axioms LinearStochastic.Staircase.FrameState.assembled
+#check @LinearStochastic.Staircase.FrameState.assembled_range
+#print axioms LinearStochastic.Staircase.FrameState.assembled_range
+#check @LinearStochastic.Staircase.initial
+#print axioms LinearStochastic.Staircase.initial
+#check @LinearStochastic.Staircase.update
+#print axioms LinearStochastic.Staircase.update
+#check @LinearStochastic.Staircase.iterate
+#print axioms LinearStochastic.Staircase.iterate
+#check @LinearStochastic.Staircase.iterate_range
+#print axioms LinearStochastic.Staircase.iterate_range
+#check @LinearStochastic.Staircase.iterate_complement_range
+#print axioms LinearStochastic.Staircase.iterate_complement_range
+#check @LinearStochastic.Staircase.iterate_dimension
+#print axioms LinearStochastic.Staircase.iterate_dimension
+#check @LinearStochastic.Staircase.iterate_residual_rank
+#print axioms LinearStochastic.Staircase.iterate_residual_rank
+#check @LinearStochastic.Staircase.iterate_stationary_at_dimension
+#print axioms LinearStochastic.Staircase.iterate_stationary_at_dimension
+#check @LinearStochastic.Staircase.initial_dimension
+#print axioms LinearStochastic.Staircase.initial_dimension
+#check @LinearStochastic.Staircase.iterate_residual_zero_at_dimension
+#print axioms LinearStochastic.Staircase.iterate_residual_zero_at_dimension
+#check @LinearStochastic.Staircase.iterate_coordinate_dimensions
+#print axioms LinearStochastic.Staircase.iterate_coordinate_dimensions
+#check @LinearStochastic.Staircase.iterate_state_dimension
+#print axioms LinearStochastic.Staircase.iterate_state_dimension
+#check @LinearStochastic.Staircase.iterate_row_dimension
+#print axioms LinearStochastic.Staircase.iterate_row_dimension
+#check @LinearStochastic.Staircase.iterate_channel_dimension
+#print axioms LinearStochastic.Staircase.iterate_channel_dimension
+#check @LinearStochastic.Staircase.stops_within_dimension
+#print axioms LinearStochastic.Staircase.stops_within_dimension
+#check @LinearStochastic.SurjectiveReduction.jointObservation
+#print axioms LinearStochastic.SurjectiveReduction.jointObservation
+#check @LinearStochastic.SurjectiveReduction.jointDrift
+#print axioms LinearStochastic.SurjectiveReduction.jointDrift
+#check @LinearStochastic.SurjectiveReduction.feedback
+#print axioms LinearStochastic.SurjectiveReduction.feedback
+#check @LinearStochastic.SurjectiveReduction.reducedObservation
+#print axioms LinearStochastic.SurjectiveReduction.reducedObservation
+#check @LinearStochastic.SurjectiveReduction.reducedDrift
+#print axioms LinearStochastic.SurjectiveReduction.reducedDrift
+#check @LinearStochastic.SurjectiveReduction.generators
+#print axioms LinearStochastic.SurjectiveReduction.generators
+#check @LinearStochastic.SurjectiveReduction.observation_iff
+#print axioms LinearStochastic.SurjectiveReduction.observation_iff
+#check @LinearStochastic.SurjectiveReduction.mem_obstruction_iff
+#print axioms LinearStochastic.SurjectiveReduction.mem_obstruction_iff
+#check @LinearStochastic.SurjectiveReduction.fixed_iff
+#print axioms LinearStochastic.SurjectiveReduction.fixed_iff
+#check @LinearStochastic.SurjectiveReduction.flag_eq_orthogonal_wordSpan
+#print axioms LinearStochastic.SurjectiveReduction.flag_eq_orthogonal_wordSpan
+#check @LinearStochastic.SurjectiveReduction.flag_bot_iff_wordSpan_top
+#print axioms LinearStochastic.SurjectiveReduction.flag_bot_iff_wordSpan_top
+#check @LinearStochastic.SurjectiveReduction.channelProjection
+#print axioms LinearStochastic.SurjectiveReduction.channelProjection
+#check @LinearStochastic.SurjectiveReduction.channelInjection
+#print axioms LinearStochastic.SurjectiveReduction.channelInjection
+#check @LinearStochastic.SurjectiveReduction.canonicalLeftInverse
+#print axioms LinearStochastic.SurjectiveReduction.canonicalLeftInverse
+#check @LinearStochastic.SurjectiveReduction.jointObservation_fromForward
+#print axioms LinearStochastic.SurjectiveReduction.jointObservation_fromForward
+#check @LinearStochastic.SurjectiveReduction.jointDrift_fromForward
+#print axioms LinearStochastic.SurjectiveReduction.jointDrift_fromForward
+#check @LinearStochastic.SurjectiveReduction.canonicalLeftInverse_left_inverse
+#print axioms LinearStochastic.SurjectiveReduction.canonicalLeftInverse_left_inverse
+#check @LinearStochastic.SurjectiveReduction.forwardH
+#print axioms LinearStochastic.SurjectiveReduction.forwardH
+#check @LinearStochastic.SurjectiveReduction.forwardF
+#print axioms LinearStochastic.SurjectiveReduction.forwardF
+#check @LinearStochastic.SurjectiveReduction.forwardE
+#print axioms LinearStochastic.SurjectiveReduction.forwardE
+#check @LinearStochastic.SurjectiveReduction.forwardGenerators
+#print axioms LinearStochastic.SurjectiveReduction.forwardGenerators
+#check @LinearStochastic.SurjectiveReduction.reducedObservation_eq_H_adjoint
+#print axioms LinearStochastic.SurjectiveReduction.reducedObservation_eq_H_adjoint
+#check @LinearStochastic.SurjectiveReduction.reducedDrift_eq_F_adjoint
+#print axioms LinearStochastic.SurjectiveReduction.reducedDrift_eq_F_adjoint
+#check @LinearStochastic.SurjectiveReduction.generators_eq_forward_adjoint
+#print axioms LinearStochastic.SurjectiveReduction.generators_eq_forward_adjoint
+#check @LinearStochastic.SurjectiveReduction.canonical_flag_eq_orthogonal_words
+#print axioms LinearStochastic.SurjectiveReduction.canonical_flag_eq_orthogonal_words
+#check @LinearStochastic.SurjectiveReduction.canonical_flag_bot_iff
+#print axioms LinearStochastic.SurjectiveReduction.canonical_flag_bot_iff
+#check @LinearStochastic.SurjectiveMatrices.stack
+#print axioms LinearStochastic.SurjectiveMatrices.stack
+#check @LinearStochastic.SurjectiveMatrices.stack_mulVec
+#print axioms LinearStochastic.SurjectiveMatrices.stack_mulVec
+#check @LinearStochastic.SurjectiveMatrices.stack_full_rank_iff
+#print axioms LinearStochastic.SurjectiveMatrices.stack_full_rank_iff
+#check @LinearStochastic.SurjectiveMatrices.reducedH
+#print axioms LinearStochastic.SurjectiveMatrices.reducedH
+#check @LinearStochastic.SurjectiveMatrices.reducedGenerators
+#print axioms LinearStochastic.SurjectiveMatrices.reducedGenerators
+#check @LinearStochastic.SurjectiveMatrices.reducedGenerators_channel
+#print axioms LinearStochastic.SurjectiveMatrices.reducedGenerators_channel
+#check @LinearStochastic.SurjectiveMatrices.reducedGenerators_drift
+#print axioms LinearStochastic.SurjectiveMatrices.reducedGenerators_drift
+#check @LinearStochastic.SurjectiveMatrices.flag_bot_iff_word_matrix_full_rank
+#print axioms LinearStochastic.SurjectiveMatrices.flag_bot_iff_word_matrix_full_rank
+#check @LinearStochastic.WordMatrices.WordIndex
+#print axioms LinearStochastic.WordMatrices.WordIndex
+#check @LinearStochastic.WordMatrices.wordIndexFintype
+#print axioms LinearStochastic.WordMatrices.wordIndexFintype
+#check @LinearStochastic.WordMatrices.CumulativeIndex
+#print axioms LinearStochastic.WordMatrices.CumulativeIndex
+#check @LinearStochastic.WordMatrices.cumulativeIndexFintype
+#print axioms LinearStochastic.WordMatrices.cumulativeIndexFintype
+#check @LinearStochastic.WordMatrices.wordMatrix
+#print axioms LinearStochastic.WordMatrices.wordMatrix
+#check @LinearStochastic.WordMatrices.cumulativeMatrix
+#print axioms LinearStochastic.WordMatrices.cumulativeMatrix
+#check @LinearStochastic.WordMatrices.wordIndex_card
+#print axioms LinearStochastic.WordMatrices.wordIndex_card
+#check @LinearStochastic.WordMatrices.cumulativeIndex_card
+#print axioms LinearStochastic.WordMatrices.cumulativeIndex_card
+#check @LinearStochastic.WordMatrices.range_joint
+#print axioms LinearStochastic.WordMatrices.range_joint
+#check @LinearStochastic.WordMatrices.range_fromCols
+#print axioms LinearStochastic.WordMatrices.range_fromCols
+#check @LinearStochastic.WordMatrices.wordMatrix_range
+#print axioms LinearStochastic.WordMatrices.wordMatrix_range
+#check @LinearStochastic.WordMatrices.cumulativeMatrix_range
+#print axioms LinearStochastic.WordMatrices.cumulativeMatrix_range
+#check @LinearStochastic.WordMatrices.cumulativeMatrix_full_rank_iff
+#print axioms LinearStochastic.WordMatrices.cumulativeMatrix_full_rank_iff
+#check @LinearStochastic.WordMatrices.cumulativeMatrix_finite_envelope
+#print axioms LinearStochastic.WordMatrices.cumulativeMatrix_finite_envelope
+#check @LinearStochastic.Words.wordSpan_map
+#print axioms LinearStochastic.Words.wordSpan_map
+#check @LinearStochastic.Words.wordSpan_reindex
+#print axioms LinearStochastic.Words.wordSpan_reindex
+#check @LinearStochastic.WordMatrices.wordSpan_euclidean_map
+#print axioms LinearStochastic.WordMatrices.wordSpan_euclidean_map
+#check @LinearStochastic.WordMatrices.cumulativeMatrix_full_rank_iff_euclidean
+#print axioms LinearStochastic.WordMatrices.cumulativeMatrix_full_rank_iff_euclidean
+#check @LinearStochastic.Words.step
+#print axioms LinearStochastic.Words.step
+#check @LinearStochastic.Words.Invariant
+#print axioms LinearStochastic.Words.Invariant
+#check @LinearStochastic.Words.le_step
+#print axioms LinearStochastic.Words.le_step
+#check @LinearStochastic.Words.step_mono
+#print axioms LinearStochastic.Words.step_mono
+#check @LinearStochastic.Words.step_eq_iff_invariant
+#print axioms LinearStochastic.Words.step_eq_iff_invariant
+#check @LinearStochastic.Words.reach
+#print axioms LinearStochastic.Words.reach
+#check @LinearStochastic.Words.reach_zero
+#print axioms LinearStochastic.Words.reach_zero
+#check @LinearStochastic.Words.reach_succ
+#print axioms LinearStochastic.Words.reach_succ
+#check @LinearStochastic.Words.reach_step_le
+#print axioms LinearStochastic.Words.reach_step_le
+#check @LinearStochastic.Words.reach_mono
+#print axioms LinearStochastic.Words.reach_mono
+#check @LinearStochastic.Words.seed_le_reach
+#print axioms LinearStochastic.Words.seed_le_reach
+#check @LinearStochastic.Words.stationary_of_step_eq
+#print axioms LinearStochastic.Words.stationary_of_step_eq
+#check @LinearStochastic.Words.reach_bot
+#print axioms LinearStochastic.Words.reach_bot
+#check @LinearStochastic.Words.reach_le_invariant
+#print axioms LinearStochastic.Words.reach_le_invariant
+#check @LinearStochastic.Words.wordMap
+#print axioms LinearStochastic.Words.wordMap
+#check @LinearStochastic.Words.wordMap_nil
+#print axioms LinearStochastic.Words.wordMap_nil
+#check @LinearStochastic.Words.wordMap_cons
+#print axioms LinearStochastic.Words.wordMap_cons
+#check @LinearStochastic.Words.wordSpan
+#print axioms LinearStochastic.Words.wordSpan
+#check @LinearStochastic.Words.wordSpan_mono
+#print axioms LinearStochastic.Words.wordSpan_mono
+#check @LinearStochastic.Words.seed_le_wordSpan
+#print axioms LinearStochastic.Words.seed_le_wordSpan
+#check @LinearStochastic.Words.wordSpan_zero
+#print axioms LinearStochastic.Words.wordSpan_zero
+#check @LinearStochastic.Words.wordSpan_succ
+#print axioms LinearStochastic.Words.wordSpan_succ
+#check @LinearStochastic.Words.reach_eq_wordSpan
+#print axioms LinearStochastic.Words.reach_eq_wordSpan
+#check @LinearStochastic.Words.layer
+#print axioms LinearStochastic.Words.layer
+#check @LinearStochastic.Words.layer_zero
+#print axioms LinearStochastic.Words.layer_zero
+#check @LinearStochastic.Words.layer_succ
+#print axioms LinearStochastic.Words.layer_succ
+#check @LinearStochastic.Words.cumulative
+#print axioms LinearStochastic.Words.cumulative
+#check @LinearStochastic.Words.cumulative_zero
+#print axioms LinearStochastic.Words.cumulative_zero
+#check @LinearStochastic.Words.cumulative_succ
+#print axioms LinearStochastic.Words.cumulative_succ
+#check @LinearStochastic.Words.step_sup
+#print axioms LinearStochastic.Words.step_sup
+#check @LinearStochastic.Words.step_cumulative
+#print axioms LinearStochastic.Words.step_cumulative
+#check @LinearStochastic.Words.cumulative_eq_reach
+#print axioms LinearStochastic.Words.cumulative_eq_reach
+#check @LinearStochastic.Words.stable_at_finrank_sub_one
+#print axioms LinearStochastic.Words.stable_at_finrank_sub_one
+#check @LinearStochastic.Words.finite_word_envelope
+#print axioms LinearStochastic.Words.finite_word_envelope
+#check @LinearStochastic.Words.orthogonal_invariant
+#print axioms LinearStochastic.Words.orthogonal_invariant
+#check @LinearStochastic.Words.orthogonal_wordSpan_greatest
+#print axioms LinearStochastic.Words.orthogonal_wordSpan_greatest
+#check @LinearStochastic.Words.orthogonal_wordRange_greatest
+#print axioms LinearStochastic.Words.orthogonal_wordRange_greatest
+#check @LinearStochastic.BSDEAnnihilator.terminal_annihilator_eq_zero
+#print axioms LinearStochastic.BSDEAnnihilator.terminal_annihilator_eq_zero
+#check @LinearStochastic.BSDEEnergy.time_slice_memLp
+#print axioms LinearStochastic.BSDEEnergy.time_slice_memLp
+#check @LinearStochastic.BSDEEnergy.terminal_drift_memLp
+#print axioms LinearStochastic.BSDEEnergy.terminal_drift_memLp
+#check @LinearStochastic.BSDEEnergy.terminal_drift_energy
+#print axioms LinearStochastic.BSDEEnergy.terminal_drift_energy
+#check @LinearStochastic.BSDEEnergy.scalar_norm_sq
+#print axioms LinearStochastic.BSDEEnergy.scalar_norm_sq
+#check @LinearStochastic.BSDEEnergy.terminalDrift
+#print axioms LinearStochastic.BSDEEnergy.terminalDrift
+#check @LinearStochastic.BSDEEnergy.terminalDrift_ae
+#print axioms LinearStochastic.BSDEEnergy.terminalDrift_ae
+#check @LinearStochastic.BSDEEnergy.terminalDrift_norm
+#print axioms LinearStochastic.BSDEEnergy.terminalDrift_norm
+#check @LinearStochastic.BSDEEnergy.terminalDrift_add
+#print axioms LinearStochastic.BSDEEnergy.terminalDrift_add
+#check @LinearStochastic.BSDEEnergy.terminalDrift_smul
+#print axioms LinearStochastic.BSDEEnergy.terminalDrift_smul
+#check @LinearStochastic.BSDEEnergy.terminalDriftCLM
+#print axioms LinearStochastic.BSDEEnergy.terminalDriftCLM
+#check @LinearStochastic.BSDEEnergy.terminalDriftCLM_norm
+#print axioms LinearStochastic.BSDEEnergy.terminalDriftCLM_norm
+#check @LinearStochastic.BSDEEnergy.raw_norm_sq
+#print axioms LinearStochastic.BSDEEnergy.raw_norm_sq
+#check @LinearStochastic.BSDEEnergy.martingale_earlier_memLp
+#print axioms LinearStochastic.BSDEEnergy.martingale_earlier_memLp
+#check @LinearStochastic.BSDEEnergy.martingale_earlier_energy
+#print axioms LinearStochastic.BSDEEnergy.martingale_earlier_energy
+#check @LinearStochastic.BSDEEnergy.martingale_time_energy
+#print axioms LinearStochastic.BSDEEnergy.martingale_time_energy
+#check @LinearStochastic.BSDEEnergy.martingale_joint_memLp
+#print axioms LinearStochastic.BSDEEnergy.martingale_joint_memLp
+#check @LinearStochastic.BSDEEnergy.martingale_energy_of_measurable
+#print axioms LinearStochastic.BSDEEnergy.martingale_energy_of_measurable
+#check @LinearStochastic.BSDEGlobalExistence.rate_mono
+#print axioms LinearStochastic.BSDEGlobalExistence.rate_mono
+#check @LinearStochastic.BSDEGlobalExistence.exists_mesh
+#print axioms LinearStochastic.BSDEGlobalExistence.exists_mesh
+#check @LinearStochastic.BSDEGlobalExistence.exists_grid
+#print axioms LinearStochastic.BSDEGlobalExistence.exists_grid
+#check @LinearStochastic.BSDEGlobalExistence.exists_global
+#print axioms LinearStochastic.BSDEGlobalExistence.exists_global
+#check @LinearStochastic.BSDEGlobalUniqueness.unique_grid
+#print axioms LinearStochastic.BSDEGlobalUniqueness.unique_grid
+#check @LinearStochastic.BSDEGlobalUniqueness.global_unique
+#print axioms LinearStochastic.BSDEGlobalUniqueness.global_unique
+#check @LinearStochastic.BSDEHilbertCoordinates.assemble_neg
+#print axioms LinearStochastic.BSDEHilbertCoordinates.assemble_neg
+#check @LinearStochastic.BSDEHilbertCoordinates.assemble_sum
+#print axioms LinearStochastic.BSDEHilbertCoordinates.assemble_sum
+#check @LinearStochastic.BSDEHilbertCoordinates.coefficientMatrix_adjoint
+#print axioms LinearStochastic.BSDEHilbertCoordinates.coefficientMatrix_adjoint
+#check @LinearStochastic.BSDEHilbertCoordinates.assemble_driver
+#print axioms LinearStochastic.BSDEHilbertCoordinates.assemble_driver
+#check @LinearStochastic.BSDEHilbertGlobal.section_backward
+#print axioms LinearStochastic.BSDEHilbertGlobal.section_backward
+#check @LinearStochastic.BSDEHilbertLocal.exists_section_backward
+#print axioms LinearStochastic.BSDEHilbertLocal.exists_section_backward
+#check @LinearStochastic.BSDEIntegralRange.ChannelH2
+#print axioms LinearStochastic.BSDEIntegralRange.ChannelH2
+#check @LinearStochastic.BSDEIntegralRange.channelComplete
+#print axioms LinearStochastic.BSDEIntegralRange.channelComplete
+#check @LinearStochastic.BSDEIntegralRange.integral
+#print axioms LinearStochastic.BSDEIntegralRange.integral
+#check @LinearStochastic.BSDEIntegralRange.integral_apply
+#print axioms LinearStochastic.BSDEIntegralRange.integral_apply
+#check @LinearStochastic.BSDEIntegralRange.integral_range_isClosed
+#print axioms LinearStochastic.BSDEIntegralRange.integral_range_isClosed
+#check @LinearStochastic.BSDEIntegralRange.integral_terminal_measurable
+#print axioms LinearStochastic.BSDEIntegralRange.integral_terminal_measurable
+#check @LinearStochastic.BSDEIntegralRange.initial_integral_orthogonal
+#print axioms LinearStochastic.BSDEIntegralRange.initial_integral_orthogonal
+#check @LinearStochastic.BSDEIntegralRange.decomposition_energy
+#print axioms LinearStochastic.BSDEIntegralRange.decomposition_energy
+#check @LinearStochastic.BSDEIntegralRange.decomposition_unique
+#print axioms LinearStochastic.BSDEIntegralRange.decomposition_unique
+#check @LinearStochastic.BSDEIntegralRange.coefficients
+#print axioms LinearStochastic.BSDEIntegralRange.coefficients
+#check @LinearStochastic.BSDEIntegralRange.coefficients_integral
+#print axioms LinearStochastic.BSDEIntegralRange.coefficients_integral
+#check @LinearStochastic.BSDEIntegralRange.coefficients_initial
+#print axioms LinearStochastic.BSDEIntegralRange.coefficients_initial
+#check @LinearStochastic.BSDEIntegralRange.coefficients_norm
+#print axioms LinearStochastic.BSDEIntegralRange.coefficients_norm
+#check @LinearStochastic.BSDEIntegralRange.coefficients_of_decomposition
+#print axioms LinearStochastic.BSDEIntegralRange.coefficients_of_decomposition
+#check @LinearStochastic.BSDEIntegralRange.initialProjection
+#print axioms LinearStochastic.BSDEIntegralRange.initialProjection
+#check @LinearStochastic.BSDEIntegralRange.initialProjection_of_measurable
+#print axioms LinearStochastic.BSDEIntegralRange.initialProjection_of_measurable
+#check @LinearStochastic.BSDEIntegralRange.initialProjection_integral
+#print axioms LinearStochastic.BSDEIntegralRange.initialProjection_integral
+#check @LinearStochastic.BSDEIntegralRange.initial_of_decomposition
+#print axioms LinearStochastic.BSDEIntegralRange.initial_of_decomposition
+#check @LinearStochastic.BSDEIntegralRange.decomposition_bound
+#print axioms LinearStochastic.BSDEIntegralRange.decomposition_bound
+#check @LinearStochastic.BSDEIntegralRange.Represented
+#print axioms LinearStochastic.BSDEIntegralRange.Represented
+#check @LinearStochastic.BSDEIntegralRange.represented_iff
+#print axioms LinearStochastic.BSDEIntegralRange.represented_iff
+#check @LinearStochastic.BSDEIntegralRange.represented_isClosed
+#print axioms LinearStochastic.BSDEIntegralRange.represented_isClosed
+#check @LinearStochastic.BSDELocal.terminalInput_measurable
+#print axioms LinearStochastic.BSDELocal.terminalInput_measurable
+#check @LinearStochastic.BSDELocal.solutionPath
+#print axioms LinearStochastic.BSDELocal.solutionPath
+#check @LinearStochastic.BSDELocal.fixedPoint_path_class
+#print axioms LinearStochastic.BSDELocal.fixedPoint_path_class
+#check @LinearStochastic.BSDELocal.fixedPoint_integral_identity
+#print axioms LinearStochastic.BSDELocal.fixedPoint_integral_identity
+#check @LinearStochastic.BSDELocal.fixedPoint_terminal
+#print axioms LinearStochastic.BSDELocal.fixedPoint_terminal
+#check @LinearStochastic.BSDELocal.exists_local_backward
+#print axioms LinearStochastic.BSDELocal.exists_local_backward
+#check @LinearStochastic.BSDELocal.solutionPath_S2
+#print axioms LinearStochastic.BSDELocal.solutionPath_S2
+#check @LinearStochastic.BSDELocalBounds.stateStep_terminal_difference
+#print axioms LinearStochastic.BSDELocalBounds.stateStep_terminal_difference
+#check @LinearStochastic.BSDELocalBounds.diffusionStep_terminal_difference
+#print axioms LinearStochastic.BSDELocalBounds.diffusionStep_terminal_difference
+#check @LinearStochastic.BSDELocalBounds.terminalBound
+#print axioms LinearStochastic.BSDELocalBounds.terminalBound
+#check @LinearStochastic.BSDELocalBounds.terminalBound_nonneg
+#print axioms LinearStochastic.BSDELocalBounds.terminalBound_nonneg
+#check @LinearStochastic.BSDELocalBounds.picardMap_terminal_difference
+#print axioms LinearStochastic.BSDELocalBounds.picardMap_terminal_difference
+#check @LinearStochastic.BSDELocalBounds.fixedPoint_difference
+#print axioms LinearStochastic.BSDELocalBounds.fixedPoint_difference
+#check @LinearStochastic.BSDEMatrixPicard.PairH2
+#print axioms LinearStochastic.BSDEMatrixPicard.PairH2
+#check @LinearStochastic.BSDEMatrixPicard.driver
+#print axioms LinearStochastic.BSDEMatrixPicard.driver
+#check @LinearStochastic.BSDEMatrixPicard.driver_apply
+#print axioms LinearStochastic.BSDEMatrixPicard.driver_apply
+#check @LinearStochastic.BSDEMatrixPicard.driver_sub
+#print axioms LinearStochastic.BSDEMatrixPicard.driver_sub
+#check @LinearStochastic.BSDEMatrixPicard.coefficientSize
+#print axioms LinearStochastic.BSDEMatrixPicard.coefficientSize
+#check @LinearStochastic.BSDEMatrixPicard.coefficientSize_nonneg
+#print axioms LinearStochastic.BSDEMatrixPicard.coefficientSize_nonneg
+#check @LinearStochastic.BSDEMatrixPicard.channel_norm_le
+#print axioms LinearStochastic.BSDEMatrixPicard.channel_norm_le
+#check @LinearStochastic.BSDEMatrixPicard.driver_norm_le
+#print axioms LinearStochastic.BSDEMatrixPicard.driver_norm_le
+#check @LinearStochastic.BSDEMatrixPicard.driver_difference
+#print axioms LinearStochastic.BSDEMatrixPicard.driver_difference
+#check @LinearStochastic.BSDEMatrixPicard.rate
+#print axioms LinearStochastic.BSDEMatrixPicard.rate
+#check @LinearStochastic.BSDEMatrixPicard.rate_nonneg
+#print axioms LinearStochastic.BSDEMatrixPicard.rate_nonneg
+#check @LinearStochastic.BSDEMatrixPicard.picardMap
+#print axioms LinearStochastic.BSDEMatrixPicard.picardMap
+#check @LinearStochastic.BSDEMatrixPicard.picardMap_contraction
+#print axioms LinearStochastic.BSDEMatrixPicard.picardMap_contraction
+#check @LinearStochastic.BSDEMatrixPicard.exists_unique_fixedPoint
+#print axioms LinearStochastic.BSDEMatrixPicard.exists_unique_fixedPoint
+#check @LinearStochastic.BSDEMatrixPicard.exists_positive_contraction_horizon
+#print axioms LinearStochastic.BSDEMatrixPicard.exists_positive_contraction_horizon
+#check @LinearStochastic.BSDEPathData.Solution
+#print axioms LinearStochastic.BSDEPathData.Solution
+#check @LinearStochastic.BSDEPathData.exists_local
+#print axioms LinearStochastic.BSDEPathData.exists_local
+#check @LinearStochastic.BSDEPathData.section_memLp
+#print axioms LinearStochastic.BSDEPathData.section_memLp
+#check @LinearStochastic.BSDEPathFixedPoint.integral_terminal_ae
+#print axioms LinearStochastic.BSDEPathFixedPoint.integral_terminal_ae
+#check @LinearStochastic.BSDEPathFixedPoint.solution_fixedPoint
+#print axioms LinearStochastic.BSDEPathFixedPoint.solution_fixedPoint
+#check @LinearStochastic.BSDEPathFixedPoint.local_classes_unique
+#print axioms LinearStochastic.BSDEPathFixedPoint.local_classes_unique
+#check @LinearStochastic.BSDEPathFixedPoint.local_paths_unique
+#print axioms LinearStochastic.BSDEPathFixedPoint.local_paths_unique
+#check @LinearStochastic.BSDEPathPaste.map_driver
+#print axioms LinearStochastic.BSDEPathPaste.map_driver
+#check @LinearStochastic.BSDEPathPaste.exists_paste
+#print axioms LinearStochastic.BSDEPathPaste.exists_paste
+#check @LinearStochastic.BSDEPathRestriction.sectionLp
+#print axioms LinearStochastic.BSDEPathRestriction.sectionLp
+#check @LinearStochastic.BSDEPathRestriction.sectionLp_ae
+#print axioms LinearStochastic.BSDEPathRestriction.sectionLp_ae
+#check @LinearStochastic.BSDEPathRestriction.prefixSolution
+#print axioms LinearStochastic.BSDEPathRestriction.prefixSolution
+#check @LinearStochastic.BSDEPathRestriction.shifted
+#print axioms LinearStochastic.BSDEPathRestriction.shifted
+#check @LinearStochastic.BSDEPathRestriction.withTerminal
+#print axioms LinearStochastic.BSDEPathRestriction.withTerminal
+#check @LinearStochastic.BSDEPathRestriction.h2_ext
+#print axioms LinearStochastic.BSDEPathRestriction.h2_ext
+#check @LinearStochastic.BSDEProcessLift.initialRaw
+#print axioms LinearStochastic.BSDEProcessLift.initialRaw
+#check @LinearStochastic.BSDEProcessLift.initialRaw_predictable
+#print axioms LinearStochastic.BSDEProcessLift.initialRaw_predictable
+#check @LinearStochastic.BSDEProcessLift.initialRaw_memLp
+#print axioms LinearStochastic.BSDEProcessLift.initialRaw_memLp
+#check @LinearStochastic.BSDEProcessLift.initialLift
+#print axioms LinearStochastic.BSDEProcessLift.initialLift
+#check @LinearStochastic.BSDEProcessLift.initialLift_ae
+#print axioms LinearStochastic.BSDEProcessLift.initialLift_ae
+#check @LinearStochastic.BSDEProcessLift.initialLift_norm_sq
+#print axioms LinearStochastic.BSDEProcessLift.initialLift_norm_sq
+#check @LinearStochastic.BSDEProcessLift.initialLift_norm
+#print axioms LinearStochastic.BSDEProcessLift.initialLift_norm
+#check @LinearStochastic.BSDEProcessLift.ext_ambient
+#print axioms LinearStochastic.BSDEProcessLift.ext_ambient
+#check @LinearStochastic.BSDEProcessLift.initialLift_sub
+#print axioms LinearStochastic.BSDEProcessLift.initialLift_sub
+#check @LinearStochastic.BSDEProcessLift.assembled
+#print axioms LinearStochastic.BSDEProcessLift.assembled
+#check @LinearStochastic.BSDEProcessLift.assembled_sub
+#print axioms LinearStochastic.BSDEProcessLift.assembled_sub
+#check @LinearStochastic.BSDEProcessLift.assembled_norm
+#print axioms LinearStochastic.BSDEProcessLift.assembled_norm
+#check @LinearStochastic.BSDEProcessLift.terminalInput
+#print axioms LinearStochastic.BSDEProcessLift.terminalInput
+#check @LinearStochastic.BSDEProcessLift.drift
+#print axioms LinearStochastic.BSDEProcessLift.drift
+#check @LinearStochastic.BSDEProcessLift.stateStep
+#print axioms LinearStochastic.BSDEProcessLift.stateStep
+#check @LinearStochastic.BSDEProcessLift.diffusionStep
+#print axioms LinearStochastic.BSDEProcessLift.diffusionStep
+#check @LinearStochastic.BSDEProcessLift.stateStep_difference
+#print axioms LinearStochastic.BSDEProcessLift.stateStep_difference
+#check @LinearStochastic.BSDEProcessLift.diffusionStep_difference
+#print axioms LinearStochastic.BSDEProcessLift.diffusionStep_difference
+#check @LinearStochastic.BSDERealization.initialH2_eq_initialLift
+#print axioms LinearStochastic.BSDERealization.initialH2_eq_initialLift
+#check @LinearStochastic.BSDERealization.path
+#print axioms LinearStochastic.BSDERealization.path
+#check @LinearStochastic.BSDERealization.path_predictable
+#print axioms LinearStochastic.BSDERealization.path_predictable
+#check @LinearStochastic.BSDERealization.path_continuousOn
+#print axioms LinearStochastic.BSDERealization.path_continuousOn
+#check @LinearStochastic.BSDERealization.stateStep_ae_path
+#print axioms LinearStochastic.BSDERealization.stateStep_ae_path
+#check @LinearStochastic.BSDERealization.path_initial
+#print axioms LinearStochastic.BSDERealization.path_initial
+#check @LinearStochastic.BSDERealization.path_integral_identity
+#print axioms LinearStochastic.BSDERealization.path_integral_identity
+#check @LinearStochastic.BSDERealization.path_terminal
+#print axioms LinearStochastic.BSDERealization.path_terminal
+#check @LinearStochastic.BSDERealization.path_S2
+#print axioms LinearStochastic.BSDERealization.path_S2
+#check @LinearStochastic.BSDETerminal.untrim
+#print axioms LinearStochastic.BSDETerminal.untrim
+#check @LinearStochastic.BSDETerminal.untrim_norm
+#print axioms LinearStochastic.BSDETerminal.untrim_norm
+#check @LinearStochastic.BSDETerminal.untrim_ae
+#print axioms LinearStochastic.BSDETerminal.untrim_ae
+#check @LinearStochastic.BSDETerminal.terminal
+#print axioms LinearStochastic.BSDETerminal.terminal
+#check @LinearStochastic.BSDETerminal.terminal_ae
+#print axioms LinearStochastic.BSDETerminal.terminal_ae
+#check @LinearStochastic.BSDETerminal.time_mass
+#print axioms LinearStochastic.BSDETerminal.time_mass
+#check @LinearStochastic.BSDETerminal.terminal_norm
+#print axioms LinearStochastic.BSDETerminal.terminal_norm
+#check @LinearStochastic.BSDETerminal.terminal_stronglyMeasurable
+#print axioms LinearStochastic.BSDETerminal.terminal_stronglyMeasurable
+#check @LinearStochastic.BSDETerminal.terminal_aestronglyMeasurable
+#print axioms LinearStochastic.BSDETerminal.terminal_aestronglyMeasurable
+#check @LinearStochastic.BSDETerminal.terminal_ae_real
+#print axioms LinearStochastic.BSDETerminal.terminal_ae_real
+#check @LinearStochastic.BSDETerminal.terminal_operator_norm
+#print axioms LinearStochastic.BSDETerminal.terminal_operator_norm
+#check @LinearStochastic.BSDEUniqueness.initialLift_eq_of_projection_eq
+#print axioms LinearStochastic.BSDEUniqueness.initialLift_eq_of_projection_eq
+#check @LinearStochastic.BSDEUniqueness.decomposition_implies_fixedPoint
+#print axioms LinearStochastic.BSDEUniqueness.decomposition_implies_fixedPoint
+#check @LinearStochastic.BSDEUniqueness.decomposition_unique
+#print axioms LinearStochastic.BSDEUniqueness.decomposition_unique
+#check @LinearStochastic.BlockPolynomial.pair
+#print axioms LinearStochastic.BlockPolynomial.pair
+#check @LinearStochastic.BlockPolynomial.eval_pair
+#print axioms LinearStochastic.BlockPolynomial.eval_pair
+#check @LinearStochastic.BlockPolynomial.CoeffIndex
+#print axioms LinearStochastic.BlockPolynomial.CoeffIndex
+#check @LinearStochastic.BlockPolynomial.values
+#print axioms LinearStochastic.BlockPolynomial.values
+#check @LinearStochastic.BlockPolynomial.universal
+#print axioms LinearStochastic.BlockPolynomial.universal
+#check @LinearStochastic.BlockPolynomial.universal_eval
+#print axioms LinearStochastic.BlockPolynomial.universal_eval
+#check @LinearStochastic.BlockPolynomial.finite_entries_polynomial
+#print axioms LinearStochastic.BlockPolynomial.finite_entries_polynomial
+#check @LinearStochastic.BrownianBSDEUniqueness.global_unique
+#print axioms LinearStochastic.BrownianBSDEUniqueness.global_unique
+#check @LinearStochastic.BrownianBSDEUniqueness.usual_global_unique
+#print axioms LinearStochastic.BrownianBSDEUniqueness.usual_global_unique
+#check @LinearStochastic.BrownianBSDEUniqueness.exists_and_unique
+#print axioms LinearStochastic.BrownianBSDEUniqueness.exists_and_unique
+#check @LinearStochastic.BrownianControlClassification.classification
+#print axioms LinearStochastic.BrownianControlClassification.classification
+#check @LinearStochastic.BrownianControlRealization.approximate_path
+#print axioms LinearStochastic.BrownianControlRealization.approximate_path
+#check @LinearStochastic.BrownianDelayedEnergy.conditional_target
+#print axioms LinearStochastic.BrownianDelayedEnergy.conditional_target
+#check @LinearStochastic.BrownianDelayedEnergy.delayed_solution
+#print axioms LinearStochastic.BrownianDelayedEnergy.delayed_solution
+#check @LinearStochastic.BrownianDelayedEnergy.earlier
+#print axioms LinearStochastic.BrownianDelayedEnergy.earlier
+#check @LinearStochastic.BrownianDelayedEnergy.earlier_lt
+#print axioms LinearStochastic.BrownianDelayedEnergy.earlier_lt
+#check @LinearStochastic.BrownianDelayedEnergy.earlier_gap
+#print axioms LinearStochastic.BrownianDelayedEnergy.earlier_gap
+#check @LinearStochastic.BrownianDelayedEnergy.earlier_pos
+#print axioms LinearStochastic.BrownianDelayedEnergy.earlier_pos
+#check @LinearStochastic.BrownianDelayedEnergy.gap_tends_zero
+#print axioms LinearStochastic.BrownianDelayedEnergy.gap_tends_zero
+#check @LinearStochastic.BrownianDelayedEnergy.energy_at_earlier
+#print axioms LinearStochastic.BrownianDelayedEnergy.energy_at_earlier
+#check @LinearStochastic.BrownianDelayedEnergy.energy_diverges
+#print axioms LinearStochastic.BrownianDelayedEnergy.energy_diverges
+#check @LinearStochastic.BrownianDelayedEnergy.expected_energy_at_earlier
+#print axioms LinearStochastic.BrownianDelayedEnergy.expected_energy_at_earlier
+#check @LinearStochastic.BrownianDelayedEnergy.expected_energy_diverges
+#print axioms LinearStochastic.BrownianDelayedEnergy.expected_energy_diverges
+#check @LinearStochastic.BrownianDelayedEnergy.unbounded_approximation
+#print axioms LinearStochastic.BrownianDelayedEnergy.unbounded_approximation
+#check @LinearStochastic.BrownianDelayedTarget.continuous_scalar
+#print axioms LinearStochastic.BrownianDelayedTarget.continuous_scalar
+#check @LinearStochastic.BrownianDelayedTarget.target
+#print axioms LinearStochastic.BrownianDelayedTarget.target
+#check @LinearStochastic.BrownianDelayedTarget.target_measurable
+#print axioms LinearStochastic.BrownianDelayedTarget.target_measurable
+#check @LinearStochastic.BrownianDelayedTarget.target_norm_le
+#print axioms LinearStochastic.BrownianDelayedTarget.target_norm_le
+#check @LinearStochastic.BrownianDelayedTarget.target_coordinates
+#print axioms LinearStochastic.BrownianDelayedTarget.target_coordinates
+#check @LinearStochastic.BrownianDelayedTarget.continuous_target
+#print axioms LinearStochastic.BrownianDelayedTarget.continuous_target
+#check @LinearStochastic.BrownianDelayedTarget.target_terminal
+#print axioms LinearStochastic.BrownianDelayedTarget.target_terminal
+#check @LinearStochastic.BrownianDelayedTarget.delayed_tendsto
+#print axioms LinearStochastic.BrownianDelayedTarget.delayed_tendsto
+#check @LinearStochastic.BrownianExactNecessity.joint_surjective
+#print axioms LinearStochastic.BrownianExactNecessity.joint_surjective
+#check @LinearStochastic.BrownianExactNecessity.usual_joint_surjective
+#print axioms LinearStochastic.BrownianExactNecessity.usual_joint_surjective
+#check @LinearStochastic.BrownianExactTerminal.exact_terminal
+#print axioms LinearStochastic.BrownianExactTerminal.exact_terminal
+#check @LinearStochastic.BrownianExactTerminal.exact_of_exactNull
+#print axioms LinearStochastic.BrownianExactTerminal.exact_of_exactNull
+#check @LinearStochastic.BrownianGlobalBSDE.change_driver
+#print axioms LinearStochastic.BrownianGlobalBSDE.change_driver
+#check @LinearStochastic.BrownianGlobalBSDE.change_filtration
+#print axioms LinearStochastic.BrownianGlobalBSDE.change_filtration
+#check @LinearStochastic.BrownianGlobalBSDE.exists_global
+#print axioms LinearStochastic.BrownianGlobalBSDE.exists_global
+#check @LinearStochastic.BrownianGramianApproximation.delayed_reachable
+#print axioms LinearStochastic.BrownianGramianApproximation.delayed_reachable
+#check @LinearStochastic.BrownianGramianApproximation.approximate
+#print axioms LinearStochastic.BrownianGramianApproximation.approximate
+#check @LinearStochastic.BrownianGramianApproximation.matrix_approximate
+#print axioms LinearStochastic.BrownianGramianApproximation.matrix_approximate
+#check @LinearStochastic.BrownianInitialTrivial.natural_initial_constant
+#print axioms LinearStochastic.BrownianInitialTrivial.natural_initial_constant
+#check @LinearStochastic.BrownianInitialTrivial.usual_initial_constant
+#print axioms LinearStochastic.BrownianInitialTrivial.usual_initial_constant
+#check @LinearStochastic.BrownianInitialTrivial.vector_initial_constant
+#print axioms LinearStochastic.BrownianInitialTrivial.vector_initial_constant
+#check @LinearStochastic.BrownianRawDuality.raw_pairing
+#print axioms LinearStochastic.BrownianRawDuality.raw_pairing
+#check @LinearStochastic.BrownianRawDuality.raw_duality
+#print axioms LinearStochastic.BrownianRawDuality.raw_duality
+#check @LinearStochastic.BrownianRawDuality.usual_raw_duality
+#print axioms LinearStochastic.BrownianRawDuality.usual_raw_duality
+#check @LinearStochastic.CommonBrownianGlobal.change_driver
+#print axioms LinearStochastic.CommonBrownianGlobal.change_driver
+#check @LinearStochastic.CommonBrownianGlobal.exists_global
+#print axioms LinearStochastic.CommonBrownianGlobal.exists_global
+#check @LinearStochastic.CommonBrownianGlobal.global_unique
+#print axioms LinearStochastic.CommonBrownianGlobal.global_unique
+#check @LinearStochastic.CommonBrownianRepair.repaired
+#print axioms LinearStochastic.CommonBrownianRepair.repaired
+#check @LinearStochastic.CommonBrownianRepair.repaired_brownian
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_brownian
+#check @LinearStochastic.CommonBrownianRepair.repaired_continuous
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_continuous
+#check @LinearStochastic.CommonBrownianRepair.repaired_indistinguishable
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_indistinguishable
+#check @LinearStochastic.CommonBrownianRepair.repaired_paths_ae
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_paths_ae
+#check @LinearStochastic.CommonBrownianRepair.repaired_independent
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_independent
+#check @LinearStochastic.CommonBrownianRepair.repaired_measurable
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_measurable
+#check @LinearStochastic.CommonBrownianRepair.repaired_forward
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_forward
+#check @LinearStochastic.CommonBrownianRepair.repaired_pairForward
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_pairForward
+#check @LinearStochastic.CommonBrownianRepair.repaired_integral
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_integral
+#check @LinearStochastic.CommonBrownianRepair.repaired_process
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_process
+#check @LinearStochastic.CommonBrownianRepair.repaired_sumIntegral
+#print axioms LinearStochastic.CommonBrownianRepair.repaired_sumIntegral
+#check @LinearStochastic.CommonBrownianSections.sections_congr
+#print axioms LinearStochastic.CommonBrownianSections.sections_congr
+#check @LinearStochastic.CommonBrownianSections.ofSections
+#print axioms LinearStochastic.CommonBrownianSections.ofSections
+#check @LinearStochastic.CommonBrownianSections.ofSections_class
+#print axioms LinearStochastic.CommonBrownianSections.ofSections_class
+#check @LinearStochastic.CommonBrownianSections.terminal_ofSections
+#print axioms LinearStochastic.CommonBrownianSections.terminal_ofSections
+#check @LinearStochastic.CommonClosedLoopSolution.matrixAction_add
+#print axioms LinearStochastic.CommonClosedLoopSolution.matrixAction_add
+#check @LinearStochastic.CommonClosedLoopSolution.matrixAction_mul
+#print axioms LinearStochastic.CommonClosedLoopSolution.matrixAction_mul
+#check @LinearStochastic.CommonClosedLoopSolution.matrixAction_zero
+#print axioms LinearStochastic.CommonClosedLoopSolution.matrixAction_zero
+#check @LinearStochastic.CommonClosedLoopSolution.closed_loop_input
+#print axioms LinearStochastic.CommonClosedLoopSolution.closed_loop_input
+#check @LinearStochastic.CommonClosedLoopSolution.closeLoop
+#print axioms LinearStochastic.CommonClosedLoopSolution.closeLoop
+#check @LinearStochastic.CommonConditionalContinuity.conditional
+#print axioms LinearStochastic.CommonConditionalContinuity.conditional
+#check @LinearStochastic.CommonConditionalContinuity.conditional_of_measurable
+#print axioms LinearStochastic.CommonConditionalContinuity.conditional_of_measurable
+#check @LinearStochastic.CommonConditionalContinuity.continuous_conditional_of_represented
+#print axioms LinearStochastic.CommonConditionalContinuity.continuous_conditional_of_represented
+#check @LinearStochastic.CommonContinuousUniqueness.path_eq_of_time_ae
+#print axioms LinearStochastic.CommonContinuousUniqueness.path_eq_of_time_ae
+#check @LinearStochastic.CommonContinuousUniqueness.indistinguishable_of_spacetime_ae
+#print axioms LinearStochastic.CommonContinuousUniqueness.indistinguishable_of_spacetime_ae
+#check @LinearStochastic.CommonDelayedSwitchingUniqueness.same_control
+#print axioms LinearStochastic.CommonDelayedSwitchingUniqueness.same_control
+#check @LinearStochastic.CommonDelayedSwitchingUniqueness.inside
+#print axioms LinearStochastic.CommonDelayedSwitchingUniqueness.inside
+#check @LinearStochastic.CommonDelayedSwitchingUniqueness.at_mesh
+#print axioms LinearStochastic.CommonDelayedSwitchingUniqueness.at_mesh
+#check @LinearStochastic.CommonDelayedSwitchingUniqueness.unique
+#print axioms LinearStochastic.CommonDelayedSwitchingUniqueness.unique
+#check @LinearStochastic.CommonDirectionBand.band_mem_range
+#print axioms LinearStochastic.CommonDirectionBand.band_mem_range
+#check @LinearStochastic.CommonDirectionBand.factored_band_mem_range
+#print axioms LinearStochastic.CommonDirectionBand.factored_band_mem_range
+#check @LinearStochastic.CommonDirectionIntegral.simple_direction
+#print axioms LinearStochastic.CommonDirectionIntegral.simple_direction
+#check @LinearStochastic.CommonDirectionIntegral.simple_direction_Lp
+#print axioms LinearStochastic.CommonDirectionIntegral.simple_direction_Lp
+#check @LinearStochastic.CommonDirectionIntegral.integral_direction
+#print axioms LinearStochastic.CommonDirectionIntegral.integral_direction
+#check @LinearStochastic.CommonDoleansBand.natural_le
+#print axioms LinearStochastic.CommonDoleansBand.natural_le
+#check @LinearStochastic.CommonDoleansBand.band_mem_range
+#print axioms LinearStochastic.CommonDoleansBand.band_mem_range
+#check @LinearStochastic.CommonDriftModification.drift_norm_le_iSup_Iic
+#print axioms LinearStochastic.CommonDriftModification.drift_norm_le_iSup_Iic
+#check @LinearStochastic.CommonDriftModification.driftSimpleProcess_neg
+#print axioms LinearStochastic.CommonDriftModification.driftSimpleProcess_neg
+#check @LinearStochastic.CommonDriftModification.driftSimpleProcess_sub
+#print axioms LinearStochastic.CommonDriftModification.driftSimpleProcess_sub
+#check @LinearStochastic.CommonDriftModification.simpleAssembly_T_norm_sq
+#print axioms LinearStochastic.CommonDriftModification.simpleAssembly_T_norm_sq
+#check @LinearStochastic.CommonDriftModification.drift_iSup_sq_le
+#print axioms LinearStochastic.CommonDriftModification.drift_iSup_sq_le
+#check @LinearStochastic.CommonDriftModification.drift_maximal_prob
+#print axioms LinearStochastic.CommonDriftModification.drift_maximal_prob
+#check @LinearStochastic.CommonDriftModification.drift_summable_maximal_tail
+#print axioms LinearStochastic.CommonDriftModification.drift_summable_maximal_tail
+#check @LinearStochastic.CommonDriftModification.drift_ae_eventually_sup_lt
+#print axioms LinearStochastic.CommonDriftModification.drift_ae_eventually_sup_lt
+#check @LinearStochastic.CommonDriftModification.driftContinuousMod_tendsto
+#print axioms LinearStochastic.CommonDriftModification.driftContinuousMod_tendsto
+#check @LinearStochastic.CommonDriftModification.driftProcessAssembled_coeFn
+#print axioms LinearStochastic.CommonDriftModification.driftProcessAssembled_coeFn
+#check @LinearStochastic.CommonDriftModification.drift_slice_energy_eq
+#print axioms LinearStochastic.CommonDriftModification.drift_slice_energy_eq
+#check @LinearStochastic.CommonDriftModification.drift_slice_sq_integrable
+#print axioms LinearStochastic.CommonDriftModification.drift_slice_sq_integrable
+#check @LinearStochastic.CommonDriftModification.driftContinuousMod_eq_setIntegral
+#print axioms LinearStochastic.CommonDriftModification.driftContinuousMod_eq_setIntegral
+#check @LinearStochastic.CommonDriftPathwise.drift_consecutive_norm_le
+#print axioms LinearStochastic.CommonDriftPathwise.drift_consecutive_norm_le
+#check @LinearStochastic.CommonDriftPathwise.driftContinuousMod_continuousOn
+#print axioms LinearStochastic.CommonDriftPathwise.driftContinuousMod_continuousOn
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess_continuous
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess_continuous
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess_stronglyAdapted
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess_stronglyAdapted
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess_isStronglyPredictable
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess_isStronglyPredictable
+#check @LinearStochastic.CommonDriftPredictable.driftContinuousMod
+#print axioms LinearStochastic.CommonDriftPredictable.driftContinuousMod
+#check @LinearStochastic.CommonDriftPredictable.driftContinuousMod_isStronglyPredictable
+#print axioms LinearStochastic.CommonDriftPredictable.driftContinuousMod_isStronglyPredictable
+#check @LinearStochastic.CommonDriftPredictable.driftContinuousMod_stronglyAdapted
+#print axioms LinearStochastic.CommonDriftPredictable.driftContinuousMod_stronglyAdapted
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess_eq_setIntegral
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess_eq_setIntegral
+#check @LinearStochastic.CommonDriftPredictable.memLp_uncurry_driftSimpleProcess
+#print axioms LinearStochastic.CommonDriftPredictable.memLp_uncurry_driftSimpleProcess
+#check @LinearStochastic.CommonDriftPredictable.memLp_slice
+#print axioms LinearStochastic.CommonDriftPredictable.memLp_slice
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess_sq_le
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess_sq_le
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess_add
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess_add
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcess_smul
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcess_smul
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcessLp
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcessLp
+#check @LinearStochastic.CommonDriftPredictable.driftSimpleProcessLp_norm_le
+#print axioms LinearStochastic.CommonDriftPredictable.driftSimpleProcessLp_norm_le
+#check @LinearStochastic.CommonDriftPredictable.driftProcessLM
+#print axioms LinearStochastic.CommonDriftPredictable.driftProcessLM
+#check @LinearStochastic.CommonDriftPredictable.driftProcessAssembled
+#print axioms LinearStochastic.CommonDriftPredictable.driftProcessAssembled
+#check @LinearStochastic.CommonDriftPredictable.driftProcessAssembled_simpleAssembly
+#print axioms LinearStochastic.CommonDriftPredictable.driftProcessAssembled_simpleAssembly
+#check @LinearStochastic.CommonDriftPredictable.driftProcessAssembled_norm_le
+#print axioms LinearStochastic.CommonDriftPredictable.driftProcessAssembled_norm_le
+#check @LinearStochastic.CommonDriftRestart.primitive_restriction
+#print axioms LinearStochastic.CommonDriftRestart.primitive_restriction
+#check @LinearStochastic.CommonDriftRestart.primitive_shift
+#print axioms LinearStochastic.CommonDriftRestart.primitive_shift
+#check @LinearStochastic.CommonDriftRestart.primitive_restart
+#print axioms LinearStochastic.CommonDriftRestart.primitive_restart
+#check @LinearStochastic.CommonDriftS2.rawDrift
+#print axioms LinearStochastic.CommonDriftS2.rawDrift
+#check @LinearStochastic.CommonDriftS2.integrand_product_memLp
+#print axioms LinearStochastic.CommonDriftS2.integrand_product_memLp
+#check @LinearStochastic.CommonDriftS2.integrand_slice_memLp
+#print axioms LinearStochastic.CommonDriftS2.integrand_slice_memLp
+#check @LinearStochastic.CommonDriftS2.rawDrift_stronglyAdapted
+#print axioms LinearStochastic.CommonDriftS2.rawDrift_stronglyAdapted
+#check @LinearStochastic.CommonDriftS2.rawDrift_continuous
+#print axioms LinearStochastic.CommonDriftS2.rawDrift_continuous
+#check @LinearStochastic.CommonDriftS2.pathSup_aestronglyMeasurable_ae
+#print axioms LinearStochastic.CommonDriftS2.pathSup_aestronglyMeasurable_ae
+#check @LinearStochastic.CommonDriftS2.rawDrift_sq_bound
+#print axioms LinearStochastic.CommonDriftS2.rawDrift_sq_bound
+#check @LinearStochastic.CommonDriftS2.pathSup_sq_bound
+#print axioms LinearStochastic.CommonDriftS2.pathSup_sq_bound
+#check @LinearStochastic.CommonDriftS2.integrable_pathSup_sq
+#print axioms LinearStochastic.CommonDriftS2.integrable_pathSup_sq
+#check @LinearStochastic.CommonDriftS2.rawDrift_S2
+#print axioms LinearStochastic.CommonDriftS2.rawDrift_S2
+#check @LinearStochastic.CommonDriftS2.indistinguishable_on_Iic
+#print axioms LinearStochastic.CommonDriftS2.indistinguishable_on_Iic
+#check @LinearStochastic.CommonDriftS2.pathSup_congr
+#print axioms LinearStochastic.CommonDriftS2.pathSup_congr
+#check @LinearStochastic.CommonDriftS2.driftContinuousMod_indistinguishable
+#print axioms LinearStochastic.CommonDriftS2.driftContinuousMod_indistinguishable
+#check @LinearStochastic.CommonDriftS2.driftContinuousMod_S2
+#print axioms LinearStochastic.CommonDriftS2.driftContinuousMod_S2
+#check @LinearStochastic.CommonFiltrationCompletion.indep_sup_nulls
+#print axioms LinearStochastic.CommonFiltrationCompletion.indep_sup_nulls
+#check @LinearStochastic.CommonFiltrationCompletion.indep_comap_congr
+#print axioms LinearStochastic.CommonFiltrationCompletion.indep_comap_congr
+#check @LinearStochastic.CommonFiltrationCompletion.forwardIndependent_sup_nulls
+#print axioms LinearStochastic.CommonFiltrationCompletion.forwardIndependent_sup_nulls
+#check @LinearStochastic.CommonFiltrationCompletion.nullsAlg_le_complete
+#print axioms LinearStochastic.CommonFiltrationCompletion.nullsAlg_le_complete
+#check @LinearStochastic.CommonFiltrationCompletion.sup_nulls_eq
+#print axioms LinearStochastic.CommonFiltrationCompletion.sup_nulls_eq
+#check @LinearStochastic.CommonFiltrationCompletion.measurableSet_of_ae_eq
+#print axioms LinearStochastic.CommonFiltrationCompletion.measurableSet_of_ae_eq
+#check @LinearStochastic.CommonFiltrationCompletion.measurable_of_ae_eq
+#print axioms LinearStochastic.CommonFiltrationCompletion.measurable_of_ae_eq
+#check @LinearStochastic.CommonFiltrationCompletion.forwardIndependent_continuous_mk
+#print axioms LinearStochastic.CommonFiltrationCompletion.forwardIndependent_continuous_mk
+#check @LinearStochastic.CommonFiltrationCompletion.exists_continuous_brownian_version
+#print axioms LinearStochastic.CommonFiltrationCompletion.exists_continuous_brownian_version
+#check @LinearStochastic.CommonFiltrationCompletion.exists_s2_on_complete_filtration
+#print axioms LinearStochastic.CommonFiltrationCompletion.exists_s2_on_complete_filtration
+#check @LinearStochastic.CommonFiltrationTransport.integrandInclusion
+#print axioms LinearStochastic.CommonFiltrationTransport.integrandInclusion
+#check @LinearStochastic.CommonFiltrationTransport.simpleLift
+#print axioms LinearStochastic.CommonFiltrationTransport.simpleLift
+#check @LinearStochastic.CommonFiltrationTransport.simpleLift_coe
+#print axioms LinearStochastic.CommonFiltrationTransport.simpleLift_coe
+#check @LinearStochastic.CommonFiltrationTransport.boundedLift
+#print axioms LinearStochastic.CommonFiltrationTransport.boundedLift
+#check @LinearStochastic.CommonFiltrationTransport.inclusion_simple
+#print axioms LinearStochastic.CommonFiltrationTransport.inclusion_simple
+#check @LinearStochastic.CommonFiltrationTransport.ito_simple_lift
+#print axioms LinearStochastic.CommonFiltrationTransport.ito_simple_lift
+#check @LinearStochastic.CommonFiltrationTransport.integral_inclusion
+#print axioms LinearStochastic.CommonFiltrationTransport.integral_inclusion
+#check @LinearStochastic.CommonForwardBounds.inputBound
+#print axioms LinearStochastic.CommonForwardBounds.inputBound
+#check @LinearStochastic.CommonForwardBounds.inputBound_nonneg
+#print axioms LinearStochastic.CommonForwardBounds.inputBound_nonneg
+#check @LinearStochastic.CommonForwardBounds.initial_eq_lift
+#print axioms LinearStochastic.CommonForwardBounds.initial_eq_lift
+#check @LinearStochastic.CommonForwardBounds.initial_difference
+#print axioms LinearStochastic.CommonForwardBounds.initial_difference
+#check @LinearStochastic.CommonForwardBounds.picard_data_difference
+#print axioms LinearStochastic.CommonForwardBounds.picard_data_difference
+#check @LinearStochastic.CommonForwardBounds.fixedPoint_difference
+#print axioms LinearStochastic.CommonForwardBounds.fixedPoint_difference
+#check @LinearStochastic.CommonForwardBounds.solution_difference
+#print axioms LinearStochastic.CommonForwardBounds.solution_difference
+#check @LinearStochastic.CommonForwardGlobalBound.meshBound
+#print axioms LinearStochastic.CommonForwardGlobalBound.meshBound
+#check @LinearStochastic.CommonForwardGlobalBound.meshBound_nonneg
+#print axioms LinearStochastic.CommonForwardGlobalBound.meshBound_nonneg
+#check @LinearStochastic.CommonForwardGlobalBound.pi_contraction
+#print axioms LinearStochastic.CommonForwardGlobalBound.pi_contraction
+#check @LinearStochastic.CommonForwardGlobalBound.restriction_norm
+#print axioms LinearStochastic.CommonForwardGlobalBound.restriction_norm
+#check @LinearStochastic.CommonForwardGlobalBound.grid_endpoint_difference
+#print axioms LinearStochastic.CommonForwardGlobalBound.grid_endpoint_difference
+#check @LinearStochastic.CommonForwardGlobalBound.endpoint_continuous_dependence
+#print axioms LinearStochastic.CommonForwardGlobalBound.endpoint_continuous_dependence
+#check @LinearStochastic.CommonForwardGlobalBound.brownian_endpoint_continuous_dependence
+#print axioms LinearStochastic.CommonForwardGlobalBound.brownian_endpoint_continuous_dependence
+#check @LinearStochastic.CommonForwardTerminal.terminalBound
+#print axioms LinearStochastic.CommonForwardTerminal.terminalBound
+#check @LinearStochastic.CommonForwardTerminal.terminalBound_nonneg
+#print axioms LinearStochastic.CommonForwardTerminal.terminalBound_nonneg
+#check @LinearStochastic.CommonForwardTerminal.dynamics
+#print axioms LinearStochastic.CommonForwardTerminal.dynamics
+#check @LinearStochastic.CommonForwardTerminal.dynamics_sub
+#print axioms LinearStochastic.CommonForwardTerminal.dynamics_sub
+#check @LinearStochastic.CommonForwardTerminal.dynamics_norm
+#print axioms LinearStochastic.CommonForwardTerminal.dynamics_norm
+#check @LinearStochastic.CommonForwardTerminal.terminalValue
+#print axioms LinearStochastic.CommonForwardTerminal.terminalValue
+#check @LinearStochastic.CommonForwardTerminal.terminalValue_coordinate
+#print axioms LinearStochastic.CommonForwardTerminal.terminalValue_coordinate
+#check @LinearStochastic.CommonForwardTerminal.terminalValue_difference
+#print axioms LinearStochastic.CommonForwardTerminal.terminalValue_difference
+#check @LinearStochastic.CommonForwardTerminal.terminalValue_ae
+#print axioms LinearStochastic.CommonForwardTerminal.terminalValue_ae
+#check @LinearStochastic.CommonForwardTerminal.solution_terminal
+#print axioms LinearStochastic.CommonForwardTerminal.solution_terminal
+#check @LinearStochastic.CommonForwardTerminal.endpoint
+#print axioms LinearStochastic.CommonForwardTerminal.endpoint
+#check @LinearStochastic.CommonForwardTerminal.endpoint_eq
+#print axioms LinearStochastic.CommonForwardTerminal.endpoint_eq
+#check @LinearStochastic.CommonForwardTerminal.localBound
+#print axioms LinearStochastic.CommonForwardTerminal.localBound
+#check @LinearStochastic.CommonForwardTerminal.one_le_localBound
+#print axioms LinearStochastic.CommonForwardTerminal.one_le_localBound
+#check @LinearStochastic.CommonForwardTerminal.local_endpoint_difference
+#print axioms LinearStochastic.CommonForwardTerminal.local_endpoint_difference
+#check @LinearStochastic.CommonGlobalExistence.exists_grid
+#print axioms LinearStochastic.CommonGlobalExistence.exists_grid
+#check @LinearStochastic.CommonGlobalExistence.exists_global
+#print axioms LinearStochastic.CommonGlobalExistence.exists_global
+#check @LinearStochastic.CommonGlobalExistence.exists_global_progressive_control
+#print axioms LinearStochastic.CommonGlobalExistence.exists_global_progressive_control
+#check @LinearStochastic.CommonGlobalS2Bound.meshBound
+#print axioms LinearStochastic.CommonGlobalS2Bound.meshBound
+#check @LinearStochastic.CommonGlobalS2Bound.meshBound_nonneg
+#print axioms LinearStochastic.CommonGlobalS2Bound.meshBound_nonneg
+#check @LinearStochastic.CommonGlobalS2Bound.boundConstant
+#print axioms LinearStochastic.CommonGlobalS2Bound.boundConstant
+#check @LinearStochastic.CommonGlobalS2Bound.boundConstant_nonneg
+#print axioms LinearStochastic.CommonGlobalS2Bound.boundConstant_nonneg
+#check @LinearStochastic.CommonGlobalS2Bound.grid_bound
+#print axioms LinearStochastic.CommonGlobalS2Bound.grid_bound
+#check @LinearStochastic.CommonGlobalS2Bound.explicit_bound
+#print axioms LinearStochastic.CommonGlobalS2Bound.explicit_bound
+#check @LinearStochastic.CommonGlobalS2Bound.full_bound
+#print axioms LinearStochastic.CommonGlobalS2Bound.full_bound
+#check @LinearStochastic.CommonGlobalS2Bound.brownian_explicit_bound
+#print axioms LinearStochastic.CommonGlobalS2Bound.brownian_explicit_bound
+#check @LinearStochastic.CommonGlobalS2Bound.brownian_full_bound
+#print axioms LinearStochastic.CommonGlobalS2Bound.brownian_full_bound
+#check @LinearStochastic.CommonGlobalUniqueness.unique_grid
+#print axioms LinearStochastic.CommonGlobalUniqueness.unique_grid
+#check @LinearStochastic.CommonGlobalUniqueness.global_unique
+#print axioms LinearStochastic.CommonGlobalUniqueness.global_unique
+#check @LinearStochastic.CommonH2Extension.left
+#print axioms LinearStochastic.CommonH2Extension.left
+#check @LinearStochastic.CommonH2Extension.right
+#print axioms LinearStochastic.CommonH2Extension.right
+#check @LinearStochastic.CommonH2Extension.paste_congr_ae
+#print axioms LinearStochastic.CommonH2Extension.paste_congr_ae
+#check @LinearStochastic.CommonH2Extension.left_ae
+#print axioms LinearStochastic.CommonH2Extension.left_ae
+#check @LinearStochastic.CommonH2Extension.right_ae
+#print axioms LinearStochastic.CommonH2Extension.right_ae
+#check @LinearStochastic.CommonH2Extension.castH2
+#print axioms LinearStochastic.CommonH2Extension.castH2
+#check @LinearStochastic.CommonH2Extension.castH2_apply
+#print axioms LinearStochastic.CommonH2Extension.castH2_apply
+#check @LinearStochastic.CommonH2Extension.extendShift
+#print axioms LinearStochastic.CommonH2Extension.extendShift
+#check @LinearStochastic.CommonH2Extension.extendShift_norm
+#print axioms LinearStochastic.CommonH2Extension.extendShift_norm
+#check @LinearStochastic.CommonH2Extension.extendShift_ae
+#print axioms LinearStochastic.CommonH2Extension.extendShift_ae
+#check @LinearStochastic.CommonH2Extension.shift_extendShift
+#print axioms LinearStochastic.CommonH2Extension.shift_extendShift
+#check @LinearStochastic.CommonH2Extension.restriction_extendShift_zero
+#print axioms LinearStochastic.CommonH2Extension.restriction_extendShift_zero
+#check @LinearStochastic.CommonH2Extension.restriction_extendShift
+#print axioms LinearStochastic.CommonH2Extension.restriction_extendShift
+#check @LinearStochastic.CommonH2Paste.sub_interval
+#print axioms LinearStochastic.CommonH2Paste.sub_interval
+#check @LinearStochastic.CommonH2Paste.time_split
+#print axioms LinearStochastic.CommonH2Paste.time_split
+#check @LinearStochastic.CommonH2Paste.raw_memLp
+#print axioms LinearStochastic.CommonH2Paste.raw_memLp
+#check @LinearStochastic.CommonH2Paste.pasteH2
+#print axioms LinearStochastic.CommonH2Paste.pasteH2
+#check @LinearStochastic.CommonH2Paste.pasteH2_ae
+#print axioms LinearStochastic.CommonH2Paste.pasteH2_ae
+#check @LinearStochastic.CommonH2Paste.restriction_pasteH2
+#print axioms LinearStochastic.CommonH2Paste.restriction_pasteH2
+#check @LinearStochastic.CommonH2Paste.shift_pasteH2
+#print axioms LinearStochastic.CommonH2Paste.shift_pasteH2
+#check @LinearStochastic.CommonH2Split.norm_sq_ambient
+#print axioms LinearStochastic.CommonH2Split.norm_sq_ambient
+#check @LinearStochastic.CommonH2Split.norm_sq_split
+#print axioms LinearStochastic.CommonH2Split.norm_sq_split
+#check @LinearStochastic.CommonH2Split.ext_pieces
+#print axioms LinearStochastic.CommonH2Split.ext_pieces
+#check @LinearStochastic.CommonH2Split.paste_norm_sq
+#print axioms LinearStochastic.CommonH2Split.paste_norm_sq
+#check @LinearStochastic.CommonH2Split.paste_add
+#print axioms LinearStochastic.CommonH2Split.paste_add
+#check @LinearStochastic.CommonH2Split.paste_smul
+#print axioms LinearStochastic.CommonH2Split.paste_smul
+#check @LinearStochastic.CommonHorizonClamp.clamp_value_apply
+#print axioms LinearStochastic.CommonHorizonClamp.clamp_value_apply
+#check @LinearStochastic.CommonHorizonClamp.clampSP
+#print axioms LinearStochastic.CommonHorizonClamp.clampSP
+#check @LinearStochastic.CommonHorizonClamp.clampSP_value_sum
+#print axioms LinearStochastic.CommonHorizonClamp.clampSP_value_sum
+#check @LinearStochastic.CommonHorizonClamp.clampSP_itoSimpleProcess
+#print axioms LinearStochastic.CommonHorizonClamp.clampSP_itoSimpleProcess
+#check @LinearStochastic.CommonHorizonClamp.clampSP_apply
+#print axioms LinearStochastic.CommonHorizonClamp.clampSP_apply
+#check @LinearStochastic.CommonHorizonClamp.clampSP_simpleProcessL2_T
+#print axioms LinearStochastic.CommonHorizonClamp.clampSP_simpleProcessL2_T
+#check @LinearStochastic.CommonHorizonClamp.itoProcessCLM_simpleProcessL2_T
+#print axioms LinearStochastic.CommonHorizonClamp.itoProcessCLM_simpleProcessL2_T
+#check @LinearStochastic.CommonHorizonRestriction.monoMeasureLp
+#print axioms LinearStochastic.CommonHorizonRestriction.monoMeasureLp
+#check @LinearStochastic.CommonHorizonRestriction.monoMeasureLp_coeFn
+#print axioms LinearStochastic.CommonHorizonRestriction.monoMeasureLp_coeFn
+#check @LinearStochastic.CommonHorizonRestriction.measure_le
+#print axioms LinearStochastic.CommonHorizonRestriction.measure_le
+#check @LinearStochastic.CommonHorizonRestriction.restriction
+#print axioms LinearStochastic.CommonHorizonRestriction.restriction
+#check @LinearStochastic.CommonHorizonRestriction.restriction_ae
+#print axioms LinearStochastic.CommonHorizonRestriction.restriction_ae
+#check @LinearStochastic.CommonHorizonRestriction.restriction_simple
+#print axioms LinearStochastic.CommonHorizonRestriction.restriction_simple
+#check @LinearStochastic.CommonHorizonRestriction.process_restriction
+#print axioms LinearStochastic.CommonHorizonRestriction.process_restriction
+#check @LinearStochastic.CommonHorizonRestriction.terminal_restriction
+#print axioms LinearStochastic.CommonHorizonRestriction.terminal_restriction
+#check @LinearStochastic.CommonInitialPredictable.initial_predictable
+#print axioms LinearStochastic.CommonInitialPredictable.initial_predictable
+#check @LinearStochastic.CommonInitialPredictable.initial_memLp
+#print axioms LinearStochastic.CommonInitialPredictable.initial_memLp
+#check @LinearStochastic.CommonInitialPredictable.initialH2
+#print axioms LinearStochastic.CommonInitialPredictable.initialH2
+#check @LinearStochastic.CommonInitialPredictable.initialH2_ae
+#print axioms LinearStochastic.CommonInitialPredictable.initialH2_ae
+#check @LinearStochastic.CommonInitialPredictable.exists_unique_initial_fixedPoint
+#print axioms LinearStochastic.CommonInitialPredictable.exists_unique_initial_fixedPoint
+#check @LinearStochastic.CommonIntegralPaste.IntegralEquation
+#print axioms LinearStochastic.CommonIntegralPaste.IntegralEquation
+#check @LinearStochastic.CommonIntegralPaste.paste_equation
+#print axioms LinearStochastic.CommonIntegralPaste.paste_equation
+#check @LinearStochastic.CommonIntegralRestriction.restrict_equation
+#print axioms LinearStochastic.CommonIntegralRestriction.restrict_equation
+#check @LinearStochastic.CommonIntegralRestriction.shift_equation
+#print axioms LinearStochastic.CommonIntegralRestriction.shift_equation
+#check @LinearStochastic.CommonIntegralS2Bound.energy
+#print axioms LinearStochastic.CommonIntegralS2Bound.energy
+#check @LinearStochastic.CommonIntegralS2Bound.rawDrift_norm
+#print axioms LinearStochastic.CommonIntegralS2Bound.rawDrift_norm
+#check @LinearStochastic.CommonIntegralS2Bound.drift_norm
+#print axioms LinearStochastic.CommonIntegralS2Bound.drift_norm
+#check @LinearStochastic.CommonIntegralS2Bound.ito_norm
+#print axioms LinearStochastic.CommonIntegralS2Bound.ito_norm
+#check @LinearStochastic.CommonIntegrandSupport.ae_trim_of_measurable
+#print axioms LinearStochastic.CommonIntegrandSupport.ae_trim_of_measurable
+#check @LinearStochastic.CommonIntegrandSupport.inclusion_vanishes_before
+#print axioms LinearStochastic.CommonIntegrandSupport.inclusion_vanishes_before
+#check @LinearStochastic.CommonIntegrandSupport.inclusion_vanishes_after
+#print axioms LinearStochastic.CommonIntegrandSupport.inclusion_vanishes_after
+#check @LinearStochastic.CommonItoCLM.timeMeasure_T
+#print axioms LinearStochastic.CommonItoCLM.timeMeasure_T
+#check @LinearStochastic.CommonItoCLM.trimMeasure_T
+#print axioms LinearStochastic.CommonItoCLM.trimMeasure_T
+#check @LinearStochastic.CommonItoCLM.predictableRect
+#print axioms LinearStochastic.CommonItoCLM.predictableRect
+#check @LinearStochastic.CommonItoCLM.isPiSystem_predictableRect
+#print axioms LinearStochastic.CommonItoCLM.isPiSystem_predictableRect
+#check @LinearStochastic.CommonItoCLM.generateFrom_predictableRect
+#print axioms LinearStochastic.CommonItoCLM.generateFrom_predictableRect
+#check @LinearStochastic.CommonItoCLM.trimMeasure_T_eq_restrict
+#print axioms LinearStochastic.CommonItoCLM.trimMeasure_T_eq_restrict
+#check @LinearStochastic.CommonItoCLM.ae_fst_mem_Ioc_trimMeasure_T
+#print axioms LinearStochastic.CommonItoCLM.ae_fst_mem_Ioc_trimMeasure_T
+#check @LinearStochastic.CommonItoCLM.memLp_uncurry_trim_T
+#print axioms LinearStochastic.CommonItoCLM.memLp_uncurry_trim_T
+#check @LinearStochastic.CommonItoCLM.simpleProcessL2_T
+#print axioms LinearStochastic.CommonItoCLM.simpleProcessL2_T
+#check @LinearStochastic.CommonItoCLM.TBoundedSP
+#print axioms LinearStochastic.CommonItoCLM.TBoundedSP
+#check @LinearStochastic.CommonItoCLM.uncurry_eq_zero_of_lt
+#print axioms LinearStochastic.CommonItoCLM.uncurry_eq_zero_of_lt
+#check @LinearStochastic.CommonItoCLM.eLpNorm_uncurry_trim_T_eq_trim
+#print axioms LinearStochastic.CommonItoCLM.eLpNorm_uncurry_trim_T_eq_trim
+#check @LinearStochastic.CommonItoCLM.simpleProcessL2_T_norm_eq
+#print axioms LinearStochastic.CommonItoCLM.simpleProcessL2_T_norm_eq
+#check @LinearStochastic.CommonItoCLM.simpleAssembly_T
+#print axioms LinearStochastic.CommonItoCLM.simpleAssembly_T
+#check @LinearStochastic.CommonItoCLM.itoAssembly_T
+#print axioms LinearStochastic.CommonItoCLM.itoAssembly_T
+#check @LinearStochastic.CommonItoCLM.assembly_isometry_T
+#print axioms LinearStochastic.CommonItoCLM.assembly_isometry_T
+#check @LinearStochastic.CommonItoCLM.setIntegral_eq_zero_of_orthogonal_pred
+#print axioms LinearStochastic.CommonItoCLM.setIntegral_eq_zero_of_orthogonal_pred
+#check @LinearStochastic.CommonItoCLM.iocSP_T
+#print axioms LinearStochastic.CommonItoCLM.iocSP_T
+#check @LinearStochastic.CommonItoCLM.uncurry_iocSP_T_eq
+#print axioms LinearStochastic.CommonItoCLM.uncurry_iocSP_T_eq
+#check @LinearStochastic.CommonItoCLM.inner_simpleAssembly_T_iocSP_T
+#print axioms LinearStochastic.CommonItoCLM.inner_simpleAssembly_T_iocSP_T
+#check @LinearStochastic.CommonItoCLM.setIntegral_eq_setIntegral_inter_supp
+#print axioms LinearStochastic.CommonItoCLM.setIntegral_eq_setIntegral_inter_supp
+#check @LinearStochastic.CommonItoCLM.simpleAssembly_T_denseRange
+#print axioms LinearStochastic.CommonItoCLM.simpleAssembly_T_denseRange
+#check @LinearStochastic.CommonItoCLM.itoIntegralCLM_T
+#print axioms LinearStochastic.CommonItoCLM.itoIntegralCLM_T
+#check @LinearStochastic.CommonItoCLM.itoIntegralCLM_T_simpleAssembly_T
+#print axioms LinearStochastic.CommonItoCLM.itoIntegralCLM_T_simpleAssembly_T
+#check @LinearStochastic.CommonItoCLM.itoIntegralCLM_T_norm
+#print axioms LinearStochastic.CommonItoCLM.itoIntegralCLM_T_norm
+#check @LinearStochastic.CommonItoCLM.itoIntegralIsometry_T
+#print axioms LinearStochastic.CommonItoCLM.itoIntegralIsometry_T
+#check @LinearStochastic.CommonItoCLM.itoIntegralCLM_T_inner
+#print axioms LinearStochastic.CommonItoCLM.itoIntegralCLM_T_inner
+#check @LinearStochastic.CommonItoContinuous.itoSimpleProcess_pathContinuous
+#print axioms LinearStochastic.CommonItoContinuous.itoSimpleProcess_pathContinuous
+#check @LinearStochastic.CommonItoContinuous.itoSimpleProcess_maximal_weak
+#print axioms LinearStochastic.CommonItoContinuous.itoSimpleProcess_maximal_weak
+#check @LinearStochastic.CommonItoContinuous.itoSimpleProcess_maximal_prob
+#print axioms LinearStochastic.CommonItoContinuous.itoSimpleProcess_maximal_prob
+#check @LinearStochastic.CommonItoContinuous.approxSeq
+#print axioms LinearStochastic.CommonItoContinuous.approxSeq
+#check @LinearStochastic.CommonItoContinuous.itoSimpleProcess_sub
+#print axioms LinearStochastic.CommonItoContinuous.itoSimpleProcess_sub
+#check @LinearStochastic.CommonItoContinuous.summable_maximal_tail
+#print axioms LinearStochastic.CommonItoContinuous.summable_maximal_tail
+#check @LinearStochastic.CommonItoContinuous.ae_eventually_sup_lt
+#print axioms LinearStochastic.CommonItoContinuous.ae_eventually_sup_lt
+#check @LinearStochastic.CommonItoContinuous.norm_le_iSup_Iic
+#print axioms LinearStochastic.CommonItoContinuous.norm_le_iSup_Iic
+#check @LinearStochastic.CommonItoContinuous.itoContinuousMod
+#print axioms LinearStochastic.CommonItoContinuous.itoContinuousMod
+#check @LinearStochastic.CommonItoContinuous.itoContinuousMod_tendsto
+#print axioms LinearStochastic.CommonItoContinuous.itoContinuousMod_tendsto
+#check @LinearStochastic.CommonItoContinuous.itoContinuousMod_modification
+#print axioms LinearStochastic.CommonItoContinuous.itoContinuousMod_modification
+#check @LinearStochastic.CommonItoContinuous.consecutive_norm_le
+#print axioms LinearStochastic.CommonItoContinuous.consecutive_norm_le
+#check @LinearStochastic.CommonItoContinuous.itoContinuousMod_continuousOn
+#print axioms LinearStochastic.CommonItoContinuous.itoContinuousMod_continuousOn
+#check @LinearStochastic.CommonItoContinuous.exists_continuous_modification_itoProcess
+#print axioms LinearStochastic.CommonItoContinuous.exists_continuous_modification_itoProcess
+#check @LinearStochastic.CommonNullAugmentation.nullsAlg
+#print axioms LinearStochastic.CommonNullAugmentation.nullsAlg
+#check @LinearStochastic.CommonNullAugmentation.nullsAlg_le
+#print axioms LinearStochastic.CommonNullAugmentation.nullsAlg_le
+#check @LinearStochastic.CommonNullAugmentation.exists_ae_eq_of_sup_nulls
+#print axioms LinearStochastic.CommonNullAugmentation.exists_ae_eq_of_sup_nulls
+#check @LinearStochastic.CommonNullAugmentation.condExp_sup_nulls
+#print axioms LinearStochastic.CommonNullAugmentation.condExp_sup_nulls
+#check @LinearStochastic.CommonItoContinuousVersion.augFiltration
+#print axioms LinearStochastic.CommonItoContinuousVersion.augFiltration
+#check @LinearStochastic.CommonItoContinuousVersion.augFiltration_apply
+#print axioms LinearStochastic.CommonItoContinuousVersion.augFiltration_apply
+#check @LinearStochastic.CommonItoContinuousVersion.itoLocalMod
+#print axioms LinearStochastic.CommonItoContinuousVersion.itoLocalMod
+#check @LinearStochastic.CommonItoContinuousVersion.exists_continuous_martingale_modification
+#print axioms LinearStochastic.CommonItoContinuousVersion.exists_continuous_martingale_modification
+#check @LinearStochastic.CommonItoCross.PairForwardIndependent
+#print axioms LinearStochastic.CommonItoCross.PairForwardIndependent
+#check @LinearStochastic.CommonItoCross.PairForwardIndependent.symm
+#print axioms LinearStochastic.CommonItoCross.PairForwardIndependent.symm
+#check @LinearStochastic.CommonItoCross.adapted_indepFun_pair
+#print axioms LinearStochastic.CommonItoCross.adapted_indepFun_pair
+#check @LinearStochastic.CommonItoCross.integral_cross_increment
+#print axioms LinearStochastic.CommonItoCross.integral_cross_increment
+#check @LinearStochastic.CommonItoCross.integrable_bdd_cross_increment
+#print axioms LinearStochastic.CommonItoCross.integrable_bdd_cross_increment
+#check @LinearStochastic.CommonItoCross.rect_cross_pairing_aux
+#print axioms LinearStochastic.CommonItoCross.rect_cross_pairing_aux
+#check @LinearStochastic.CommonItoCross.rect_cross_pairing
+#print axioms LinearStochastic.CommonItoCross.rect_cross_pairing
+#check @LinearStochastic.CommonItoCross.itoSimple_cross_integral
+#print axioms LinearStochastic.CommonItoCross.itoSimple_cross_integral
+#check @LinearStochastic.CommonItoCross.itoSimpleLp_cross_inner
+#print axioms LinearStochastic.CommonItoCross.itoSimpleLp_cross_inner
+#check @LinearStochastic.CommonItoCross.itoIntegral_cross_inner
+#print axioms LinearStochastic.CommonItoCross.itoIntegral_cross_inner
+#check @LinearStochastic.CommonItoIsometry.ForwardIndependent
+#print axioms LinearStochastic.CommonItoIsometry.ForwardIndependent
+#check @LinearStochastic.CommonItoIsometry.AdaptedAt
+#print axioms LinearStochastic.CommonItoIsometry.AdaptedAt
+#check @LinearStochastic.CommonItoIsometry.AdaptedAt.measurable
+#print axioms LinearStochastic.CommonItoIsometry.AdaptedAt.measurable
+#check @LinearStochastic.CommonItoIsometry.adaptedAt_eval
+#print axioms LinearStochastic.CommonItoIsometry.adaptedAt_eval
+#check @LinearStochastic.CommonItoIsometry.adaptedAt_comp_eval
+#print axioms LinearStochastic.CommonItoIsometry.adaptedAt_comp_eval
+#check @LinearStochastic.CommonItoIsometry.AdaptedAt.mono
+#print axioms LinearStochastic.CommonItoIsometry.AdaptedAt.mono
+#check @LinearStochastic.CommonItoIsometry.AdaptedAt.mul
+#print axioms LinearStochastic.CommonItoIsometry.AdaptedAt.mul
+#check @LinearStochastic.CommonItoIsometry.AdaptedAt.sub
+#print axioms LinearStochastic.CommonItoIsometry.AdaptedAt.sub
+#check @LinearStochastic.CommonItoIsometry.adapted_indepFun_increment
+#print axioms LinearStochastic.CommonItoIsometry.adapted_indepFun_increment
+#check @LinearStochastic.CommonItoIsometry.integral_adapted_mul_increment
+#print axioms LinearStochastic.CommonItoIsometry.integral_adapted_mul_increment
+#check @LinearStochastic.CommonItoIsometry.integral_increment_sq
+#print axioms LinearStochastic.CommonItoIsometry.integral_increment_sq
+#check @LinearStochastic.CommonItoIsometry.integral_adapted_mul_increment_sq
+#print axioms LinearStochastic.CommonItoIsometry.integral_adapted_mul_increment_sq
+#check @LinearStochastic.CommonItoIsometry.integral_adapted_sq_mul_increment_sq
+#print axioms LinearStochastic.CommonItoIsometry.integral_adapted_sq_mul_increment_sq
+#check @LinearStochastic.CommonItoIsometry.memLp_adapted_mul_increment
+#print axioms LinearStochastic.CommonItoIsometry.memLp_adapted_mul_increment
+#check @LinearStochastic.CommonItoIsometry.integral_cross_increment_bilinear_eq_zero
+#print axioms LinearStochastic.CommonItoIsometry.integral_cross_increment_bilinear_eq_zero
+#check @LinearStochastic.CommonItoIsometry.ito_isometry_discrete_bilinear
+#print axioms LinearStochastic.CommonItoIsometry.ito_isometry_discrete_bilinear
+#check @LinearStochastic.CommonItoIsometry.ito_isometry_discrete
+#print axioms LinearStochastic.CommonItoIsometry.ito_isometry_discrete
+#check @LinearStochastic.CommonItoIsometry.integral_eval_sq
+#print axioms LinearStochastic.CommonItoIsometry.integral_eval_sq
+#check @LinearStochastic.CommonItoIsometry.adapted_indepFun_forward
+#print axioms LinearStochastic.CommonItoIsometry.adapted_indepFun_forward
+#check @LinearStochastic.CommonItoIsometry.integral_two_increment
+#print axioms LinearStochastic.CommonItoIsometry.integral_two_increment
+#check @LinearStochastic.CommonItoIsometry.integrable_bdd_two_increment
+#print axioms LinearStochastic.CommonItoIsometry.integrable_bdd_two_increment
+#check @LinearStochastic.CommonItoIsometry.rect_increment_pairing_aux
+#print axioms LinearStochastic.CommonItoIsometry.rect_increment_pairing_aux
+#check @LinearStochastic.CommonItoIsometry.rect_increment_pairing
+#print axioms LinearStochastic.CommonItoIsometry.rect_increment_pairing
+#check @LinearStochastic.CommonItoL2.adaptedAt_of_measurable_common
+#print axioms LinearStochastic.CommonItoL2.adaptedAt_of_measurable_common
+#check @LinearStochastic.CommonItoL2.itoSimple
+#print axioms LinearStochastic.CommonItoL2.itoSimple
+#check @LinearStochastic.CommonItoL2.itoSimple_apply
+#print axioms LinearStochastic.CommonItoL2.itoSimple_apply
+#check @LinearStochastic.CommonItoL2.memLp_itoSimple
+#print axioms LinearStochastic.CommonItoL2.memLp_itoSimple
+#check @LinearStochastic.CommonItoL2.itoSimpleLp
+#print axioms LinearStochastic.CommonItoL2.itoSimpleLp
+#check @LinearStochastic.CommonItoL2.itoSimple_sq_integral
+#print axioms LinearStochastic.CommonItoL2.itoSimple_sq_integral
+#check @LinearStochastic.CommonItoL2.lp_two_norm_sq
+#print axioms LinearStochastic.CommonItoL2.lp_two_norm_sq
+#check @LinearStochastic.CommonItoL2.itoSimpleLp_norm_sq
+#print axioms LinearStochastic.CommonItoL2.itoSimpleLp_norm_sq
+#check @LinearStochastic.CommonItoL2.measurableEmbedding_nnrealCoe
+#print axioms LinearStochastic.CommonItoL2.measurableEmbedding_nnrealCoe
+#check @LinearStochastic.CommonItoL2.timeMeasure
+#print axioms LinearStochastic.CommonItoL2.timeMeasure
+#check @LinearStochastic.CommonItoL2.timeMeasure_Ioc
+#print axioms LinearStochastic.CommonItoL2.timeMeasure_Ioc
+#check @LinearStochastic.CommonItoL2.timeMeasure_Ioc_inter
+#print axioms LinearStochastic.CommonItoL2.timeMeasure_Ioc_inter
+#check @LinearStochastic.CommonItoL2.timeMeasure_singleton
+#print axioms LinearStochastic.CommonItoL2.timeMeasure_singleton
+#check @LinearStochastic.CommonItoL2.elemIntegrand
+#print axioms LinearStochastic.CommonItoL2.elemIntegrand
+#check @LinearStochastic.CommonItoL2.rectTerm
+#print axioms LinearStochastic.CommonItoL2.rectTerm
+#check @LinearStochastic.CommonItoL2.rectTerm_eq_indicator
+#print axioms LinearStochastic.CommonItoL2.rectTerm_eq_indicator
+#check @LinearStochastic.CommonItoL2.memLp_rectTerm
+#print axioms LinearStochastic.CommonItoL2.memLp_rectTerm
+#check @LinearStochastic.CommonItoL2.uncurry_ae_eq_sum_rectTerm_of_ae_fst_ne_zero
+#print axioms LinearStochastic.CommonItoL2.uncurry_ae_eq_sum_rectTerm_of_ae_fst_ne_zero
+#check @LinearStochastic.CommonItoL2.ae_fst_ne_zero_prod
+#print axioms LinearStochastic.CommonItoL2.ae_fst_ne_zero_prod
+#check @LinearStochastic.CommonItoL2.uncurry_ae_eq_sum_rectTerm
+#print axioms LinearStochastic.CommonItoL2.uncurry_ae_eq_sum_rectTerm
+#check @LinearStochastic.CommonItoL2.memLp_uncurry_prod
+#print axioms LinearStochastic.CommonItoL2.memLp_uncurry_prod
+#check @LinearStochastic.CommonItoL2.memLp_uncurry_trim
+#print axioms LinearStochastic.CommonItoL2.memLp_uncurry_trim
+#check @LinearStochastic.CommonItoL2.simpleProcessL2
+#print axioms LinearStochastic.CommonItoL2.simpleProcessL2
+#check @LinearStochastic.CommonItoL2.integral_rectTerm_mul
+#print axioms LinearStochastic.CommonItoL2.integral_rectTerm_mul
+#check @LinearStochastic.CommonItoL2.simpleProcessL2_norm_sq
+#print axioms LinearStochastic.CommonItoL2.simpleProcessL2_norm_sq
+#check @LinearStochastic.CommonItoL2.itoSimple_add
+#print axioms LinearStochastic.CommonItoL2.itoSimple_add
+#check @LinearStochastic.CommonItoL2.itoSimple_smul
+#print axioms LinearStochastic.CommonItoL2.itoSimple_smul
+#check @LinearStochastic.CommonItoL2.itoAssembly
+#print axioms LinearStochastic.CommonItoL2.itoAssembly
+#check @LinearStochastic.CommonItoL2.uncurry_coe_add
+#print axioms LinearStochastic.CommonItoL2.uncurry_coe_add
+#check @LinearStochastic.CommonItoL2.uncurry_coe_smul
+#print axioms LinearStochastic.CommonItoL2.uncurry_coe_smul
+#check @LinearStochastic.CommonItoL2.simpleAssembly
+#print axioms LinearStochastic.CommonItoL2.simpleAssembly
+#check @LinearStochastic.CommonItoL2.assembly_isometry
+#print axioms LinearStochastic.CommonItoL2.assembly_isometry
+#check @LinearStochastic.CommonItoLocality.afterFactor
+#print axioms LinearStochastic.CommonItoLocality.afterFactor
+#check @LinearStochastic.CommonItoLocality.abs_afterFactor_le
+#print axioms LinearStochastic.CommonItoLocality.abs_afterFactor_le
+#check @LinearStochastic.CommonItoLocality.measurable_afterFactor
+#print axioms LinearStochastic.CommonItoLocality.measurable_afterFactor
+#check @LinearStochastic.CommonItoLocality.smulAdaptedCLM
+#print axioms LinearStochastic.CommonItoLocality.smulAdaptedCLM
+#check @LinearStochastic.CommonItoLocality.coeFn_smulAdaptedCLM
+#print axioms LinearStochastic.CommonItoLocality.coeFn_smulAdaptedCLM
+#check @LinearStochastic.CommonItoLocality.smulAdapted
+#print axioms LinearStochastic.CommonItoLocality.smulAdapted
+#check @LinearStochastic.CommonItoLocality.coeFn_smulAdapted_afterFactor
+#print axioms LinearStochastic.CommonItoLocality.coeFn_smulAdapted_afterFactor
+#check @LinearStochastic.CommonItoLocality.coeFn_smulAdapted
+#print axioms LinearStochastic.CommonItoLocality.coeFn_smulAdapted
+#check @LinearStochastic.CommonItoLocality.restrictAfterCLM
+#print axioms LinearStochastic.CommonItoLocality.restrictAfterCLM
+#check @LinearStochastic.CommonItoLocality.restrictAfterCLM_eq
+#print axioms LinearStochastic.CommonItoLocality.restrictAfterCLM_eq
+#check @LinearStochastic.CommonItoLocality.coeFn_restrictAfterCLM
+#print axioms LinearStochastic.CommonItoLocality.coeFn_restrictAfterCLM
+#check @LinearStochastic.CommonItoLocality.ae_fst_ne_zero
+#print axioms LinearStochastic.CommonItoLocality.ae_fst_ne_zero
+#check @LinearStochastic.CommonItoLocality.coe_simpleProcess_sum
+#print axioms LinearStochastic.CommonItoLocality.coe_simpleProcess_sum
+#check @LinearStochastic.CommonItoLocality.coe_stepSP
+#print axioms LinearStochastic.CommonItoLocality.coe_stepSP
+#check @LinearStochastic.CommonItoLocality.afterStepSP
+#print axioms LinearStochastic.CommonItoLocality.afterStepSP
+#check @LinearStochastic.CommonItoLocality.coe_afterStepSP
+#print axioms LinearStochastic.CommonItoLocality.coe_afterStepSP
+#check @LinearStochastic.CommonItoLocality.simpleAssembly_T_afterStepSP
+#print axioms LinearStochastic.CommonItoLocality.simpleAssembly_T_afterStepSP
+#check @LinearStochastic.CommonItoLocality.itoSimple_afterStepSP_eq
+#print axioms LinearStochastic.CommonItoLocality.itoSimple_afterStepSP_eq
+#check @LinearStochastic.CommonItoLocality.itoSimple_afterStepSP_smul
+#print axioms LinearStochastic.CommonItoLocality.itoSimple_afterStepSP_smul
+#check @LinearStochastic.CommonItoLocality.itoIntegralCLM_T_smulAdapted
+#print axioms LinearStochastic.CommonItoLocality.itoIntegralCLM_T_smulAdapted
+#check @LinearStochastic.CommonItoLocality.itoIntegralCLM_T_smulAdapted_of_memLp
+#print axioms LinearStochastic.CommonItoLocality.itoIntegralCLM_T_smulAdapted_of_memLp
+#check @LinearStochastic.CommonItoLocality.itoIntegralCLM_T_smul_of_memLp
+#print axioms LinearStochastic.CommonItoLocality.itoIntegralCLM_T_smul_of_memLp
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess_martingale
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess_martingale
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess_ae_eq
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess_ae_eq
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess_memLp
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess_memLp
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess_toLp
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess_toLp
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess_terminal_ae
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess_terminal_ae
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess_zero_ae
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess_zero_ae
+#check @LinearStochastic.CommonItoMartingaleVersion.integralProcess_l2_continuous
+#print axioms LinearStochastic.CommonItoMartingaleVersion.integralProcess_l2_continuous
+#check @LinearStochastic.CommonItoMultichannel.spacetimeMeasure
+#print axioms LinearStochastic.CommonItoMultichannel.spacetimeMeasure
+#check @LinearStochastic.CommonItoMultichannel.channelIntegral
+#print axioms LinearStochastic.CommonItoMultichannel.channelIntegral
+#check @LinearStochastic.CommonItoMultichannel.sumIntegral
+#print axioms LinearStochastic.CommonItoMultichannel.sumIntegral
+#check @LinearStochastic.CommonItoMultichannel.sumIntegral_inner
+#print axioms LinearStochastic.CommonItoMultichannel.sumIntegral_inner
+#check @LinearStochastic.CommonItoMultichannel.sumIntegral_norm_sq
+#print axioms LinearStochastic.CommonItoMultichannel.sumIntegral_norm_sq
+#check @LinearStochastic.CommonItoPredictable.itoSimpleProcess_continuous
+#print axioms LinearStochastic.CommonItoPredictable.itoSimpleProcess_continuous
+#check @LinearStochastic.CommonItoPredictable.itoSimpleProcess_isStronglyPredictable
+#print axioms LinearStochastic.CommonItoPredictable.itoSimpleProcess_isStronglyPredictable
+#check @LinearStochastic.CommonItoPredictable.itoContinuousMod_isStronglyPredictable
+#print axioms LinearStochastic.CommonItoPredictable.itoContinuousMod_isStronglyPredictable
+#check @LinearStochastic.CommonItoPredictable.memLp_itoContinuousMod
+#print axioms LinearStochastic.CommonItoPredictable.memLp_itoContinuousMod
+#check @LinearStochastic.CommonItoPredictable.itoProcessAssembled
+#print axioms LinearStochastic.CommonItoPredictable.itoProcessAssembled
+#check @LinearStochastic.CommonItoPredictable.itoProcessAssembled_norm_sq
+#print axioms LinearStochastic.CommonItoPredictable.itoProcessAssembled_norm_sq
+#check @LinearStochastic.CommonItoPredictable.itoProcessAssembled_norm_le
+#print axioms LinearStochastic.CommonItoPredictable.itoProcessAssembled_norm_le
+#check @LinearStochastic.CommonItoPredictable.itoProcessAssembled_add
+#print axioms LinearStochastic.CommonItoPredictable.itoProcessAssembled_add
+#check @LinearStochastic.CommonItoPredictable.itoProcessAssembled_sub
+#print axioms LinearStochastic.CommonItoPredictable.itoProcessAssembled_sub
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess
+#check @LinearStochastic.CommonItoProcess.stoppedProcess_const_coe
+#print axioms LinearStochastic.CommonItoProcess.stoppedProcess_const_coe
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_apply
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_apply
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_add
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_add
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_smul
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_smul
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_neg
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_neg
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_zero_time
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_zero_time
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_eq_itoSimple
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_eq_itoSimple
+#check @LinearStochastic.CommonItoProcess.memLp_value
+#print axioms LinearStochastic.CommonItoProcess.memLp_value
+#check @LinearStochastic.CommonItoProcess.memLp_truncated_term
+#print axioms LinearStochastic.CommonItoProcess.memLp_truncated_term
+#check @LinearStochastic.CommonItoProcess.memLp_itoSimpleProcess
+#print axioms LinearStochastic.CommonItoProcess.memLp_itoSimpleProcess
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcessLp
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcessLp
+#check @LinearStochastic.CommonItoProcessGeneral.itoSimpleProcessLp_norm_le
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoSimpleProcessLp_norm_le
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessLM
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessLM
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_simpleAssembly_T
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_simpleAssembly_T
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_zero_time
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_zero_time
+#check @LinearStochastic.CommonItoProcessGeneral.condExp_itoSimple_eq
+#print axioms LinearStochastic.CommonItoProcessGeneral.condExp_itoSimple_eq
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_eq_condExpL2
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_eq_condExpL2
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_aeStronglyMeasurable
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_aeStronglyMeasurable
+#check @LinearStochastic.CommonItoProcessGeneral.itoIntegralProcessGen_isMartingale
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoIntegralProcessGen_isMartingale
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_norm_le
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_norm_le
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_terminal_eq
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_terminal_eq
+#check @LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_norm_terminal
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoProcessCLM_norm_terminal
+#check @LinearStochastic.CommonItoProcessGeneral.integral_itoIntegralCLM_T
+#print axioms LinearStochastic.CommonItoProcessGeneral.integral_itoIntegralCLM_T
+#check @LinearStochastic.CommonItoProcessGeneral.itoIntegralProcessGen_l2_continuous
+#print axioms LinearStochastic.CommonItoProcessGeneral.itoIntegralProcessGen_l2_continuous
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_adaptedAt
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_adaptedAt
+#check @LinearStochastic.CommonItoProcess.condExp_adapted_mul_increment
+#print axioms LinearStochastic.CommonItoProcess.condExp_adapted_mul_increment
+#check @LinearStochastic.CommonItoProcess.clamped_increment_eq
+#print axioms LinearStochastic.CommonItoProcess.clamped_increment_eq
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_isMartingale
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_isMartingale
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcess_isometry_time
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcess_isometry_time
+#check @LinearStochastic.CommonItoProcess.itoSimpleProcessLp_l2_continuous
+#print axioms LinearStochastic.CommonItoProcess.itoSimpleProcessLp_l2_continuous
+#check @LinearStochastic.CommonItoS2.exists_continuous_s2_modification
+#print axioms LinearStochastic.CommonItoS2.exists_continuous_s2_modification
+#check @LinearStochastic.CommonItoVersion.itoSimple_congr
+#print axioms LinearStochastic.CommonItoVersion.itoSimple_congr
+#check @LinearStochastic.CommonItoVersion.integral_congr
+#print axioms LinearStochastic.CommonItoVersion.integral_congr
+#check @LinearStochastic.CommonItoVersion.process_congr
+#print axioms LinearStochastic.CommonItoVersion.process_congr
+#check @LinearStochastic.CommonLocalCoefficients.matrixAction_ae
+#print axioms LinearStochastic.CommonLocalCoefficients.matrixAction_ae
+#check @LinearStochastic.CommonLocalCoefficients.linearInput_ae
+#print axioms LinearStochastic.CommonLocalCoefficients.linearInput_ae
+#check @LinearStochastic.CommonLocalCoefficients.primitive_congr_spacetime
+#print axioms LinearStochastic.CommonLocalCoefficients.primitive_congr_spacetime
+#check @LinearStochastic.CommonLocalCoefficients.noiseInput_actual
+#print axioms LinearStochastic.CommonLocalCoefficients.noiseInput_actual
+#check @LinearStochastic.CommonLocalCoefficients.state_raw_integral_equation
+#print axioms LinearStochastic.CommonLocalCoefficients.state_raw_integral_equation
+#check @LinearStochastic.CommonLocalS2Bound.coefficientBound
+#print axioms LinearStochastic.CommonLocalS2Bound.coefficientBound
+#check @LinearStochastic.CommonLocalS2Bound.coefficientBound_nonneg
+#print axioms LinearStochastic.CommonLocalS2Bound.coefficientBound_nonneg
+#check @LinearStochastic.CommonLocalS2Bound.localBound
+#print axioms LinearStochastic.CommonLocalS2Bound.localBound
+#check @LinearStochastic.CommonLocalS2Bound.localBound_ge_one
+#print axioms LinearStochastic.CommonLocalS2Bound.localBound_ge_one
+#check @LinearStochastic.CommonLocalS2Bound.matrix_coordinate_bound
+#print axioms LinearStochastic.CommonLocalS2Bound.matrix_coordinate_bound
+#check @LinearStochastic.CommonLocalS2Bound.raw_bound
+#print axioms LinearStochastic.CommonLocalS2Bound.raw_bound
+#check @LinearStochastic.CommonLocalS2Bound.state_bound
+#print axioms LinearStochastic.CommonLocalS2Bound.state_bound
+#check @LinearStochastic.CommonLocalS2Bound.local_bound
+#print axioms LinearStochastic.CommonLocalS2Bound.local_bound
+#check @LinearStochastic.CommonLocalSolution.driftInput
+#print axioms LinearStochastic.CommonLocalSolution.driftInput
+#check @LinearStochastic.CommonLocalSolution.noiseInput
+#print axioms LinearStochastic.CommonLocalSolution.noiseInput
+#check @LinearStochastic.CommonLocalSolution.stateProcess
+#print axioms LinearStochastic.CommonLocalSolution.stateProcess
+#check @LinearStochastic.CommonLocalSolution.picardMap_coordinate
+#print axioms LinearStochastic.CommonLocalSolution.picardMap_coordinate
+#check @LinearStochastic.CommonLocalSolution.fixedPoint_state_ae
+#print axioms LinearStochastic.CommonLocalSolution.fixedPoint_state_ae
+#check @LinearStochastic.CommonLocalSolution.exists_progressive_control_solution
+#print axioms LinearStochastic.CommonLocalSolution.exists_progressive_control_solution
+#check @LinearStochastic.CommonLocalUniqueness.fixedPoint_representatives_indistinguishable
+#print axioms LinearStochastic.CommonLocalUniqueness.fixedPoint_representatives_indistinguishable
+#check @LinearStochastic.CommonNaturalIntegral.naturalForward
+#print axioms LinearStochastic.CommonNaturalIntegral.naturalForward
+#check @LinearStochastic.CommonNaturalIntegral.common_eq_natural
+#print axioms LinearStochastic.CommonNaturalIntegral.common_eq_natural
+#check @LinearStochastic.CommonNullL2.measurable_of_null_augmented
+#print axioms LinearStochastic.CommonNullL2.measurable_of_null_augmented
+#check @LinearStochastic.CommonPairHorizon.exists_common_contraction_horizon
+#print axioms LinearStochastic.CommonPairHorizon.exists_common_contraction_horizon
+#check @LinearStochastic.CommonPastedClasses.restriction_paste
+#print axioms LinearStochastic.CommonPastedClasses.restriction_paste
+#check @LinearStochastic.CommonPastedClasses.shift_paste
+#print axioms LinearStochastic.CommonPastedClasses.shift_paste
+#check @LinearStochastic.CommonPastedClasses.map_matrixAction
+#print axioms LinearStochastic.CommonPastedClasses.map_matrixAction
+#check @LinearStochastic.CommonPastedClasses.map_linearInput
+#print axioms LinearStochastic.CommonPastedClasses.map_linearInput
+#check @LinearStochastic.CommonPicardHorizon.matrixSize
+#print axioms LinearStochastic.CommonPicardHorizon.matrixSize
+#check @LinearStochastic.CommonPicardHorizon.matrixSize_nonneg
+#print axioms LinearStochastic.CommonPicardHorizon.matrixSize_nonneg
+#check @LinearStochastic.CommonPicardHorizon.matrixAction_norm_le
+#print axioms LinearStochastic.CommonPicardHorizon.matrixAction_norm_le
+#check @LinearStochastic.CommonPicardHorizon.rate_le
+#print axioms LinearStochastic.CommonPicardHorizon.rate_le
+#check @LinearStochastic.CommonPicardHorizon.exists_positive_contraction_horizon
+#print axioms LinearStochastic.CommonPicardHorizon.exists_positive_contraction_horizon
+#check @LinearStochastic.CommonPicardRealization.realization
+#print axioms LinearStochastic.CommonPicardRealization.realization
+#check @LinearStochastic.CommonPicardRealization.driftScalar
+#print axioms LinearStochastic.CommonPicardRealization.driftScalar
+#check @LinearStochastic.CommonPicardRealization.itoScalar
+#print axioms LinearStochastic.CommonPicardRealization.itoScalar
+#check @LinearStochastic.CommonPicardRealization.realization_predictable
+#print axioms LinearStochastic.CommonPicardRealization.realization_predictable
+#check @LinearStochastic.CommonPicardRealization.realization_continuousOn
+#print axioms LinearStochastic.CommonPicardRealization.realization_continuousOn
+#check @LinearStochastic.CommonPicardRealization.realization_integral_identity
+#print axioms LinearStochastic.CommonPicardRealization.realization_integral_identity
+#check @LinearStochastic.CommonPicardRealization.assembled_ae_realization
+#print axioms LinearStochastic.CommonPicardRealization.assembled_ae_realization
+#check @LinearStochastic.CommonPicardRealization.realization_initial
+#print axioms LinearStochastic.CommonPicardRealization.realization_initial
+#check @LinearStochastic.CommonProcessPaste.paste
+#print axioms LinearStochastic.CommonProcessPaste.paste
+#check @LinearStochastic.CommonProcessPaste.progressive
+#print axioms LinearStochastic.CommonProcessPaste.progressive
+#check @LinearStochastic.CommonProcessPaste.continuousOn
+#print axioms LinearStochastic.CommonProcessPaste.continuousOn
+#check @LinearStochastic.CommonProcessPaste.paste_zero
+#print axioms LinearStochastic.CommonProcessPaste.paste_zero
+#check @LinearStochastic.CommonProcessPaste.paste_terminal
+#print axioms LinearStochastic.CommonProcessPaste.paste_terminal
+#check @LinearStochastic.CommonProcessPaste.paste_S2
+#print axioms LinearStochastic.CommonProcessPaste.paste_S2
+#check @LinearStochastic.CommonProcessSpace.progressive_spacetime_measurable
+#print axioms LinearStochastic.CommonProcessSpace.progressive_spacetime_measurable
+#check @LinearStochastic.CommonProcessSpace.spacetime_memLp_of_s2
+#print axioms LinearStochastic.CommonProcessSpace.spacetime_memLp_of_s2
+#check @LinearStochastic.CommonProcessSpace.eval_memLp_of_s2
+#print axioms LinearStochastic.CommonProcessSpace.eval_memLp_of_s2
+#check @LinearStochastic.CommonProcessSpace.exists_predictable_H2
+#print axioms LinearStochastic.CommonProcessSpace.exists_predictable_H2
+#check @LinearStochastic.CommonProgressiveComparison.product_ae_of_modification
+#print axioms LinearStochastic.CommonProgressiveComparison.product_ae_of_modification
+#check @LinearStochastic.CommonProgressiveComparison.indistinguishable_of_modification
+#print axioms LinearStochastic.CommonProgressiveComparison.indistinguishable_of_modification
+#check @LinearStochastic.CommonRawFixedPoint.product_ae_of_horizon_indistinguishable
+#print axioms LinearStochastic.CommonRawFixedPoint.product_ae_of_horizon_indistinguishable
+#check @LinearStochastic.CommonRawFixedPoint.raw_integral_implies_fixedPoint
+#print axioms LinearStochastic.CommonRawFixedPoint.raw_integral_implies_fixedPoint
+#check @LinearStochastic.CommonRawFixedPoint.raw_coefficients_imply_fixedPoint
+#print axioms LinearStochastic.CommonRawFixedPoint.raw_coefficients_imply_fixedPoint
+#check @LinearStochastic.CommonRawFixedPoint.raw_solutions_indistinguishable
+#print axioms LinearStochastic.CommonRawFixedPoint.raw_solutions_indistinguishable
+#check @LinearStochastic.CommonRealizationS2Bound.realization_norm
+#print axioms LinearStochastic.CommonRealizationS2Bound.realization_norm
+#check @LinearStochastic.CommonRestartIntegral.shift_restriction
+#print axioms LinearStochastic.CommonRestartIntegral.shift_restriction
+#check @LinearStochastic.CommonRestartIntegral.terminal_restart
+#print axioms LinearStochastic.CommonRestartIntegral.terminal_restart
+#check @LinearStochastic.CommonRestartIntegral.restriction_shift
+#print axioms LinearStochastic.CommonRestartIntegral.restriction_shift
+#check @LinearStochastic.CommonRestartIntegral.process_restart
+#print axioms LinearStochastic.CommonRestartIntegral.process_restart
+#check @LinearStochastic.CommonSectionSolution.Sections
+#print axioms LinearStochastic.CommonSectionSolution.Sections
+#check @LinearStochastic.CommonSectionSolution.sections_of_real
+#print axioms LinearStochastic.CommonSectionSolution.sections_of_real
+#check @LinearStochastic.CommonSectionSolution.terminal_of_real
+#print axioms LinearStochastic.CommonSectionSolution.terminal_of_real
+#check @LinearStochastic.CommonSectionSolution.sections_representative
+#print axioms LinearStochastic.CommonSectionSolution.sections_representative
+#check @LinearStochastic.CommonSectionSolution.ofSections
+#print axioms LinearStochastic.CommonSectionSolution.ofSections
+#check @LinearStochastic.CommonSectionSolution.terminal_ofSections
+#print axioms LinearStochastic.CommonSectionSolution.terminal_ofSections
+#check @LinearStochastic.CommonShiftH2.Space
+#print axioms LinearStochastic.CommonShiftH2.Space
+#check @LinearStochastic.CommonShiftH2.ambient_memLp
+#print axioms LinearStochastic.CommonShiftH2.ambient_memLp
+#check @LinearStochastic.CommonShiftH2.shift
+#print axioms LinearStochastic.CommonShiftH2.shift
+#check @LinearStochastic.CommonShiftH2.shift_ae
+#print axioms LinearStochastic.CommonShiftH2.shift_ae
+#check @LinearStochastic.CommonShiftH2.pull_ae
+#print axioms LinearStochastic.CommonShiftH2.pull_ae
+#check @LinearStochastic.CommonShiftH2.shift_add
+#print axioms LinearStochastic.CommonShiftH2.shift_add
+#check @LinearStochastic.CommonShiftH2.shift_smul
+#print axioms LinearStochastic.CommonShiftH2.shift_smul
+#check @LinearStochastic.CommonShiftH2.shift_norm
+#print axioms LinearStochastic.CommonShiftH2.shift_norm
+#check @LinearStochastic.CommonShiftH2.shiftCLM
+#print axioms LinearStochastic.CommonShiftH2.shiftCLM
+#check @LinearStochastic.CommonShiftIntegral.shift_simpleAssembly
+#print axioms LinearStochastic.CommonShiftIntegral.shift_simpleAssembly
+#check @LinearStochastic.CommonShiftIntegral.itoAssembly_shift
+#print axioms LinearStochastic.CommonShiftIntegral.itoAssembly_shift
+#check @LinearStochastic.CommonShiftIntegral.integral_shift
+#print axioms LinearStochastic.CommonShiftIntegral.integral_shift
+#check @LinearStochastic.CommonShiftMeasure.coe_interval
+#print axioms LinearStochastic.CommonShiftMeasure.coe_interval
+#check @LinearStochastic.CommonShiftMeasure.real_add
+#print axioms LinearStochastic.CommonShiftMeasure.real_add
+#check @LinearStochastic.CommonShiftMeasure.add_interval
+#print axioms LinearStochastic.CommonShiftMeasure.add_interval
+#check @LinearStochastic.CommonShiftMeasure.interval_le
+#print axioms LinearStochastic.CommonShiftMeasure.interval_le
+#check @LinearStochastic.CommonShiftMeasure.shifted_memLp
+#print axioms LinearStochastic.CommonShiftMeasure.shifted_memLp
+#check @LinearStochastic.CommonShiftMeasure.integral_shift
+#print axioms LinearStochastic.CommonShiftMeasure.integral_shift
+#check @LinearStochastic.CommonShiftMeasure.exists_shifted_predictable
+#print axioms LinearStochastic.CommonShiftMeasure.exists_shifted_predictable
+#check @LinearStochastic.CommonShiftRepresentation.pair_shift
+#print axioms LinearStochastic.CommonShiftRepresentation.pair_shift
+#check @LinearStochastic.CommonShiftRepresentation.channels_shift
+#print axioms LinearStochastic.CommonShiftRepresentation.channels_shift
+#check @LinearStochastic.CommonShiftRepresentation.represented_shift
+#print axioms LinearStochastic.CommonShiftRepresentation.represented_shift
+#check @LinearStochastic.CommonShiftSimple.shiftedMeas
+#print axioms LinearStochastic.CommonShiftSimple.shiftedMeas
+#check @LinearStochastic.CommonShiftSimple.shiftedForward
+#print axioms LinearStochastic.CommonShiftSimple.shiftedForward
+#check @LinearStochastic.CommonShiftSimple.simpleShift
+#print axioms LinearStochastic.CommonShiftSimple.simpleShift
+#check @LinearStochastic.CommonShiftSimple.interval_translate
+#print axioms LinearStochastic.CommonShiftSimple.interval_translate
+#check @LinearStochastic.CommonShiftSimple.simpleShift_coe
+#print axioms LinearStochastic.CommonShiftSimple.simpleShift_coe
+#check @LinearStochastic.CommonShiftSimple.increment_split
+#print axioms LinearStochastic.CommonShiftSimple.increment_split
+#check @LinearStochastic.CommonShiftSimple.itoSimple_shift
+#print axioms LinearStochastic.CommonShiftSimple.itoSimple_shift
+#check @LinearStochastic.CommonSmallTimeBound.picard_zero
+#print axioms LinearStochastic.CommonSmallTimeBound.picard_zero
+#check @LinearStochastic.CommonSmallTimeBound.state_bound
+#print axioms LinearStochastic.CommonSmallTimeBound.state_bound
+#check @LinearStochastic.CommonSmallTimeBound.additiveFactor
+#print axioms LinearStochastic.CommonSmallTimeBound.additiveFactor
+#check @LinearStochastic.CommonSmallTimeBound.additiveFactor_tendsto
+#print axioms LinearStochastic.CommonSmallTimeBound.additiveFactor_tendsto
+#check @LinearStochastic.CommonSmallTimeBound.additive_state_bound
+#print axioms LinearStochastic.CommonSmallTimeBound.additive_state_bound
+#check @LinearStochastic.CommonSolutionData.Solution
+#print axioms LinearStochastic.CommonSolutionData.Solution
+#check @LinearStochastic.CommonSolutionData.exists_local
+#print axioms LinearStochastic.CommonSolutionData.exists_local
+#check @LinearStochastic.CommonSolutionData.endpoint_memLp
+#print axioms LinearStochastic.CommonSolutionData.endpoint_memLp
+#check @LinearStochastic.CommonSolutionFixedPoint.solution_fixedPoint
+#print axioms LinearStochastic.CommonSolutionFixedPoint.solution_fixedPoint
+#check @LinearStochastic.CommonSolutionFixedPoint.withInitial
+#print axioms LinearStochastic.CommonSolutionFixedPoint.withInitial
+#check @LinearStochastic.CommonSolutionFixedPoint.local_unique
+#print axioms LinearStochastic.CommonSolutionFixedPoint.local_unique
+#check @LinearStochastic.CommonSolutionPaste.exists_paste
+#print axioms LinearStochastic.CommonSolutionPaste.exists_paste
+#check @LinearStochastic.CommonSolutionRestriction.timeMap_S2
+#print axioms LinearStochastic.CommonSolutionRestriction.timeMap_S2
+#check @LinearStochastic.CommonSolutionRestriction.prefixSolution
+#print axioms LinearStochastic.CommonSolutionRestriction.prefixSolution
+#check @LinearStochastic.CommonSolutionRestriction.shifted
+#print axioms LinearStochastic.CommonSolutionRestriction.shifted
+#check @LinearStochastic.CommonSolutionZeroExtension.zero_equation
+#print axioms LinearStochastic.CommonSolutionZeroExtension.zero_equation
+#check @LinearStochastic.CommonSolutionZeroExtension.shiftedForwardFamily
+#print axioms LinearStochastic.CommonSolutionZeroExtension.shiftedForwardFamily
+#check @LinearStochastic.CommonSolutionZeroExtension.extend
+#print axioms LinearStochastic.CommonSolutionZeroExtension.extend
+#check @LinearStochastic.CommonSolutionZeroExtension.extend_state_norm
+#print axioms LinearStochastic.CommonSolutionZeroExtension.extend_state_norm
+#check @LinearStochastic.CommonStateS2.pathSup_measurableOn
+#print axioms LinearStochastic.CommonStateS2.pathSup_measurableOn
+#check @LinearStochastic.CommonStateS2.pathSup_add_memLp
+#print axioms LinearStochastic.CommonStateS2.pathSup_add_memLp
+#check @LinearStochastic.CommonStateS2.constant_S2
+#print axioms LinearStochastic.CommonStateS2.constant_S2
+#check @LinearStochastic.CommonStateS2.pathSup_sum_memLp
+#print axioms LinearStochastic.CommonStateS2.pathSup_sum_memLp
+#check @LinearStochastic.CommonStateS2.itoContinuousMod_S2
+#print axioms LinearStochastic.CommonStateS2.itoContinuousMod_S2
+#check @LinearStochastic.CommonStateS2.realization_S2
+#print axioms LinearStochastic.CommonStateS2.realization_S2
+#check @LinearStochastic.CommonStateS2.vector_reconstruct_S2
+#print axioms LinearStochastic.CommonStateS2.vector_reconstruct_S2
+#check @LinearStochastic.CommonStateS2.state_reconstruction_S2
+#print axioms LinearStochastic.CommonStateS2.state_reconstruction_S2
+#check @LinearStochastic.CommonItoLocality.stepSP
+#print axioms LinearStochastic.CommonItoLocality.stepSP
+#check @LinearStochastic.CommonItoLocality.itoSimple_stepSP
+#print axioms LinearStochastic.CommonItoLocality.itoSimple_stepSP
+#check @LinearStochastic.CommonItoLocality.itoSimple_sum
+#print axioms LinearStochastic.CommonItoLocality.itoSimple_sum
+#check @LinearStochastic.CommonSwitchingUniqueness.shiftedForwardFamily
+#print axioms LinearStochastic.CommonSwitchingUniqueness.shiftedForwardFamily
+#check @LinearStochastic.CommonSwitchingUniqueness.on_window
+#print axioms LinearStochastic.CommonSwitchingUniqueness.on_window
+#check @LinearStochastic.CommonSwitchingUniqueness.inside
+#print axioms LinearStochastic.CommonSwitchingUniqueness.inside
+#check @LinearStochastic.CommonSwitchingUniqueness.at_mesh
+#print axioms LinearStochastic.CommonSwitchingUniqueness.at_mesh
+#check @LinearStochastic.CommonSwitchingUniqueness.unique
+#print axioms LinearStochastic.CommonSwitchingUniqueness.unique
+#check @LinearStochastic.CommonTimeShift.filtration
+#print axioms LinearStochastic.CommonTimeShift.filtration
+#check @LinearStochastic.CommonTimeShift.driver
+#print axioms LinearStochastic.CommonTimeShift.driver
+#check @LinearStochastic.CommonTimeShift.complete
+#print axioms LinearStochastic.CommonTimeShift.complete
+#check @LinearStochastic.CommonTimeShift.forwardIndependent
+#print axioms LinearStochastic.CommonTimeShift.forwardIndependent
+#check @LinearStochastic.CommonTimeShift.preBrownian
+#print axioms LinearStochastic.CommonTimeShift.preBrownian
+#check @LinearStochastic.CommonTimeShift.continuous_driver
+#print axioms LinearStochastic.CommonTimeShift.continuous_driver
+#check @LinearStochastic.CommonTimeShift.progressive
+#print axioms LinearStochastic.CommonTimeShift.progressive
+#check @LinearStochastic.CommonTimeShift.stronglyProgressive
+#print axioms LinearStochastic.CommonTimeShift.stronglyProgressive
+#check @LinearStochastic.CommonUniformHorizon.bound
+#print axioms LinearStochastic.CommonUniformHorizon.bound
+#check @LinearStochastic.CommonUniformHorizon.bound_mono
+#print axioms LinearStochastic.CommonUniformHorizon.bound_mono
+#check @LinearStochastic.CommonUniformHorizon.exists_positive_bound
+#print axioms LinearStochastic.CommonUniformHorizon.exists_positive_bound
+#check @LinearStochastic.CommonUniformHorizon.exists_mesh
+#print axioms LinearStochastic.CommonUniformHorizon.exists_mesh
+#check @LinearStochastic.CommonVectorPicard.H2
+#print axioms LinearStochastic.CommonVectorPicard.H2
+#check @LinearStochastic.CommonVectorPicard.matrixAction
+#print axioms LinearStochastic.CommonVectorPicard.matrixAction
+#check @LinearStochastic.CommonVectorPicard.matrixAction_apply
+#print axioms LinearStochastic.CommonVectorPicard.matrixAction_apply
+#check @LinearStochastic.CommonVectorPicard.driftVector
+#print axioms LinearStochastic.CommonVectorPicard.driftVector
+#check @LinearStochastic.CommonVectorPicard.driftVector_norm_le
+#print axioms LinearStochastic.CommonVectorPicard.driftVector_norm_le
+#check @LinearStochastic.CommonVectorPicard.itoVector
+#print axioms LinearStochastic.CommonVectorPicard.itoVector
+#check @LinearStochastic.CommonVectorPicard.itoVector_add
+#print axioms LinearStochastic.CommonVectorPicard.itoVector_add
+#check @LinearStochastic.CommonVectorPicard.itoVector_sub
+#print axioms LinearStochastic.CommonVectorPicard.itoVector_sub
+#check @LinearStochastic.CommonVectorPicard.itoVector_norm_le
+#print axioms LinearStochastic.CommonVectorPicard.itoVector_norm_le
+#check @LinearStochastic.CommonVectorPicard.picardMap
+#print axioms LinearStochastic.CommonVectorPicard.picardMap
+#check @LinearStochastic.CommonVectorPicard.rate
+#print axioms LinearStochastic.CommonVectorPicard.rate
+#check @LinearStochastic.CommonVectorPicard.rate_nonneg
+#print axioms LinearStochastic.CommonVectorPicard.rate_nonneg
+#check @LinearStochastic.CommonVectorPicard.picardMap_contraction
+#print axioms LinearStochastic.CommonVectorPicard.picardMap_contraction
+#check @LinearStochastic.CommonVectorPicard.exists_unique_fixedPoint
+#print axioms LinearStochastic.CommonVectorPicard.exists_unique_fixedPoint
+#check @LinearStochastic.CommonVectorS2.exists_continuous_s2_vector
+#print axioms LinearStochastic.CommonVectorS2.exists_continuous_s2_vector
+#check @LinearStochastic.ConeBlocks.BlockSpace
+#print axioms LinearStochastic.ConeBlocks.BlockSpace
+#check @LinearStochastic.ConeBlocks.inject
+#print axioms LinearStochastic.ConeBlocks.inject
+#check @LinearStochastic.ConeBlocks.project
+#print axioms LinearStochastic.ConeBlocks.project
+#check @LinearStochastic.ConeBlocks.inject_apply
+#print axioms LinearStochastic.ConeBlocks.inject_apply
+#check @LinearStochastic.ConeBlocks.project_apply
+#print axioms LinearStochastic.ConeBlocks.project_apply
+#check @LinearStochastic.ConeBlocks.inject_adjoint
+#print axioms LinearStochastic.ConeBlocks.inject_adjoint
+#check @LinearStochastic.ConeBlocks.sum_inject_project
+#print axioms LinearStochastic.ConeBlocks.sum_inject_project
+#check @LinearStochastic.ConeBlocks.block
+#print axioms LinearStochastic.ConeBlocks.block
+#check @LinearStochastic.ConeBlocks.block_diagonal_positive
+#print axioms LinearStochastic.ConeBlocks.block_diagonal_positive
+#check @LinearStochastic.ConeBlocks.positive_block_zero_column
+#print axioms LinearStochastic.ConeBlocks.positive_block_zero_column
+#check @LinearStochastic.ConeBlocks.positive_eq_zero_of_diagonal_blocks_zero
+#print axioms LinearStochastic.ConeBlocks.positive_eq_zero_of_diagonal_blocks_zero
+#check @LinearStochastic.ConeBlocks.project_adjoint
+#print axioms LinearStochastic.ConeBlocks.project_adjoint
+#check @LinearStochastic.ConeBlocks.block_adjoint
+#print axioms LinearStochastic.ConeBlocks.block_adjoint
+#check @LinearStochastic.ConeBlocks.block_inner
+#print axioms LinearStochastic.ConeBlocks.block_inner
+#check @LinearStochastic.ConeBlocks.two_block_positive
+#print axioms LinearStochastic.ConeBlocks.two_block_positive
+#check @LinearStochastic.ConeBlocks.block_factorization
+#print axioms LinearStochastic.ConeBlocks.block_factorization
+#check @LinearStochastic.ConeBlocks.positive_sum
+#print axioms LinearStochastic.ConeBlocks.positive_sum
+#check @LinearStochastic.ConeBlocks.positive_summands_zero
+#print axioms LinearStochastic.ConeBlocks.positive_summands_zero
+#check @LinearStochastic.ConeBlocks.head_nonzero_of_balance
+#print axioms LinearStochastic.ConeBlocks.head_nonzero_of_balance
+#check @LinearStochastic.ConeBlocks.zero_flag_excludes_block_certificate
+#print axioms LinearStochastic.ConeBlocks.zero_flag_excludes_block_certificate
+#check @LinearStochastic.ConeCertificate.positive_quadratic_zero_iff
+#print axioms LinearStochastic.ConeCertificate.positive_quadratic_zero_iff
+#check @LinearStochastic.ConeCertificate.maps_range_of_adjoint_preserves_kernel
+#print axioms LinearStochastic.ConeCertificate.maps_range_of_adjoint_preserves_kernel
+#check @LinearStochastic.ConeCertificate.dual_identity_invariant_selectors
+#print axioms LinearStochastic.ConeCertificate.dual_identity_invariant_selectors
+#check @LinearStochastic.ConeCertificate.zero_flag_excludes_dual_certificate
+#print axioms LinearStochastic.ConeCertificate.zero_flag_excludes_dual_certificate
+#check @LinearStochastic.ContinuousDoobL2.grid
+#print axioms LinearStochastic.ContinuousDoobL2.grid
+#check @LinearStochastic.ContinuousDoobL2.grid_monotone
+#print axioms LinearStochastic.ContinuousDoobL2.grid_monotone
+#check @LinearStochastic.ContinuousDoobL2.grid_mem
+#print axioms LinearStochastic.ContinuousDoobL2.grid_mem
+#check @LinearStochastic.ContinuousDoobL2.grid_last
+#print axioms LinearStochastic.ContinuousDoobL2.grid_last
+#check @LinearStochastic.ContinuousDoobL2.exists_grid
+#print axioms LinearStochastic.ContinuousDoobL2.exists_grid
+#check @LinearStochastic.ContinuousDoobL2.finite_max_eq_grid
+#print axioms LinearStochastic.ContinuousDoobL2.finite_max_eq_grid
+#check @LinearStochastic.ContinuousDoobL2.finite_max_eLpNorm_le
+#print axioms LinearStochastic.ContinuousDoobL2.finite_max_eLpNorm_le
+#check @LinearStochastic.ContinuousDoobL2.sampleSet
+#print axioms LinearStochastic.ContinuousDoobL2.sampleSet
+#check @LinearStochastic.ContinuousDoobL2.sampleSet_nonempty
+#print axioms LinearStochastic.ContinuousDoobL2.sampleSet_nonempty
+#check @LinearStochastic.ContinuousDoobL2.sampleSet_le
+#print axioms LinearStochastic.ContinuousDoobL2.sampleSet_le
+#check @LinearStochastic.ContinuousDoobL2.sampleSet_max
+#print axioms LinearStochastic.ContinuousDoobL2.sampleSet_max
+#check @LinearStochastic.ContinuousDoobL2.sampleSet_monotone
+#print axioms LinearStochastic.ContinuousDoobL2.sampleSet_monotone
+#check @LinearStochastic.ContinuousDoobL2.pathSup
+#print axioms LinearStochastic.ContinuousDoobL2.pathSup
+#check @LinearStochastic.ContinuousDoobL2.norm_range_bddAbove
+#print axioms LinearStochastic.ContinuousDoobL2.norm_range_bddAbove
+#check @LinearStochastic.ContinuousDoobL2.sampled_max_tendsto
+#print axioms LinearStochastic.ContinuousDoobL2.sampled_max_tendsto
+#check @LinearStochastic.ContinuousDoobL2.pathSup_eLpNorm_le
+#print axioms LinearStochastic.ContinuousDoobL2.pathSup_eLpNorm_le
+#check @LinearStochastic.ContinuousDoobL2.pathSup_aestronglyMeasurable
+#print axioms LinearStochastic.ContinuousDoobL2.pathSup_aestronglyMeasurable
+#check @LinearStochastic.ContinuousDoobL2.pathSup_memLp
+#print axioms LinearStochastic.ContinuousDoobL2.pathSup_memLp
+#check @LinearStochastic.ContinuousDoobL2.integrable_pathSup_sq
+#print axioms LinearStochastic.ContinuousDoobL2.integrable_pathSup_sq
+#check @LinearStochastic.ContinuousQuadraticExpectation.continuousOn_expected_product
+#print axioms LinearStochastic.ContinuousQuadraticExpectation.continuousOn_expected_product
+#check @LinearStochastic.ContinuousRealization
+#print axioms LinearStochastic.ContinuousRealization
+#check @LinearStochastic.ContinuousRealization.path_mem
+#print axioms LinearStochastic.ContinuousRealization.path_mem
+#check @LinearStochastic.ContinuousRealization.endpoints_mem
+#print axioms LinearStochastic.ContinuousRealization.endpoints_mem
+#check @LinearStochastic.ContinuousSubspace.continuous_mem_closed_of_ae
+#print axioms LinearStochastic.ContinuousSubspace.continuous_mem_closed_of_ae
+#check @LinearStochastic.ContinuousSubspace.process_mem_closed_every_time
+#print axioms LinearStochastic.ContinuousSubspace.process_mem_closed_every_time
+#check @LinearStochastic.ContinuousSubspace.process_mem_subspace_every_time
+#print axioms LinearStochastic.ContinuousSubspace.process_mem_subspace_every_time
+#check @LinearStochastic.ControlDriverTransport.approximate_iff
+#print axioms LinearStochastic.ControlDriverTransport.approximate_iff
+#check @LinearStochastic.ControlDriverTransport.approximateNull_iff
+#print axioms LinearStochastic.ControlDriverTransport.approximateNull_iff
+#check @LinearStochastic.ControlLogic.terminal
+#print axioms LinearStochastic.ControlLogic.terminal
+#check @LinearStochastic.ControlLogic.Exact
+#print axioms LinearStochastic.ControlLogic.Exact
+#check @LinearStochastic.ControlLogic.ExactNull
+#print axioms LinearStochastic.ControlLogic.ExactNull
+#check @LinearStochastic.ControlLogic.ExactTerminal
+#print axioms LinearStochastic.ControlLogic.ExactTerminal
+#check @LinearStochastic.ControlLogic.Approximate
+#print axioms LinearStochastic.ControlLogic.Approximate
+#check @LinearStochastic.ControlLogic.ApproximateNull
+#print axioms LinearStochastic.ControlLogic.ApproximateNull
+#check @LinearStochastic.ControlLogic.exact_iff_surjective
+#print axioms LinearStochastic.ControlLogic.exact_iff_surjective
+#check @LinearStochastic.ControlLogic.exact_implies_approximate
+#print axioms LinearStochastic.ControlLogic.exact_implies_approximate
+#check @LinearStochastic.ControlLogic.exact_implies_exactNull
+#print axioms LinearStochastic.ControlLogic.exact_implies_exactNull
+#check @LinearStochastic.ControlLogic.exactNull_implies_approximateNull
+#print axioms LinearStochastic.ControlLogic.exactNull_implies_approximateNull
+#check @LinearStochastic.ControlLogic.approximate_implies_approximateNull
+#print axioms LinearStochastic.ControlLogic.approximate_implies_approximateNull
+#check @LinearStochastic.ControlLogic.exact_iff_terminal_and_null
+#print axioms LinearStochastic.ControlLogic.exact_iff_terminal_and_null
+#check @LinearStochastic.CoordinateIntegralReconstruction.assemble_real_ae
+#print axioms LinearStochastic.CoordinateIntegralReconstruction.assemble_real_ae
+#check @LinearStochastic.CoordinateIntegralReconstruction.primitive_assemble_ae
+#print axioms LinearStochastic.CoordinateIntegralReconstruction.primitive_assemble_ae
+#check @LinearStochastic.CoordinateIntegralReconstruction.state
+#print axioms LinearStochastic.CoordinateIntegralReconstruction.state
+#check @LinearStochastic.CoordinateIntegralReconstruction.state_integral_ae
+#print axioms LinearStochastic.CoordinateIntegralReconstruction.state_integral_ae
+#check @LinearStochastic.CoordinatePathSolution.reconstruct
+#print axioms LinearStochastic.CoordinatePathSolution.reconstruct
+#check @LinearStochastic.CoordinatePathSolution.space_ae
+#print axioms LinearStochastic.CoordinatePathSolution.space_ae
+#check @LinearStochastic.CoordinatePathSolution.integral_ae
+#print axioms LinearStochastic.CoordinatePathSolution.integral_ae
+#check @LinearStochastic.CoordinatePathSolution.section_solution
+#print axioms LinearStochastic.CoordinatePathSolution.section_solution
+#check @LinearStochastic.CoordinatePathSolution.continuousRealization
+#print axioms LinearStochastic.CoordinatePathSolution.continuousRealization
+#check @LinearStochastic.CoordinatePathSolution.reconstruct_progressive
+#print axioms LinearStochastic.CoordinatePathSolution.reconstruct_progressive
+#check @LinearStochastic.CoordinatePathSolution.reconstruct_S2
+#print axioms LinearStochastic.CoordinatePathSolution.reconstruct_S2
+#check @LinearStochastic.CoordinateSectionSolution.state_space_ae
+#print axioms LinearStochastic.CoordinateSectionSolution.state_space_ae
+#check @LinearStochastic.CoordinateSectionSolution.state_continuous
+#print axioms LinearStochastic.CoordinateSectionSolution.state_continuous
+#check @LinearStochastic.CoordinateSectionSolution.state_initial_ae
+#print axioms LinearStochastic.CoordinateSectionSolution.state_initial_ae
+#check @LinearStochastic.CoordinateSectionSolution.continuousRealization
+#print axioms LinearStochastic.CoordinateSectionSolution.continuousRealization
+#check @LinearStochastic.CoordinateSectionSolution.section_solution
+#print axioms LinearStochastic.CoordinateSectionSolution.section_solution
+#check @LinearStochastic.DelayedDeterministicState.responseOperator
+#print axioms LinearStochastic.DelayedDeterministicState.responseOperator
+#check @LinearStochastic.DelayedDeterministicState.primitive_continuous
+#print axioms LinearStochastic.DelayedDeterministicState.primitive_continuous
+#check @LinearStochastic.DelayedDeterministicState.responseOperator_continuous
+#print axioms LinearStochastic.DelayedDeterministicState.responseOperator_continuous
+#check @LinearStochastic.DelayedDeterministicState.responseOperator_apply
+#print axioms LinearStochastic.DelayedDeterministicState.responseOperator_apply
+#check @LinearStochastic.DelayedDeterministicState.responseOperator_zero
+#print axioms LinearStochastic.DelayedDeterministicState.responseOperator_zero
+#check @LinearStochastic.DelayedDeterministicState.response
+#print axioms LinearStochastic.DelayedDeterministicState.response
+#check @LinearStochastic.DelayedDeterministicState.response_continuous
+#print axioms LinearStochastic.DelayedDeterministicState.response_continuous
+#check @LinearStochastic.DelayedDeterministicState.response_prefix
+#print axioms LinearStochastic.DelayedDeterministicState.response_prefix
+#check @LinearStochastic.DelayedDeterministicState.response_integral
+#print axioms LinearStochastic.DelayedDeterministicState.response_integral
+#check @LinearStochastic.DeterministicControlClassification.Path
+#print axioms LinearStochastic.DeterministicControlClassification.Path
+#check @LinearStochastic.DeterministicControlClassification.path_original_ode
+#print axioms LinearStochastic.DeterministicControlClassification.path_original_ode
+#check @LinearStochastic.DeterministicControlClassification.ExactReach
+#print axioms LinearStochastic.DeterministicControlClassification.ExactReach
+#check @LinearStochastic.DeterministicControlClassification.ApproxReach
+#print axioms LinearStochastic.DeterministicControlClassification.ApproxReach
+#check @LinearStochastic.DeterministicControlClassification.Holds
+#print axioms LinearStochastic.DeterministicControlClassification.Holds
+#check @LinearStochastic.DeterministicControlClassification.exact_reach_of_kalman
+#print axioms LinearStochastic.DeterministicControlClassification.exact_reach_of_kalman
+#check @LinearStochastic.DeterministicControlClassification.implies_approximateNull
+#print axioms LinearStochastic.DeterministicControlClassification.implies_approximateNull
+#check @LinearStochastic.DeterministicControlClassification.approximateNull_raw
+#print axioms LinearStochastic.DeterministicControlClassification.approximateNull_raw
+#check @LinearStochastic.DeterministicControlClassification.holds_iff_kalman
+#print axioms LinearStochastic.DeterministicControlClassification.holds_iff_kalman
+#check @LinearStochastic.DeterministicExponential.observe
+#print axioms LinearStochastic.DeterministicExponential.observe
+#check @LinearStochastic.DeterministicExponential.observe_derivative
+#print axioms LinearStochastic.DeterministicExponential.observe_derivative
+#check @LinearStochastic.DeterministicExponential.observe_continuous
+#print axioms LinearStochastic.DeterministicExponential.observe_continuous
+#check @LinearStochastic.DeterministicExponential.powers_zero_of_observe_zero
+#print axioms LinearStochastic.DeterministicExponential.powers_zero_of_observe_zero
+#check @LinearStochastic.DeterministicGramian.observation
+#print axioms LinearStochastic.DeterministicGramian.observation
+#check @LinearStochastic.DeterministicGramian.observation_continuous
+#print axioms LinearStochastic.DeterministicGramian.observation_continuous
+#check @LinearStochastic.DeterministicGramian.gramian
+#print axioms LinearStochastic.DeterministicGramian.gramian
+#check @LinearStochastic.DeterministicGramian.integrand_continuous
+#print axioms LinearStochastic.DeterministicGramian.integrand_continuous
+#check @LinearStochastic.DeterministicGramian.quadratic
+#print axioms LinearStochastic.DeterministicGramian.quadratic
+#check @LinearStochastic.DeterministicGramian.powers_zero_of_quadratic_zero
+#print axioms LinearStochastic.DeterministicGramian.powers_zero_of_quadratic_zero
+#check @LinearStochastic.DeterministicGramian.quadratic_pos
+#print axioms LinearStochastic.DeterministicGramian.quadratic_pos
+#check @LinearStochastic.DeterministicGramian.gramian_injective
+#print axioms LinearStochastic.DeterministicGramian.gramian_injective
+#check @LinearStochastic.DeterministicGramian.gramianEquiv
+#print axioms LinearStochastic.DeterministicGramian.gramianEquiv
+#check @LinearStochastic.DeterministicGramian.gramian_inverse
+#print axioms LinearStochastic.DeterministicGramian.gramian_inverse
+#check @LinearStochastic.DeterministicGramianControl.observation_adjoint
+#print axioms LinearStochastic.DeterministicGramianControl.observation_adjoint
+#check @LinearStochastic.DeterministicGramianControl.gramian_classical
+#print axioms LinearStochastic.DeterministicGramianControl.gramian_classical
+#check @LinearStochastic.DeterministicGramianControl.kernel
+#print axioms LinearStochastic.DeterministicGramianControl.kernel
+#check @LinearStochastic.DeterministicGramianControl.kernel_continuous
+#print axioms LinearStochastic.DeterministicGramianControl.kernel_continuous
+#check @LinearStochastic.DeterministicGramianControl.terminal_integral
+#print axioms LinearStochastic.DeterministicGramianControl.terminal_integral
+#check @LinearStochastic.DeterministicGramianControl.kernel_square_integrable
+#print axioms LinearStochastic.DeterministicGramianControl.kernel_square_integrable
+#check @LinearStochastic.DeterministicGramianMatrices.observable_of_kalman_rank
+#print axioms LinearStochastic.DeterministicGramianMatrices.observable_of_kalman_rank
+#check @LinearStochastic.DeterministicGramianMatrices.gramian_positive
+#print axioms LinearStochastic.DeterministicGramianMatrices.gramian_positive
+#check @LinearStochastic.DeterministicGramianMatrices.terminal_integral
+#print axioms LinearStochastic.DeterministicGramianMatrices.terminal_integral
+#check @LinearStochastic.DeterministicODEBridge.OdePath
+#print axioms LinearStochastic.DeterministicODEBridge.OdePath
+#check @LinearStochastic.DeterministicODEBridge.odePath_of_memLp_control
+#print axioms LinearStochastic.DeterministicODEBridge.odePath_of_memLp_control
+#check @LinearStochastic.DeterministicODEBridge.ode_exact_of_kalman
+#print axioms LinearStochastic.DeterministicODEBridge.ode_exact_of_kalman
+#check @LinearStochastic.DeterministicODEBridge.path_of_ode
+#print axioms LinearStochastic.DeterministicODEBridge.path_of_ode
+#check @LinearStochastic.DeterministicODEBridge.exact_of_ode
+#print axioms LinearStochastic.DeterministicODEBridge.exact_of_ode
+#check @LinearStochastic.DeterministicODEBridge.approximate_of_ode
+#print axioms LinearStochastic.DeterministicODEBridge.approximate_of_ode
+#check @LinearStochastic.DeterministicODEBridge.OdeHolds
+#print axioms LinearStochastic.DeterministicODEBridge.OdeHolds
+#check @LinearStochastic.DeterministicODEBridge.ode_classification
+#print axioms LinearStochastic.DeterministicODEBridge.ode_classification
+#check @LinearStochastic.DeterministicVariation.exp_add
+#print axioms LinearStochastic.DeterministicVariation.exp_add
+#check @LinearStochastic.DeterministicVariation.state
+#print axioms LinearStochastic.DeterministicVariation.state
+#check @LinearStochastic.DeterministicVariation.exp_inverse_apply
+#print axioms LinearStochastic.DeterministicVariation.exp_inverse_apply
+#check @LinearStochastic.DeterministicVariation.derivative
+#print axioms LinearStochastic.DeterministicVariation.derivative
+#check @LinearStochastic.DeterministicVariation.continuous_state
+#print axioms LinearStochastic.DeterministicVariation.continuous_state
+#check @LinearStochastic.DeterministicVariation.initial
+#print axioms LinearStochastic.DeterministicVariation.initial
+#check @LinearStochastic.DeterministicVariation.integral_equation
+#print axioms LinearStochastic.DeterministicVariation.integral_equation
+#check @LinearStochastic.DeterministicVariation.convolution
+#print axioms LinearStochastic.DeterministicVariation.convolution
+#check @LinearStochastic.DiffusionKernelWitness.exists_unit_kernel
+#print axioms LinearStochastic.DiffusionKernelWitness.exists_unit_kernel
+#check @LinearStochastic.DiffusionKernelWitness.sum_norm_sq_eq_one
+#print axioms LinearStochastic.DiffusionKernelWitness.sum_norm_sq_eq_one
+#check @LinearStochastic.DriftMartingaleDuality.adapted_pairing_condExp
+#print axioms LinearStochastic.DriftMartingaleDuality.adapted_pairing_condExp
+#check @LinearStochastic.DriftMartingaleDuality.bochner_drift_pairing
+#print axioms LinearStochastic.DriftMartingaleDuality.bochner_drift_pairing
+#check @LinearStochastic.DriftMartingaleDuality.martingale_condExpL2
+#print axioms LinearStochastic.DriftMartingaleDuality.martingale_condExpL2
+#check @LinearStochastic.DriftMartingaleDuality.drift_martingale_cross
+#print axioms LinearStochastic.DriftMartingaleDuality.drift_martingale_cross
+#check @LinearStochastic.DriftMartingaleDuality.integrable_inner_of_memLp
+#print axioms LinearStochastic.DriftMartingaleDuality.integrable_inner_of_memLp
+#check @LinearStochastic.DriftMartingaleDuality.drift_martingale_cross_expectation
+#print axioms LinearStochastic.DriftMartingaleDuality.drift_martingale_cross_expectation
+#check @LinearStochastic.DriftPairIntegrability.terminal_product_integrable
+#print axioms LinearStochastic.DriftPairIntegrability.terminal_product_integrable
+#check @LinearStochastic.DriftPairIntegrability.terminal_cross_integrable
+#print axioms LinearStochastic.DriftPairIntegrability.terminal_cross_integrable
+#check @LinearStochastic.DriftPairIntegrability.past_pair_sections
+#print axioms LinearStochastic.DriftPairIntegrability.past_pair_sections
+#check @LinearStochastic.DriftPairIntegrability.past_pair_expectation_integrable
+#print axioms LinearStochastic.DriftPairIntegrability.past_pair_expectation_integrable
+#check @LinearStochastic.DriftPairIntegrability.martingale_pair_sections
+#print axioms LinearStochastic.DriftPairIntegrability.martingale_pair_sections
+#check @LinearStochastic.DriftPairIntegrability.martingale_pair_expectation_integrable
+#print axioms LinearStochastic.DriftPairIntegrability.martingale_pair_expectation_integrable
+#check @LinearStochastic.DriftProduct.integral_order_triangles
+#print axioms LinearStochastic.DriftProduct.integral_order_triangles
+#check @LinearStochastic.DriftProduct.primitive_cross_integrable
+#print axioms LinearStochastic.DriftProduct.primitive_cross_integrable
+#check @LinearStochastic.DriftProduct.primitive_cross_integrable_left
+#print axioms LinearStochastic.DriftProduct.primitive_cross_integrable_left
+#check @LinearStochastic.DriftProduct.inner_integral_product
+#print axioms LinearStochastic.DriftProduct.inner_integral_product
+#check @LinearStochastic.DriftProduct.inner_integral_product_Ioc
+#print axioms LinearStochastic.DriftProduct.inner_integral_product_Ioc
+#check @LinearStochastic.DriftProduct.l2_expected_drift_product
+#print axioms LinearStochastic.DriftProduct.l2_expected_drift_product
+#check @LinearStochastic.DriftProductExpectation.time_swap_preserving
+#print axioms LinearStochastic.DriftProductExpectation.time_swap_preserving
+#check @LinearStochastic.DriftProductExpectation.cross_product_integrable
+#print axioms LinearStochastic.DriftProductExpectation.cross_product_integrable
+#check @LinearStochastic.DriftProductExpectation.terminal_drift_product
+#print axioms LinearStochastic.DriftProductExpectation.terminal_drift_product
+#check @LinearStochastic.DriftProductExpectation.past_cross_expectation
+#print axioms LinearStochastic.DriftProductExpectation.past_cross_expectation
+#check @LinearStochastic.DriftProductExpectation.drift_product_expectation
+#print axioms LinearStochastic.DriftProductExpectation.drift_product_expectation
+#check @LinearStochastic.ExactDiffusionAlgebra.rightColumn
+#print axioms LinearStochastic.ExactDiffusionAlgebra.rightColumn
+#check @LinearStochastic.ExactDiffusionAlgebra.rightColumn_sum
+#print axioms LinearStochastic.ExactDiffusionAlgebra.rightColumn_sum
+#check @LinearStochastic.ExactDiffusionAlgebra.control
+#print axioms LinearStochastic.ExactDiffusionAlgebra.control
+#check @LinearStochastic.ExactDiffusionAlgebra.control_ae
+#print axioms LinearStochastic.ExactDiffusionAlgebra.control_ae
+#check @LinearStochastic.ExactDiffusionAlgebra.diffusion_control
+#print axioms LinearStochastic.ExactDiffusionAlgebra.diffusion_control
+#check @LinearStochastic.ExactDiffusionAlgebra.effectiveDrift
+#print axioms LinearStochastic.ExactDiffusionAlgebra.effectiveDrift
+#check @LinearStochastic.ExactDiffusionAlgebra.noiseDrift
+#print axioms LinearStochastic.ExactDiffusionAlgebra.noiseDrift
+#check @LinearStochastic.ExactDiffusionAlgebra.drift_control
+#print axioms LinearStochastic.ExactDiffusionAlgebra.drift_control
+#check @LinearStochastic.ExactDiffusionNecessity.spike_obstruction
+#print axioms LinearStochastic.ExactDiffusionNecessity.spike_obstruction
+#check @LinearStochastic.ExactDiffusionNecessity.joint_surjective
+#print axioms LinearStochastic.ExactDiffusionNecessity.joint_surjective
+#check @LinearStochastic.ExactTerminalProperties.initial_congr
+#print axioms LinearStochastic.ExactTerminalProperties.initial_congr
+#check @LinearStochastic.ExactTerminalProperties.ExactTerminal
+#print axioms LinearStochastic.ExactTerminalProperties.ExactTerminal
+#check @LinearStochastic.ExactTerminalProperties.exact_iff_terminal_and_null
+#print axioms LinearStochastic.ExactTerminalProperties.exact_iff_terminal_and_null
+#check @LinearStochastic.ExpectedProduct.drift_state_pairing
+#print axioms LinearStochastic.ExpectedProduct.drift_state_pairing
+#check @LinearStochastic.ExpectedProduct.expected_product
+#print axioms LinearStochastic.ExpectedProduct.expected_product
+#check @LinearStochastic.ExpectedQuadraticGenerator.generator
+#print axioms LinearStochastic.ExpectedQuadraticGenerator.generator
+#check @LinearStochastic.ExpectedQuadraticGenerator.continuous_clamped
+#print axioms LinearStochastic.ExpectedQuadraticGenerator.continuous_clamped
+#check @LinearStochastic.ExpectedQuadraticGenerator.generator_le
+#print axioms LinearStochastic.ExpectedQuadraticGenerator.generator_le
+#check @LinearStochastic.ExpectedQuadraticGenerator.integral_generator
+#print axioms LinearStochastic.ExpectedQuadraticGenerator.integral_generator
+#check @LinearStochastic.ExpectedStateEnergy.id_compLp
+#print axioms LinearStochastic.ExpectedStateEnergy.id_compLp
+#check @LinearStochastic.ExpectedStateEnergy.norm_sq_eq_integral
+#print axioms LinearStochastic.ExpectedStateEnergy.norm_sq_eq_integral
+#check @LinearStochastic.ExpectedStateEnergy.moment_integrable
+#print axioms LinearStochastic.ExpectedStateEnergy.moment_integrable
+#check @LinearStochastic.ExpectedStateEnergy.integral_exp_decay_le
+#print axioms LinearStochastic.ExpectedStateEnergy.integral_exp_decay_le
+#check @LinearStochastic.ExpectedStateEnergy.state_energy_le
+#print axioms LinearStochastic.ExpectedStateEnergy.state_energy_le
+#check @LinearStochastic.ExpectedStateEnergy.feedback_energy_le
+#print axioms LinearStochastic.ExpectedStateEnergy.feedback_energy_le
+#check @LinearStochastic.FeedbackIntervalData.Data
+#print axioms LinearStochastic.FeedbackIntervalData.Data
+#check @LinearStochastic.FeedbackIntervalData.exists_data
+#print axioms LinearStochastic.FeedbackIntervalData.exists_data
+#check @LinearStochastic.FeedbackIntervalData.terminal_memLp
+#print axioms LinearStochastic.FeedbackIntervalData.terminal_memLp
+#check @LinearStochastic.FeedbackIntervalRestart.shiftedForwardFamily
+#print axioms LinearStochastic.FeedbackIntervalRestart.shiftedForwardFamily
+#check @LinearStochastic.FeedbackIntervalRestart.Initial
+#print axioms LinearStochastic.FeedbackIntervalRestart.Initial
+#check @LinearStochastic.FeedbackIntervalRestart.exists_shifted
+#print axioms LinearStochastic.FeedbackIntervalRestart.exists_shifted
+#check @LinearStochastic.FeedbackIntervalRestart.chooseInterval
+#print axioms LinearStochastic.FeedbackIntervalRestart.chooseInterval
+#check @LinearStochastic.FeedbackIntervalRestart.nextInitial
+#print axioms LinearStochastic.FeedbackIntervalRestart.nextInitial
+#check @LinearStochastic.FeedbackRecursion.shiftedForwardFamily
+#print axioms LinearStochastic.FeedbackRecursion.shiftedForwardFamily
+#check @LinearStochastic.FeedbackRecursion.step
+#print axioms LinearStochastic.FeedbackRecursion.step
+#check @LinearStochastic.FeedbackRecursion.states
+#print axioms LinearStochastic.FeedbackRecursion.states
+#check @LinearStochastic.FeedbackRecursion.segment
+#print axioms LinearStochastic.FeedbackRecursion.segment
+#check @LinearStochastic.FeedbackRecursion.states_zero
+#print axioms LinearStochastic.FeedbackRecursion.states_zero
+#check @LinearStochastic.FeedbackRecursion.states_next
+#print axioms LinearStochastic.FeedbackRecursion.states_next
+#check @LinearStochastic.FeedbackRecursion.moment_step
+#print axioms LinearStochastic.FeedbackRecursion.moment_step
+#check @LinearStochastic.FilteredIto.integral
+#print axioms LinearStochastic.FilteredIto.integral
+#check @LinearStochastic.FilteredIto.step_memLp
+#print axioms LinearStochastic.FilteredIto.step_memLp
+#check @LinearStochastic.FilteredIto.step_mean_zero
+#print axioms LinearStochastic.FilteredIto.step_mean_zero
+#check @LinearStochastic.FilteredIto.step_isometry
+#print axioms LinearStochastic.FilteredIto.step_isometry
+#check @LinearStochastic.FilteredIto.cross_integral_zero
+#print axioms LinearStochastic.FilteredIto.cross_integral_zero
+#check @LinearStochastic.FilteredIto.integral_memLp
+#print axioms LinearStochastic.FilteredIto.integral_memLp
+#check @LinearStochastic.FilteredIto.integral_mean_zero
+#print axioms LinearStochastic.FilteredIto.integral_mean_zero
+#check @LinearStochastic.FilteredIto.cross_integral_zero_of_ne
+#print axioms LinearStochastic.FilteredIto.cross_integral_zero_of_ne
+#check @LinearStochastic.FilteredIto.integral_isometry
+#print axioms LinearStochastic.FilteredIto.integral_isometry
+#check @LinearStochastic.FilteredIto.joint_indep_scalar
+#print axioms LinearStochastic.FilteredIto.joint_indep_scalar
+#check @LinearStochastic.FilteredIto.channel_cross_zero
+#print axioms LinearStochastic.FilteredIto.channel_cross_zero
+#check @LinearStochastic.FilteredIto.channel_sum_memLp
+#print axioms LinearStochastic.FilteredIto.channel_sum_memLp
+#check @LinearStochastic.FilteredIto.channel_sum_isometry
+#print axioms LinearStochastic.FilteredIto.channel_sum_isometry
+#check @LinearStochastic.FilteredIto.Multichannel.cross_time_zero
+#print axioms LinearStochastic.FilteredIto.Multichannel.cross_time_zero
+#check @LinearStochastic.FilteredIto.Multichannel.cross_pair_zero
+#print axioms LinearStochastic.FilteredIto.Multichannel.cross_pair_zero
+#check @LinearStochastic.FilteredIto.Multichannel.sumIntegral
+#print axioms LinearStochastic.FilteredIto.Multichannel.sumIntegral
+#check @LinearStochastic.FilteredIto.Multichannel.sumIntegral_memLp
+#print axioms LinearStochastic.FilteredIto.Multichannel.sumIntegral_memLp
+#check @LinearStochastic.FilteredIto.Multichannel.sumIntegral_isometry
+#print axioms LinearStochastic.FilteredIto.Multichannel.sumIntegral_isometry
+#check @LinearStochastic.FilteredIto.Multichannel.sumIntegral_mean_zero
+#print axioms LinearStochastic.FilteredIto.Multichannel.sumIntegral_mean_zero
+#check @LinearStochastic.FilteredItoL2.ae_adapted_independent
+#print axioms LinearStochastic.FilteredItoL2.ae_adapted_independent
+#check @LinearStochastic.FilteredItoL2.product_memLp
+#print axioms LinearStochastic.FilteredItoL2.product_memLp
+#check @LinearStochastic.FilteredItoL2.integral
+#print axioms LinearStochastic.FilteredItoL2.integral
+#check @LinearStochastic.FilteredItoL2.integral_coe
+#print axioms LinearStochastic.FilteredItoL2.integral_coe
+#check @LinearStochastic.FilteredItoL2.integralLinear
+#print axioms LinearStochastic.FilteredItoL2.integralLinear
+#check @LinearStochastic.FilteredItoL2.norm_sq_integral
+#print axioms LinearStochastic.FilteredItoL2.norm_sq_integral
+#check @LinearStochastic.FilteredItoL2.integral_norm_sq
+#print axioms LinearStochastic.FilteredItoL2.integral_norm_sq
+#check @LinearStochastic.FilteredItoL2.integral_norm
+#print axioms LinearStochastic.FilteredItoL2.integral_norm
+#check @LinearStochastic.FilteredItoL2.integralCLM
+#print axioms LinearStochastic.FilteredItoL2.integralCLM
+#check @LinearStochastic.FilteredItoL2.integralIsometry
+#print axioms LinearStochastic.FilteredItoL2.integralIsometry
+#check @LinearStochastic.FilteredItoL2.integral_tendsto
+#print axioms LinearStochastic.FilteredItoL2.integral_tendsto
+#check @LinearStochastic.FilteredItoL2.adaptedSimple
+#print axioms LinearStochastic.FilteredItoL2.adaptedSimple
+#check @LinearStochastic.FilteredItoL2.adaptedSimple_dense
+#print axioms LinearStochastic.FilteredItoL2.adaptedSimple_dense
+#check @LinearStochastic.FilteredItoL2.integralIsometry_closed_range
+#print axioms LinearStochastic.FilteredItoL2.integralIsometry_closed_range
+#check @LinearStochastic.FilteredItoL2.integralIsometry_simple_closure
+#print axioms LinearStochastic.FilteredItoL2.integralIsometry_simple_closure
+#check @LinearStochastic.FiniteExponentialTotality.memLp_exp_linear
+#print axioms LinearStochastic.FiniteExponentialTotality.memLp_exp_linear
+#check @LinearStochastic.FiniteExponentialTotality.integral_withDensity_ofReal_eq
+#print axioms LinearStochastic.FiniteExponentialTotality.integral_withDensity_ofReal_eq
+#check @LinearStochastic.FiniteExponentialTotality.integrable_withDensity_ofReal_iff
+#print axioms LinearStochastic.FiniteExponentialTotality.integrable_withDensity_ofReal_iff
+#check @LinearStochastic.FiniteExponentialTotality.setIntegral_eq_zero_of_iSup_comap
+#print axioms LinearStochastic.FiniteExponentialTotality.setIntegral_eq_zero_of_iSup_comap
+#check @LinearStochastic.FiniteStepAbel.exists_step_sum
+#print axioms LinearStochastic.FiniteStepAbel.exists_step_sum
+#check @LinearStochastic.GlobalInvariantObstruction.exists_zero_observation
+#print axioms LinearStochastic.GlobalInvariantObstruction.exists_zero_observation
+#check @LinearStochastic.GlobalInvariantObstruction.positive_horizon_separation
+#print axioms LinearStochastic.GlobalInvariantObstruction.positive_horizon_separation
+#check @LinearStochastic.GlobalInvariantObstruction.nonempty_separated_forward_family
+#print axioms LinearStochastic.GlobalInvariantObstruction.nonempty_separated_forward_family
+#check @LinearStochastic.GlobalObservationDuality.annihilator_iff
+#print axioms LinearStochastic.GlobalObservationDuality.annihilator_iff
+#check @LinearStochastic.GlobalObservationDuality.annihilator_terminal_zero
+#print axioms LinearStochastic.GlobalObservationDuality.annihilator_terminal_zero
+#check @LinearStochastic.HilbertBrownianPath.exists_full_solution
+#print axioms LinearStochastic.HilbertBrownianPath.exists_full_solution
+#check @LinearStochastic.HilbertBrownianRealization.coordinateSolution
+#print axioms LinearStochastic.HilbertBrownianRealization.coordinateSolution
+#check @LinearStochastic.HilbertBrownianRealization.coordinateSolution_terminal
+#print axioms LinearStochastic.HilbertBrownianRealization.coordinateSolution_terminal
+#check @LinearStochastic.HilbertBrownianRealization.exists_realization
+#print axioms LinearStochastic.HilbertBrownianRealization.exists_realization
+#check @LinearStochastic.HilbertBrownianUniqueness.terminal_unique
+#print axioms LinearStochastic.HilbertBrownianUniqueness.terminal_unique
+#check @LinearStochastic.HilbertDelayedSwitchingUniqueness.state_unique
+#print axioms LinearStochastic.HilbertDelayedSwitchingUniqueness.state_unique
+#check @LinearStochastic.HilbertDelayedSwitchingUniqueness.unique
+#print axioms LinearStochastic.HilbertDelayedSwitchingUniqueness.unique
+#check @LinearStochastic.HilbertDuality.dense_range_iff_adjoint_ker_eq_bot
+#print axioms LinearStochastic.HilbertDuality.dense_range_iff_adjoint_ker_eq_bot
+#check @LinearStochastic.HilbertEndpointBound.coordinate_norm_le
+#print axioms LinearStochastic.HilbertEndpointBound.coordinate_norm_le
+#check @LinearStochastic.HilbertEndpointBound.coordinates_norm_le
+#print axioms LinearStochastic.HilbertEndpointBound.coordinates_norm_le
+#check @LinearStochastic.HilbertEndpointBound.norm_le_card_coordinates
+#print axioms LinearStochastic.HilbertEndpointBound.norm_le_card_coordinates
+#check @LinearStochastic.HilbertEndpointBound.terminal_bound
+#print axioms LinearStochastic.HilbertEndpointBound.terminal_bound
+#check @LinearStochastic.HilbertFeedbackExtension.shiftedForwardFamily
+#print axioms LinearStochastic.HilbertFeedbackExtension.shiftedForwardFamily
+#check @LinearStochastic.HilbertFeedbackExtension.exists_feedback
+#print axioms LinearStochastic.HilbertFeedbackExtension.exists_feedback
+#check @LinearStochastic.HilbertFullS2Bound.path_coordinates
+#print axioms LinearStochastic.HilbertFullS2Bound.path_coordinates
+#check @LinearStochastic.HilbertFullS2Bound.full_bound
+#print axioms LinearStochastic.HilbertFullS2Bound.full_bound
+#check @LinearStochastic.HilbertGlobalPath.exists_full_solution
+#print axioms LinearStochastic.HilbertGlobalPath.exists_full_solution
+#check @LinearStochastic.HilbertGlobalSolution.exists_full_solution
+#print axioms LinearStochastic.HilbertGlobalSolution.exists_full_solution
+#check @LinearStochastic.HilbertGlobalSolution.exists_section_solution
+#print axioms LinearStochastic.HilbertGlobalSolution.exists_section_solution
+#check @LinearStochastic.HilbertLocalSolution.coefficientMatrix
+#print axioms LinearStochastic.HilbertLocalSolution.coefficientMatrix
+#check @LinearStochastic.HilbertLocalSolution.assemble_add
+#print axioms LinearStochastic.HilbertLocalSolution.assemble_add
+#check @LinearStochastic.HilbertLocalSolution.assemble_matrixAction
+#print axioms LinearStochastic.HilbertLocalSolution.assemble_matrixAction
+#check @LinearStochastic.HilbertLocalSolution.assemble_driftInput
+#print axioms LinearStochastic.HilbertLocalSolution.assemble_driftInput
+#check @LinearStochastic.HilbertLocalSolution.assemble_noiseInput
+#print axioms LinearStochastic.HilbertLocalSolution.assemble_noiseInput
+#check @LinearStochastic.HilbertLocalSolution.state_terminal_memLp
+#print axioms LinearStochastic.HilbertLocalSolution.state_terminal_memLp
+#check @LinearStochastic.HilbertLocalSolution.exists_section_solution
+#print axioms LinearStochastic.HilbertLocalSolution.exists_section_solution
+#check @LinearStochastic.HilbertNullExtension.shiftedForwardFamily
+#print axioms LinearStochastic.HilbertNullExtension.shiftedForwardFamily
+#check @LinearStochastic.HilbertNullExtension.exists_null
+#print axioms LinearStochastic.HilbertNullExtension.exists_null
+#check @LinearStochastic.HilbertPathSupBound.coordinate_norm
+#print axioms LinearStochastic.HilbertPathSupBound.coordinate_norm
+#check @LinearStochastic.HilbertPathSupBound.coordinates_norm
+#print axioms LinearStochastic.HilbertPathSupBound.coordinates_norm
+#check @LinearStochastic.HilbertPathSupBound.initial_coordinate
+#print axioms LinearStochastic.HilbertPathSupBound.initial_coordinate
+#check @LinearStochastic.HilbertPathSupBound.basis_pathSup
+#print axioms LinearStochastic.HilbertPathSupBound.basis_pathSup
+#check @LinearStochastic.HilbertPathSupBound.reconstruction
+#print axioms LinearStochastic.HilbertPathSupBound.reconstruction
+#check @LinearStochastic.HilbertPrefixUniqueness.at_prefix
+#print axioms LinearStochastic.HilbertPrefixUniqueness.at_prefix
+#check @LinearStochastic.HilbertRestartUniqueness.coordinateSolution_time
+#print axioms LinearStochastic.HilbertRestartUniqueness.coordinateSolution_time
+#check @LinearStochastic.HilbertRestartUniqueness.coordinate_shift
+#print axioms LinearStochastic.HilbertRestartUniqueness.coordinate_shift
+#check @LinearStochastic.HilbertRestartUniqueness.shiftedForwardFamily
+#print axioms LinearStochastic.HilbertRestartUniqueness.shiftedForwardFamily
+#check @LinearStochastic.HilbertRestartUniqueness.scalar_shift_unique
+#print axioms LinearStochastic.HilbertRestartUniqueness.scalar_shift_unique
+#check @LinearStochastic.HilbertRestartUniqueness.restart
+#print axioms LinearStochastic.HilbertRestartUniqueness.restart
+#check @LinearStochastic.HilbertS2Energy.lp_energy
+#print axioms LinearStochastic.HilbertS2Energy.lp_energy
+#check @LinearStochastic.HilbertS2Energy.initial_energy
+#print axioms LinearStochastic.HilbertS2Energy.initial_energy
+#check @LinearStochastic.HilbertS2Energy.control_energy
+#print axioms LinearStochastic.HilbertS2Energy.control_energy
+#check @LinearStochastic.HilbertS2Energy.full_energy_bound
+#print axioms LinearStochastic.HilbertS2Energy.full_energy_bound
+#check @LinearStochastic.HilbertSectionCoordinates.integral_coordinate_ae
+#print axioms LinearStochastic.HilbertSectionCoordinates.integral_coordinate_ae
+#check @LinearStochastic.HilbertSectionCoordinates.sections_coordinates
+#print axioms LinearStochastic.HilbertSectionCoordinates.sections_coordinates
+#check @LinearStochastic.HilbertSectionCoordinates.terminal_coordinates
+#print axioms LinearStochastic.HilbertSectionCoordinates.terminal_coordinates
+#check @LinearStochastic.HilbertSectionCoordinates.drift_coordinates
+#print axioms LinearStochastic.HilbertSectionCoordinates.drift_coordinates
+#check @LinearStochastic.HilbertSectionCoordinates.noise_coordinates
+#print axioms LinearStochastic.HilbertSectionCoordinates.noise_coordinates
+#check @LinearStochastic.HilbertSectionPrefix.restrict_compLp
+#print axioms LinearStochastic.HilbertSectionPrefix.restrict_compLp
+#check @LinearStochastic.HilbertSectionPrefix.restrict_add
+#print axioms LinearStochastic.HilbertSectionPrefix.restrict_add
+#check @LinearStochastic.HilbertSectionPrefix.controlled_prefix
+#print axioms LinearStochastic.HilbertSectionPrefix.controlled_prefix
+#check @LinearStochastic.HilbertSectionRealization.coordinateSolution
+#print axioms LinearStochastic.HilbertSectionRealization.coordinateSolution
+#check @LinearStochastic.HilbertSectionRealization.coordinateSolution_terminal
+#print axioms LinearStochastic.HilbertSectionRealization.coordinateSolution_terminal
+#check @LinearStochastic.HilbertSectionRealization.exists_realization
+#print axioms LinearStochastic.HilbertSectionRealization.exists_realization
+#check @LinearStochastic.HilbertSectionUniqueness.terminal_unique
+#print axioms LinearStochastic.HilbertSectionUniqueness.terminal_unique
+#check @LinearStochastic.HilbertSmallTimeBound.additive_bound
+#print axioms LinearStochastic.HilbertSmallTimeBound.additive_bound
+#check @LinearStochastic.HilbertSolutionZeroExtension.shiftedForwardFamily
+#print axioms LinearStochastic.HilbertSolutionZeroExtension.shiftedForwardFamily
+#check @LinearStochastic.HilbertSolutionZeroExtension.exists_additive
+#print axioms LinearStochastic.HilbertSolutionZeroExtension.exists_additive
+#check @LinearStochastic.HilbertStateUniqueness.state_unique
+#print axioms LinearStochastic.HilbertStateUniqueness.state_unique
+#check @LinearStochastic.HilbertSwitchingUniqueness.coordinate_comp
+#print axioms LinearStochastic.HilbertSwitchingUniqueness.coordinate_comp
+#check @LinearStochastic.HilbertSwitchingUniqueness.state_unique
+#print axioms LinearStochastic.HilbertSwitchingUniqueness.state_unique
+#check @LinearStochastic.HilbertSwitchingUniqueness.unique
+#print axioms LinearStochastic.HilbertSwitchingUniqueness.unique
+#check @LinearStochastic.InitialExpectedProduct.initial_martingale_pairing_zero
+#print axioms LinearStochastic.InitialExpectedProduct.initial_martingale_pairing_zero
+#check @LinearStochastic.InitialExpectedProduct.shifted_covariance
+#print axioms LinearStochastic.InitialExpectedProduct.shifted_covariance
+#check @LinearStochastic.InitialExpectedProduct.expected_product_initial
+#print axioms LinearStochastic.InitialExpectedProduct.expected_product_initial
+#check @LinearStochastic.InitialExpectedProduct.sumProcess_zero_ae
+#print axioms LinearStochastic.InitialExpectedProduct.sumProcess_zero_ae
+#check @LinearStochastic.InitialExpectedProduct.vectorProcess_zero_ae
+#print axioms LinearStochastic.InitialExpectedProduct.vectorProcess_zero_ae
+#check @LinearStochastic.InitialExpectedProduct.expected_vector_ito_product_initial
+#print axioms LinearStochastic.InitialExpectedProduct.expected_vector_ito_product_initial
+#check @LinearStochastic.InputStructure.feasible_adjoint_eq_orthogonal
+#print axioms LinearStochastic.InputStructure.feasible_adjoint_eq_orthogonal
+#check @LinearStochastic.InputStructure.feasible_adjoint_eq_top_iff
+#print axioms LinearStochastic.InputStructure.feasible_adjoint_eq_top_iff
+#check @LinearStochastic.InputStructure.input_dimension_lower_bound
+#print axioms LinearStochastic.InputStructure.input_dimension_lower_bound
+#check @LinearStochastic.InputStructure.range_id_sub_rightInverse_comp
+#print axioms LinearStochastic.InputStructure.range_id_sub_rightInverse_comp
+#check @LinearStochastic.InputStructure.effective_drift_range
+#print axioms LinearStochastic.InputStructure.effective_drift_range
+#check @LinearStochastic.InputStructure.id_sub_rightInverse_comp_idempotent
+#print axioms LinearStochastic.InputStructure.id_sub_rightInverse_comp_idempotent
+#check @LinearStochastic.InputStructure.diffusionGramEquiv
+#print axioms LinearStochastic.InputStructure.diffusionGramEquiv
+#check @LinearStochastic.InputStructure.canonicalRightInverse
+#print axioms LinearStochastic.InputStructure.canonicalRightInverse
+#check @LinearStochastic.InputStructure.canonicalRightInverse_right_inverse
+#print axioms LinearStochastic.InputStructure.canonicalRightInverse_right_inverse
+#check @LinearStochastic.InputStructure.canonical_kernel_projection
+#print axioms LinearStochastic.InputStructure.canonical_kernel_projection
+#check @LinearStochastic.InputStructure.canonical_diffusion_projection
+#print axioms LinearStochastic.InputStructure.canonical_diffusion_projection
+#check @LinearStochastic.InputStructure.jointDiffusion
+#print axioms LinearStochastic.InputStructure.jointDiffusion
+#check @LinearStochastic.InputStructure.jointDiffusion_adjoint_apply
+#print axioms LinearStochastic.InputStructure.jointDiffusion_adjoint_apply
+#check @LinearStochastic.InputStructure.fromForward
+#print axioms LinearStochastic.InputStructure.fromForward
+#check @LinearStochastic.InputStructure.flag_one_eq_orthogonal
+#print axioms LinearStochastic.InputStructure.flag_one_eq_orthogonal
+#check @LinearStochastic.InputStructure.flag_eq_top_of_drift_kernel_zero
+#print axioms LinearStochastic.InputStructure.flag_eq_top_of_drift_kernel_zero
+#check @LinearStochastic.InputStructure.drift_kernel_ne_zero_of_flag_bot
+#print axioms LinearStochastic.InputStructure.drift_kernel_ne_zero_of_flag_bot
+#check @LinearStochastic.IntegralEnergyDecay.decay_of_integral_identity
+#print axioms LinearStochastic.IntegralEnergyDecay.decay_of_integral_identity
+#check @LinearStochastic.InvariantAdjointDynamics.Dynamics
+#print axioms LinearStochastic.InvariantAdjointDynamics.Dynamics
+#check @LinearStochastic.InvariantAdjointDynamics.exists_dynamics
+#print axioms LinearStochastic.InvariantAdjointDynamics.exists_dynamics
+#check @LinearStochastic.InvariantAdjointDynamics.exists_terminal_dynamics
+#print axioms LinearStochastic.InvariantAdjointDynamics.exists_terminal_dynamics
+#check @LinearStochastic.InvariantAdjointDynamics.coefficients_eq_fromForward
+#print axioms LinearStochastic.InvariantAdjointDynamics.coefficients_eq_fromForward
+#check @LinearStochastic.InvariantSolutionLift.liftedNoise
+#print axioms LinearStochastic.InvariantSolutionLift.liftedNoise
+#check @LinearStochastic.InvariantSolutionLift.liftedNoise_ae
+#print axioms LinearStochastic.InvariantSolutionLift.liftedNoise_ae
+#check @LinearStochastic.InvariantSolutionLift.observation_zero
+#print axioms LinearStochastic.InvariantSolutionLift.observation_zero
+#check @LinearStochastic.InvariantSolutionLift.drift_eq
+#print axioms LinearStochastic.InvariantSolutionLift.drift_eq
+#check @LinearStochastic.InvariantSolutionLift.backward_solution
+#print axioms LinearStochastic.InvariantSolutionLift.backward_solution
+#check @LinearStochastic.ItoExpectedProduct.sumProcess
+#print axioms LinearStochastic.ItoExpectedProduct.sumProcess
+#check @LinearStochastic.ItoExpectedProduct.sumProcess_martingale
+#print axioms LinearStochastic.ItoExpectedProduct.sumProcess_martingale
+#check @LinearStochastic.ItoExpectedProduct.sumProcess_memLp
+#print axioms LinearStochastic.ItoExpectedProduct.sumProcess_memLp
+#check @LinearStochastic.ItoExpectedProduct.sumProcess_terminal_ae
+#print axioms LinearStochastic.ItoExpectedProduct.sumProcess_terminal_ae
+#check @LinearStochastic.ItoExpectedProduct.sumProcess_terminal_inner
+#print axioms LinearStochastic.ItoExpectedProduct.sumProcess_terminal_inner
+#check @LinearStochastic.ItoExpectedProduct.predictable_inner_real
+#print axioms LinearStochastic.ItoExpectedProduct.predictable_inner_real
+#check @LinearStochastic.ItoExpectedProduct.expected_ito_product
+#print axioms LinearStochastic.ItoExpectedProduct.expected_ito_product
+#check @LinearStochastic.JointBrownian.indepFun_pi_pair
+#print axioms LinearStochastic.JointBrownian.indepFun_pi_pair
+#check @LinearStochastic.JointBrownian.law
+#print axioms LinearStochastic.JointBrownian.law
+#check @LinearStochastic.JointBrownian.process
+#print axioms LinearStochastic.JointBrownian.process
+#check @LinearStochastic.JointBrownian.pastPath
+#print axioms LinearStochastic.JointBrownian.pastPath
+#check @LinearStochastic.JointBrownian.process_measurable
+#print axioms LinearStochastic.JointBrownian.process_measurable
+#check @LinearStochastic.JointBrownian.pastPath_measurable
+#print axioms LinearStochastic.JointBrownian.pastPath_measurable
+#check @LinearStochastic.JointBrownian.process_isBrownian
+#print axioms LinearStochastic.JointBrownian.process_isBrownian
+#check @LinearStochastic.JointBrownian.joint_past_independent_increment
+#print axioms LinearStochastic.JointBrownian.joint_past_independent_increment
+#check @LinearStochastic.JointBrownian.increments_independent
+#print axioms LinearStochastic.JointBrownian.increments_independent
+#check @LinearStochastic.JointBrownian.filtration
+#print axioms LinearStochastic.JointBrownian.filtration
+#check @LinearStochastic.JointBrownian.process_measurable_past
+#print axioms LinearStochastic.JointBrownian.process_measurable_past
+#check @LinearStochastic.JointBrownian.gridFiltration
+#print axioms LinearStochastic.JointBrownian.gridFiltration
+#check @LinearStochastic.JointBrownian.gridIncrement
+#print axioms LinearStochastic.JointBrownian.gridIncrement
+#check @LinearStochastic.JointBrownian.gridIncrement_adapted
+#print axioms LinearStochastic.JointBrownian.gridIncrement_adapted
+#check @LinearStochastic.JointBrownian.gridIncrement_law
+#print axioms LinearStochastic.JointBrownian.gridIncrement_law
+#check @LinearStochastic.JointBrownian.gridIncrement_independent_past
+#print axioms LinearStochastic.JointBrownian.gridIncrement_independent_past
+#check @LinearStochastic.JointBrownian.actual_joint_isometry
+#print axioms LinearStochastic.JointBrownian.actual_joint_isometry
+#check @LinearStochastic.JointBrownian.channels_independent
+#print axioms LinearStochastic.JointBrownian.channels_independent
+#check @LinearStochastic.JointBrownian.pair_forward_independent
+#print axioms LinearStochastic.JointBrownian.pair_forward_independent
+#check @LinearStochastic.JointBrownian.itoIntegral_cross_inner
+#print axioms LinearStochastic.JointBrownian.itoIntegral_cross_inner
+#check @LinearStochastic.JointBrownian.sumIntegral
+#print axioms LinearStochastic.JointBrownian.sumIntegral
+#check @LinearStochastic.JointBrownian.sumIntegral_inner
+#print axioms LinearStochastic.JointBrownian.sumIntegral_inner
+#check @LinearStochastic.JointBrownian.sumIntegral_norm_sq
+#print axioms LinearStochastic.JointBrownian.sumIntegral_norm_sq
+#check @LinearStochastic.JointBrownianDirections.direction
+#print axioms LinearStochastic.JointBrownianDirections.direction
+#check @LinearStochastic.JointBrownianDirections.direction_gaussian
+#print axioms LinearStochastic.JointBrownianDirections.direction_gaussian
+#check @LinearStochastic.JointBrownianDirections.direction_centered
+#print axioms LinearStochastic.JointBrownianDirections.direction_centered
+#check @LinearStochastic.JointBrownianDirections.direction_covariance
+#print axioms LinearStochastic.JointBrownianDirections.direction_covariance
+#check @LinearStochastic.JointBrownianDirections.direction_preBrownian
+#print axioms LinearStochastic.JointBrownianDirections.direction_preBrownian
+#check @LinearStochastic.JointBrownianDirections.direction_measurable
+#print axioms LinearStochastic.JointBrownianDirections.direction_measurable
+#check @LinearStochastic.JointBrownianDirections.direction_continuous
+#print axioms LinearStochastic.JointBrownianDirections.direction_continuous
+#check @LinearStochastic.JointBrownian.joint_past_independent_forward
+#print axioms LinearStochastic.JointBrownian.joint_past_independent_forward
+#check @LinearStochastic.JointBrownian.commonForwardIndependent
+#print axioms LinearStochastic.JointBrownian.commonForwardIndependent
+#check @LinearStochastic.JointBrownian.predictableMeasure
+#print axioms LinearStochastic.JointBrownian.predictableMeasure
+#check @LinearStochastic.JointBrownian.itoIntegral
+#print axioms LinearStochastic.JointBrownian.itoIntegral
+#check @LinearStochastic.JointBrownian.itoIntegral_norm
+#print axioms LinearStochastic.JointBrownian.itoIntegral_norm
+#check @LinearStochastic.JointBrownian.itoIntegral_inner
+#print axioms LinearStochastic.JointBrownian.itoIntegral_inner
+#check @LinearStochastic.JointBrownian.itoIntegral_simple
+#print axioms LinearStochastic.JointBrownian.itoIntegral_simple
+#check @LinearStochastic.JointCylinderGeneration.natural
+#print axioms LinearStochastic.JointCylinderGeneration.natural
+#check @LinearStochastic.JointCylinderGeneration.natural_eq
+#print axioms LinearStochastic.JointCylinderGeneration.natural_eq
+#check @LinearStochastic.JointCylinderGeneration.measurable_natural
+#print axioms LinearStochastic.JointCylinderGeneration.measurable_natural
+#check @LinearStochastic.JointCylinderGeneration.cylinderSigma
+#print axioms LinearStochastic.JointCylinderGeneration.cylinderSigma
+#check @LinearStochastic.JointCylinderGeneration.cylinders
+#print axioms LinearStochastic.JointCylinderGeneration.cylinders
+#check @LinearStochastic.JointCylinderGeneration.iSup_cylinders_eq_natural
+#print axioms LinearStochastic.JointCylinderGeneration.iSup_cylinders_eq_natural
+#check @LinearStochastic.JointCylinderGeneration.cylinderSigma_eq_coordinates
+#print axioms LinearStochastic.JointCylinderGeneration.cylinderSigma_eq_coordinates
+#check @LinearStochastic.JointDoleansBand.exponential
+#print axioms LinearStochastic.JointDoleansBand.exponential
+#check @LinearStochastic.JointDoleansBand.band_mem_range
+#print axioms LinearStochastic.JointDoleansBand.band_mem_range
+#check @LinearStochastic.JointDoleansBand.factored_band_mem_range
+#print axioms LinearStochastic.JointDoleansBand.factored_band_mem_range
+#check @LinearStochastic.JointDoleansMoments.stepExp
+#print axioms LinearStochastic.JointDoleansMoments.stepExp
+#check @LinearStochastic.JointDoleansMoments.memLp_exp_vector_increment
+#print axioms LinearStochastic.JointDoleansMoments.memLp_exp_vector_increment
+#check @LinearStochastic.JointDoleansMoments.memLp_exp_stepSum
+#print axioms LinearStochastic.JointDoleansMoments.memLp_exp_stepSum
+#check @LinearStochastic.JointDoleansMoments.memLp_stepExp
+#print axioms LinearStochastic.JointDoleansMoments.memLp_stepExp
+#check @LinearStochastic.JointDoleansMoments.measurable_stepExp
+#print axioms LinearStochastic.JointDoleansMoments.measurable_stepExp
+#check @LinearStochastic.JointExponentialTotality.eq_zero_of_orthogonal_finite_exponentials
+#print axioms LinearStochastic.JointExponentialTotality.eq_zero_of_orthogonal_finite_exponentials
+#check @LinearStochastic.JointHilbertBSDE.exists_section_backward
+#print axioms LinearStochastic.JointHilbertBSDE.exists_section_backward
+#check @LinearStochastic.JointHilbertBSDE.terminal_annihilator_eq_zero
+#print axioms LinearStochastic.JointHilbertBSDE.terminal_annihilator_eq_zero
+#check @LinearStochastic.JointMartingaleRepresentation.inner_eq_integral_mul
+#print axioms LinearStochastic.JointMartingaleRepresentation.inner_eq_integral_mul
+#check @LinearStochastic.JointMartingaleRepresentation.integral
+#print axioms LinearStochastic.JointMartingaleRepresentation.integral
+#check @LinearStochastic.JointMartingaleRepresentation.integral_mean_zero
+#print axioms LinearStochastic.JointMartingaleRepresentation.integral_mean_zero
+#check @LinearStochastic.JointMartingaleRepresentation.orthogonal_step
+#print axioms LinearStochastic.JointMartingaleRepresentation.orthogonal_step
+#check @LinearStochastic.JointMartingaleRepresentation.centered_mem_range
+#print axioms LinearStochastic.JointMartingaleRepresentation.centered_mem_range
+#check @LinearStochastic.JointMartingaleRepresentation.represented
+#print axioms LinearStochastic.JointMartingaleRepresentation.represented
+#check @LinearStochastic.JointNaturalForward.regroup_independent_pairs
+#print axioms LinearStochastic.JointNaturalForward.regroup_independent_pairs
+#check @LinearStochastic.JointNaturalForward.joint_future_past
+#print axioms LinearStochastic.JointNaturalForward.joint_future_past
+#check @LinearStochastic.JointNaturalForward.natural_le_past
+#print axioms LinearStochastic.JointNaturalForward.natural_le_past
+#check @LinearStochastic.JointNaturalForward.direction_adapted
+#print axioms LinearStochastic.JointNaturalForward.direction_adapted
+#check @LinearStochastic.JointNaturalForward.directionForward
+#print axioms LinearStochastic.JointNaturalForward.directionForward
+#check @LinearStochastic.JointNaturalForward.coordinateForward
+#print axioms LinearStochastic.JointNaturalForward.coordinateForward
+#check @LinearStochastic.JointNaturalForward.pairForward
+#print axioms LinearStochastic.JointNaturalForward.pairForward
+#check @LinearStochastic.JointStepRepresentation.step_difference
+#print axioms LinearStochastic.JointStepRepresentation.step_difference
+#check @LinearStochastic.JointStepRepresentation.step_mem_range
+#print axioms LinearStochastic.JointStepRepresentation.step_mem_range
+#check @LinearStochastic.JointStepTotality.integral_mul_exp_linear_eq_zero
+#print axioms LinearStochastic.JointStepTotality.integral_mul_exp_linear_eq_zero
+#check @LinearStochastic.JointStepTotality.eq_zero_of_orthogonal_stepExp
+#print axioms LinearStochastic.JointStepTotality.eq_zero_of_orthogonal_stepExp
+#check @LinearStochastic.JointUsualBrownianGlobal.coordinateForward
+#print axioms LinearStochastic.JointUsualBrownianGlobal.coordinateForward
+#check @LinearStochastic.JointUsualBrownianGlobal.pairForward
+#print axioms LinearStochastic.JointUsualBrownianGlobal.pairForward
+#check @LinearStochastic.JointUsualBrownianGlobal.exists_global_progressive_control
+#print axioms LinearStochastic.JointUsualBrownianGlobal.exists_global_progressive_control
+#check @LinearStochastic.JointUsualBrownianGlobal.global_unique
+#print axioms LinearStochastic.JointUsualBrownianGlobal.global_unique
+#check @LinearStochastic.JointUsualIndependence.exists_natural_event
+#print axioms LinearStochastic.JointUsualIndependence.exists_natural_event
+#check @LinearStochastic.JointUsualIndependence.indep_usual
+#print axioms LinearStochastic.JointUsualIndependence.indep_usual
+#check @LinearStochastic.JointUsualIndependence.coordinateForward
+#print axioms LinearStochastic.JointUsualIndependence.coordinateForward
+#check @LinearStochastic.JointUsualIndependence.pairForward
+#print axioms LinearStochastic.JointUsualIndependence.pairForward
+#check @LinearStochastic.JointUsualNatural.augmented
+#print axioms LinearStochastic.JointUsualNatural.augmented
+#check @LinearStochastic.JointUsualNatural.usual
+#print axioms LinearStochastic.JointUsualNatural.usual
+#check @LinearStochastic.JointUsualNatural.natural_le_usual
+#print axioms LinearStochastic.JointUsualNatural.natural_le_usual
+#check @LinearStochastic.JointUsualNatural.usual_rightContinuous
+#print axioms LinearStochastic.JointUsualNatural.usual_rightContinuous
+#check @LinearStochastic.JointUsualNatural.usual_complete
+#print axioms LinearStochastic.JointUsualNatural.usual_complete
+#check @LinearStochastic.JointUsualNatural.usual_le_augmented
+#print axioms LinearStochastic.JointUsualNatural.usual_le_augmented
+#check @LinearStochastic.JointUsualNatural.natural_measurable_later
+#print axioms LinearStochastic.JointUsualNatural.natural_measurable_later
+#check @LinearStochastic.JointUsualNatural.natural_measurable_of_usual
+#print axioms LinearStochastic.JointUsualNatural.natural_measurable_of_usual
+#check @LinearStochastic.JointUsualRepresentation.represented
+#print axioms LinearStochastic.JointUsualRepresentation.represented
+#check @LinearStochastic.JointUsualShiftRepresentation.represented
+#print axioms LinearStochastic.JointUsualShiftRepresentation.represented
+#check @LinearStochastic.KnownTargetControl.control
+#print axioms LinearStochastic.KnownTargetControl.control
+#check @LinearStochastic.KnownTargetControl.measurable_template
+#print axioms LinearStochastic.KnownTargetControl.measurable_template
+#check @LinearStochastic.KnownTargetControl.progressive
+#print axioms LinearStochastic.KnownTargetControl.progressive
+#check @LinearStochastic.KnownTargetControl.exists_norm_bound
+#print axioms LinearStochastic.KnownTargetControl.exists_norm_bound
+#check @LinearStochastic.KnownTargetControl.memLp
+#print axioms LinearStochastic.KnownTargetControl.memLp
+#check @LinearStochastic.KnownTargetControl.zero_prefix
+#print axioms LinearStochastic.KnownTargetControl.zero_prefix
+#check @LinearStochastic.KnownTargetGramian.steeringControl
+#print axioms LinearStochastic.KnownTargetGramian.steeringControl
+#check @LinearStochastic.KnownTargetGramian.terminal_last_interval
+#print axioms LinearStochastic.KnownTargetGramian.terminal_last_interval
+#check @LinearStochastic.KnownTargetGramian.progressive
+#print axioms LinearStochastic.KnownTargetGramian.progressive
+#check @LinearStochastic.KnownTargetGramian.memLp
+#print axioms LinearStochastic.KnownTargetGramian.memLp
+#check @LinearStochastic.KnownTargetLpReaching.exists_solution
+#print axioms LinearStochastic.KnownTargetLpReaching.exists_solution
+#check @LinearStochastic.KnownTargetSolution.terminal
+#print axioms LinearStochastic.KnownTargetSolution.terminal
+#check @LinearStochastic.KnownTargetSolution.exists_solution
+#print axioms LinearStochastic.KnownTargetSolution.exists_solution
+#check @LinearStochastic.KnownTargetState.path
+#print axioms LinearStochastic.KnownTargetState.path
+#check @LinearStochastic.KnownTargetState.continuous
+#print axioms LinearStochastic.KnownTargetState.continuous
+#check @LinearStochastic.KnownTargetState.progressive
+#print axioms LinearStochastic.KnownTargetState.progressive
+#check @LinearStochastic.KnownTargetState.squareSup
+#print axioms LinearStochastic.KnownTargetState.squareSup
+#check @LinearStochastic.KnownTargetState.control_integrable
+#print axioms LinearStochastic.KnownTargetState.control_integrable
+#check @LinearStochastic.KnownTargetState.equation
+#print axioms LinearStochastic.KnownTargetState.equation
+#check @LinearStochastic.LMICoefficients.liftBlock
+#print axioms LinearStochastic.LMICoefficients.liftBlock
+#check @LinearStochastic.LMICoefficients.liftBlock_adjoint
+#print axioms LinearStochastic.LMICoefficients.liftBlock_adjoint
+#check @LinearStochastic.LMICoefficients.trace_liftBlock
+#print axioms LinearStochastic.LMICoefficients.trace_liftBlock
+#check @LinearStochastic.LMICoefficients.lmi
+#print axioms LinearStochastic.LMICoefficients.lmi
+#check @LinearStochastic.LMICoefficients.liftBlock_add
+#print axioms LinearStochastic.LMICoefficients.liftBlock_add
+#check @LinearStochastic.LMICoefficients.liftBlock_smul
+#print axioms LinearStochastic.LMICoefficients.liftBlock_smul
+#check @LinearStochastic.LMICoefficients.lmi_symmetric
+#print axioms LinearStochastic.LMICoefficients.lmi_symmetric
+#check @LinearStochastic.LMICoefficients.trace_adjoint
+#print axioms LinearStochastic.LMICoefficients.trace_adjoint
+#check @LinearStochastic.LMICoefficients.trace_comp_adjoint
+#print axioms LinearStochastic.LMICoefficients.trace_comp_adjoint
+#check @LinearStochastic.LMICoefficients.trace_comp_add
+#print axioms LinearStochastic.LMICoefficients.trace_comp_add
+#check @LinearStochastic.LMICoefficients.trace_comp_sub
+#print axioms LinearStochastic.LMICoefficients.trace_comp_sub
+#check @LinearStochastic.LMICoefficients.trace_comp_sum
+#print axioms LinearStochastic.LMICoefficients.trace_comp_sum
+#check @LinearStochastic.LMICoefficients.trace_lmi_blocks
+#print axioms LinearStochastic.LMICoefficients.trace_lmi_blocks
+#check @LinearStochastic.LMICoefficients.lmi_add
+#print axioms LinearStochastic.LMICoefficients.lmi_add
+#check @LinearStochastic.LMICoefficients.lmi_smul
+#print axioms LinearStochastic.LMICoefficients.lmi_smul
+#check @LinearStochastic.LMICoefficients.lmiMap
+#print axioms LinearStochastic.LMICoefficients.lmiMap
+#check @LinearStochastic.LMICoefficients.trace_cycle_three
+#print axioms LinearStochastic.LMICoefficients.trace_cycle_three
+#check @LinearStochastic.LMICoefficients.trace_symmetric_right
+#print axioms LinearStochastic.LMICoefficients.trace_symmetric_right
+#check @LinearStochastic.LMICoefficients.trace_control_pair
+#print axioms LinearStochastic.LMICoefficients.trace_control_pair
+#check @LinearStochastic.LMICoefficients.stateCoefficient
+#print axioms LinearStochastic.LMICoefficients.stateCoefficient
+#check @LinearStochastic.LMICoefficients.inputCoefficient
+#print axioms LinearStochastic.LMICoefficients.inputCoefficient
+#check @LinearStochastic.LMICoefficients.trace_add_comp
+#print axioms LinearStochastic.LMICoefficients.trace_add_comp
+#check @LinearStochastic.LMICoefficients.trace_sub_comp
+#print axioms LinearStochastic.LMICoefficients.trace_sub_comp
+#check @LinearStochastic.LMICoefficients.trace_sum_comp
+#print axioms LinearStochastic.LMICoefficients.trace_sum_comp
+#check @LinearStochastic.LMICoefficients.stateCoefficient_symmetric
+#print axioms LinearStochastic.LMICoefficients.stateCoefficient_symmetric
+#check @LinearStochastic.LMICoefficients.trace_lmi_coefficients
+#print axioms LinearStochastic.LMICoefficients.trace_lmi_coefficients
+#check @LinearStochastic.LMICoefficients.symmetric_trace_separates
+#print axioms LinearStochastic.LMICoefficients.symmetric_trace_separates
+#check @LinearStochastic.LMICoefficients.rectangular_trace_separates
+#print axioms LinearStochastic.LMICoefficients.rectangular_trace_separates
+#check @LinearStochastic.LMICoefficients.coefficients_of_trace_annihilation
+#print axioms LinearStochastic.LMICoefficients.coefficients_of_trace_annihilation
+#check @LinearStochastic.LMICoefficients.arbitrary_rate_feasible
+#print axioms LinearStochastic.LMICoefficients.arbitrary_rate_feasible
+#check @LinearStochastic.LMICoefficients.lmi_noise_diagonal
+#print axioms LinearStochastic.LMICoefficients.lmi_noise_diagonal
+#check @LinearStochastic.LMICoefficients.inject_norm
+#print axioms LinearStochastic.LMICoefficients.inject_norm
+#check @LinearStochastic.LMICoefficients.positive_lyapunov_of_negative_lmi
+#print axioms LinearStochastic.LMICoefficients.positive_lyapunov_of_negative_lmi
+#check @LinearStochastic.LMIFeedback.positive_injective
+#print axioms LinearStochastic.LMIFeedback.positive_injective
+#check @LinearStochastic.LMIFeedback.inverse
+#print axioms LinearStochastic.LMIFeedback.inverse
+#check @LinearStochastic.LMIFeedback.apply_inverse
+#print axioms LinearStochastic.LMIFeedback.apply_inverse
+#check @LinearStochastic.LMIFeedback.inverse_apply
+#print axioms LinearStochastic.LMIFeedback.inverse_apply
+#check @LinearStochastic.LMIFeedback.inverse_symmetric
+#print axioms LinearStochastic.LMIFeedback.inverse_symmetric
+#check @LinearStochastic.LMIFeedback.inverse_strict
+#print axioms LinearStochastic.LMIFeedback.inverse_strict
+#check @LinearStochastic.LMIFeedback.liftBlock_inner
+#print axioms LinearStochastic.LMIFeedback.liftBlock_inner
+#check @LinearStochastic.LMIFeedback.lmi_quadratic
+#print axioms LinearStochastic.LMIFeedback.lmi_quadratic
+#check @LinearStochastic.LMIFeedback.head_quadratic
+#print axioms LinearStochastic.LMIFeedback.head_quadratic
+#check @LinearStochastic.LMIFeedback.testVector
+#print axioms LinearStochastic.LMIFeedback.testVector
+#check @LinearStochastic.LMIFeedback.project_test_none
+#print axioms LinearStochastic.LMIFeedback.project_test_none
+#check @LinearStochastic.LMIFeedback.project_test_some
+#print axioms LinearStochastic.LMIFeedback.project_test_some
+#check @LinearStochastic.LMIFeedback.feedback_test_quadratic
+#print axioms LinearStochastic.LMIFeedback.feedback_test_quadratic
+#check @LinearStochastic.LMIFeedback.closed_loop_lyapunov
+#print axioms LinearStochastic.LMIFeedback.closed_loop_lyapunov
+#check @LinearStochastic.LMIFeedback.inverse_uniformPositive
+#print axioms LinearStochastic.LMIFeedback.inverse_uniformPositive
+#check @LinearStochastic.LMIFeedback.arbitrary_rate_feedback
+#print axioms LinearStochastic.LMIFeedback.arbitrary_rate_feedback
+#check @LinearStochastic.LMIMatrixCoordinates.flattenLinear
+#print axioms LinearStochastic.LMIMatrixCoordinates.flattenLinear
+#check @LinearStochastic.LMIMatrixCoordinates.flatten
+#print axioms LinearStochastic.LMIMatrixCoordinates.flatten
+#check @LinearStochastic.LMIMatrixCoordinates.flattenEnd
+#print axioms LinearStochastic.LMIMatrixCoordinates.flattenEnd
+#check @LinearStochastic.LMIMatrixCoordinates.blockMatrix
+#print axioms LinearStochastic.LMIMatrixCoordinates.blockMatrix
+#check @LinearStochastic.LMIMatrixCoordinates.embed
+#print axioms LinearStochastic.LMIMatrixCoordinates.embed
+#check @LinearStochastic.LMIMatrixCoordinates.flatten_liftBlock
+#print axioms LinearStochastic.LMIMatrixCoordinates.flatten_liftBlock
+#check @LinearStochastic.LMIMatrixCoordinates.blockMatrix_liftBlock
+#print axioms LinearStochastic.LMIMatrixCoordinates.blockMatrix_liftBlock
+#check @LinearStochastic.LMIMatrixCoordinates.blockMatrix_action
+#print axioms LinearStochastic.LMIMatrixCoordinates.blockMatrix_action
+#check @LinearStochastic.LMIMatrixCoordinates.blockMatrix_symmetric
+#print axioms LinearStochastic.LMIMatrixCoordinates.blockMatrix_symmetric
+#check @LinearStochastic.LMIMatrixCoordinates.blockMatrix_posDef
+#print axioms LinearStochastic.LMIMatrixCoordinates.blockMatrix_posDef
+#check @LinearStochastic.LMIMatrixCoordinates.matrix_adjoint
+#print axioms LinearStochastic.LMIMatrixCoordinates.matrix_adjoint
+#check @LinearStochastic.LMIMatrixCoordinates.matrixLMI
+#print axioms LinearStochastic.LMIMatrixCoordinates.matrixLMI
+#check @LinearStochastic.LMIMatrixCoordinates.matrixLMI_state_state
+#print axioms LinearStochastic.LMIMatrixCoordinates.matrixLMI_state_state
+#check @LinearStochastic.LMIMatrixCoordinates.matrixLMI_noise_state
+#print axioms LinearStochastic.LMIMatrixCoordinates.matrixLMI_noise_state
+#check @LinearStochastic.LMIMatrixCoordinates.matrixLMI_state_noise
+#print axioms LinearStochastic.LMIMatrixCoordinates.matrixLMI_state_noise
+#check @LinearStochastic.LMIMatrixCoordinates.matrixLMI_noise_noise
+#print axioms LinearStochastic.LMIMatrixCoordinates.matrixLMI_noise_noise
+#check @LinearStochastic.LMIMatrixCoordinates.positive_lyapunov_of_matrix_lmi
+#print axioms LinearStochastic.LMIMatrixCoordinates.positive_lyapunov_of_matrix_lmi
+#check @LinearStochastic.LMIMatrixCoordinates.lmi_coordinate_identity
+#print axioms LinearStochastic.LMIMatrixCoordinates.lmi_coordinate_identity
+#check @LinearStochastic.LMIMatrixCoordinates.arbitrary_rate_matrix_feasible
+#print axioms LinearStochastic.LMIMatrixCoordinates.arbitrary_rate_matrix_feasible
+#check @LinearStochastic.LMIMatrixCoordinates.arbitrary_rate_positive_matrix_feasible
+#print axioms LinearStochastic.LMIMatrixCoordinates.arbitrary_rate_positive_matrix_feasible
+#check @LinearStochastic.LMINormalization.Feasible
+#print axioms LinearStochastic.LMINormalization.Feasible
+#check @LinearStochastic.LMINormalization.normalize_strict
+#print axioms LinearStochastic.LMINormalization.normalize_strict
+#check @LinearStochastic.LMINormalization.feasible_of_zero_flag
+#print axioms LinearStochastic.LMINormalization.feasible_of_zero_flag
+#check @LinearStochastic.LMINormalization.feasible_lyapunov_ge_one
+#print axioms LinearStochastic.LMINormalization.feasible_lyapunov_ge_one
+#check @LinearStochastic.LMINormalization.feasible_uniformPositive
+#print axioms LinearStochastic.LMINormalization.feasible_uniformPositive
+#check @LinearStochastic.LMINormalization.feasible_inverse_bound
+#print axioms LinearStochastic.LMINormalization.feasible_inverse_bound
+#check @LinearStochastic.LMINormalization.feasible_inverse_norm_le_one
+#print axioms LinearStochastic.LMINormalization.feasible_inverse_norm_le_one
+#check @LinearStochastic.LMIPolynomial.entries
+#print axioms LinearStochastic.LMIPolynomial.entries
+#check @LinearStochastic.LMIPolynomial.eval_entries
+#print axioms LinearStochastic.LMIPolynomial.eval_entries
+#check @LinearStochastic.LMIPolynomial.frobenius_sq
+#print axioms LinearStochastic.LMIPolynomial.frobenius_sq
+#check @LinearStochastic.LMIPolynomial.objective
+#print axioms LinearStochastic.LMIPolynomial.objective
+#check @LinearStochastic.LMIPolynomial.eval_objective
+#print axioms LinearStochastic.LMIPolynomial.eval_objective
+#check @LinearStochastic.LMIPolynomial.quadratic
+#print axioms LinearStochastic.LMIPolynomial.quadratic
+#check @LinearStochastic.LMIPolynomial.eval_quadratic
+#print axioms LinearStochastic.LMIPolynomial.eval_quadratic
+#check @LinearStochastic.LMIPolynomial.isSemialgebraic_symmetric
+#print axioms LinearStochastic.LMIPolynomial.isSemialgebraic_symmetric
+#check @LinearStochastic.LMIStability.genericBlockNormedSpace
+#print axioms LinearStochastic.LMIStability.genericBlockNormedSpace
+#check @LinearStochastic.LMIStability.lmi_rate_difference
+#print axioms LinearStochastic.LMIStability.lmi_rate_difference
+#check @LinearStochastic.LMIStability.lmi_rate_continuous
+#print axioms LinearStochastic.LMIStability.lmi_rate_continuous
+#check @LinearStochastic.LMIStability.scaled_margin
+#print axioms LinearStochastic.LMIStability.scaled_margin
+#check @LinearStochastic.LMIStability.scaled_feasible_near
+#print axioms LinearStochastic.LMIStability.scaled_feasible_near
+#check @LinearStochastic.MatrixStability.blockNormedSpace
+#print axioms LinearStochastic.MatrixStability.blockNormedSpace
+#check @LinearStochastic.MatrixStability.blockContinuousSMul
+#print axioms LinearStochastic.MatrixStability.blockContinuousSMul
+#check @LinearStochastic.MatrixStability.operator_of_feasible
+#print axioms LinearStochastic.MatrixStability.operator_of_feasible
+#check @LinearStochastic.MatrixStability.scaled_feasible_near
+#print axioms LinearStochastic.MatrixStability.scaled_feasible_near
+#check @LinearStochastic.LinearDuality.compLp_adjoint
+#print axioms LinearStochastic.LinearDuality.compLp_adjoint
+#check @LinearStochastic.LinearDuality.coefficient_cancellation
+#print axioms LinearStochastic.LinearDuality.coefficient_cancellation
+#check @LinearStochastic.LinearDuality.observation_ae
+#print axioms LinearStochastic.LinearDuality.observation_ae
+#check @LinearStochastic.LinearDuality.predictable_inner_expectation
+#print axioms LinearStochastic.LinearDuality.predictable_inner_expectation
+#check @LinearStochastic.LinearDuality.integralState
+#print axioms LinearStochastic.LinearDuality.integralState
+#check @LinearStochastic.LinearDuality.IntegralSolution
+#print axioms LinearStochastic.LinearDuality.IntegralSolution
+#check @LinearStochastic.LinearDuality.integral_solution_product
+#print axioms LinearStochastic.LinearDuality.integral_solution_product
+#check @LinearStochastic.LinearDuality.forward_backward_duality
+#print axioms LinearStochastic.LinearDuality.forward_backward_duality
+#check @LinearStochastic.LinearDuality.forward_backward_duality_real
+#print axioms LinearStochastic.LinearDuality.forward_backward_duality_real
+#check @LinearStochastic.LocalCommonObstruction.exists_common_horizon_observation
+#print axioms LinearStochastic.LocalCommonObstruction.exists_common_horizon_observation
+#check @LinearStochastic.LocalCommonObstruction.exists_nonempty_separated_forward_family
+#print axioms LinearStochastic.LocalCommonObstruction.exists_nonempty_separated_forward_family
+#check @LinearStochastic.LocalInvariantObstruction.exists_local_zero_observation
+#print axioms LinearStochastic.LocalInvariantObstruction.exists_local_zero_observation
+#check @LinearStochastic.LocalInvariantObstruction.exists_positive_horizon_separation
+#print axioms LinearStochastic.LocalInvariantObstruction.exists_positive_horizon_separation
+#check @LinearStochastic.LpFiniteTensor.injection
+#print axioms LinearStochastic.LpFiniteTensor.injection
+#check @LinearStochastic.LpFiniteTensor.injection_ae
+#print axioms LinearStochastic.LpFiniteTensor.injection_ae
+#check @LinearStochastic.LpFiniteTensor.comp_injection
+#print axioms LinearStochastic.LpFiniteTensor.comp_injection
+#check @LinearStochastic.LpFiniteTensor.coordinate_injection
+#print axioms LinearStochastic.LpFiniteTensor.coordinate_injection
+#check @LinearStochastic.LpFiniteTensor.lp_expansion
+#print axioms LinearStochastic.LpFiniteTensor.lp_expansion
+#check @LinearStochastic.LpFiniteTensor.lift
+#print axioms LinearStochastic.LpFiniteTensor.lift
+#check @LinearStochastic.LpFiniteTensor.lift_injection
+#print axioms LinearStochastic.LpFiniteTensor.lift_injection
+#check @LinearStochastic.LpFiniteTensor.lift_comp
+#print axioms LinearStochastic.LpFiniteTensor.lift_comp
+#check @LinearStochastic.LpLyapunovEstimate.quadratic_integrable
+#print axioms LinearStochastic.LpLyapunovEstimate.quadratic_integrable
+#check @LinearStochastic.LpLyapunovEstimate.quadratic_inner
+#print axioms LinearStochastic.LpLyapunovEstimate.quadratic_inner
+#check @LinearStochastic.LpLyapunovEstimate.coefficient_inner
+#print axioms LinearStochastic.LpLyapunovEstimate.coefficient_inner
+#check @LinearStochastic.LpLyapunovEstimate.diffusion_inner
+#print axioms LinearStochastic.LpLyapunovEstimate.diffusion_inner
+#check @LinearStochastic.LpLyapunovEstimate.integrated
+#print axioms LinearStochastic.LpLyapunovEstimate.integrated
+#check @LinearStochastic.LpOrthonormalCoordinates.assemble
+#print axioms LinearStochastic.LpOrthonormalCoordinates.assemble
+#check @LinearStochastic.LpOrthonormalCoordinates.assemble_ae
+#print axioms LinearStochastic.LpOrthonormalCoordinates.assemble_ae
+#check @LinearStochastic.LpOrthonormalCoordinates.coordinate_assemble
+#print axioms LinearStochastic.LpOrthonormalCoordinates.coordinate_assemble
+#check @LinearStochastic.LpOrthonormalCoordinates.assemble_coordinates
+#print axioms LinearStochastic.LpOrthonormalCoordinates.assemble_coordinates
+#check @LinearStochastic.LpOrthonormalCoordinates.assemble_matrix
+#print axioms LinearStochastic.LpOrthonormalCoordinates.assemble_matrix
+#check @LinearStochastic.MathFinBridge.canonical_brownian_foundation
+#print axioms LinearStochastic.MathFinBridge.canonical_brownian_foundation
+#check @LinearStochastic.MathFinBridge.affine_lipschitz
+#print axioms LinearStochastic.MathFinBridge.affine_lipschitz
+#check @LinearStochastic.MathFinBridge.linear_lipschitz
+#print axioms LinearStochastic.MathFinBridge.linear_lipschitz
+#check @LinearStochastic.MathFinBridge.affine_sde_local_exists_unique
+#print axioms LinearStochastic.MathFinBridge.affine_sde_local_exists_unique
+#check @LinearStochastic.MathFinBridge.controlled_scalar_sde_local_exists_unique
+#print axioms LinearStochastic.MathFinBridge.controlled_scalar_sde_local_exists_unique
+#check @LinearStochastic.MatrixApproximateClassification.flag_iff_rank
+#print axioms LinearStochastic.MatrixApproximateClassification.flag_iff_rank
+#check @LinearStochastic.MatrixApproximateClassification.classification
+#print axioms LinearStochastic.MatrixApproximateClassification.classification
+#check @LinearStochastic.MatrixApproximateClassification.approximate_iff_rank
+#print axioms LinearStochastic.MatrixApproximateClassification.approximate_iff_rank
+#check @LinearStochastic.MatrixDimensionObjective.dimension_le_frobenius_sq
+#print axioms LinearStochastic.MatrixDimensionObjective.dimension_le_frobenius_sq
+#check @LinearStochastic.MatrixDimensionObjective.dimension_le_objective
+#print axioms LinearStochastic.MatrixDimensionObjective.dimension_le_objective
+#check @LinearStochastic.MatrixDimensionObjective.feasible_dimension_le_objective
+#print axioms LinearStochastic.MatrixDimensionObjective.feasible_dimension_le_objective
+#check @LinearStochastic.MatrixExactTerminal.raw_exact_terminal
+#print axioms LinearStochastic.MatrixExactTerminal.raw_exact_terminal
+#check @LinearStochastic.MatrixExactTerminal.raw_exact_of_exactNull
+#print axioms LinearStochastic.MatrixExactTerminal.raw_exact_of_exactNull
+#check @LinearStochastic.MatrixExactTerminal.matrix_exact_terminal
+#print axioms LinearStochastic.MatrixExactTerminal.matrix_exact_terminal
+#check @LinearStochastic.MatrixExactTerminal.matrix_exact_of_exactNull
+#print axioms LinearStochastic.MatrixExactTerminal.matrix_exact_of_exactNull
+#check @LinearStochastic.MatrixFeedback.blockNormedSpace
+#print axioms LinearStochastic.MatrixFeedback.blockNormedSpace
+#check @LinearStochastic.MatrixFeedback.blockContinuousSMul
+#print axioms LinearStochastic.MatrixFeedback.blockContinuousSMul
+#check @LinearStochastic.MatrixFeedback.inverse_matrix
+#print axioms LinearStochastic.MatrixFeedback.inverse_matrix
+#check @LinearStochastic.MatrixFeedback.lmi_uniformPositive
+#print axioms LinearStochastic.MatrixFeedback.lmi_uniformPositive
+#check @LinearStochastic.MatrixFeedback.matrix_closed_loop_quadratic
+#print axioms LinearStochastic.MatrixFeedback.matrix_closed_loop_quadratic
+#check @LinearStochastic.MatrixFeedback.lyapunovMatrix
+#print axioms LinearStochastic.MatrixFeedback.lyapunovMatrix
+#check @LinearStochastic.MatrixFeedback.lyapunovMatrix_symmetric
+#print axioms LinearStochastic.MatrixFeedback.lyapunovMatrix_symmetric
+#check @LinearStochastic.MatrixFeedback.transpose_toEuclideanLin
+#print axioms LinearStochastic.MatrixFeedback.transpose_toEuclideanLin
+#check @LinearStochastic.MatrixFeedback.lyapunovMatrix_quadratic
+#print axioms LinearStochastic.MatrixFeedback.lyapunovMatrix_quadratic
+#check @LinearStochastic.MatrixFeedback.matrix_closed_loop_negative
+#print axioms LinearStochastic.MatrixFeedback.matrix_closed_loop_negative
+#check @LinearStochastic.MatrixFeedback.arbitrary_rate_matrix_feedback
+#print axioms LinearStochastic.MatrixFeedback.arbitrary_rate_matrix_feedback
+#check @LinearStochastic.MatrixFeedbackPath.closed_loop_compLp
+#print axioms LinearStochastic.MatrixFeedbackPath.closed_loop_compLp
+#check @LinearStochastic.MatrixFeedbackPath.exists_decay
+#print axioms LinearStochastic.MatrixFeedbackPath.exists_decay
+#check @LinearStochastic.MatrixGrowthBounds.operator_apply_bound
+#print axioms LinearStochastic.MatrixGrowthBounds.operator_apply_bound
+#check @LinearStochastic.MatrixGrowthBounds.operator_norm_le_frobenius
+#print axioms LinearStochastic.MatrixGrowthBounds.operator_norm_le_frobenius
+#check @LinearStochastic.MatrixGrowthBounds.eigenvector_action
+#print axioms LinearStochastic.MatrixGrowthBounds.eigenvector_action
+#check @LinearStochastic.MatrixGrowthBounds.eigenvalue_le_frobenius
+#print axioms LinearStochastic.MatrixGrowthBounds.eigenvalue_le_frobenius
+#check @LinearStochastic.MatrixGrowthBounds.eigenvalue_ge_one
+#print axioms LinearStochastic.MatrixGrowthBounds.eigenvalue_ge_one
+#check @LinearStochastic.MatrixGrowthBounds.maxEigenvalue
+#print axioms LinearStochastic.MatrixGrowthBounds.maxEigenvalue
+#check @LinearStochastic.MatrixGrowthBounds.minEigenvalue
+#print axioms LinearStochastic.MatrixGrowthBounds.minEigenvalue
+#check @LinearStochastic.MatrixGrowthBounds.conditionNumber
+#print axioms LinearStochastic.MatrixGrowthBounds.conditionNumber
+#check @LinearStochastic.MatrixGrowthBounds.conditionNumber_le_frobenius
+#print axioms LinearStochastic.MatrixGrowthBounds.conditionNumber_le_frobenius
+#check @LinearStochastic.MatrixGrowthBounds.objective_ge_one
+#print axioms LinearStochastic.MatrixGrowthBounds.objective_ge_one
+#check @LinearStochastic.MatrixGrowthBounds.conditionNumber_le_objective
+#print axioms LinearStochastic.MatrixGrowthBounds.conditionNumber_le_objective
+#check @LinearStochastic.MatrixGrowthBounds.feasible_gain_bound
+#print axioms LinearStochastic.MatrixGrowthBounds.feasible_gain_bound
+#check @LinearStochastic.MatrixInverseEnergyBounds.min_eigen_pos
+#print axioms LinearStochastic.MatrixInverseEnergyBounds.min_eigen_pos
+#check @LinearStochastic.MatrixInverseEnergyBounds.max_eigen_pos
+#print axioms LinearStochastic.MatrixInverseEnergyBounds.max_eigen_pos
+#check @LinearStochastic.MatrixInverseEnergyBounds.inverse_eigenvector
+#print axioms LinearStochastic.MatrixInverseEnergyBounds.inverse_eigenvector
+#check @LinearStochastic.MatrixInverseEnergyBounds.inverse_quadratic_expansion
+#print axioms LinearStochastic.MatrixInverseEnergyBounds.inverse_quadratic_expansion
+#check @LinearStochastic.MatrixInverseEnergyBounds.inverse_quadratic_bounds
+#print axioms LinearStochastic.MatrixInverseEnergyBounds.inverse_quadratic_bounds
+#check @LinearStochastic.MatrixMinimum.isClosed_symmetric
+#print axioms LinearStochastic.MatrixMinimum.isClosed_symmetric
+#check @LinearStochastic.MatrixMinimum.isClosed_posSemidef
+#print axioms LinearStochastic.MatrixMinimum.isClosed_posSemidef
+#check @LinearStochastic.MatrixMinimum.matrixLMI_continuous
+#print axioms LinearStochastic.MatrixMinimum.matrixLMI_continuous
+#check @LinearStochastic.MatrixMinimum.isClosed_feasible_graph
+#print axioms LinearStochastic.MatrixMinimum.isClosed_feasible_graph
+#check @LinearStochastic.MatrixMinimum.isClosed_feasible
+#print axioms LinearStochastic.MatrixMinimum.isClosed_feasible
+#check @LinearStochastic.MatrixMinimum.exists_feasible_minimum
+#print axioms LinearStochastic.MatrixMinimum.exists_feasible_minimum
+#check @LinearStochastic.MatrixMinimum.zero_flag_minimum
+#print axioms LinearStochastic.MatrixMinimum.zero_flag_minimum
+#check @LinearStochastic.MatrixNormalization.blockNormedSpace
+#print axioms LinearStochastic.MatrixNormalization.blockNormedSpace
+#check @LinearStochastic.MatrixNormalization.blockContinuousSMul
+#print axioms LinearStochastic.MatrixNormalization.blockContinuousSMul
+#check @LinearStochastic.MatrixNormalization.Feasible
+#print axioms LinearStochastic.MatrixNormalization.Feasible
+#check @LinearStochastic.MatrixNormalization.blockMatrix_id
+#print axioms LinearStochastic.MatrixNormalization.blockMatrix_id
+#check @LinearStochastic.MatrixNormalization.blockMatrix_posSemidef
+#print axioms LinearStochastic.MatrixNormalization.blockMatrix_posSemidef
+#check @LinearStochastic.MatrixNormalization.feasible_of_operator
+#print axioms LinearStochastic.MatrixNormalization.feasible_of_operator
+#check @LinearStochastic.MatrixNormalization.normalize_strict
+#print axioms LinearStochastic.MatrixNormalization.normalize_strict
+#check @LinearStochastic.MatrixNormalization.feasible_of_zero_flag
+#print axioms LinearStochastic.MatrixNormalization.feasible_of_zero_flag
+#check @LinearStochastic.MatrixNormalization.feasible_ge_one
+#print axioms LinearStochastic.MatrixNormalization.feasible_ge_one
+#check @LinearStochastic.MatrixNormalization.feasible_posDef
+#print axioms LinearStochastic.MatrixNormalization.feasible_posDef
+#check @LinearStochastic.MatrixNormalization.feasible_strict_lmi
+#print axioms LinearStochastic.MatrixNormalization.feasible_strict_lmi
+#check @LinearStochastic.MatrixNormalization.feasible_inverse_bound
+#print axioms LinearStochastic.MatrixNormalization.feasible_inverse_bound
+#check @LinearStochastic.MatrixNormalization.feasible_inverse_norm_le_one
+#print axioms LinearStochastic.MatrixNormalization.feasible_inverse_norm_le_one
+#check @LinearStochastic.MatrixPrefixDecay.mean_square_decay_at
+#print axioms LinearStochastic.MatrixPrefixDecay.mean_square_decay_at
+#check @LinearStochastic.MatrixSectionDecay.mean_square_decay
+#print axioms LinearStochastic.MatrixSectionDecay.mean_square_decay
+#check @LinearStochastic.MatrixSemialgebraic.isSemialgebraic_posSemidef
+#print axioms LinearStochastic.MatrixSemialgebraic.isSemialgebraic_posSemidef
+#check @LinearStochastic.MatrixSemialgebraic.normalizedEntries
+#print axioms LinearStochastic.MatrixSemialgebraic.normalizedEntries
+#check @LinearStochastic.MatrixSemialgebraic.eval_normalizedEntries
+#print axioms LinearStochastic.MatrixSemialgebraic.eval_normalizedEntries
+#check @LinearStochastic.MatrixSemialgebraic.isSemialgebraic_feasible
+#print axioms LinearStochastic.MatrixSemialgebraic.isSemialgebraic_feasible
+#check @LinearStochastic.ParametricMinimum.objective_smul
+#print axioms LinearStochastic.ParametricMinimum.objective_smul
+#check @LinearStochastic.ParametricMinimum.upperSemicontinuous_value
+#print axioms LinearStochastic.ParametricMinimum.upperSemicontinuous_value
+#check @LinearStochastic.ParametricMinimum.continuous_value
+#print axioms LinearStochastic.ParametricMinimum.continuous_value
+#check @LinearStochastic.MatrixValue.continuous_value
+#print axioms LinearStochastic.MatrixValue.continuous_value
+#check @LinearStochastic.ParametricMinimum.value_eq_iff
+#print axioms LinearStochastic.ParametricMinimum.value_eq_iff
+#check @LinearStochastic.MatrixValue.value_eq_iff
+#print axioms LinearStochastic.MatrixValue.value_eq_iff
+#check @LinearStochastic.MatrixValue.valueReal
+#print axioms LinearStochastic.MatrixValue.valueReal
+#check @LinearStochastic.MatrixValue.valueReal_on_ray
+#print axioms LinearStochastic.MatrixValue.valueReal_on_ray
+#check @LinearStochastic.MatrixValue.valueReal_continuousOn
+#print axioms LinearStochastic.MatrixValue.valueReal_continuousOn
+#check @LinearStochastic.MatrixValue.rayGraph_iff
+#print axioms LinearStochastic.MatrixValue.rayGraph_iff
+#check @LinearStochastic.NullFeedbackTheorem.Achievement
+#print axioms LinearStochastic.NullFeedbackTheorem.Achievement
+#check @LinearStochastic.NullFeedbackTheorem.all_horizons
+#print axioms LinearStochastic.NullFeedbackTheorem.all_horizons
+#check @LinearStochastic.UsualNullFeedbackTheorem.paper_theorem
+#print axioms LinearStochastic.UsualNullFeedbackTheorem.paper_theorem
+#check @LinearStochastic.NumericalRank.threshold
+#print axioms LinearStochastic.NumericalRank.threshold
+#check @LinearStochastic.NumericalRank.rank
+#print axioms LinearStochastic.NumericalRank.rank
+#check @LinearStochastic.NumericalRank.threshold_nonneg
+#print axioms LinearStochastic.NumericalRank.threshold_nonneg
+#check @LinearStochastic.NumericalRank.selected_iff
+#print axioms LinearStochastic.NumericalRank.selected_iff
+#check @LinearStochastic.NumericalRank.le_exact_rank
+#print axioms LinearStochastic.NumericalRank.le_exact_rank
+#check @LinearStochastic.NumericalRank.zero_tolerance
+#print axioms LinearStochastic.NumericalRank.zero_tolerance
+#check @LinearStochastic.NumericalRank.monotone_tolerances
+#print axioms LinearStochastic.NumericalRank.monotone_tolerances
+#check @LinearStochastic.NumericalRank.positive_threshold_can_disagree
+#print axioms LinearStochastic.NumericalRank.positive_threshold_can_disagree
+#check @LinearStochastic.NumericalRank.matrixRank
+#print axioms LinearStochastic.NumericalRank.matrixRank
+#check @LinearStochastic.OpenConeAlternative.separating_annihilator
+#print axioms LinearStochastic.OpenConeAlternative.separating_annihilator
+#check @LinearStochastic.OpenConeAlternative.strict_feasibility_or_certificate
+#print axioms LinearStochastic.OpenConeAlternative.strict_feasibility_or_certificate
+#check @LinearStochastic.PaperControlContract.progressive_iff_strong
+#print axioms LinearStochastic.PaperControlContract.progressive_iff_strong
+#check @LinearStochastic.PaperControlContract.energy_iff_memLp
+#print axioms LinearStochastic.PaperControlContract.energy_iff_memLp
+#check @LinearStochastic.PaperControlContract.ordinary_control_class
+#print axioms LinearStochastic.PaperControlContract.ordinary_control_class
+#check @LinearStochastic.PaperControlContract.control_class_unique
+#print axioms LinearStochastic.PaperControlContract.control_class_unique
+#check @LinearStochastic.PaperControlContract.euclidean_dimensions
+#print axioms LinearStochastic.PaperControlContract.euclidean_dimensions
+#check @LinearStochastic.PaperControlContract.stacked_dimensions
+#print axioms LinearStochastic.PaperControlContract.stacked_dimensions
+#check @LinearStochastic.PaperControlContract.empty_rank
+#print axioms LinearStochastic.PaperControlContract.empty_rank
+#check @LinearStochastic.PaperControlProperties.Property
+#print axioms LinearStochastic.PaperControlProperties.Property
+#check @LinearStochastic.PaperControlProperties.Holds
+#print axioms LinearStochastic.PaperControlProperties.Holds
+#check @LinearStochastic.PaperControlProperties.Criterion
+#print axioms LinearStochastic.PaperControlProperties.Criterion
+#check @LinearStochastic.PaperControlProperties.holds_iff
+#print axioms LinearStochastic.PaperControlProperties.holds_iff
+#check @LinearStochastic.PaperControlProperties.horizon_independent
+#print axioms LinearStochastic.PaperControlProperties.horizon_independent
+#check @LinearStochastic.PaperControlProperties.flag_of_holds
+#print axioms LinearStochastic.PaperControlProperties.flag_of_holds
+#check @LinearStochastic.PaperControlProperties.nonzero_flag_none
+#print axioms LinearStochastic.PaperControlProperties.nonzero_flag_none
+#check @LinearStochastic.PaperControlProperties.zero_flag_regime
+#print axioms LinearStochastic.PaperControlProperties.zero_flag_regime
+#check @LinearStochastic.ParametricMinimum.exists_minimum
+#print axioms LinearStochastic.ParametricMinimum.exists_minimum
+#check @LinearStochastic.ParametricMinimum.minimizer
+#print axioms LinearStochastic.ParametricMinimum.minimizer
+#check @LinearStochastic.ParametricMinimum.minimizer_spec
+#print axioms LinearStochastic.ParametricMinimum.minimizer_spec
+#check @LinearStochastic.ParametricMinimum.value
+#print axioms LinearStochastic.ParametricMinimum.value
+#check @LinearStochastic.ParametricMinimum.value_nonneg
+#print axioms LinearStochastic.ParametricMinimum.value_nonneg
+#check @LinearStochastic.ParametricMinimum.value_le
+#print axioms LinearStochastic.ParametricMinimum.value_le
+#check @LinearStochastic.ParametricMinimum.isClosed_sublevel
+#print axioms LinearStochastic.ParametricMinimum.isClosed_sublevel
+#check @LinearStochastic.ParametricMinimum.lowerSemicontinuous_value
+#print axioms LinearStochastic.ParametricMinimum.lowerSemicontinuous_value
+#check @LinearStochastic.MatrixValue.closed_ray_graph
+#print axioms LinearStochastic.MatrixValue.closed_ray_graph
+#check @LinearStochastic.MatrixValue.value
+#print axioms LinearStochastic.MatrixValue.value
+#check @LinearStochastic.MatrixValue.lowerSemicontinuous_value
+#print axioms LinearStochastic.MatrixValue.lowerSemicontinuous_value
+#check @LinearStochastic.PathSupNorm.norm
+#print axioms LinearStochastic.PathSupNorm.norm
+#check @LinearStochastic.PathSupNorm.nonneg
+#print axioms LinearStochastic.PathSupNorm.nonneg
+#check @LinearStochastic.PathSupNorm.congr
+#print axioms LinearStochastic.PathSupNorm.congr
+#check @LinearStochastic.PathSupNorm.constant
+#print axioms LinearStochastic.PathSupNorm.constant
+#check @LinearStochastic.PathSupNorm.sq_eq_integral
+#print axioms LinearStochastic.PathSupNorm.sq_eq_integral
+#check @LinearStochastic.PathSupNorm.sup_add
+#print axioms LinearStochastic.PathSupNorm.sup_add
+#check @LinearStochastic.PathSupNorm.add_le
+#print axioms LinearStochastic.PathSupNorm.add_le
+#check @LinearStochastic.PathSupNorm.sum_le
+#print axioms LinearStochastic.PathSupNorm.sum_le
+#check @LinearStochastic.PathSupNorm.eval_le
+#print axioms LinearStochastic.PathSupNorm.eval_le
+#check @LinearStochastic.PathSupNorm.split_le
+#print axioms LinearStochastic.PathSupNorm.split_le
+#check @LinearStochastic.PathSupNorm.square_sup
+#print axioms LinearStochastic.PathSupNorm.square_sup
+#check @LinearStochastic.PolynomialFeedbackGrowth.normalized_polynomial_feedback
+#print axioms LinearStochastic.PolynomialFeedbackGrowth.normalized_polynomial_feedback
+#check @LinearStochastic.PolynomialFeedbackGrowth.polynomial_feedback
+#print axioms LinearStochastic.PolynomialFeedbackGrowth.polynomial_feedback
+#check @LinearStochastic.PolynomialFeedbackGrowth.zero_flag_polynomial_feedback
+#print axioms LinearStochastic.PolynomialFeedbackGrowth.zero_flag_polynomial_feedback
+#check @LinearStochastic.PositiveBlock.factor_of_kernel_le
+#print axioms LinearStochastic.PositiveBlock.factor_of_kernel_le
+#check @LinearStochastic.PositiveBlock.positive_block_kernel_le
+#print axioms LinearStochastic.PositiveBlock.positive_block_kernel_le
+#check @LinearStochastic.PositiveBlock.positive_block_factorization
+#print axioms LinearStochastic.PositiveBlock.positive_block_factorization
+#check @LinearStochastic.PositiveCone.UniformPositive
+#print axioms LinearStochastic.PositiveCone.UniformPositive
+#check @LinearStochastic.PositiveCone.uniformPositive_strict
+#print axioms LinearStochastic.PositiveCone.uniformPositive_strict
+#check @LinearStochastic.PositiveCone.uniformPositive_id
+#print axioms LinearStochastic.PositiveCone.uniformPositive_id
+#check @LinearStochastic.PositiveCone.uniformPositive_of_norm_sub_lt
+#print axioms LinearStochastic.PositiveCone.uniformPositive_of_norm_sub_lt
+#check @LinearStochastic.PositiveCone.cone
+#print axioms LinearStochastic.PositiveCone.cone
+#check @LinearStochastic.PositiveCone.cone_nonempty
+#print axioms LinearStochastic.PositiveCone.cone_nonempty
+#check @LinearStochastic.PositiveCone.cone_isOpen
+#print axioms LinearStochastic.PositiveCone.cone_isOpen
+#check @LinearStochastic.PositiveCone.cone_convex
+#print axioms LinearStochastic.PositiveCone.cone_convex
+#check @LinearStochastic.PositiveCone.strict_positive_or_certificate
+#print axioms LinearStochastic.PositiveCone.strict_positive_or_certificate
+#check @LinearStochastic.PositiveDual.tracePair
+#print axioms LinearStochastic.PositiveDual.tracePair
+#check @LinearStochastic.PositiveDual.tracePair_rankOne
+#print axioms LinearStochastic.PositiveDual.tracePair_rankOne
+#check @LinearStochastic.PositiveDual.tracePair_injective
+#print axioms LinearStochastic.PositiveDual.tracePair_injective
+#check @LinearStochastic.PositiveDual.trace_representation
+#print axioms LinearStochastic.PositiveDual.trace_representation
+#check @LinearStochastic.PositiveDual.symmetricExtension
+#print axioms LinearStochastic.PositiveDual.symmetricExtension
+#check @LinearStochastic.PositiveDual.symmetricExtension_adjoint
+#print axioms LinearStochastic.PositiveDual.symmetricExtension_adjoint
+#check @LinearStochastic.PositiveDual.symmetricExtension_selfAdjoint
+#print axioms LinearStochastic.PositiveDual.symmetricExtension_selfAdjoint
+#check @LinearStochastic.PositiveDual.symmetric_trace_representation
+#print axioms LinearStochastic.PositiveDual.symmetric_trace_representation
+#check @LinearStochastic.PositiveDual.rankOneSelf
+#print axioms LinearStochastic.PositiveDual.rankOneSelf
+#check @LinearStochastic.PositiveDual.identitySelf
+#print axioms LinearStochastic.PositiveDual.identitySelf
+#check @LinearStochastic.PositiveDual.rankOne_add_positive_identity
+#print axioms LinearStochastic.PositiveDual.rankOne_add_positive_identity
+#check @LinearStochastic.PositiveDual.functional_nonneg_rankOne
+#print axioms LinearStochastic.PositiveDual.functional_nonneg_rankOne
+#check @LinearStochastic.PositiveDual.positive_trace_representation
+#print axioms LinearStochastic.PositiveDual.positive_trace_representation
+#check @LinearStochastic.PositiveDual.strict_positive_or_positive_annihilator
+#print axioms LinearStochastic.PositiveDual.strict_positive_or_positive_annihilator
+#check @LinearStochastic.PositiveDual.positive_trace_zero_iff
+#print axioms LinearStochastic.PositiveDual.positive_trace_zero_iff
+#check @LinearStochastic.PositiveFinite.uniformPositive_of_strict
+#print axioms LinearStochastic.PositiveFinite.uniformPositive_of_strict
+#check @LinearStochastic.PositiveFinite.uniformPositive_iff_strict
+#print axioms LinearStochastic.PositiveFinite.uniformPositive_iff_strict
+#check @LinearStochastic.PositiveFinite.matrix_uniformPositive
+#print axioms LinearStochastic.PositiveFinite.matrix_uniformPositive
+#check @LinearStochastic.PositiveFinite.blockNormedSpace
+#print axioms LinearStochastic.PositiveFinite.blockNormedSpace
+#check @LinearStochastic.PositiveFinite.blockMatrix_uniformPositive
+#print axioms LinearStochastic.PositiveFinite.blockMatrix_uniformPositive
+#check @LinearStochastic.PredictableConstant.finite_spacetime
+#print axioms LinearStochastic.PredictableConstant.finite_spacetime
+#check @LinearStochastic.PredictableConstant.constant
+#print axioms LinearStochastic.PredictableConstant.constant
+#check @LinearStochastic.PredictableConstant.constant_ae
+#print axioms LinearStochastic.PredictableConstant.constant_ae
+#check @LinearStochastic.PredictableConstant.constant_norm_sq
+#print axioms LinearStochastic.PredictableConstant.constant_norm_sq
+#check @LinearStochastic.PredictableConstant.constant_compLp
+#print axioms LinearStochastic.PredictableConstant.constant_compLp
+#check @LinearStochastic.PredictableConstant.constant_add
+#print axioms LinearStochastic.PredictableConstant.constant_add
+#check @LinearStochastic.PredictableConstant.constant_zero
+#print axioms LinearStochastic.PredictableConstant.constant_zero
+#check @LinearStochastic.PredictableConstant.constant_smul
+#print axioms LinearStochastic.PredictableConstant.constant_smul
+#check @LinearStochastic.PredictableConstant.constantLinear
+#print axioms LinearStochastic.PredictableConstant.constantLinear
+#check @LinearStochastic.PredictableConstant.normalized_norm_sq
+#print axioms LinearStochastic.PredictableConstant.normalized_norm_sq
+#check @LinearStochastic.PrincipalMinors.AllPrincipalNonneg
+#print axioms LinearStochastic.PrincipalMinors.AllPrincipalNonneg
+#check @LinearStochastic.PrincipalMinors.psd_principal_nonneg
+#print axioms LinearStochastic.PrincipalMinors.psd_principal_nonneg
+#check @LinearStochastic.PrincipalMinors.constant_le_eval
+#print axioms LinearStochastic.PrincipalMinors.constant_le_eval
+#check @LinearStochastic.PrincipalMinors.eval_det_one_add
+#print axioms LinearStochastic.PrincipalMinors.eval_det_one_add
+#check @LinearStochastic.PrincipalMinors.det_one_add_ge_one
+#print axioms LinearStochastic.PrincipalMinors.det_one_add_ge_one
+#check @LinearStochastic.PrincipalMinors.psd_of_principal_nonneg
+#print axioms LinearStochastic.PrincipalMinors.psd_of_principal_nonneg
+#check @LinearStochastic.PrincipalMinors.psd_iff_principal_nonneg
+#print axioms LinearStochastic.PrincipalMinors.psd_iff_principal_nonneg
+#check @LinearStochastic.ProcessHorizonS2.prefix_memLp
+#print axioms LinearStochastic.ProcessHorizonS2.prefix_memLp
+#check @LinearStochastic.ProcessQuadraticInner.bilinear_inner
+#print axioms LinearStochastic.ProcessQuadraticInner.bilinear_inner
+#check @LinearStochastic.ProcessQuadraticInner.restrict_representative
+#print axioms LinearStochastic.ProcessQuadraticInner.restrict_representative
+#check @LinearStochastic.ProcessQuadraticInner.bilinear_restrict_inner
+#print axioms LinearStochastic.ProcessQuadraticInner.bilinear_restrict_inner
+#check @LinearStochastic.ProcessQuadraticInner.comp_compLp
+#print axioms LinearStochastic.ProcessQuadraticInner.comp_compLp
+#check @LinearStochastic.ProcessQuadraticInner.continuous_expected_product_clamped
+#print axioms LinearStochastic.ProcessQuadraticInner.continuous_expected_product_clamped
+#check @LinearStochastic.ProgressiveControlSection.representatives
+#print axioms LinearStochastic.ProgressiveControlSection.representatives
+#check @LinearStochastic.ProgressiveControlSection.coefficient_ae
+#print axioms LinearStochastic.ProgressiveControlSection.coefficient_ae
+#check @LinearStochastic.ProgressiveControlSection.primitive_ae
+#print axioms LinearStochastic.ProgressiveControlSection.primitive_ae
+#check @LinearStochastic.ProgressiveControlSection.RawSolution
+#print axioms LinearStochastic.ProgressiveControlSection.RawSolution
+#check @LinearStochastic.ProgressiveControlSection.RawSolution.to_section
+#print axioms LinearStochastic.ProgressiveControlSection.RawSolution.to_section
+#check @LinearStochastic.ProgressiveControlSection.RawSolution.of_class_path
+#print axioms LinearStochastic.ProgressiveControlSection.RawSolution.of_class_path
+#check @LinearStochastic.ProgressiveControlSection.representatives_of_progressive
+#print axioms LinearStochastic.ProgressiveControlSection.representatives_of_progressive
+#check @LinearStochastic.ProgressivePredictable.primitive
+#print axioms LinearStochastic.ProgressivePredictable.primitive
+#check @LinearStochastic.ProgressivePredictable.progressive_clamp_measurable
+#print axioms LinearStochastic.ProgressivePredictable.progressive_clamp_measurable
+#check @LinearStochastic.ProgressivePredictable.primitive_stronglyAdapted
+#print axioms LinearStochastic.ProgressivePredictable.primitive_stronglyAdapted
+#check @LinearStochastic.ProgressivePredictable.progressive_clamp
+#print axioms LinearStochastic.ProgressivePredictable.progressive_clamp
+#check @LinearStochastic.ProgressivePredictable.primitive_continuous
+#print axioms LinearStochastic.ProgressivePredictable.primitive_continuous
+#check @LinearStochastic.ProgressivePredictable.pastAverage
+#print axioms LinearStochastic.ProgressivePredictable.pastAverage
+#check @LinearStochastic.ProgressivePredictable.pastAverage_stronglyAdapted
+#print axioms LinearStochastic.ProgressivePredictable.pastAverage_stronglyAdapted
+#check @LinearStochastic.ProgressivePredictable.pastAverage_continuous
+#print axioms LinearStochastic.ProgressivePredictable.pastAverage_continuous
+#check @LinearStochastic.ProgressivePredictable.pastAverage_predictable
+#print axioms LinearStochastic.ProgressivePredictable.pastAverage_predictable
+#check @LinearStochastic.ProgressivePredictable.clamped_path_stronglyMeasurable
+#print axioms LinearStochastic.ProgressivePredictable.clamped_path_stronglyMeasurable
+#check @LinearStochastic.ProgressivePredictable.clamped_path_locallyIntegrable
+#print axioms LinearStochastic.ProgressivePredictable.clamped_path_locallyIntegrable
+#check @LinearStochastic.ProgressivePredictable.pastAverage_tendsto_of_hasDerivAt
+#print axioms LinearStochastic.ProgressivePredictable.pastAverage_tendsto_of_hasDerivAt
+#check @LinearStochastic.ProgressivePredictable.averagingScale
+#print axioms LinearStochastic.ProgressivePredictable.averagingScale
+#check @LinearStochastic.ProgressivePredictable.averagingScale_pos
+#print axioms LinearStochastic.ProgressivePredictable.averagingScale_pos
+#check @LinearStochastic.ProgressivePredictable.averagingScale_tendsto
+#print axioms LinearStochastic.ProgressivePredictable.averagingScale_tendsto
+#check @LinearStochastic.ProgressivePredictable.predictableRepresentative
+#print axioms LinearStochastic.ProgressivePredictable.predictableRepresentative
+#check @LinearStochastic.ProgressivePredictable.representative_predictable
+#print axioms LinearStochastic.ProgressivePredictable.representative_predictable
+#check @LinearStochastic.ProgressivePredictable.representative_ae_time
+#print axioms LinearStochastic.ProgressivePredictable.representative_ae_time
+#check @LinearStochastic.ProgressivePredictable.representative_ae_product
+#print axioms LinearStochastic.ProgressivePredictable.representative_ae_product
+#check @LinearStochastic.ProgressivePredictable.exists_predictable_bounded
+#print axioms LinearStochastic.ProgressivePredictable.exists_predictable_bounded
+#check @LinearStochastic.ProgressivePredictable.boundedApprox
+#print axioms LinearStochastic.ProgressivePredictable.boundedApprox
+#check @LinearStochastic.ProgressivePredictable.boundedApprox_continuous
+#print axioms LinearStochastic.ProgressivePredictable.boundedApprox_continuous
+#check @LinearStochastic.ProgressivePredictable.boundedApprox_bound
+#print axioms LinearStochastic.ProgressivePredictable.boundedApprox_bound
+#check @LinearStochastic.ProgressivePredictable.boundedApprox_tendsto
+#print axioms LinearStochastic.ProgressivePredictable.boundedApprox_tendsto
+#check @LinearStochastic.ProgressivePredictable.exists_predictable
+#print axioms LinearStochastic.ProgressivePredictable.exists_predictable
+#check @LinearStochastic.ProgressivePredictable.exists_predictable_Lp
+#print axioms LinearStochastic.ProgressivePredictable.exists_predictable_Lp
+#check @LinearStochastic.ProgressivePredictable.exists_predictable_Lp_of_progressive
+#print axioms LinearStochastic.ProgressivePredictable.exists_predictable_Lp_of_progressive
+#check @LinearStochastic.ProjectedNoiseEnergy.sum_integral_zero
+#print axioms LinearStochastic.ProjectedNoiseEnergy.sum_integral_zero
+#check @LinearStochastic.ProjectedNoiseEnergy.projected_sum_integral_zero
+#print axioms LinearStochastic.ProjectedNoiseEnergy.projected_sum_integral_zero
+#check @LinearStochastic.ProjectedNoiseEnergy.actual_projected_energy
+#print axioms LinearStochastic.ProjectedNoiseEnergy.actual_projected_energy
+#check @LinearStochastic.QuadraticMinimum.objective
+#print axioms LinearStochastic.QuadraticMinimum.objective
+#check @LinearStochastic.QuadraticMinimum.objective_continuous
+#print axioms LinearStochastic.QuadraticMinimum.objective_continuous
+#check @LinearStochastic.QuadraticMinimum.objective_nonneg
+#print axioms LinearStochastic.QuadraticMinimum.objective_nonneg
+#check @LinearStochastic.QuadraticMinimum.norm_le_objective_add_one
+#print axioms LinearStochastic.QuadraticMinimum.norm_le_objective_add_one
+#check @LinearStochastic.QuadraticMinimum.exists_minimum
+#print axioms LinearStochastic.QuadraticMinimum.exists_minimum
+#check @LinearStochastic.QuadraticMinimum.matrixObjective
+#print axioms LinearStochastic.QuadraticMinimum.matrixObjective
+#check @LinearStochastic.QuadraticMinimum.matrixObjective_continuous
+#print axioms LinearStochastic.QuadraticMinimum.matrixObjective_continuous
+#check @LinearStochastic.QuadraticMinimum.matrix_minimum
+#print axioms LinearStochastic.QuadraticMinimum.matrix_minimum
+#check @LinearStochastic.QuadraticMomentBounds.integrated_bounds
+#print axioms LinearStochastic.QuadraticMomentBounds.integrated_bounds
+#check @LinearStochastic.QuadraticMomentBounds.moment_le_of_energy_le
+#print axioms LinearStochastic.QuadraticMomentBounds.moment_le_of_energy_le
+#check @LinearStochastic.RawBSDECoordinates.RawSolution
+#print axioms LinearStochastic.RawBSDECoordinates.RawSolution
+#check @LinearStochastic.RawBSDECoordinates.coordinate_squareSup
+#print axioms LinearStochastic.RawBSDECoordinates.coordinate_squareSup
+#check @LinearStochastic.RawBSDECoordinates.toCoordinates
+#print axioms LinearStochastic.RawBSDECoordinates.toCoordinates
+#check @LinearStochastic.RawBSDECoordinates.fromCoordinates
+#print axioms LinearStochastic.RawBSDECoordinates.fromCoordinates
+#check @LinearStochastic.RawBSDECoordinates.ordinary_noise_classes
+#print axioms LinearStochastic.RawBSDECoordinates.ordinary_noise_classes
+#check @LinearStochastic.RawBSDEUniqueness.global_unique
+#print axioms LinearStochastic.RawBSDEUniqueness.global_unique
+#check @LinearStochastic.RawBSDEUniqueness.usual_global_unique
+#print axioms LinearStochastic.RawBSDEUniqueness.usual_global_unique
+#check @LinearStochastic.RawBSDEUniqueness.exists_and_unique
+#print axioms LinearStochastic.RawBSDEUniqueness.exists_and_unique
+#check @LinearStochastic.RawBrownianClassification.classification
+#print axioms LinearStochastic.RawBrownianClassification.classification
+#check @LinearStochastic.RawBrownianClassification.matrix_classification
+#print axioms LinearStochastic.RawBrownianClassification.matrix_classification
+#check @LinearStochastic.RawCompleteClassification.exactNull_iff_flag
+#print axioms LinearStochastic.RawCompleteClassification.exactNull_iff_flag
+#check @LinearStochastic.RawCompleteClassification.exact_iff_flag_rank
+#print axioms LinearStochastic.RawCompleteClassification.exact_iff_flag_rank
+#check @LinearStochastic.RawCompleteClassification.classification
+#print axioms LinearStochastic.RawCompleteClassification.classification
+#check @LinearStochastic.RawControlProperties.Reach
+#print axioms LinearStochastic.RawControlProperties.Reach
+#check @LinearStochastic.RawControlProperties.Approximate
+#print axioms LinearStochastic.RawControlProperties.Approximate
+#check @LinearStochastic.RawControlProperties.ApproximateNull
+#print axioms LinearStochastic.RawControlProperties.ApproximateNull
+#check @LinearStochastic.RawControlProperties.reach_iff
+#print axioms LinearStochastic.RawControlProperties.reach_iff
+#check @LinearStochastic.RawControlProperties.approximate_iff
+#print axioms LinearStochastic.RawControlProperties.approximate_iff
+#check @LinearStochastic.RawControlProperties.approximateNull_iff
+#print axioms LinearStochastic.RawControlProperties.approximateNull_iff
+#check @LinearStochastic.RawControlProperties.null_error
+#print axioms LinearStochastic.RawControlProperties.null_error
+#check @LinearStochastic.RawDelayedSwitchingUniqueness.unique
+#print axioms LinearStochastic.RawDelayedSwitchingUniqueness.unique
+#check @LinearStochastic.RawExactProperties.Reach
+#print axioms LinearStochastic.RawExactProperties.Reach
+#check @LinearStochastic.RawExactProperties.Exact
+#print axioms LinearStochastic.RawExactProperties.Exact
+#check @LinearStochastic.RawExactProperties.ExactNull
+#print axioms LinearStochastic.RawExactProperties.ExactNull
+#check @LinearStochastic.RawExactProperties.ExactTerminal
+#print axioms LinearStochastic.RawExactProperties.ExactTerminal
+#check @LinearStochastic.RawExactProperties.reach_iff
+#print axioms LinearStochastic.RawExactProperties.reach_iff
+#check @LinearStochastic.RawExactProperties.exact_iff
+#print axioms LinearStochastic.RawExactProperties.exact_iff
+#check @LinearStochastic.RawExactProperties.exactNull_iff
+#print axioms LinearStochastic.RawExactProperties.exactNull_iff
+#check @LinearStochastic.RawExactProperties.exactTerminal_iff
+#print axioms LinearStochastic.RawExactProperties.exactTerminal_iff
+#check @LinearStochastic.RawExactProperties.exact_iff_terminal_and_null
+#print axioms LinearStochastic.RawExactProperties.exact_iff_terminal_and_null
+#check @LinearStochastic.RawPathOfRepresentative.raw_solution
+#print axioms LinearStochastic.RawPathOfRepresentative.raw_solution
+#check @LinearStochastic.RawRankClassification.classification
+#print axioms LinearStochastic.RawRankClassification.classification
+#check @LinearStochastic.RawRankCriteria.rankDifference
+#print axioms LinearStochastic.RawRankCriteria.rankDifference
+#check @LinearStochastic.RawRankCriteria.null_rank
+#print axioms LinearStochastic.RawRankCriteria.null_rank
+#check @LinearStochastic.RawRankCriteria.exact_rank
+#print axioms LinearStochastic.RawRankCriteria.exact_rank
+#check @LinearStochastic.RawRankCriteria.exact_word_rank
+#print axioms LinearStochastic.RawRankCriteria.exact_word_rank
+#check @LinearStochastic.RawStateLinearity.linear_combination
+#print axioms LinearStochastic.RawStateLinearity.linear_combination
+#check @LinearStochastic.RawSwitchingUniqueness.unique
+#print axioms LinearStochastic.RawSwitchingUniqueness.unique
+#check @LinearStochastic.RealQECellComposition.increasing_cell_positive_iff
+#print axioms LinearStochastic.RealQECellComposition.increasing_cell_positive_iff
+#check @LinearStochastic.RealQECellComposition.increasing_cell_negative_iff
+#print axioms LinearStochastic.RealQECellComposition.increasing_cell_negative_iff
+#check @LinearStochastic.RealQECellComposition.increasing_cells_transfer
+#print axioms LinearStochastic.RealQECellComposition.increasing_cells_transfer
+#check @LinearStochastic.RealQECellComposition.bounded_cell_extension
+#print axioms LinearStochastic.RealQECellComposition.bounded_cell_extension
+#check @LinearStochastic.RealQECellComposition.decreasing_cells_transfer
+#print axioms LinearStochastic.RealQECellComposition.decreasing_cells_transfer
+#check @LinearStochastic.RealQECellComposition.eventually_sign_leading
+#print axioms LinearStochastic.RealQECellComposition.eventually_sign_leading
+#check @LinearStochastic.RealQECellComposition.reflected_leading_signs
+#print axioms LinearStochastic.RealQECellComposition.reflected_leading_signs
+#check @LinearStochastic.RealQECellComposition.increasing_right_cells_transfer
+#print axioms LinearStochastic.RealQECellComposition.increasing_right_cells_transfer
+#check @LinearStochastic.RealQECellComposition.increasing_left_cells_transfer
+#print axioms LinearStochastic.RealQECellComposition.increasing_left_cells_transfer
+#check @LinearStochastic.RealQECellComposition.increasing_line_transfer
+#print axioms LinearStochastic.RealQECellComposition.increasing_line_transfer
+#check @LinearStochastic.RealQECellComposition.projected_coeff_signs
+#print axioms LinearStochastic.RealQECellComposition.projected_coeff_signs
+#check @LinearStochastic.RealQECellComposition.projected_support_eq
+#print axioms LinearStochastic.RealQECellComposition.projected_support_eq
+#check @LinearStochastic.RealQECellComposition.projected_natDegree_eq
+#print axioms LinearStochastic.RealQECellComposition.projected_natDegree_eq
+#check @LinearStochastic.RealQECellComposition.projected_leading_signs
+#print axioms LinearStochastic.RealQECellComposition.projected_leading_signs
+#check @LinearStochastic.RealQECellComposition.boundary_signs_transfer
+#print axioms LinearStochastic.RealQECellComposition.boundary_signs_transfer
+#check @LinearStochastic.RealQECellComposition.zero_leading_branch_transfer
+#print axioms LinearStochastic.RealQECellComposition.zero_leading_branch_transfer
+#check @LinearStochastic.RealQECutTransport.Position
+#print axioms LinearStochastic.RealQECutTransport.Position
+#check @LinearStochastic.RealQECutTransport.Position.symm
+#print axioms LinearStochastic.RealQECutTransport.Position.symm
+#check @LinearStochastic.RealQECutTransport.Position.point
+#print axioms LinearStochastic.RealQECutTransport.Position.point
+#check @LinearStochastic.RealQECutTransport.Position.eq_of_eq_cut
+#print axioms LinearStochastic.RealQECutTransport.Position.eq_of_eq_cut
+#check @LinearStochastic.RealQECutTransport.exists_position
+#print axioms LinearStochastic.RealQECutTransport.exists_position
+#check @LinearStochastic.RealQECutTransport.Position.lt_of_separator
+#print axioms LinearStochastic.RealQECutTransport.Position.lt_of_separator
+#check @LinearStochastic.RealQECutTransport.SeparatedBy
+#print axioms LinearStochastic.RealQECutTransport.SeparatedBy
+#check @LinearStochastic.RealQECutTransport.Position.unique_on_refinement
+#print axioms LinearStochastic.RealQECutTransport.Position.unique_on_refinement
+#check @LinearStochastic.RealQECutTransport.refineOrderIso
+#print axioms LinearStochastic.RealQECutTransport.refineOrderIso
+#check @LinearStochastic.RealQECutTransport.refineOrderIso_position
+#print axioms LinearStochastic.RealQECutTransport.refineOrderIso_position
+#check @LinearStochastic.RealQECutTransport.restrictOrderIso
+#print axioms LinearStochastic.RealQECutTransport.restrictOrderIso
+#check @LinearStochastic.RealQECutTransport.Position.restrict
+#print axioms LinearStochastic.RealQECutTransport.Position.restrict
+#check @LinearStochastic.RealQECutTransport.Position.trans
+#print axioms LinearStochastic.RealQECutTransport.Position.trans
+#check @LinearStochastic.RealQECutTransport.same_position_signs
+#print axioms LinearStochastic.RealQECutTransport.same_position_signs
+#check @LinearStochastic.RealQECutTransport.SignTableEquivalence
+#print axioms LinearStochastic.RealQECutTransport.SignTableEquivalence
+#check @LinearStochastic.RealQECutTransport.SignTableEquivalence.exists_signs
+#print axioms LinearStochastic.RealQECutTransport.SignTableEquivalence.exists_signs
+#check @LinearStochastic.RealQECutTransport.rootCuts_cons
+#print axioms LinearStochastic.RealQECutTransport.rootCuts_cons
+#check @LinearStochastic.RealQECutTransport.roots_membership_iff_of_signs
+#print axioms LinearStochastic.RealQECutTransport.roots_membership_iff_of_signs
+#check @LinearStochastic.RealQECutTransport.forall₂_signs_trans
+#print axioms LinearStochastic.RealQECutTransport.forall₂_signs_trans
+#check @LinearStochastic.RealQECutTransport.pruneSignTable
+#print axioms LinearStochastic.RealQECutTransport.pruneSignTable
+#check @LinearStochastic.RealQECutTransport.polynomial_roots_separated
+#print axioms LinearStochastic.RealQECutTransport.polynomial_roots_separated
+#check @LinearStochastic.RealQEExistential.atoms
+#print axioms LinearStochastic.RealQEExistential.atoms
+#check @LinearStochastic.RealQEExistential.holds_of_same_signs
+#print axioms LinearStochastic.RealQEExistential.holds_of_same_signs
+#check @LinearStochastic.RealQEExistential.finite_sign_formula_on
+#print axioms LinearStochastic.RealQEExistential.finite_sign_formula_on
+#check @LinearStochastic.RealQEExistential.finite_sign_determined_semialgebraic
+#print axioms LinearStochastic.RealQEExistential.finite_sign_determined_semialgebraic
+#check @LinearStochastic.RealQEExistential.extend
+#print axioms LinearStochastic.RealQEExistential.extend
+#check @LinearStochastic.RealQEExistential.eval_option_polynomial
+#print axioms LinearStochastic.RealQEExistential.eval_option_polynomial
+#check @LinearStochastic.RealQEExistential.existentialCoefficients
+#print axioms LinearStochastic.RealQEExistential.existentialCoefficients
+#check @LinearStochastic.RealQEExistential.existential_truth_same_signs
+#print axioms LinearStochastic.RealQEExistential.existential_truth_same_signs
+#check @LinearStochastic.RealQEExistential.exists_formula
+#print axioms LinearStochastic.RealQEExistential.exists_formula
+#check @LinearStochastic.RealQEExistential.exists_option
+#print axioms LinearStochastic.RealQEExistential.exists_option
+#check @LinearStochastic.RealQEFiniteCells.SameSign
+#print axioms LinearStochastic.RealQEFiniteCells.SameSign
+#check @LinearStochastic.RealQEFiniteCells.SameSign.refl
+#print axioms LinearStochastic.RealQEFiniteCells.SameSign.refl
+#check @LinearStochastic.RealQEFiniteCells.SameSign.symm
+#print axioms LinearStochastic.RealQEFiniteCells.SameSign.symm
+#check @LinearStochastic.RealQEFiniteCells.SameSign.trans
+#print axioms LinearStochastic.RealQEFiniteCells.SameSign.trans
+#check @LinearStochastic.RealQEFiniteCells.SameSign.neg_iff
+#print axioms LinearStochastic.RealQEFiniteCells.SameSign.neg_iff
+#check @LinearStochastic.RealQEFiniteCells.SameSign.neg
+#print axioms LinearStochastic.RealQEFiniteCells.SameSign.neg
+#check @LinearStochastic.RealQEFiniteCells.SameSign.mul_left
+#print axioms LinearStochastic.RealQEFiniteCells.SameSign.mul_left
+#check @LinearStochastic.RealQEFiniteCells.rootCuts
+#print axioms LinearStochastic.RealQEFiniteCells.rootCuts
+#check @LinearStochastic.RealQEFiniteCells.mem_rootCuts
+#print axioms LinearStochastic.RealQEFiniteCells.mem_rootCuts
+#check @LinearStochastic.RealQEFiniteCells.gap
+#print axioms LinearStochastic.RealQEFiniteCells.gap
+#check @LinearStochastic.RealQEFiniteCells.gap_ordConnected
+#print axioms LinearStochastic.RealQEFiniteCells.gap_ordConnected
+#check @LinearStochastic.RealQEFiniteCells.gap_nonempty_iff
+#print axioms LinearStochastic.RealQEFiniteCells.gap_nonempty_iff
+#check @LinearStochastic.RealQEFiniteCells.gap_disjoint_cuts
+#print axioms LinearStochastic.RealQEFiniteCells.gap_disjoint_cuts
+#check @LinearStochastic.RealQEFiniteCells.noncut_mem_gap
+#print axioms LinearStochastic.RealQEFiniteCells.noncut_mem_gap
+#check @LinearStochastic.RealQEFiniteCells.sameSign_of_no_roots
+#print axioms LinearStochastic.RealQEFiniteCells.sameSign_of_no_roots
+#check @LinearStochastic.RealQEFiniteCells.gap_signs
+#print axioms LinearStochastic.RealQEFiniteCells.gap_signs
+#check @LinearStochastic.RealQEFiniteCells.gapSample
+#print axioms LinearStochastic.RealQEFiniteCells.gapSample
+#check @LinearStochastic.RealQEFiniteCells.gapSample_mem
+#print axioms LinearStochastic.RealQEFiniteCells.gapSample_mem
+#check @LinearStochastic.RealQEFiniteCells.samples
+#print axioms LinearStochastic.RealQEFiniteCells.samples
+#check @LinearStochastic.RealQEFiniteCells.finite_sign_table_complete
+#print axioms LinearStochastic.RealQEFiniteCells.finite_sign_table_complete
+#check @LinearStochastic.RealQEFiniteCells.exists_iff_finite_samples
+#print axioms LinearStochastic.RealQEFiniteCells.exists_iff_finite_samples
+#check @LinearStochastic.RealQEFiniteProjection.exists_finite
+#print axioms LinearStochastic.RealQEFiniteProjection.exists_finite
+#check @LinearStochastic.RealQEFiniteProjection.forall_finite
+#print axioms LinearStochastic.RealQEFiniteProjection.forall_finite
+#check @LinearStochastic.RealQEGapIntervals.GapBounds
+#print axioms LinearStochastic.RealQEGapIntervals.GapBounds
+#check @LinearStochastic.RealQEGapIntervals.gapBounds
+#print axioms LinearStochastic.RealQEGapIntervals.gapBounds
+#check @LinearStochastic.RealQEGapIntervals.position_iff_bounds
+#print axioms LinearStochastic.RealQEGapIntervals.position_iff_bounds
+#check @LinearStochastic.RealQEGapIntervals.increasing_position_transfer
+#print axioms LinearStochastic.RealQEGapIntervals.increasing_position_transfer
+#check @LinearStochastic.RealQEGapIntervals.same_position_signs_of_roots_subset
+#print axioms LinearStochastic.RealQEGapIntervals.same_position_signs_of_roots_subset
+#check @LinearStochastic.RealQEGapIntervals.polynomial_position_transfer
+#print axioms LinearStochastic.RealQEGapIntervals.polynomial_position_transfer
+#check @LinearStochastic.RealQEProjection.remainder
+#print axioms LinearStochastic.RealQEProjection.remainder
+#check @LinearStochastic.RealQEProjection.remainder_degree_lt
+#print axioms LinearStochastic.RealQEProjection.remainder_degree_lt
+#check @LinearStochastic.RealQEProjection.remainder_signs
+#print axioms LinearStochastic.RealQEProjection.remainder_signs
+#check @LinearStochastic.RealQEProjection.remainder_natDegree_lt
+#print axioms LinearStochastic.RealQEProjection.remainder_natDegree_lt
+#check @LinearStochastic.RealQEProjection.remainderChain
+#print axioms LinearStochastic.RealQEProjection.remainderChain
+#check @LinearStochastic.RealQEProjection.mem_remainderChain_self
+#print axioms LinearStochastic.RealQEProjection.mem_remainderChain_self
+#check @LinearStochastic.RealQEProjection.remainderChain_length_le
+#print axioms LinearStochastic.RealQEProjection.remainderChain_length_le
+#check @LinearStochastic.RealQEProjection.remainderChain_closed
+#print axioms LinearStochastic.RealQEProjection.remainderChain_closed
+#check @LinearStochastic.RealQEProjection.remainderChain_boundary_signs
+#print axioms LinearStochastic.RealQEProjection.remainderChain_boundary_signs
+#check @LinearStochastic.RealQEProjection.projectionClosure
+#print axioms LinearStochastic.RealQEProjection.projectionClosure
+#check @LinearStochastic.RealQEProjection.derivative_mem_projectionClosure
+#print axioms LinearStochastic.RealQEProjection.derivative_mem_projectionClosure
+#check @LinearStochastic.RealQEProjection.mem_projectionClosure
+#print axioms LinearStochastic.RealQEProjection.mem_projectionClosure
+#check @LinearStochastic.RealQEProjection.projectionClosure_closed
+#print axioms LinearStochastic.RealQEProjection.projectionClosure_closed
+#check @LinearStochastic.RealQEProjection.eraseLead_natDegree_lt
+#print axioms LinearStochastic.RealQEProjection.eraseLead_natDegree_lt
+#check @LinearStochastic.RealQEProjection.branchClosure
+#print axioms LinearStochastic.RealQEProjection.branchClosure
+#check @LinearStochastic.RealQEProjection.mem_branchClosure_self
+#print axioms LinearStochastic.RealQEProjection.mem_branchClosure_self
+#check @LinearStochastic.RealQEProjection.branchClosure_degree_le
+#print axioms LinearStochastic.RealQEProjection.branchClosure_degree_le
+#check @LinearStochastic.RealQEProjection.branchClosure_tail_degree_lt
+#print axioms LinearStochastic.RealQEProjection.branchClosure_tail_degree_lt
+#check @LinearStochastic.RealQEProjection.branchClosure_closed
+#print axioms LinearStochastic.RealQEProjection.branchClosure_closed
+#check @LinearStochastic.RealQEProjection.map_eraseLead_of_leading_zero
+#print axioms LinearStochastic.RealQEProjection.map_eraseLead_of_leading_zero
+#check @LinearStochastic.RealQEProjection.branchClosure_specialization
+#print axioms LinearStochastic.RealQEProjection.branchClosure_specialization
+#check @LinearStochastic.RealQEProjectionCorrectness.FamilyTable
+#print axioms LinearStochastic.RealQEProjectionCorrectness.FamilyTable
+#check @LinearStochastic.RealQEProjectionCorrectness.family_signs
+#print axioms LinearStochastic.RealQEProjectionCorrectness.family_signs
+#check @LinearStochastic.RealQEProjectionCorrectness.projected_zero_iff
+#print axioms LinearStochastic.RealQEProjectionCorrectness.projected_zero_iff
+#check @LinearStochastic.RealQEProjectionCorrectness.represented_table
+#print axioms LinearStochastic.RealQEProjectionCorrectness.represented_table
+#check @LinearStochastic.RealQEProjectionCorrectness.constant_family_roots_empty
+#print axioms LinearStochastic.RealQEProjectionCorrectness.constant_family_roots_empty
+#check @LinearStochastic.RealQEProjectionCorrectness.constant_family_table
+#print axioms LinearStochastic.RealQEProjectionCorrectness.constant_family_table
+#check @LinearStochastic.RealQEProjectionCorrectness.nonzero_family_extension
+#print axioms LinearStochastic.RealQEProjectionCorrectness.nonzero_family_extension
+#check @LinearStochastic.RealQEProjectionCorrectness.projection_sign_table
+#print axioms LinearStochastic.RealQEProjectionCorrectness.projection_sign_table
+#check @LinearStochastic.RealQEProjectionCorrectness.projection_sign_witness
+#print axioms LinearStochastic.RealQEProjectionCorrectness.projection_sign_witness
+#check @LinearStochastic.RealQEPseudoDivision.exists_pseudodivision
+#print axioms LinearStochastic.RealQEPseudoDivision.exists_pseudodivision
+#check @LinearStochastic.RealQEPseudoDivision.exists_even_pseudodivision
+#print axioms LinearStochastic.RealQEPseudoDivision.exists_even_pseudodivision
+#check @LinearStochastic.RealQEPseudoDivision.evaluate_even_remainder
+#print axioms LinearStochastic.RealQEPseudoDivision.evaluate_even_remainder
+#check @LinearStochastic.RealQEPseudoDivision.signs_of_even_remainder
+#print axioms LinearStochastic.RealQEPseudoDivision.signs_of_even_remainder
+#check @LinearStochastic.RealQEPseudoDivision.exists_sign_preserving_remainder
+#print axioms LinearStochastic.RealQEPseudoDivision.exists_sign_preserving_remainder
+#check @LinearStochastic.RealQEPseudoDivision.evaluate_eraseLead_of_leading_zero
+#print axioms LinearStochastic.RealQEPseudoDivision.evaluate_eraseLead_of_leading_zero
+#check @LinearStochastic.RealQERecursiveProjection.additions
+#print axioms LinearStochastic.RealQERecursiveProjection.additions
+#check @LinearStochastic.RealQERecursiveProjection.lowerFamily
+#print axioms LinearStochastic.RealQERecursiveProjection.lowerFamily
+#check @LinearStochastic.RealQERecursiveProjection.additions_natDegree_lt
+#print axioms LinearStochastic.RealQERecursiveProjection.additions_natDegree_lt
+#check @LinearStochastic.RealQERecursiveProjection.degreeMeasure
+#print axioms LinearStochastic.RealQERecursiveProjection.degreeMeasure
+#check @LinearStochastic.RealQERecursiveProjection.lowerFamily_degree_descent
+#print axioms LinearStochastic.RealQERecursiveProjection.lowerFamily_degree_descent
+#check @LinearStochastic.RealQERecursiveProjection.derivative_mem_lowerFamily
+#print axioms LinearStochastic.RealQERecursiveProjection.derivative_mem_lowerFamily
+#check @LinearStochastic.RealQERecursiveProjection.eraseLead_mem_lowerFamily
+#print axioms LinearStochastic.RealQERecursiveProjection.eraseLead_mem_lowerFamily
+#check @LinearStochastic.RealQERecursiveProjection.branchClosure_mem_lowerFamily
+#print axioms LinearStochastic.RealQERecursiveProjection.branchClosure_mem_lowerFamily
+#check @LinearStochastic.RealQERecursiveProjection.lowerFamily_closed
+#print axioms LinearStochastic.RealQERecursiveProjection.lowerFamily_closed
+#check @LinearStochastic.RealQERecursiveProjection.branchClosure_contained
+#print axioms LinearStochastic.RealQERecursiveProjection.branchClosure_contained
+#check @LinearStochastic.RealQERecursiveProjection.lowerFamily_branchClosure
+#print axioms LinearStochastic.RealQERecursiveProjection.lowerFamily_branchClosure
+#check @LinearStochastic.RealQERecursiveProjection.HasPositiveDegree
+#print axioms LinearStochastic.RealQERecursiveProjection.HasPositiveDegree
+#check @LinearStochastic.RealQERecursiveProjection.exists_max_polynomial
+#print axioms LinearStochastic.RealQERecursiveProjection.exists_max_polynomial
+#check @LinearStochastic.RealQERecursiveProjection.maxPolynomial
+#print axioms LinearStochastic.RealQERecursiveProjection.maxPolynomial
+#check @LinearStochastic.RealQERecursiveProjection.maxPolynomial_spec
+#print axioms LinearStochastic.RealQERecursiveProjection.maxPolynomial_spec
+#check @LinearStochastic.RealQERecursiveProjection.reducedFamily
+#print axioms LinearStochastic.RealQERecursiveProjection.reducedFamily
+#check @LinearStochastic.RealQERecursiveProjection.degreeMeasure_perm
+#print axioms LinearStochastic.RealQERecursiveProjection.degreeMeasure_perm
+#check @LinearStochastic.RealQERecursiveProjection.reducedFamily_descent
+#print axioms LinearStochastic.RealQERecursiveProjection.reducedFamily_descent
+#check @LinearStochastic.RealQERecursiveProjection.projectionCoefficients
+#print axioms LinearStochastic.RealQERecursiveProjection.projectionCoefficients
+#check @LinearStochastic.RealQERecursiveProjection.projectionCoefficients_induction
+#print axioms LinearStochastic.RealQERecursiveProjection.projectionCoefficients_induction
+#check @LinearStochastic.RealQERecursiveProjection.leadingCoeff_mem_projectionCoefficients
+#print axioms LinearStochastic.RealQERecursiveProjection.leadingCoeff_mem_projectionCoefficients
+#check @LinearStochastic.RealQERecursiveProjection.coeff_mem_projectionCoefficients
+#print axioms LinearStochastic.RealQERecursiveProjection.coeff_mem_projectionCoefficients
+#check @LinearStochastic.RealQESignCells.derivative_degree_drop
+#print axioms LinearStochastic.RealQESignCells.derivative_degree_drop
+#check @LinearStochastic.RealQESignCells.strictMonoOn_cell
+#print axioms LinearStochastic.RealQESignCells.strictMonoOn_cell
+#check @LinearStochastic.RealQESignCells.increasing_cell_root_iff
+#print axioms LinearStochastic.RealQESignCells.increasing_cell_root_iff
+#check @LinearStochastic.RealQESignCells.increasing_cell_root_signs
+#print axioms LinearStochastic.RealQESignCells.increasing_cell_root_signs
+#check @LinearStochastic.RealQESignCells.increasing_cell_trichotomy
+#print axioms LinearStochastic.RealQESignCells.increasing_cell_trichotomy
+#check @LinearStochastic.RealQESignCells.decreasing_cell_root_iff
+#print axioms LinearStochastic.RealQESignCells.decreasing_cell_root_iff
+#check @LinearStochastic.RealQESignCells.positive_infinity_signs
+#print axioms LinearStochastic.RealQESignCells.positive_infinity_signs
+#check @LinearStochastic.RealQESignCells.negative_infinity_signs
+#print axioms LinearStochastic.RealQESignCells.negative_infinity_signs
+#check @LinearStochastic.RealQESignCells.increasing_right_cell_root_iff
+#print axioms LinearStochastic.RealQESignCells.increasing_right_cell_root_iff
+#check @LinearStochastic.RealQETableRefinement.refined_cut_mem
+#print axioms LinearStochastic.RealQETableRefinement.refined_cut_mem
+#check @LinearStochastic.RealQETableRefinement.RefinedCuts
+#print axioms LinearStochastic.RealQETableRefinement.RefinedCuts
+#check @LinearStochastic.RealQETableRefinement.refinePolynomialCuts
+#print axioms LinearStochastic.RealQETableRefinement.refinePolynomialCuts
+#check @LinearStochastic.RealQETableRefinement.polynomialRefinement
+#print axioms LinearStochastic.RealQETableRefinement.polynomialRefinement
+#check @LinearStochastic.RealQETableRefinement.RefinedCuts.old_cut
+#print axioms LinearStochastic.RealQETableRefinement.RefinedCuts.old_cut
+#check @LinearStochastic.RealQETableRefinement.RefinedCuts.base_position
+#print axioms LinearStochastic.RealQETableRefinement.RefinedCuts.base_position
+#check @LinearStochastic.RealQETableRefinement.position_ordConnected
+#print axioms LinearStochastic.RealQETableRefinement.position_ordConnected
+#check @LinearStochastic.RealQETableRefinement.RefinedCuts.zero_iff
+#print axioms LinearStochastic.RealQETableRefinement.RefinedCuts.zero_iff
+#check @LinearStochastic.RealQETableRefinement.strictMonoOn_position
+#print axioms LinearStochastic.RealQETableRefinement.strictMonoOn_position
+#check @LinearStochastic.RealQETableRefinement.RefinedCuts.signs_on_positions
+#print axioms LinearStochastic.RealQETableRefinement.RefinedCuts.signs_on_positions
+#check @LinearStochastic.RealQETableRefinement.addPolynomialTable
+#print axioms LinearStochastic.RealQETableRefinement.addPolynomialTable
+#check @LinearStochastic.RealTimeBridge.coe_measurePreserving
+#print axioms LinearStochastic.RealTimeBridge.coe_measurePreserving
+#check @LinearStochastic.RealTimeBridge.toNNReal_measurePreserving
+#print axioms LinearStochastic.RealTimeBridge.toNNReal_measurePreserving
+#check @LinearStochastic.RealTimeBridge.memLp_real_extension
+#print axioms LinearStochastic.RealTimeBridge.memLp_real_extension
+#check @LinearStochastic.RealTimeBridge.filtration
+#print axioms LinearStochastic.RealTimeBridge.filtration
+#check @LinearStochastic.RealTimeBridge.filtration_coe
+#print axioms LinearStochastic.RealTimeBridge.filtration_coe
+#check @LinearStochastic.RealTimeBridge.martingale_real_extension
+#print axioms LinearStochastic.RealTimeBridge.martingale_real_extension
+#check @LinearStochastic.RealTimeBridge.integral_real_extension
+#print axioms LinearStochastic.RealTimeBridge.integral_real_extension
+#check @LinearStochastic.RealTimeBridge.predictable_memLp_real_extension
+#print axioms LinearStochastic.RealTimeBridge.predictable_memLp_real_extension
+#check @LinearStochastic.RealTimeBridge.predictable_real_stronglyAdapted
+#print axioms LinearStochastic.RealTimeBridge.predictable_real_stronglyAdapted
+#check @LinearStochastic.RealTimeBridge.past_integral_real
+#print axioms LinearStochastic.RealTimeBridge.past_integral_real
+#check @LinearStochastic.RealTimeBridge.predictable_expected_product
+#print axioms LinearStochastic.RealTimeBridge.predictable_expected_product
+#check @LinearStochastic.ReducedElimination.reducedL
+#print axioms LinearStochastic.ReducedElimination.reducedL
+#check @LinearStochastic.ReducedElimination.reducedM
+#print axioms LinearStochastic.ReducedElimination.reducedM
+#check @LinearStochastic.ReducedElimination.obstruction_eq_map_feasible
+#print axioms LinearStochastic.ReducedElimination.obstruction_eq_map_feasible
+#check @LinearStochastic.ReducedElimination.feasible_eq_residual_ker
+#print axioms LinearStochastic.ReducedElimination.feasible_eq_residual_ker
+#check @LinearStochastic.ReducedElimination.residual_rank_eq_dimension_drop
+#print axioms LinearStochastic.ReducedElimination.residual_rank_eq_dimension_drop
+#check @LinearStochastic.ReducedElimination.current_space_orthogonal_split
+#print axioms LinearStochastic.ReducedElimination.current_space_orthogonal_split
+#check @LinearStochastic.ReducedElimination.complement_update
+#print axioms LinearStochastic.ReducedElimination.complement_update
+#check @LinearStochastic.SVDResidual.rows
+#print axioms LinearStochastic.SVDResidual.rows
+#check @LinearStochastic.SVDResidual.rows_ker
+#print axioms LinearStochastic.SVDResidual.rows_ker
+#check @LinearStochastic.SVDResidual.selected_left_rows
+#print axioms LinearStochastic.SVDResidual.selected_left_rows
+#check @LinearStochastic.SVDResidual.wide_or_tall_full_left_rows
+#print axioms LinearStochastic.SVDResidual.wide_or_tall_full_left_rows
+#check @LinearStochastic.SVDResidual.square_paired_left_rows
+#print axioms LinearStochastic.SVDResidual.square_paired_left_rows
+#check @LinearStochastic.SVDResidual.right_retained_space
+#print axioms LinearStochastic.SVDResidual.right_retained_space
+#check @LinearStochastic.SVDResidual.right_positive_span
+#print axioms LinearStochastic.SVDResidual.right_positive_span
+#check @LinearStochastic.SVDResidual.right_removed_space
+#print axioms LinearStochastic.SVDResidual.right_removed_space
+#check @LinearStochastic.SVDResidual.tail_card
+#print axioms LinearStochastic.SVDResidual.tail_card
+#check @LinearStochastic.SVDResidual.tallResidual
+#print axioms LinearStochastic.SVDResidual.tallResidual
+#check @LinearStochastic.SVDResidual.tallResidual_ker
+#print axioms LinearStochastic.SVDResidual.tallResidual_ker
+#check @LinearStochastic.SVDResidual.tallResidual_row_count
+#print axioms LinearStochastic.SVDResidual.tallResidual_row_count
+#check @LinearStochastic.SVDResidual.wide_thin_omits_kernel
+#print axioms LinearStochastic.SVDResidual.wide_thin_omits_kernel
+#check @LinearStochastic.SVDResidual.empty_rows_ker
+#print axioms LinearStochastic.SVDResidual.empty_rows_ker
+#check @LinearStochastic.ScalarGramianEnergy.observable
+#print axioms LinearStochastic.ScalarGramianEnergy.observable
+#check @LinearStochastic.ScalarGramianEnergy.gramian_scalar
+#print axioms LinearStochastic.ScalarGramianEnergy.gramian_scalar
+#check @LinearStochastic.ScalarGramianEnergy.kernel_scalar
+#print axioms LinearStochastic.ScalarGramianEnergy.kernel_scalar
+#check @LinearStochastic.ScalarGramianEnergy.control
+#print axioms LinearStochastic.ScalarGramianEnergy.control
+#check @LinearStochastic.ScalarGramianEnergy.control_is_gramian
+#print axioms LinearStochastic.ScalarGramianEnergy.control_is_gramian
+#check @LinearStochastic.ScalarGramianEnergy.energy
+#print axioms LinearStochastic.ScalarGramianEnergy.energy
+#check @LinearStochastic.ScalarGramianEnergy.sample_energy
+#print axioms LinearStochastic.ScalarGramianEnergy.sample_energy
+#check @LinearStochastic.ScalarGramianEnergy.expected_energy
+#print axioms LinearStochastic.ScalarGramianEnergy.expected_energy
+#check @LinearStochastic.SectionDriverTransport.vectorProcess_ae
+#print axioms LinearStochastic.SectionDriverTransport.vectorProcess_ae
+#check @LinearStochastic.SectionDriverTransport.integralState_ae
+#print axioms LinearStochastic.SectionDriverTransport.integralState_ae
+#check @LinearStochastic.SectionDriverTransport.solution
+#print axioms LinearStochastic.SectionDriverTransport.solution
+#check @LinearStochastic.SectionExpectedEnergy.prefix_energy
+#print axioms LinearStochastic.SectionExpectedEnergy.prefix_energy
+#check @LinearStochastic.SectionExponentialEnergy.exponential_energy
+#print axioms LinearStochastic.SectionExponentialEnergy.exponential_energy
+#check @LinearStochastic.SectionHorizonRestriction.real_restrict_ae
+#print axioms LinearStochastic.SectionHorizonRestriction.real_restrict_ae
+#check @LinearStochastic.SectionHorizonRestriction.primitive_restrict
+#print axioms LinearStochastic.SectionHorizonRestriction.primitive_restrict
+#check @LinearStochastic.SectionHorizonRestriction.integralState_restrict
+#print axioms LinearStochastic.SectionHorizonRestriction.integralState_restrict
+#check @LinearStochastic.SectionHorizonRestriction.section_restrict
+#print axioms LinearStochastic.SectionHorizonRestriction.section_restrict
+#check @LinearStochastic.SectionLinearDuality.SectionIntegralSolution
+#print axioms LinearStochastic.SectionLinearDuality.SectionIntegralSolution
+#check @LinearStochastic.SectionLinearDuality.IntegralSolution.toSections
+#print axioms LinearStochastic.SectionLinearDuality.IntegralSolution.toSections
+#check @LinearStochastic.SectionLinearDuality.integral_solution_product
+#print axioms LinearStochastic.SectionLinearDuality.integral_solution_product
+#check @LinearStochastic.SectionLinearDuality.forward_backward_duality
+#print axioms LinearStochastic.SectionLinearDuality.forward_backward_duality
+#check @LinearStochastic.SectionLinearDuality.forward_backward_duality_real
+#print axioms LinearStochastic.SectionLinearDuality.forward_backward_duality_real
+#check @LinearStochastic.SectionLyapunovEnergy.energy_le
+#print axioms LinearStochastic.SectionLyapunovEnergy.energy_le
+#check @LinearStochastic.SectionQuadraticEnergy.symmetric_compLp
+#print axioms LinearStochastic.SectionQuadraticEnergy.symmetric_compLp
+#check @LinearStochastic.SectionQuadraticEnergy.energy_identity
+#print axioms LinearStochastic.SectionQuadraticEnergy.energy_identity
+#check @LinearStochastic.SectionSolutionLinearity.real_add_ae
+#print axioms LinearStochastic.SectionSolutionLinearity.real_add_ae
+#check @LinearStochastic.SectionSolutionLinearity.primitive_add_ae
+#print axioms LinearStochastic.SectionSolutionLinearity.primitive_add_ae
+#check @LinearStochastic.SectionSolutionLinearity.vectorProcess_add_ae
+#print axioms LinearStochastic.SectionSolutionLinearity.vectorProcess_add_ae
+#check @LinearStochastic.SectionSolutionLinearity.integralState_add_ae
+#print axioms LinearStochastic.SectionSolutionLinearity.integralState_add_ae
+#check @LinearStochastic.SectionSolutionLinearity.SectionIntegralSolution.add
+#print axioms LinearStochastic.SectionSolutionLinearity.SectionIntegralSolution.add
+#check @LinearStochastic.SectionSolutionLinearity.SectionIntegralSolution.smul
+#print axioms LinearStochastic.SectionSolutionLinearity.SectionIntegralSolution.smul
+#check @LinearStochastic.SectionSolutionLinearity.zero_solution
+#print axioms LinearStochastic.SectionSolutionLinearity.zero_solution
+#check @LinearStochastic.SectionSolutionLinearity.SectionIntegralSolution.terminal_congr
+#print axioms LinearStochastic.SectionSolutionLinearity.SectionIntegralSolution.terminal_congr
+#check @LinearStochastic.SectionSolutionMap.real_compLp_ae
+#print axioms LinearStochastic.SectionSolutionMap.real_compLp_ae
+#check @LinearStochastic.SectionSolutionMap.primitive_comp_ae
+#print axioms LinearStochastic.SectionSolutionMap.primitive_comp_ae
+#check @LinearStochastic.SectionSolutionMap.integralState_comp_ae
+#print axioms LinearStochastic.SectionSolutionMap.integralState_comp_ae
+#check @LinearStochastic.SectionSolutionMap.SectionIntegralSolution.map
+#print axioms LinearStochastic.SectionSolutionMap.SectionIntegralSolution.map
+#check @LinearStochastic.SectionSolutionMap.mapRealization
+#print axioms LinearStochastic.SectionSolutionMap.mapRealization
+#check @LinearStochastic.SectionSolutionNaturality.real_compLp_ae
+#print axioms LinearStochastic.SectionSolutionNaturality.real_compLp_ae
+#check @LinearStochastic.SectionSolutionNaturality.primitive_comp_ae
+#print axioms LinearStochastic.SectionSolutionNaturality.primitive_comp_ae
+#check @LinearStochastic.SectionSolutionNaturality.integralState_comp_ae
+#print axioms LinearStochastic.SectionSolutionNaturality.integralState_comp_ae
+#check @LinearStochastic.SectionSolutionNaturality.SectionIntegralSolution.map
+#print axioms LinearStochastic.SectionSolutionNaturality.SectionIntegralSolution.map
+#check @LinearStochastic.SectionTerminalSpace.terminalDrift
+#print axioms LinearStochastic.SectionTerminalSpace.terminalDrift
+#check @LinearStochastic.SectionTerminalSpace.terminalDrift_ae
+#print axioms LinearStochastic.SectionTerminalSpace.terminalDrift_ae
+#check @LinearStochastic.SectionTerminalSpace.primitive_terminal_memLp
+#print axioms LinearStochastic.SectionTerminalSpace.primitive_terminal_memLp
+#check @LinearStochastic.SectionTerminalSpace.SectionIntegralSolution.terminal_memLp
+#print axioms LinearStochastic.SectionTerminalSpace.SectionIntegralSolution.terminal_memLp
+#check @LinearStochastic.SectionTerminalSpace.SectionIntegralSolution.terminal_aestronglyMeasurable
+#print axioms LinearStochastic.SectionTerminalSpace.SectionIntegralSolution.terminal_aestronglyMeasurable
+#check @LinearStochastic.SectionZeroDecomposition.diffusion_zero_of_zero_solution
+#print axioms LinearStochastic.SectionZeroDecomposition.diffusion_zero_of_zero_solution
+#check @LinearStochastic.SectionZeroDecomposition.zero_decomposition
+#print axioms LinearStochastic.SectionZeroDecomposition.zero_decomposition
+#check @LinearStochastic.SemialgebraicCoordinates.toBivariate
+#print axioms LinearStochastic.SemialgebraicCoordinates.toBivariate
+#check @LinearStochastic.SemialgebraicCoordinates.evaluate_toBivariate
+#print axioms LinearStochastic.SemialgebraicCoordinates.evaluate_toBivariate
+#check @LinearStochastic.SemialgebraicCoordinates.SignFormula
+#print axioms LinearStochastic.SemialgebraicCoordinates.SignFormula
+#check @LinearStochastic.SemialgebraicCoordinates.SignFormula.Holds
+#print axioms LinearStochastic.SemialgebraicCoordinates.SignFormula.Holds
+#check @LinearStochastic.SemialgebraicCoordinates.SignFormula.toFormula
+#print axioms LinearStochastic.SemialgebraicCoordinates.SignFormula.toFormula
+#check @LinearStochastic.SemialgebraicCoordinates.SignFormula.toFormula_holds
+#print axioms LinearStochastic.SemialgebraicCoordinates.SignFormula.toFormula_holds
+#check @LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic
+#print axioms LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic
+#check @LinearStochastic.SemialgebraicCoordinates.rayGraph
+#print axioms LinearStochastic.SemialgebraicCoordinates.rayGraph
+#check @LinearStochastic.SemialgebraicCoordinates.rayGraph_to_nested
+#print axioms LinearStochastic.SemialgebraicCoordinates.rayGraph_to_nested
+#check @LinearStochastic.SemialgebraicCoordinates.continuous_semialgebraic_growth
+#print axioms LinearStochastic.SemialgebraicCoordinates.continuous_semialgebraic_growth
+#check @LinearStochastic.SemialgebraicCoordinates.SignFormula.subst
+#print axioms LinearStochastic.SemialgebraicCoordinates.SignFormula.subst
+#check @LinearStochastic.SemialgebraicCoordinates.eval_subst
+#print axioms LinearStochastic.SemialgebraicCoordinates.eval_subst
+#check @LinearStochastic.SemialgebraicCoordinates.SignFormula.subst_holds
+#print axioms LinearStochastic.SemialgebraicCoordinates.SignFormula.subst_holds
+#check @LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.polynomial_preimage
+#print axioms LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.polynomial_preimage
+#check @LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.rename_preimage
+#print axioms LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.rename_preimage
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_empty
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_empty
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_univ
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_univ
+#check @LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.compl
+#print axioms LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.compl
+#check @LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.inter
+#print axioms LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.inter
+#check @LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.union
+#print axioms LinearStochastic.SemialgebraicCoordinates.IsSemialgebraic.union
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_zero
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_zero
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_positive
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_positive
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_nonneg
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_nonneg
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_eq
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_eq
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_le
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_le
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_lt
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_lt
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_finset_all
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_finset_all
+#check @LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_fintype_all
+#print axioms LinearStochastic.SemialgebraicCoordinates.isSemialgebraic_fintype_all
+#check @LinearStochastic.SemialgebraicMinimum.PairIndex
+#print axioms LinearStochastic.SemialgebraicMinimum.PairIndex
+#check @LinearStochastic.SemialgebraicMinimum.readP
+#print axioms LinearStochastic.SemialgebraicMinimum.readP
+#check @LinearStochastic.SemialgebraicMinimum.readK
+#print axioms LinearStochastic.SemialgebraicMinimum.readK
+#check @LinearStochastic.SemialgebraicMinimum.encode
+#print axioms LinearStochastic.SemialgebraicMinimum.encode
+#check @LinearStochastic.SemialgebraicMinimum.exists_pair_iff
+#print axioms LinearStochastic.SemialgebraicMinimum.exists_pair_iff
+#check @LinearStochastic.SemialgebraicMinimum.pVariables
+#print axioms LinearStochastic.SemialgebraicMinimum.pVariables
+#check @LinearStochastic.SemialgebraicMinimum.kVariables
+#print axioms LinearStochastic.SemialgebraicMinimum.kVariables
+#check @LinearStochastic.SemialgebraicMinimum.eval_pVariables
+#print axioms LinearStochastic.SemialgebraicMinimum.eval_pVariables
+#check @LinearStochastic.SemialgebraicMinimum.eval_kVariables
+#print axioms LinearStochastic.SemialgebraicMinimum.eval_kVariables
+#check @LinearStochastic.SemialgebraicMinimum.isSemialgebraic_attainable_value
+#print axioms LinearStochastic.SemialgebraicMinimum.isSemialgebraic_attainable_value
+#check @LinearStochastic.SemialgebraicMinimum.isSemialgebraic_smaller_value
+#print axioms LinearStochastic.SemialgebraicMinimum.isSemialgebraic_smaller_value
+#check @LinearStochastic.SemialgebraicMinimum.isSemialgebraic_minimum_graph
+#print axioms LinearStochastic.SemialgebraicMinimum.isSemialgebraic_minimum_graph
+#check @LinearStochastic.SemialgebraicTail.PolynomialBound
+#print axioms LinearStochastic.SemialgebraicTail.PolynomialBound
+#check @LinearStochastic.SemialgebraicTail.polynomial_ratio_bound
+#print axioms LinearStochastic.SemialgebraicTail.polynomial_ratio_bound
+#check @LinearStochastic.SemialgebraicTail.PolynomialBound.zero
+#print axioms LinearStochastic.SemialgebraicTail.PolynomialBound.zero
+#check @LinearStochastic.SemialgebraicTail.PolynomialBound.abs
+#print axioms LinearStochastic.SemialgebraicTail.PolynomialBound.abs
+#check @LinearStochastic.SemialgebraicTail.PolynomialBound.add
+#print axioms LinearStochastic.SemialgebraicTail.PolynomialBound.add
+#check @LinearStochastic.SemialgebraicTail.PolynomialBound.sum
+#print axioms LinearStochastic.SemialgebraicTail.PolynomialBound.sum
+#check @LinearStochastic.SemialgebraicTail.root_abs_lt_ratio_sum
+#print axioms LinearStochastic.SemialgebraicTail.root_abs_lt_ratio_sum
+#check @LinearStochastic.SemialgebraicTail.Bivariate
+#print axioms LinearStochastic.SemialgebraicTail.Bivariate
+#check @LinearStochastic.SemialgebraicTail.specialize
+#print axioms LinearStochastic.SemialgebraicTail.specialize
+#check @LinearStochastic.SemialgebraicTail.evaluate
+#print axioms LinearStochastic.SemialgebraicTail.evaluate
+#check @LinearStochastic.SemialgebraicTail.bivariate_eventually_no_roots
+#print axioms LinearStochastic.SemialgebraicTail.bivariate_eventually_no_roots
+#check @LinearStochastic.SemialgebraicTail.positive_iff_on_ray
+#print axioms LinearStochastic.SemialgebraicTail.positive_iff_on_ray
+#check @LinearStochastic.SemialgebraicTail.Formula
+#print axioms LinearStochastic.SemialgebraicTail.Formula
+#check @LinearStochastic.SemialgebraicTail.Formula.Holds
+#print axioms LinearStochastic.SemialgebraicTail.Formula.Holds
+#check @LinearStochastic.SemialgebraicTail.TailStable
+#print axioms LinearStochastic.SemialgebraicTail.TailStable
+#check @LinearStochastic.SemialgebraicTail.TailStable.constant
+#print axioms LinearStochastic.SemialgebraicTail.TailStable.constant
+#check @LinearStochastic.SemialgebraicTail.TailStable.neg
+#print axioms LinearStochastic.SemialgebraicTail.TailStable.neg
+#check @LinearStochastic.SemialgebraicTail.TailStable.combine
+#print axioms LinearStochastic.SemialgebraicTail.TailStable.combine
+#check @LinearStochastic.SemialgebraicTail.zero_tail
+#print axioms LinearStochastic.SemialgebraicTail.zero_tail
+#check @LinearStochastic.SemialgebraicTail.positive_tail
+#print axioms LinearStochastic.SemialgebraicTail.positive_tail
+#check @LinearStochastic.SemialgebraicTail.Formula.tail_stable
+#print axioms LinearStochastic.SemialgebraicTail.Formula.tail_stable
+#check @LinearStochastic.SemialgebraicTail.upward_formula_polynomial_bound
+#print axioms LinearStochastic.SemialgebraicTail.upward_formula_polynomial_bound
+#check @LinearStochastic.SemialgebraicTail.Formula.reflect
+#print axioms LinearStochastic.SemialgebraicTail.Formula.reflect
+#check @LinearStochastic.SemialgebraicTail.Formula.reflect_holds
+#print axioms LinearStochastic.SemialgebraicTail.Formula.reflect_holds
+#check @LinearStochastic.SemialgebraicTail.formula_graph_eventual_upper
+#print axioms LinearStochastic.SemialgebraicTail.formula_graph_eventual_upper
+#check @LinearStochastic.SemialgebraicTail.SemialgebraicGraph
+#print axioms LinearStochastic.SemialgebraicTail.SemialgebraicGraph
+#check @LinearStochastic.SemialgebraicTail.semialgebraic_graph_eventual_bound
+#print axioms LinearStochastic.SemialgebraicTail.semialgebraic_graph_eventual_bound
+#check @LinearStochastic.SemialgebraicTail.continuous_polynomial_bound
+#print axioms LinearStochastic.SemialgebraicTail.continuous_polynomial_bound
+#check @LinearStochastic.SemialgebraicTail.continuous_semialgebraic_growth
+#print axioms LinearStochastic.SemialgebraicTail.continuous_semialgebraic_growth
+#check @LinearStochastic.ShiftedFeedbackIdentity.feedback
+#print axioms LinearStochastic.ShiftedFeedbackIdentity.feedback
+#check @LinearStochastic.ShiftedFeedbackIdentity.progressive
+#print axioms LinearStochastic.ShiftedFeedbackIdentity.progressive
+#check @LinearStochastic.ShiftedFeedbackIdentity.feedback_ae
+#print axioms LinearStochastic.ShiftedFeedbackIdentity.feedback_ae
+#check @LinearStochastic.ShiftedFeedbackWindows.prefix_zero
+#print axioms LinearStochastic.ShiftedFeedbackWindows.prefix_zero
+#check @LinearStochastic.ShiftedFeedbackWindows.window
+#print axioms LinearStochastic.ShiftedFeedbackWindows.window
+#check @LinearStochastic.ShiftedSwitchingGain.gain
+#print axioms LinearStochastic.ShiftedSwitchingGain.gain
+#check @LinearStochastic.ShiftedSwitchingGain.gain_before
+#print axioms LinearStochastic.ShiftedSwitchingGain.gain_before
+#check @LinearStochastic.ShiftedSwitchingGain.gain_shift
+#print axioms LinearStochastic.ShiftedSwitchingGain.gain_shift
+#check @LinearStochastic.ShiftedSwitchingGain.gain_on
+#print axioms LinearStochastic.ShiftedSwitchingGain.gain_on
+#check @LinearStochastic.ShiftedSwitchingGain.prefix_bound
+#print axioms LinearStochastic.ShiftedSwitchingGain.prefix_bound
+#check @LinearStochastic.ShiftedSwitchingGain.measurable_gain
+#print axioms LinearStochastic.ShiftedSwitchingGain.measurable_gain
+#check @LinearStochastic.SpectralNullspace.rightBasis
+#print axioms LinearStochastic.SpectralNullspace.rightBasis
+#check @LinearStochastic.SpectralNullspace.leftBasis
+#print axioms LinearStochastic.SpectralNullspace.leftBasis
+#check @LinearStochastic.SpectralNullspace.right_diagonal
+#print axioms LinearStochastic.SpectralNullspace.right_diagonal
+#check @LinearStochastic.SpectralNullspace.ker_iff_coordinates
+#print axioms LinearStochastic.SpectralNullspace.ker_iff_coordinates
+#check @LinearStochastic.SpectralNullspace.ker_eq_zero_singular_span
+#print axioms LinearStochastic.SpectralNullspace.ker_eq_zero_singular_span
+#check @LinearStochastic.SpectralNullspace.left_ker_eq_zero_singular_span
+#print axioms LinearStochastic.SpectralNullspace.left_ker_eq_zero_singular_span
+#check @LinearStochastic.SpectralNullspace.rightZeroFrame
+#print axioms LinearStochastic.SpectralNullspace.rightZeroFrame
+#check @LinearStochastic.SpectralNullspace.rightZeroFrame_range
+#print axioms LinearStochastic.SpectralNullspace.rightZeroFrame_range
+#check @LinearStochastic.SpectralNullspace.leftZeroFrame
+#print axioms LinearStochastic.SpectralNullspace.leftZeroFrame
+#check @LinearStochastic.SpectralNullspace.leftZeroFrame_range
+#print axioms LinearStochastic.SpectralNullspace.leftZeroFrame_range
+#check @LinearStochastic.SpectralNullspace.spectral_residual_exact
+#print axioms LinearStochastic.SpectralNullspace.spectral_residual_exact
+#check @LinearStochastic.SpectralNullspace.wide_tail_in_kernel
+#print axioms LinearStochastic.SpectralNullspace.wide_tail_in_kernel
+#check @LinearStochastic.SpectralNullspace.wide_tail_not_in_thin_span
+#print axioms LinearStochastic.SpectralNullspace.wide_tail_not_in_thin_span
+#check @LinearStochastic.SquareSVD.normalizedImage
+#print axioms LinearStochastic.SquareSVD.normalizedImage
+#check @LinearStochastic.SquareSVD.image_inner
+#print axioms LinearStochastic.SquareSVD.image_inner
+#check @LinearStochastic.SquareSVD.normalized_orthonormal
+#print axioms LinearStochastic.SquareSVD.normalized_orthonormal
+#check @LinearStochastic.SquareSVD.leftBasis
+#print axioms LinearStochastic.SquareSVD.leftBasis
+#check @LinearStochastic.SquareSVD.leftBasis_positive
+#print axioms LinearStochastic.SquareSVD.leftBasis_positive
+#check @LinearStochastic.SquareSVD.singular_pair
+#print axioms LinearStochastic.SquareSVD.singular_pair
+#check @LinearStochastic.SquareSVD.decomposition
+#print axioms LinearStochastic.SquareSVD.decomposition
+#check @LinearStochastic.SquareSVD.adjoint_coordinates
+#print axioms LinearStochastic.SquareSVD.adjoint_coordinates
+#check @LinearStochastic.SquareSVD.left_ker_iff_coordinates
+#print axioms LinearStochastic.SquareSVD.left_ker_iff_coordinates
+#check @LinearStochastic.SquareSVD.left_ker_eq_zero_span
+#print axioms LinearStochastic.SquareSVD.left_ker_eq_zero_span
+#check @LinearStochastic.StaircaseControlClassification.residual_zero_final
+#print axioms LinearStochastic.StaircaseControlClassification.residual_zero_final
+#check @LinearStochastic.StaircaseControlClassification.zero_space_final
+#print axioms LinearStochastic.StaircaseControlClassification.zero_space_final
+#check @LinearStochastic.StaircaseControlClassification.stop_returns_terminal
+#print axioms LinearStochastic.StaircaseControlClassification.stop_returns_terminal
+#check @LinearStochastic.StaircaseControlClassification.no_columns_iff
+#print axioms LinearStochastic.StaircaseControlClassification.no_columns_iff
+#check @LinearStochastic.StaircaseControlClassification.systemCoefficients
+#print axioms LinearStochastic.StaircaseControlClassification.systemCoefficients
+#check @LinearStochastic.StaircaseControlClassification.stopped_classification
+#print axioms LinearStochastic.StaircaseControlClassification.stopped_classification
+#check @LinearStochastic.StaircaseControlClassification.terminates_and_classifies
+#print axioms LinearStochastic.StaircaseControlClassification.terminates_and_classifies
+#check @LinearStochastic.StaircaseControlClassification.zero_residual_nonzero_none
+#print axioms LinearStochastic.StaircaseControlClassification.zero_residual_nonzero_none
+#check @LinearStochastic.StaircaseControlClassification.zero_columns_success
+#print axioms LinearStochastic.StaircaseControlClassification.zero_columns_success
+#check @LinearStochastic.StaircaseFirstStop.Stops
+#print axioms LinearStochastic.StaircaseFirstStop.Stops
+#check @LinearStochastic.StaircaseFirstStop.first_stop
+#print axioms LinearStochastic.StaircaseFirstStop.first_stop
+#check @LinearStochastic.StaircaseFirstStop.matrix_first_stop
+#print axioms LinearStochastic.StaircaseFirstStop.matrix_first_stop
+#check @LinearStochastic.StochasticDeterministicReduction.flag_iff_kalman
+#print axioms LinearStochastic.StochasticDeterministicReduction.flag_iff_kalman
+#check @LinearStochastic.StochasticDeterministicReduction.null_properties_iff_kalman
+#print axioms LinearStochastic.StochasticDeterministicReduction.null_properties_iff_kalman
+#check @LinearStochastic.StochasticDeterministicReduction.not_exact
+#print axioms LinearStochastic.StochasticDeterministicReduction.not_exact
+#check @LinearStochastic.StochasticExactExamples.singular_exact
+#print axioms LinearStochastic.StochasticExactExamples.singular_exact
+#check @LinearStochastic.StochasticExactExamples.exactNullLocus
+#print axioms LinearStochastic.StochasticExactExamples.exactNullLocus
+#check @LinearStochastic.StochasticExactExamples.exactNull_locus_eq
+#print axioms LinearStochastic.StochasticExactExamples.exactNull_locus_eq
+#check @LinearStochastic.StochasticExactExamples.nonrobust_exact
+#print axioms LinearStochastic.StochasticExactExamples.nonrobust_exact
+#check @LinearStochastic.StochasticExactExamples.exactNull_not_open
+#print axioms LinearStochastic.StochasticExactExamples.exactNull_not_open
+#check @LinearStochastic.StochasticExactExamples.no_continuous_rank_test
+#print axioms LinearStochastic.StochasticExactExamples.no_continuous_rank_test
+#check @LinearStochastic.StochasticExamples.singular_approximate
+#print axioms LinearStochastic.StochasticExamples.singular_approximate
+#check @LinearStochastic.StochasticExamples.approximateLocus
+#print axioms LinearStochastic.StochasticExamples.approximateLocus
+#check @LinearStochastic.StochasticExamples.approximateNullLocus
+#print axioms LinearStochastic.StochasticExamples.approximateNullLocus
+#check @LinearStochastic.StochasticExamples.approximate_locus_eq
+#print axioms LinearStochastic.StochasticExamples.approximate_locus_eq
+#check @LinearStochastic.StochasticExamples.approximateNull_locus_eq
+#print axioms LinearStochastic.StochasticExamples.approximateNull_locus_eq
+#check @LinearStochastic.StochasticExamples.nonrobust_family
+#print axioms LinearStochastic.StochasticExamples.nonrobust_family
+#check @LinearStochastic.StochasticExamples.loci_not_open
+#print axioms LinearStochastic.StochasticExamples.loci_not_open
+#check @LinearStochastic.StochasticExamples.no_continuous_rank_test
+#print axioms LinearStochastic.StochasticExamples.no_continuous_rank_test
+#check @LinearStochastic.StochasticFoundation.gaussian_increment_memLp
+#print axioms LinearStochastic.StochasticFoundation.gaussian_increment_memLp
+#check @LinearStochastic.StochasticFoundation.gaussian_increment_mean
+#print axioms LinearStochastic.StochasticFoundation.gaussian_increment_mean
+#check @LinearStochastic.StochasticFoundation.gaussian_increment_second_moment
+#print axioms LinearStochastic.StochasticFoundation.gaussian_increment_second_moment
+#check @LinearStochastic.StochasticFoundation.elementary_integral_memLp
+#print axioms LinearStochastic.StochasticFoundation.elementary_integral_memLp
+#check @LinearStochastic.StochasticFoundation.elementary_integral_mean_zero
+#print axioms LinearStochastic.StochasticFoundation.elementary_integral_mean_zero
+#check @LinearStochastic.StochasticFoundation.elementary_integral_isometry
+#print axioms LinearStochastic.StochasticFoundation.elementary_integral_isometry
+#check @LinearStochastic.StochasticFoundation.adapted_independent_increment
+#print axioms LinearStochastic.StochasticFoundation.adapted_independent_increment
+#check @LinearStochastic.StochasticFoundation.adapted_increment_energy
+#print axioms LinearStochastic.StochasticFoundation.adapted_increment_energy
+#check @LinearStochastic.StochasticFoundation.gaussian_increment_model
+#print axioms LinearStochastic.StochasticFoundation.gaussian_increment_model
+#check @LinearStochastic.StochasticInputStructure.drift_kernel_nonzero
+#print axioms LinearStochastic.StochasticInputStructure.drift_kernel_nonzero
+#check @LinearStochastic.StochasticInputStructure.exact_input_dimension
+#print axioms LinearStochastic.StochasticInputStructure.exact_input_dimension
+#check @LinearStochastic.StochasticInputStructure.none_of_drift_kernel_zero
+#print axioms LinearStochastic.StochasticInputStructure.none_of_drift_kernel_zero
+#check @LinearStochastic.SubspaceIntegralSolution.complementProjection
+#print axioms LinearStochastic.SubspaceIntegralSolution.complementProjection
+#check @LinearStochastic.SubspaceIntegralSolution.complementProjection_eq_zero_iff
+#print axioms LinearStochastic.SubspaceIntegralSolution.complementProjection_eq_zero_iff
+#check @LinearStochastic.SubspaceIntegralSolution.compLp_eq_zero_iff
+#print axioms LinearStochastic.SubspaceIntegralSolution.compLp_eq_zero_iff
+#check @LinearStochastic.SubspaceIntegralSolution.projected_zero_solution
+#print axioms LinearStochastic.SubspaceIntegralSolution.projected_zero_solution
+#check @LinearStochastic.SubspaceIntegralSolution.coefficients_mem
+#print axioms LinearStochastic.SubspaceIntegralSolution.coefficients_mem
+#check @LinearStochastic.Switching.geometric_decay
+#print axioms LinearStochastic.Switching.geometric_decay
+#check @LinearStochastic.Switching.quotient_decay
+#print axioms LinearStochastic.Switching.quotient_decay
+#check @LinearStochastic.Switching.energy_summable_and_bound
+#print axioms LinearStochastic.Switching.energy_summable_and_bound
+#check @LinearStochastic.Switching.state_sequence_tends_to_zero
+#print axioms LinearStochastic.Switching.state_sequence_tends_to_zero
+#check @LinearStochastic.Switching.switchTime
+#print axioms LinearStochastic.Switching.switchTime
+#check @LinearStochastic.Switching.switchTime_zero
+#print axioms LinearStochastic.Switching.switchTime_zero
+#check @LinearStochastic.Switching.switchTime_length
+#print axioms LinearStochastic.Switching.switchTime_length
+#check @LinearStochastic.Switching.switchTime_strictMono
+#print axioms LinearStochastic.Switching.switchTime_strictMono
+#check @LinearStochastic.Switching.switchTime_tendsto
+#print axioms LinearStochastic.Switching.switchTime_tendsto
+#check @LinearStochastic.Switching.polynomial_exp_bound
+#print axioms LinearStochastic.Switching.polynomial_exp_bound
+#check @LinearStochastic.Switching.exists_switching_constant
+#print axioms LinearStochastic.Switching.exists_switching_constant
+#check @LinearStochastic.Switching.rescaled_contraction
+#print axioms LinearStochastic.Switching.rescaled_contraction
+#check @LinearStochastic.Switching.terminal_value_zero_of_continuous
+#print axioms LinearStochastic.Switching.terminal_value_zero_of_continuous
+#check @LinearStochastic.SwitchingActualFeedback.control_is_feedback
+#print axioms LinearStochastic.SwitchingActualFeedback.control_is_feedback
+#check @LinearStochastic.SwitchingActualFeedback.feedback_admissible
+#print axioms LinearStochastic.SwitchingActualFeedback.feedback_admissible
+#check @LinearStochastic.SwitchingActualFeedback.raw_solution
+#print axioms LinearStochastic.SwitchingActualFeedback.raw_solution
+#check @LinearStochastic.SwitchingActualFeedback.energy_bound
+#print axioms LinearStochastic.SwitchingActualFeedback.energy_bound
+#check @LinearStochastic.SwitchingControl.inside
+#print axioms LinearStochastic.SwitchingControl.inside
+#check @LinearStochastic.SwitchingControl.time_mono
+#print axioms LinearStochastic.SwitchingControl.time_mono
+#check @LinearStochastic.SwitchingControl.separated
+#print axioms LinearStochastic.SwitchingControl.separated
+#check @LinearStochastic.SwitchingControl.total
+#print axioms LinearStochastic.SwitchingControl.total
+#check @LinearStochastic.SwitchingControl.energy_identity
+#print axioms LinearStochastic.SwitchingControl.energy_identity
+#check @LinearStochastic.SwitchingControl.energy_bound
+#print axioms LinearStochastic.SwitchingControl.energy_bound
+#check @LinearStochastic.SwitchingControl.recover_window
+#print axioms LinearStochastic.SwitchingControl.recover_window
+#check @LinearStochastic.SwitchingControl.cost_formula
+#print axioms LinearStochastic.SwitchingControl.cost_formula
+#check @LinearStochastic.SwitchingControl.paper_energy_bound
+#print axioms LinearStochastic.SwitchingControl.paper_energy_bound
+#check @LinearStochastic.SwitchingDynamics.shiftedForwardFamily
+#print axioms LinearStochastic.SwitchingDynamics.shiftedForwardFamily
+#check @LinearStochastic.SwitchingDynamics.Run
+#print axioms LinearStochastic.SwitchingDynamics.Run
+#check @LinearStochastic.SwitchingDynamics.exists_run
+#print axioms LinearStochastic.SwitchingDynamics.exists_run
+#check @LinearStochastic.SwitchingDynamics.moment
+#print axioms LinearStochastic.SwitchingDynamics.moment
+#check @LinearStochastic.SwitchingDynamics.control
+#print axioms LinearStochastic.SwitchingDynamics.control
+#check @LinearStochastic.SwitchingDynamics.moment_nonneg
+#print axioms LinearStochastic.SwitchingDynamics.moment_nonneg
+#check @LinearStochastic.SwitchingDynamics.moment_zero
+#print axioms LinearStochastic.SwitchingDynamics.moment_zero
+#check @LinearStochastic.SwitchingDynamics.moment_step
+#print axioms LinearStochastic.SwitchingDynamics.moment_step
+#check @LinearStochastic.SwitchingDynamics.control_energy
+#print axioms LinearStochastic.SwitchingDynamics.control_energy
+#check @LinearStochastic.SwitchingFeedbackAll.shiftedForwardFamily
+#print axioms LinearStochastic.SwitchingFeedbackAll.shiftedForwardFamily
+#check @LinearStochastic.SwitchingFeedbackAll.exists_gain
+#print axioms LinearStochastic.SwitchingFeedbackAll.exists_gain
+#check @LinearStochastic.SwitchingFeedbackFamily.Family
+#print axioms LinearStochastic.SwitchingFeedbackFamily.Family
+#check @LinearStochastic.SwitchingFeedbackFamily.exists_family
+#print axioms LinearStochastic.SwitchingFeedbackFamily.exists_family
+#check @LinearStochastic.SwitchingFeedbackFamily.uniform_contraction
+#print axioms LinearStochastic.SwitchingFeedbackFamily.uniform_contraction
+#check @LinearStochastic.SwitchingFeedbackIdentity.feedback
+#print axioms LinearStochastic.SwitchingFeedbackIdentity.feedback
+#check @LinearStochastic.SwitchingFeedbackIdentity.feedback_progressive
+#print axioms LinearStochastic.SwitchingFeedbackIdentity.feedback_progressive
+#check @LinearStochastic.SwitchingFeedbackIdentity.ae_away_mesh
+#print axioms LinearStochastic.SwitchingFeedbackIdentity.ae_away_mesh
+#check @LinearStochastic.SwitchingFeedbackIdentity.mesh_inside
+#print axioms LinearStochastic.SwitchingFeedbackIdentity.mesh_inside
+#check @LinearStochastic.SwitchingFeedbackIdentity.feedback_ae
+#print axioms LinearStochastic.SwitchingFeedbackIdentity.feedback_ae
+#check @LinearStochastic.SwitchingFeedbackIdentity.feedback_admissible
+#print axioms LinearStochastic.SwitchingFeedbackIdentity.feedback_admissible
+#check @LinearStochastic.SwitchingFeedbackSmall.for_family
+#print axioms LinearStochastic.SwitchingFeedbackSmall.for_family
+#check @LinearStochastic.SwitchingFeedbackSmall.uniform_gain
+#print axioms LinearStochastic.SwitchingFeedbackSmall.uniform_gain
+#check @LinearStochastic.SwitchingFeedbackWindows.window_of_feedback
+#print axioms LinearStochastic.SwitchingFeedbackWindows.window_of_feedback
+#check @LinearStochastic.SwitchingFeedbackWindows.feedback_ae_iff
+#print axioms LinearStochastic.SwitchingFeedbackWindows.feedback_ae_iff
+#check @LinearStochastic.SwitchingGain.gain
+#print axioms LinearStochastic.SwitchingGain.gain
+#check @LinearStochastic.SwitchingGain.time_mono
+#print axioms LinearStochastic.SwitchingGain.time_mono
+#check @LinearStochastic.SwitchingGain.covers
+#print axioms LinearStochastic.SwitchingGain.covers
+#check @LinearStochastic.SwitchingGain.measurable_gain
+#print axioms LinearStochastic.SwitchingGain.measurable_gain
+#check @LinearStochastic.SwitchingGain.gain_on
+#print axioms LinearStochastic.SwitchingGain.gain_on
+#check @LinearStochastic.SwitchingGain.gain_after
+#print axioms LinearStochastic.SwitchingGain.gain_after
+#check @LinearStochastic.SwitchingGain.prefix_bound
+#print axioms LinearStochastic.SwitchingGain.prefix_bound
+#check @LinearStochastic.SwitchingLinearSolutions.Good
+#print axioms LinearStochastic.SwitchingLinearSolutions.Good
+#check @LinearStochastic.SwitchingLinearSolutions.add_good
+#print axioms LinearStochastic.SwitchingLinearSolutions.add_good
+#check @LinearStochastic.SwitchingLinearSolutions.smul_good
+#print axioms LinearStochastic.SwitchingLinearSolutions.smul_good
+#check @LinearStochastic.SwitchingLinearSolutions.control_unique
+#print axioms LinearStochastic.SwitchingLinearSolutions.control_unique
+#check @LinearStochastic.SwitchingNullAll.shiftedForwardFamily
+#print axioms LinearStochastic.SwitchingNullAll.shiftedForwardFamily
+#check @LinearStochastic.SwitchingNullAll.exists_null
+#print axioms LinearStochastic.SwitchingNullAll.exists_null
+#check @LinearStochastic.SwitchingNullAll.exactNull
+#print axioms LinearStochastic.SwitchingNullAll.exactNull
+#check @LinearStochastic.SwitchingNullLinear.exists_good
+#print axioms LinearStochastic.SwitchingNullLinear.exists_good
+#check @LinearStochastic.SwitchingNullLinear.continuous_linear_null_map
+#print axioms LinearStochastic.SwitchingNullLinear.continuous_linear_null_map
+#check @LinearStochastic.SwitchingNullSmall.exists_null_for_family
+#print axioms LinearStochastic.SwitchingNullSmall.exists_null_for_family
+#check @LinearStochastic.SwitchingNullSmall.uniform_cost
+#print axioms LinearStochastic.SwitchingNullSmall.uniform_cost
+#check @LinearStochastic.SwitchingNullSmall.exactNull
+#print axioms LinearStochastic.SwitchingNullSmall.exactNull
+#check @LinearStochastic.SwitchingRates.rate
+#print axioms LinearStochastic.SwitchingRates.rate
+#check @LinearStochastic.SwitchingRates.length
+#print axioms LinearStochastic.SwitchingRates.length
+#check @LinearStochastic.SwitchingRates.rate_formula
+#print axioms LinearStochastic.SwitchingRates.rate_formula
+#check @LinearStochastic.SwitchingRates.rate_ratio
+#print axioms LinearStochastic.SwitchingRates.rate_ratio
+#check @LinearStochastic.SwitchingRates.dyadic_ratio_ge_one
+#print axioms LinearStochastic.SwitchingRates.dyadic_ratio_ge_one
+#check @LinearStochastic.SwitchingRates.rate_ge_one
+#print axioms LinearStochastic.SwitchingRates.rate_ge_one
+#check @LinearStochastic.SwitchingRates.rate_length
+#print axioms LinearStochastic.SwitchingRates.rate_length
+#check @LinearStochastic.SwitchingRates.contraction_factor
+#print axioms LinearStochastic.SwitchingRates.contraction_factor
+#check @LinearStochastic.SwitchingState.shiftedForwardFamily
+#print axioms LinearStochastic.SwitchingState.shiftedForwardFamily
+#check @LinearStochastic.SwitchingState.initial_measurable
+#print axioms LinearStochastic.SwitchingState.initial_measurable
+#check @LinearStochastic.SwitchingState.State
+#print axioms LinearStochastic.SwitchingState.State
+#check @LinearStochastic.SwitchingState.exists_state
+#print axioms LinearStochastic.SwitchingState.exists_state
+#check @LinearStochastic.SwitchingState.piece_equation
+#print axioms LinearStochastic.SwitchingState.piece_equation
+#check @LinearStochastic.SwitchingState.one_restart
+#print axioms LinearStochastic.SwitchingState.one_restart
+#check @LinearStochastic.SwitchingState.at_mesh
+#print axioms LinearStochastic.SwitchingState.at_mesh
+#check @LinearStochastic.SwitchingState.agrees_on_piece
+#print axioms LinearStochastic.SwitchingState.agrees_on_piece
+#check @LinearStochastic.SwitchingState.terminal_zero
+#print axioms LinearStochastic.SwitchingState.terminal_zero
+#check @LinearStochastic.SwitchingSummability.weighted
+#print axioms LinearStochastic.SwitchingSummability.weighted
+#check @LinearStochastic.SwitchingSummability.constant
+#print axioms LinearStochastic.SwitchingSummability.constant
+#check @LinearStochastic.SwitchingSummability.rate_scaling
+#print axioms LinearStochastic.SwitchingSummability.rate_scaling
+#check @LinearStochastic.SwitchingSummability.weighted_nonneg
+#print axioms LinearStochastic.SwitchingSummability.weighted_nonneg
+#check @LinearStochastic.SwitchingSummability.contraction
+#print axioms LinearStochastic.SwitchingSummability.contraction
+#check @LinearStochastic.SwitchingSummability.energy_summable
+#print axioms LinearStochastic.SwitchingSummability.energy_summable
+#check @LinearStochastic.SwitchingSummability.energy_geometric
+#print axioms LinearStochastic.SwitchingSummability.energy_geometric
+#check @LinearStochastic.SwitchingSummability.norms_summable
+#print axioms LinearStochastic.SwitchingSummability.norms_summable
+#check @LinearStochastic.SwitchingSummability.moment_tendsto_zero
+#print axioms LinearStochastic.SwitchingSummability.moment_tendsto_zero
+#check @LinearStochastic.SwitchingTerminalLimit.terminal_moment_zero
+#print axioms LinearStochastic.SwitchingTerminalLimit.terminal_moment_zero
+#check @LinearStochastic.SwitchingTerminalLimit.terminal_ae_zero
+#print axioms LinearStochastic.SwitchingTerminalLimit.terminal_ae_zero
+#check @LinearStochastic.SwitchingTimeMesh.time
+#print axioms LinearStochastic.SwitchingTimeMesh.time
+#check @LinearStochastic.SwitchingTimeMesh.duration
+#print axioms LinearStochastic.SwitchingTimeMesh.duration
+#check @LinearStochastic.SwitchingTimeMesh.coe_time
+#print axioms LinearStochastic.SwitchingTimeMesh.coe_time
+#check @LinearStochastic.SwitchingTimeMesh.coe_duration
+#print axioms LinearStochastic.SwitchingTimeMesh.coe_duration
+#check @LinearStochastic.SwitchingTimeMesh.time_zero
+#print axioms LinearStochastic.SwitchingTimeMesh.time_zero
+#check @LinearStochastic.SwitchingTimeMesh.next_time
+#print axioms LinearStochastic.SwitchingTimeMesh.next_time
+#check @LinearStochastic.SwitchingTimeMesh.time_le
+#print axioms LinearStochastic.SwitchingTimeMesh.time_le
+#check @LinearStochastic.SwitchingTimeMesh.time_lt
+#print axioms LinearStochastic.SwitchingTimeMesh.time_lt
+#check @LinearStochastic.SwitchingTimeMesh.duration_pos
+#print axioms LinearStochastic.SwitchingTimeMesh.duration_pos
+#check @LinearStochastic.SwitchingTimeMesh.time_tendsto
+#print axioms LinearStochastic.SwitchingTimeMesh.time_tendsto
+#check @LinearStochastic.TallQRElimination.Space
+#print axioms LinearStochastic.TallQRElimination.Space
+#check @LinearStochastic.TallQRElimination.coord
+#print axioms LinearStochastic.TallQRElimination.coord
+#check @LinearStochastic.TallQRElimination.top
+#print axioms LinearStochastic.TallQRElimination.top
+#check @LinearStochastic.TallQRElimination.bottom
+#print axioms LinearStochastic.TallQRElimination.bottom
+#check @LinearStochastic.TallQRElimination.paddedColumns
+#print axioms LinearStochastic.TallQRElimination.paddedColumns
+#check @LinearStochastic.TallQRElimination.qBasis
+#print axioms LinearStochastic.TallQRElimination.qBasis
+#check @LinearStochastic.TallQRElimination.transformed
+#print axioms LinearStochastic.TallQRElimination.transformed
+#check @LinearStochastic.TallQRElimination.triangular
+#print axioms LinearStochastic.TallQRElimination.triangular
+#check @LinearStochastic.TallQRElimination.transformed_column_zero
+#print axioms LinearStochastic.TallQRElimination.transformed_column_zero
+#check @LinearStochastic.TallQRElimination.transformed_bottom_zero
+#print axioms LinearStochastic.TallQRElimination.transformed_bottom_zero
+#check @LinearStochastic.TallQRElimination.triangular_upper
+#print axioms LinearStochastic.TallQRElimination.triangular_upper
+#check @LinearStochastic.TallQRElimination.qr_factorization
+#print axioms LinearStochastic.TallQRElimination.qr_factorization
+#check @LinearStochastic.TallQRElimination.qr_householder
+#print axioms LinearStochastic.TallQRElimination.qr_householder
+#check @LinearStochastic.TallQRElimination.triangular_ker
+#print axioms LinearStochastic.TallQRElimination.triangular_ker
+#check @LinearStochastic.TallQRElimination.triangular_rank
+#print axioms LinearStochastic.TallQRElimination.triangular_rank
+#check @LinearStochastic.TallQRElimination.topL
+#print axioms LinearStochastic.TallQRElimination.topL
+#check @LinearStochastic.TallQRElimination.bottomL
+#print axioms LinearStochastic.TallQRElimination.bottomL
+#check @LinearStochastic.TallQRElimination.feasible_top_bottom
+#print axioms LinearStochastic.TallQRElimination.feasible_top_bottom
+#check @LinearStochastic.TallQRElimination.qr_spectral_residual
+#print axioms LinearStochastic.TallQRElimination.qr_spectral_residual
+#check @LinearStochastic.TallQRElimination.reorthogonalize_ordered
+#print axioms LinearStochastic.TallQRElimination.reorthogonalize_ordered
+#check @LinearStochastic.TerminalDriftWindow.terminal_restart
+#print axioms LinearStochastic.TerminalDriftWindow.terminal_restart
+#check @LinearStochastic.TerminalDriftWindow.terminal_extendShift
+#print axioms LinearStochastic.TerminalDriftWindow.terminal_extendShift
+#check @LinearStochastic.TerminalDriftWindow.terminalDrift_norm
+#print axioms LinearStochastic.TerminalDriftWindow.terminalDrift_norm
+#check @LinearStochastic.TerminalDriftWindow.terminalDrift_extendShift
+#print axioms LinearStochastic.TerminalDriftWindow.terminalDrift_extendShift
+#check @LinearStochastic.TerminalDriftWindow.terminalDrift_window_bound
+#print axioms LinearStochastic.TerminalDriftWindow.terminalDrift_window_bound
+#check @LinearStochastic.TerminalObservationBound.observation_bound
+#print axioms LinearStochastic.TerminalObservationBound.observation_bound
+#check @LinearStochastic.TerminalObservationBound.not_surjective_of_vanishing_observations
+#print axioms LinearStochastic.TerminalObservationBound.not_surjective_of_vanishing_observations
+#check @LinearStochastic.TerminalSpikeEstimate.endpoint_eq
+#print axioms LinearStochastic.TerminalSpikeEstimate.endpoint_eq
+#check @LinearStochastic.TerminalSpikeEstimate.forcing_drift_bound
+#print axioms LinearStochastic.TerminalSpikeEstimate.forcing_drift_bound
+#check @LinearStochastic.TerminalSpikeEstimate.unit_lower
+#print axioms LinearStochastic.TerminalSpikeEstimate.unit_lower
+#check @LinearStochastic.TerminalSpikeNoise.noise
+#print axioms LinearStochastic.TerminalSpikeNoise.noise
+#check @LinearStochastic.TerminalSpikeNoise.energy
+#print axioms LinearStochastic.TerminalSpikeNoise.energy
+#check @LinearStochastic.TerminalSpikeNoise.noise_ae
+#print axioms LinearStochastic.TerminalSpikeNoise.noise_ae
+#check @LinearStochastic.TerminalSpikeNoise.observation_zero
+#print axioms LinearStochastic.TerminalSpikeNoise.observation_zero
+#check @LinearStochastic.TerminalSpikeNoise.stochastic_norm
+#print axioms LinearStochastic.TerminalSpikeNoise.stochastic_norm
+#check @LinearStochastic.TerminalSpikeState.scalarBasis
+#print axioms LinearStochastic.TerminalSpikeState.scalarBasis
+#check @LinearStochastic.TerminalSpikeState.windowLinear
+#print axioms LinearStochastic.TerminalSpikeState.windowLinear
+#check @LinearStochastic.TerminalSpikeState.forcing
+#print axioms LinearStochastic.TerminalSpikeState.forcing
+#check @LinearStochastic.TerminalSpikeState.factor
+#print axioms LinearStochastic.TerminalSpikeState.factor
+#check @LinearStochastic.TerminalSpikeState.exists_solution
+#print axioms LinearStochastic.TerminalSpikeState.exists_solution
+#check @LinearStochastic.TerminalSpikeState.factor_tendsto
+#print axioms LinearStochastic.TerminalSpikeState.factor_tendsto
+#check @LinearStochastic.TrimInclusion.measurableInclusion
+#print axioms LinearStochastic.TrimInclusion.measurableInclusion
+#check @LinearStochastic.TrimInclusion.inclusion
+#print axioms LinearStochastic.TrimInclusion.inclusion
+#check @LinearStochastic.TrimInclusion.inclusion_ambient_ae
+#print axioms LinearStochastic.TrimInclusion.inclusion_ambient_ae
+#check @LinearStochastic.TrimInclusion.predictable_mono
+#print axioms LinearStochastic.TrimInclusion.predictable_mono
+#check @LinearStochastic.UniformSwitchingFamily.Parameters
+#print axioms LinearStochastic.UniformSwitchingFamily.Parameters
+#check @LinearStochastic.UniformSwitchingFamily.exists_parameters
+#print axioms LinearStochastic.UniformSwitchingFamily.exists_parameters
+#check @LinearStochastic.UniformSwitchingFamily.family
+#print axioms LinearStochastic.UniformSwitchingFamily.family
+#check @LinearStochastic.UniformSwitchingFamily.family_M
+#print axioms LinearStochastic.UniformSwitchingFamily.family_M
+#check @LinearStochastic.UniformSwitchingFamily.family_p
+#print axioms LinearStochastic.UniformSwitchingFamily.family_p
+#check @LinearStochastic.UniformSwitchingFamily.family_L
+#print axioms LinearStochastic.UniformSwitchingFamily.family_L
+#check @LinearStochastic.UsualControlClassification.classification
+#print axioms LinearStochastic.UsualControlClassification.classification
+#check @LinearStochastic.UsualGlobalBSDE.exists_global
+#print axioms LinearStochastic.UsualGlobalBSDE.exists_global
+#check @LinearStochastic.UsualGlobalControllability.reachable_dense
+#print axioms LinearStochastic.UsualGlobalControllability.reachable_dense
+#check @LinearStochastic.UsualGlobalControllability.approximation_from_initial
+#print axioms LinearStochastic.UsualGlobalControllability.approximation_from_initial
+#check @LinearStochastic.UsualHilbertBSDE.exists_section_backward
+#print axioms LinearStochastic.UsualHilbertBSDE.exists_section_backward
+#check @LinearStochastic.UsualHilbertBSDE.terminal_annihilator_eq_zero
+#print axioms LinearStochastic.UsualHilbertBSDE.terminal_annihilator_eq_zero
+#check @LinearStochastic.UsualHilbertGlobalBSDE.exists_section_backward
+#print axioms LinearStochastic.UsualHilbertGlobalBSDE.exists_section_backward
+#check @LinearStochastic.UsualLocalControllability.reachable_dense
+#print axioms LinearStochastic.UsualLocalControllability.reachable_dense
+#check @LinearStochastic.UsualLocalControllability.approximation_from_initial
+#print axioms LinearStochastic.UsualLocalControllability.approximation_from_initial
+#check @LinearStochastic.UsualVersionFiltration.natural_le_of_ae
+#print axioms LinearStochastic.UsualVersionFiltration.natural_le_of_ae
+#check @LinearStochastic.UsualVersionFiltration.usual_le
+#print axioms LinearStochastic.UsualVersionFiltration.usual_le
+#check @LinearStochastic.UsualVersionFiltration.forward_congr
+#print axioms LinearStochastic.UsualVersionFiltration.forward_congr
+#check @LinearStochastic.UsualVersionFiltration.pairForward_congr
+#print axioms LinearStochastic.UsualVersionFiltration.pairForward_congr
+#check @LinearStochastic.UsualVersionFiltration.usual_eq_of_ae
+#print axioms LinearStochastic.UsualVersionFiltration.usual_eq_of_ae
+#check @LinearStochastic.UsualVersionFiltration.repaired_usual_eq
+#print axioms LinearStochastic.UsualVersionFiltration.repaired_usual_eq
+#check @LinearStochastic.VectorExtensionNaturality.compLp
+#print axioms LinearStochastic.VectorExtensionNaturality.compLp
+#check @LinearStochastic.VectorExtensionNaturality.normalized_constant
+#print axioms LinearStochastic.VectorExtensionNaturality.normalized_constant
+#check @LinearStochastic.VectorH2Extension.norm_sq_coordinates
+#print axioms LinearStochastic.VectorH2Extension.norm_sq_coordinates
+#check @LinearStochastic.VectorH2Extension.liftLinear
+#print axioms LinearStochastic.VectorH2Extension.liftLinear
+#check @LinearStochastic.VectorH2Extension.coordinate_lift
+#print axioms LinearStochastic.VectorH2Extension.coordinate_lift
+#check @LinearStochastic.VectorH2Extension.liftIsometry
+#print axioms LinearStochastic.VectorH2Extension.liftIsometry
+#check @LinearStochastic.VectorH2Extension.lift_norm_le
+#print axioms LinearStochastic.VectorH2Extension.lift_norm_le
+#check @LinearStochastic.VectorH2Extension.extendShift
+#print axioms LinearStochastic.VectorH2Extension.extendShift
+#check @LinearStochastic.VectorH2Extension.extendShift_norm
+#print axioms LinearStochastic.VectorH2Extension.extendShift_norm
+#check @LinearStochastic.VectorH2Extension.coordinate_extendShift
+#print axioms LinearStochastic.VectorH2Extension.coordinate_extendShift
+#check @LinearStochastic.VectorH2Extension.shift
+#print axioms LinearStochastic.VectorH2Extension.shift
+#check @LinearStochastic.VectorH2Extension.shift_extendShift
+#print axioms LinearStochastic.VectorH2Extension.shift_extendShift
+#check @LinearStochastic.VectorH2Extension.shift_ae
+#print axioms LinearStochastic.VectorH2Extension.shift_ae
+#check @LinearStochastic.VectorH2Extension.window_ae
+#print axioms LinearStochastic.VectorH2Extension.window_ae
+#check @LinearStochastic.VectorH2Extension.extendShift_ae
+#print axioms LinearStochastic.VectorH2Extension.extendShift_ae
+#check @LinearStochastic.VectorH2Extension.restriction_extendShift_zero
+#print axioms LinearStochastic.VectorH2Extension.restriction_extendShift_zero
+#check @LinearStochastic.VectorH2Orthogonality.inner_ambient
+#print axioms LinearStochastic.VectorH2Orthogonality.inner_ambient
+#check @LinearStochastic.VectorH2Orthogonality.inner_extendShift_eq_zero
+#print axioms LinearStochastic.VectorH2Orthogonality.inner_extendShift_eq_zero
+#check @LinearStochastic.VectorH2Orthogonality.pull_ae
+#print axioms LinearStochastic.VectorH2Orthogonality.pull_ae
+#check @LinearStochastic.VectorH2Orthogonality.shift_extendShift_eq_zero
+#print axioms LinearStochastic.VectorH2Orthogonality.shift_extendShift_eq_zero
+#check @LinearStochastic.VectorH2Orthogonality.norm_tsum_sq
+#print axioms LinearStochastic.VectorH2Orthogonality.norm_tsum_sq
+#check @LinearStochastic.VectorH2Orthogonality.extensions_norm_tsum_sq
+#print axioms LinearStochastic.VectorH2Orthogonality.extensions_norm_tsum_sq
+#check @LinearStochastic.VectorH2Orthogonality.shift_tsum_extensions
+#print axioms LinearStochastic.VectorH2Orthogonality.shift_tsum_extensions
+#check @LinearStochastic.VectorH2Series.restrict_norm
+#print axioms LinearStochastic.VectorH2Series.restrict_norm
+#check @LinearStochastic.VectorH2Series.restrictCLM
+#print axioms LinearStochastic.VectorH2Series.restrictCLM
+#check @LinearStochastic.VectorH2Series.restrictCLM_apply
+#print axioms LinearStochastic.VectorH2Series.restrictCLM_apply
+#check @LinearStochastic.VectorH2Series.restriction_extendShift
+#print axioms LinearStochastic.VectorH2Series.restriction_extendShift
+#check @LinearStochastic.VectorH2Series.extensions_summable
+#print axioms LinearStochastic.VectorH2Series.extensions_summable
+#check @LinearStochastic.VectorH2Series.restrict_tsum_prefix
+#print axioms LinearStochastic.VectorH2Series.restrict_tsum_prefix
+#check @LinearStochastic.VectorHorizonRestriction.measure_le
+#print axioms LinearStochastic.VectorHorizonRestriction.measure_le
+#check @LinearStochastic.VectorHorizonRestriction.restrict
+#print axioms LinearStochastic.VectorHorizonRestriction.restrict
+#check @LinearStochastic.VectorHorizonRestriction.restrict_ae
+#print axioms LinearStochastic.VectorHorizonRestriction.restrict_ae
+#check @LinearStochastic.VectorHorizonRestriction.restrict_comp
+#print axioms LinearStochastic.VectorHorizonRestriction.restrict_comp
+#check @LinearStochastic.VectorHorizonRestriction.coordinate_restrict
+#print axioms LinearStochastic.VectorHorizonRestriction.coordinate_restrict
+#check @LinearStochastic.VectorHorizonRestriction.vectorLp_restrict
+#print axioms LinearStochastic.VectorHorizonRestriction.vectorLp_restrict
+#check @LinearStochastic.VectorHorizonRestriction.vectorProcess_restrict
+#print axioms LinearStochastic.VectorHorizonRestriction.vectorProcess_restrict
+#check @LinearStochastic.VectorItoMap.comp_injection
+#print axioms LinearStochastic.VectorItoMap.comp_injection
+#check @LinearStochastic.VectorItoMap.lift_map
+#print axioms LinearStochastic.VectorItoMap.lift_map
+#check @LinearStochastic.VectorItoMap.vectorLp_map
+#print axioms LinearStochastic.VectorItoMap.vectorLp_map
+#check @LinearStochastic.VectorItoMap.vectorProcess_map_ae
+#print axioms LinearStochastic.VectorItoMap.vectorProcess_map_ae
+#check @LinearStochastic.VectorItoNaturality.vectorLp
+#print axioms LinearStochastic.VectorItoNaturality.vectorLp
+#check @LinearStochastic.VectorItoNaturality.vectorLp_coordinates
+#print axioms LinearStochastic.VectorItoNaturality.vectorLp_coordinates
+#check @LinearStochastic.VectorItoNaturality.vectorLp_comp
+#print axioms LinearStochastic.VectorItoNaturality.vectorLp_comp
+#check @LinearStochastic.VectorItoNaturality.vectorProcess_ae_vectorLp
+#print axioms LinearStochastic.VectorItoNaturality.vectorProcess_ae_vectorLp
+#check @LinearStochastic.VectorItoNaturality.vectorProcess_comp_ae
+#print axioms LinearStochastic.VectorItoNaturality.vectorProcess_comp_ae
+#check @LinearStochastic.VectorItoProduct.martingale_map
+#print axioms LinearStochastic.VectorItoProduct.martingale_map
+#check @LinearStochastic.VectorItoProduct.martingale_sum
+#print axioms LinearStochastic.VectorItoProduct.martingale_sum
+#check @LinearStochastic.VectorItoProduct.coordinate
+#print axioms LinearStochastic.VectorItoProduct.coordinate
+#check @LinearStochastic.VectorItoProduct.coordinate_ae
+#print axioms LinearStochastic.VectorItoProduct.coordinate_ae
+#check @LinearStochastic.VectorItoProduct.coordinate_inner_sum
+#print axioms LinearStochastic.VectorItoProduct.coordinate_inner_sum
+#check @LinearStochastic.VectorItoProduct.inner_reconstruct
+#print axioms LinearStochastic.VectorItoProduct.inner_reconstruct
+#check @LinearStochastic.VectorItoProduct.vectorProcess
+#print axioms LinearStochastic.VectorItoProduct.vectorProcess
+#check @LinearStochastic.VectorItoProduct.vectorProcess_martingale
+#print axioms LinearStochastic.VectorItoProduct.vectorProcess_martingale
+#check @LinearStochastic.VectorItoProduct.vectorProcess_memLp
+#print axioms LinearStochastic.VectorItoProduct.vectorProcess_memLp
+#check @LinearStochastic.VectorItoProduct.vectorProcess_terminal_inner
+#print axioms LinearStochastic.VectorItoProduct.vectorProcess_terminal_inner
+#check @LinearStochastic.VectorItoProduct.predictable_inner_real_vector
+#print axioms LinearStochastic.VectorItoProduct.predictable_inner_real_vector
+#check @LinearStochastic.VectorItoProduct.expected_vector_ito_product
+#print axioms LinearStochastic.VectorItoProduct.expected_vector_ito_product
+#check @LinearStochastic.ZeroIntegralDrift.primitive_stronglyMeasurable
+#print axioms LinearStochastic.ZeroIntegralDrift.primitive_stronglyMeasurable
+#check @LinearStochastic.ZeroIntegralDrift.drift_zero_of_primitive_sections
+#print axioms LinearStochastic.ZeroIntegralDrift.drift_zero_of_primitive_sections
+#check @LinearStochastic.ZeroIntegralDrift.vectorProcess_zero_ae
+#print axioms LinearStochastic.ZeroIntegralDrift.vectorProcess_zero_ae
+#check @LinearStochastic.ZeroIntegralDrift.real_zero_ae
+#print axioms LinearStochastic.ZeroIntegralDrift.real_zero_ae
+#check @LinearStochastic.ZeroIntegralDrift.predictable_zero_of_real_ae
+#print axioms LinearStochastic.ZeroIntegralDrift.predictable_zero_of_real_ae
+#check @LinearStochastic.ZeroIntegralDrift.zero_decomposition
+#print axioms LinearStochastic.ZeroIntegralDrift.zero_decomposition
+#check @LinearStochastic.ZeroIntegralSolution.drift_zero_of_primitive_zero
+#print axioms LinearStochastic.ZeroIntegralSolution.drift_zero_of_primitive_zero
+#check @LinearStochastic.ZeroIntegralSolution.diffusion_zero_of_zero_solution
+#print axioms LinearStochastic.ZeroIntegralSolution.diffusion_zero_of_zero_solution
+#check @LinearStochastic.ZeroObservationFlag.coefficients
+#print axioms LinearStochastic.ZeroObservationFlag.coefficients
+#check @LinearStochastic.ZeroObservationFlag.obstruction_step
+#print axioms LinearStochastic.ZeroObservationFlag.obstruction_step
+#check @LinearStochastic.ZeroObservationFlag.mem_flag
+#print axioms LinearStochastic.ZeroObservationFlag.mem_flag
+#check @LinearStochastic.ZeroObservationFlag.terminal_zero_of_flag_bot
+#print axioms LinearStochastic.ZeroObservationFlag.terminal_zero_of_flag_bot
+#check @LinearStochastic.ZeroObservationMatrices.matrixMap
+#print axioms LinearStochastic.ZeroObservationMatrices.matrixMap
+#check @LinearStochastic.ZeroObservationMatrices.matrix_flag_bot_iff
+#print axioms LinearStochastic.ZeroObservationMatrices.matrix_flag_bot_iff
+#check @LinearStochastic.ZeroObservationMatrices.terminal_zero
+#print axioms LinearStochastic.ZeroObservationMatrices.terminal_zero
+#check @LinearStochastic.ZeroObservationSeparation.integral_inner_le_norm
+#print axioms LinearStochastic.ZeroObservationSeparation.integral_inner_le_norm
+#check @LinearStochastic.ZeroObservationSeparation.terminal_pairing
+#print axioms LinearStochastic.ZeroObservationSeparation.terminal_pairing
+#check @LinearStochastic.ZeroObservationSeparation.positive_terminal_distance
+#print axioms LinearStochastic.ZeroObservationSeparation.positive_terminal_distance

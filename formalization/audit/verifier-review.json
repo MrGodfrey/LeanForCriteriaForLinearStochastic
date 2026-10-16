@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "verdict": "pass",
+  "independent_approval": true,
+  "reviewer": "release integration reviewer (AI)",
+  "author": "release verifier author (AI)",
+  "verifier_sha256": "bff8c795b756f7d6f71ba772f0d91894f6965fed3e0cab28fbb007f472b02162",
+  "blocking_findings": [],
+  "checks": [
+    "Full source review of the publication verifier; source parser/hygiene compared with the internal gate.",
+    "Fixed original manuscript, complete 384-module hash inventory, full 80-claim mathematical mapping, and all three build inputs.",
+    "Exact per-module replay marker and zero exit status are required; duplicate or missing axiom output is rejected.",
+    "Only the three approved foundational axioms are allowed; all inputs and clean dependency pins are rechecked at end.",
+    "Metadata-only mode never grants a proof pass; previous output is invalidated on every attempt; failures return nonzero.",
+    "Valid frozen inventory and all 2559 explicit declaration names independently inspected.",
+    "wrong verdict: rejected",
+    "missing declaration anchor: rejected",
+    "unknown dependency: rejected",
+    "changed mapping: rejected",
+    "wrong source line: rejected",
+    "unsafe path ../escape: rejected",
+    "unsafe path /absolute/path: rejected",
+    "unsafe path a/../../escape: rejected"
+  ],
+  "limits": [
+    "This review is an AI peer review, not a proof of the Python verifier or an independently implemented Lean kernel.",
+    "Translation approval is a bound recorded review, not a cryptographic identity or an absolute guarantee of informal/formal equivalence."
+  ]
+}

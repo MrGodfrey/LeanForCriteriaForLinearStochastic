@@ -1,0 +1,17 @@
+# Local Lean and Python build caches
+.lake/
+__pycache__/
+*.pyc
+.DS_Store
+# TeX build intermediates; the release PDF is tracked
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+# Keep reproducibility logs
+!formalization/verification/*.log

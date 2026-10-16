@@ -1,0 +1,56 @@
+{
+  "scope": "Unused placeholder sites in the pinned source-import closure. These are disclosed independently of the required standard-axiom closures of all local public declarations. This list does not claim that all upstream source files are complete.",
+  "dependency": "BrownianMotion",
+  "revision": "0d5b6eb928e616d3b1f774ad7d233c167d9f42c9",
+  "count": 8,
+  "sites": [
+    {
+      "module": "BrownianMotion.StochasticIntegral.DoobLp",
+      "line": 512,
+      "code": "sorry",
+      "source_sha256": "9928b2d502d3cbd7f9774e12eb7936be3e09ff392d0f10765bd6c250dece569c"
+    },
+    {
+      "module": "BrownianMotion.StochasticIntegral.DoobLp",
+      "line": 518,
+      "code": "sorry",
+      "source_sha256": "9928b2d502d3cbd7f9774e12eb7936be3e09ff392d0f10765bd6c250dece569c"
+    },
+    {
+      "module": "BrownianMotion.StochasticIntegral.LocalMartingale",
+      "line": 91,
+      "code": "sorry",
+      "source_sha256": "5ea5530e706b8c1c88a1cbf297b8786885fe3dd89da07c85d5a3ec8ac3a2ffb6"
+    },
+    {
+      "module": "BrownianMotion.StochasticIntegral.OptionalSampling",
+      "line": 286,
+      "code": "sorry",
+      "source_sha256": "e0c6619113faf1b7d6f3382ce6c30f1c70b75dca5bd6ffcb06b2ea34e70cf367"
+    },
+    {
+      "module": "BrownianMotion.StochasticIntegral.UniformIntegrable",
+      "line": 380,
+      "code": "sorry",
+      "source_sha256": "7259b32e1d8ca78e1b7d7a79c04050a173888af9e82fa066beeb4702f0befc18"
+    },
+    {
+      "module": "BrownianMotion.StochasticIntegral.UniformIntegrable",
+      "line": 443,
+      "code": "sorry",
+      "source_sha256": "7259b32e1d8ca78e1b7d7a79c04050a173888af9e82fa066beeb4702f0befc18"
+    },
+    {
+      "module": "BrownianMotion.StochasticIntegral.UniformIntegrable",
+      "line": 474,
+      "code": "sorry",
+      "source_sha256": "7259b32e1d8ca78e1b7d7a79c04050a173888af9e82fa066beeb4702f0befc18"
+    },
+    {
+      "module": "BrownianMotion.StochasticIntegral.UniformIntegrable",
+      "line": 481,
+      "code": "sorry",
+      "source_sha256": "7259b32e1d8ca78e1b7d7a79c04050a173888af9e82fa066beeb4702f0befc18"
+    }
+  ]
+}

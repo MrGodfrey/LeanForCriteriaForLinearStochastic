@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "source_sha256": {
+    "main.tex": "8ccc417fa3629e23e0b9dba2cd499916ccc9369201a9bec28f1538d298cb39ea",
+    "references.bib": "42c2163d4abfb6ec90c1932365b583a32b2db482d91fbc2f28dd4f3f6404d67c",
+    "autart.cls": "40bf449f134f368b058b143db950a01d1ea928909c00f1e6b682b12144695a95"
+  },
+  "pdf_sha256": "f186083295810b6988946453cb769d3e186fd7f9725fb6ae86b5b30806b04c76",
+  "pages": 11,
+  "bytes": 673854,
+  "engine": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex",
+  "exit_code": 0,
+  "unresolved_citations": false,
+  "unresolved_references": false,
+  "layout_review": "All 11 pages rendered and inspected in a contact sheet; pages 1, 5, 8, and 11 additionally inspected at full size. Minor overfull boxes remain, with no visible collision or clipping.",
+  "bibliography_gate": {
+    "entries": 29,
+    "source_verified": 29,
+    "human_waived": 0,
+    "unresolved": 0,
+    "result": "pass"
+  },
+  "reproducibility_note": "PDF metadata and TeX versions may change PDF bytes on recompilation. Source hashes identify the checked text; the published PDF hash identifies this exact artifact."
+}

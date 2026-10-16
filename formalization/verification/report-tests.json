@@ -1,0 +1,60 @@
+{
+  "scope": "Author-run presentation tests against synthetic mocked proof evidence; not actual formal verification.",
+  "renderer_sha256": "786d738a6a9574cb520013e665e7fc2cce65b37bf5aa61547ec39a8519d79a58",
+  "case_count": 13,
+  "all_passed": true,
+  "cases": [
+    {
+      "case": "valid",
+      "passed": true
+    },
+    {
+      "case": "stale_input",
+      "passed": true
+    },
+    {
+      "case": "wrong_verifier",
+      "passed": true
+    },
+    {
+      "case": "contradictory_metadata_mode",
+      "passed": true
+    },
+    {
+      "case": "failed_kernel_flag",
+      "passed": true
+    },
+    {
+      "case": "failed_build",
+      "passed": true
+    },
+    {
+      "case": "missing_replay",
+      "passed": true
+    },
+    {
+      "case": "wrong_marker",
+      "passed": true
+    },
+    {
+      "case": "sorry_axiom",
+      "passed": true
+    },
+    {
+      "case": "missing_coverage",
+      "passed": true
+    },
+    {
+      "case": "unknown_declaration",
+      "passed": true
+    },
+    {
+      "case": "pending_not_promoted",
+      "passed": true
+    },
+    {
+      "case": "html_escaping",
+      "passed": true
+    }
+  ]
+}

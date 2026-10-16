@@ -1,0 +1,270 @@
+{
+  "scope": "Author-run isolated Python -O orchestration tests, not independent review or actual Lean proof verification.",
+  "verifier_sha256": "bff8c795b756f7d6f71ba772f0d91894f6965fed3e0cab28fbb007f472b02162",
+  "test_source_sha256": "2920678d4c97d3be67388c3fa5582277a5b90c11bbbee0de4660e16a8cdaf88d",
+  "case_count": 24,
+  "all_passed": true,
+  "production_modified": false,
+  "cases": [
+    {
+      "case": "metadata_valid",
+      "passed": true,
+      "exit_code": 0,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": []
+    },
+    {
+      "case": "full_valid",
+      "passed": true,
+      "exit_code": 0,
+      "fullPaperPassed": true,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": []
+    },
+    {
+      "case": "source_change",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Release file changed: main.tex"
+      ]
+    },
+    {
+      "case": "proof_change_rebound",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Local proof inventory differs from the verified 384-module original"
+      ]
+    },
+    {
+      "case": "pins_change_rebound",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Build environment differs from the reviewed original: lean-toolchain"
+      ]
+    },
+    {
+      "case": "aggregate_extra",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Aggregate must contain exactly the current module imports and no declarations"
+      ]
+    },
+    {
+      "case": "mapping_rebound",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: The mathematical mapping differs from the independently reviewed original"
+      ]
+    },
+    {
+      "case": "anchor_stale",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Source excerpt position differs: contract:probability"
+      ]
+    },
+    {
+      "case": "duplicate_claim",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Duplicate claim ID"
+      ]
+    },
+    {
+      "case": "translation_unapproved",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Independent publication translation review is not approved"
+      ]
+    },
+    {
+      "case": "translation_self_review",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Translation review must be independent"
+      ]
+    },
+    {
+      "case": "verifier_review_stale",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Stale/blocked publication verifier review"
+      ]
+    },
+    {
+      "case": "build_failure",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: lake build failed; see verification/build.log"
+      ]
+    },
+    {
+      "case": "dependency_failure",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Injected dirty dependency"
+      ]
+    },
+    {
+      "case": "toolchain_mismatch",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 0,
+      "peak_concurrency": 0,
+      "errors": [
+        "ValueError: Active Lean version differs from lean-toolchain"
+      ]
+    },
+    {
+      "case": "child_failure",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: A module replay failed or did not identify exactly its target"
+      ]
+    },
+    {
+      "case": "wrong_marker",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: A module replay failed or did not identify exactly its target"
+      ]
+    },
+    {
+      "case": "swapped_markers",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: A module replay failed or did not identify exactly its target"
+      ]
+    },
+    {
+      "case": "missing_marker",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: A module replay failed or did not identify exactly its target"
+      ]
+    },
+    {
+      "case": "duplicate_marker",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: A module replay failed or did not identify exactly its target"
+      ]
+    },
+    {
+      "case": "axiom_sorry",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: Unapproved transitive axiom dependency"
+      ]
+    },
+    {
+      "case": "axiom_missing",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: Axiom output has missing, duplicate, or unexpected declarations"
+      ]
+    },
+    {
+      "case": "axiom_duplicate",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: Axiom output has missing, duplicate, or unexpected declarations"
+      ]
+    },
+    {
+      "case": "freshness_mutation",
+      "passed": true,
+      "exit_code": 1,
+      "fullPaperPassed": false,
+      "kernel_calls": 384,
+      "peak_concurrency": 4,
+      "errors": [
+        "ValueError: Input changed during verification: references.bib"
+      ]
+    }
+  ]
+}

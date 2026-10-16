@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "independent_approval": true,
+  "verdict": "pass",
+  "reviewer": "algebra-proofs agent (independent translation reviewer)",
+  "translator": "paper-alignment agent",
+  "blocking_findings": [],
+  "claims_sha256": "4c062f7e90852224f9b5e29b902c9647f99eaf9d4f2816a68dcede0ca6c8f353",
+  "source_sha256": "8ccc417fa3629e23e0b9dba2cd499916ccc9369201a9bec28f1538d298cb39ea",
+  "proof_inventory_sha256": "a197fbdec236da5e9e272436caa27fb3e1d6431d31f41b04863c8a69e225c38c",
+  "mapping_sha256": "20a8ab4f170a4e2c2a5c5c270b1e7c1c5125bfc201f054011b0db7fe133100ee",
+  "source_review_sha256": "1e7afa68b9fa3e43f9a50f740a86ffbb44141042819fb3b94017532ca99b920c",
+  "source_inventory_sha256": "dae44268800eb33b77694d3ea9e61ac6a1e41f4bb529eb96116018508e0dfc2a",
+  "source_anchor_sha256": "5a50d212827e60aea5a1947200f3e121c0455827c1412c71a1f02cb8b6c5f88d",
+  "historical_verification_sha256": "41e437b3f15c2b3cda77874ad2ff0e9e189ff54ee55d8419934889ab68f7b950",
+  "canonical_mapping_sha256": "f8d558da3522311bc43ea1f8350803377a0757bc8efbc54cc970302a92c203e0",
+  "scope": "Independent line-by-line reading of all 80 English titles, summaries, mathematical review reasons, and scope boundaries against the frozen source inventory and semantic mappings. Exact identifiers, declaration lists, dependencies, verdicts, all 87 TeX excerpts and their locations/digests, and all 384 proof-source hashes were mechanically compared and preserved.",
+  "review_method": "The reviewer read the entire English index and all paired source summaries/reasons in four consecutive groups of 20 claims. Separate explicit checks ran under Python -O, so validation does not depend on Python assertions.",
+  "mechanical_checks": {
+    "claims": 80,
+    "source_excerpts": 87,
+    "proof_files": 384,
+    "same_claim_order_and_ids": true,
+    "same_dependencies_and_edges": true,
+    "same_declarations_and_verdicts": true,
+    "same_source_ranges_and_quote_bytes": true,
+    "source_quote_locations_and_digests_checked": true,
+    "current_proof_hashes_checked": true,
+    "same_semantic_boundaries": true,
+    "canonical_digests_recomputed": true,
+    "private_absolute_paths_absent": true,
+    "optimization_level": 1,
+    "all_passed": true
+  },
+  "findings": [
+    {
+      "severity": "accepted_editorial_change",
+      "claim_id": "lem:arbitrary-rate",
+      "detail": "The old shorthand summary could suggest that both P and U are symmetric. The English summary correctly states symmetric P and rectangular U, matching the exact TeX statement and unchanged mathematical review."
+    },
+    {
+      "severity": "accepted_editorial_change",
+      "claim_id": "contract:probability",
+      "detail": "An obsolete staging sentence is retained in historical_review_note rather than the mathematical reason. The final frozen verification confirms completion; no mathematical premise was removed."
+    },
+    {
+      "severity": "accepted_editorial_change",
+      "claim_id": "support:feedback-lyapunov-schur",
+      "detail": "Historical line numbers are separated from the translated mathematical reason. The actual source ranges, declaration bindings, strict inequality, and independent stochastic-decay boundary are unchanged."
+    },
+    {
+      "severity": "scope_confirmed",
+      "detail": "The translation preserves the original probability model, ordinary control space, positive-dimension and positive-horizon scope, quantifier order, genuine solution requirements, exact-versus-numerical distinction, and all five manuscript-revision boundaries."
+    }
+  ],
+  "reviewed_claims": [
+    {
+      "id": "contract:probability",
+      "title": "Probability model and process spaces",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:linearity",
+      "title": "Linearity of the state equation",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "contract:dimensions",
+      "title": "Positive system dimensions and constant coefficients",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "foundation:sde",
+      "title": "Forward SDE existence, uniqueness, and estimate",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "def:control",
+      "title": "Four controllability definitions",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "contract:joint-diffusion",
+      "title": "Vertically stacked joint diffusion",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "foundation:bsde",
+      "title": "Linear BSDE existence and uniqueness",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:duality",
+      "title": "Forward–backward duality",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "contract:flag",
+      "title": "Definition of the obstruction flag",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "lem:flag",
+      "title": "Stabilization and maximal invariant subspace",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "thm:geometry",
+      "title": "Geometric controllability classification",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:time-independence",
+      "title": "Independence of the positive time horizon",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "thm:null-feedback",
+      "title": "Exact null feedback with polynomial small-time cost",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:classification-table",
+      "title": "The three possible controllability regimes",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "ex:singular-diffusion",
+      "title": "A family with singular joint diffusion",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:block-dimensions",
+      "title": "Dimensions of the recursive block matrices",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "thm:rank",
+      "title": "Block representation and rank-difference formula",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "cor:rank-control",
+      "title": "Controllability by the stabilized rank difference",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:surjective-projector",
+      "title": "Canonical right inverse and orthogonal projections",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:word-dimensions",
+      "title": "Word-matrix construction and dimensions",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "prop:exact-rank",
+      "title": "Exact controllability by the canonical word matrix",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "lem:approximate",
+      "title": "Approximate controllability and the zero obstruction",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:terminal-map",
+      "title": "The actual terminal operator and its adjoint",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:hilbert-density",
+      "title": "Reachable range, density, and null reachability",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:zero-observation-flag",
+      "title": "Zero observation forces flag membership",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:invariant-adjoint",
+      "title": "An adjoint trajectory inside the obstruction",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:obstruction-separation",
+      "title": "A nonzero obstruction prevents approximate null control",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:lmi-positive",
+      "title": "Positivity from a noise principal block",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "lem:arbitrary-rate",
+      "title": "LMI feasibility at every decay rate",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:cone-separation",
+      "title": "Separation of the actual LMI image and positive cone",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:cone-coefficients",
+      "title": "The two trace-coefficient identities",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:cone-singular-factor",
+      "title": "Factorization with a possibly singular principal block",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:cone-leading-nonzero",
+      "title": "The leading certificate block is nonzero",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:cone-invariant-range",
+      "title": "The separating certificate produces an obstruction",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "lem:tarski-seidenberg",
+      "title": "Real quantifier elimination and semialgebraic projection",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "lem:semialgebraic-growth",
+      "title": "Polynomial growth of continuous semialgebraic functions",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "lem:growth",
+      "title": "Polynomial bounds for gains and Lyapunov conditioning",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:normalized-feasible",
+      "title": "Normalization and attainment of the feasible minimum",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:semialgebraic-minimum",
+      "title": "Semialgebraicity of the minimum-value graph",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:minimum-continuity",
+      "title": "Continuity of the minimum value",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:polynomial-pair-bounds",
+      "title": "From the minimum value to gain and condition-number bounds",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:closed-loop-decay",
+      "title": "Mean-square decay under the feedback",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:feedback-lyapunov-schur",
+      "title": "From the LMI to the closed-loop Lyapunov inequality",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:switching-schedule",
+      "title": "The deterministic switching schedule",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:switching-recursion",
+      "title": "The actual endpoint-moment recurrence",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:switching-interval-energy",
+      "title": "Energy on each switching interval",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:switching-contraction",
+      "title": "Uniform contraction of weighted moments",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:switching-summability",
+      "title": "Summability and the explicit control-energy bound",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:switching-terminal",
+      "title": "The terminal extension of the switched solution",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:linear-null-map",
+      "title": "A bounded linear null-control map",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:switching-large-horizon",
+      "title": "Extension to horizons greater than one",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:enc-anc",
+      "title": "Exact null control implies approximate null control",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:exact-observability",
+      "title": "Observability from terminal surjectivity",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:diffusion-pulse",
+      "title": "A normalized terminal-window diffusion pulse",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:ec-diffusion-necessary",
+      "title": "Full joint diffusion rank is necessary for EC",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:ec-sufficient",
+      "title": "Sufficiency for exact controllability",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "rem:terminal-interpretation",
+      "title": "Exact terminal controllability versus fixed-initial EC",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:block-representation",
+      "title": "Recovering every flag constraint from the block recursion",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:quotient-rank",
+      "title": "The quotient-map rank identity",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:block-polynomial",
+      "title": "Polynomial dependence of the block entries",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "rem:deterministic-reduction",
+      "title": "Reduction to deterministic Kalman controllability",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:deterministic-flag",
+      "title": "The zero-diffusion flag and Kalman matrix",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:delayed-target-approximation",
+      "title": "Approximation by delayed conditional targets",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "rem:input-structure",
+      "title": "Necessary input structure and input dimension",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:first-obstruction",
+      "title": "The first obstruction and effective drift directions",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "rem:nonrobustness",
+      "title": "Nonrobustness under noise perturbations",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:perturbation-flag",
+      "title": "The flag in the noise-perturbation family",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:full-rank-open",
+      "title": "Openness of maximal matrix rank",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:surjective-observation",
+      "title": "Eliminating the observation under joint surjectivity",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:word-stabilization",
+      "title": "Stabilization of the reachable word space",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:word-orthogonality",
+      "title": "Orthogonality between the word space and obstruction",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "rem:surjective-diffusion",
+      "title": "A basis-free canonical word criterion",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:reduced-blocks",
+      "title": "Reduced constraints in orthogonal coordinates",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:reduced-elimination",
+      "title": "Elimination by the full left nullspace",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:orthogonal-update",
+      "title": "The full orthogonal-frame update",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "prop:staircase",
+      "title": "Correctness of the exact staircase algorithm",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:algorithm-termination",
+      "title": "Finite termination of the actual recursion",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:algorithm-classification",
+      "title": "The classification returned by the pseudocode",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "support:qr-svd-equivalence",
+      "title": "Exact QR/SVD implementation of orthogonal elimination",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    },
+    {
+      "id": "contract:numerical-rank",
+      "title": "The numerical-rank threshold convention",
+      "semantic_translation": "pass",
+      "identifiers_and_source_ranges": "unchanged"
+    }
+  ],
+  "trust_boundary": "This is an AI-assisted independent assessment of translation fidelity, not a new Lean proof, not a proof of the Lean kernel implementation, and not a replacement for the release verifier. Full mathematical coverage inherits the exact frozen proof and manuscript correspondence; the public checkout must rerun its own kernel, axiom, source, and coverage checks. This reviewer did not author or edit the translated index.",
+  "provenance": "Public-facing translation review; historical audit artifacts remain identified by their content hashes. No manuscript or proof source was changed by this review."
+}

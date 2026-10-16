@@ -1,0 +1,19 @@
+name = "LinearStochastic"
+version = "0.1.0"
+defaultTargets = ["LinearStochastic"]
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "MathFin"
+git = "https://github.com/formal-applied-math/formal-mathfin.git"
+rev = "99b836298731c432a6242fdb6cb51c1c97f37902"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "0434c03386d3e7f7fd3ed95754543eabe4ab251b"
+
+[[lean_lib]]
+name = "LinearStochastic"
