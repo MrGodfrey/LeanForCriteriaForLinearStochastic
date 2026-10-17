@@ -31,7 +31,7 @@ The verifier source is authoritative when explanatory pages lag behind it.
 | Root SPDX licence | Apache-2.0 `LICENSE`, with scope and third-party notices in `NOTICE`; independent Licensee detection remains part of the Linux workflow |
 | Structured provenance | `formalization/formalization.yaml` passed the official metadata parser |
 | Full mechanical preflight | GitHub workflow configured with an immutable official verifier pin; starts on candidate branch pushes; not yet completed |
-| Public immutable snapshot | Final commit and push pending |
+| Public immutable snapshot | Published on `palomar-preparation`; use the exact SHA from a successful preflight run |
 | Editorial review and registration | Not requested or performed |
 
 The manuscript, `autart.cls`, and third-party material retain their existing
@@ -56,8 +56,8 @@ applying `RawCompleteClassification.classification`.
 The two intended Comparator declarations are
 `LinearStochastic.Palomar.classification` and
 `LinearStochastic.Palomar.ito_unique`. No replacement of the main stochastic
-result by a supporting algebraic lemma is intended. Both statements and the solution have passed Lean compilation. Exact export
-comparison and independent kernels are checked by the Linux workflow.
+result by a supporting algebraic lemma is intended. Both statements and the
+solution have passed Lean compilation. Exact export comparison and independent kernels are checked by the Linux workflow.
 
 ## Port scope and remaining review
 
@@ -116,9 +116,12 @@ bindings.
 The official complete check uses Linux and `bubblewrap`, together with the
 toolchain's Comparator, Lean kernel, NanoDa, and con-ron. The macOS build alone
 does not reproduce that sandboxed workflow. Once the candidate is committed
-and pushed, the **Palomar mechanical preflight** GitHub Actions workflow checks that
-exact commit. It can also be dispatched manually once available on the default branch. This predictive check does not create a Palomar submission or
-register a result.
+and pushed, the **Palomar mechanical preflight** GitHub Actions workflow checks
+that exact commit using the approved `palomar-standard-v1` GitHub-hosted
+execution profile. The catalogue default uses Palomar's private Namespace
+runner infrastructure and is not appropriate for this repository. The
+workflow can also be dispatched manually once available on the default branch.
+This predictive check does not create a Palomar submission or register a result.
 
 ## Submission fields
 
