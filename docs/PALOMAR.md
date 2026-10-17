@@ -10,6 +10,18 @@ builds all 384 core modules and the independent Challenge, bridge, and Solution.
 The frozen reference evidence remains separate from the new local checks and
 Linux preflight. No Palomar registration has been requested.
 
+The complete sandboxed mechanical preflight **passed** for the public candidate
+[`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513).
+The [successful workflow](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/actions/runs/39017801590)
+uses Palomar's pinned official verifier in this repository. Its unmodified
+[mechanical report](../formalization/palomar/mechanical-report.json) records
+`status: pass`, `stage: complete`, and no errors or warnings. Comparator accepted
+the exact statement correspondence, and con-ron, NanoDa, and Lean's default
+kernel each accepted the solution. Challenge provenance has trust level `high`
+with no untrusted sources. This is an advisory preflight, not Palomar editorial
+acceptance or registration. The report is bound to the candidate SHA above;
+later documentation or evidence commits do not change that binding.
+
 ## Requirements and evidence
 
 The requirements were checked on 2026-10-17 against the
@@ -27,11 +39,11 @@ The verifier source is authoritative when explanatory pages lag behind it.
 | Module headers and file limits | All 485 Lean source files use the module system; no file exceeds 10,000 lines |
 | Local build and axiom inspection | Passed: 9,415 build tasks; all 2,559 reference declarations and both advertised entries use only `propext`, `Quot.sound`, and `Classical.choice`; [report](../formalization/palomar/local-check.json) |
 | Independent Challenge | Imports only `Mathlib`; 211 lines / 11,459 bytes; compilation passed |
-| Proved Solution and exact comparison | Bridge and Solution compile; exact sandboxed Comparator correspondence pending Linux preflight |
-| Root SPDX licence | Apache-2.0 `LICENSE`, with scope and third-party notices in `NOTICE`; independent Licensee detection remains part of the Linux workflow |
+| Proved Solution and exact comparison | Passed the official sandboxed Comparator for both advertised declarations |
+| Root SPDX licence | Apache-2.0 `LICENSE`, with scope and third-party notices in `NOTICE`; independently detected as Apache-2.0 by the official workflow |
 | Structured provenance | `formalization/formalization.yaml` passed the official metadata parser |
-| Full mechanical preflight | GitHub workflow configured with an immutable official verifier pin; starts on candidate branch pushes; not yet completed |
-| Public immutable snapshot | Published on `palomar-preparation`; use the exact SHA from a successful preflight run |
+| Full mechanical preflight | Passed for `c088eb9943197e88c4b046223239d4c4f0180513`: exact comparison and con-ron, NanoDa, and Lean kernel acceptance |
+| Public immutable snapshot | Published on `palomar-preparation`; the verified candidate SHA is recorded above and in the mechanical report |
 | Editorial review and registration | Not requested or performed |
 
 The manuscript, `autart.cls`, and third-party material retain their existing
@@ -57,7 +69,9 @@ The two intended Comparator declarations are
 `LinearStochastic.Palomar.classification` and
 `LinearStochastic.Palomar.ito_unique`. No replacement of the main stochastic
 result by a supporting algebraic lemma is intended. Both statements and the
-solution have passed Lean compilation. Exact export comparison and independent kernels are checked by the Linux workflow.
+solution have passed Lean compilation, exact export comparison, and the three
+kernel checks in the Linux workflow. Supplementary macOS replay results are
+recorded separately in [native-kernel-check.json](../formalization/palomar/native-kernel-check.json).
 
 ## Port scope and remaining review
 
@@ -128,12 +142,13 @@ This predictive check does not create a Palomar submission or register a result.
 
 ## Submission fields
 
-After all required checks pass, use the **full 40-character public commit SHA**
-of the verified candidate and these repository-relative paths:
+Use the following **verified immutable candidate**, rather than a moving branch
+name or an unverified later commit, and these repository-relative paths:
 
 | Field | Value |
 | --- | --- |
 | Repository | `https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic` |
+| Verified commit | `c088eb9943197e88c4b046223239d4c4f0180513` |
 | Project directory | `formalization` |
 | Comparator configuration | `formalization/comparator.json` |
 | Formalization metadata | `formalization/formalization.yaml` |

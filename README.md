@@ -40,6 +40,13 @@ checked with Lean `v4.33.0-rc1`. Its frozen reports do not certify a later
 migration or a Palomar registration. See the [Palomar preparation record](docs/PALOMAR.md)
 for the current toolchain, independent statement interface, and preflight status.
 
+The current Palomar candidate, commit
+[`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513),
+passed the [complete official mechanical preflight](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/actions/runs/39017801590)
+on 2026-10-17: exact Comparator correspondence and acceptance by Lean, NanoDa,
+and con-ron. The [saved report](formalization/palomar/mechanical-report.json)
+is bound to that SHA. This preflight does not constitute Palomar registration.
+
 The reference verification of the accompanying revised manuscript passed:
 
 | Check | Result |
