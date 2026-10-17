@@ -1,4 +1,4 @@
-# Palomar submission preparation
+# Palomar submission and verification
 
 This work targets the **full stochastic controllability classification** in
 manuscript Theorem `thm:geometry`. The reference release is commit
@@ -8,7 +8,16 @@ later toolchain migration, a new statement interface, or Palomar registration.
 The migration is installed in the normal source tree. Lean `v4.35.0-rc2`
 builds all 384 core modules and the independent Challenge, bridge, and Solution.
 The frozen reference evidence remains separate from the new local checks and
-Linux preflight. No Palomar registration has been requested.
+Linux preflight. The preparation branch was merged into `main` through
+[PR #1](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/pull/1).
+
+The verified candidate was **submitted to Palomar on 2026-10-17**, as submission
+`bag3afqazkiq`. Palomar accepted the repository-write proof and started its
+[official verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717).
+The [public submission record](../formalization/palomar/submission.json) records
+the exact source and paths without access credentials. Verification and review
+are in progress; submission is not registration. The private status link is
+stored only in local Git metadata and must not be committed or published.
 
 The complete sandboxed mechanical preflight **passed** for the public candidate
 [`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513).
@@ -43,8 +52,9 @@ The verifier source is authoritative when explanatory pages lag behind it.
 | Root SPDX licence | Apache-2.0 `LICENSE`, with scope and third-party notices in `NOTICE`; independently detected as Apache-2.0 by the official workflow |
 | Structured provenance | `formalization/formalization.yaml` passed the official metadata parser |
 | Full mechanical preflight | Passed for `c088eb9943197e88c4b046223239d4c4f0180513`: exact comparison and con-ron, NanoDa, and Lean kernel acceptance |
-| Public immutable snapshot | Published on `palomar-preparation`; the verified candidate SHA is recorded above and in the mechanical report |
-| Editorial review and registration | Not requested or performed |
+| Public immutable snapshot | Preparation merged into `main`; the submitted candidate SHA is recorded above and in the mechanical report |
+| Official submission | Accepted as `bag3afqazkiq` on 2026-10-17; official verification and review in progress |
+| Registration | Not yet registered; the eventual review and registration decision are separate from submission |
 
 The manuscript, `autart.cls`, and third-party material retain their existing
 rights. The software licence does not relicense those materials.
@@ -142,11 +152,13 @@ This predictive check does not create a Palomar submission or register a result.
 
 ## Submission fields
 
-Use the following **verified immutable candidate**, rather than a moving branch
-name or an unverified later commit, and these repository-relative paths:
+The official submission uses the following **verified immutable candidate**
+and repository-relative paths. Later documentation commits on `main` do not
+alter the submitted source snapshot:
 
 | Field | Value |
 | --- | --- |
+| Submission ID | `bag3afqazkiq` |
 | Repository | `https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic` |
 | Verified commit | `c088eb9943197e88c4b046223239d4c4f0180513` |
 | Project directory | `formalization` |

@@ -47,6 +47,14 @@ on 2026-10-17: exact Comparator correspondence and acceptance by Lean, NanoDa,
 and con-ron. The [saved report](formalization/palomar/mechanical-report.json)
 is bound to that SHA. This preflight does not constitute Palomar registration.
 
+**Submitted to the [Palomar Registry](https://palomar-registry.org/) on
+2026-10-17**, as submission `bag3afqazkiq`, for the same immutable candidate
+`c088eb9943197e88c4b046223239d4c4f0180513`. The
+[official verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717)
+and [submission record](formalization/palomar/submission.json) identify the
+submitted snapshot. Verification and review are in progress; the result has
+not yet been registered.
+
 The reference verification of the accompanying revised manuscript passed:
 
 | Check | Result |

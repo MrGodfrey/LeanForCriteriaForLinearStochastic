@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "submission_id": "bag3afqazkiq",
+  "submitted_at": "2026-10-17T09:06:39Z",
+  "repository": "MrGodfrey/LeanForCriteriaForLinearStochastic",
+  "commit": "c088eb9943197e88c4b046223239d4c4f0180513",
+  "project_path": "formalization",
+  "comparator_config_path": "formalization/comparator.json",
+  "formalization_metadata_path": "formalization/formalization.yaml",
+  "authorization_relationship": "maintainer",
+  "status_at_recording": "verifying",
+  "official_verification_run": "https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717",
+  "advisory_preflight_run": "https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/actions/runs/39017801590",
+  "registration": "not yet registered",
+  "note": "This public receipt records submission only. Private access credentials and editorial review are not included. Later documentation commits do not change the submitted source snapshot."
+}
