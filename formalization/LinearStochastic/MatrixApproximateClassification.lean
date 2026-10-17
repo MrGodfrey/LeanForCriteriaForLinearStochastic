@@ -1,5 +1,9 @@
-import LinearStochastic.BrownianControlClassification
-import LinearStochastic.ZeroObservationMatrices
+module
+
+public import LinearStochastic.BrownianControlClassification
+public import LinearStochastic.ZeroObservationMatrices
+
+@[expose] public section
 
 /-! The actual original Brownian control system with literal real matrices:
 AC and ANC are exactly the manuscript flag and block-matrix rank tests. -/

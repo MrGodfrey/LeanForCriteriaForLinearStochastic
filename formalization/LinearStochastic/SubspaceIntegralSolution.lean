@@ -1,7 +1,11 @@
-import LinearStochastic.SectionSolutionNaturality
-import LinearStochastic.SectionZeroDecomposition
-import LinearStochastic.ContinuousSubspace
-import LinearStochastic.AlgebraFlag
+module
+
+public import LinearStochastic.SectionSolutionNaturality
+public import LinearStochastic.SectionZeroDecomposition
+public import LinearStochastic.ContinuousSubspace
+public import LinearStochastic.AlgebraFlag
+
+@[expose] public section
 
 /-! Genuine subspace constraints on an integral solution force its drift and
 every diffusion coefficient into the same subspace. -/

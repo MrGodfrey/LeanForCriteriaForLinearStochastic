@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingGain
-import LinearStochastic.VectorH2Extension
+module
+
+public import LinearStochastic.SwitchingGain
+public import LinearStochastic.VectorH2Extension
+
+@[expose] public section
 
 /-! The actual window feedback equations determine the total control as the
 literal deterministic gain applied to the same state. Mesh endpoints are

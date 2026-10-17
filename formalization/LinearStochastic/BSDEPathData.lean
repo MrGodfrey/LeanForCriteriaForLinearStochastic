@@ -1,5 +1,9 @@
-import LinearStochastic.BSDELocal
-import LinearStochastic.CommonH2Paste
+module
+
+public import LinearStochastic.BSDELocal
+public import LinearStochastic.CommonH2Paste
+
+@[expose] public section
 
 /-! Genuine coordinate backward solutions, including the separate terminal
 boundary and their actual global Lebesgue/Itô equations. -/

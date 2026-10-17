@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraBlocks
+module
+
+public import LinearStochastic.AlgebraBlocks
+
+@[expose] public section
 
 /-!
 # Literal coordinate matrices for the rank theorem

@@ -1,6 +1,10 @@
-import LinearStochastic.RealTimeBridge
-import LinearStochastic.CommonItoMultichannel
-import LinearStochastic.CommonItoMartingaleVersion
+module
+
+public import LinearStochastic.RealTimeBridge
+public import LinearStochastic.CommonItoMultichannel
+public import LinearStochastic.CommonItoMartingaleVersion
+
+@[expose] public section
 
 /-! Actual finite-channel Itô processes and their expected product on the
 manuscript's real Lebesgue time interval. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.DriftMartingaleDuality
-import LinearStochastic.DriftProduct
+module
+
+public import LinearStochastic.DriftMartingaleDuality
+public import LinearStochastic.DriftProduct
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.DriftProductExpectation

@@ -1,7 +1,11 @@
-import LinearStochastic.JointUsualRepresentation
-import LinearStochastic.CommonConditionalContinuity
-import LinearStochastic.JointUsualBrownianGlobal
-import LinearStochastic.LpOrthonormalCoordinates
+module
+
+public import LinearStochastic.JointUsualRepresentation
+public import LinearStochastic.CommonConditionalContinuity
+public import LinearStochastic.JointUsualBrownianGlobal
+public import LinearStochastic.LpOrthonormalCoordinates
+
+@[expose] public section
 
 /-! Actual delayed conditional expectations converge in L² on the original
 usual Brownian filtration. This is the conditional-expectation step in the

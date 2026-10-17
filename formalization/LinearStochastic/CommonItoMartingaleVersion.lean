@@ -1,4 +1,8 @@
-import LinearStochastic.CommonItoProcessGeneral
+module
+
+public import LinearStochastic.CommonItoProcessGeneral
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonItoMartingaleVersion

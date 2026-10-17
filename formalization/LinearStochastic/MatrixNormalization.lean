@@ -1,6 +1,10 @@
-import LinearStochastic.LMINormalization
-import LinearStochastic.MatrixFeedback
-import Mathlib.Analysis.Matrix.Normed
+module
+
+public import LinearStochastic.LMINormalization
+public import LinearStochastic.MatrixFeedback
+public import Mathlib.Analysis.Matrix.Normed
+
+@[expose] public section
 
 set_option maxHeartbeats 800000
 set_option synthInstance.maxHeartbeats 200000
@@ -13,6 +17,7 @@ variable {n r m : ℕ}
 local instance blockNormedSpace {ι : Type*} [Fintype ι] :
     NormedSpace ℝ (ConeBlocks.BlockSpace (EuclideanSpace ℝ (Fin n)) ι) :=
   PiLp.normedSpace 2 ℝ (fun _ : ι => EuclideanSpace ℝ (Fin n))
+set_option synthInstance.maxHeartbeats 1000000 in
 local instance blockContinuousSMul :
     ContinuousSMul ℝ (ConeBlocks.BlockSpace (EuclideanSpace ℝ (Fin n)) (Option (Fin m))) := by
   change ContinuousSMul ℝ (PiLp 2 (fun _ : Option (Fin m) => EuclideanSpace ℝ (Fin n)))

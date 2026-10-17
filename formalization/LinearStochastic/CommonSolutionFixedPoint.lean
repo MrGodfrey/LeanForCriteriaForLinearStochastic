@@ -1,4 +1,8 @@
-import LinearStochastic.CommonProgressiveComparison
+module
+
+public import LinearStochastic.CommonProgressiveComparison
+
+@[expose] public section
 
 /-! Actual continuous integral solution data implies the real H² Picard
 equation. Fixed-time identities are converted using proven joint measurability. -/

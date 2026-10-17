@@ -1,5 +1,9 @@
-import LinearStochastic.CommonRealizationS2Bound
-import LinearStochastic.CommonForwardBounds
+module
+
+public import LinearStochastic.CommonRealizationS2Bound
+public import LinearStochastic.CommonForwardBounds
+
+@[expose] public section
 
 /-! Explicit coefficient-only local S² bounds for every actual forward
 solution, using its proved Picard identity and actual integral realization. -/

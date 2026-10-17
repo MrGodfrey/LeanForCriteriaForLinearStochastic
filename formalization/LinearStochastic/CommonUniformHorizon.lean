@@ -1,4 +1,8 @@
-import LinearStochastic.CommonPicardHorizon
+module
+
+public import LinearStochastic.CommonPicardHorizon
+
+@[expose] public section
 
 /-! Filtration-independent short-time bounds and a genuine finite equal mesh
 for every finite horizon. -/

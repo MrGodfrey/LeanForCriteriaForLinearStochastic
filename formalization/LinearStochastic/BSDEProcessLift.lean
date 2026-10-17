@@ -1,8 +1,12 @@
-import LinearStochastic.BSDEIntegralRange
-import LinearStochastic.BSDETerminal
-import LinearStochastic.CommonItoPredictable
-import LinearStochastic.CommonDriftPredictable
-import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
+module
+
+public import LinearStochastic.BSDEIntegralRange
+public import LinearStochastic.BSDETerminal
+public import LinearStochastic.CommonItoPredictable
+public import LinearStochastic.CommonDriftPredictable
+public import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
+
+@[expose] public section
 
 /-! Genuine predictable process lift used for backward iteration.
 The initial lift uses actual conditional expectation at F₀; the stochastic lift
@@ -32,10 +36,9 @@ theorem initialRaw_memLp (T : ℝ≥0) (χ : Lp ℝ 2 μ) :
     MemLp (Function.uncurry (initialRaw (𝓕:=𝓕) χ)) 2 (spacetimeMeasure 𝓕 μ T) := by
   have hp := initialRaw_predictable (𝓕:=𝓕) χ
   have hm := ((Lp.memLp χ).condExp one_le_two (m:=𝓕 0)).comp_snd (CommonItoCLM.timeMeasure_T T)
-  refine ⟨hp.aestronglyMeasurable, ?_⟩
   change eLpNorm _ 2 (((CommonItoCLM.timeMeasure_T T).prod μ).trim 𝓕.predictable_le_prod) < ⊤
   rw [eLpNorm_trim _ hp]
-  exact hm.2
+  exact hm.eLpNorm_lt_top
 
 def initialLift (T : ℝ≥0) (χ : Lp ℝ 2 μ) : Lp ℝ 2 (spacetimeMeasure 𝓕 μ T) :=
   (initialRaw_memLp T χ).toLp (Function.uncurry (initialRaw (𝓕:=𝓕) χ))

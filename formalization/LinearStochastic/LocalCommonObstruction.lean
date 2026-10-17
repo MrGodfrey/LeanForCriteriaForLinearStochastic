@@ -1,7 +1,11 @@
-import LinearStochastic.CommonPairHorizon
-import LinearStochastic.HilbertLocalSolution
-import LinearStochastic.InvariantSolutionLift
-import LinearStochastic.ZeroObservationSeparation
+module
+
+public import LinearStochastic.CommonPairHorizon
+public import LinearStochastic.HilbertLocalSolution
+public import LinearStochastic.InvariantSolutionLift
+public import LinearStochastic.ZeroObservationSeparation
+
+@[expose] public section
 
 /-! A true local obstruction at a common positive horizon with actual forward
 solutions for every input. Global extension to prescribed horizons is separate. -/

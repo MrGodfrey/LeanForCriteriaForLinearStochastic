@@ -1,4 +1,8 @@
-import LinearStochastic.CommonIntegralPaste
+module
+
+public import LinearStochastic.CommonIntegralPaste
+
+@[expose] public section
 
 /-! Prefix and restart of genuine integral equations, proved from the actual
 Lebesgue and Itô operators on the same probability space. -/

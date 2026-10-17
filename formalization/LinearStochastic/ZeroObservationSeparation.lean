@@ -1,4 +1,8 @@
-import LinearStochastic.SectionLinearDuality
+module
+
+public import LinearStochastic.SectionLinearDuality
+
+@[expose] public section
 
 /-! A genuine zero-observation backward solution with nonzero deterministic
 initial value separates every actual forward terminal state from zero by a

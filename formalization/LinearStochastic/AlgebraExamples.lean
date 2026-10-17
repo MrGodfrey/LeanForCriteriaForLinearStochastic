@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraFlagTransport
+module
+
+public import LinearStochastic.AlgebraFlagTransport
+
+@[expose] public section
 
 /-!
 # The manuscript's concrete coefficient families

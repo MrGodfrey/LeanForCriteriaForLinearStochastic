@@ -1,6 +1,10 @@
-import LinearStochastic.CommonDriftPredictable
-import LinearStochastic.CommonItoMultichannel
-import Mathlib.MeasureTheory.Function.LpSpace.Complete
+module
+
+public import LinearStochastic.CommonDriftPredictable
+public import LinearStochastic.CommonItoMultichannel
+public import Mathlib.MeasureTheory.Function.LpSpace.Complete
+
+@[expose] public section
 
 set_option maxHeartbeats 1000000
 

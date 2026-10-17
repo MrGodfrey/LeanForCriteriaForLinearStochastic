@@ -1,4 +1,8 @@
-import LinearStochastic.CommonSolutionData
+module
+
+public import LinearStochastic.CommonSolutionData
+
+@[expose] public section
 
 /-! Fixed-time modification identities become space-time identities only after
 proving joint measurability from actual progressiveness. -/

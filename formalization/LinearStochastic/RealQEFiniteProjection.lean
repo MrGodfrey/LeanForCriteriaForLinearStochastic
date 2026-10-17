@@ -1,6 +1,10 @@
-import LinearStochastic.RealQEExistential
-import LinearStochastic.SemialgebraicLogic
-import Mathlib.Data.Fintype.Option
+module
+
+public import LinearStochastic.RealQEExistential
+public import LinearStochastic.SemialgebraicLogic
+public import Mathlib.Data.Fintype.Option
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.RealQEFiniteProjection

@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertSwitchingUniqueness
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.HilbertSwitchingUniqueness
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! Actual singular feedback solution classes are closed under addition and
 scaling; their control is unique. These facts justify linearity of the selected

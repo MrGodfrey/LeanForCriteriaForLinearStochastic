@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertSolutionZeroExtension
-import LinearStochastic.VectorExtensionNaturality
-import LinearStochastic.TerminalSpikeNoise
+module
+
+public import LinearStochastic.HilbertSolutionZeroExtension
+public import LinearStochastic.VectorExtensionNaturality
+public import LinearStochastic.TerminalSpikeNoise
+
+@[expose] public section
 
 /-! Genuine adjoint solutions for the normalized terminal diffusion spike. -/
 noncomputable section

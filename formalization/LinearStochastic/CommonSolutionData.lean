@@ -1,4 +1,8 @@
-import LinearStochastic.CommonPastedClasses
+module
+
+public import LinearStochastic.CommonPastedClasses
+
+@[expose] public section
 
 /-! Concrete coordinate solution data, with actual continuous S² paths and
 actual Lebesgue/Itô integral equations. Local existence is constructed from

@@ -1,6 +1,10 @@
-import LinearStochastic.SwitchingControl
-import LinearStochastic.SwitchingTerminalLimit
-import LinearStochastic.HilbertRestartUniqueness
+module
+
+public import LinearStochastic.SwitchingControl
+public import LinearStochastic.SwitchingTerminalLimit
+public import LinearStochastic.HilbertRestartUniqueness
+
+@[expose] public section
 
 /-! The genuine full-horizon S² solution driven by the constructed total
 control agrees with every recursively solved interval. Its true terminal

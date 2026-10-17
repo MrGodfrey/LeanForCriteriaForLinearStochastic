@@ -1,5 +1,9 @@
-import LinearStochastic.PaperControlProperties
-import LinearStochastic.AlgebraDeterministic
+module
+
+public import LinearStochastic.PaperControlProperties
+public import LinearStochastic.AlgebraDeterministic
+
+@[expose] public section
 
 /-! The zero-noise stochastic system has the precise Kalman reduction for
 AC, ANC and ENC, while arbitrary-random-target EC fails when n,m>0. -/

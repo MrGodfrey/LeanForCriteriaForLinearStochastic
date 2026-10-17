@@ -1,6 +1,10 @@
-import LinearStochastic.BSDEEnergy
-import LinearStochastic.ProgressivePredictable
-import LinearStochastic.CommonItoMultichannel
+module
+
+public import LinearStochastic.BSDEEnergy
+public import LinearStochastic.ProgressivePredictable
+public import LinearStochastic.CommonItoMultichannel
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.BSDETerminal

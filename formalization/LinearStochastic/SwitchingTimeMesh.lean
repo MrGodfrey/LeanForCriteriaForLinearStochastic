@@ -1,4 +1,8 @@
-import LinearStochastic.SwitchingRates
+module
+
+public import LinearStochastic.SwitchingRates
+
+@[expose] public section
 
 /-! The actual nonnegative deterministic mesh used to restart the feedback SDE. -/
 noncomputable section

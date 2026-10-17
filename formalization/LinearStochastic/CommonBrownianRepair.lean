@@ -1,6 +1,10 @@
-import LinearStochastic.CommonItoVersion
-import LinearStochastic.CommonFiltrationCompletion
-import LinearStochastic.CommonItoMultichannel
+module
+
+public import LinearStochastic.CommonItoVersion
+public import LinearStochastic.CommonFiltrationCompletion
+public import LinearStochastic.CommonItoMultichannel
+
+@[expose] public section
 
 /-! Simultaneous finite-channel repair of Brownian paths on the original
 complete filtration, preserving whole-future independence, joint channel laws,

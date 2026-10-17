@@ -1,5 +1,9 @@
-import LinearStochastic.ActualTerminalDensity
-import LinearStochastic.RawExactProperties
+module
+
+public import LinearStochastic.ActualTerminalDensity
+public import LinearStochastic.RawExactProperties
+
+@[expose] public section
 
 /-! Actual initial-state null controllability is exactly membership of the
 negative uncontrolled endpoint in the terminal map's range or its closure. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.LMIPolynomial
-import Mathlib.Analysis.Matrix.Spectrum
+module
+
+public import LinearStochastic.LMIPolynomial
+public import Mathlib.Analysis.Matrix.Spectrum
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.MatrixGrowthBounds

@@ -1,11 +1,15 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Raphael Coelho
 Adapted to a specified common filtration; original pinned MathFin source retained in NOTICE.
 -/
-import LinearStochastic.CommonStepProcess
-import MathFin.Foundations.ItoIntegralLocality
+public import LinearStochastic.CommonStepProcess
+public import MathFin.Foundations.ItoIntegralLocality
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonItoLocality
@@ -523,10 +527,10 @@ theorem itoIntegralCLM_T_smul_of_memLp (T a : ℝ≥0) (hBmeas : ∀ t, Measurab
           = ENNReal.ofReal ‖smulAdapted T a hBmeas _ (hZMm M) (M : ℝ) (hZMb M) φ‖ from by
         rw [Lp.norm_def, ENNReal.ofReal_toReal (Lp.eLpNorm_ne_top _)]]
       exact ENNReal.ofReal_le_ofReal (hbound M)
-    exact ⟨hmeas, lt_of_le_of_lt ((MeasureTheory.Lp.eLpNorm_lim_le_liminf_eLpNorm
+    exact lt_of_le_of_lt ((MeasureTheory.Lp.eLpNorm_lim_le_liminf_eLpNorm
       (fun M : ℕ ↦ Lp.aestronglyMeasurable
-        (smulAdapted T a hBmeas _ (hZMm M) (M : ℝ) (hZMb M) φ)) _ hlim).trans hle)
-      ENNReal.ofReal_lt_top⟩
+        (smulAdapted T a hBmeas _ (hZMm M) (M : ℝ) (hZMb M) φ)) _ hmeas hlim).trans hle)
+      ENNReal.ofReal_lt_top
   exact ⟨hZφ.toLp _, hZφ.coeFn_toLp,
     itoIntegralCLM_T_smulAdapted_of_memLp hB T a hBmeas Z hZm φ hφ hZφ⟩
 

@@ -1,7 +1,11 @@
-import MathFin.Foundations.DoobLpMaximalInequality
-import BrownianMotion.Auxiliary.Martingale
-import Mathlib.Data.Finset.Sort
-import Mathlib
+module
+
+public import MathFin.Foundations.DoobLpMaximalInequality
+public import BrownianMotion.Auxiliary.Martingale
+public import Mathlib.Data.Finset.Sort
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # Strong L² Doob inequality for continuous martingales
@@ -164,6 +168,28 @@ theorem sampled_max_tendsto {Ω E : Type*} [NormedAddCommGroup E]
   rw [← he]
   exact tendsto_atTop_ciSup hm hbf
 
+/-- The pathwise full supremum is measurable as a limit of finite measurable
+maxima; no uncountable-supremum measurability is assumed. -/
+theorem pathSup_aestronglyMeasurable {Ω E : Type*} {mΩ : MeasurableSpace Ω}
+    {μ : Measure Ω} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    {𝓕 : Filtration ℝ≥0 mΩ} {X : ℝ≥0 → Ω → E}
+    (hX : StronglyAdapted 𝓕 X) (hc : ∀ ω, Continuous (fun t ↦ X t ω)) (T : ℝ≥0) :
+    AEStronglyMeasurable (pathSup X T) μ := by
+  letI : Nonempty (Set.Iic T) := ⟨⟨T, show T ≤ T from le_rfl⟩⟩
+  let q := TopologicalSpace.denseSeq (Set.Iic T)
+  have hq : DenseRange q := TopologicalSpace.denseRange_denseSeq _
+  let f : ℕ → Ω → ℝ := fun n ω ↦ (sampleSet T q n).sup' (sampleSet_nonempty T q n)
+    (fun t ↦ ‖X t ω‖)
+  apply aestronglyMeasurable_of_tendsto_ae (f:=f) atTop
+  · intro n
+    apply Measurable.aestronglyMeasurable
+    convert (Finset.measurable_sup' (sampleSet_nonempty T q n)
+      (fun t _ ↦ ((hX t).mono (𝓕.le t)).norm.measurable)) using 1
+    funext ω
+    exact (Finset.sup'_apply (sampleSet_nonempty T q n) (fun t ω ↦ ‖X t ω‖) ω).symm
+  · exact ae_of_all _ fun ω ↦ sampled_max_tendsto X T q hq ω (hc ω)
+
+
 /-- Strong continuous-time L² Doob bound, proved from finite ordered samples
 and Fatou; no continuous-time strong maximal inequality is assumed. -/
 theorem pathSup_eLpNorm_le {Ω E : Type*} {mΩ : MeasurableSpace Ω} {μ : Measure Ω}
@@ -186,29 +212,9 @@ theorem pathSup_eLpNorm_le {Ω E : Type*} {mΩ : MeasurableSpace Ω} {μ : Measu
       (fun t _ ↦ ((hX.stronglyAdapted t).mono (𝓕.le t)).norm.measurable)) using 1
     funext ω
     exact (Finset.sup'_apply (sampleSet_nonempty T q n) (fun t ω ↦ ‖X t ω‖) ω).symm
-  · exact ae_of_all _ fun ω ↦ sampled_max_tendsto X T q hq ω (hc ω)
+  · exact pathSup_aestronglyMeasurable hX.stronglyAdapted hc T
+  · exact ae_of_all μ fun ω ↦ sampled_max_tendsto X T q hq ω (hc ω)
 
-
-/-- The pathwise full supremum is measurable as a limit of finite measurable
-maxima; no uncountable-supremum measurability is assumed. -/
-theorem pathSup_aestronglyMeasurable {Ω E : Type*} {mΩ : MeasurableSpace Ω}
-    {μ : Measure Ω} [NormedAddCommGroup E] [NormedSpace ℝ E]
-    {𝓕 : Filtration ℝ≥0 mΩ} {X : ℝ≥0 → Ω → E}
-    (hX : StronglyAdapted 𝓕 X) (hc : ∀ ω, Continuous (fun t ↦ X t ω)) (T : ℝ≥0) :
-    AEStronglyMeasurable (pathSup X T) μ := by
-  letI : Nonempty (Set.Iic T) := ⟨⟨T, show T ≤ T from le_rfl⟩⟩
-  let q := TopologicalSpace.denseSeq (Set.Iic T)
-  have hq : DenseRange q := TopologicalSpace.denseRange_denseSeq _
-  let f : ℕ → Ω → ℝ := fun n ω ↦ (sampleSet T q n).sup' (sampleSet_nonempty T q n)
-    (fun t ↦ ‖X t ω‖)
-  apply aestronglyMeasurable_of_tendsto_ae (f:=f) atTop
-  · intro n
-    apply Measurable.aestronglyMeasurable
-    convert (Finset.measurable_sup' (sampleSet_nonempty T q n)
-      (fun t _ ↦ ((hX t).mono (𝓕.le t)).norm.measurable)) using 1
-    funext ω
-    exact (Finset.sup'_apply (sampleSet_nonempty T q n) (fun t ω ↦ ‖X t ω‖) ω).symm
-  · exact ae_of_all _ fun ω ↦ sampled_max_tendsto X T q hq ω (hc ω)
 
 /-- Every continuous square-integrable-terminal martingale is genuinely S². -/
 theorem pathSup_memLp {Ω E : Type*} {mΩ : MeasurableSpace Ω} {μ : Measure Ω}
@@ -216,7 +222,6 @@ theorem pathSup_memLp {Ω E : Type*} {mΩ : MeasurableSpace Ω} {μ : Measure Ω
     {𝓕 : Filtration ℝ≥0 mΩ} {X : ℝ≥0 → Ω → E}
     (hX : Martingale X 𝓕 μ) (hc : ∀ ω, Continuous (fun t ↦ X t ω)) (T : ℝ≥0)
     (hT : MemLp (X T) 2 μ) : MemLp (pathSup X T) 2 μ := by
-  refine ⟨pathSup_aestronglyMeasurable hX.stronglyAdapted hc T, ?_⟩
   exact (pathSup_eLpNorm_le hX hc T).trans_lt
     (ENNReal.mul_lt_top (by norm_num) hT.eLpNorm_lt_top)
 

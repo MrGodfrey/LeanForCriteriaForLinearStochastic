@@ -1,5 +1,9 @@
-import LinearStochastic.MatrixSectionDecay
-import LinearStochastic.ProcessHorizonS2
+module
+
+public import LinearStochastic.MatrixSectionDecay
+public import LinearStochastic.ProcessHorizonS2
+
+@[expose] public section
 
 /-! The manuscript's actual mean-square decay formula with its exact spectral
 condition number, for the genuine closed-loop SDE and ordinary matrix gain UP⁻¹. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.JointUsualNatural
-import LinearStochastic.CommonBrownianRepair
+module
+
+public import LinearStochastic.JointUsualNatural
+public import LinearStochastic.CommonBrownianRepair
+
+@[expose] public section
 
 /-! The usual filtration is unchanged by actual process versions, on the same
 complete probability space. This closes the filtration-identification part of

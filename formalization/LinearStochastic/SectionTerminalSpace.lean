@@ -1,4 +1,8 @@
-import LinearStochastic.HilbertLocalSolution
+module
+
+public import LinearStochastic.HilbertLocalSolution
+
+@[expose] public section
 
 /-! The terminal of any genuine section solution lies in the actual F_T
 square-integrable space. No endpoint integrability or measurability is assumed. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertGlobalSolution
-import LinearStochastic.ActualObservationDuality
+module
+
+public import LinearStochastic.HilbertGlobalSolution
+public import LinearStochastic.ActualObservationDuality
+
+@[expose] public section
 
 /-! Actual terminal-annihilator duality on every finite horizon, using the
 proved global forward solution for the observation test control. -/

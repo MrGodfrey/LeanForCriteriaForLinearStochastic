@@ -1,7 +1,11 @@
-import LinearStochastic.DeterministicExponential
-import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
-import Mathlib.MeasureTheory.Function.L2Space
-import Mathlib.MeasureTheory.Function.LocallyIntegrable
+module
+
+public import LinearStochastic.DeterministicExponential
+public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+public import Mathlib.MeasureTheory.Function.L2Space
+public import Mathlib.MeasureTheory.Function.LocallyIntegrable
+
+@[expose] public section
 
 /-! The actual exponential controllability Gramian, its positivity under
 Kalman observability, and the resulting genuine finite-dimensional inverse. -/

@@ -1,6 +1,10 @@
-import LinearStochastic.InitialExpectedProduct
-import Mathlib.Analysis.InnerProductSpace.Adjoint
-import Mathlib.Analysis.InnerProductSpace.PiL2
+module
+
+public import LinearStochastic.InitialExpectedProduct
+public import Mathlib.Analysis.InnerProductSpace.Adjoint
+public import Mathlib.Analysis.InnerProductSpace.PiL2
+
+@[expose] public section
 
 /-! The actual finite-channel Itô terminal map as an isometric embedding.
 Its adjoint extracts representation coefficients; representation existence is

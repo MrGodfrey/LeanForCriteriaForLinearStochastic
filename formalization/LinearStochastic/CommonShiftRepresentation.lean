@@ -1,5 +1,9 @@
-import LinearStochastic.CommonShiftIntegral
-import LinearStochastic.BSDEIntegralRange
+module
+
+public import LinearStochastic.CommonShiftIntegral
+public import LinearStochastic.BSDEIntegralRange
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonShiftRepresentation

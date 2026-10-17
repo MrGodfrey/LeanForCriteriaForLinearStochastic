@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraRank
+module
+
+public import LinearStochastic.AlgebraRank
+
+@[expose] public section
 
 /-!
 # Drift inputs in the joint diffusion kernel

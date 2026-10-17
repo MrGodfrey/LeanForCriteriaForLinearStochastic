@@ -1,7 +1,11 @@
-import LinearStochastic.RawRankClassification
-import LinearStochastic.MatrixExactTerminal
-import LinearStochastic.BrownianExactNecessity
-import LinearStochastic.SwitchingNullAll
+module
+
+public import LinearStochastic.RawRankClassification
+public import LinearStochastic.MatrixExactTerminal
+public import LinearStochastic.BrownianExactNecessity
+public import LinearStochastic.SwitchingNullAll
+
+@[expose] public section
 
 /-! The complete controllability classification for the original Brownian
 usual filtration, ordinary progressive controls and actual continuous S²

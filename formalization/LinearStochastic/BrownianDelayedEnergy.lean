@@ -1,5 +1,9 @@
-import LinearStochastic.ScalarGramianEnergy
-import LinearStochastic.JointUsualBrownianGlobal
+module
+
+public import LinearStochastic.ScalarGramianEnergy
+public import LinearStochastic.JointUsualBrownianGlobal
+
+@[expose] public section
 
 /-! A genuine unbounded-energy delayed-target approximation for dy=u dt:
 the target is W_T, its conditional targets are W_a, and the actual Gramian

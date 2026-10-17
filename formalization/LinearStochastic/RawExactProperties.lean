@@ -1,5 +1,9 @@
-import LinearStochastic.RawControlProperties
-import LinearStochastic.ExactTerminalProperties
+module
+
+public import LinearStochastic.RawControlProperties
+public import LinearStochastic.ExactTerminalProperties
+
+@[expose] public section
 
 /-! Exact controllability predicates in the ordinary progressive-control and
 raw continuous-S² path formulation are equivalent to the actual section

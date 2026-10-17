@@ -1,6 +1,10 @@
-import LinearStochastic.CommonDoleansBand
-import LinearStochastic.CommonDirectionIntegral
-import LinearStochastic.CommonItoLocality
+module
+
+public import LinearStochastic.CommonDoleansBand
+public import LinearStochastic.CommonDirectionIntegral
+public import LinearStochastic.CommonItoLocality
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonDirectionBand

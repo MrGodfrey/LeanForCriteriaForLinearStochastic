@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEProcessLift
-import LinearStochastic.CommonPicardHorizon
+module
+
+public import LinearStochastic.BSDEProcessLift
+public import LinearStochastic.CommonPicardHorizon
+
+@[expose] public section
 
 /-! The literal finite-dimensional adjoint BSDE iteration. This constructs the
 actual predictable H² fixed point. Its terminal identification still requires

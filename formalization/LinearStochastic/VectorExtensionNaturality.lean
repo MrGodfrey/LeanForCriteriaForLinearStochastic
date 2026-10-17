@@ -1,5 +1,9 @@
-import LinearStochastic.VectorH2Extension
-import LinearStochastic.PredictableConstant
+module
+
+public import LinearStochastic.VectorH2Extension
+public import LinearStochastic.PredictableConstant
+
+@[expose] public section
 
 /-! True coefficient naturality for the constructed window extension. -/
 noncomputable section

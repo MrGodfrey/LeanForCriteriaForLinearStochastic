@@ -1,5 +1,9 @@
-import LinearStochastic.CommonInitialPredictable
-import LinearStochastic.CommonDriftPathwise
+module
+
+public import LinearStochastic.CommonInitialPredictable
+public import LinearStochastic.CommonDriftPathwise
+
+@[expose] public section
 
 /-! A genuine pathwise realization of the controlled H² Picard map. The scalar
 coordinate process is defined by the actual continuous-limit drift and Itô

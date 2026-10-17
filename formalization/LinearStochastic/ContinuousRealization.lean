@@ -1,5 +1,9 @@
-import LinearStochastic.ContinuousSubspace
-import LinearStochastic.VectorItoProduct
+module
+
+public import LinearStochastic.ContinuousSubspace
+public import LinearStochastic.VectorItoProduct
+
+@[expose] public section
 
 /-! An explicit continuous path version of a predictable L² state, including
 its two separately specified endpoint values. This contains no equation or

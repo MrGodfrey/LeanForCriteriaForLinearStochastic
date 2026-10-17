@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingActualFeedback
-import LinearStochastic.UniformSwitchingFamily
+module
+
+public import LinearStochastic.SwitchingActualFeedback
+public import LinearStochastic.UniformSwitchingFamily
+
+@[expose] public section
 
 /-! A single deterministic switching gain works for all original F0 L²
 initial variables on each short horizon, with coefficient-only uniform cost. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.AlgebraSurjective
-import LinearStochastic.AlgebraWordTransport
+module
+
+public import LinearStochastic.AlgebraSurjective
+public import LinearStochastic.AlgebraWordTransport
+
+@[expose] public section
 
 /-!
 # Original matrix coefficients and the reduced word-rank obstruction

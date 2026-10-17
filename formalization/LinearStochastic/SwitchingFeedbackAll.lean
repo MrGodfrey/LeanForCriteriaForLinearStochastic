@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertFeedbackExtension
-import LinearStochastic.SwitchingFeedbackSmall
+module
+
+public import LinearStochastic.HilbertFeedbackExtension
+public import LinearStochastic.SwitchingFeedbackSmall
+
+@[expose] public section
 
 /-! One deterministic locally bounded piecewise matrix gain at every positive
 horizon, with actual ordinary-progressive finite-energy feedback and terminal

@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertSectionPrefix
-import LinearStochastic.HilbertBrownianUniqueness
+module
+
+public import LinearStochastic.HilbertSectionPrefix
+public import LinearStochastic.HilbertBrownianUniqueness
+
+@[expose] public section
 
 /-! Two actual controlled solutions with equal controls on a prefix have the
 same actual endpoint of that prefix, irrespective of later controls. -/

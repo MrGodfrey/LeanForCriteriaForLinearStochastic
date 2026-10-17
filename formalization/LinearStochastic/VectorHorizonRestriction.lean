@@ -1,5 +1,9 @@
-import LinearStochastic.CommonHorizonRestriction
-import LinearStochastic.VectorItoNaturality
+module
+
+public import LinearStochastic.CommonHorizonRestriction
+public import LinearStochastic.VectorItoNaturality
+
+@[expose] public section
 
 /-! Genuine horizon restriction of vector predictable L² classes and their
 constructed vector Itô integrals, on the same sample space and filtration. -/

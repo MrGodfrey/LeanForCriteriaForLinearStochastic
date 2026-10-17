@@ -1,6 +1,10 @@
-import LinearStochastic.ActualReachability
-import LinearStochastic.ActualObservationDuality
-import Mathlib.Analysis.InnerProductSpace.Projection.Submodule
+module
+
+public import LinearStochastic.ActualReachability
+public import LinearStochastic.ActualObservationDuality
+public import Mathlib.Analysis.InnerProductSpace.Projection.Submodule
+
+@[expose] public section
 
 /-! The actual reachable subspace in the true F_T L² Hilbert space, its
 orthogonal complement, and the exact approximation consequence of density. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.MatrixSemialgebraic
-import LinearStochastic.MinimumGraph
+module
+
+public import LinearStochastic.MatrixSemialgebraic
+public import LinearStochastic.MinimumGraph
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.SemialgebraicMinimum

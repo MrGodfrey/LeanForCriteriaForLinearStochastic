@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingNullSmall
-import LinearStochastic.HilbertNullExtension
+module
+
+public import LinearStochastic.SwitchingNullSmall
+public import LinearStochastic.HilbertNullExtension
+
+@[expose] public section
 
 /-! Exact null control at every positive horizon for the actual original SDE.
 For long horizons the real control is zero until the final unit interval. -/

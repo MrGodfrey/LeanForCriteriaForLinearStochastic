@@ -1,4 +1,8 @@
-import LinearStochastic.MatrixGrowthBounds
+module
+
+public import LinearStochastic.MatrixGrowthBounds
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.MatrixDimensionObjective

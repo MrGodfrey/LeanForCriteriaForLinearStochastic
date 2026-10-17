@@ -1,4 +1,8 @@
-import LinearStochastic.ProgressiveControlSection
+module
+
+public import LinearStochastic.ProgressiveControlSection
+
+@[expose] public section
 
 /-! A raw progressive representative of the very same control gives the raw
 integral equation with its literal drift and identified Itô coefficients. -/

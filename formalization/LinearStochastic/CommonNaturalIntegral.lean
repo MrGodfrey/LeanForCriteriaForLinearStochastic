@@ -1,5 +1,9 @@
-import LinearStochastic.CommonItoCLM
-import MathFin.Foundations.ItoIntegralCLM
+module
+
+public import LinearStochastic.CommonItoCLM
+public import MathFin.Foundations.ItoIntegralCLM
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonNaturalIntegral

@@ -1,6 +1,10 @@
-import LinearStochastic.ConeBlocks
-import LinearStochastic.InputStructure
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.ConeBlocks
+public import LinearStochastic.InputStructure
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! The canonical joint-diffusion right inverse produces the literal feedback
 used in the exact-terminal BSDE construction, including its actual L² maps. -/

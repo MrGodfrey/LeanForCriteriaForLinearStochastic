@@ -1,5 +1,9 @@
-import LinearStochastic.ZeroObservationFlag
-import LinearStochastic.InputStructure
+module
+
+public import LinearStochastic.ZeroObservationFlag
+public import LinearStochastic.InputStructure
+
+@[expose] public section
 
 /-! Construction of the genuine autonomous dynamics on an invariant
 obstruction subspace from the algebraically proved linear selectors. -/

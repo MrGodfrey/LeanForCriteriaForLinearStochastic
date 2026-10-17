@@ -1,4 +1,8 @@
-import LinearStochastic.SpectralNullspace
+module
+
+public import LinearStochastic.SpectralNullspace
+
+@[expose] public section
 
 /-! A genuine paired square SVD, constructed from the spectral theorem and orthonormal extension. -/
 noncomputable section

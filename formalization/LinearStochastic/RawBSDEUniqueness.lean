@@ -1,4 +1,8 @@
-import LinearStochastic.RawBSDECoordinates
+module
+
+public import LinearStochastic.RawBSDECoordinates
+
+@[expose] public section
 
 /-! Actual Hilbert-valued backward existence and uniqueness, with arbitrary
 raw solutions and original usual Brownian drivers. -/

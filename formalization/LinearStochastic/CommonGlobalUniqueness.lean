@@ -1,5 +1,9 @@
-import LinearStochastic.CommonSolutionRestriction
-import LinearStochastic.CommonUniformHorizon
+module
+
+public import LinearStochastic.CommonSolutionRestriction
+public import LinearStochastic.CommonUniformHorizon
+
+@[expose] public section
 
 /-! Genuine arbitrary-horizon pathwise uniqueness. The proof restricts and
 restarts arbitrary actual solutions, derives local Picard equations, and uses

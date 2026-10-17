@@ -1,5 +1,9 @@
-import LinearStochastic.CommonSolutionPaste
-import LinearStochastic.CommonUniformHorizon
+module
+
+public import LinearStochastic.CommonSolutionPaste
+public import LinearStochastic.CommonUniformHorizon
+
+@[expose] public section
 
 /-! Genuine arbitrary finite-horizon existence for controlled linear matrix
 SDEs, constructed by a finite deterministic mesh on the original probability

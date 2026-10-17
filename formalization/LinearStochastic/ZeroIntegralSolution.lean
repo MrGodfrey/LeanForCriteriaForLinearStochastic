@@ -1,6 +1,10 @@
-import LinearStochastic.LinearDuality
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
-import Mathlib.MeasureTheory.Measure.OpenPos
+module
+
+public import LinearStochastic.LinearDuality
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
+public import Mathlib.MeasureTheory.Measure.OpenPos
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.ZeroIntegralSolution

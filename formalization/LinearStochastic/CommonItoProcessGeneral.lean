@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -8,8 +10,10 @@ Common-filtration adaptation of MathFin/Foundations/ItoIntegralProcessGeneral.le
 integrals and their probability proofs are retained; all filtration-dependent
 objects refer to the specified common filtration, not scalar natural history.
 -/
-import LinearStochastic.CommonItoProcessMartingale
-import LinearStochastic.CommonItoCLM
+public import LinearStochastic.CommonItoProcessMartingale
+public import LinearStochastic.CommonItoCLM
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic
@@ -49,7 +53,7 @@ theorem itoSimpleProcessLp_norm_le (T t : ℝ≥0) (hBmeas : ∀ u, Measurable (
   simp only [hT'eq] at hcond
   -- conditional expectation is an L² contraction.
   simp only [itoSimpleProcessLp, itoSimpleLp, Lp.norm_toLp]
-  refine ENNReal.toReal_mono (memLp_itoSimple hB hBmeas V).2.ne ?_
+  refine ENNReal.toReal_mono (memLp_itoSimple hB hBmeas V).eLpNorm_lt_top.ne ?_
   calc eLpNorm (itoSimpleProcess hBmeas V t) 2 μ
       = eLpNorm (μ[itoSimple hBmeas V | 𝓕 t]) 2 μ :=
         (eLpNorm_congr_ae hcond).symm
@@ -196,7 +200,7 @@ theorem itoProcessCLM_norm_le (T t : ℝ≥0) (hBmeas : ∀ u, Measurable (B u))
       (𝕜 := ℝ) ((𝓕).le t)
     rwa [Lp.toLp_coeFn] at h
   rw [Lp.norm_def, ← itoIntegralCLM_T_norm (𝓕 := 𝓕) hB T hBmeas φ, Lp.norm_def]
-  refine ENNReal.toReal_mono (Lp.memLp (itoIntegralCLM_T (𝓕 := 𝓕) hB T hBmeas φ)).2.ne ?_
+  refine ENNReal.toReal_mono (Lp.memLp (itoIntegralCLM_T (𝓕 := 𝓕) hB T hBmeas φ)).eLpNorm_lt_top.ne ?_
   rw [eLpNorm_congr_ae hae]
   exact eLpNorm_condExp_le_eLpNorm _ (by simp)
 

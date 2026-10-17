@@ -1,9 +1,13 @@
-import Mathlib.Algebra.BigOperators.Field
-import Mathlib.Analysis.Polynomial.Basic
-import Mathlib.Analysis.Polynomial.CauchyBound
-import Mathlib.Topology.Order.IntermediateValue
-import Mathlib.Topology.Algebra.Polynomial
-import Mathlib.Analysis.Normed.Group.Bounded
+module
+
+public import Mathlib.Algebra.BigOperators.Field
+public import Mathlib.Analysis.Polynomial.Basic
+public import Mathlib.Analysis.Polynomial.CauchyBound
+public import Mathlib.Topology.Order.IntermediateValue
+public import Mathlib.Topology.Algebra.Polynomial
+public import Mathlib.Analysis.Normed.Group.Bounded
+
+@[expose] public section
 
 /-!
 # Polynomial tail bounds for quantifier-free real sign formulas

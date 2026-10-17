@@ -1,4 +1,8 @@
-import LinearStochastic.SectionSolutionNaturality
+module
+
+public import LinearStochastic.SectionSolutionNaturality
+
+@[expose] public section
 
 /-! Actual quadratic energy of a genuine integral solution.  This is the
 stochastic product identity applied to the true linear image by H; no energy

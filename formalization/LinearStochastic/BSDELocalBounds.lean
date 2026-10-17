@@ -1,4 +1,8 @@
-import LinearStochastic.BSDELocal
+module
+
+public import LinearStochastic.BSDELocal
+
+@[expose] public section
 
 /-! Explicit terminal-data continuity of the actual backward Picard solution.
 The norms are the genuine predictable coordinate H² / Hilbert channel norms. -/

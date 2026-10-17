@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -6,8 +8,10 @@ Authors: Raphael Coelho
 The orthogonal-complement proof is adapted from MathFin MartingaleRepresentation
 to the actual finite-channel Ito isometry on the original joint natural filtration.
 -/
-import LinearStochastic.JointStepTotality
-import LinearStochastic.BSDEIntegralRange
+public import LinearStochastic.JointStepTotality
+public import LinearStochastic.BSDEIntegralRange
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointMartingaleRepresentation

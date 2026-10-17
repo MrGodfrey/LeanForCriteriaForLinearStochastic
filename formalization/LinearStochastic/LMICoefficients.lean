@@ -1,6 +1,10 @@
-import LinearStochastic.ConeBlocks
-import LinearStochastic.PositiveDual
-import LinearStochastic.InputStructure
+module
+
+public import LinearStochastic.ConeBlocks
+public import LinearStochastic.PositiveDual
+public import LinearStochastic.InputStructure
+
+@[expose] public section
 noncomputable section
 namespace LinearStochastic.LMICoefficients
 open scoped BigOperators

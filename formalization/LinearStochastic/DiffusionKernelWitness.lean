@@ -1,4 +1,8 @@
-import LinearStochastic.InputStructure
+module
+
+public import LinearStochastic.InputStructure
+
+@[expose] public section
 
 /-! Failure of the actual joint diffusion map to be onto produces a genuine
 unit vector killed by the sum of the channel adjoints. -/

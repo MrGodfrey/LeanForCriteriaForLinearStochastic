@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -9,8 +11,10 @@ has been replaced by explicit measurability in a specified common filtration.
 The independence base is a genuine whole-forward-process independence
 hypothesis, to be instantiated from the constructed joint Brownian model.
 -/
-import MathFin.Foundations.WienerIntegralL2
-import Mathlib
+public import MathFin.Foundations.WienerIntegralL2
+public import Mathlib
+
+@[expose] public section
 
 namespace LinearStochastic
 namespace CommonItoIsometry

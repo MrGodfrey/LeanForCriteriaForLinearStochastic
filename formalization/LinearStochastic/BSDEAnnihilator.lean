@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEHilbertLocal
-import LinearStochastic.ActualObservationDuality
+module
+
+public import LinearStochastic.BSDEHilbertLocal
+public import LinearStochastic.ActualObservationDuality
+
+@[expose] public section
 
 /-! The actual local backward solution closes the terminal-annihilator
 argument. Scalar martingale representation is an explicit separate premise. -/

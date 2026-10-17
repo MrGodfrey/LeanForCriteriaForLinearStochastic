@@ -1,5 +1,9 @@
-import LinearStochastic.PaperControlProperties
-import LinearStochastic.AlgebraStaircaseTermination
+module
+
+public import LinearStochastic.PaperControlProperties
+public import LinearStochastic.AlgebraStaircaseTermination
+
+@[expose] public section
 
 /-! The actual orthogonal-elimination state returns exactly the stochastic
 classification. Zero residual and zero retained width are actual computed

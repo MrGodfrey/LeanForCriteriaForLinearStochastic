@@ -1,6 +1,10 @@
-import LinearStochastic.DriftMartingaleDuality
-import LinearStochastic.RealTimeBridge
-import MathFin.Foundations.FiniteMeasureCauchySchwarz
+module
+
+public import LinearStochastic.DriftMartingaleDuality
+public import LinearStochastic.RealTimeBridge
+public import MathFin.Foundations.FiniteMeasureCauchySchwarz
+
+@[expose] public section
 
 /-! Actual energy estimates used by the backward Picard construction.
 All integrals and conditional expectations are Mathlib/constructed operators.
@@ -16,7 +20,7 @@ variable {I Ω : Type*} [MeasurableSpace I] [mΩ : MeasurableSpace Ω]
 theorem time_slice_memLp (f : I → Ω → ℝ)
     (hf : MemLp (Function.uncurry f) 2 (ν.prod μ)) :
     ∀ᵐ ω ∂μ, MemLp (fun s => f s ω) 2 ν := by
-  filter_upwards [hf.1.prodMk_right,hf.integrable_sq.prod_left_ae] with ω hm hi
+  filter_upwards [hf.aestronglyMeasurable.prodMk_right,hf.integrable_sq.prod_left_ae] with ω hm hi
   exact (memLp_two_iff_integrable_sq hm).mpr hi
 
 /-- The genuine terminal Lebesgue drift is square integrable. -/

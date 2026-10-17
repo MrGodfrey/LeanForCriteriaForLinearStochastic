@@ -1,5 +1,9 @@
-import LinearStochastic.DeterministicGramian
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+module
+
+public import LinearStochastic.DeterministicGramian
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+
+@[expose] public section
 
 /-! The classical exponential Gramian steering kernel and its exact terminal
 integral identity, before random delayed targets are substituted into it. -/

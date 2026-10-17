@@ -1,6 +1,10 @@
-import LinearStochastic.CommonH2Extension
-import LinearStochastic.LpOrthonormalCoordinates
-import LinearStochastic.VectorHorizonRestriction
+module
+
+public import LinearStochastic.CommonH2Extension
+public import LinearStochastic.LpOrthonormalCoordinates
+public import LinearStochastic.VectorHorizonRestriction
+
+@[expose] public section
 
 /-! Finite-dimensional Hilbert zero extension with the true Hilbert L² norm,
 obtained by actual orthonormal coordinate reconstruction and Parseval. -/

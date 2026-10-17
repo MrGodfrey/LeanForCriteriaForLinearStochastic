@@ -1,4 +1,8 @@
-import LinearStochastic.BSDEHilbertCoordinates
+module
+
+public import LinearStochastic.BSDEHilbertCoordinates
+
+@[expose] public section
 
 /-! Genuine local Hilbert-valued adjoint BSDE solutions. The sole probabilistic
 existence premise left visible is representation in the actual Itô range. -/

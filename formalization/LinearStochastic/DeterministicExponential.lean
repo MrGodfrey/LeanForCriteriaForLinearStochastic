@@ -1,7 +1,11 @@
-import LinearStochastic.AlgebraDeterministic
-import Mathlib.Analysis.SpecialFunctions.Exponential
-import Mathlib.Analysis.Calculus.Deriv.Mul
-import Mathlib.MeasureTheory.Measure.OpenPos
+module
+
+public import LinearStochastic.AlgebraDeterministic
+public import Mathlib.Analysis.SpecialFunctions.Exponential
+public import Mathlib.Analysis.Calculus.Deriv.Mul
+public import Mathlib.MeasureTheory.Measure.OpenPos
+
+@[expose] public section
 
 /-! A true exponential observation vanishing on a positive interval forces
 all Kalman power observations to vanish. This supplies the analytic step in

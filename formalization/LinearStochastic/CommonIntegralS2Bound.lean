@@ -1,4 +1,8 @@
-import LinearStochastic.PathSupNorm
+module
+
+public import LinearStochastic.PathSupNorm
+
+@[expose] public section
 
 /-! Quantitative full-path bounds for the actual Lebesgue drift and Itô
 representatives, not merely their values at a fixed terminal time. -/

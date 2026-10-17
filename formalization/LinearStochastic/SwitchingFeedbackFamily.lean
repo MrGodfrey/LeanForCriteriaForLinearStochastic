@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingRates
-import LinearStochastic.PolynomialFeedbackGrowth
+module
+
+public import LinearStochastic.SwitchingRates
+public import LinearStochastic.PolynomialFeedbackGrowth
+
+@[expose] public section
 
 /-! Countably many actual feasible matrix feedbacks chosen at the concrete
 switching rates. A single polynomial bound and switching constant work for

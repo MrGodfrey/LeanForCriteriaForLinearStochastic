@@ -1,4 +1,8 @@
-import LinearStochastic.VectorItoProduct
+module
+
+public import LinearStochastic.VectorItoProduct
+
+@[expose] public section
 
 /-! The actual finite-coordinate lift of a scalar L² linear map commutes with
 finite-dimensional state-space linear maps. This will be instantiated with the

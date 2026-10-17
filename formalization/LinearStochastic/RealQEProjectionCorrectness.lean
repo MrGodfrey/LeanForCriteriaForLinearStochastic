@@ -1,4 +1,8 @@
-import LinearStochastic.RealQETableRefinement
+module
+
+public import LinearStochastic.RealQETableRefinement
+
+@[expose] public section
 
 /-!
 # Correctness of the symbolic coefficient projection

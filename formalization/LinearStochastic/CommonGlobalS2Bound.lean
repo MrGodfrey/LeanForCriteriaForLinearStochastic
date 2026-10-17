@@ -1,5 +1,9 @@
-import LinearStochastic.CommonLocalS2Bound
-import LinearStochastic.CommonForwardGlobalBound
+module
+
+public import LinearStochastic.CommonLocalS2Bound
+public import LinearStochastic.CommonForwardGlobalBound
+
+@[expose] public section
 
 /-! Coefficient-only full-path S² estimates on every finite horizon, by
 literal prefix/restart of the same actual solution on a genuine finite mesh. -/

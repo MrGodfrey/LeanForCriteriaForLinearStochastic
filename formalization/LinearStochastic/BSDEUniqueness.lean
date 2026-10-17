@@ -1,4 +1,8 @@
-import LinearStochastic.BSDELocal
+module
+
+public import LinearStochastic.BSDELocal
+
+@[expose] public section
 
 /-! Genuine initial-value H² decomposition and terminal boundary imply the
 actual backward Picard equation. Uniqueness is therefore not restricted to

@@ -1,4 +1,8 @@
-import LinearStochastic.CommonFiltrationCompletion
+module
+
+public import LinearStochastic.CommonFiltrationCompletion
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonNullL2

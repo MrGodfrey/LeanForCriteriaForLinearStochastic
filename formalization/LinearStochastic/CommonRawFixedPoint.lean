@@ -1,5 +1,9 @@
-import LinearStochastic.CommonLocalCoefficients
-import LinearStochastic.CommonLocalUniqueness
+module
+
+public import LinearStochastic.CommonLocalCoefficients
+public import LinearStochastic.CommonLocalUniqueness
+
+@[expose] public section
 
 /-! Actual raw integral-solution equations imply the H² Picard equation.
 The premise is an initial-value Lebesgue/constructed-Itô decomposition, not a
@@ -18,7 +22,7 @@ variable {Ω : Type*} {mΩ : MeasurableSpace Ω} {μ : Measure Ω} [IsProbabilit
 omit [IsProbabilityMeasure μ] in
 /-- A simultaneous horizon identity pulls back through the two product
 projections. No joint measurability is inferred from separate time fibres. -/
-theorem product_ae_of_horizon_indistinguishable (T : ℝ≥0)
+theorem product_ae_of_horizon_indistinguishable [SFinite μ] (T : ℝ≥0)
     {E : Type*} {R S : ℝ≥0 → Ω → E}
     (h : ∀ᵐ ω ∂μ, ∀ t, t ≤ T → R t ω = S t ω) :
     Function.uncurry R =ᵐ[(timeMeasure_T T).prod μ] Function.uncurry S := by

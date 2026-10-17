@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertGlobalSolution
-import LinearStochastic.InvariantSolutionLift
-import LinearStochastic.ZeroObservationSeparation
+module
+
+public import LinearStochastic.HilbertGlobalSolution
+public import LinearStochastic.InvariantSolutionLift
+public import LinearStochastic.ZeroObservationSeparation
+
+@[expose] public section
 
 /-! Genuinely constructed invariant obstructions on every prescribed finite
 horizon, using the actual globally pasted forward SDE solution. -/

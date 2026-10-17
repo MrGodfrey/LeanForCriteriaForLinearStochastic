@@ -1,5 +1,9 @@
-import LinearStochastic.InitialExpectedProduct
-import Mathlib.Analysis.InnerProductSpace.Adjoint
+module
+
+public import LinearStochastic.InitialExpectedProduct
+public import Mathlib.Analysis.InnerProductSpace.Adjoint
+
+@[expose] public section
 
 /-! The genuine SDE/BSDE pairing identity for actual integral solutions.
 An integral solution specifies actual Lebesgue/constructed Itô decompositions,

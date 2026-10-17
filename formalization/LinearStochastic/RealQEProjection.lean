@@ -1,5 +1,9 @@
-import LinearStochastic.RealQEPseudoDivision
-import Mathlib.Algebra.Polynomial.Derivative
+module
+
+public import LinearStochastic.RealQEPseudoDivision
+public import Mathlib.Algebra.Polynomial.Derivative
+
+@[expose] public section
 
 /-!
 # Finite remainder closure for symbolic real projection

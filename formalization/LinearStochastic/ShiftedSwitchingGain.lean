@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingGain
-import LinearStochastic.SwitchingFeedbackIdentity
+module
+
+public import LinearStochastic.SwitchingGain
+public import LinearStochastic.SwitchingFeedbackIdentity
+
+@[expose] public section
 
 /-! The actual long-horizon feedback schedule: zero on the waiting interval,
 then the same deterministic short-horizon gain translated to the original clock. -/

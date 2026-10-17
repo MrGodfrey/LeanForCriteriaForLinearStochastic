@@ -1,5 +1,11 @@
 # Formalization guide
 
+The release counts and reproduction commands in this guide describe reference
+commit `6a7eebe7311a0bd52c1e59c0b1b7150c7bee6137` (Lean `v4.33.0-rc1`).
+For the Lean `v4.35.0-rc2` port and independent submission interface, use the
+[Palomar preparation guide](PALOMAR.md). Historical reports are retained as
+evidence of the reference release, not reissued for the port.
+
 This guide connects the manuscript's statements to their Lean proofs and explains how to interpret the verification results. The main mathematical setting is a finite-dimensional, constant-coefficient linear stochastic system driven by multidimensional Brownian motion, with controls in both drift and diffusion.
 
 The reference verification covers **80 inventoried mathematical claims**, including **18 named statements**, across **384 project modules**. It checks **2,559 explicitly named declarations**, of which **2,015 are theorems or lemmas**. These counts describe one checked snapshot; they are not a substitute for the individual statement correspondence.

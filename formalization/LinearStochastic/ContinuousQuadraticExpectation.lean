@@ -1,5 +1,9 @@
-import LinearStochastic.ContinuousDoobL2
-import LinearStochastic.LinearDuality
+module
+
+public import LinearStochastic.ContinuousDoobL2
+public import LinearStochastic.LinearDuality
+
+@[expose] public section
 
 /-! Continuous S² paths have continuous actual expected quadratic products.
 The dominating integrable function is the genuine squared path supremum. -/

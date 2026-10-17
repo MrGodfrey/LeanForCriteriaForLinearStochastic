@@ -1,4 +1,8 @@
-import Mathlib.Analysis.InnerProductSpace.Adjoint
+module
+
+public import Mathlib.Analysis.InnerProductSpace.Adjoint
+
+@[expose] public section
 
 /-!
 The Hilbert-space fact used at the beginning of `lem:approximate`.

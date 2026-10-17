@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertSectionCoordinates
-import LinearStochastic.CoordinatePathSolution
-import LinearStochastic.CommonSectionSolution
+module
+
+public import LinearStochastic.HilbertSectionCoordinates
+public import LinearStochastic.CoordinatePathSolution
+public import LinearStochastic.CommonSectionSolution
+
+@[expose] public section
 
 /-! Every genuine Hilbert section solution is the same L² state and terminal
 as a progressive continuous S² solution of the original equation. This closes

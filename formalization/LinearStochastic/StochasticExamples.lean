@@ -1,5 +1,9 @@
-import LinearStochastic.RawBrownianClassification
-import LinearStochastic.AlgebraNonrobustTopology
+module
+
+public import LinearStochastic.RawBrownianClassification
+public import LinearStochastic.AlgebraNonrobustTopology
+
+@[expose] public section
 
 /-! The concrete algebraic examples now apply to actual original Brownian
 systems and ordinary progressive controls. This module covers AC and ANC;

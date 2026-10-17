@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraFlag
+module
+
+public import LinearStochastic.AlgebraFlag
+
+@[expose] public section
 
 /-!
 # Algebraic obstruction carried by a positive dual certificate

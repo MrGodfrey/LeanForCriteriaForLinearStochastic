@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEGlobalExistence
-import LinearStochastic.JointUsualRepresentation
+module
+
+public import LinearStochastic.BSDEGlobalExistence
+public import LinearStochastic.JointUsualRepresentation
+
+@[expose] public section
 
 /-! Genuine arbitrary-horizon adjoint backward existence on the actual usual
 augmentation of the Brownian natural filtration, on the original sample space. -/

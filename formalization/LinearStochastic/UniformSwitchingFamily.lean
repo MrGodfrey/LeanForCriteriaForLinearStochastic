@@ -1,4 +1,8 @@
-import LinearStochastic.SwitchingFeedbackFamily
+module
+
+public import LinearStochastic.SwitchingFeedbackFamily
+
+@[expose] public section
 
 /-! One coefficient-dependent parameter choice works for every short horizon,
 so the quantitative null-control cost has genuinely uniform constants. -/

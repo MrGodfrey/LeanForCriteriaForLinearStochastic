@@ -1,5 +1,9 @@
-import Mathlib.MeasureTheory.Function.ConditionalExpectation.AEMeasurable
-import Mathlib.Probability.Process.Predictable
+module
+
+public import Mathlib.MeasureTheory.Function.ConditionalExpectation.AEMeasurable
+public import Mathlib.Probability.Process.Predictable
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.TrimInclusion

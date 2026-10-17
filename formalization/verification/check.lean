@@ -1,4 +1,8 @@
-import LinearStochastic
+module
+
+public import LinearStochastic
+
+@[expose] public section
 set_option format.width 120
 #check @LinearStochastic.ActualAdjointIdentity.terminalFact
 #print axioms LinearStochastic.ActualAdjointIdentity.terminalFact

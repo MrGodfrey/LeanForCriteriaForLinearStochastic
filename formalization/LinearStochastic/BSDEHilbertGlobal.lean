@@ -1,7 +1,11 @@
-import LinearStochastic.BSDEHilbertCoordinates
-import LinearStochastic.CoordinatePathSolution
-import LinearStochastic.BSDEPathData
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.BSDEHilbertCoordinates
+public import LinearStochastic.CoordinatePathSolution
+public import LinearStochastic.BSDEPathData
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! A genuine global coordinate adjoint solution gives the original Hilbert
 adjoint equation, its actual terminal datum, and a continuous S² realization. -/

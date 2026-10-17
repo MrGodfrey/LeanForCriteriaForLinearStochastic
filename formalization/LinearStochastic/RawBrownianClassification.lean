@@ -1,6 +1,10 @@
-import LinearStochastic.RawControlProperties
-import LinearStochastic.BrownianControlClassification
-import LinearStochastic.MatrixApproximateClassification
+module
+
+public import LinearStochastic.RawControlProperties
+public import LinearStochastic.BrownianControlClassification
+public import LinearStochastic.MatrixApproximateClassification
+
+@[expose] public section
 
 /-! The paper's ordinary progressive-control, raw continuous-S²-solution
 AC and ANC are exactly the algebraic terminal flag test. -/

@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -8,7 +10,9 @@ Common-filtration adaptation of MathFin/Foundations/ItoIntegralProcessMartingale
 integrals and their probability proofs are retained; all filtration-dependent
 objects refer to the specified common filtration, not scalar natural history.
 -/
-import LinearStochastic.CommonItoProcess
+public import LinearStochastic.CommonItoProcess
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic

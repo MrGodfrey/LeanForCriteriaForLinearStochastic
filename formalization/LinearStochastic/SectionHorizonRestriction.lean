@@ -1,5 +1,9 @@
-import LinearStochastic.VectorHorizonRestriction
-import LinearStochastic.SectionLinearDuality
+module
+
+public import LinearStochastic.VectorHorizonRestriction
+public import LinearStochastic.SectionLinearDuality
+
+@[expose] public section
 
 /-! Actual restriction of sectionwise integral solutions, preserving the
 specified initial value and using the genuine endpoint at the shorter time. -/

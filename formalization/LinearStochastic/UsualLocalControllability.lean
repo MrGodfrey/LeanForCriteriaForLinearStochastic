@@ -1,7 +1,11 @@
-import LinearStochastic.ActualApproximation
-import LinearStochastic.GlobalObservationDuality
-import LinearStochastic.BSDEHilbertLocal
-import LinearStochastic.JointUsualRepresentation
+module
+
+public import LinearStochastic.ActualApproximation
+public import LinearStochastic.GlobalObservationDuality
+public import LinearStochastic.BSDEHilbertLocal
+public import LinearStochastic.JointUsualRepresentation
+
+@[expose] public section
 
 /-! Actual approximation on the Brownian usual filtration when the true flag
 vanishes. Only the backward construction's explicit local rate remains; forward

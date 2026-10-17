@@ -1,4 +1,8 @@
-import LinearStochastic.RawCompleteClassification
+module
+
+public import LinearStochastic.RawCompleteClassification
+
+@[expose] public section
 
 /-! The complete finite-rank corollary and reduced finite-word exact-control
 criterion, for the actual original-coefficient stochastic system. -/

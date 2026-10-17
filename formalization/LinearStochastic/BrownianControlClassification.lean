@@ -1,6 +1,10 @@
-import LinearStochastic.UsualControlClassification
-import LinearStochastic.ControlDriverTransport
-import LinearStochastic.JointUsualBrownianGlobal
+module
+
+public import LinearStochastic.UsualControlClassification
+public import LinearStochastic.ControlDriverTransport
+public import LinearStochastic.JointUsualBrownianGlobal
+
+@[expose] public section
 
 /-! Full approximate/approximate-null classification on the original complete
 probability space and the original Brownian usual filtration. No everywhere

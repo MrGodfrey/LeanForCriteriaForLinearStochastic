@@ -1,0 +1,120 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+
+project:
+  name: A Unified Kalman-Type Classification of Controllability for Linear Stochastic Systems
+  description: >-
+    Formalization of a finite algebraic classification of approximate,
+    approximate null, exact null, and exact controllability for finite-dimensional
+    linear stochastic systems with constant coefficients and independent
+    Brownian drivers. A decreasing subspace sequence gives a common obstruction
+    for the first three properties; exact controllability additionally requires
+    full row rank of the stacked diffusion-control matrix. The development also
+    covers stochastic integration, forward and backward equations, duality,
+    finite rank tests, null feedback, and polynomial small-time energy bounds.
+    The independent Palomar statement and its solution compile with Lean
+    v4.35.0-rc2 and canonical Mathlib. Complete sandboxed mechanical preflight
+    and editorial review are separate requirements; no registration is claimed.
+  authors:
+    - Yu Wang
+  responsible_maintainers:
+    - Yu Wang
+  license: Apache-2.0
+
+classification:
+  arxiv: [math.OC, math.PR]
+  msc2020: [93B05, 93E03, 60H10, 68V20]
+
+sources:
+  - title: A Unified Kalman-Type Classification of Controllability for Linear Stochastic Systems
+    authors: [Qi Lü, Yu Wang]
+    type: manuscript
+    relationship: formalizes
+    location: https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/blob/6a7eebe7311a0bd52c1e59c0b1b7150c7bee6137/main.pdf
+    note: >-
+      The revised manuscript is included as main.tex and main.pdf. Its source
+      SHA-256 is 8ccc417fa3629e23e0b9dba2cd499916ccc9369201a9bec28f1538d298cb39ea.
+      Five disclosed proof or scope revisions are described in
+      docs/FORMALIZATION.md. Paper authorship and formalization authorship are
+      recorded separately.
+
+related_formalizations:
+  - id: https://github.com/formal-applied-math/formal-mathfin/tree/99b836298731c432a6242fdb6cb51c1c97f37902
+    relationship: builds-on
+    note: >-
+      Uses stochastic-analysis foundations and retains attribution for adapted
+      modules; see formalization/licenses/NOTICE.md.
+  - id: https://github.com/RemyDegenne/brownian-motion/tree/0d5b6eb928e616d3b1f774ad7d233c167d9f42c9
+    relationship: builds-on
+    note: Brownian and predictable-process foundations in the reference dependency graph.
+
+status:
+  scope: >-
+    The reference release at 6a7eebe7311a0bd52c1e59c0b1b7150c7bee6137
+    records 384 proof modules and coverage of 80 manuscript claims. These are
+    historical checks with Lean v4.33.0-rc1, not verification of a later port or
+    an independent Palomar Challenge. The requested submission concerns the full
+    stochastic controllability classification, not only an algebraic lemma.
+  sorry_count: 10
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: agent
+      framework: OpenAI Codex
+      tool_setup: >-
+        AI-assisted proof development and distinct AI statement reviews are
+        disclosed in docs/FORMALIZATION.md and formalization/audit. This
+        preparation also uses Codex for repository, toolchain, and interface work.
+  notes: >-
+    Historical model identities, costs, and prompt logs are not reconstructed.
+    Human authors retain responsibility. Automated review is not human peer review.
+
+fidelity:
+  divergences: >-
+    The claim mapping concerns the revised manuscript, including its five
+    disclosed revisions. Controls are ordinary progressive finite-energy
+    processes and states are actual continuous square-integrable paths on the
+    usual augmented joint Brownian filtration. Positive state and noise
+    dimensions and a positive horizon are required. Exact-arithmetic
+    factorization results do not certify floating-point numerical software.
+    PalomarBridge proves that the explicit set recursion is the carrier of
+    the original submodule flag, and proves correspondence with the original
+    raw SDE predicates.
+    The scalar Ito maps are characterized by their values on every bounded
+    predictable step process; classification proves existence and ito_unique
+    proves uniqueness. The sorry count includes two intentional Challenge
+    theorem holes and eight inherited holes in the vendored stochastic
+    dependency closure. There are no definition holes or new solution holes.
+    Source occurrence counts do not establish whether a theorem depends on a
+    hole; transitive axiom inspection is recorded separately in
+    formalization/palomar/local-check.json and the official preflight report.
+
+review:
+  status: agent-reviewed
+  notes: >-
+    This status describes the reference release's disclosed AI statement review.
+    The port and new interface were also prepared and checked by Codex, with
+    no claim of independent human review. Historical kernel replay used Lean's
+    own leanchecker. Current local check evidence and the status of sandboxed
+    Comparator, NanoDa, and con-ron appear in docs/PALOMAR.md; none is an
+    editorial acceptance or registration. See also docs/FORMALIZATION.md and
+    formalization/audit.
+
+alignment:
+  namespace: LinearStochastic
+  statements:
+    - source: Main controllability classification of the accompanying manuscript
+      lean: LinearStochastic.Palomar.classification
+      module: Solution
+      status: proved
+      note: >-
+        Independent Mathlib-only statement in Challenge.lean, proved in
+        Solution.lean through PalomarBridge and RawCompleteClassification.
+        The result includes existence of the specified Ito integral maps.
+    - source: Uniqueness of the L2 Ito integral from bounded predictable step processes
+      lean: LinearStochastic.Palomar.ito_unique
+      module: Solution
+      status: proved
+      note: Prevents the integral witnesses in the classification from changing its meaning.

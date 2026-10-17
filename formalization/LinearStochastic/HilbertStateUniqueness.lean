@@ -1,4 +1,8 @@
-import LinearStochastic.HilbertBrownianRealization
+module
+
+public import LinearStochastic.HilbertBrownianRealization
+
+@[expose] public section
 
 /-! Uniqueness of the whole genuine Hilbert state class, not merely of its
 terminal value, under the original Brownian assumptions. -/

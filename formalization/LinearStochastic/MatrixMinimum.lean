@@ -1,5 +1,9 @@
-import LinearStochastic.MatrixNormalization
-import LinearStochastic.QuadraticMinimum
+module
+
+public import LinearStochastic.MatrixNormalization
+public import LinearStochastic.QuadraticMinimum
+
+@[expose] public section
 
 set_option maxHeartbeats 800000
 noncomputable section

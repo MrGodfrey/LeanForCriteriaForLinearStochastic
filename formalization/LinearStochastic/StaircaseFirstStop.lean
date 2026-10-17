@@ -1,5 +1,9 @@
-import LinearStochastic.StaircaseControlClassification
-import Mathlib.Data.Nat.Find
+module
+
+public import LinearStochastic.StaircaseControlClassification
+public import Mathlib.Data.Nat.Find
+
+@[expose] public section
 
 /-! The first-return semantics of the exact orthogonal-elimination loop.
 Every earlier state is live, so a zero residual returns a nonzero obstruction;

@@ -1,6 +1,10 @@
-import LinearStochastic.RealQEProjection
-import Mathlib.Data.Multiset.DershowitzManna
-import Mathlib.Data.Finset.Max
+module
+
+public import LinearStochastic.RealQEProjection
+public import Mathlib.Data.Multiset.DershowitzManna
+public import Mathlib.Data.Finset.Max
+
+@[expose] public section
 
 /-!
 # Terminating symbolic projection recursion

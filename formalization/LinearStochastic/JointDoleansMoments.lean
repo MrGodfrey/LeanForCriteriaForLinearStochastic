@@ -1,5 +1,9 @@
-import LinearStochastic.JointDoleansBand
-import LinearStochastic.FiniteExponentialTotality
+module
+
+public import LinearStochastic.JointDoleansBand
+public import LinearStochastic.FiniteExponentialTotality
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointDoleansMoments

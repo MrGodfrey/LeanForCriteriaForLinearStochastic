@@ -1,4 +1,8 @@
-import LinearStochastic.Switching
+module
+
+public import LinearStochastic.Switching
+
+@[expose] public section
 
 /-! The manuscript's concrete dyadic time mesh and quadratic-rate schedule
 satisfy the scalar bounds needed for the actual switching construction. -/

@@ -1,4 +1,8 @@
-import LinearStochastic.CommonShiftSimple
+module
+
+public import LinearStochastic.CommonShiftSimple
+
+@[expose] public section
 
 /-! Actual deterministic-restart compatibility of the constructed continuous
 Itô operator, proved first on increment sums and then on their dense L² domain. -/

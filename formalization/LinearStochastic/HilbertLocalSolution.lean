@@ -1,5 +1,9 @@
-import LinearStochastic.CoordinateSectionSolution
-import LinearStochastic.BSDETerminal
+module
+
+public import LinearStochastic.CoordinateSectionSolution
+public import LinearStochastic.BSDETerminal
+
+@[expose] public section
 
 /-! The genuinely constructed coordinate Picard solution is transported to
 the original Hilbert-valued coefficient maps and the actual integral interface. -/

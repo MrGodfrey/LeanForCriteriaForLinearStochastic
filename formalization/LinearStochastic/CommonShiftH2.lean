@@ -1,4 +1,8 @@
-import LinearStochastic.CommonShiftMeasure
+module
+
+public import LinearStochastic.CommonShiftMeasure
+
+@[expose] public section
 
 /-! The actual predictable L² restriction/translation operator for deterministic
 restarts. It is built from real spacetime transport and the proved progressive
@@ -18,8 +22,10 @@ abbrev Space (𝓕 : Filtration ℝ≥0 mΩ) (μ : Measure Ω) (T : ℝ≥0) :=
 omit [SFinite μ] in
 theorem ambient_memLp (T : ℝ≥0) (f : Space 𝓕 μ T) :
     MemLp (f : ℝ≥0 × Ω → ℝ) 2 ((timeMeasure_T T).prod μ) :=
-  ⟨aestronglyMeasurable_of_aestronglyMeasurable_trim 𝓕.predictable_le_prod (Lp.aestronglyMeasurable f),
-    by rw [←eLpNorm_trim_ae 𝓕.predictable_le_prod (Lp.aestronglyMeasurable f)]; exact (Lp.memLp f).2⟩
+  by
+    unfold MemLp
+    rw [←eLpNorm_trim_ae 𝓕.predictable_le_prod (Lp.aestronglyMeasurable f)]
+    exact Lp.memLp f
 
 def shift (a δ T : ℝ≥0) (h : a+δ ≤ T) (f : Space 𝓕 μ T) :
     Space (CommonTimeShift.filtration 𝓕 a) μ δ :=
@@ -70,12 +76,12 @@ theorem shift_smul (a δ T : ℝ≥0) (h : a+δ ≤ T) (c : ℝ) (f : Space 𝓕
 theorem shift_norm (a δ T : ℝ≥0) (h : a+δ ≤ T) (f : Space 𝓕 μ T) :
     ‖shift a δ T h f‖ ≤ ‖f‖ := by
   rw [Lp.norm_def,Lp.norm_def]
-  apply ENNReal.toReal_mono (Lp.memLp f).2.ne
+  apply ENNReal.toReal_mono (Lp.memLp f).eLpNorm_lt_top.ne
   rw [eLpNorm_trim_ae _ (Lp.aestronglyMeasurable _),eLpNorm_congr_ae (shift_ae a δ T h f)]
   have hs := (ambient_memLp T f).mono_measure
     (Measure.prod_mono (CommonShiftMeasure.interval_le a δ T h) le_rfl)
   change eLpNorm ((f : ℝ≥0 × Ω → ℝ) ∘ Prod.map (fun t ↦ a+t) id) 2 _ ≤ _
-  rw [eLpNorm_comp_measurePreserving hs.1 ((CommonShiftMeasure.add_interval a δ).prod (MeasurePreserving.id μ)),
+  rw [eLpNorm_comp_measurePreserving hs.aestronglyMeasurable ((CommonShiftMeasure.add_interval a δ).prod (MeasurePreserving.id μ)),
     eLpNorm_trim_ae _ (Lp.aestronglyMeasurable f)]
   exact eLpNorm_mono_measure f (Measure.prod_mono (CommonShiftMeasure.interval_le a δ T h) le_rfl)
 

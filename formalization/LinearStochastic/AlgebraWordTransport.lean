@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraWordMatrices
+module
+
+public import LinearStochastic.AlgebraWordMatrices
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.Words

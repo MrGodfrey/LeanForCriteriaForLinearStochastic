@@ -1,6 +1,10 @@
-import LinearStochastic.SectionExpectedEnergy
-import LinearStochastic.IntegralEnergyDecay
-import LinearStochastic.SectionTerminalSpace
+module
+
+public import LinearStochastic.SectionExpectedEnergy
+public import LinearStochastic.IntegralEnergyDecay
+public import LinearStochastic.SectionTerminalSpace
+
+@[expose] public section
 
 /-! Actual exponential quadratic decay of a homogeneous stochastic equation.
 The energy identity and differential inequality are proved from the SDE and

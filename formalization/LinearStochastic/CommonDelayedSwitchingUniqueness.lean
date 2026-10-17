@@ -1,4 +1,8 @@
-import LinearStochastic.CommonSwitchingUniqueness
+module
+
+public import LinearStochastic.CommonSwitchingUniqueness
+
+@[expose] public section
 
 /-! Actual closed-loop uniqueness after an arbitrary deterministic waiting
 interval. Prefix controls need only agree; later controls may differ. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertDelayedSwitchingUniqueness
-import LinearStochastic.ProgressiveControlSection
+module
+
+public import LinearStochastic.HilbertDelayedSwitchingUniqueness
+public import LinearStochastic.ProgressiveControlSection
+
+@[expose] public section
 
 /-! Ordinary progressive raw S² solutions of the literal delayed singular feedback
 have a unique state path and control class. No equality of controls is presumed. -/

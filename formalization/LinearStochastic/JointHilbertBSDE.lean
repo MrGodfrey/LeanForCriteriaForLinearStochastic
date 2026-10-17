@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEAnnihilator
-import LinearStochastic.JointMartingaleRepresentation
+module
+
+public import LinearStochastic.BSDEAnnihilator
+public import LinearStochastic.JointMartingaleRepresentation
+
+@[expose] public section
 
 /-! The local Hilbert backward solution and zero terminal-annihilator result
 on the actual joint Brownian natural filtration. Martingale representation and

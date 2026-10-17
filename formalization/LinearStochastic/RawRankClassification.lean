@@ -1,4 +1,8 @@
-import LinearStochastic.RawBrownianClassification
+module
+
+public import LinearStochastic.RawBrownianClassification
+
+@[expose] public section
 
 /-! Literal finite block-matrix rank criteria for ordinary progressive
 controls and actual raw continuous S² solutions. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.ReducedElimination
-import Mathlib.Analysis.InnerProductSpace.ProdL2
+module
+
+public import LinearStochastic.ReducedElimination
+public import Mathlib.Analysis.InnerProductSpace.ProdL2
+
+@[expose] public section
 
 /-!
 # A fully constructed exact orthogonal-elimination algorithm

@@ -1,6 +1,10 @@
-import LinearStochastic.CommonPicardRealization
-import LinearStochastic.CommonPicardHorizon
-import LinearStochastic.ProgressivePredictable
+module
+
+public import LinearStochastic.CommonPicardRealization
+public import LinearStochastic.CommonPicardHorizon
+public import LinearStochastic.ProgressivePredictable
+
+@[expose] public section
 
 /-! Local controlled matrix integral solutions with actual progressive controls
 and F₀-measurable square-integrable initial coordinates. The pathwise realization

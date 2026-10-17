@@ -1,6 +1,10 @@
-import LinearStochastic.ParametricMinimum
-import LinearStochastic.LMIStability
-import Mathlib.Topology.Order.LeftRight
+module
+
+public import LinearStochastic.ParametricMinimum
+public import LinearStochastic.LMIStability
+public import Mathlib.Topology.Order.LeftRight
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.ParametricMinimum

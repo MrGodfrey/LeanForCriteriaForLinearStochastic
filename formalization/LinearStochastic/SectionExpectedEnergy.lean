@@ -1,6 +1,10 @@
-import LinearStochastic.ProcessQuadraticInner
-import LinearStochastic.ExpectedQuadraticGenerator
-import LinearStochastic.SectionQuadraticEnergy
+module
+
+public import LinearStochastic.ProcessQuadraticInner
+public import LinearStochastic.ExpectedQuadraticGenerator
+public import LinearStochastic.SectionQuadraticEnergy
+
+@[expose] public section
 
 /-! The full time-indexed expected energy identity is deduced from the
 actual integral equation on every prefix, with the same continuous S² path. -/

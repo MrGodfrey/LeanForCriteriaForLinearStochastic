@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -9,7 +11,9 @@ Here two distinct Brownian channels replace the repeated scalar driver, and
 actual joint forward independence and independent path laws give zero pairing.
 The two-variable dense extension and multichannel interface are local additions.
 -/
-import LinearStochastic.CommonItoCLM
+public import LinearStochastic.CommonItoCLM
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonItoCross

@@ -1,4 +1,8 @@
-import LinearStochastic.ZeroIntegralSolution
+module
+
+public import LinearStochastic.ZeroIntegralSolution
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.ZeroIntegralDrift

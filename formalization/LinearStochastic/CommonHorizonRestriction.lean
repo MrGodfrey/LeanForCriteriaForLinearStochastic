@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,7 +9,9 @@ MathFin/Foundations/ItoIntegralProcessL2Infinite.lean at
 99b836298731c432a6242fdb6cb51c1c97f37902. Remaining finite-horizon compatibility
 uses the actual common-filtration clamp proof.
 -/
-import LinearStochastic.CommonHorizonClamp
+public import LinearStochastic.CommonHorizonClamp
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section
@@ -44,7 +48,7 @@ noncomputable def monoMeasureLp (h : ν ≤ μ) : Lp ℝ 2 μ →L[ℝ] Lp ℝ 2
         simp only [h1, h2, h3, h4, Pi.smul_apply, RingHom.id_apply] }
     1 (fun f ↦ by
       simp only [LinearMap.coe_mk, AddHom.coe_mk, one_mul, Lp.norm_def]
-      refine ENNReal.toReal_mono (Lp.memLp f).2.ne ?_
+      refine ENNReal.toReal_mono (Lp.memLp f).eLpNorm_lt_top.ne ?_
       rw [eLpNorm_congr_ae (MemLp.coeFn_toLp ((Lp.memLp f).mono_measure h))]
       exact eLpNorm_mono_measure _ h)
 

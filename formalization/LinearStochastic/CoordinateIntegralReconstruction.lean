@@ -1,6 +1,10 @@
-import LinearStochastic.LpOrthonormalCoordinates
-import LinearStochastic.SectionLinearDuality
-import LinearStochastic.CommonPicardRealization
+module
+
+public import LinearStochastic.LpOrthonormalCoordinates
+public import LinearStochastic.SectionLinearDuality
+public import LinearStochastic.CommonPicardRealization
+
+@[expose] public section
 
 /-! Exact reconstruction of the actual coordinate Lebesgue/Itô integrals
 into the Hilbert-valued integral-solution interface. -/

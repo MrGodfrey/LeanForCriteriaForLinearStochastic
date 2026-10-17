@@ -1,7 +1,11 @@
-import LinearStochastic.BrownianBSDEUniqueness
-import LinearStochastic.HilbertSectionCoordinates
-import LinearStochastic.BSDEHilbertGlobal
-import LinearStochastic.ProgressivePredictable
+module
+
+public import LinearStochastic.BrownianBSDEUniqueness
+public import LinearStochastic.HilbertSectionCoordinates
+public import LinearStochastic.BSDEHilbertGlobal
+public import LinearStochastic.ProgressivePredictable
+
+@[expose] public section
 
 /-! Arbitrary genuine Hilbert-valued raw backward solutions, rather than only
 constructed solutions, give the coordinate record used by global uniqueness. -/

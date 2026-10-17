@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertLocalSolution
-import LinearStochastic.InvariantSolutionLift
-import LinearStochastic.ZeroObservationSeparation
+module
+
+public import LinearStochastic.HilbertLocalSolution
+public import LinearStochastic.InvariantSolutionLift
+public import LinearStochastic.ZeroObservationSeparation
+
+@[expose] public section
 
 /-! A genuinely constructed nonzero invariant obstruction on a positive
 short horizon. Global extension to every prescribed horizon is separate. -/

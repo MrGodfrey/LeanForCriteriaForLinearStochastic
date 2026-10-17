@@ -1,6 +1,10 @@
-import LinearStochastic.ProgressiveControlSection
-import LinearStochastic.HilbertBrownianRealization
-import LinearStochastic.ActualControlProperties
+module
+
+public import LinearStochastic.ProgressiveControlSection
+public import LinearStochastic.HilbertBrownianRealization
+public import LinearStochastic.ActualControlProperties
+
+@[expose] public section
 
 /-! Equivalence of the section-based predicates and ordinary progressive
 finite-energy controls with genuine raw continuous S² solutions and the

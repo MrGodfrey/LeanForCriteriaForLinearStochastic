@@ -1,5 +1,9 @@
-import LinearStochastic.AlgebraCoordinates
-import Mathlib.Algebra.MvPolynomial.Eval
+module
+
+public import LinearStochastic.AlgebraCoordinates
+public import Mathlib.Algebra.MvPolynomial.Eval
+
+@[expose] public section
 
 /-! Every literal recursively constructed matrix entry is a polynomial in
 exactly the original finite coefficient entries. Evaluation yields the actual

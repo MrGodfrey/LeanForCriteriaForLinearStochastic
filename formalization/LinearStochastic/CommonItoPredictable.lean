@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -9,9 +11,11 @@ an explicit common filtration. The norm bound uses the proved per-time CLM
 contraction directly, so no extra time-indexed-isometry module is imported.
 -/
 
-import LinearStochastic.CommonItoContinuous
+public import LinearStochastic.CommonItoContinuous
 
-import BrownianMotion.StochasticIntegral.Predictable
+public import BrownianMotion.StochasticIntegral.Predictable
+
+@[expose] public section
 
 /-! # Predictable space-time L² assembly on a specified common filtration
 
@@ -104,11 +108,12 @@ theorem memLp_itoContinuousMod (T : ℝ≥0) (hBmeas : ∀ t, Measurable (B t))
     (φ : Lp ℝ 2 (trimMeasure_T (𝓕 := 𝓕) (μ := μ) T hBmeas)) :
     MemLp (Function.uncurry (itoContinuousMod T hBmeas φ)) 2 (trimMeasure_T (𝓕 := 𝓕) (μ := μ) T hBmeas) := by
   have hpred := itoContinuousMod_isStronglyPredictable hB T hBmeas hBcont φ
-  refine ⟨hpred.aestronglyMeasurable, ?_⟩
+  change eLpNorm _ 2 _ < ⊤
   rw [show trimMeasure_T (𝓕 := 𝓕) (μ := μ) T hBmeas
         = ((timeMeasure_T T).prod μ).trim 𝓕.predictable_le_prod from rfl,
       eLpNorm_trim _ hpred,
-      eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top (by norm_num) (by norm_num),
+      eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top (by norm_num) (by norm_num)
+        (hpred.mono 𝓕.predictable_le_prod).aestronglyMeasurable,
       lintegral_prod _
         ((hpred.mono 𝓕.predictable_le_prod).measurable.enorm.pow_const _
           |>.aemeasurable)]
@@ -124,7 +129,7 @@ theorem memLp_itoContinuousMod (T : ℝ≥0) (hBmeas : ∀ t, Measurable (B t))
       rw [hω]
     rw [hmod, lintegral_rpow_enorm_eq_rpow_eLpNorm' (by norm_num : (0 : ℝ) < (2 : ℝ≥0∞).toReal)]
     gcongr
-    rw [← eLpNorm_eq_eLpNorm' (by norm_num) (by norm_num), ← Lp.enorm_def, ← ofReal_norm]
+    rw [← eLpNorm_eq_eLpNorm' (by norm_num) (by norm_num) (Lp.aestronglyMeasurable _), ← Lp.enorm_def, ← ofReal_norm]
     exact ENNReal.ofReal_le_ofReal (itoProcessCLM_norm_le hB T t hBmeas φ)
   refine lt_of_le_of_lt
     (lintegral_mono_ae (g := fun _ ↦ (ENNReal.ofReal ‖φ‖) ^ (2 : ℝ≥0∞).toReal) ?_) ?_
@@ -159,9 +164,9 @@ theorem itoProcessAssembled_norm_sq (T : ℝ≥0) (hBmeas : ∀ t, Measurable (B
   have hmem := memLp_itoContinuousMod hB T hBmeas hBcont φ
   have hmem_prod : MemLp (Function.uncurry (itoContinuousMod T hBmeas φ)) 2
       ((timeMeasure_T T).prod μ) := by
-    refine ⟨(hpred.mono 𝓕.predictable_le_prod).aestronglyMeasurable, ?_⟩
+    change eLpNorm _ 2 _ < ⊤
     rw [← eLpNorm_trim 𝓕.predictable_le_prod hpred]
-    exact hmem.2
+    exact hmem.eLpNorm_lt_top
   have hint : Integrable (fun z ↦ (Function.uncurry (itoContinuousMod T hBmeas φ) z) ^ 2)
       ((timeMeasure_T T).prod μ) := by
     refine (hmem_prod.integrable_mul hmem_prod).congr ?_

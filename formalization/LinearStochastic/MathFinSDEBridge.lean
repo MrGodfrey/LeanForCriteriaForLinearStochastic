@@ -1,4 +1,8 @@
-import MathFin.Foundations.SDEExistence
+module
+
+public import MathFin.Foundations.SDEExistence
+
+@[expose] public section
 
 /-!
 # Local scalar SDEs from a constructed Itô integral

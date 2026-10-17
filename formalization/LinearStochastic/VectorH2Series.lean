@@ -1,4 +1,8 @@
-import LinearStochastic.VectorH2Extension
+module
+
+public import LinearStochastic.VectorH2Extension
+
+@[expose] public section
 
 /-! Actual continuous horizon restriction and summation of isometrically
 zero-extended controls. Prefix recovery is an equality of genuine L² classes. -/
@@ -17,7 +21,7 @@ omit [InnerProductSpace ℝ E] in
 theorem restrict_norm {t T : ℝ≥0} (h : t ≤ T) (f : Lp E 2 (spacetimeMeasure 𝓕 μ T)) :
     ‖restrict h f‖ ≤ ‖f‖ := by
   simp only [Lp.norm_def]
-  apply ENNReal.toReal_mono (Lp.memLp f).2.ne
+  apply ENNReal.toReal_mono (Lp.memLp f).eLpNorm_lt_top.ne
   rw [eLpNorm_congr_ae (restrict_ae h f)]
   exact eLpNorm_mono_measure _ (measure_le h)
 

@@ -1,6 +1,10 @@
-import LinearStochastic.VectorH2Extension
-import LinearStochastic.CommonDriftRestart
-import LinearStochastic.SectionTerminalSpace
+module
+
+public import LinearStochastic.VectorH2Extension
+public import LinearStochastic.CommonDriftRestart
+public import LinearStochastic.SectionTerminalSpace
+
+@[expose] public section
 
 /-! True terminal Lebesgue integration on a zero-extended time window.
 The interval-length bound is proved by restart of the actual primitive. -/

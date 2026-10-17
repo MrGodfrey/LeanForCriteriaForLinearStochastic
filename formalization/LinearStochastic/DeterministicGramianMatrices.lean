@@ -1,5 +1,9 @@
-import LinearStochastic.DeterministicGramianControl
-import LinearStochastic.ZeroObservationMatrices
+module
+
+public import LinearStochastic.DeterministicGramianControl
+public import LinearStochastic.ZeroObservationMatrices
+
+@[expose] public section
 
 /-! The positive exponential Gramian is derived from the paper's literal
 finite Kalman rank condition, closing the algebra-to-analytic hypothesis. -/

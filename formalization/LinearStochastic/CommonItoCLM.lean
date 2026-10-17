@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -8,8 +10,10 @@ Adapted from MathFin/Foundations/ItoIntegralCLM.lean at
 rectangle π-λ density proof and continuous extension of true SimpleProcess
 integrals, with a specified common filtration replacing the scalar natural one.
 -/
-import LinearStochastic.CommonItoL2
-import BrownianMotion.StochasticIntegral.Predictable
+public import LinearStochastic.CommonItoL2
+public import BrownianMotion.StochasticIntegral.Predictable
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Topology NNReal ENNReal ProbabilityTheory

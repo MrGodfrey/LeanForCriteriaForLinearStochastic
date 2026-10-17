@@ -1,6 +1,10 @@
-import LinearStochastic.JointUsualBrownianGlobal
-import LinearStochastic.JointMartingaleRepresentation
-import LinearStochastic.LpOrthonormalCoordinates
+module
+
+public import LinearStochastic.JointUsualBrownianGlobal
+public import LinearStochastic.JointMartingaleRepresentation
+public import LinearStochastic.LpOrthonormalCoordinates
+
+@[expose] public section
 
 /-! The actual initial usual Brownian sigma algebra is trivial for L² random
 variables. This follows from the proved raw representation at horizon zero,

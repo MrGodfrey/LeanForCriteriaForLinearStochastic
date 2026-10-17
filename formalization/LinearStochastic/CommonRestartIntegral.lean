@@ -1,5 +1,9 @@
-import LinearStochastic.CommonShiftIntegral
-import LinearStochastic.CommonHorizonRestriction
+module
+
+public import LinearStochastic.CommonShiftIntegral
+public import LinearStochastic.CommonHorizonRestriction
+
+@[expose] public section
 
 /-! Restart compatibility for all times and arbitrary containing horizons. -/
 set_option autoImplicit false

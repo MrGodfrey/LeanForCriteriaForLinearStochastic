@@ -1,4 +1,8 @@
-import LinearStochastic.BSDEIntegralRange
+module
+
+public import LinearStochastic.BSDEIntegralRange
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonConditionalContinuity

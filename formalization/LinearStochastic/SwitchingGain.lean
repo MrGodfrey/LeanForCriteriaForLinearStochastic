@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingTimeMesh
-import Mathlib.MeasureTheory.Constructions.Polish.Basic
+module
+
+public import LinearStochastic.SwitchingTimeMesh
+public import Mathlib.MeasureTheory.Constructions.Polish.Basic
+
+@[expose] public section
 
 /-! An actual deterministic measurable gain schedule with the manuscript's
 half-open intervals. It is bounded on every compact prefix strictly before T. -/

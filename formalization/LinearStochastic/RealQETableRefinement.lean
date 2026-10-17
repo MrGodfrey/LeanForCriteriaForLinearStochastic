@@ -1,4 +1,8 @@
-import LinearStochastic.RealQEGapIntervals
+module
+
+public import LinearStochastic.RealQEGapIntervals
+
+@[expose] public section
 
 /-!
 # Refining an ordered sign table by one polynomial

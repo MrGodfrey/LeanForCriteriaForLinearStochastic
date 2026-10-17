@@ -1,4 +1,8 @@
-import LinearStochastic.CommonH2Paste
+module
+
+public import LinearStochastic.CommonH2Paste
+
+@[expose] public section
 
 /-! Orthogonal time splitting of actual predictable spacetime L² classes. -/
 set_option autoImplicit false
@@ -31,7 +35,7 @@ theorem norm_sq_split (a δ : ℝ≥0) (f : H2 𝓕 μ (a+δ)) :
     Measure.prod_mono (Measure.restrict_mono (Ioc_subset_Ioc_right (show a ≤ a+δ from le_add_right le_rfl)) le_rfl) le_rfl
   have hr : ν ≤ (timeMeasure_T (a+δ)).prod μ :=
     Measure.prod_mono (CommonShiftMeasure.interval_le a δ (a+δ) le_rfl) le_rfl
-  have hint := (memLp_two_iff_integrable_sq (ambient_memLp (a+δ) f).1).mp (ambient_memLp (a+δ) f)
+  have hint := (memLp_two_iff_integrable_sq (ambient_memLp (a+δ) f).aestronglyMeasurable).mp (ambient_memLp (a+δ) f)
   have hleft : ‖restriction hWm (show a ≤ a+δ from le_add_right le_rfl) f‖^2 =
       ∫ z, (f z)^2 ∂(timeMeasure_T a).prod μ := by
     rw [norm_sq_ambient]

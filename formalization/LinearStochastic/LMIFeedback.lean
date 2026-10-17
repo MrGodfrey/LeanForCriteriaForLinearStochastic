@@ -1,4 +1,8 @@
-import LinearStochastic.LMICoefficients
+module
+
+public import LinearStochastic.LMICoefficients
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.LMIFeedback

@@ -1,4 +1,8 @@
-import Mathlib
+module
+
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # The algebraic obstruction flag (paper Lemma `lem:flag`)

@@ -1,5 +1,9 @@
-import LinearStochastic.CommonTimeShift
-import LinearStochastic.RealTimeBridge
+module
+
+public import LinearStochastic.CommonTimeShift
+public import LinearStochastic.RealTimeBridge
+
+@[expose] public section
 
 /-! Actual measure transport of deterministic restart intervals. -/
 set_option autoImplicit false

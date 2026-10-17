@@ -1,0 +1,2042 @@
+--- a/BrownianMotion/Auxiliary/Adapted.lean
++++ b/BrownianMotion/Auxiliary/Adapted.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Indistinguishable
+ public import Mathlib.Probability.Process.Adapted
+@@ -103,8 +106,12 @@
+     by_cases hi0 : i = ⟨0, by simp [r]⟩
+     · have hj0 : ⟨0, by simp [r]⟩ ≠ j := by simp [← hi0, hij.ne]
+       simp [f, hi0, hj0.symm]
+-    · have hj0 : 0 < j.val := by grind
+-      have hj1 : ⟨0, by simp [r]⟩ ≠ j := by grind
++    · have hj0 : 0 < j.val := lt_of_le_of_lt (Nat.zero_le i.val) hij
++      have hj1 : ⟨0, by simp [r]⟩ ≠ j := by
++        intro heq
++        have := congrArg Fin.val heq
++        simp only [Fin.val_mk] at this
++        omega
+       simp only [hi0, ↓reduceDIte, hj1.symm, Set.disjoint_prod, Ioc_disjoint_Ioc, le_sup_iff,
+         inf_le_iff, OrderEmbedding.le_iff_le, disjoint_self, bot_eq_empty, univ_eq_empty_iff,
+         not_isEmpty_of_nonempty, or_false, f]
+--- a/BrownianMotion/Auxiliary/Algebra.lean
++++ b/BrownianMotion/Auxiliary/Algebra.lean
+@@ -1,14 +1,13 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.LinearAlgebra.Dimension.Finite
+ 
+ @[expose] public section
+ 
+--- TODO: remove if https://github.com/leanprover-community/mathlib4/pull/40909 has merged.
+-lemma Set.indicator_apply_apply {ι Ω M : Type*} [Zero M] (s : Set ι) (f : ι → Ω → M) (i : ι)
+-    (ω : Ω) :
+-    s.indicator f i ω = s.indicator (fun j ↦ f j ω) i := by
+-  by_cases h : i ∈ s <;> simp [h]
++-- `Set.indicator_apply_apply` is now provided by Mathlib.
+ 
+ /-- A finite sum of monotone functions is monotone. -/
+ lemma Monotone.finset_sum {ι κ M : Type*} [Preorder ι] [AddCommMonoid M] [Preorder M]
+--- a/BrownianMotion/Auxiliary/Analysis.lean
++++ b/BrownianMotion/Auxiliary/Analysis.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Analysis.InnerProductSpace.Basic
+ public import Mathlib.MeasureTheory.Function.LpSeminorm.LpNorm
+@@ -44,12 +47,7 @@
+ lemma lpNorm_congr {α ε : Type*} {m0 : MeasurableSpace α} {p : ℝ≥0∞} {μ : Measure α}
+     [NormedAddCommGroup ε] {f g : α → ε} (hfg : f =ᵐ[μ] g) :
+     lpNorm f p μ = lpNorm g p μ := by
+-  rw [lpNorm]
+-  split_ifs with h
+-  · rw [eLpNorm_congr_ae hfg, lpNorm, if_pos (h.congr hfg)]
+-  · rw [lpNorm, if_neg]
+-    contrapose h
+-    exact h.congr hfg.symm
++  simp only [lpNorm, eLpNorm_congr_ae hfg]
+ 
+ lemma lpNorm_rpow_nnreal_eq_integral {α ε : Type*} {m0 : MeasurableSpace α} {μ : Measure α}
+     [NormedAddCommGroup ε] {f : α → ε} {p : ℝ≥0} (hp : p ≠ 0)
+--- a/BrownianMotion/Auxiliary/ContinuousBilinForm.lean
++++ b/BrownianMotion/Auxiliary/ContinuousBilinForm.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.LinearAlgebra
+ public import Mathlib.LinearAlgebra.Matrix.BilinearForm
+--- a/BrownianMotion/Auxiliary/DenseCountable.lean
++++ b/BrownianMotion/Auxiliary/DenseCountable.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Topology.Bases
+ 
+--- a/BrownianMotion/Auxiliary/ENNReal.lean
++++ b/BrownianMotion/Auxiliary/ENNReal.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
+ 
+--- a/BrownianMotion/Auxiliary/Filtration.lean
++++ b/BrownianMotion/Auxiliary/Filtration.lean
+@@ -4,6 +4,9 @@
+ Authors: Thomas Zhu
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Probability.Process.Adapted
+ 
+--- a/BrownianMotion/Auxiliary/FiniteInf.lean
++++ b/BrownianMotion/Auxiliary/FiniteInf.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Data.Finset.Max
+ public import Mathlib.Data.Set.Finite.Lattice
+--- a/BrownianMotion/Auxiliary/HasLaw.lean
++++ b/BrownianMotion/Auxiliary/HasLaw.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Probability.Distributions.Gaussian.Real
+ 
+@@ -14,9 +17,7 @@
+ 
+ variable {𝓧} {m𝓧 : MeasurableSpace 𝓧} {X : Ω → 𝓧} {μ : Measure 𝓧} {P : Measure Ω}
+ 
+-lemma hasLaw_map (hX : AEMeasurable X P) : HasLaw X (P.map X) P where
+-  aemeasurable := hX
+-  map_eq := rfl
++-- `hasLaw_map` is provided by Mathlib in Lean 4.35.
+ 
+ section dirac
+ 
+--- a/BrownianMotion/Auxiliary/Indistinguishable.lean
++++ b/BrownianMotion/Auxiliary/Indistinguishable.lean
+@@ -4,6 +4,9 @@
+ Authors: Etienne Marion
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.MeasureTheory.Measure.MeasureSpaceDef
+ 
+--- a/BrownianMotion/Auxiliary/IsStoppingTime.lean
++++ b/BrownianMotion/Auxiliary/IsStoppingTime.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Probability.Process.Stopping
+ 
+--- a/BrownianMotion/Auxiliary/Jensen.lean
++++ b/BrownianMotion/Auxiliary/Jensen.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Analysis
+ public import BrownianMotion.Auxiliary.ENNReal
+@@ -70,7 +73,8 @@
+   swap; · simp [condExp_of_not_le hm]
+   by_cases h : eLpNormEssSup f μ = ∞
+   · simp [h]
+-  have hf' : MemLp f ∞ μ := ⟨hf, Ne.lt_top h⟩
++  have hf' : MemLp f ∞ μ := by
++    simpa [MemLp, eLpNorm_exponent_top hf] using Ne.lt_top h
+   have : (‖f ·‖) ≤ᵐ[μ] fun _ ↦ (eLpNormEssSup f μ).toReal := by
+     filter_upwards [enorm_ae_le_eLpNormEssSup f μ] with ω hω
+     exact (ofReal_le_iff_le_toReal h).1 (by simpa)
+@@ -81,7 +85,7 @@
+ omit [IsFiniteMeasure μ] in
+ lemma MemLp.condExp' {p : ℝ≥0∞} (hp : 1 ≤ p) (hf : MemLp f p μ) :
+     MemLp μ[f|m] p μ :=
+-  ⟨integrable_condExp.aestronglyMeasurable, (eLpNorm_condExp_le_eLpNorm f hp).trans_lt hf.2⟩
++  (eLpNorm_condExp_le_eLpNorm f hp).trans_lt hf
+ 
+ /-- If a function `f` is bounded almost everywhere by `R`, then so is its conditional
+ expectation. -/
+@@ -113,36 +117,38 @@
+   refine uniformIntegrable_of le_rfl ENNReal.one_ne_top
+     (fun n => (stronglyMeasurable_condExp.mono (hℱ n)).aestronglyMeasurable) fun ε hε => ?_
+   by_cases hne : eLpNorm g 1 μ = 0
+-  · rw [eLpNorm_eq_zero_iff hg.1 one_ne_zero] at hne
++  · rw [eLpNorm_eq_zero_iff one_ne_zero] at hne
+     refine ⟨0, fun n => (le_of_eq <|
+-      (eLpNorm_eq_zero_iff ((stronglyMeasurable_condExp.mono (hℱ n)).aestronglyMeasurable.indicator
+-        (hmeas n 0)) one_ne_zero).2 ?_).trans zero_le⟩
++      (eLpNorm_eq_zero_iff one_ne_zero).2 ?_).trans zero_le⟩
+     filter_upwards [condExp_congr_ae (m := ℱ n) hne] with x hx
+     simp only [zero_le, Set.ofPred_true, Set.indicator_univ, Pi.zero_apply, hx, condExp_zero]
+-  obtain ⟨δ, hδ, h⟩ := hg.eLpNorm_indicator_le le_rfl ENNReal.one_ne_top hε
+-  set C : ℝ≥0 := δ.toNNReal⁻¹ * (eLpNorm g 1 μ).toNNReal with hC
+-  have hCpos : 0 < C := mul_pos (inv_pos.2 (Real.toNNReal_pos.2 hδ))
+-    (ENNReal.toNNReal_pos hne hg.eLpNorm_lt_top.ne)
+-  have hδC : ENNReal.ofReal δ * (C : ℝ≥0∞) = eLpNorm g 1 μ := by
+-    rw [← Real.coe_toNNReal δ hδ.le, ← ENNReal.coe_nnreal_eq, ← ENNReal.coe_mul, hC,
+-      mul_inv_cancel_left₀ (Real.toNNReal_pos.2 hδ).ne', ENNReal.coe_toNNReal hg.eLpNorm_lt_top.ne]
+-  have : ∀ n, μ {x : Ω | C ≤ ‖(μ[g|ℱ n]) x‖₊} ≤ ENNReal.ofReal δ := by
++  obtain ⟨δ, hδ, h⟩ := hg.eLpNorm_indicator_le le_rfl one_ne_top hε
++  rcases eq_top_or_lt_top δ with rfl | hδ_top
++  · refine ⟨0, fun i ↦ ?_⟩
++    specialize h .univ
++    simp only [zero_le, Set.ofPred_true, Set.indicator_univ, MeasurableSet.univ, le_top,
++      forall_const] at h ⊢
++    exact (eLpNorm_condExp_le_eLpNorm g le_rfl).trans h
++  set C : ℝ≥0 := δ⁻¹.toNNReal * (eLpNorm g 1 μ).toNNReal with hC
++  have hCpos : 0 < C := _root_.mul_pos (toNNReal_pos (ENNReal.inv_ne_zero.2 hδ_top.ne)
++    (inv_ne_top.2 hδ.ne')) (toNNReal_pos hne hg.ne)
++  have : ∀ n, μ {x : Ω | C ≤ ‖(μ[g|ℱ n]) x‖₊} ≤ δ := by
+     intro n
+     have : C ^ ENNReal.toReal 1 * μ {x | ENNReal.ofNNReal C ≤ ‖μ[g|ℱ n] x‖₊} ≤
+-        eLpNorm μ[g|ℱ n] 1 μ ^ ENNReal.toReal 1 := by
+-      rw [ENNReal.toReal_one, ENNReal.rpow_one]
+-      convert mul_meas_ge_le_pow_eLpNorm μ one_ne_zero ENNReal.one_ne_top
+-        (stronglyMeasurable_condExp.mono (hℱ n)).aestronglyMeasurable C
++        eLpNorm μ[g | ℱ n] 1 μ ^ ENNReal.toReal 1 := by
++      rw [toReal_one, rpow_one]
++      convert!
++        mul_meas_ge_le_pow_eLpNorm μ one_ne_zero ENNReal.one_ne_top C
+       · rw [ENNReal.toReal_one, ENNReal.rpow_one, enorm_eq_nnnorm]
+-      · simp
+-    rw [ENNReal.toReal_one, ENNReal.rpow_one, mul_comm, ←
+-      ENNReal.le_div_iff_mul_le (Or.inl (ENNReal.coe_ne_zero.2 hCpos.ne'))
+-        (Or.inl ENNReal.coe_lt_top.ne)] at this
+-    simp_rw [ENNReal.coe_le_coe] at this
++    rw [toReal_one, rpow_one, mul_comm,
++      ← ENNReal.le_div_iff_mul_le (Or.inl (coe_ne_zero.2 hCpos.ne'))
++        (Or.inl coe_lt_top.ne)] at this
++    simp_rw [coe_le_coe] at this
+     refine this.trans ?_
+-    rw [ENNReal.div_le_iff_le_mul (Or.inl (ENNReal.coe_ne_zero.2 hCpos.ne'))
+-        (Or.inl ENNReal.coe_lt_top.ne), hδC, rpow_one]
+-    exact eLpNorm_condExp_le_eLpNorm _ le_rfl
++    rw [ENNReal.div_le_iff_le_mul (.inl (coe_ne_zero.2 hCpos.ne')) (.inl coe_lt_top.ne),
++      hC, ← toNNReal_mul, coe_toNNReal (mul_ne_top (inv_ne_top.2 hδ.ne') hg.ne),
++      ← mul_assoc, ENNReal.mul_inv_cancel hδ.ne' hδ_top.ne, one_mul, rpow_one]
++    exact eLpNorm_condExp_le_eLpNorm g (le_refl 1)
+   refine ⟨C, fun n => le_trans ?_ (h {x : Ω | C ≤ ‖(μ[g|ℱ n]) x‖₊} (hmeas n C) (this n))⟩
+   have hmeasℱ : MeasurableSet[ℱ n] {x : Ω | C ≤ ‖(μ[g|ℱ n]) x‖₊} :=
+     @StronglyMeasurable.measurableSet_le _ _ (ℱ n) _ _ _ _ _ _ stronglyMeasurable_const
+--- a/BrownianMotion/Auxiliary/LimitProcess.lean
++++ b/BrownianMotion/Auxiliary/LimitProcess.lean
+@@ -4,6 +4,9 @@
+ Authors: Etienne Marion
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Indistinguishable
+ public import Mathlib.Probability.Process.Filtration
+@@ -74,9 +77,7 @@
+   obtain ⟨g, hg1, hg2⟩ := h
+   refine ⟨c⁻¹ • g, hg1.const_smul _, ?_⟩
+   filter_upwards [hg2] with ω h1
+-  convert h1.const_smul c⁻¹
+-  · simp [hc]
+-  · simp
++  convert h1.const_smul c⁻¹ using 1 <;> simp [hc]
+ 
+ @[to_fun limitProcess_fun_neg]
+ lemma limitProcess_neg (X : ι → Ω → E) :
+--- a/BrownianMotion/Auxiliary/LinearAlgebra.lean
++++ b/BrownianMotion/Auxiliary/LinearAlgebra.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Analysis.InnerProductSpace.Dual
+ public import Mathlib.LinearAlgebra.Matrix.PosDef
+--- a/BrownianMotion/Auxiliary/Martingale.lean
++++ b/BrownianMotion/Auxiliary/Martingale.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne, Thomas Zhu
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Filtration
+ public import Mathlib.MeasureTheory.Function.ConditionalExpectation.CondJensen
+--- a/BrownianMotion/Auxiliary/MeanInequalities.lean
++++ b/BrownianMotion/Auxiliary/MeanInequalities.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.MeasureTheory.Integral.MeanInequalities
+ public import Mathlib.Analysis.Convex.Integral
+--- a/BrownianMotion/Auxiliary/MeasureTheory.lean
++++ b/BrownianMotion/Auxiliary/MeasureTheory.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Algebra
+ public import BrownianMotion.Auxiliary.Metric
+--- a/BrownianMotion/Auxiliary/Metric.lean
++++ b/BrownianMotion/Auxiliary/Metric.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Analysis.Normed.Module.Ball.Pointwise
+ public import Mathlib.Order.CompletePartialOrder
+--- a/BrownianMotion/Auxiliary/NNReal.lean
++++ b/BrownianMotion/Auxiliary/NNReal.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Data.NNReal.Basic
+ 
+--- a/BrownianMotion/Auxiliary/Nat.lean
++++ b/BrownianMotion/Auxiliary/Nat.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Algebra.Order.Floor.Semiring
+ public import Mathlib.Algebra.Order.Ring.Abs
+--- a/BrownianMotion/Auxiliary/StoppedProcess.lean
++++ b/BrownianMotion/Auxiliary/StoppedProcess.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Indistinguishable
+ public import BrownianMotion.StochasticIntegral.Cadlag
+--- a/BrownianMotion/Auxiliary/StoppedValue.lean
++++ b/BrownianMotion/Auxiliary/StoppedValue.lean
+@@ -4,6 +4,9 @@
+ Authors: Etienne Marion
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.LimitProcess
+ public import BrownianMotion.StochasticIntegral.Cadlag
+--- a/BrownianMotion/Auxiliary/StronglyMeasurablePath.lean
++++ b/BrownianMotion/Auxiliary/StronglyMeasurablePath.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.StochasticIntegral.Cadlag
+ public import Mathlib.Probability.Process.Adapted
+--- a/BrownianMotion/Auxiliary/Topology.lean
++++ b/BrownianMotion/Auxiliary/Topology.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Topology.MetricSpace.HolderNorm
+ 
+--- a/BrownianMotion/Continuity/Chaining.lean
++++ b/BrownianMotion/Continuity/Chaining.lean
+@@ -5,6 +5,9 @@
+ -/
+ module
+ 
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
++
+ public import BrownianMotion.Auxiliary.ENNReal
+ public import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
+ public import Mathlib.Order.CompletePartialOrder
+@@ -21,6 +24,8 @@
+ -/
+ 
+ @[expose] public section
++
++set_option backward.isDefEq.respectTransparency false
+ 
+ open Metric
+ open scoped ENNReal NNReal
+@@ -171,9 +176,7 @@
+         edist (f (chainingSequence C x k (m + i))) (f (chainingSequence C x k (m + i + 1))) := by
+   simp only [Nat.add_assoc, edist_comm (f x)]
+   convert edist_le_range_sum_edist (fun i => f (chainingSequence C x k (m + i))) (k - m)
+-  · rfl
+-  · simp
+-  · simp [(show m + (k - m) = k by lia)]
++  all_goals simp [(show m + (k - m) = k by omega)]
+ 
+ lemma edist_chainingSequence_le_sum_edist' {T : Type*} [PseudoEMetricSpace T] (f : E → T)
+     {m : ℕ} (hm : m ≤ k) :
+@@ -256,7 +259,7 @@
+   · gcongr with s t
+     exact le_trans (edist_triangle _ (X (c t)) _) (by gcongr; apply edist_triangle)
+   · simp only [ENNReal.add_iSup, add_assoc]
+-  · exact iSup_le (fun s => by gcongr <;> exact le_iSup (α := ENNReal) _ _)
++  · exact iSup_le (fun s => by gcongr <;> apply le_iSup_of_le s <;> rfl)
+   · congr 1
+     conv_lhs => congr; ext s; rw [iSup_subtype]
+     rw [iSup_comm]
+@@ -264,7 +267,7 @@
+     conv_lhs => congr; ext s; rw [iSup_subtype']
+   · simp only [ENNReal.iSup_add]
+   · rw [add_assoc]
+-    exact add_le_add_right (iSup_le (fun s => by gcongr <;> exact le_iSup (α := ENNReal) _ _)) _
++    exact add_le_add_right (iSup_le (fun s => by gcongr <;> apply le_iSup_of_le s <;> rfl)) _
+   · conv_lhs => right; congr; ext s; rw [edist_comm]
+     conv_rhs => left; congr; ext s; congr; ext t; rw [edist_comm]
+     ring
+--- a/BrownianMotion/Continuity/CoveringNumber.lean
++++ b/BrownianMotion/Continuity/CoveringNumber.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.ENNReal
+ public import BrownianMotion.Auxiliary.MeasureTheory
+--- a/BrownianMotion/Continuity/HasBoundedInternalCoveringNumber.lean
++++ b/BrownianMotion/Continuity/HasBoundedInternalCoveringNumber.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Continuity.CoveringNumber
+ 
+--- a/BrownianMotion/Continuity/IsKolmogorovProcess.lean
++++ b/BrownianMotion/Continuity/IsKolmogorovProcess.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.FiniteInf
+ public import BrownianMotion.Auxiliary.MeanInequalities
+--- a/BrownianMotion/Continuity/KolmogorovChentsov.lean
++++ b/BrownianMotion/Continuity/KolmogorovChentsov.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Topology
+ public import BrownianMotion.Continuity.LimitModification
+@@ -336,7 +339,7 @@
+     HolderOnWith (C ω ^ p⁻¹).toNNReal β (fun (t : T') ↦ X t ω) {t' | (t' : T) ∈ U} := by
+   intro s hs t ht
+   have h_edist_lt_top : edist s t < ∞ := by
+-    calc edist s t ≤ Metric.ediam U := Metric.edist_le_ediam_of_mem hs ht
++    calc edist s t ≤ Metric.ediam U := Metric.edist_le_ediam_of_mem (x := (s : T)) (y := (t : T)) hs ht
+     _ < ∞ := hT.ediam_lt_top
+   have h_dist_top : edist s t ^ (β : ℝ) ≠ ∞ := by
+     simp only [ne_eq, ENNReal.rpow_eq_top_iff, NNReal.coe_pos, not_or, not_and, not_lt,
+--- a/BrownianMotion/Continuity/KolmogorovChentsovInequality.lean
++++ b/BrownianMotion/Continuity/KolmogorovChentsovInequality.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Continuity.IsKolmogorovProcess
+ public import Mathlib.Data.Set.FiniteExhaustion
+--- a/BrownianMotion/Continuity/LimitModification.lean
++++ b/BrownianMotion/Continuity/LimitModification.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.DenseCountable
+ public import Mathlib.MeasureTheory.Constructions.Polish.Basic
+--- a/BrownianMotion/Gaussian/BrownianMotion.lean
++++ b/BrownianMotion/Gaussian/BrownianMotion.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.HasLaw
+ public import BrownianMotion.Continuity.KolmogorovChentsov
+@@ -150,14 +153,13 @@
+   hasGaussianLaw I := by
+     have := (law ⊥).isProbabilityMeasure
+     obtain rfl | hI := I.eq_empty_or_nonempty
+-    · constructor
++    · refine { aemeasurable := aemeasurable_pi_lambda (fun _ ↦ (law _).aemeasurable),
++                 isGaussian_map := ?_ }
+       have : P.map (fun ω ↦ Finset.restrict ∅ fun x ↦ X x ω) = .dirac Classical.ofNonempty := by
+         ext s -
+         apply Subsingleton.set_cases (p := fun s ↦ Measure.map _ _ s = _)
+         · simp
+         simp only [measure_univ]
+-        exact @measure_univ _ _ _
+-          (Measure.isProbabilityMeasure_map (aemeasurable_pi_lambda _ fun _ ↦ (law _).aemeasurable))
+       rw [this]
+       infer_instance
+     have := incrementsToRestrict_increments_ofFin'_ae_eq_restrict ℝ h_bot I
+@@ -406,8 +408,7 @@
+ -- We easily have that `m3 ≤ m1 ≤ mΩ`.
+   have hm1 : m1 ≤ mΩ := by
+     apply Measurable.comap_le
+-    apply @measurable_pi_lambda _ _ _ mΩ
+-    exact hX
++    exact @measurable_pi_lambda _ _ _ mΩ _ _ hX
+   have hm3 : m3 ≤ m1 := by
+     apply iInf₂_le_of_le 1 (by simp)
+     rw [natural_eq_comap]
+@@ -486,7 +487,7 @@
+   -- as `ε → 0⁺`, and we can conclude by uniqueness of the limit.
+   refine tendsto_nhds_unique h1 ?_
+   refine Tendsto.congr' (f₁ := fun ε ↦ P.real A * ∫ ω, f (fun t ↦ X t ω - X ε ω) ∂P) ?_ ?_
+-  · apply eventually_nhdsGT (I.min' hI |>.2)
++  · apply eventually_nhdsGT (show (0 : ℝ≥0) < (I.min' hI : ℝ≥0) from (I.min' hI).2)
+     rintro ε ⟨h1, h2⟩
+     exact (key ε h1 h2).symm
+   refine Filter.Tendsto.const_mul (b := P.real A) ?_
+@@ -505,7 +506,7 @@
+   fun_prop
+ 
+ lemma hasLaw_preBrownian : HasLaw (fun ω ↦ (preBrownian · ω)) gaussianLimit gaussianLimit where
+-  aemeasurable := (measurable_pi_lambda _ measurable_preBrownian).aemeasurable
++  aemeasurable := (measurable_pi_iff.mpr measurable_preBrownian).aemeasurable
+   map_eq := Measure.map_id
+ 
+ lemma isPreBrownianReal_preBrownian : IsPreBrownianReal preBrownian gaussianLimit :=
+@@ -590,7 +591,7 @@
+ 
+ lemma hasLaw_brownian : HasLaw (fun ω ↦ (brownian · ω)) gaussianLimit gaussianLimit :=
+   isBrownianReal_brownian.hasLaw_gaussianLimit
+-    (measurable_pi_lambda _ fun t ↦ measurable_brownian t).aemeasurable
++    (measurable_pi_iff.mpr (fun t ↦ measurable_brownian t)).aemeasurable
+ 
+ lemma hasLaw_brownian_eval {t : ℝ≥0} :
+     HasLaw (brownian t) (gaussianReal 0 t) gaussianLimit :=
+--- a/BrownianMotion/Gaussian/CovMatrix.lean
++++ b/BrownianMotion/Gaussian/CovMatrix.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.ContinuousBilinForm
+ public import BrownianMotion.Auxiliary.MeasureTheory
+--- a/BrownianMotion/Gaussian/Gaussian.lean
++++ b/BrownianMotion/Gaussian/Gaussian.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Probability.Distributions.Gaussian.CharFun
+ public import Mathlib.Probability.Distributions.Gaussian.HasGaussianLaw.Basic
+--- a/BrownianMotion/Gaussian/GaussianProcess.lean
++++ b/BrownianMotion/Gaussian/GaussianProcess.lean
+@@ -4,6 +4,9 @@
+ Authors: Etienne Marion
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Probability.Distributions.Gaussian.IsGaussianProcess.Independence
+ 
+--- a/BrownianMotion/Gaussian/Moment.lean
++++ b/BrownianMotion/Gaussian/Moment.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Probability.Distributions.Gaussian.Real
+ 
+--- a/BrownianMotion/Gaussian/ProjectiveLimit.lean
++++ b/BrownianMotion/Gaussian/ProjectiveLimit.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.MeasureTheory
+ public import BrownianMotion.Auxiliary.NNReal
+--- a/BrownianMotion/Gaussian/StochasticProcesses.lean
++++ b/BrownianMotion/Gaussian/StochasticProcesses.lean
+@@ -1,4 +1,7 @@
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.MeasureTheory.Measure.MeasureSpaceDef
+ 
+--- a/BrownianMotion/StochasticIntegral/ApproxSeq.lean
++++ b/BrownianMotion/StochasticIntegral/ApproxSeq.lean
+@@ -4,6 +4,9 @@
+ Authors: Kexing Ying
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.StochasticIntegral.Cadlag
+ public import BrownianMotion.StochasticIntegral.UniformIntegrable
+@@ -361,7 +364,7 @@
+     τn).memLp_of_tendstoInMeasure (tendstoInMeasure_of_tendsto_ae
+       (fun m ↦ (integrable_stoppedValue_of_discreteApproxSequence h hτ_le τn m).1) <|
+       tendsto_stoppedValue_discreteApproxSequence _ hRC))
+-    (uniformIntegrable_stoppedValue_discreteApproxSequence h hτ_le τn).2.1
++    (uniformIntegrable_stoppedValue_discreteApproxSequence h hτ_le τn).unifIntegrable
+     (tendstoInMeasure_of_tendsto_ae
+       (fun m ↦ (integrable_stoppedValue_of_discreteApproxSequence h hτ_le τn m).1) <|
+       tendsto_stoppedValue_discreteApproxSequence _ hRC)
+@@ -374,9 +377,7 @@
+   UniformIntegrable.integrable_of_tendstoInMeasure
+     (h.uniformIntegrable_stoppedValue_of_countable_range τn' τn'.isStoppingTime
+       (discreteApproxSequence_of_le hτ_le τn) τn'.countable)
+-    (tendstoInMeasure_of_tendsto_eLpNorm one_ne_zero
+-      (fun m ↦ (integrable_stoppedValue_of_discreteApproxSequence h hτ_le τn m).1)
+-      (aestronglyMeasurable_stoppedValue_of_discreteApproxSequence h hRC hτ_le τn') <|
++    (tendstoInMeasure_of_tendsto_eLpNorm one_ne_zero <|
+       tendsto_eLpNorm_stoppedValue_of_discreteApproxSequence h hRC hτ_le τn)
+ 
+ lemma tendsto_eLpNorm_stoppedValue_of_discreteApproxSequence_of_le
+@@ -388,7 +389,7 @@
+     (fun m ↦ (((uniformIntegrable_stoppedValue_discreteApproxSequence_of_le
+       h τn hτn_le).memLp m).integrable le_rfl).1) ?_
+     (h.uniformIntegrable_stoppedValue_of_countable_range τn τn.isStoppingTime
+-      hτn_le τn.countable).2.1
++      hτn_le τn.countable).unifIntegrable
+     (tendstoInMeasure_of_tendsto_ae
+       (fun m ↦ (((uniformIntegrable_stoppedValue_discreteApproxSequence_of_le
+       h τn hτn_le).memLp m).integrable le_rfl).1) <|
+--- a/BrownianMotion/StochasticIntegral/Cadlag.lean
++++ b/BrownianMotion/StochasticIntegral/Cadlag.lean
+@@ -5,6 +5,10 @@
+ -/
+ module
+ 
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
++
++public import Mathlib.Topology.Order.Cadlag
+ public import Mathlib.Analysis.Normed.Group.Continuity
+ public import Mathlib.Topology.Algebra.MulAction
+ public import Mathlib.Topology.Instances.ENNReal.Lemmas
+@@ -23,19 +27,9 @@
+ 
+ variable {ι E : Type*} [TopologicalSpace ι]
+ 
+-/-- The predicate that a function is right continuous. -/
+-abbrev IsRightContinuous [TopologicalSpace E] [Preorder ι] (f : ι → E) :=
+-  ∀ a, ContinuousWithinAt f (Set.Ioi a) a
+-
+-lemma Continuous.isRightContinuous [TopologicalSpace E] [Preorder ι]
+-    {f : ι → E} (hf : Continuous f) :
+-    IsRightContinuous f :=
+-  fun _ ↦ hf.continuousWithinAt
+-
+-lemma IsRightContinuous.continuous_comp {F : Type*} [TopologicalSpace E]
+-    [TopologicalSpace F] [Preorder ι] {g : E → F}
+-    {f : ι → E} (hg : Continuous g) (hf : IsRightContinuous f) : IsRightContinuous (g ∘ f) :=
+-  fun x ↦ (hg.tendsto (f x)).comp (hf x)
++-- The basic continuity and càdlàg API is now supplied by Mathlib.
++alias IsCadlag.right_continuous := IsCadlag.isRightContinuous
++alias IsCadlag.left_limit := IsCadlag.tendsto_nhdsLT
+ 
+ /-- The composition of a right-continuous function with a monotone continuous function is
+ right-continuous. -/
+@@ -52,35 +46,6 @@
+ lemma isRightContinuous_const [TopologicalSpace E] [Preorder ι] (c : E) :
+     IsRightContinuous (fun _ ↦ c : ι → E) :=
+   continuous_const.isRightContinuous
+-
+-@[to_additive (attr := to_fun)]
+-lemma IsRightContinuous.mul [TopologicalSpace E] [Preorder ι] [Mul E] [ContinuousMul E]
+-    {f g : ι → E} (hf : IsRightContinuous f) (hg : IsRightContinuous g) :
+-    IsRightContinuous (f * g) :=
+-  fun x ↦ (hf x).mul (hg x)
+-
+-@[to_additive (attr := to_fun) sub]
+-lemma IsRightContinuous.div' [TopologicalSpace E] [Preorder ι] [Div E] [ContinuousDiv E]
+-    {f g : ι → E} (hf : IsRightContinuous f) (hg : IsRightContinuous g) :
+-    IsRightContinuous (f / g) :=
+-  fun x ↦ (hf x).div' (hg x)
+-
+-@[to_fun]
+-lemma IsRightContinuous.div [Preorder ι] [GroupWithZero E] [TopologicalSpace E]
+-    [ContinuousInv₀ E] [ContinuousMul E] {f g : ι → E}
+-    (hf : IsRightContinuous f) (hg : IsRightContinuous g) (h : ∀ x, g x ≠ 0) :
+-    IsRightContinuous (f / g) :=
+-  fun x ↦ (hf x).div (hg x) (h x)
+-
+-/-- A function is cadlag if it is right-continuous and has left limits. -/
+-structure IsCadlag [TopologicalSpace E] [Preorder ι] (f : ι → E) : Prop where
+-  right_continuous : IsRightContinuous f
+-  left_limit : ∀ x, ∃ l, Tendsto f (𝓝[<] x) (𝓝 l)
+-
+-lemma Continuous.isCadlag [TopologicalSpace E] [Preorder ι] {f : ι → E} (hf : Continuous f) :
+-    IsCadlag f where
+-  right_continuous := hf.isRightContinuous
+-  left_limit x := ⟨f x, hf.continuousAt.continuousWithinAt⟩
+ 
+ @[simp]
+ lemma isCadlag_const [TopologicalSpace E] [Preorder ι] (c : E) : IsCadlag (fun _ ↦ c : ι → E) :=
+@@ -175,46 +140,12 @@
+ end Jump
+ 
+ @[to_additive (attr := to_fun)]
+-lemma IsCadlag.mul {E : Type*} [Mul E] [TopologicalSpace E] [ContinuousMul E] [Preorder ι]
+-    {f g : ι → E} (hf : IsCadlag f) (hg : IsCadlag g) :
+-    IsCadlag (f * g) := by
+-  refine ⟨fun i ↦ ContinuousWithinAt.mul (hf.1 i) (hg.1 i), fun i ↦ ?_⟩
+-  obtain ⟨l, hl⟩ := hf.2 i
+-  obtain ⟨m, hm⟩ := hg.2 i
+-  exact ⟨l * m, hl.mul hm⟩
+-
+-@[to_fun]
+-lemma IsCadlag.const_smul {E : Type*} [SMul ℝ E] [TopologicalSpace E] [ContinuousSMul ℝ E]
+-    [Preorder ι] {f : ι → E} (hf : IsCadlag f) (r : ℝ) :
+-    IsCadlag (r • f) := by
+-  refine ⟨fun i ↦ ContinuousWithinAt.const_smul (hf.1 i) r, fun i ↦ ?_⟩
+-  obtain ⟨l, hl⟩ := hf.2 i
+-  exact ⟨r • l, hl.const_smul r⟩
+-
+-@[to_additive (attr := to_fun)]
+ lemma IsCadlag.inv {E : Type*} [Group E] [TopologicalSpace E] [ContinuousInv E] [Preorder ι]
+     {f : ι → E} (hf : IsCadlag f) :
+     IsCadlag (f⁻¹) := by
+   refine ⟨fun i ↦ ContinuousWithinAt.inv (hf.1 i), fun i ↦ ?_⟩
+   obtain ⟨l, hl⟩ := hf.2 i
+   exact ⟨l⁻¹, hl.inv⟩
+-
+-@[to_fun]
+-lemma IsCadlag.sub {E : Type*} [Sub E] [TopologicalSpace E] [ContinuousSub E]
+-    [Preorder ι] {f g : ι → E} (hf : IsCadlag f) (hg : IsCadlag g) :
+-    IsCadlag (f - g) := by
+-  refine ⟨fun i ↦ ContinuousWithinAt.sub (hf.1 i) (hg.1 i), fun i ↦ ?_⟩
+-  obtain ⟨l, hl⟩ := hf.2 i
+-  obtain ⟨m, hm⟩ := hg.2 i
+-  exact ⟨l - m, hl.sub hm⟩
+-
+-lemma IsCadlag.continuous_comp {κ E F : Type*} [TopologicalSpace κ] [TopologicalSpace E]
+-    [TopologicalSpace F] [Preorder κ] {g : E → F} {f : κ → E}
+-    (hg : Continuous g) (hf : IsCadlag f) : IsCadlag (g ∘ f) where
+-  right_continuous := IsRightContinuous.continuous_comp hg hf.right_continuous
+-  left_limit i := by
+-    obtain ⟨l, hl⟩ := hf.left_limit i
+-    exact ⟨g l, (hg.tendsto l).comp hl⟩
+ 
+ lemma IsCadlag.norm {κ F : Type*} [TopologicalSpace κ] [NormedAddCommGroup F] [Preorder κ]
+     {f : κ → F} (hf : IsCadlag f) : IsCadlag (fun i ↦ ‖f i‖) :=
+@@ -229,8 +160,8 @@
+     [PartialOrder κ] [TopologicalSpace κ] [TopologicalSpace E]
+     {f : κ → E} (hf : IsCadlag f) {ψ : ι → κ} (hψ : Monotone ψ) (hψc : Continuous ψ) :
+     IsCadlag (f ∘ ψ) where
+-  right_continuous := hf.right_continuous.comp_of_monotone_of_continuous hψ hψc
+-  left_limit x := by
++  isRightContinuous := hf.right_continuous.comp_of_monotone_of_continuous hψ hψc
++  tendsto_nhdsLT x := by
+     by_cases h : ∃ y < x, ψ y = ψ x
+     · obtain ⟨y, hyx, hy⟩ := h
+       refine ⟨f (ψ x), ?_⟩
+@@ -263,8 +194,3 @@
+   · have : y ∈ V := hR.2 ▸ ⟨hyR, hR.1 hgt⟩
+     grind
+ 
+-/-- A càdlàg function maps compact sets to bounded sets. -/
+-lemma isBounded_image_of_isCadlag_of_isCompact {E : Type*} [LinearOrder ι] [PseudoMetricSpace E]
+-    {f : ι → E} (hf : IsCadlag f) {s : Set ι} (hs : IsCompact s) :
+-    IsBounded (f '' s) :=
+-  isBounded_image_of_isLocallyBounded_of_isCompact hs (isLocallyBounded_of_isCadlag hf)
+--- a/BrownianMotion/StochasticIntegral/DoobLp.lean
++++ b/BrownianMotion/StochasticIntegral/DoobLp.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne, Thomas Zhu
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Martingale
+ public import BrownianMotion.StochasticIntegral.Cadlag
+@@ -181,7 +184,7 @@
+       have : Tendsto (fun r : ℕ ↦ (((r + 1)⁻¹ : ℝ≥0) : ℝ≥0∞)) atTop (𝓝 0) := by
+         rw [← ENNReal.tendsto_toNNReal_iff (by finiteness) (by finiteness)]
+         change Tendsto (fun r : ℕ ↦ _) _ _
+-        simp only [ne_eq, AddLeftCancelMonoid.add_eq_zero, Nat.cast_eq_zero, one_ne_zero, and_false,
++        simp only [ne_eq, add_eq_zero, Nat.cast_eq_zero, one_ne_zero, and_false,
+           not_false_eq_true, ENNReal.coe_inv, ENNReal.coe_add, ENNReal.coe_natCast, ENNReal.coe_one,
+           comp_apply, ENNReal.toNNReal_inv, ENNReal.toNNReal_zero]
+         exact tendsto_inv_add_atTop_nhds_zero_nat (𝕜 := ℝ≥0)
+@@ -199,7 +202,7 @@
+       have : Tendsto (fun r : ℕ ↦ (((r + 1)⁻¹ : ℝ≥0) : ℝ≥0∞)) atTop (𝓝 0) := by
+         rw [← ENNReal.tendsto_toNNReal_iff (by finiteness) (by finiteness)]
+         change Tendsto (fun r : ℕ ↦ _) _ _
+-        simp only [ne_eq, AddLeftCancelMonoid.add_eq_zero, Nat.cast_eq_zero, one_ne_zero, and_false,
++        simp only [ne_eq, add_eq_zero, Nat.cast_eq_zero, one_ne_zero, and_false,
+           not_false_eq_true, ENNReal.coe_inv, ENNReal.coe_add, ENNReal.coe_natCast, ENNReal.coe_one,
+           comp_apply, ENNReal.toNNReal_inv, ENNReal.toNNReal_zero]
+         exact tendsto_inv_add_atTop_nhds_zero_nat (𝕜 := ℝ≥0)
+--- a/BrownianMotion/StochasticIntegral/L2M.lean
++++ b/BrownianMotion/StochasticIntegral/L2M.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.StochasticIntegral.Predictable
+ public import Mathlib.Probability.Process.Predictable
+--- a/BrownianMotion/StochasticIntegral/LocalMartingale.lean
++++ b/BrownianMotion/StochasticIntegral/LocalMartingale.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.IsStoppingTime
+ public import BrownianMotion.Auxiliary.Martingale
+--- a/BrownianMotion/StochasticIntegral/LocalizingSequence.lean
++++ b/BrownianMotion/StochasticIntegral/LocalizingSequence.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne, Kexing Ying
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.IsStoppingTime
+ public import BrownianMotion.Auxiliary.StoppedProcess
+--- a/BrownianMotion/StochasticIntegral/Locally.lean
++++ b/BrownianMotion/StochasticIntegral/Locally.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne, Kexing Ying
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.StochasticIntegral.Cadlag
+ public import BrownianMotion.StochasticIntegral.LocalizingSequence
+@@ -322,7 +325,7 @@
+     IsRightContinuous fun t ↦ s.indicator (X t) ω := by
+   by_cases hω : ω ∈ s
+   · simpa [Set.indicator_of_mem hω] using hC ω
+-  · simp [Set.indicator_of_notMem hω, IsRightContinuous, isRightContinuous_const]
++  · simpa [Set.indicator_of_notMem hω] using (isRightContinuous_const (ι := ι) (0 : E))
+ 
+ lemma stronglyAdapted_indicator [OrderBot ι]
+     (hX : StronglyAdapted 𝓕 X) {τ : Ω → WithTop ι} (hτ : IsStoppingTime 𝓕 τ) :
+@@ -333,7 +336,8 @@
+     (hX : IsStronglyProgressive 𝓕 X) {τ : Ω → WithTop ι} (hτ : IsStoppingTime 𝓕 τ) :
+     IsStronglyProgressive 𝓕 fun i ↦ {ω | ⊥ < τ ω}.indicator (X i) := by
+   refine fun i ↦ StronglyMeasurable.indicator (hX i) ?_
+-  exact MeasurableSet.preimage (𝓕.mono bot_le _ <| hτ.measurableSet_gt _) measurable_snd
++  exact (𝓕.mono (show ⊥ ≤ i from bot_le) _ (hτ.measurableSet_gt ⊥)).preimage
++    (@measurable_snd (Set.Iic i) Ω _ (𝓕 i))
+ 
+ variable [TopologicalSpace ι] [SecondCountableTopology ι] [TopologicalSpace.PseudoMetrizableSpace ι]
+   [OrderBot ι] [OrderTopology ι]
+--- a/BrownianMotion/StochasticIntegral/OptionalSampling.lean
++++ b/BrownianMotion/StochasticIntegral/OptionalSampling.lean
+@@ -4,6 +4,9 @@
+ Authors: Kexing Ying
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.Adapted
+ public import BrownianMotion.Auxiliary.StoppedValue
+@@ -132,8 +135,7 @@
+       (hσ.measurableSpace_mono (σn.isStoppingTime m) (σn.le m) _ hs)
+   refine tendsto_nhds_unique (f := (fun m ↦ ∫ (ω : Ω) in s, stoppedValue X (τn' m) ω ∂μ))
+     (l := atTop) ?_ (this ▸ ?_)
+-  · refine tendsto_setIntegral_of_L1' _ (integrable_stoppedValue_of_discreteApproxSequence' h hRC
+-        (fun _ ↦ min_le_of_left_le <| hτ_le _) τn').aestronglyMeasurable ?_
++  · refine tendsto_setIntegral_of_L1' _ ?_
+       (tendsto_eLpNorm_stoppedValue_of_discreteApproxSequence_of_le h hRC τn'
+         (τn.discreteApproxSequence_of_le_inf_le_of_left σn hτ_le)) _
+     rw [eventually_atTop]
+@@ -141,7 +143,7 @@
+       (DiscreteApproxSequence.isStoppingTime _ _)
+       (τn.discreteApproxSequence_of_le_inf_le_of_left σn hτ_le m)
+       (DiscreteApproxSequence.countable _ m))⟩
+-  · refine tendsto_setIntegral_of_L1' _ hintgbl.aestronglyMeasurable ?_
++  · refine tendsto_setIntegral_of_L1' _ ?_
+       (tendsto_eLpNorm_stoppedValue_of_discreteApproxSequence h hRC hτ_le τn) _
+     rw [eventually_atTop]
+     exact ⟨0, fun m _ ↦ (h.integrable_stoppedValue_of_countable_range _
+--- a/BrownianMotion/StochasticIntegral/Predictable.lean
++++ b/BrownianMotion/StochasticIntegral/Predictable.lean
+@@ -4,6 +4,9 @@
+ Authors: Kexing Ying, Greg Neustroev, Shehzad Hathi
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.MeasureTheory.SetSemiring
+ public import Mathlib.Probability.Process.Adapted
+--- a/BrownianMotion/StochasticIntegral/SimpleProcess.lean
++++ b/BrownianMotion/StochasticIntegral/SimpleProcess.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne, Thomas Zhu
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import BrownianMotion.Auxiliary.StoppedProcess
+ public import Mathlib.MeasureTheory.Constructions.BorelSpace.ContinuousLinearMap
+--- a/BrownianMotion/StochasticIntegral/UniformIntegrable.lean
++++ b/BrownianMotion/StochasticIntegral/UniformIntegrable.lean
+@@ -5,6 +5,9 @@
+ -/
+ module
+ 
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
++
+ public import BrownianMotion.Auxiliary.Adapted
+ public import BrownianMotion.Auxiliary.Jensen
+ public import BrownianMotion.Auxiliary.StoppedProcess
+@@ -18,6 +21,8 @@
+ -/
+ 
+ public section
++
++set_option maxHeartbeats 800000
+ 
+ open Filter MeasureTheory
+ open scoped NNReal ENNReal Topology
+@@ -37,14 +42,23 @@
+         ∀ ε : ℝ, 0 < ε → ∃ C : ℝ≥0,
+           ∀ i, eLpNorm ({x | C < ‖X i x‖₊}.indicator (X i)) p μ ≤ ENNReal.ofReal ε := by
+   rw [uniformIntegrable_iff hp hp']
+-  refine ⟨fun h ↦ ⟨h.1, fun ε hε ↦ ?_⟩, fun h ↦ ⟨h.1, fun ε hε ↦ ?_⟩⟩
+-  · obtain ⟨C, hC⟩ := h.2 ε hε
+-    refine ⟨C, fun i ↦ (eLpNorm_mono fun x ↦ ?_).trans (hC i)⟩
++  constructor
++  · rintro ⟨hm, h⟩
++    refine ⟨hm, fun ε hε ↦ ?_⟩
++    obtain ⟨C, hC⟩ := h (ENNReal.ofReal ε) (ENNReal.ofReal_pos.mpr hε)
++    refine ⟨C, fun i ↦ (eLpNorm_mono ((hm i).indicator₀
++      (aestronglyMeasurable_const.nullMeasurableSet_lt (hm i).nnnorm)) (fun x ↦ ?_)).trans (hC i)⟩
+     by_cases hx : C < ‖X i x‖₊
+     · simp [hx, hx.le]
+     · simp [hx]
+-  · obtain ⟨C, hC⟩ := h.2 ε hε
+-    refine ⟨C + 1, fun i ↦ (eLpNorm_mono fun x ↦ ?_).trans (hC i)⟩
++  · rintro ⟨hm, h⟩
++    refine ⟨hm, fun ε hε ↦ ?_⟩
++    by_cases ht : ε = ∞
++    · exact ⟨0, fun _ ↦ ht ▸ le_top⟩
++    obtain ⟨C, hC⟩ := h ε.toReal (ENNReal.toReal_pos hε.ne' ht)
++    refine ⟨C + 1, fun i ↦ ((eLpNorm_mono ((hm i).indicator₀
++      (aestronglyMeasurable_const.nullMeasurableSet_le (hm i).nnnorm))
++      (fun x ↦ ?_)).trans (hC i)).trans_eq (ENNReal.ofReal_toReal ht)⟩
+     by_cases hx : C + 1 ≤ ‖X i x‖₊
+     · have hx' : C < ‖X i x‖₊ := (lt_add_of_pos_right C zero_lt_one).trans_le hx
+       simp [hx, hx']
+@@ -61,7 +75,8 @@
+   -- We first show that this tail function is antitone so that convergence at `atTop` can be checked
+   -- by `ENNReal.tendsto_atTop_zero_iff_le_of_antitone htail_mono`.
+   have htail_anti : Antitone tail := by
+-    refine fun c d hcd => iSup_mono fun k => eLpNorm_mono_enorm fun ω => ?_
++    refine fun c d hcd => iSup_mono fun k => eLpNorm_mono_enorm ((hX k).indicator₀
++      (aestronglyMeasurable_const.nullMeasurableSet_lt (hX k).nnnorm)) (fun ω => ?_)
+     by_cases hω : d < ‖X k ω‖₊
+     · simp [hω, hcd.trans_lt hω]
+     · simp [hω]
+@@ -85,7 +100,7 @@
+   have hs : NullMeasurableSet {ω | c < ‖f ω‖} μ :=
+     aestronglyMeasurable_const.nullMeasurableSet_lt hf.aestronglyMeasurable.norm
+   have hs_eq : {ω | c < ‖f ω‖₊} = {ω | c < ‖f ω‖} := by ext; simp [NNReal.coe_lt_coe.symm]
+-  simp [eLpNorm_one_eq_lintegral_enorm, hs_eq,
++  simp [eLpNorm_one_eq_lintegral_enorm (hf.indicator₀ hs).aestronglyMeasurable, hs_eq,
+     ← ofReal_integral_norm_eq_lintegral_enorm (hf.indicator₀ hs),
+     norm_indicator_eq_indicator_norm, integral_indicator₀ hs]
+ 
+@@ -134,20 +149,16 @@
+ lemma UniformIntegrable.add [NormedAddCommGroup E] {X Y : ι → Ω → E} {p : ℝ≥0∞} (hp : 1 ≤ p)
+     (hX : UniformIntegrable X p μ) (hY : UniformIntegrable Y p μ) :
+     UniformIntegrable (X + Y) p μ := by
+-  refine ⟨fun _ ↦ (hX.1 _).add (hY.1 _), ?_, ?_⟩
+-  · rcases hX with ⟨hX₁, hX₂, hX₃⟩
+-    rcases hY with ⟨hY₁, hY₂, hY₃⟩
+-    exact hX₂.add hY₂ hp hX₁ hY₁
+-  · obtain ⟨C_X, hC_X⟩ := hX.2.2
+-    obtain ⟨C_Y, hC_Y⟩ := hY.2.2
+-    exact ⟨C_X + C_Y,
+-      fun i ↦ le_trans (eLpNorm_add_le (hX.1 i) (hY.1 i) hp) (add_le_add (hC_X i) (hC_Y i))⟩
++  refine ⟨hX.unifIntegrable.add hY.unifIntegrable hp, ?_⟩
++  obtain ⟨C_X, hC_X⟩ := hX.2
++  obtain ⟨C_Y, hC_Y⟩ := hY.2
++  exact ⟨C_X + C_Y, fun i ↦ (eLpNorm_add_le hp).trans (by simpa using add_le_add (hC_X i) (hC_Y i))⟩
+ 
+ lemma UniformIntegrable.neg [NormedAddCommGroup E] {X : ι → Ω → E} {p : ℝ≥0∞}
+     (hX : UniformIntegrable X p μ) :
+     UniformIntegrable (-X) p μ := by
+-  refine ⟨fun i => (hX.1 i).neg, hX.unifIntegrable.neg, ?_⟩
+-  obtain ⟨C, hC⟩ := hX.2.2
++  refine ⟨hX.unifIntegrable.neg, ?_⟩
++  obtain ⟨C, hC⟩ := hX.2
+   exact ⟨C, by simp [hC]⟩
+ 
+ lemma UniformIntegrable.sub [NormedAddCommGroup E] {X Y : ι → Ω → E} {p : ℝ≥0∞}
+@@ -160,19 +171,16 @@
+     (hY : UniformIntegrable Y p μ) (mX : ∀ i, AEStronglyMeasurable (X i) μ)
+     (hX : ∀ i, ∃ j, ∀ᵐ ω ∂μ, ‖X i ω‖ ≤ ‖Y j ω‖) :
+     UniformIntegrable X p μ := by
+-  refine ⟨mX, fun ε hε ↦ ?_, ?_⟩
+-  · obtain ⟨δ, hδ, h⟩ := hY.2.1 hε
+-    refine ⟨δ, hδ, fun i s hs hμs ↦ let ⟨j, hj⟩ := hX i
+-      le_trans (eLpNorm_mono_ae ?_) <| h j s hs hμs⟩
+-    filter_upwards [hj] with ω hω
+-    rw [Set.indicator]
+-    split_ifs with hmem
+-    · rw [Set.indicator_of_mem hmem]
+-      exact hω
+-    · simp [Set.indicator_of_notMem hmem]
+-  · obtain ⟨C, hC⟩ := hY.2.2
+-    exact ⟨C, fun i ↦ let ⟨j, hj⟩ := hX i
+-      le_trans (eLpNorm_mono_ae hj) <| hC j⟩
++  refine ⟨unifIntegrable_iff.mpr ?_, ?_⟩
++  · intro ε hε
++    obtain ⟨δ, hδ, h⟩ := unifIntegrable_iff.mp hY.unifIntegrable ε hε
++    refine ⟨δ, hδ, fun i s hμs ↦ ?_⟩
++    obtain ⟨j, hj⟩ := hX i
++    exact (eLpNorm_mono_ae (mX i).restrict (hj.filter_mono ae_restrict_le)).trans (h j s hμs)
++  · obtain ⟨C, hC⟩ := hY.2
++    refine ⟨C, fun i ↦ ?_⟩
++    obtain ⟨j, hj⟩ := hX i
++    exact (eLpNorm_mono_ae (mX i) hj).trans (hC j)
+ 
+ lemma UniformIntegrable.norm [NormedAddCommGroup E] {X : ι → Ω → E} {p : ℝ≥0∞}
+     (hY : UniformIntegrable X p μ) :
+@@ -225,10 +233,10 @@
+     (mX : ∀ i, AEStronglyMeasurable (X i) μ) (hX : ∀ i, ∀ᵐ ω ∂μ, ‖X i ω‖ₑ ≤ Y ω) :
+     UniformIntegrable X 1 μ := by
+   have : ∫⁻ x, Y x ∂μ ≠ ⊤ := by
+-    simpa [eLpNorm_one_eq_lintegral_enorm, enorm_eq_self] using ne_of_lt hY.2
+-  have hY_fin : ∀ᵐ ω ∂μ, Y ω < ∞ := ae_lt_top' hY.1.aemeasurable this
++    simpa [eLpNorm_one_eq_lintegral_enorm hY.aestronglyMeasurable, enorm_eq_self] using ne_of_lt hY
++  have hY_fin : ∀ᵐ ω ∂μ, Y ω < ∞ := ae_lt_top' hY.aestronglyMeasurable.aemeasurable this
+   have hY_real : MemLp (fun ω => (Y ω).toReal) 1 μ := mem_L1_toReal_of_lintegral_ne_top
+-    hY.1.aemeasurable this
++    hY.aestronglyMeasurable.aemeasurable this
+   refine uniformIntegrable_of_dominated_singleton (by simp) (by simp) hY_real mX fun i => ?_
+   filter_upwards [hX i, hY_fin] with ω hbound hfin
+   exact norm_le_toReal_of_enorm_le hfin.ne hbound
+@@ -238,16 +246,21 @@
+     {𝓕 : κ → MeasurableSpace Ω} (h𝓕 : ∀ i, 𝓕 i ≤ mΩ) :
+     UniformIntegrable (fun (p : ι × κ) ↦ μ[X p.1 | 𝓕 p.2]) 1 μ := by
+   have hX' := hX
+-  obtain ⟨hX1, hX2, ⟨C, hC⟩⟩ := hX
+-  refine ⟨fun p ↦ (stronglyMeasurable_condExp.mono (h𝓕 p.2)).aestronglyMeasurable, ?_,
++  obtain ⟨hX2, C, hC⟩ := hX
++  refine ⟨?_,
+     ⟨C, fun p ↦ (eLpNorm_condExp_le_eLpNorm (X p.1) le_rfl).trans (hC p.1)⟩⟩
+   refine unifIntegrable_of le_rfl (by simp)
+     (fun p ↦ (stronglyMeasurable_condExp.mono (h𝓕 p.2)).aestronglyMeasurable) fun ε hε ↦ ?_
+-  obtain ⟨δ, δ_pos, hδ⟩ := hX2 hε
+-  lift δ to ℝ≥0 using δ_pos.le
+-  have hδ' : δ ≠ 0 := by
+-    convert δ_pos.ne'
+-    simp
++  obtain ⟨δ₀, hδ₀, hδ₀spec⟩ := unifIntegrable_iff'.mp hX2 ε hε
++  have hfinite : min δ₀ 1 < ∞ := lt_of_le_of_lt (min_le_right _ _) ENNReal.one_lt_top
++  let δ : ℝ≥0 := (min δ₀ 1).toNNReal
++  have hδcoe : (δ : ℝ≥0∞) = min δ₀ 1 := ENNReal.coe_toNNReal hfinite.ne
++  have δ_pos : 0 < δ := ENNReal.toNNReal_pos (ne_of_gt (lt_min hδ₀ zero_lt_one)) hfinite.ne
++  have hδ (i : ι) (s : Set Ω) (hs : MeasurableSet s) (hμs : μ s ≤ δ) :
++      eLpNorm (s.indicator (X i)) 1 μ ≤ ε := by
++    rw [eLpNorm_indicator_eq_eLpNorm_restrict hs]
++    exact hδ₀spec i s hs (hμs.trans (hδcoe.le.trans (min_le_left _ _)))
++  have hδ' : δ ≠ 0 := δ_pos.ne'
+   refine ⟨(⨆ i, eLpNorm (X i) 1 μ).toNNReal / δ + 1, fun p ↦ ?_⟩
+   rw [eLpNorm_congr_ae (condExp_indicator ?_ ?_).symm]
+   rotate_left
+@@ -260,7 +273,8 @@
+   _ ≤ eLpNorm μ[X p.1 | 𝓕 p.2] 1 μ / ((⨆ i, eLpNorm (X i) 1 μ).toNNReal / δ + 1) := by
+     simp_rw [← ENNReal.coe_le_coe, ← enorm_eq_nnnorm]
+     grw [meas_ge_le_lintegral_div (by fun_prop) (by simp) (by simp),
+-      ← eLpNorm_one_eq_lintegral_enorm]
++      ← eLpNorm_one_eq_lintegral_enorm
++        (stronglyMeasurable_condExp.mono (h𝓕 p.2)).aestronglyMeasurable]
+     norm_cast
+   _ ≤ eLpNorm μ[X p.1 | 𝓕 p.2] 1 μ / ((⨆ i, eLpNorm (X i) 1 μ) / δ) := by
+     grw [ENNReal.coe_toNNReal (ne_top_of_le_ne_top (by simp) <| iSup_le hC),
+@@ -271,21 +285,17 @@
+   _ ≤ 1 * δ := by
+     grw [eLpNorm_condExp_le_eLpNorm _ le_rfl]
+     gcongr
+-    exact ENNReal.div_le_one_of_le <| le_iSup (α := ℝ≥0∞) _ p.1
++    apply ENNReal.div_le_one_of_le
++    exact le_iSup (fun i ↦ eLpNorm (X i) 1 μ) p.1
+   _ = _ := by simp
+ 
+-lemma UnifIntegrable.comp {κ : Type*} [NormedAddCommGroup E]
+-    {X : ι → Ω → E} {p : ℝ≥0∞} (hX : UnifIntegrable X p μ) (f : κ → ι) :
+-    UnifIntegrable (X ∘ f) p μ := by
+-  intro ε hε
+-  obtain ⟨δ, hδ, h⟩ := hX hε
+-  exact ⟨δ, ⟨hδ, fun i ↦ h (f i)⟩⟩
++-- `UnifIntegrable.comp` is now provided by Mathlib.
+ 
+ lemma UniformIntegrable.comp {κ : Type*} [NormedAddCommGroup E]
+     {X : ι → Ω → E} {p : ℝ≥0∞} (hX : UniformIntegrable X p μ) (f : κ → ι) :
+     UniformIntegrable (X ∘ f) p μ := by
+-  obtain ⟨hX1, hX2, ⟨C, hC⟩⟩ := hX
+-  exact ⟨fun _ ↦ hX1 _, hX2.comp f, ⟨C, fun i ↦ hC (f i)⟩⟩
++  obtain ⟨hX2, C, hC⟩ := hX
++  exact ⟨hX2.comp f, ⟨C, fun i ↦ hC (f i)⟩⟩
+ 
+ lemma UniformIntegrable.condExp {X : ι → Ω → E} [NormedAddCommGroup E] [NormedSpace ℝ E]
+     [CompleteSpace E] (hX : UniformIntegrable X 1 μ) {𝓕 : ι → MeasurableSpace Ω}
+@@ -304,29 +314,32 @@
+   have hq' : q ≠ ∞ := by
+     contrapose hp
+     simp [hp]
+-  refine ⟨hX1, fun ε hε ↦ ?_, ?_⟩
+-  · have {s : Set Ω} (hs : MeasurableSet s) (t : ι) :
+-        eLpNorm (s.indicator (X t)) q μ ≤
+-          (eLpNorm (X t) p μ) * (μ s) ^ (q⁻¹ - p⁻¹).toReal := calc
+-      eLpNorm (s.indicator (X t)) q μ
+-        = eLpNorm ((s.indicator (fun _ ↦ 1 : Ω → ℝ)) • (X t)) q μ := by
+-        congr with ω
+-        simp [Set.indicator]
+-      _ ≤ eLpNorm (s.indicator (fun _ ↦ 1 : Ω → ℝ)) (q⁻¹ - p⁻¹)⁻¹ μ *
+-          eLpNorm (X t) p μ := by
+-        have : (q⁻¹ - p⁻¹)⁻¹.HolderTriple p q := ⟨by
+-          rw [inv_inv, tsub_add_cancel_of_le (by simp [hp.le])]⟩
+-        grw [← eLpNorm_smul_le_mul_eLpNorm (r := q) (hX1 t)]
+-        exact aestronglyMeasurable_const.indicator hs
+-      _ = (eLpNorm (X t) p μ) * (μ s) ^ (q⁻¹ - p⁻¹).toReal := by
+-        rw [eLpNorm_indicator_const hs, mul_comm]
+-        · simp
+-        · simp only [ne_eq, ENNReal.inv_eq_zero, ENNReal.sub_eq_top_iff, ENNReal.inv_eq_top,
+-            not_and, Decidable.not_not]
+-          intro
+-          simp_all
+-        · simpa [tsub_eq_zero_iff_le]
+-    refine ⟨(ε / (C + 1)) ^ (q⁻¹ - p⁻¹)⁻¹.toReal, by positivity, fun t s hs hμs ↦ ?_⟩
++  refine ⟨unifIntegrable_iff'.mpr (fun ε hε ↦ ?_), ?_⟩
++  · by_cases ht : ε = ∞
++    · exact ⟨1, zero_lt_one, fun _ _ _ _ ↦ ht ▸ le_top⟩
++    have hεreal : 0 < ε.toReal := ENNReal.toReal_pos hε.ne' ht
++    have {s : Set Ω} (hs : MeasurableSet s) (t : ι) :
++          eLpNorm (s.indicator (X t)) q μ ≤
++            (eLpNorm (X t) p μ) * (μ s) ^ (q⁻¹ - p⁻¹).toReal := calc
++        eLpNorm (s.indicator (X t)) q μ
++          = eLpNorm ((s.indicator (fun _ ↦ 1 : Ω → ℝ)) • (X t)) q μ := by
++          congr with ω
++          simp [Set.indicator]
++        _ ≤ eLpNorm (s.indicator (fun _ ↦ 1 : Ω → ℝ)) (q⁻¹ - p⁻¹)⁻¹ μ *
++            eLpNorm (X t) p μ := by
++          have : (q⁻¹ - p⁻¹)⁻¹.HolderTriple p q := ⟨by
++            rw [inv_inv, tsub_add_cancel_of_le (by simp [hp.le])]⟩
++          grw [← eLpNorm_smul_le_mul_eLpNorm (r := q) (aestronglyMeasurable_const.indicator hs) (hX1 t)]
++        _ = (eLpNorm (X t) p μ) * (μ s) ^ (q⁻¹ - p⁻¹).toReal := by
++          rw [eLpNorm_indicator_const hs.nullMeasurableSet, mul_comm]
++          · simp
++          · simp only [ne_eq, ENNReal.inv_eq_zero, ENNReal.sub_eq_top_iff, ENNReal.inv_eq_top,
++              not_and, Decidable.not_not]
++            intro
++            simp_all
++          · simpa [tsub_eq_zero_iff_le]
++    refine ⟨ENNReal.ofReal ((ε.toReal / (C + 1)) ^ (q⁻¹ - p⁻¹)⁻¹.toReal), ENNReal.ofReal_pos.mpr (Real.rpow_pos_of_pos (div_pos hεreal (by positivity)) _), fun t s hs hμs ↦ ?_⟩
++    rw [← eLpNorm_indicator_eq_eLpNorm_restrict hs, ← ENNReal.ofReal_toReal ht]
+     grw [this hs t, hμs, hX2, le_self_add (a := (C : ℝ≥0∞)) (b := 1), ENNReal.ofReal_rpow_of_nonneg,
+       ENNReal.toReal_inv,
+       Real.rpow_inv_rpow, show (C + 1 : ℝ≥0∞) = .ofReal (C + 1: ℝ) by simp [ENNReal.ofReal_add],
+@@ -410,7 +423,8 @@
+     (hf : ∀ n, AEStronglyMeasurable (f n) μ) : eLpNorm g p μ ≤ C := by
+   calc
+     _ ≤ atTop.liminf (fun (n : ℕ) => eLpNorm (f n) p μ) :=
+-      Lp.eLpNorm_lim_le_liminf_eLpNorm (fun n => hf n) g h_tendsto
++      Lp.eLpNorm_lim_le_liminf_eLpNorm (fun n => hf n) g
++        (aestronglyMeasurable_of_tendsto_ae atTop hf h_tendsto) h_tendsto
+     _ ≤ C := by
+       refine liminf_le_of_le (by isBoundedDefault) (fun b hb => ?_)
+       obtain ⟨n, hn⟩ := Filter.eventually_atTop.mp hb
+--- a/KolmogorovExtension4/CompactSystem.lean
++++ b/KolmogorovExtension4/CompactSystem.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne, Peter Pfaffelhuber
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.MeasureTheory.Constructions.ClosedCompactCylinders
+ public import Mathlib.Topology.Compactness.CompactSystem
+--- a/KolmogorovExtension4/KolmogorovExtension.lean
++++ b/KolmogorovExtension4/KolmogorovExtension.lean
+@@ -5,6 +5,10 @@
+ -/
+ module
+ 
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
++
++public import Mathlib.Topology.MetricSpace.Polish
+ public import KolmogorovExtension4.RegularContent
+ public import Mathlib.MeasureTheory.Constructions.ProjectiveFamilyContent
+ public import Mathlib.MeasureTheory.Measure.RegularityCompacts
+--- a/KolmogorovExtension4/RegularContent.lean
++++ b/KolmogorovExtension4/RegularContent.lean
+@@ -4,6 +4,9 @@
+ Authors: Rémy Degenne, Peter Pfaffelhuber
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import KolmogorovExtension4.CompactSystem
+ public import Mathlib.MeasureTheory.Measure.AddContent
+--- a/MathFin/Foundations/BrownianCylinderGeneration.lean
++++ b/MathFin/Foundations/BrownianCylinderGeneration.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralL2
+ 
+--- a/MathFin/Foundations/BrownianExpMoment.lean
++++ b/MathFin/Foundations/BrownianExpMoment.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralBrownian
+ public import MathFin.Foundations.BrownianMartingale
+--- a/MathFin/Foundations/BrownianMartingale.lean
++++ b/MathFin/Foundations/BrownianMartingale.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ public import BrownianMotion.Gaussian.BrownianMotion
+--- a/MathFin/Foundations/DiscreteIto.lean
++++ b/MathFin/Foundations/DiscreteIto.lean
+@@ -22,6 +22,9 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ 
+--- a/MathFin/Foundations/DoleansStepRepresentation.lean
++++ b/MathFin/Foundations/DoleansStepRepresentation.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoFormulaGBM
+ public import MathFin.Foundations.ItoIntegralLocality
+--- a/MathFin/Foundations/DoobLpMaximalInequality.lean
++++ b/MathFin/Foundations/DoobLpMaximalInequality.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib.Probability.Martingale.OptionalStopping
+ public import Mathlib.MeasureTheory.Function.ConditionalExpectation.CondJensen
+@@ -46,6 +49,8 @@
+ -/
+ 
+ @[expose] public section
++
++set_option backward.isDefEq.respectTransparency false
+ 
+ open ProbabilityTheory ENNReal Filter Set Finset
+ open scoped NNReal
+@@ -822,14 +827,15 @@
+ /-- Conversion lemma: for a non-negative `f : Ω → ℝ` and `1 < p`,
+     `eLpNorm f (ofReal p) μ = (∫⁻ ω, ofReal(f ω ^ p) ∂μ)^(1/p)`. -/
+ private lemma eLpNorm_eq_lintegral_ofReal_pow
+-    {f : Ω → ℝ} (hf_nn : ∀ ω, 0 ≤ f ω) {p : ℝ} (hp : 1 < p) :
++    {f : Ω → ℝ} (hf_nn : ∀ ω, 0 ≤ f ω) {p : ℝ} (hp : 1 < p)
++    (hf_meas : AEStronglyMeasurable f μ) :
+     eLpNorm f (ENNReal.ofReal p) μ
+       = (∫⁻ ω, ENNReal.ofReal (f ω ^ p) ∂μ) ^ (1 / p) := by
+   have hp_pos : 0 < p := lt_trans zero_lt_one hp
+   have hp_ne_zero : (ENNReal.ofReal p) ≠ 0 := by
+     simp [hp_pos]
+   have hp_ne_top : (ENNReal.ofReal p) ≠ ⊤ := ENNReal.ofReal_ne_top
+-  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal hp_ne_zero hp_ne_top]
++  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal hp_ne_zero hp_ne_top hf_meas]
+   rw [ENNReal.toReal_ofReal hp_pos.le]
+   congr 1
+   apply lintegral_congr_ae
+@@ -946,8 +952,9 @@
+           eLpNorm (f n) (ENNReal.ofReal p) μ := by
+   -- `Finset.sup'` is definitionally `runMax f n`.
+   change eLpNorm (runMax f n) (ENNReal.ofReal p) μ ≤ _
+-  rw [eLpNorm_eq_lintegral_ofReal_pow (runMax_nonneg hnonneg n) hp,
+-      eLpNorm_eq_lintegral_ofReal_pow (hnonneg n) hp]
++  rw [eLpNorm_eq_lintegral_ofReal_pow (runMax_nonneg hnonneg n) hp
++      (runMax_measurable hsub n).aestronglyMeasurable,
++      eLpNorm_eq_lintegral_ofReal_pow (hnonneg n) hp (hsub.integrable n).aestronglyMeasurable]
+   set A : ℝ≥0∞ := ∫⁻ ω, ENNReal.ofReal ((runMax f n ω) ^ p) ∂μ
+   set B : ℝ≥0∞ := ∫⁻ ω, ENNReal.ofReal ((f n ω) ^ p) ∂μ
+   set C : ℝ≥0∞ := ENNReal.ofReal (p / (p - 1)) with hC_def
+@@ -1015,7 +1022,7 @@
+       ≤ ENNReal.ofReal (p / (p - 1)) * eLpNorm (f n) (ENNReal.ofReal p) μ := by
+   have hsub := martingale_norm_submartingale hf
+   have hbound := maximal_ineq_Lp hsub (fun _ _ ↦ norm_nonneg _) hp n
+-  rwa [eLpNorm_norm] at hbound
++  rwa [eLpNorm_norm (f n) (hf.integrable n).aestronglyMeasurable] at hbound
+ 
+ /-! ## The `L^p` dominator of an `L^p`-bounded `ℕ`-indexed martingale
+ 
+@@ -1093,7 +1100,10 @@
+   have hDoob : eLpNorm (fun ω ↦ runMaxNorm f n ω) (ENNReal.ofReal p) μ
+       ≤ ENNReal.ofReal (p / (p - 1)) * ENNReal.ofReal R :=
+     (Martingale.eLpNorm_norm_runMax_le hf hp n).trans (by gcongr; exact hbound _)
+-  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (by simp [hp_pos]) ENNReal.ofReal_ne_top,
++  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (by simp [hp_pos]) ENNReal.ofReal_ne_top
++      (show AEStronglyMeasurable (runMaxNorm f n) μ from
++        (Finset.measurable_range_sup'' (n := n) (fun k _ ↦
++          (measurable_of_martingale hf k).norm)).aestronglyMeasurable),
+       ENNReal.toReal_ofReal hp_pos.le] at hDoob
+   have hpow := ENNReal.rpow_le_rpow hDoob hp_pos.le
+   rw [← ENNReal.rpow_mul, one_div, inv_mul_cancel₀ hp_pos.ne', ENNReal.rpow_one] at hpow
+@@ -1150,8 +1160,9 @@
+     (hbound : ∀ n, eLpNorm (f n) (ENNReal.ofReal p) μ ≤ ENNReal.ofReal R) :
+     MemLp (dominator f) (ENNReal.ofReal p) μ := by
+   have hp_pos : 0 < p := lt_trans zero_lt_one hp
+-  refine ⟨(measurable_dominator (measurable_of_martingale hf)).aestronglyMeasurable, ?_⟩
+-  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (by simp [hp_pos]) ENNReal.ofReal_ne_top,
++  have hmeas : AEStronglyMeasurable (dominator f) μ := (measurable_dominator (measurable_of_martingale hf)).aestronglyMeasurable
++  change eLpNorm (dominator f) (ENNReal.ofReal p) μ < ⊤
++  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal (by simp [hp_pos]) ENNReal.ofReal_ne_top hmeas,
+       ENNReal.toReal_ofReal hp_pos.le]
+   refine ENNReal.rpow_lt_top_of_nonneg (by positivity) (lt_of_le_of_lt ?_
+     (enormSup_rpow_lintegral_lt_top hp hf hbound)).ne
+--- a/MathFin/Foundations/DriftProcessPredictable.lean
++++ b/MathFin/Foundations/DriftProcessPredictable.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoProcessPredictable
+ public import MathFin.Foundations.FiniteMeasureCauchySchwarz
+@@ -329,11 +332,15 @@
+     -- ∫ (drift)² ∂prod ≤ (T:ℝ)² · ∫ (⇑V)² ∂prod
+     have hmemD_prod : MemLp (Function.uncurry (driftSimpleProcess hBmeas V.val)) 2
+         ((timeMeasure_T T).prod μ) :=
+-      ⟨(hpredD.mono 𝓕.predictable_le_prod).aestronglyMeasurable, by
+-        rw [← eLpNorm_trim 𝓕.predictable_le_prod hpredD]; exact hmemD.2⟩
++      by
++        unfold MemLp
++        rw [← eLpNorm_trim 𝓕.predictable_le_prod hpredD]
++        exact hmemD.eLpNorm_lt_top
+     have hmemV_prod : MemLp (Function.uncurry ⇑V.val) 2 ((timeMeasure_T T).prod μ) :=
+-      ⟨(V.val.isStronglyPredictable.mono 𝓕.predictable_le_prod).aestronglyMeasurable, by
+-        rw [← eLpNorm_trim 𝓕.predictable_le_prod V.val.isStronglyPredictable]; exact hmemV.2⟩
++      by
++        unfold MemLp
++        rw [← eLpNorm_trim 𝓕.predictable_le_prod V.val.isStronglyPredictable]
++        exact hmemV.eLpNorm_lt_top
+     have hintD := hmemD_prod.integrable_sq
+     have hintV := hmemV_prod.integrable_sq
+     rw [integral_prod _ hintD]
+--- a/MathFin/Foundations/ExpMartingaleIndepIncrements.lean
++++ b/MathFin/Foundations/ExpMartingaleIndepIncrements.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ 
+--- a/MathFin/Foundations/ExtendOfNormIsometry.lean
++++ b/MathFin/Foundations/ExtendOfNormIsometry.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ 
+--- a/MathFin/Foundations/FiniteMeasureCauchySchwarz.lean
++++ b/MathFin/Foundations/FiniteMeasureCauchySchwarz.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ 
+--- a/MathFin/Foundations/GaussianMoments.lean
++++ b/MathFin/Foundations/GaussianMoments.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ public import BrownianMotion.Gaussian.Moment
+--- a/MathFin/Foundations/ItoFormulaGBM.lean
++++ b/MathFin/Foundations/ItoFormulaGBM.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoFormulaItoProcess
+ 
+--- a/MathFin/Foundations/ItoFormulaItoProcess.lean
++++ b/MathFin/Foundations/ItoFormulaItoProcess.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoFormulaLocalized
+ 
+--- a/MathFin/Foundations/ItoFormulaLocalized.lean
++++ b/MathFin/Foundations/ItoFormulaLocalized.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoFormulaTD
+ public import MathFin.Foundations.BrownianExpMoment
+--- a/MathFin/Foundations/ItoFormulaRemainder.lean
++++ b/MathFin/Foundations/ItoFormulaRemainder.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.GaussianMoments
+ public import MathFin.Foundations.QuadraticVariationL2
+--- a/MathFin/Foundations/ItoFormulaSquaredL2.lean
++++ b/MathFin/Foundations/ItoFormulaSquaredL2.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ -- `import Mathlib` and `BrownianMotion.*` come transitively through
+ -- `QuadraticVariationL2`; this file's own surface needs only:
+--- a/MathFin/Foundations/ItoFormulaTD.lean
++++ b/MathFin/Foundations/ItoFormulaTD.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.WeightedQuadraticVariation
+ public import MathFin.Foundations.ItoFormulaTDRemainder
+--- a/MathFin/Foundations/ItoFormulaTDRemainder.lean
++++ b/MathFin/Foundations/ItoFormulaTDRemainder.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoFormulaRemainder
+ public import MathFin.Foundations.ItoLemma2D
+--- a/MathFin/Foundations/ItoIntegralBrownian.lean
++++ b/MathFin/Foundations/ItoIntegralBrownian.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ -- `import Mathlib` + `BrownianMotion.*` come transitively through `ItoIntegralCLM`.
+ public import MathFin.Foundations.ItoIntegralCLM
+--- a/MathFin/Foundations/ItoIntegralCLM.lean
++++ b/MathFin/Foundations/ItoIntegralCLM.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralL2
+ public import BrownianMotion.StochasticIntegral.Predictable
+--- a/MathFin/Foundations/ItoIntegralL2.lean
++++ b/MathFin/Foundations/ItoIntegralL2.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ public import BrownianMotion.Gaussian.BrownianMotion
+@@ -365,8 +368,10 @@
+     (V : SimpleProcess ℝ (natFiltration (mΩ := mΩ) hBmeas)) :
+     MemLp (Function.uncurry ⇑V) 2
+       ((timeMeasure.prod μ).trim (natFiltration hBmeas).predictable_le_prod) :=
+-  ⟨V.isStronglyPredictable.aestronglyMeasurable,
+-   by rw [eLpNorm_trim _ V.isStronglyPredictable]; exact (memLp_uncurry_prod hBmeas V).2⟩
++  by
++    unfold MemLp
++    rw [eLpNorm_trim _ V.isStronglyPredictable]
++    exact memLp_uncurry_prod hBmeas V
+ 
+ /-- **The embedding** of a simple process into the predictable `L²` space, as the class of
+ its uncurried version. The codomain `Lp ℝ 2 ((timeMeasure.prod μ).trim …)` is *definitionally*
+--- a/MathFin/Foundations/ItoIntegralLocality.lean
++++ b/MathFin/Foundations/ItoIntegralLocality.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralBrownian
+ public import MathFin.Foundations.ItoIntegralProcessIsometry
+@@ -693,10 +696,10 @@
+           = ENNReal.ofReal ‖smulAdapted T a hBmeas _ (hZMm M) (M : ℝ) (hZMb M) φ‖ from by
+         rw [Lp.norm_def, ENNReal.ofReal_toReal (Lp.eLpNorm_ne_top _)]]
+       exact ENNReal.ofReal_le_ofReal (hbound M)
+-    exact ⟨hmeas, lt_of_le_of_lt ((MeasureTheory.Lp.eLpNorm_lim_le_liminf_eLpNorm
++    exact lt_of_le_of_lt ((MeasureTheory.Lp.eLpNorm_lim_le_liminf_eLpNorm
+       (fun M : ℕ ↦ Lp.aestronglyMeasurable
+-        (smulAdapted T a hBmeas _ (hZMm M) (M : ℝ) (hZMb M) φ)) _ hlim).trans hle)
+-      ENNReal.ofReal_lt_top⟩
++        (smulAdapted T a hBmeas _ (hZMm M) (M : ℝ) (hZMb M) φ)) _ hmeas hlim).trans hle)
++      ENNReal.ofReal_lt_top
+   exact ⟨hZφ.toLp _, hZφ.coeFn_toLp,
+     itoIntegralCLM_T_smulAdapted_of_memLp hB T a hBmeas Z hZm φ hφ hZφ⟩
+ 
+--- a/MathFin/Foundations/ItoIntegralProcess.lean
++++ b/MathFin/Foundations/ItoIntegralProcess.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralL2
+ 
+--- a/MathFin/Foundations/ItoIntegralProcessContinuousModification.lean
++++ b/MathFin/Foundations/ItoIntegralProcessContinuousModification.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralProcessGeneral
+ public import MathFin.Foundations.ItoIntegralProcessLocalMartingale
+@@ -104,8 +107,8 @@
+   have hL2 : ∫ ω, ‖f ω‖ ∂μ ≤ ‖itoSimpleProcessLp hB hBmeas V.val T‖ := by
+     rw [itoSimpleProcessLp, Lp.norm_toLp,
+       ← ENNReal.toReal_ofReal (integral_nonneg fun ω ↦ norm_nonneg _),
+-      ofReal_integral_norm_eq_lintegral_enorm hfi, ← eLpNorm_one_eq_lintegral_enorm]
+-    exact ENNReal.toReal_mono hf.2.ne (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num) hf.1)
++      ofReal_integral_norm_eq_lintegral_enorm hfi, ← eLpNorm_one_eq_lintegral_enorm hf.aestronglyMeasurable]
++    exact ENNReal.toReal_mono hf.eLpNorm_lt_top.ne (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num))
+   -- terminal Itô isometry on the simple embedding
+   have hterm : ‖itoSimpleProcessLp hB hBmeas V.val T‖ = ‖simpleAssembly_T (μ := μ) T hBmeas V‖ := by
+     rw [← itoProcessCLM_simpleAssembly_T hB T T hBmeas V, itoProcessCLM_norm_terminal hB T hBmeas]
+@@ -287,7 +290,7 @@
+   have hV := (approxSeq T hBmeas φ).choose_spec
+   set F : ℕ → Ω → ℝ := fun n ω ↦ itoSimpleProcess hBmeas (V n).val t ω
+   have hFmeas : ∀ n, AEStronglyMeasurable (F n) μ :=
+-    fun n ↦ (memLp_itoSimpleProcess hB hBmeas (V n).val t).1
++    fun n ↦ (memLp_itoSimpleProcess hB hBmeas (V n).val t).aestronglyMeasurable
+   -- (a) F → itoContinuousMod a.e. ⟹ in measure
+   have hmeasG : TendstoInMeasure μ F atTop (fun ω ↦ itoContinuousMod T hBmeas φ t ω) := by
+     refine tendstoInMeasure_of_tendsto_ae hFmeas ?_
+@@ -311,8 +314,7 @@
+     simp only [Lp.toLp_coeFn]
+     exact hLp
+   have hmeasH : TendstoInMeasure μ F atTop (⇑(itoProcessCLM hB T t hBmeas φ)) :=
+-    tendstoInMeasure_of_tendsto_eLpNorm (by norm_num) hFmeas
+-      (Lp.aestronglyMeasurable _) heLp
++    tendstoInMeasure_of_tendsto_eLpNorm (by norm_num) heLp
+   exact tendstoInMeasure_ae_unique hmeasG hmeasH
+ 
+ omit hB in
+--- a/MathFin/Foundations/ItoIntegralProcessGeneral.lean
++++ b/MathFin/Foundations/ItoIntegralProcessGeneral.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralProcessMartingale
+ public import MathFin.Foundations.ItoIntegralCLM
+@@ -87,7 +90,7 @@
+   simp only [hT'eq] at hcond
+   -- conditional expectation is an L² contraction.
+   simp only [itoSimpleProcessLp, itoSimpleLp, Lp.norm_toLp]
+-  refine ENNReal.toReal_mono (memLp_itoSimple hB hBmeas V).2.ne ?_
++  refine ENNReal.toReal_mono (memLp_itoSimple hB hBmeas V).eLpNorm_lt_top.ne ?_
+   calc eLpNorm (itoSimpleProcess hBmeas V t) 2 μ
+       = eLpNorm (μ[itoSimple hBmeas V | natFiltration hBmeas t]) 2 μ :=
+         (eLpNorm_congr_ae hcond).symm
+@@ -234,7 +237,7 @@
+       (𝕜 := ℝ) ((natFiltration hBmeas).le t)
+     rwa [Lp.toLp_coeFn] at h
+   rw [Lp.norm_def, ← itoIntegralCLM_T_norm hB T hBmeas φ, Lp.norm_def]
+-  refine ENNReal.toReal_mono (Lp.memLp (itoIntegralCLM_T hB T hBmeas φ)).2.ne ?_
++  refine ENNReal.toReal_mono (Lp.memLp (itoIntegralCLM_T hB T hBmeas φ)).eLpNorm_lt_top.ne ?_
+   rw [eLpNorm_congr_ae hae]
+   exact eLpNorm_condExp_le_eLpNorm _ (by simp)
+ 
+--- a/MathFin/Foundations/ItoIntegralProcessIsometry.lean
++++ b/MathFin/Foundations/ItoIntegralProcessIsometry.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralProcessGeneral
+ 
+@@ -240,7 +243,7 @@
+     1 (fun φ ↦ by
+       simp only [LinearMap.coe_mk, AddHom.coe_mk]
+       rw [one_mul, Lp.norm_toLp, Lp.norm_def]
+-      exact ENNReal.toReal_mono (Lp.memLp φ).2.ne (eLpNorm_indicator_le _))
++      exact ENNReal.toReal_mono (Lp.memLp φ).eLpNorm_lt_top.ne (eLpNorm_indicator_le _ (measurableSet_band t hBmeas)))
+ 
+ omit [IsProbabilityMeasure μ] hB in
+ /-- **The truncation CLM realises the band energy.** `‖truncCLM T t φ‖² = ∫_{(0,t]×Ω} φ²`:
+--- a/MathFin/Foundations/ItoIntegralProcessLocalMartingale.lean
++++ b/MathFin/Foundations/ItoIntegralProcessLocalMartingale.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralProcessMartingale
+ public import BrownianMotion.StochasticIntegral.LocalMartingale
+--- a/MathFin/Foundations/ItoIntegralProcessMartingale.lean
++++ b/MathFin/Foundations/ItoIntegralProcessMartingale.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralProcess
+ 
+--- a/MathFin/Foundations/ItoIntegralRiemannBridge.lean
++++ b/MathFin/Foundations/ItoIntegralRiemannBridge.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralBrownian
+ 
+--- a/MathFin/Foundations/ItoIntegralRiemannBridgeTD.lean
++++ b/MathFin/Foundations/ItoIntegralRiemannBridgeTD.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralRiemannBridge
+ 
+--- a/MathFin/Foundations/ItoIsometryAdapted.lean
++++ b/MathFin/Foundations/ItoIsometryAdapted.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ public import BrownianMotion.Gaussian.BrownianMotion
+@@ -87,7 +90,7 @@
+ theorem AdaptedAt.measurable (hBmeas : ∀ t, Measurable (B t)) {t₀ : ℝ≥0}
+     {φ : Ω → ℝ} (hφ : AdaptedAt B t₀ φ) : Measurable φ := by
+   obtain ⟨g, hg, rfl⟩ := hφ
+-  exact hg.comp (measurable_pi_lambda _ fun _ ↦ hBmeas _)
++  exact hg.comp (measurable_pi_lambda fun _ ↦ hBmeas _)
+ 
+ /-! ### Adaptedness algebra (the natural Brownian filtration `𝓕_{t₀}`)
+ 
+@@ -112,7 +115,7 @@
+     (hφ : AdaptedAt B t₀ φ) : AdaptedAt B t₁ φ := by
+   obtain ⟨g, hg, rfl⟩ := hφ
+   exact ⟨g ∘ fun p : Set.Iic t₁ → ℝ ↦ fun s : Set.Iic t₀ ↦ p ⟨(s : ℝ≥0), le_trans s.2 ht⟩,
+-    hg.comp (measurable_pi_lambda _ fun _ ↦ measurable_pi_apply _), rfl⟩
++    hg.comp (measurable_pi_lambda fun _ ↦ measurable_pi_apply _), rfl⟩
+ 
+ /-- Products of adapted integrands are adapted. -/
+ theorem AdaptedAt.mul {t₀ : ℝ≥0} {φ ψ : Ω → ℝ}
+--- a/MathFin/Foundations/ItoLemma.lean
++++ b/MathFin/Foundations/ItoLemma.lean
+@@ -25,6 +25,9 @@
+ Released under Apache 2.0 license as described in the file LICENSE.
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ public import MathFin.Foundations.DiscreteIto
+--- a/MathFin/Foundations/ItoLemma2D.lean
++++ b/MathFin/Foundations/ItoLemma2D.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ -- `import Mathlib` comes transitively through `ItoLemma`; this file's surface
+ -- needs only the `Real.exp` chain rule + `Finset` sum lemmas it already pulls.
+--- a/MathFin/Foundations/ItoProcessPredictable.lean
++++ b/MathFin/Foundations/ItoProcessPredictable.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.ItoIntegralProcessContinuousModification
+ public import MathFin.Foundations.ItoIntegralProcessIsometry
+@@ -123,11 +126,12 @@
+     (φ : Lp ℝ 2 (trimMeasure_T (μ := μ) T hBmeas)) :
+     MemLp (Function.uncurry (itoContinuousMod T hBmeas φ)) 2 (trimMeasure_T (μ := μ) T hBmeas) := by
+   have hpred := itoContinuousMod_isStronglyPredictable hB T hBmeas hBcont φ
+-  refine ⟨hpred.aestronglyMeasurable, ?_⟩
++  change eLpNorm _ 2 _ < ⊤
+   rw [show trimMeasure_T (μ := μ) T hBmeas
+         = ((timeMeasure_T T).prod μ).trim (natFiltration hBmeas).predictable_le_prod from rfl,
+       eLpNorm_trim _ hpred,
+-      eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top (by norm_num) (by norm_num),
++      eLpNorm_lt_top_iff_lintegral_rpow_enorm_lt_top (by norm_num) (by norm_num)
++        (hpred.mono (natFiltration hBmeas).predictable_le_prod).aestronglyMeasurable,
+       lintegral_prod _
+         ((hpred.mono (natFiltration hBmeas).predictable_le_prod).measurable.enorm.pow_const _
+           |>.aemeasurable)]
+@@ -143,7 +147,7 @@
+       rw [hω]
+     rw [hmod, lintegral_rpow_enorm_eq_rpow_eLpNorm' (by norm_num : (0 : ℝ) < (2 : ℝ≥0∞).toReal)]
+     gcongr
+-    rw [← eLpNorm_eq_eLpNorm' (by norm_num) (by norm_num), ← Lp.enorm_def, ← ofReal_norm]
++    rw [← eLpNorm_eq_eLpNorm' (by norm_num) (by norm_num) (Lp.aestronglyMeasurable _), ← Lp.enorm_def, ← ofReal_norm]
+     exact ENNReal.ofReal_le_ofReal (itoProcessCLM_norm_le hB T t hBmeas φ)
+   refine lt_of_le_of_lt
+     (lintegral_mono_ae (g := fun _ ↦ (ENNReal.ofReal ‖φ‖) ^ (2 : ℝ≥0∞).toReal) ?_) ?_
+@@ -179,9 +183,9 @@
+   have hmem := memLp_itoContinuousMod hB T hBmeas hBcont φ
+   have hmem_prod : MemLp (Function.uncurry (itoContinuousMod T hBmeas φ)) 2
+       ((timeMeasure_T T).prod μ) := by
+-    refine ⟨(hpred.mono (natFiltration hBmeas).predictable_le_prod).aestronglyMeasurable, ?_⟩
++    change eLpNorm _ 2 _ < ⊤
+     rw [← eLpNorm_trim (natFiltration hBmeas).predictable_le_prod hpred]
+-    exact hmem.2
++    exact hmem.eLpNorm_lt_top
+   have hint : Integrable (fun z ↦ (Function.uncurry (itoContinuousMod T hBmeas φ) z) ^ 2)
+       ((timeMeasure_T T).prod μ) := by
+     refine (hmem_prod.integrable_mul hmem_prod).congr ?_
+--- a/MathFin/Foundations/ItoSquaringIdentity.lean
++++ b/MathFin/Foundations/ItoSquaringIdentity.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.DiscreteIto
+ 
+--- a/MathFin/Foundations/QuadraticVariationL2.lean
++++ b/MathFin/Foundations/QuadraticVariationL2.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ public import BrownianMotion.Gaussian.BrownianMotion
+@@ -287,9 +290,7 @@
+       simpa using memLp_increment_sq_centered_two hB (unifPart T n k) (unifPart T n (k + 1)) 0
+     exact hsum.sub (memLp_const (T : ℝ))
+   refine tendstoInMeasure_of_tendsto_eLpNorm (by norm_num : (2 : ℝ≥0∞) ≠ 0)
+-    (fun n ↦ (Finset.measurable_sum _ fun k _ ↦
+-      ((hBmeas _).sub (hBmeas _)).pow_const 2).aestronglyMeasurable)
+-    aestronglyMeasurable_const ?_
++    ?_
+   -- `eLpNorm (Sₙ − T) 2 = ofReal √(∫ (Sₙ − T)²) → 0`, the L² convergence `tendsto_qv`
+   have hconv : ∀ n : ℕ, eLpNorm (fun ω ↦ (∑ k ∈ Finset.range n,
+         (B (unifPart T n (k + 1)) ω - B (unifPart T n k) ω) ^ 2) - (T : ℝ)) 2 μ
+--- a/MathFin/Foundations/SDEExistence.lean
++++ b/MathFin/Foundations/SDEExistence.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.DriftProcessPredictable
+ 
+--- a/MathFin/Foundations/WeightedQuadraticVariation.lean
++++ b/MathFin/Foundations/WeightedQuadraticVariation.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.QuadraticVariationL2
+ public import MathFin.Foundations.ItoIntegralL2
+--- a/MathFin/Foundations/WienerExponentialTotality.lean
++++ b/MathFin/Foundations/WienerExponentialTotality.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import MathFin.Foundations.BrownianCylinderGeneration
+ public import MathFin.Foundations.DoleansStepRepresentation
+@@ -278,7 +281,7 @@
+   have hfaeneg : AEMeasurable (fun ω ↦ -f ω) μ := hfae.neg
+   have hfint : Integrable f μ := memLp_one_iff_integrable.mp (hfL2.mono_exponent one_le_two)
+   have hXmeas : Measurable fun (ω : Ω) (i : ι) ↦ B (τ i) ω :=
+-    measurable_pi_lambda _ fun i ↦ hBmeas (τ i)
++    measurable_pi_lambda fun i ↦ hBmeas (τ i)
+   obtain ⟨G, hGmeas, hGA⟩ :
+       ∃ G : Set (ι → ℝ), MeasurableSet G ∧ (fun (ω : Ω) (i : ι) ↦ B (τ i) ω) ⁻¹' G = A := by
+     rw [← MeasurableSpace.comap_process_pi fun i ↦ B (τ i)] at hA
+@@ -463,7 +466,7 @@
+     rw [eLpNorm_congr_ae hsub, eLpNorm_neg]
+   simp only [heq] at hlim
+   have hf0ae : f =ᵐ[μ] 0 :=
+-    (eLpNorm_eq_zero_iff hfL2.aestronglyMeasurable one_ne_zero).mp
++    (eLpNorm_eq_zero_iff one_ne_zero).mp
+       (tendsto_nhds_unique hlim tendsto_const_nhds).symm
+   exact Lp.ext_iff.mpr ((hfae.trans hf0ae).trans (Lp.coeFn_zero ℝ 2 μ).symm)
+ 
+--- a/MathFin/Foundations/WienerIntegralL2.lean
++++ b/MathFin/Foundations/WienerIntegralL2.lean
+@@ -4,6 +4,9 @@
+ Authors: Raphael Coelho
+ -/
+ module
++
++/- Compatibility modifications for Lean 4.35.0-rc2 by Yu Wang and contributors,
++2026-10-17. See vendor/stochastic/provenance.json and compatibility.patch. -/
+ 
+ public import Mathlib
+ public import BrownianMotion.Gaussian.BrownianMotion

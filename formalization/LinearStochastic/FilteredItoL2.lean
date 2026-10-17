@@ -1,5 +1,9 @@
-import LinearStochastic.FilteredIto
-import Mathlib
+module
+
+public import LinearStochastic.FilteredIto
+public import Mathlib
+
+@[expose] public section
 
 /-!
 A constructed continuous stochastic integration map for one Gaussian increment,

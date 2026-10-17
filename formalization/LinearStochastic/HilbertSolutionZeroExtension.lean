@@ -1,8 +1,12 @@
-import LinearStochastic.CommonSolutionZeroExtension
-import LinearStochastic.CommonSmallTimeBound
-import LinearStochastic.HilbertEndpointBound
-import LinearStochastic.HilbertGlobalSolution
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.CommonSolutionZeroExtension
+public import LinearStochastic.CommonSmallTimeBound
+public import LinearStochastic.HilbertEndpointBound
+public import LinearStochastic.HilbertGlobalSolution
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! Actual additive vector equations on a terminal time window.  The solution
 is constructed locally and its genuine state class is extended isometrically. -/

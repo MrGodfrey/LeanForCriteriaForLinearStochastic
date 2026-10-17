@@ -1,6 +1,10 @@
-import LinearStochastic.RealQEProjectionCorrectness
-import LinearStochastic.SemialgebraicCoordinates
-import Mathlib.Algebra.MvPolynomial.Equiv
+module
+
+public import LinearStochastic.RealQEProjectionCorrectness
+public import LinearStochastic.SemialgebraicCoordinates
+public import Mathlib.Algebra.MvPolynomial.Equiv
+
+@[expose] public section
 
 /-!
 # Existential real quantifier elimination for polynomial sign formulas

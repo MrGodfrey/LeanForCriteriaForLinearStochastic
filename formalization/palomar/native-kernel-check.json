@@ -1,0 +1,44 @@
+{
+  "scope": "Supplementary native macOS replay, not sandboxed Comparator or official Palomar verification",
+  "commit": "c088eb9943197e88c4b046223239d4c4f0180513",
+  "targets": [
+    "LinearStochastic.Palomar.classification",
+    "LinearStochastic.Palomar.ito_unique"
+  ],
+  "export_bytes": 636392855,
+  "export_sha256": "8a063dacc414f5d0ce9286114aa4fb496680149205c592e297d62d002d7dc58c",
+  "source_check_report_sha256": "4a88cdbfb0cf17b1f1a8202052537239271fd65a51a7fb46a0817d11d08349e9",
+  "tool_sha256": {
+    "leanexport": "f533d8829d2f6507816a3c784055bf2eb8f9a7e53a3134affbe320eba5dc27c1",
+    "nanoda_bin": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c",
+    "con-ron": "7e04504e38276e0e2edb9b4fa992a9206424091b3cfa509ebe8024696b4ad8b0",
+    "leanchecker": "41662275cb7d624d0f0fdf8cb3dc7d5c15e99b233be3ebec576a5c38df181844"
+  },
+  "nanoda": {
+    "exit_code": 0,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unpermitted_axiom_hard_error": true,
+    "nat_extension": true,
+    "string_extension": true,
+    "num_threads": 4,
+    "log": "Checked 74508 declarations with no typechecker errors, 1 pretty printer errors: [\n    \"Unable to print axioms\",\n]\n"
+  },
+  "con_ron": {
+    "exit_code": 0,
+    "mode": "verified",
+    "jobs": 2,
+    "log": "con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)\ncon-ron: parse done: 72125 fold records \u2014 72117 declarations after the 8 built-in prelude records (8 stream copies of prelude records dropped) t=1.240s (parse 1.240s)\ncon-ron: install 0/72125 basis t=1.241s\ncon-ron: install 10000/72125 thm Function.Embedding.ofIsEmpty._proof_1 t=2.852s\ncon-ron: install 20000/72125 def PiLp.seminormedAddCommGroup t=3.583s\ncon-ron: install 30000/72125 thm ContinuousFunctionalCalculus.exists_cfc_of_predicate t=4.961s\ncon-ron: install 40000/72125 thm AffineEquiv.toAffineMap._proof_1 t=6.558s\ncon-ron: install 50000/72125 thm Set.Countable.union t=7.992s\ncon-ron: install 60000/72125 def formalMultilinearSeries_geometric t=9.562s\ncon-ron: install 70000/72125 thm LinearStochastic.SemialgebraicMinimum.eval_kVariables t=11.693s\ncon-ron: install done: 72125/72125 declarations installed, 70964 checks pending t=12.419s (install 11.179s)\ncon-ron: check 10000/70964 theorem sInf_empty t=13.700s\ncon-ron: check 20000/70964 theorem ContinuousLinearMap.opNorm_smul_le t=15.372s\ncon-ron: check 30000/70964 definition Submodule.map\u2082 t=17.978s\ncon-ron: check 40000/70964 theorem ENNReal.LpAddConst_lt_top t=21.420s\ncon-ron: check 50000/70964 definition Classical.decidable_of_decidable_not t=25.448s\ncon-ron: check 60000/70964 theorem AddSubgroupClass.seminormedAddCommGroup._proof_1 t=30.898s\ncon-ron: check 70000/70964 theorem Fintype.sum_congr t=39.013s\ncon-ron: check done: 70964/70964 t=41.637s (check 29.218s)\ncon-ron: done: parse 1.240s, install 11.179s, check 29.218s, 2 workers t=41.637s\ncon-ron: accepted 72095 declarations (--verified)\n"
+  },
+  "lean_default": {
+    "exit_code": 0,
+    "arguments": [
+      "--silent",
+      "--from-export"
+    ],
+    "log": ""
+  }
+}

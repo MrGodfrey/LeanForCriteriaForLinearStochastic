@@ -1,7 +1,11 @@
-import LinearStochastic.RawExactProperties
-import LinearStochastic.BrownianExactTerminal
-import LinearStochastic.AlgebraSurjectiveMatrices
-import LinearStochastic.ZeroObservationMatrices
+module
+
+public import LinearStochastic.RawExactProperties
+public import LinearStochastic.BrownianExactTerminal
+public import LinearStochastic.AlgebraSurjectiveMatrices
+public import LinearStochastic.ZeroObservationMatrices
+
+@[expose] public section
 
 /-! Surjective diffusion gives exact-terminal controllability for original
 ordinary-progressive controls; the finite real-matrix statement uses literally

@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingSummability
-import LinearStochastic.VectorH2Orthogonality
+module
+
+public import LinearStochastic.SwitchingSummability
+public import LinearStochastic.VectorH2Orthogonality
+
+@[expose] public section
 
 /-! A genuine admissible global switching control is the orthogonal sum of
 its actual locally solved feedback controls. The exact paper energy constant

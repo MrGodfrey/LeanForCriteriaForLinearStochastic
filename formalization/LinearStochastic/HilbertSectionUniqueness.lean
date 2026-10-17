@@ -1,4 +1,8 @@
-import LinearStochastic.HilbertSectionRealization
+module
+
+public import LinearStochastic.HilbertSectionRealization
+
+@[expose] public section
 
 /-! Genuine arbitrary-horizon uniqueness of section-based terminal states,
 proved by reconstructing continuous S² solutions and applying actual global

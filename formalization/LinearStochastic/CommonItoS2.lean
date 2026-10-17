@@ -1,5 +1,9 @@
-import LinearStochastic.CommonItoContinuousVersion
-import LinearStochastic.ContinuousDoobL2
+module
+
+public import LinearStochastic.CommonItoContinuousVersion
+public import LinearStochastic.ContinuousDoobL2
+
+@[expose] public section
 
 /-! Genuine continuous S² versions of the common-filtration stochastic integral. -/
 noncomputable section

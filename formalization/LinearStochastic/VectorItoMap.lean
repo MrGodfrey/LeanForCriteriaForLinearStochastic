@@ -1,4 +1,8 @@
-import LinearStochastic.VectorItoNaturality
+module
+
+public import LinearStochastic.VectorItoNaturality
+
+@[expose] public section
 
 /-! The actual vector Itô integral is natural also between different finite
 state spaces and independently chosen orthonormal bases. -/

@@ -8,7 +8,10 @@ retain Raphael Coelho’s copyright and Apache-2.0 license. Their pinned source 
 formal-applied-math/formal-mathfin at 99b836298731c432a6242fdb6cb51c1c97f37902.
 The license is reproduced in MathFin-APACHE-2.0.txt. Local adaptation notices in
 each source describe the specified common filtration and cross-channel changes.
-The source checkout under .lake/packages/MathFin is unchanged.
+The reference release used an unchanged source checkout under
+.lake/packages/MathFin. The Palomar port instead includes the required subset
+of MathFin, BrownianMotion, and KolmogorovExtension4 under ../vendor/stochastic,
+with original licenses, per-file provenance and a compatibility patch.
 
 CommonItoPredictable adapts ItoProcessPredictable; CommonDriftPredictable
 adapts DriftProcessPredictable; CommonDriftModification adapts

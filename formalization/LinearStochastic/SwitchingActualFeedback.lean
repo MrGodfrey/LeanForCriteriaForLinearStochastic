@@ -1,6 +1,10 @@
-import LinearStochastic.SwitchingState
-import LinearStochastic.SwitchingFeedbackIdentity
-import LinearStochastic.RawPathOfRepresentative
+module
+
+public import LinearStochastic.SwitchingState
+public import LinearStochastic.SwitchingFeedbackIdentity
+public import LinearStochastic.RawPathOfRepresentative
+
+@[expose] public section
 
 /-! The constructed full-horizon S² state uses the literal deterministic
 switching gain. The feedback is an actual ordinary progressive L² process. -/

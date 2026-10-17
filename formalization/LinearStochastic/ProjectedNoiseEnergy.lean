@@ -1,4 +1,8 @@
-import LinearStochastic.SubspaceIntegralSolution
+module
+
+public import LinearStochastic.SubspaceIntegralSolution
+
+@[expose] public section
 
 /-! The pathwise integrated projected-noise energy displayed in the paper is
 zero, derived from the actual projected SDE rather than assumed variation. -/

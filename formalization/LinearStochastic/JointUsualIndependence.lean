@@ -1,4 +1,8 @@
-import LinearStochastic.JointUsualNatural
+module
+
+public import LinearStochastic.JointUsualNatural
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointUsualIndependence

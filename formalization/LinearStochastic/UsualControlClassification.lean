@@ -1,5 +1,9 @@
-import LinearStochastic.ActualControlProperties
-import LinearStochastic.UsualGlobalControllability
+module
+
+public import LinearStochastic.ActualControlProperties
+public import LinearStochastic.UsualGlobalControllability
+
+@[expose] public section
 
 /-! Actual all-horizon approximate and approximate-null controllability are
 exactly the vanishing of the genuine algebraic obstruction. This version uses

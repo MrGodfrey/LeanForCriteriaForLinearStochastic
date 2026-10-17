@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertNullExtension
-import LinearStochastic.ShiftedFeedbackIdentity
-import LinearStochastic.RawPathOfRepresentative
+module
+
+public import LinearStochastic.HilbertNullExtension
+public import LinearStochastic.ShiftedFeedbackIdentity
+public import LinearStochastic.RawPathOfRepresentative
+
+@[expose] public section
 
 /-! Extending an actual short-horizon feedback construction by an uncontrolled
 prefix yields the literal translated deterministic feedback on the whole

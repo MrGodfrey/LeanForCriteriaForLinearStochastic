@@ -1,6 +1,10 @@
-import LinearStochastic.StochasticDeterministicReduction
-import LinearStochastic.KnownTargetSolution
-import LinearStochastic.DeterministicGramianMatrices
+module
+
+public import LinearStochastic.StochasticDeterministicReduction
+public import LinearStochastic.KnownTargetSolution
+public import LinearStochastic.DeterministicGramianMatrices
+
+@[expose] public section
 
 /-! The deterministic-control, deterministic-target reading in the paper is
 kept separate from random-target EC. Controls and entire state paths here are

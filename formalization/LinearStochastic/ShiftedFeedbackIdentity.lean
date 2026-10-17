@@ -1,6 +1,10 @@
-import LinearStochastic.ShiftedSwitchingGain
-import LinearStochastic.VectorH2Extension
-import LinearStochastic.VectorH2Orthogonality
+module
+
+public import LinearStochastic.ShiftedSwitchingGain
+public import LinearStochastic.VectorH2Extension
+public import LinearStochastic.VectorH2Orthogonality
+
+@[expose] public section
 
 /-! Literal identification of a zero-extended local feedback with the
 translated deterministic gain applied to the actual global state. -/

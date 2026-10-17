@@ -1,7 +1,11 @@
-import LinearStochastic.JointCylinderGeneration
-import LinearStochastic.JointBrownianDirections
-import LinearStochastic.JointBrownian
-import LinearStochastic.CommonItoCross
+module
+
+public import LinearStochastic.JointCylinderGeneration
+public import LinearStochastic.JointBrownianDirections
+public import LinearStochastic.JointBrownian
+public import LinearStochastic.CommonItoCross
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointNaturalForward
@@ -27,7 +31,7 @@ theorem regroup_independent_pairs {Ω ι X Y : Type*} [MeasurableSpace Ω]
   have hfI : iIndepFun f μ := hp.comp (fun _ => Prod.fst) (fun _ => measurable_fst)
   have hgI : iIndepFun g μ := hp.comp (fun _ => Prod.snd) (fun _ => measurable_snd)
   apply (indepFun_iff_map_prod_eq_prod_map_map
-    (measurable_pi_lambda _ hf).aemeasurable (measurable_pi_lambda _ hg).aemeasurable).mpr
+    (measurable_pi_lambda hf).aemeasurable (measurable_pi_lambda hg).aemeasurable).mpr
   rw [hfI.map_fun_eq_pi_map (fun i => (hf i).aemeasurable),
     hgI.map_fun_eq_pi_map (fun i => (hg i).aemeasurable)]
   let e := MeasurableEquiv.arrowProdEquivProdArrow X Y ι
@@ -51,8 +55,8 @@ theorem joint_future_past (s : ℝ≥0) :
   apply regroup_independent_pairs
     (fun i ω (t : Set.Iic s) => W i t ω)
     (fun i ω (u : ℝ≥0) => W i (s+u) ω - W i s ω)
-    (fun i => measurable_pi_lambda _ (fun t => hWm i t))
-    (fun i => measurable_pi_lambda _ (fun u => (hWm i (s+u)).sub (hWm i s)))
+    (fun i => measurable_pi_lambda (fun t => hWm i t))
+    (fun i => measurable_pi_lambda (fun u => (hWm i (s+u)).sub (hWm i s)))
   · exact hInd.comp (fun _ f => ((fun t : Set.Iic s => f t),fun u => f (s+u)-f s))
       (fun _ => by fun_prop)
   · intro i

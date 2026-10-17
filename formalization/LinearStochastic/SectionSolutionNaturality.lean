@@ -1,5 +1,9 @@
-import LinearStochastic.SectionLinearDuality
-import LinearStochastic.VectorItoNaturality
+module
+
+public import LinearStochastic.SectionLinearDuality
+public import LinearStochastic.VectorItoNaturality
+
+@[expose] public section
 
 /-! The actual Lebesgue and Itô decomposition is preserved by a state-space
 linear map. The proof uses only fixed-time equalities of the raw Itô version. -/

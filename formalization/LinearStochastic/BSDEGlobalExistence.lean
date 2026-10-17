@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEPathPaste
-import LinearStochastic.CommonShiftRepresentation
+module
+
+public import LinearStochastic.BSDEPathPaste
+public import LinearStochastic.CommonShiftRepresentation
+
+@[expose] public section
 
 /-! Genuine arbitrary finite-horizon backward construction by a finite reverse
 mesh. Representation is an explicit input here and will be discharged for the

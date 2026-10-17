@@ -1,4 +1,8 @@
-import LinearStochastic.BSDERealization
+module
+
+public import LinearStochastic.BSDERealization
+
+@[expose] public section
 
 /-! Actual local coordinate BSDE construction, conditional only on an explicit
 martingale-representation statement about the already constructed Itô range.

@@ -1,5 +1,9 @@
-import LinearStochastic.SubspaceIntegralSolution
-import LinearStochastic.ContinuousRealization
+module
+
+public import LinearStochastic.SubspaceIntegralSolution
+public import LinearStochastic.ContinuousRealization
+
+@[expose] public section
 
 /-! The genuine zero-observation induction into the paper's obstruction flag.
 The inputs are an actual backward integral solution and its actual continuous

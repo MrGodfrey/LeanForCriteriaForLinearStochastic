@@ -1,6 +1,10 @@
-import LinearStochastic.JointMartingaleRepresentation
-import LinearStochastic.CommonConditionalContinuity
-import LinearStochastic.CommonNullL2
+module
+
+public import LinearStochastic.JointMartingaleRepresentation
+public import LinearStochastic.CommonConditionalContinuity
+public import LinearStochastic.CommonNullL2
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointUsualNatural

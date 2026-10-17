@@ -1,4 +1,8 @@
-import LinearStochastic.PositiveBlock
+module
+
+public import LinearStochastic.PositiveBlock
+
+@[expose] public section
 noncomputable section
 namespace LinearStochastic.ConeBlocks
 open scoped BigOperators

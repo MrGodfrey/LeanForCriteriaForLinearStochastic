@@ -1,7 +1,11 @@
-import LinearStochastic.CommonDelayedSwitchingUniqueness
-import LinearStochastic.HilbertRestartUniqueness
-import LinearStochastic.ShiftedFeedbackWindows
-import LinearStochastic.HilbertSwitchingUniqueness
+module
+
+public import LinearStochastic.CommonDelayedSwitchingUniqueness
+public import LinearStochastic.HilbertRestartUniqueness
+public import LinearStochastic.ShiftedFeedbackWindows
+public import LinearStochastic.HilbertSwitchingUniqueness
+
+@[expose] public section
 
 /-! Actual Hilbert uniqueness of the delayed singular feedback equation. Both controls
 are permitted to differ; their literal raw feedback identities are converted to

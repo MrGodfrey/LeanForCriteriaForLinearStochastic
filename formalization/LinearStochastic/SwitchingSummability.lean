@@ -1,4 +1,8 @@
-import LinearStochastic.SwitchingDynamics
+module
+
+public import LinearStochastic.SwitchingDynamics
+
+@[expose] public section
 
 /-! Summability and vanishing endpoint moments for the actually constructed
 random switching solution, derived from its actual SDE estimates. -/

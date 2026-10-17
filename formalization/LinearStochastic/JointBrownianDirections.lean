@@ -1,5 +1,9 @@
-import LinearStochastic.CommonItoIsometry
-import Mathlib.Probability.Distributions.Gaussian.HasGaussianLaw.Independence
+module
+
+public import LinearStochastic.CommonItoIsometry
+public import Mathlib.Probability.Distributions.Gaussian.HasGaussianLaw.Independence
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointBrownianDirections

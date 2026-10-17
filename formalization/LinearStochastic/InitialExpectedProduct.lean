@@ -1,4 +1,8 @@
-import LinearStochastic.VectorItoProduct
+module
+
+public import LinearStochastic.VectorItoProduct
+
+@[expose] public section
 
 /-! Expected products with genuine nonzero F₀-measurable L² initial values.
 The zero-initial covariance cross terms are derived from actual martingale

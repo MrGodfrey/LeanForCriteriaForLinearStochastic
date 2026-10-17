@@ -1,5 +1,9 @@
-import LinearStochastic.InvariantAdjointDynamics
-import LinearStochastic.AlgebraFlagTransport
+module
+
+public import LinearStochastic.InvariantAdjointDynamics
+public import LinearStochastic.AlgebraFlagTransport
+
+@[expose] public section
 
 /-! Exact real-matrix specialization of the genuine zero-observation flag
 argument, using the same ordinary-coordinate flag as the rank criterion. -/

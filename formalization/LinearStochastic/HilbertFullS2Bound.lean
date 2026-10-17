@@ -1,7 +1,11 @@
-import LinearStochastic.CommonGlobalS2Bound
-import LinearStochastic.HilbertPathSupBound
-import LinearStochastic.HilbertBrownianRealization
-import LinearStochastic.ProgressiveControlSection
+module
+
+public import LinearStochastic.CommonGlobalS2Bound
+public import LinearStochastic.HilbertPathSupBound
+public import LinearStochastic.HilbertBrownianRealization
+public import LinearStochastic.ProgressiveControlSection
+
+@[expose] public section
 
 /-! Uniform full S² estimates in the original Hilbert norm for the actual
 ordinary-progressive controlled paths and original Brownian drivers. -/

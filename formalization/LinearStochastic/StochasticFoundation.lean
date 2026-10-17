@@ -1,6 +1,10 @@
-import Mathlib.Probability.HasLaw
-import Mathlib.Probability.Distributions.Gaussian.Real
-import Mathlib.Probability.Independence.Integration
+module
+
+public import Mathlib.Probability.HasLaw
+public import Mathlib.Probability.Distributions.Gaussian.Real
+public import Mathlib.Probability.Independence.Integration
+
+@[expose] public section
 
 /-!
 # Gaussian increment integration
@@ -54,7 +58,7 @@ theorem elementary_integral_memLp
     (by fun_prop) (by fun_prop)
   have hprod := hsq.integrable_mul hcoeff.integrable_sq hinc.integrable_sq
   change Integrable (fun ω ↦ coefficient ω ^ 2 * increment ω ^ 2) P at hprod
-  refine (memLp_two_iff_integrable_sq (hcoeff.1.mul hinc.1)).mpr ?_
+  refine (memLp_two_iff_integrable_sq (hcoeff.aestronglyMeasurable.mul hinc.aestronglyMeasurable)).mpr ?_
   simpa only [Pi.mul_apply, mul_pow] using hprod
 
 theorem elementary_integral_mean_zero
@@ -62,8 +66,8 @@ theorem elementary_integral_mean_zero
     (hindep : IndepFun coefficient increment P)
     (hcoeff : MemLp coefficient 2 P) :
     (∫ ω, coefficient ω * increment ω ∂P) = 0 := by
-  rw [hindep.integral_fun_mul_eq_mul_integral hcoeff.1
-    (gaussian_increment_memLp hlaw).1, gaussian_increment_mean hlaw, mul_zero]
+  rw [hindep.integral_fun_mul_eq_mul_integral hcoeff.aestronglyMeasurable
+    (gaussian_increment_memLp hlaw).aestronglyMeasurable, gaussian_increment_mean hlaw, mul_zero]
 
 /-- The elementary Itô isometry; integrability is separately proved above. -/
 theorem elementary_integral_isometry

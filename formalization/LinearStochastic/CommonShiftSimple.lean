@@ -1,6 +1,10 @@
-import LinearStochastic.CommonShiftH2
-import LinearStochastic.CommonItoLocality
-import LinearStochastic.CommonItoProcessGeneral
+module
+
+public import LinearStochastic.CommonShiftH2
+public import LinearStochastic.CommonItoLocality
+public import LinearStochastic.CommonItoProcessGeneral
+
+@[expose] public section
 
 /-! Genuine finite stochastic increment sums under deterministic restart. -/
 set_option autoImplicit false

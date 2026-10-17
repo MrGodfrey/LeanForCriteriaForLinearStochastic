@@ -1,5 +1,9 @@
-import LinearStochastic.KnownTargetSolution
-import Mathlib.Analysis.SpecificLimits.Basic
+module
+
+public import LinearStochastic.KnownTargetSolution
+public import Mathlib.Analysis.SpecificLimits.Basic
+
+@[expose] public section
 
 /-! An explicit scalar member of the genuine Gramian family. Its delayed
 control energy is computed exactly, allowing an actual divergence example. -/

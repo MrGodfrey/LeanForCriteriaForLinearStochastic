@@ -1,4 +1,8 @@
-import LinearStochastic.SectionSolutionNaturality
+module
+
+public import LinearStochastic.SectionSolutionNaturality
+
+@[expose] public section
 
 /-! Linearity of actual sectionwise stochastic integral solutions. It is
 proved from Lebesgue integrability and the constructed Itô linear maps. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.JointUsualIndependence
-import LinearStochastic.CommonFiltrationTransport
+module
+
+public import LinearStochastic.JointUsualIndependence
+public import LinearStochastic.CommonFiltrationTransport
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointUsualRepresentation

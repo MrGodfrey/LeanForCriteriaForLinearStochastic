@@ -1,6 +1,10 @@
-import LinearStochastic.DeterministicVariation
-import LinearStochastic.KnownTargetControl
-import LinearStochastic.CommonStateS2
+module
+
+public import LinearStochastic.DeterministicVariation
+public import LinearStochastic.KnownTargetControl
+public import LinearStochastic.CommonStateS2
+
+@[expose] public section
 
 /-! An explicit continuous state for the delayed known-target control. Its
 response is zero before the target is revealed, and its actual original drift

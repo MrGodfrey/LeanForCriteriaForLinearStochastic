@@ -1,4 +1,8 @@
-import LinearStochastic.DelayedDeterministicState
+module
+
+public import LinearStochastic.DelayedDeterministicState
+
+@[expose] public section
 
 /-! The explicit raw state accompanying the delayed finite-energy control:
 ordinary progressiveness, true continuous paths, S² and original ODE identity. -/

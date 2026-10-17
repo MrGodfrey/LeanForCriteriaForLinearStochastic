@@ -1,4 +1,8 @@
-import LinearStochastic.PaperControlProperties
+module
+
+public import LinearStochastic.PaperControlProperties
+
+@[expose] public section
 
 /-! The input-structure restriction is a necessary condition for the actual
 four stochastic properties, not only for an auxiliary algebraic flag. -/

@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -6,7 +8,9 @@ Adapted from MathFin/Foundations/ItoIntegralProcessL2Infinite.lean at
 99b836298731c432a6242fdb6cb51c1c97f37902: actual clamp definitions and proofs
 with the arbitrary specified common filtration; both helper proofs made public.
 -/
-import LinearStochastic.CommonItoProcessGeneral
+public import LinearStochastic.CommonItoProcessGeneral
+
+@[expose] public section
 
 set_option autoImplicit false
 noncomputable section

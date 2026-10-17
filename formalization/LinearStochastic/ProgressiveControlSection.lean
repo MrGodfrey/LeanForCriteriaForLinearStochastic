@@ -1,6 +1,10 @@
-import LinearStochastic.CommonProcessSpace
-import LinearStochastic.SectionLinearDuality
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.CommonProcessSpace
+public import LinearStochastic.SectionLinearDuality
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! Ordinary progressive controls and raw continuous S² paths are connected
 in both directions to the actual predictable L² section interface. Every

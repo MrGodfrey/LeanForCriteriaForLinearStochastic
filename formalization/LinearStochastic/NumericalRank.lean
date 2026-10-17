@@ -1,5 +1,9 @@
-import Mathlib.Analysis.InnerProductSpace.SingularValues
-import Mathlib.Analysis.InnerProductSpace.PiL2
+module
+
+public import Mathlib.Analysis.InnerProductSpace.SingularValues
+public import Mathlib.Analysis.InnerProductSpace.PiL2
+
+@[expose] public section
 
 /-! Literal singular-value threshold contract. This is the mathematical
 numerical-rank rule, not a theorem that floating-point outputs certify exact

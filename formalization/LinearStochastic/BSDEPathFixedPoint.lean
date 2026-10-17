@@ -1,6 +1,10 @@
-import LinearStochastic.BSDEPathData
-import LinearStochastic.BSDEUniqueness
-import LinearStochastic.CommonProgressiveComparison
+module
+
+public import LinearStochastic.BSDEPathData
+public import LinearStochastic.BSDEUniqueness
+public import LinearStochastic.CommonProgressiveComparison
+
+@[expose] public section
 
 /-! Arbitrary actual backward paths imply the genuine H² Picard equation.
 Neither the initial conditional value nor the fixed-point identity is assumed. -/

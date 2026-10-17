@@ -1,6 +1,10 @@
-import LinearStochastic.CommonGlobalExistence
-import LinearStochastic.CommonGlobalUniqueness
-import LinearStochastic.CommonBrownianRepair
+module
+
+public import LinearStochastic.CommonGlobalExistence
+public import LinearStochastic.CommonGlobalUniqueness
+public import LinearStochastic.CommonBrownianRepair
+
+@[expose] public section
 
 /-! Global controlled SDE existence and pathwise uniqueness for actual Brownian
 motions with almost-sure continuous paths. The continuous version is constructed

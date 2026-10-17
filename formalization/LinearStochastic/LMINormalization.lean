@@ -1,4 +1,8 @@
-import LinearStochastic.LMIFeedback
+module
+
+public import LinearStochastic.LMIFeedback
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.LMINormalization
