@@ -1,5 +1,9 @@
-import LinearStochastic.CommonLocalSolution
-import LinearStochastic.CommonContinuousUniqueness
+module
+
+public import LinearStochastic.CommonLocalSolution
+public import LinearStochastic.CommonContinuousUniqueness
+
+@[expose] public section
 
 /-! Indistinguishability of continuous representatives of the actual controlled
 H² fixed point. A positive horizon and a single common probability-one set

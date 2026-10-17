@@ -1,4 +1,8 @@
-import LinearStochastic.ActualControlProperties
+module
+
+public import LinearStochastic.ActualControlProperties
+
+@[expose] public section
 
 /-! Exact terminal controllability permits a target-dependent deterministic
 initial state. Its combination with exact null controllability is proved for

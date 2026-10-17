@@ -1,5 +1,9 @@
-import LinearStochastic.UsualGlobalBSDE
-import LinearStochastic.JointUsualBrownianGlobal
+module
+
+public import LinearStochastic.UsualGlobalBSDE
+public import LinearStochastic.JointUsualBrownianGlobal
+
+@[expose] public section
 
 /-! Backward solution transport to the original Brownian paths and their
 original usual filtration. No everywhere-continuous-path premise remains. -/

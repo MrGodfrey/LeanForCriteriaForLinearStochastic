@@ -1,5 +1,9 @@
-import LinearStochastic.CommonItoCLM
-import LinearStochastic.ExpectedProduct
+module
+
+public import LinearStochastic.CommonItoCLM
+public import LinearStochastic.ExpectedProduct
+
+@[expose] public section
 
 /-!
 # Actual real-time transport for the common-filtration stochastic integral

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Matrix.Normed
-import Mathlib.Analysis.Normed.Module.FiniteDimension
-import Mathlib.Topology.Order.Compact
+module
+
+public import Mathlib.Analysis.Matrix.Normed
+public import Mathlib.Analysis.Normed.Module.FiniteDimension
+public import Mathlib.Topology.Order.Compact
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.QuadraticMinimum

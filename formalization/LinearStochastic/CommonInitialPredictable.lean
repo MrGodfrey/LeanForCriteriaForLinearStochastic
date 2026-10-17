@@ -1,5 +1,9 @@
-import LinearStochastic.CommonVectorPicard
-import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
+module
+
+public import LinearStochastic.CommonVectorPicard
+public import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
+
+@[expose] public section
 
 /-! Actual F₀-measurable square-integrable random initial values, embedded as
 constant-in-time predictable processes, and their controlled matrix Picard
@@ -26,7 +30,6 @@ theorem initial_memLp {ξ : Ω → ℝ} (hξ : StronglyMeasurable[𝓕 0] ξ)
   have hp := initial_predictable hξ
   change StronglyMeasurable[𝓕.predictable] (fun z : ℝ≥0 × Ω ↦ ξ z.2) at hp
   have hm := hξ2.comp_snd (CommonItoCLM.timeMeasure_T T)
-  refine ⟨hp.aestronglyMeasurable, ?_⟩
   change eLpNorm (fun z : ℝ≥0 × Ω ↦ ξ z.2) 2
     (((CommonItoCLM.timeMeasure_T T).prod μ).trim 𝓕.predictable_le_prod) < ⊤
   rw [eLpNorm_trim _ hp]

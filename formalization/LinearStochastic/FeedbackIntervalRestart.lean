@@ -1,5 +1,9 @@
-import LinearStochastic.FeedbackIntervalData
-import LinearStochastic.CommonShiftRepresentation
+module
+
+public import LinearStochastic.FeedbackIntervalData
+public import LinearStochastic.CommonShiftRepresentation
+
+@[expose] public section
 
 /-! Genuine deterministic restart of constant matrix feedback on the original
 probability space, with the full original F_a measurable initial value. -/

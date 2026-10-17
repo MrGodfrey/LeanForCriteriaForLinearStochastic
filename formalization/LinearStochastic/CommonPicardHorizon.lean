@@ -1,4 +1,8 @@
-import LinearStochastic.CommonInitialPredictable
+module
+
+public import LinearStochastic.CommonInitialPredictable
+
+@[expose] public section
 
 /-! An actual positive contraction horizon for every fixed finite collection
 of matrix coefficients. Uniform entry-sum bounds remove any unproved continuity

@@ -1,5 +1,9 @@
-import LinearStochastic.SectionQuadraticEnergy
-import LinearStochastic.LpLyapunovEstimate
+module
+
+public import LinearStochastic.SectionQuadraticEnergy
+public import LinearStochastic.LpLyapunovEstimate
+
+@[expose] public section
 
 /-! The actual closed-loop energy inequality, obtained by composing the
 proved quadratic Itô identity and the deterministic Lyapunov inequality. -/

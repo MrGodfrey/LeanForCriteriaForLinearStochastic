@@ -1,5 +1,9 @@
-import LinearStochastic.ProcessQuadraticInner
-import LinearStochastic.LpLyapunovEstimate
+module
+
+public import LinearStochastic.ProcessQuadraticInner
+public import LinearStochastic.LpLyapunovEstimate
+
+@[expose] public section
 
 /-! The actual expected quadratic generator: continuity from S² domination,
 its pointwise Lyapunov bound, and the exact time-integral decomposition. -/

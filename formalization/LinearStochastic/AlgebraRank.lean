@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraFlag
+module
+
+public import LinearStochastic.AlgebraFlag
+
+@[expose] public section
 
 /-!
 # Rank difference for an existential linear constraint

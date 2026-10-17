@@ -1,4 +1,8 @@
-import LinearStochastic.CommonIntegralPaste
+module
+
+public import LinearStochastic.CommonIntegralPaste
+
+@[expose] public section
 
 /-! Actual predictable classes of a pasted continuous process and linear matrix
 coefficient compatibility. No state equation is assumed in these identities. -/

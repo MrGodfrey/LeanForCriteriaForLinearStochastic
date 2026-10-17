@@ -1,5 +1,9 @@
-import LinearStochastic.StochasticFoundation
-import Mathlib.Probability.Process.Filtration
+module
+
+public import LinearStochastic.StochasticFoundation
+public import Mathlib.Probability.Process.Filtration
+
+@[expose] public section
 
 /-!
 The finite adapted-increment integral for an arbitrary common filtration.
@@ -59,7 +63,7 @@ theorem cross_integral_zero {i j : ℕ} (hij : i < j) :
           congr 1; funext ω; ring
     _ = (∫ ω, (φ i ω * Δ i ω) * φ j ω ∂P) * (∫ ω, Δ j ω ∂P) :=
       hi.integral_fun_mul_eq_mul_integral hp'.aestronglyMeasurable
-        (gaussian_increment_memLp (hlaw j)).1
+        (gaussian_increment_memLp (hlaw j)).aestronglyMeasurable
     _ = 0 := by rw [gaussian_increment_mean (hlaw j), mul_zero]
 
 omit [IsProbabilityMeasure P] hΔ in
@@ -151,15 +155,15 @@ theorem channel_cross_zero {i j : ι} (hij : i ≠ j) :
       (measurable_iff_comap_le.mp (hi.mul hj))
   have hnoise : (∫ ω, Δ i ω * Δ j ω ∂P) = 0 := by
     rw [(hpair hij).integral_fun_mul_eq_mul_integral
-      (gaussian_increment_memLp (hlaw i)).1 (gaussian_increment_memLp (hlaw j)).1,
+      (gaussian_increment_memLp (hlaw i)).aestronglyMeasurable (gaussian_increment_memLp (hlaw j)).aestronglyMeasurable,
       gaussian_increment_mean (hlaw i), zero_mul]
   calc
     (∫ ω, (φ i ω * Δ i ω) * (φ j ω * Δ j ω) ∂P) =
         ∫ ω, (φ i ω * φ j ω) * (Δ i ω * Δ j ω) ∂P := by
           congr 1; funext ω; ring
     _ = (∫ ω, φ i ω * φ j ω ∂P) * (∫ ω, Δ i ω * Δ j ω ∂P) :=
-      hprod.integral_fun_mul_eq_mul_integral ((hLp i).1.mul (hLp j).1)
-        ((gaussian_increment_memLp (hlaw i)).1.mul (gaussian_increment_memLp (hlaw j)).1)
+      hprod.integral_fun_mul_eq_mul_integral ((hLp i).aestronglyMeasurable.mul (hLp j).aestronglyMeasurable)
+        ((gaussian_increment_memLp (hlaw i)).aestronglyMeasurable.mul (gaussian_increment_memLp (hlaw j)).aestronglyMeasurable)
     _ = 0 := by rw [hnoise, mul_zero]
 
 variable [Fintype ι]
@@ -228,7 +232,7 @@ theorem cross_time_zero {k l : ℕ} (hkl : k < l) (i j : ι) :
           congr 1; funext ω; ring
     _ = (∫ ω, (φ k i ω * Δ k i ω) * φ l j ω ∂P) * (∫ ω, Δ l j ω ∂P) :=
       hi.integral_fun_mul_eq_mul_integral hp'.aestronglyMeasurable
-        (gaussian_increment_memLp (hlaw l j)).1
+        (gaussian_increment_memLp (hlaw l j)).aestronglyMeasurable
     _ = 0 := by rw [gaussian_increment_mean (hlaw l j), mul_zero]
 
 variable (hLp : ∀ k i, MemLp (φ k i) 2 P)

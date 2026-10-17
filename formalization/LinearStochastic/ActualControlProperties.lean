@@ -1,5 +1,9 @@
-import LinearStochastic.GlobalInvariantObstruction
-import LinearStochastic.ActualApproximation
+module
+
+public import LinearStochastic.GlobalInvariantObstruction
+public import LinearStochastic.ActualApproximation
+
+@[expose] public section
 
 /-! Controllability properties stated with the original controlled integral
  equation, rather than an abstract terminal map. These definitions quantify

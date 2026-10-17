@@ -1,4 +1,8 @@
-import LinearStochastic.BSDEPathData
+module
+
+public import LinearStochastic.BSDEPathData
+
+@[expose] public section
 
 /-! Exact concatenation of actual backward solutions. Noise classes are pasted
 using genuine predictable L² construction, not an assumed global coefficient. -/

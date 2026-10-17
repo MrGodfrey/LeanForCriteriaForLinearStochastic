@@ -1,7 +1,11 @@
-import LinearStochastic.KnownTargetState
-import LinearStochastic.KnownTargetGramian
-import LinearStochastic.ProgressiveControlSection
-import LinearStochastic.ZeroIntegralDrift
+module
+
+public import LinearStochastic.KnownTargetState
+public import LinearStochastic.KnownTargetGramian
+public import LinearStochastic.ProgressiveControlSection
+public import LinearStochastic.ZeroIntegralDrift
+
+@[expose] public section
 
 /-! The Gramian last-interval construction is a genuine raw controlled
 solution, with ordinary progressive control and actual finite S² state. -/

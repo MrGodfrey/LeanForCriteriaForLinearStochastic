@@ -1,4 +1,8 @@
-import LinearStochastic.CommonItoProcessGeneral
+module
+
+public import LinearStochastic.CommonItoProcessGeneral
+
+@[expose] public section
 
 /-! Actual constructed Itô operators are invariant under indistinguishable
 changes of the driving Brownian motion, with the original common filtration. -/

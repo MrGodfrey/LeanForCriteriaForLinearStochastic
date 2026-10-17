@@ -1,4 +1,8 @@
-import LinearStochastic.HilbertFullS2Bound
+module
+
+public import LinearStochastic.HilbertFullS2Bound
+
+@[expose] public section
 
 /-! The full-path bound in the manuscript's literal expected-energy form:
 E sup_{0≤t≤T} ‖Y_t‖² ≤ C_T (E ‖ξ‖² + E ∫₀ᵀ ‖v_t‖² dt).

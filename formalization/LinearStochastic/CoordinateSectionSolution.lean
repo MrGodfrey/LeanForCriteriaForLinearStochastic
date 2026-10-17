@@ -1,6 +1,10 @@
-import LinearStochastic.CoordinateIntegralReconstruction
-import LinearStochastic.ContinuousRealization
-import LinearStochastic.CommonLocalSolution
+module
+
+public import LinearStochastic.CoordinateIntegralReconstruction
+public import LinearStochastic.ContinuousRealization
+public import LinearStochastic.CommonLocalSolution
+
+@[expose] public section
 
 /-! Actual continuous coordinate realizations, including the constructed
 Picard solutions, supply the Hilbert-valued sectionwise integral interface. -/

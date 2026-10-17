@@ -1,5 +1,9 @@
-import LinearStochastic.JointNaturalForward
-import LinearStochastic.CommonDirectionBand
+module
+
+public import LinearStochastic.JointNaturalForward
+public import LinearStochastic.CommonDirectionBand
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointDoleansBand

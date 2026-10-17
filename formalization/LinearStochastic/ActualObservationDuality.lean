@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertLocalSolution
-import LinearStochastic.ZeroObservationFlag
+module
+
+public import LinearStochastic.HilbertLocalSolution
+public import LinearStochastic.ZeroObservationFlag
+
+@[expose] public section
 
 /-! Actual terminal annihilation and actual adjoint observation. In the local
 theorem the required forward state is genuinely constructed, rather than

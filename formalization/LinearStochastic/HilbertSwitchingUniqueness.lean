@@ -1,6 +1,10 @@
-import LinearStochastic.CommonSwitchingUniqueness
-import LinearStochastic.HilbertRestartUniqueness
-import LinearStochastic.SwitchingFeedbackWindows
+module
+
+public import LinearStochastic.CommonSwitchingUniqueness
+public import LinearStochastic.HilbertRestartUniqueness
+public import LinearStochastic.SwitchingFeedbackWindows
+
+@[expose] public section
 
 /-! Actual Hilbert uniqueness of the singular feedback equation. Both controls
 are permitted to differ; their literal raw feedback identities are converted to

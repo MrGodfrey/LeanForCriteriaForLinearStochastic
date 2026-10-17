@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertBrownianRealization
-import LinearStochastic.VectorH2Extension
-import LinearStochastic.CommonSolutionRestriction
+module
+
+public import LinearStochastic.HilbertBrownianRealization
+public import LinearStochastic.VectorH2Extension
+public import LinearStochastic.CommonSolutionRestriction
+
+@[expose] public section
 
 /-! Deterministic restart of genuine Hilbert section solutions. The proof uses
 actual coordinate integrals and the proved original-Brownian path uniqueness. -/

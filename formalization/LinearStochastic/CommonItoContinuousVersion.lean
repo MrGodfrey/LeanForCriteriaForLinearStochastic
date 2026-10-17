@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -8,7 +10,9 @@ Adapted from ItoIntegralProcessLocalMartingaleGeneral.lean, MathFin pin
 conditional expectation invariance proofs are retained for an arbitrary
 specified common filtration. The conclusion packages a true Martingale.
 -/
-import LinearStochastic.CommonItoContinuous
+public import LinearStochastic.CommonItoContinuous
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ProbabilityTheory Filter Topology

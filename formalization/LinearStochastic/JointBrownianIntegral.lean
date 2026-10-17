@@ -1,5 +1,9 @@
-import LinearStochastic.JointBrownianForward
-import LinearStochastic.CommonItoCLM
+module
+
+public import LinearStochastic.JointBrownianForward
+public import LinearStochastic.CommonItoCLM
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointBrownian

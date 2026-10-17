@@ -1,4 +1,8 @@
-import LinearStochastic.LpLyapunovEstimate
+module
+
+public import LinearStochastic.LpLyapunovEstimate
+
+@[expose] public section
 
 /-! Passing from expected quadratic energy to the actual second moment,
 with the precise ratio of lower and upper pointwise constants. -/

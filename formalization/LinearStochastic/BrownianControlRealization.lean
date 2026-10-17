@@ -1,6 +1,10 @@
-import LinearStochastic.BrownianControlClassification
-import LinearStochastic.HilbertBrownianRealization
-import LinearStochastic.HilbertBrownianUniqueness
+module
+
+public import LinearStochastic.BrownianControlClassification
+public import LinearStochastic.HilbertBrownianRealization
+public import LinearStochastic.HilbertBrownianUniqueness
+
+@[expose] public section
 
 /-! Actual controls and continuous S² paths witnessing the paper's expected
 squared terminal error, on the original Brownian usual filtration. -/

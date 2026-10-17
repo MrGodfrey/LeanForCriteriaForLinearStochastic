@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertStateUniqueness
-import LinearStochastic.ProgressiveControlSection
+module
+
+public import LinearStochastic.HilbertStateUniqueness
+public import LinearStochastic.ProgressiveControlSection
+
+@[expose] public section
 
 /-! Linearity of the full original state process. Two arbitrary raw S²
 solutions and any solution driven by the linear-combination data agree on one

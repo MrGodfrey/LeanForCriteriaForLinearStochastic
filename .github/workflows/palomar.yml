@@ -1,0 +1,23 @@
+name: Palomar mechanical preflight
+
+# Every run checks one published, fixed revision. This does not submit or
+# register a result, and an uncommitted local edit cannot be checked here.
+on:
+  workflow_dispatch:
+  push:
+    branches: [palomar-preparation]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+      request_id: preflight001
+      mode: full
+      options: >-
+        {"project_path":"formalization","comparator_config_path":"formalization/comparator.json","formalization_metadata_path":"formalization/formalization.yaml","authorization_relationship":"I am a responsible author or maintainer"}

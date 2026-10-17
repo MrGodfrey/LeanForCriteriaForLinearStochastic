@@ -1,5 +1,9 @@
-import LinearStochastic.PathSupNorm
-import LinearStochastic.VectorItoProduct
+module
+
+public import LinearStochastic.PathSupNorm
+public import LinearStochastic.VectorItoProduct
+
+@[expose] public section
 
 /-! Exact orthonormal-coordinate estimates for the actual Hilbert S² norm.
 The path norm is the original Hilbert norm, not the Pi maximum norm used in

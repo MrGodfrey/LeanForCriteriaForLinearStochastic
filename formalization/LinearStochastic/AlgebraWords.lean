@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraFlag
+module
+
+public import LinearStochastic.AlgebraFlag
+
+@[expose] public section
 
 /-!
 # Finite products and the smallest common invariant subspace

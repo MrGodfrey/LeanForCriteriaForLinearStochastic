@@ -1,5 +1,9 @@
-import Mathlib.Analysis.ODE.Gronwall
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+module
+
+public import Mathlib.Analysis.ODE.Gronwall
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+
+@[expose] public section
 
 /-! Exponential decay follows from a genuine integral energy identity and a
 pointwise dissipative generator bound. This deterministic lemma keeps both

@@ -1,5 +1,9 @@
-import LinearStochastic.MinimumContinuity
-import LinearStochastic.SemialgebraicCoordinates
+module
+
+public import LinearStochastic.MinimumContinuity
+public import LinearStochastic.SemialgebraicCoordinates
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.ParametricMinimum

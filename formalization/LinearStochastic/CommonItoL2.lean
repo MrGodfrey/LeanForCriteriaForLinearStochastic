@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -9,9 +11,11 @@ spacetime embedding and rectangle-pairing norm proof are retained. The filtratio
 is an arbitrary specified common filtration, with its independence supplied by
 CommonItoIsometry.ForwardIndependent rather than scalar-past factorization.
 -/
-import LinearStochastic.CommonItoIsometry
-import BrownianMotion.StochasticIntegral.SimpleProcess
-import BrownianMotion.StochasticIntegral.L2M
+public import LinearStochastic.CommonItoIsometry
+public import BrownianMotion.StochasticIntegral.SimpleProcess
+public import BrownianMotion.StochasticIntegral.L2M
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic
@@ -304,8 +308,10 @@ lemma memLp_uncurry_trim (hBmeas : ∀ t, Measurable (B t))
     (V : SimpleProcess ℝ (𝓕)) :
     MemLp (Function.uncurry ⇑V) 2
       ((timeMeasure.prod μ).trim (𝓕).predictable_le_prod) :=
-  ⟨V.isStronglyPredictable.aestronglyMeasurable,
-   by rw [eLpNorm_trim _ V.isStronglyPredictable]; exact (memLp_uncurry_prod hBmeas V).2⟩
+  by
+    unfold MemLp
+    rw [eLpNorm_trim _ V.isStronglyPredictable]
+    exact memLp_uncurry_prod hBmeas V
 
 /-- **The embedding** of a simple process into the predictable `L²` space, as the class of
 its uncurried version. The codomain `Lp ℝ 2 ((timeMeasure.prod μ).trim …)` is *definitionally*

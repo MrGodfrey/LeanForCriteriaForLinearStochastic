@@ -1,5 +1,9 @@
-import LinearStochastic.AlgebraStaircase
-import Mathlib.Analysis.InnerProductSpace.SingularValues
+module
+
+public import LinearStochastic.AlgebraStaircase
+public import Mathlib.Analysis.InnerProductSpace.SingularValues
+
+@[expose] public section
 
 /-! Actual full right/left singular bases and their zero singular subspaces. -/
 noncomputable section

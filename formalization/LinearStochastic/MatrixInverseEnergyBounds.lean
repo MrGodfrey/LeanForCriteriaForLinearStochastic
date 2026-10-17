@@ -1,6 +1,10 @@
-import LinearStochastic.MatrixFeedback
-import LinearStochastic.MatrixGrowthBounds
-import Mathlib.Analysis.Matrix.PosDef
+module
+
+public import LinearStochastic.MatrixFeedback
+public import LinearStochastic.MatrixGrowthBounds
+public import Mathlib.Analysis.Matrix.PosDef
+
+@[expose] public section
 
 /-! Exact spectral bounds for the ordinary inverse P⁻¹.  The constants are
 the manuscript's actual smallest and largest eigenvalues of P. -/

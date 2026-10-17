@@ -1,6 +1,10 @@
-import LinearStochastic.AlgebraExamples
-import Mathlib.Analysis.Normed.Module.FiniteDimension
-import Mathlib.Topology.ClusterPt
+module
+
+public import LinearStochastic.AlgebraExamples
+public import Mathlib.Analysis.Normed.Module.FiniteDimension
+public import Mathlib.Topology.ClusterPt
+
+@[expose] public section
 
 /-!
 # Continuous full-rank tests cannot characterize the manuscript's vanishing flag

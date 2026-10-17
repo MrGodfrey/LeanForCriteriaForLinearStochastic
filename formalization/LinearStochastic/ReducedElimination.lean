@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraBlocks
+module
+
+public import LinearStochastic.AlgebraBlocks
+
+@[expose] public section
 
 /-!
 # Exact reduced elimination inside an obstruction space

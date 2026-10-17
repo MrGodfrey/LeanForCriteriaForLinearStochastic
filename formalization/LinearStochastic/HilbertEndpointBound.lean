@@ -1,6 +1,10 @@
-import LinearStochastic.CommonForwardGlobalBound
-import LinearStochastic.HilbertBrownianUniqueness
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.CommonForwardGlobalBound
+public import LinearStochastic.HilbertBrownianUniqueness
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! A quantitative bound on the actual vector-valued SDE endpoint, obtained
 from the genuine coordinate SDE bound and orthonormal reconstruction. -/

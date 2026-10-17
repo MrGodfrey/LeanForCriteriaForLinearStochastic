@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -10,8 +12,10 @@ extension are retained. The deterministic drift estimates are proved explicitly;
 the common-filtration simple-process dense embedding.
 -/
 
-import LinearStochastic.CommonItoPredictable
-import MathFin.Foundations.FiniteMeasureCauchySchwarz
+public import LinearStochastic.CommonItoPredictable
+public import MathFin.Foundations.FiniteMeasureCauchySchwarz
+
+@[expose] public section
 
 /-! # Predictable L² extension of the actual elementary drift integral
 
@@ -305,11 +309,15 @@ theorem driftSimpleProcessLp_norm_le (T : ℝ≥0) (hBmeas : ∀ t, Measurable (
     -- ∫ (drift)² ∂prod ≤ (T:ℝ)² · ∫ (⇑V)² ∂prod
     have hmemD_prod : MemLp (Function.uncurry (driftSimpleProcess hBmeas V.val)) 2
         ((timeMeasure_T T).prod μ) :=
-      ⟨(hpredD.mono 𝓕.predictable_le_prod).aestronglyMeasurable, by
-        rw [← eLpNorm_trim 𝓕.predictable_le_prod hpredD]; exact hmemD.2⟩
+      by
+        unfold MemLp
+        rw [← eLpNorm_trim 𝓕.predictable_le_prod hpredD]
+        exact hmemD.eLpNorm_lt_top
     have hmemV_prod : MemLp (Function.uncurry ⇑V.val) 2 ((timeMeasure_T T).prod μ) :=
-      ⟨(V.val.isStronglyPredictable.mono 𝓕.predictable_le_prod).aestronglyMeasurable, by
-        rw [← eLpNorm_trim 𝓕.predictable_le_prod V.val.isStronglyPredictable]; exact hmemV.2⟩
+      by
+        unfold MemLp
+        rw [← eLpNorm_trim 𝓕.predictable_le_prod V.val.isStronglyPredictable]
+        exact hmemV.eLpNorm_lt_top
     have hintD := hmemD_prod.integrable_sq
     have hintV := hmemV_prod.integrable_sq
     rw [integral_prod _ hintD]

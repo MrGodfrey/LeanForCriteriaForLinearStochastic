@@ -1,4 +1,8 @@
-import LinearStochastic.ActualTerminalOperator
+module
+
+public import LinearStochastic.ActualTerminalOperator
+
+@[expose] public section
 
 /-! Exact controllability of the genuine SDE implies an observability bound
 for every genuine adjoint integral solution, by the actual bounded terminal

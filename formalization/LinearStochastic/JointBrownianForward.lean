@@ -1,5 +1,9 @@
-import LinearStochastic.JointBrownian
-import LinearStochastic.CommonItoIsometry
+module
+
+public import LinearStochastic.JointBrownian
+public import LinearStochastic.CommonItoIsometry
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointBrownian
@@ -14,8 +18,8 @@ theorem joint_past_independent_forward (s : ℝ≥0) :
   apply indepFun_pi_pair (fun _ : ι ↦ gaussianLimit)
     (fun _ ω (u : Set.Iic s) ↦ brownian u ω)
     (fun _ ω u ↦ brownian (s+u) ω - brownian s ω)
-    (fun _ ↦ measurable_pi_lambda _ (fun u ↦ measurable_brownian u))
-    (fun _ ↦ measurable_pi_lambda _ (fun u ↦
+    (fun _ ↦ measurable_pi_lambda (fun u ↦ measurable_brownian u))
+    (fun _ ↦ measurable_pi_lambda (fun u ↦
       (measurable_brownian (s+u)).sub (measurable_brownian s)))
   intro i
   exact (isBrownianReal_brownian.toIsPreBrownianReal.indepFun_shift s).symm

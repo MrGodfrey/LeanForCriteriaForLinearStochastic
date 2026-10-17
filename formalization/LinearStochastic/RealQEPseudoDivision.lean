@@ -1,8 +1,12 @@
-import Mathlib.Algebra.Polynomial.CancelLeads
-import Mathlib.Algebra.Polynomial.EraseLead
-import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.Polynomial.CancelLeads
+public import Mathlib.Algebra.Polynomial.EraseLead
+public import Mathlib.Algebra.Polynomial.Eval.Defs
+public import Mathlib.Data.Real.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Denominator-free polynomial reduction for a real QE construction

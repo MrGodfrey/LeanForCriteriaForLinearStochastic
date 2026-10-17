@@ -1,4 +1,8 @@
-import LinearStochastic.CommonItoMultichannel
+module
+
+public import LinearStochastic.CommonItoMultichannel
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonDirectionIntegral

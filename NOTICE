@@ -1,0 +1,19 @@
+Lean formalization of stochastic controllability criteria
+Copyright 2026 Yu Wang and contributors.
+
+Original software in this repository is licensed under Apache-2.0; see LICENSE.
+The accompanying manuscript (main.tex and main.pdf) is by Qi Lü and Yu Wang
+and is not relicensed by this software licence. Bibliographic source material
+and the Automatica class autart.cls retain their respective rights and terms.
+
+Adapted MathFin sources retain Raphael Coelho's copyright and Apache-2.0
+notices. See formalization/licenses/NOTICE.md and the original source headers.
+External dependencies retain their own licences. No ownership of third-party
+material is asserted by the repository's software licence.
+
+The Lean 4.35 compatibility sources under formalization/vendor/stochastic
+are extracted from MathFin, BrownianMotion, and KolmogorovExtension4. Their
+original authors and copyright notices are retained in the source headers;
+immutable source revisions and file hashes are recorded in provenance.json.
+These compatibility edits do not constitute upstream releases or upstream
+endorsement of this project.

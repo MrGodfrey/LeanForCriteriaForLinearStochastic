@@ -1,5 +1,9 @@
-import LinearStochastic.JointBrownianIntegral
-import LinearStochastic.CommonItoCross
+module
+
+public import LinearStochastic.JointBrownianIntegral
+public import LinearStochastic.CommonItoCross
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointBrownian
@@ -11,7 +15,7 @@ variable (ι : Type*) [Fintype ι]
 theorem channels_independent {i j : ι} (hij : i ≠ j) :
     IndepFun (fun ω t ↦ process ι i t ω) (fun ω t ↦ process ι j t ω) (law ι) := by
   exact (iIndepFun_pi (fun _ : ι ↦
-    (measurable_pi_lambda _ (fun t ↦ measurable_brownian t)).aemeasurable)).indepFun hij
+    (measurable_pi_lambda (fun t ↦ measurable_brownian t)).aemeasurable)).indepFun hij
 
 /-- Independence of the entire pair of future paths from all channel histories. -/
 theorem pair_forward_independent (i j : ι) :

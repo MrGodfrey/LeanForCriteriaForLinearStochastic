@@ -1,4 +1,8 @@
-import LinearStochastic.CommonBrownianGlobal
+module
+
+public import LinearStochastic.CommonBrownianGlobal
+
+@[expose] public section
 
 /-! Genuine solution transport from a constant state feedback to the actual
 constant closed-loop coefficients. The control relation is an L² equality. -/

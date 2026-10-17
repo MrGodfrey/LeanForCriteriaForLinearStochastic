@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingFeedbackAll
-import LinearStochastic.JointUsualBrownianGlobal
+module
+
+public import LinearStochastic.SwitchingFeedbackAll
+public import LinearStochastic.JointUsualBrownianGlobal
+
+@[expose] public section
 
 /-! One deterministic locally bounded piecewise matrix gain at every positive
 horizon, with actual ordinary-progressive finite-energy feedback and terminal

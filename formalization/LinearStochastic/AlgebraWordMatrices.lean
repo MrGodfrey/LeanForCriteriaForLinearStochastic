@@ -1,5 +1,9 @@
-import LinearStochastic.AlgebraCoordinates
-import LinearStochastic.AlgebraWords
+module
+
+public import LinearStochastic.AlgebraCoordinates
+public import LinearStochastic.AlgebraWords
+
+@[expose] public section
 
 /-!
 # The exact finite word matrices H₀,...,Hₙ₋₁

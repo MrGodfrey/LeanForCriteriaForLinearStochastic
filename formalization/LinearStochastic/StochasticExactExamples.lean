@@ -1,5 +1,9 @@
-import LinearStochastic.RawCompleteClassification
-import LinearStochastic.StochasticExamples
+module
+
+public import LinearStochastic.RawCompleteClassification
+public import LinearStochastic.StochasticExamples
+
+@[expose] public section
 
 /-! Exact-null and exact-control conclusions for both concrete manuscript
 families, including the nonopen actual ENC locus. -/

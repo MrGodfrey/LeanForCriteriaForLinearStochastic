@@ -1,5 +1,9 @@
-import LinearStochastic.HilbertLocalSolution
-import LinearStochastic.SectionSolutionMap
+module
+
+public import LinearStochastic.HilbertLocalSolution
+public import LinearStochastic.SectionSolutionMap
+
+@[expose] public section
 
 /-! Exact scalar coordinate consequences of any actual Hilbert section
 solution. In particular, no joint measurability of the raw Itô version is

@@ -1,8 +1,12 @@
-import LinearStochastic.RealQEFiniteCells
-import Mathlib.Data.Finset.Sort
-import Mathlib.Analysis.Calculus.LocalExtr.Rolle
-import Mathlib.Analysis.Calculus.Deriv.Polynomial
-import Mathlib.Order.Hom.Set
+module
+
+public import LinearStochastic.RealQEFiniteCells
+public import Mathlib.Data.Finset.Sort
+public import Mathlib.Analysis.Calculus.LocalExtr.Rolle
+public import Mathlib.Analysis.Calculus.Deriv.Polynomial
+public import Mathlib.Order.Hom.Set
+
+@[expose] public section
 
 /-!
 # Ordered finite-cut transport

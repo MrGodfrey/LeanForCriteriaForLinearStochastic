@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,7 +9,9 @@ The elementary uniform-limit argument below is adapted from the corresponding
 Itô modification proof at MathFin 99b836298731c432a6242fdb6cb51c1c97f37902,
 using the independently proved deterministic drift maximal estimate instead.
 -/
-import LinearStochastic.CommonDriftModification
+public import LinearStochastic.CommonDriftModification
+
+@[expose] public section
 noncomputable section
 namespace LinearStochastic.CommonDriftPathwise
 open MeasureTheory ProbabilityTheory Filter Topology

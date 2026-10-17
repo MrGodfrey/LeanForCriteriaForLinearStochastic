@@ -1,6 +1,10 @@
-import LinearStochastic.BSDEPathFixedPoint
-import LinearStochastic.BSDEPathRestriction
-import LinearStochastic.BSDEGlobalExistence
+module
+
+public import LinearStochastic.BSDEPathFixedPoint
+public import LinearStochastic.BSDEPathRestriction
+public import LinearStochastic.BSDEGlobalExistence
+
+@[expose] public section
 
 /-! Global uniqueness of genuine backward solutions is obtained by actual
 reverse interval restriction, local Picard uniqueness and exact H² pasting.

@@ -1,5 +1,9 @@
-import LinearStochastic.RealQEFiniteProjection
-import LinearStochastic.LMIPolynomial
+module
+
+public import LinearStochastic.RealQEFiniteProjection
+public import LinearStochastic.LMIPolynomial
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.MatrixSemialgebraic

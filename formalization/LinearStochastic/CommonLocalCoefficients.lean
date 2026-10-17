@@ -1,5 +1,9 @@
-import LinearStochastic.CommonDriftS2
-import LinearStochastic.CommonLocalSolution
+module
+
+public import LinearStochastic.CommonDriftS2
+public import LinearStochastic.CommonLocalSolution
+
+@[expose] public section
 
 /-! The actual matrix coefficient processes of the constructed local solution.
 Both the state and ordinary progressive controls are retained under the ambient

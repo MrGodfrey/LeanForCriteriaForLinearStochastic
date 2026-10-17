@@ -1,5 +1,9 @@
-import LinearStochastic.CommonRestartIntegral
-import LinearStochastic.CommonLocalCoefficients
+module
+
+public import LinearStochastic.CommonRestartIntegral
+public import LinearStochastic.CommonLocalCoefficients
+
+@[expose] public section
 
 /-! Deterministic Lebesgue primitive compatibility on actual predictable H²
 classes. The same probability-one set works for every restarted time. -/

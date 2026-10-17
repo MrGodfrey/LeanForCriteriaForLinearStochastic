@@ -1,6 +1,10 @@
-import LinearStochastic.ExactDiffusionNecessity
-import LinearStochastic.SectionDriverTransport
-import LinearStochastic.JointUsualBrownianGlobal
+module
+
+public import LinearStochastic.ExactDiffusionNecessity
+public import LinearStochastic.SectionDriverTransport
+public import LinearStochastic.JointUsualBrownianGlobal
+
+@[expose] public section
 
 /-! The joint-diffusion necessity theorem for the original Brownian paths,
 without strengthening their almost-sure continuity to everywhere continuity. -/

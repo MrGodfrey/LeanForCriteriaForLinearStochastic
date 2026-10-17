@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingTimeMesh
-import LinearStochastic.ProcessQuadraticInner
+module
+
+public import LinearStochastic.SwitchingTimeMesh
+public import LinearStochastic.ProcessQuadraticInner
+
+@[expose] public section
 
 /-! Actual S² continuity identifies the terminal random variable from the
 vanishing moments along the genuine switching mesh. -/

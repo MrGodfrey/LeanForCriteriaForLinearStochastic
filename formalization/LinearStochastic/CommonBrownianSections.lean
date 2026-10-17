@@ -1,5 +1,9 @@
-import LinearStochastic.CommonSectionSolution
-import LinearStochastic.CommonBrownianGlobal
+module
+
+public import LinearStochastic.CommonSectionSolution
+public import LinearStochastic.CommonBrownianGlobal
+
+@[expose] public section
 
 /-! Canonical continuous S² versions of actual section solutions for the
 original Brownian motion, without an all-sample continuous-path assumption. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.CommonFiltrationCompletion
-import LinearStochastic.ProgressivePredictable
+module
+
+public import LinearStochastic.CommonFiltrationCompletion
+public import LinearStochastic.ProgressivePredictable
+
+@[expose] public section
 
 /-! Deterministic restarts on the original probability space and common
 filtration. Only Brownian and measurability data are transported here; integral

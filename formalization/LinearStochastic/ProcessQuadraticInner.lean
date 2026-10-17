@@ -1,5 +1,9 @@
-import LinearStochastic.SectionHorizonRestriction
-import LinearStochastic.ContinuousQuadraticExpectation
+module
+
+public import LinearStochastic.SectionHorizonRestriction
+public import LinearStochastic.ContinuousQuadraticExpectation
+
+@[expose] public section
 
 /-! Exact conversion of actual predictable L² pairings into expected
 quadratic products of the same underlying process, including shorter horizons. -/

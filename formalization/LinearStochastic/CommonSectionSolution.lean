@@ -1,5 +1,9 @@
-import LinearStochastic.CommonGlobalUniqueness
-import LinearStochastic.RealTimeBridge
+module
+
+public import LinearStochastic.CommonGlobalUniqueness
+public import LinearStochastic.RealTimeBridge
+
+@[expose] public section
 
 /-! An actual H² solution given only in almost-everywhere time sections has a
 canonical continuous S² version. Measurability is established for the continuous

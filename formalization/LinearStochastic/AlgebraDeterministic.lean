@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraFlagTransport
+module
+
+public import LinearStochastic.AlgebraFlagTransport
+
+@[expose] public section
 
 /-! # The zero-diffusion obstruction flag and the classical Kalman matrix -/
 noncomputable section

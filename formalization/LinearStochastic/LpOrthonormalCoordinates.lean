@@ -1,4 +1,8 @@
-import LinearStochastic.VectorItoMap
+module
+
+public import LinearStochastic.VectorItoMap
+
+@[expose] public section
 
 /-! Honest reconstruction of finite scalar L² coordinates into a Hilbert
 state, and exact comparison with pointwise coefficient maps. -/

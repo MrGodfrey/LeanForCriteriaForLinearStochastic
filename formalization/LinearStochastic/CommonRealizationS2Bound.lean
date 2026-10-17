@@ -1,4 +1,8 @@
-import LinearStochastic.CommonIntegralS2Bound
+module
+
+public import LinearStochastic.CommonIntegralS2Bound
+
+@[expose] public section
 
 /-! Quantitative S² control of the actual initial-plus-drift-plus-Itô path. -/
 noncomputable section

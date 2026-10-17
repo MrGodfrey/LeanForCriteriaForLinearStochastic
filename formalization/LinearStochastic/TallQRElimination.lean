@@ -1,6 +1,10 @@
-import LinearStochastic.SpectralNullspace
-import Mathlib.Analysis.InnerProductSpace.GramSchmidtOrtho
-import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
+module
+
+public import LinearStochastic.SpectralNullspace
+public import Mathlib.Analysis.InnerProductSpace.GramSchmidtOrtho
+public import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
+
+@[expose] public section
 
 /-! Constructed tall QR, finite Householder realization, and exact residual elimination. -/
 noncomputable section

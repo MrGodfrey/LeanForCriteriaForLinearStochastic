@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEGlobalUniqueness
-import LinearStochastic.BrownianGlobalBSDE
+module
+
+public import LinearStochastic.BSDEGlobalUniqueness
+public import LinearStochastic.BrownianGlobalBSDE
+
+@[expose] public section
 
 /-! Global backward uniqueness for the original Brownian drivers and their
 original usual filtration. Equality means actual H² classes and pathwise

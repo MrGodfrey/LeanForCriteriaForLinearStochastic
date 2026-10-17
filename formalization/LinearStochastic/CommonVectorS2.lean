@@ -1,5 +1,9 @@
-import LinearStochastic.CommonFiltrationCompletion
-import LinearStochastic.VectorItoProduct
+module
+
+public import LinearStochastic.CommonFiltrationCompletion
+public import LinearStochastic.VectorItoProduct
+
+@[expose] public section
 
 /-! Continuous S² versions of the actual finite-channel vector Itô integral on
 an arbitrary complete common filtration. The input space and terminal integral

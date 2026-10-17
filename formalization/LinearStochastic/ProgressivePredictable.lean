@@ -1,7 +1,11 @@
-import LinearStochastic.RealTimeBridge
-import BrownianMotion.StochasticIntegral.Predictable
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
-import Mathlib.MeasureTheory.Constructions.Polish.StronglyMeasurable
+module
+
+public import LinearStochastic.RealTimeBridge
+public import BrownianMotion.StochasticIntegral.Predictable
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
+public import Mathlib.MeasureTheory.Constructions.Polish.StronglyMeasurable
+
+@[expose] public section
 
 /-! Constructive progressive-to-predictable approximation via actual past
 Lebesgue integrals. This file develops the required measurable/continuous
@@ -294,9 +298,9 @@ theorem exists_predictable_Lp (μ : Measure Ω) [SFinite μ]
     (memLp_congr_ae hge).mpr hLp
   have hgt : MemLp (Function.uncurry g) p
       (((CommonItoCLM.timeMeasure_T T).prod μ).trim 𝓕.predictable_le_prod) := by
-    refine ⟨hg.aestronglyMeasurable, ?_⟩
+    unfold MemLp
     rw [eLpNorm_trim 𝓕.predictable_le_prod hg]
-    exact hgm.2
+    exact hgm.eLpNorm_lt_top
   refine ⟨hgt.toLp (Function.uncurry g), ?_⟩
   exact (ae_eq_of_ae_eq_trim (MemLp.coeFn_toLp hgt)).trans hge
 

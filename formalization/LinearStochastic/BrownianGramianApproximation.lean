@@ -1,7 +1,11 @@
-import LinearStochastic.KnownTargetLpReaching
-import LinearStochastic.BrownianDelayedTarget
-import LinearStochastic.RawControlProperties
-import LinearStochastic.DeterministicGramianMatrices
+module
+
+public import LinearStochastic.KnownTargetLpReaching
+public import LinearStochastic.BrownianDelayedTarget
+public import LinearStochastic.RawControlProperties
+public import LinearStochastic.DeterministicGramianMatrices
+
+@[expose] public section
 
 /-! The manuscript's actual delayed conditional-expectation/Gramian proof
 of approximate controllability in the zero-diffusion case. -/

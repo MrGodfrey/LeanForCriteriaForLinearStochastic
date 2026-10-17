@@ -1,5 +1,9 @@
-import LinearStochastic.AlgebraWords
-import LinearStochastic.InputStructure
+module
+
+public import LinearStochastic.AlgebraWords
+public import LinearStochastic.InputStructure
+
+@[expose] public section
 
 /-!
 # Algebraic reduction with injective joint adjoint diffusion

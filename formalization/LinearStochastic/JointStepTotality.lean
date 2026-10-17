@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -7,9 +9,11 @@ The constant-normalization argument is adapted from MathFin
 WienerExponentialTotality; joint coordinate density uses the independently
 proved finite-coordinate totality on the original sample space.
 -/
-import LinearStochastic.JointStepRepresentation
-import LinearStochastic.FiniteStepAbel
-import LinearStochastic.JointExponentialTotality
+public import LinearStochastic.JointStepRepresentation
+public import LinearStochastic.FiniteStepAbel
+public import LinearStochastic.JointExponentialTotality
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointStepTotality

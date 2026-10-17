@@ -1,8 +1,12 @@
-import LinearStochastic.SwitchingLinearSolutions
-import LinearStochastic.SwitchingState
-import LinearStochastic.UniformSwitchingFamily
-import LinearStochastic.ActualControlProperties
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.SwitchingLinearSolutions
+public import LinearStochastic.SwitchingState
+public import LinearStochastic.UniformSwitchingFamily
+public import LinearStochastic.ActualControlProperties
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! Actual exact null control on every short horizon, with one genuinely
 coefficient-dependent polynomial cost and arbitrary original F0 L² initial

@@ -1,4 +1,8 @@
-import LinearStochastic.CommonH2Split
+module
+
+public import LinearStochastic.CommonH2Split
+
+@[expose] public section
 
 /-! Genuine isometric extension of predictable controls by zero outside a
 finite deterministic interval, with exact restriction and restart identities. -/

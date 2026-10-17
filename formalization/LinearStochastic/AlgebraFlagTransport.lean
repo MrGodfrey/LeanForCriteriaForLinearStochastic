@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraSurjectiveMatrices
+module
+
+public import LinearStochastic.AlgebraSurjectiveMatrices
+
+@[expose] public section
 
 /-!
 # Coordinate invariance of the full obstruction iteration

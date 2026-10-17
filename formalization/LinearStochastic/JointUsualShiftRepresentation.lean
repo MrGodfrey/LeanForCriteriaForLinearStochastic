@@ -1,5 +1,9 @@
-import LinearStochastic.JointUsualRepresentation
-import LinearStochastic.CommonShiftRepresentation
+module
+
+public import LinearStochastic.JointUsualRepresentation
+public import LinearStochastic.CommonShiftRepresentation
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointUsualShiftRepresentation

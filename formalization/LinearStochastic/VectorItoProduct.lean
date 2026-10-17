@@ -1,5 +1,9 @@
-import LinearStochastic.ItoExpectedProduct
-import Mathlib.Analysis.InnerProductSpace.PiL2
+module
+
+public import LinearStochastic.ItoExpectedProduct
+public import Mathlib.Analysis.InnerProductSpace.PiL2
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.VectorItoProduct

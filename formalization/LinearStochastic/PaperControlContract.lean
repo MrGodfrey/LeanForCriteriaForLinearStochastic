@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertS2Energy
-import LinearStochastic.CommonProcessSpace
-import LinearStochastic.PaperControlProperties
+module
+
+public import LinearStochastic.HilbertS2Energy
+public import LinearStochastic.CommonProcessSpace
+public import LinearStochastic.PaperControlProperties
+
+@[expose] public section
 
 /-! Exact mathematical conventions for the manuscript's control space,
 Euclidean dimensions, intermediate empty matrices, and L² representatives. -/
@@ -22,7 +26,7 @@ theorem progressive_iff_strong (v : ℝ≥0 → Ω → EuclideanSpace ℝ (Fin r
 omit [IsProbabilityMeasure μ] in
 /-- Ordinary progressive finite-energy controls have exactly the L²
 integrability required by the genuine stochastic integral. -/
-theorem energy_iff_memLp (T : ℝ≥0) (v : ℝ≥0 → Ω → EuclideanSpace ℝ (Fin r))
+theorem energy_iff_memLp [SFinite μ] (T : ℝ≥0) (v : ℝ≥0 → Ω → EuclideanSpace ℝ (Fin r))
     (hv : IsProgressive 𝓕 v) :
     Integrable (fun z : ℝ≥0 × Ω=>‖v z.1 z.2‖^2) ((CommonItoCLM.timeMeasure_T T).prod μ) ↔
       MemLp (Function.uncurry v) 2 ((CommonItoCLM.timeMeasure_T T).prod μ) :=

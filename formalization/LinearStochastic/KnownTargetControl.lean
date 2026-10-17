@@ -1,6 +1,10 @@
-import LinearStochastic.CommonProcessSpace
-import LinearStochastic.DeterministicGramianControl
-import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
+module
+
+public import LinearStochastic.CommonProcessSpace
+public import LinearStochastic.DeterministicGramianControl
+public import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
+
+@[expose] public section
 
 /-! A continuous deterministic steering kernel applied after time a to an
 F_a-measurable L² vector is an ordinary progressive finite-energy control.

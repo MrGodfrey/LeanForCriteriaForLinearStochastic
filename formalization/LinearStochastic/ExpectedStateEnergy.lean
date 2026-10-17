@@ -1,5 +1,9 @@
-import LinearStochastic.ProcessQuadraticInner
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+module
+
+public import LinearStochastic.ProcessQuadraticInner
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+
+@[expose] public section
 
 /-! Actual state and feedback H² norms expressed as expected path integrals.
 The exponential integral bound is a deterministic consequence of a supplied

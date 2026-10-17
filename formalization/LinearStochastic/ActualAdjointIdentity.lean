@@ -1,4 +1,8 @@
-import LinearStochastic.ActualTerminalOperator
+module
+
+public import LinearStochastic.ActualTerminalOperator
+
+@[expose] public section
 
 /-! The Hilbert adjoint of the genuine SDE terminal operator is the genuine
 BSDE observation. This strengthens a pairing-only interface to an equality of

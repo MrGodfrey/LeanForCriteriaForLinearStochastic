@@ -1,5 +1,9 @@
-import LinearStochastic.ActualReachableDensity
-import LinearStochastic.HilbertGlobalSolution
+module
+
+public import LinearStochastic.ActualReachableDensity
+public import LinearStochastic.HilbertGlobalSolution
+
+@[expose] public section
 
 /-! Approximation from arbitrary actual F₀ L² initial data, using density of
 the actual zero-initial reachable subspace and a genuinely constructed forward

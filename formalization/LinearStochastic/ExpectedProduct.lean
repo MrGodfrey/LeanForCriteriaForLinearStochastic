@@ -1,4 +1,8 @@
-import LinearStochastic.DriftPairIntegrability
+module
+
+public import LinearStochastic.DriftPairIntegrability
+
+@[expose] public section
 
 /-!
 # Expected product of H² drifts and genuine martingales

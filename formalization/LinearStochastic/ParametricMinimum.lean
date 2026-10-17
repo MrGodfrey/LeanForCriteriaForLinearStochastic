@@ -1,6 +1,10 @@
-import LinearStochastic.MatrixMinimum
-import Mathlib.Topology.Semicontinuity.Basic
-import Mathlib.Topology.Maps.Proper.Basic
+module
+
+public import LinearStochastic.MatrixMinimum
+public import Mathlib.Topology.Semicontinuity.Basic
+public import Mathlib.Topology.Maps.Proper.Basic
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.ParametricMinimum

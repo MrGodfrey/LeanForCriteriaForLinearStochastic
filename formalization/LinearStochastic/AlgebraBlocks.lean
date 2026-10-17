@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraRank
+module
+
+public import LinearStochastic.AlgebraRank
+
+@[expose] public section
 
 /-!
 # Recursive block pair of paper (eq:pair)
@@ -35,8 +39,8 @@ variable {E U ι : Type} [AddCommGroup E] [Module ℝ E]
   [FiniteDimensional ℝ E] [FiniteDimensional ℝ U]
 variable (s : AdjointCoefficients (𝕜 := ℝ) (E := E) (U := U) (ι := ι))
 
-private def sumC : (ι → E) →ₗ[ℝ] E := ∑ i, (s.C i).comp (LinearMap.proj i)
-private def sumD : (ι → E) →ₗ[ℝ] U := ∑ i, (s.D i).comp (LinearMap.proj i)
+def sumC : (ι → E) →ₗ[ℝ] E := ∑ i, (s.C i).comp (LinearMap.proj i)
+def sumD : (ι → E) →ₗ[ℝ] U := ∑ i, (s.D i).comp (LinearMap.proj i)
 
 /-- Initial pair `(Bᵀ, Dᵀ)` from (eq:pair-start). -/
 def firstPair : BlockPair E where

@@ -1,6 +1,10 @@
-import Mathlib.Analysis.Matrix.PosDef
-import Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff
-import Mathlib.Algebra.Polynomial.Eval.Degree
+module
+
+public import Mathlib.Analysis.Matrix.PosDef
+public import Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff
+public import Mathlib.Algebra.Polynomial.Eval.Degree
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.PrincipalMinors

@@ -1,5 +1,9 @@
-import LinearStochastic.PositiveCone
-import LinearStochastic.LMIMatrixCoordinates
+module
+
+public import LinearStochastic.PositiveCone
+public import LinearStochastic.LMIMatrixCoordinates
+
+@[expose] public section
 
 set_option maxHeartbeats 800000
 noncomputable section

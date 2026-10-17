@@ -1,4 +1,8 @@
-import LinearStochastic.LinearDuality
+module
+
+public import LinearStochastic.LinearDuality
+
+@[expose] public section
 
 /-! Pointwise deterministic Lyapunov inequalities integrated on actual L²
 state classes. All quadratic integrability is proved from the L² data. -/

@@ -1,5 +1,9 @@
-import LinearStochastic.CommonDriftRestart
-import LinearStochastic.CommonProcessPaste
+module
+
+public import LinearStochastic.CommonDriftRestart
+public import LinearStochastic.CommonProcessPaste
+
+@[expose] public section
 
 /-! A genuine pasting theorem for the actual Lebesgue and constructed Itô
 operators. Equations use fixed-time almost-everywhere identities; no illegal

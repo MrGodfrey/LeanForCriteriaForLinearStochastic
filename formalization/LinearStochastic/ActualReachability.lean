@@ -1,5 +1,9 @@
-import LinearStochastic.SectionSolutionLinearity
-import LinearStochastic.SectionTerminalSpace
+module
+
+public import LinearStochastic.SectionSolutionLinearity
+public import LinearStochastic.SectionTerminalSpace
+
+@[expose] public section
 
 /-! Reachable terminals of the genuine forward stochastic equation form a
 linear subspace of the actual terminal L² space. -/

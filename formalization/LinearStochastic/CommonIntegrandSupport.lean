@@ -1,4 +1,8 @@
-import LinearStochastic.CommonFiltrationTransport
+module
+
+public import LinearStochastic.CommonFiltrationTransport
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonIntegrandSupport

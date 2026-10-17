@@ -1,4 +1,8 @@
-import LinearStochastic.CommonItoCross
+module
+
+public import LinearStochastic.CommonItoCross
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonItoMultichannel

@@ -1,4 +1,8 @@
-import LinearStochastic.KnownTargetSolution
+module
+
+public import LinearStochastic.KnownTargetSolution
+
+@[expose] public section
 
 /-! Earlier-measurable L² target classes are attained by the concrete
 Gramian control and true raw zero-diffusion solution. -/

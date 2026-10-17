@@ -1,5 +1,9 @@
-import LinearStochastic.JointCylinderGeneration
-import LinearStochastic.FiniteExponentialTotality
+module
+
+public import LinearStochastic.JointCylinderGeneration
+public import LinearStochastic.FiniteExponentialTotality
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.JointExponentialTotality
@@ -55,7 +59,7 @@ theorem eq_zero_of_orthogonal_finite_exponentials
     rw [eLpNorm_congr_ae hsub, eLpNorm_neg]
   simp only [heq] at hlim
   have hf0 : f =ᵐ[μ] 0 :=
-    (eLpNorm_eq_zero_iff hfL2.aestronglyMeasurable one_ne_zero).mp
+    (eLpNorm_eq_zero_iff one_ne_zero).mp
       (tendsto_nhds_unique hlim tendsto_const_nhds).symm
   exact Lp.ext_iff.mpr ((hfae.trans hf0).trans (Lp.coeFn_zero ℝ 2 μ).symm)
 

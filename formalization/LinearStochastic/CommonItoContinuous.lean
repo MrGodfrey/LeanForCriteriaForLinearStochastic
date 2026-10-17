@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -9,8 +11,10 @@ path-continuity proof in ItoIntegralProcessLocalMartingale.lean, MathFin pin
 Borel--Cantelli and uniform Cauchy limit construction are retained, now for
 arbitrary sample spaces and the specified common filtration.
 -/
-import LinearStochastic.CommonItoProcessGeneral
-import BrownianMotion.StochasticIntegral.DoobLp
+public import LinearStochastic.CommonItoProcessGeneral
+public import BrownianMotion.StochasticIntegral.DoobLp
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ProbabilityTheory Filter Topology
@@ -80,8 +84,8 @@ theorem itoSimpleProcess_maximal_prob (hBmeas : ∀ t, Measurable (B t))
   have hL2 : ∫ ω, ‖f ω‖ ∂μ ≤ ‖itoSimpleProcessLp hB hBmeas V.val T‖ := by
     rw [itoSimpleProcessLp, Lp.norm_toLp,
       ← ENNReal.toReal_ofReal (integral_nonneg fun ω ↦ norm_nonneg _),
-      ofReal_integral_norm_eq_lintegral_enorm hfi, ← eLpNorm_one_eq_lintegral_enorm]
-    exact ENNReal.toReal_mono hf.2.ne (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num) hf.1)
+      ofReal_integral_norm_eq_lintegral_enorm hfi, ← eLpNorm_one_eq_lintegral_enorm hf.aestronglyMeasurable]
+    exact ENNReal.toReal_mono hf.eLpNorm_lt_top.ne (eLpNorm_le_eLpNorm_of_exponent_le (by norm_num))
   -- terminal Itô isometry on the simple embedding
   have hterm : ‖itoSimpleProcessLp hB hBmeas V.val T‖ = ‖simpleAssembly_T (𝓕 := 𝓕) (μ := μ) T hBmeas V‖ := by
     rw [← itoProcessCLM_simpleAssembly_T hB T T hBmeas V, itoProcessCLM_norm_terminal hB T hBmeas]
@@ -263,7 +267,7 @@ theorem itoContinuousMod_modification (T : ℝ≥0) (hBmeas : ∀ t, Measurable 
   have hV := (approxSeq T hBmeas φ).choose_spec
   set F : ℕ → Ω → ℝ := fun n ω ↦ itoSimpleProcess hBmeas (V n).val t ω
   have hFmeas : ∀ n, AEStronglyMeasurable (F n) μ :=
-    fun n ↦ (memLp_itoSimpleProcess hB hBmeas (V n).val t).1
+    fun n ↦ (memLp_itoSimpleProcess hB hBmeas (V n).val t).aestronglyMeasurable
   -- (a) F → itoContinuousMod a.e. ⟹ in measure
   have hmeasG : TendstoInMeasure μ F atTop (fun ω ↦ itoContinuousMod T hBmeas φ t ω) := by
     refine tendstoInMeasure_of_tendsto_ae hFmeas ?_
@@ -287,8 +291,7 @@ theorem itoContinuousMod_modification (T : ℝ≥0) (hBmeas : ∀ t, Measurable 
     simp only [Lp.toLp_coeFn]
     exact hLp
   have hmeasH : TendstoInMeasure μ F atTop (⇑(itoProcessCLM hB T t hBmeas φ)) :=
-    tendstoInMeasure_of_tendsto_eLpNorm (by norm_num) hFmeas
-      (Lp.aestronglyMeasurable _) heLp
+    tendstoInMeasure_of_tendsto_eLpNorm (by norm_num) heLp
   exact tendstoInMeasure_ae_unique hmeasG hmeasH
 
 omit hB in

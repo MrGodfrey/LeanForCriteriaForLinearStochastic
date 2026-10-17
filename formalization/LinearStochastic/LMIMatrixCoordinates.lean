@@ -1,5 +1,9 @@
-import LinearStochastic.LMICoefficients
-import LinearStochastic.AlgebraFlagTransport
+module
+
+public import LinearStochastic.LMICoefficients
+public import LinearStochastic.AlgebraFlagTransport
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.LMIMatrixCoordinates

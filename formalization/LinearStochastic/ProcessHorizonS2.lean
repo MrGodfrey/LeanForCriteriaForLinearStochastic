@@ -1,4 +1,8 @@
-import LinearStochastic.CommonStateS2
+module
+
+public import LinearStochastic.CommonStateS2
+
+@[expose] public section
 
 /-! True S² restriction to deterministic prefixes for vector processes. -/
 noncomputable section

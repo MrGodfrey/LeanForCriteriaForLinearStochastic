@@ -1,5 +1,9 @@
-import Mathlib
-import LinearStochastic.OpenConeAlternative
+module
+
+public import Mathlib
+public import LinearStochastic.OpenConeAlternative
+
+@[expose] public section
 
 /-!
 # The open cone of uniformly positive symmetric operators

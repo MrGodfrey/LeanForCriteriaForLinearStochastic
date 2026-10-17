@@ -1,4 +1,8 @@
-import Mathlib.Analysis.LocallyConvex.Separation
+module
+
+public import Mathlib.Analysis.LocallyConvex.Separation
+
+@[expose] public section
 
 /-!
 # Separation of a linear range from an open convex cone

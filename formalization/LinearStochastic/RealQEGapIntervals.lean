@@ -1,5 +1,9 @@
-import LinearStochastic.RealQECutTransport
-import LinearStochastic.RealQECellComposition
+module
+
+public import LinearStochastic.RealQECutTransport
+public import LinearStochastic.RealQECellComposition
+
+@[expose] public section
 
 /-!
 # Canonical intervals of a finite cut set

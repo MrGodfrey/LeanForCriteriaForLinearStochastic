@@ -1,5 +1,9 @@
-import LinearStochastic.CommonStateS2
-import LinearStochastic.ProgressivePredictable
+module
+
+public import LinearStochastic.CommonStateS2
+public import LinearStochastic.ProgressivePredictable
+
+@[expose] public section
 
 /-! A genuine progressive continuous S² process determines the predictable H²
 class used by Picard. Joint measurability comes from progressiveness of the
@@ -16,7 +20,7 @@ variable {Ω : Type*} {mΩ : MeasurableSpace Ω} {μ : Measure Ω} [IsProbabilit
 omit [IsProbabilityMeasure μ] in
 /-- Genuine progressiveness provides joint measurability under the stopped
 product measure, even if no global uncurry measurability was supplied. -/
-theorem progressive_spacetime_measurable {E : Type*} [NormedAddCommGroup E]
+theorem progressive_spacetime_measurable [SFinite μ] {E : Type*} [NormedAddCommGroup E]
     {R : ℝ≥0 → Ω → E} (hR : IsStronglyProgressive 𝓕 R) (T : ℝ≥0) :
     AEStronglyMeasurable (Function.uncurry R) ((timeMeasure_T T).prod μ) := by
   have hs : StronglyMeasurable (fun z : ℝ≥0 × Ω ↦ R (min z.1 T) z.2) :=

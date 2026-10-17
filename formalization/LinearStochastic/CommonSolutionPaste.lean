@@ -1,4 +1,8 @@
-import LinearStochastic.CommonSolutionData
+module
+
+public import LinearStochastic.CommonSolutionData
+
+@[expose] public section
 
 /-! Actual deterministic concatenation of two constructed matrix SDE solutions.
 The pasted predictable class is obtained from the genuine continuous S² path;

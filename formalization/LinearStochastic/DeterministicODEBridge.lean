@@ -1,4 +1,8 @@
-import LinearStochastic.DeterministicControlClassification
+module
+
+public import LinearStochastic.DeterministicControlClassification
+
+@[expose] public section
 
 /-! Every classical deterministic measurable finite-energy ODE solution is
 admitted by the raw-solution interface. This closes the reverse semantic bridge;

@@ -1,6 +1,10 @@
-import LinearStochastic.CommonBrownianGlobal
-import LinearStochastic.UsualVersionFiltration
-import LinearStochastic.JointUsualIndependence
+module
+
+public import LinearStochastic.CommonBrownianGlobal
+public import LinearStochastic.UsualVersionFiltration
+public import LinearStochastic.JointUsualIndependence
+
+@[expose] public section
 
 /-! Actual global controlled SDEs on the usual augmentation of the original
 joint Brownian natural filtration. Brownian paths need only be almost surely

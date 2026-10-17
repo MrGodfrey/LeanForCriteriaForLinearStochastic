@@ -1,5 +1,9 @@
-import LinearStochastic.ZeroIntegralDrift
-import LinearStochastic.SectionLinearDuality
+module
+
+public import LinearStochastic.ZeroIntegralDrift
+public import LinearStochastic.SectionLinearDuality
+
+@[expose] public section
 
 /-! Decomposition uniqueness for the genuine sectionwise integral-solution
 interface; no product measurability of the raw Itô representative is assumed. -/

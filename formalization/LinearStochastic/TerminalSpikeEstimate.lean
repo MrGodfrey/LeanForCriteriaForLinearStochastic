@@ -1,5 +1,9 @@
-import LinearStochastic.TerminalSpikeState
-import LinearStochastic.TerminalDriftWindow
+module
+
+public import LinearStochastic.TerminalSpikeState
+public import LinearStochastic.TerminalDriftWindow
+
+@[expose] public section
 
 /-! Quantitative terminal estimates for actual normalized adjoint spikes. -/
 noncomputable section

@@ -1,4 +1,8 @@
-import LinearStochastic.LinearDuality
+module
+
+public import LinearStochastic.LinearDuality
+
+@[expose] public section
 
 /-! Actual integral solutions with time-a.e. probability-a.e. sections.
 This interface does not infer product-a.e. equality for the raw separately

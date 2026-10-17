@@ -1,4 +1,8 @@
-import LinearStochastic.VectorH2Series
+module
+
+public import LinearStochastic.VectorH2Series
+
+@[expose] public section
 
 /-! Disjoint deterministic windows give actual orthogonality and exact energy
 addition for the constructed global predictable controls. -/

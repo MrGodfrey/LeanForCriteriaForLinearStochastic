@@ -1,7 +1,11 @@
-import LinearStochastic.ShiftedSwitchingGain
-import LinearStochastic.SwitchingFeedbackWindows
-import LinearStochastic.CommonDelayedSwitchingUniqueness
-import LinearStochastic.VectorHorizonRestriction
+module
+
+public import LinearStochastic.ShiftedSwitchingGain
+public import LinearStochastic.SwitchingFeedbackWindows
+public import LinearStochastic.CommonDelayedSwitchingUniqueness
+public import LinearStochastic.VectorHorizonRestriction
+
+@[expose] public section
 
 /-! The literal delayed feedback implies actual zero prefix and constant-gain
 translated window relations. All exceptional endpoints are removed in time measure. -/

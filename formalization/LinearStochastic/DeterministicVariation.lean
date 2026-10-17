@@ -1,6 +1,10 @@
-import LinearStochastic.DeterministicExponential
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
-import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+module
+
+public import LinearStochastic.DeterministicExponential
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+
+@[expose] public section
 
 /-! The actual variation-of-constants formula for a continuous forcing term,
 with a proved derivative and original drift integral equation. -/

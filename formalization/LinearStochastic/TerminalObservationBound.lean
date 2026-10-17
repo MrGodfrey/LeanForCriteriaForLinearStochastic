@@ -1,5 +1,9 @@
-import Mathlib.Analysis.Normed.Operator.Banach
-import Mathlib.Analysis.InnerProductSpace.Adjoint
+module
+
+public import Mathlib.Analysis.Normed.Operator.Banach
+public import Mathlib.Analysis.InnerProductSpace.Adjoint
+
+@[expose] public section
 
 /-! The actual open-mapping step in exact controllability. The pairing is
 explicit so the application must establish the real SDE/adjoint identity;

@@ -1,5 +1,9 @@
-import LinearStochastic.SemialgebraicMinimum
-import LinearStochastic.MatrixGrowthBounds
+module
+
+public import LinearStochastic.SemialgebraicMinimum
+public import LinearStochastic.MatrixGrowthBounds
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.PolynomialFeedbackGrowth

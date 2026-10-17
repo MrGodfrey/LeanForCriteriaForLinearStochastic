@@ -1,5 +1,9 @@
-import LinearStochastic.SemialgebraicTail
-import Mathlib.Algebra.MvPolynomial.Basic
+module
+
+public import LinearStochastic.SemialgebraicTail
+public import Mathlib.Algebra.MvPolynomial.Basic
+
+@[expose] public section
 
 /-!
 # Standard multivariate-polynomial coordinates for semialgebraic graph growth

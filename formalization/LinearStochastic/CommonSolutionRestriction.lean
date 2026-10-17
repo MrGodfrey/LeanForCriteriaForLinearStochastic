@@ -1,5 +1,9 @@
-import LinearStochastic.CommonIntegralRestriction
-import LinearStochastic.CommonSolutionFixedPoint
+module
+
+public import LinearStochastic.CommonIntegralRestriction
+public import LinearStochastic.CommonSolutionFixedPoint
+
+@[expose] public section
 
 /-! Actual restriction and restart of continuous S² solution data. -/
 set_option autoImplicit false

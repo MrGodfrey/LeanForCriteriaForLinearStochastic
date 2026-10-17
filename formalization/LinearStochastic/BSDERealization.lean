@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEMatrixPicard
-import LinearStochastic.CommonStateS2
+module
+
+public import LinearStochastic.BSDEMatrixPicard
+public import LinearStochastic.CommonStateS2
+
+@[expose] public section
 
 /-! Actual continuous predictable realization of a represented backward step.
 The only representation hypothesis is the explicit membership in the genuine

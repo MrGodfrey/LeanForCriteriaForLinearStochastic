@@ -1,4 +1,8 @@
-import LinearStochastic.ConeCertificate
+module
+
+public import LinearStochastic.ConeCertificate
+
+@[expose] public section
 
 /-!
 # Singular positive block factorization

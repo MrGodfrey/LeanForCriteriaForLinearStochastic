@@ -1,4 +1,8 @@
-import MathFin.Foundations.BrownianCylinderGeneration
+module
+
+public import MathFin.Foundations.BrownianCylinderGeneration
+
+@[expose] public section
 
 /-!
 The actual joint natural filtration and its finite dyadic coordinate cylinders.

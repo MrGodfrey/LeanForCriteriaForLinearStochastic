@@ -1,5 +1,9 @@
-import LinearStochastic.TrimInclusion
-import LinearStochastic.CommonItoCLM
+module
+
+public import LinearStochastic.TrimInclusion
+public import LinearStochastic.CommonItoCLM
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonFiltrationTransport

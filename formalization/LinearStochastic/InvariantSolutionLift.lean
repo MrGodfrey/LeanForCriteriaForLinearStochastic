@@ -1,5 +1,9 @@
-import LinearStochastic.InvariantAdjointDynamics
-import LinearStochastic.SectionSolutionMap
+module
+
+public import LinearStochastic.InvariantAdjointDynamics
+public import LinearStochastic.SectionSolutionMap
+
+@[expose] public section
 
 /-! Lifting a genuine SDE solution on the invariant obstruction subspace
 produces an actual backward adjoint solution with zero observation. -/

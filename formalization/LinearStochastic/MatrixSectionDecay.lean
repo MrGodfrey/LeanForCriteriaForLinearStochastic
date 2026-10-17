@@ -1,6 +1,10 @@
-import LinearStochastic.SectionExponentialEnergy
-import LinearStochastic.MatrixInverseEnergyBounds
-import LinearStochastic.QuadraticMomentBounds
+module
+
+public import LinearStochastic.SectionExponentialEnergy
+public import LinearStochastic.MatrixInverseEnergyBounds
+public import LinearStochastic.QuadraticMomentBounds
+
+@[expose] public section
 
 /-! The manuscript's actual mean-square decay formula with its exact spectral
 condition number, for the genuine closed-loop SDE and ordinary matrix gain UP⁻¹. -/

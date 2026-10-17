@@ -1,5 +1,9 @@
-import LinearStochastic.CommonProcessSpace
-import LinearStochastic.CommonTimeShift
+module
+
+public import LinearStochastic.CommonProcessSpace
+public import LinearStochastic.CommonTimeShift
+
+@[expose] public section
 
 /-! Measurable and continuous deterministic pasting on the original filtration. -/
 set_option autoImplicit false
@@ -33,7 +37,7 @@ theorem progressive [MeasurableSpace E] {𝓕 : Filtration ℝ≥0 mΩ}
         (fun z : Iic T × Ω ↦ S (z.1.val-a) z.2) := by
       have he : (fun z : Iic T × Ω ↦ S (z.1.val-a) z.2) =
           (fun z : Iic (T-a) × Ω ↦ S z.1.val z.2) ∘
-            (fun z : Iic T × Ω ↦ ((⟨z.1.val-a,tsub_le_tsub_right z.1.property a⟩ : Iic (T-a)),z.2)) := rfl
+            (fun z : Iic T × Ω ↦ ((⟨z.1.val-a,tsub_le_tsub_right (show z.1.val ≤ T from z.1.property) a⟩ : Iic (T-a)),z.2)) := rfl
       rw [he]
       exact hm.comp (((measurable_subtype_coe.comp measurable_fst).sub measurable_const).subtype_mk.prodMk measurable_snd)
     exact Measurable.ite (measurableSet_le (measurable_subtype_coe.comp measurable_fst) measurable_const) (hR T) hs

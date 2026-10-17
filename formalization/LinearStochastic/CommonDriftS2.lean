@@ -1,7 +1,11 @@
-import LinearStochastic.CommonPicardRealization
-import LinearStochastic.ContinuousDoobL2
-import LinearStochastic.ProgressivePredictable
-import LinearStochastic.CommonContinuousUniqueness
+module
+
+public import LinearStochastic.CommonPicardRealization
+public import LinearStochastic.ContinuousDoobL2
+public import LinearStochastic.ProgressivePredictable
+public import LinearStochastic.CommonContinuousUniqueness
+
+@[expose] public section
 
 /-! Actual Lebesgue drift path estimates for arbitrary predictable H² inputs.
 This uses pathwise Cauchy–Schwarz and Fubini; the drift is not treated as a
@@ -26,7 +30,7 @@ theorem integrand_product_memLp (T : ℝ≥0) (g : H2 𝓕 μ T) :
 theorem integrand_slice_memLp (T : ℝ≥0) (g : H2 𝓕 μ T) :
     ∀ᵐ ω ∂μ, MemLp (fun s ↦ g (s,ω)) 2 (timeMeasure_T T) := by
   have hp := integrand_product_memLp T g
-  filter_upwards [hp.1.prodMk_right, hp.integrable_sq.prod_left_ae] with ω hm hi
+  filter_upwards [hp.aestronglyMeasurable.prodMk_right, hp.integrable_sq.prod_left_ae] with ω hm hi
   exact (memLp_two_iff_integrable_sq hm).mpr hi
 
 omit [IsProbabilityMeasure μ] in

@@ -1,6 +1,10 @@
-import LinearStochastic.CommonForwardTerminal
-import LinearStochastic.CommonGlobalUniqueness
-import LinearStochastic.CommonBrownianGlobal
+module
+
+public import LinearStochastic.CommonForwardTerminal
+public import LinearStochastic.CommonGlobalUniqueness
+public import LinearStochastic.CommonBrownianGlobal
+
+@[expose] public section
 
 /-! Quantitative dependence of actual forward endpoints on every finite horizon.
 A genuine prefix/restart induction propagates the local coefficient bound. -/
@@ -46,7 +50,7 @@ omit [Fintype ι] in
 theorem restriction_norm (i₀ : ι) {t T : ℝ≥0} (h : t ≤ T) (f : H2 𝓕 μ T) :
     ‖restriction (hWm i₀) h f‖ ≤ ‖f‖ := by
   simp only [Lp.norm_def]
-  apply ENNReal.toReal_mono (Lp.memLp f).2.ne
+  apply ENNReal.toReal_mono (Lp.memLp f).eLpNorm_lt_top.ne
   rw [eLpNorm_congr_ae (restriction_ae (hWm i₀) h f)]
   exact eLpNorm_mono_measure _ (measure_le (hWm i₀) h)
 

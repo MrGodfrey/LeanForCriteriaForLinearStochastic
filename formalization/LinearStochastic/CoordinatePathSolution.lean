@@ -1,6 +1,10 @@
-import LinearStochastic.CoordinateIntegralReconstruction
-import LinearStochastic.ContinuousRealization
-import LinearStochastic.CommonSolutionData
+module
+
+public import LinearStochastic.CoordinateIntegralReconstruction
+public import LinearStochastic.ContinuousRealization
+public import LinearStochastic.CommonSolutionData
+
+@[expose] public section
 
 /-! Any actual coordinate integral solution, including deterministic-time
 pasted global solutions, reconstructs into the exact Hilbert integral equation. -/

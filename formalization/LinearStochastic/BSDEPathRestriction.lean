@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEPathPaste
-import LinearStochastic.CommonSolutionRestriction
+module
+
+public import LinearStochastic.BSDEPathPaste
+public import LinearStochastic.CommonSolutionRestriction
+
+@[expose] public section
 
 /-! Exact prefixes and deterministic restarts of actual backward solutions,
 with genuine endpoint random variables and H²-class reconstruction. -/

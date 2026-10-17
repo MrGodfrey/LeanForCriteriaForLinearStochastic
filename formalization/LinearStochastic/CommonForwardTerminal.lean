@@ -1,4 +1,8 @@
-import LinearStochastic.CommonForwardBounds
+module
+
+public import LinearStochastic.CommonForwardBounds
+
+@[expose] public section
 
 /-! Actual forward terminal random variables and quantitative bounds. The
 terminal map is built from the genuine Bochner drift CLM and constructed Itô

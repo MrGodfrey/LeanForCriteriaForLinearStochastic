@@ -1,5 +1,9 @@
-import LinearStochastic.ActualControlProperties
-import LinearStochastic.SectionDriverTransport
+module
+
+public import LinearStochastic.ActualControlProperties
+public import LinearStochastic.SectionDriverTransport
+
+@[expose] public section
 
 /-! The actual controllability predicates preserve their controls, state
 classes and terminal variables when the Brownian driver is repaired on a

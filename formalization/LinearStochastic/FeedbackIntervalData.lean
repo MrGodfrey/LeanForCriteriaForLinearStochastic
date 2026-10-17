@@ -1,4 +1,8 @@
-import LinearStochastic.MatrixFeedbackPath
+module
+
+public import LinearStochastic.MatrixFeedbackPath
+
+@[expose] public section
 
 /-! Data produced by the actual constant-feedback solution theorem. The
 terminal square-integrability and adaptedness are proved, so this record can

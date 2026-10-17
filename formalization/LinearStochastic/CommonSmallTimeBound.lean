@@ -1,4 +1,8 @@
-import LinearStochastic.CommonForwardBounds
+module
+
+public import LinearStochastic.CommonForwardBounds
+
+@[expose] public section
 
 /-! Actual small-time zero-initial SDE state estimates. The vanishing bound
 comes from the constructed Picard operator and its actual integral norms. -/

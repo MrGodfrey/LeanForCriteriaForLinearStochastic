@@ -1,7 +1,11 @@
-import LinearStochastic.ActualApproximation
-import LinearStochastic.GlobalObservationDuality
-import LinearStochastic.UsualHilbertGlobalBSDE
-import LinearStochastic.JointUsualRepresentation
+module
+
+public import LinearStochastic.ActualApproximation
+public import LinearStochastic.GlobalObservationDuality
+public import LinearStochastic.UsualHilbertGlobalBSDE
+public import LinearStochastic.JointUsualRepresentation
+
+@[expose] public section
 
 /-! Actual approximation on the Brownian usual filtration when the true flag
 vanishes. Both forward and backward solutions and scalar martingale representation

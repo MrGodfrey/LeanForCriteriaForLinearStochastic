@@ -1,7 +1,11 @@
-import LinearStochastic.ActualTerminalOperator
-import LinearStochastic.RawControlProperties
-import LinearStochastic.ControlDriverTransport
-import LinearStochastic.HilbertDuality
+module
+
+public import LinearStochastic.ActualTerminalOperator
+public import LinearStochastic.RawControlProperties
+public import LinearStochastic.ControlDriverTransport
+public import LinearStochastic.HilbertDuality
+
+@[expose] public section
 
 /-! The manuscript's density criterion for the actual SDE terminal operator,
 with original Brownian drivers and ordinary progressive raw controls. -/

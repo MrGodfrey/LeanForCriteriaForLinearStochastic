@@ -1,5 +1,9 @@
-import LinearStochastic.VectorH2Series
-import LinearStochastic.SectionHorizonRestriction
+module
+
+public import LinearStochastic.VectorH2Series
+public import LinearStochastic.SectionHorizonRestriction
+
+@[expose] public section
 
 /-! A genuine controlled Hilbert integral solution restricts to its actual
 prefix with the same coefficient maps and the truly restricted control. -/

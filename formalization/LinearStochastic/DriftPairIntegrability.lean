@@ -1,4 +1,8 @@
-import LinearStochastic.DriftProductExpectation
+module
+
+public import LinearStochastic.DriftProductExpectation
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.DriftPairIntegrability

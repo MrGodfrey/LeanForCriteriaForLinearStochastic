@@ -1,5 +1,9 @@
-import LinearStochastic.BrownianInitialTrivial
-import LinearStochastic.ProgressiveControlSection
+module
+
+public import LinearStochastic.BrownianInitialTrivial
+public import LinearStochastic.ProgressiveControlSection
+
+@[expose] public section
 
 /-! The paper's original ordinary-progressive forward/adjoint duality, on
 its original usual Brownian filtration. The random initial adjoint is proved

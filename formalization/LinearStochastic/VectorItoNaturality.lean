@@ -1,4 +1,8 @@
-import LinearStochastic.LpFiniteTensor
+module
+
+public import LinearStochastic.LpFiniteTensor
+
+@[expose] public section
 
 /-! Naturality of the actual constructed vector Itô integral. All process
 equalities below are explicitly fixed-time almost-everywhere equalities;

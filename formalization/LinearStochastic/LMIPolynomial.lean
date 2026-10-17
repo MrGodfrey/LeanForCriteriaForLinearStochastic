@@ -1,5 +1,9 @@
-import LinearStochastic.SemialgebraicLogic
-import LinearStochastic.MatrixMinimum
+module
+
+public import LinearStochastic.SemialgebraicLogic
+public import LinearStochastic.MatrixMinimum
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.LMIPolynomial

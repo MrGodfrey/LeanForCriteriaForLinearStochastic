@@ -1,6 +1,10 @@
-import LinearStochastic.FeedbackRecursion
-import LinearStochastic.SwitchingFeedbackFamily
-import LinearStochastic.SwitchingTimeMesh
+module
+
+public import LinearStochastic.FeedbackRecursion
+public import LinearStochastic.SwitchingFeedbackFamily
+public import LinearStochastic.SwitchingTimeMesh
+
+@[expose] public section
 
 /-! Actual stochastic dynamics driven by the polynomially controlled family
 on the manuscript's countable dyadic mesh. -/

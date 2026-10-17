@@ -1,5 +1,9 @@
-import LinearStochastic.CommonItoS2
-import BrownianMotion.StochasticIntegral.Predictable
+module
+
+public import LinearStochastic.CommonItoS2
+public import BrownianMotion.StochasticIntegral.Predictable
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonFiltrationCompletion

@@ -1,6 +1,10 @@
-import LinearStochastic.CommonNaturalIntegral
-import LinearStochastic.CommonIntegrandSupport
-import MathFin.Foundations.DoleansStepRepresentation
+module
+
+public import LinearStochastic.CommonNaturalIntegral
+public import LinearStochastic.CommonIntegrandSupport
+public import MathFin.Foundations.DoleansStepRepresentation
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonDoleansBand

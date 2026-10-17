@@ -1,5 +1,9 @@
-import LinearStochastic.SemialgebraicCoordinates
-import Mathlib.Algebra.MvPolynomial.CommRing
+module
+
+public import LinearStochastic.SemialgebraicCoordinates
+public import Mathlib.Algebra.MvPolynomial.CommRing
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.SemialgebraicCoordinates

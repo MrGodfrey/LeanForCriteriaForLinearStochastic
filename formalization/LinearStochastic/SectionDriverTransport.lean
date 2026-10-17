@@ -1,5 +1,9 @@
-import LinearStochastic.SectionLinearDuality
-import LinearStochastic.CommonItoVersion
+module
+
+public import LinearStochastic.SectionLinearDuality
+public import LinearStochastic.CommonItoVersion
+
+@[expose] public section
 
 /-! Actual vector integral solutions are invariant under indistinguishable
 versions of the Brownian drivers, with the same filtration and original L²

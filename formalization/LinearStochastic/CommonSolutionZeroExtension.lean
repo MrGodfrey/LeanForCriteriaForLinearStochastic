@@ -1,5 +1,9 @@
-import LinearStochastic.VectorH2Extension
-import LinearStochastic.CommonSolutionPaste
+module
+
+public import LinearStochastic.VectorH2Extension
+public import LinearStochastic.CommonSolutionPaste
+
+@[expose] public section
 
 /-! Actual zero-initial SDE solutions can be placed after a zero time segment.
 The predictable state and input are the real isometric window extensions, and

@@ -1,5 +1,9 @@
-import LinearStochastic.KnownTargetControl
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+module
+
+public import LinearStochastic.KnownTargetControl
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+
+@[expose] public section
 
 /-! The final-interval exponential control acts pointwise on an earlier-known
 random target and has the exact intended terminal convolution. -/

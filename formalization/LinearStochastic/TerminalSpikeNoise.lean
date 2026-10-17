@@ -1,7 +1,11 @@
-import LinearStochastic.PredictableConstant
-import LinearStochastic.VectorH2Extension
-import LinearStochastic.DiffusionKernelWitness
-import LinearStochastic.VectorItoNaturality
+module
+
+public import LinearStochastic.PredictableConstant
+public import LinearStochastic.VectorH2Extension
+public import LinearStochastic.DiffusionKernelWitness
+public import LinearStochastic.VectorItoNaturality
+
+@[expose] public section
 
 /-! Actual normalized predictable diffusion spikes on a terminal time window.
 Their exact L² energy, adjoint-control kernel identity, and stochastic terminal

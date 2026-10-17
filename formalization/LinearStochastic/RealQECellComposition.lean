@@ -1,6 +1,10 @@
-import LinearStochastic.RealQESignCells
-import LinearStochastic.RealQEFiniteCells
-import LinearStochastic.RealQERecursiveProjection
+module
+
+public import LinearStochastic.RealQESignCells
+public import LinearStochastic.RealQEFiniteCells
+public import LinearStochastic.RealQERecursiveProjection
+
+@[expose] public section
 
 /-!
 # Combining lower-degree signs into higher-degree cells

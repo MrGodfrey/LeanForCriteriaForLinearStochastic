@@ -1,5 +1,9 @@
-import LinearStochastic.TerminalSpikeEstimate
-import LinearStochastic.ActualObservationBound
+module
+
+public import LinearStochastic.TerminalSpikeEstimate
+public import LinearStochastic.ActualObservationBound
+
+@[expose] public section
 
 /-! Actual terminal spikes exclude exact controllability when the joint
 controlled diffusion fails to be onto. This first theorem keeps the explicit

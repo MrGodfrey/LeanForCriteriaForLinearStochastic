@@ -1,9 +1,13 @@
-import Mathlib.Topology.Algebra.Polynomial
-import Mathlib.Topology.Order.IntermediateValue
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Data.Finset.Powerset
-import Mathlib.Order.CountableDenseLinearOrder
-import Mathlib.Tactic
+module
+
+public import Mathlib.Topology.Algebra.Polynomial
+public import Mathlib.Topology.Order.IntermediateValue
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.Data.Finset.Powerset
+public import Mathlib.Order.CountableDenseLinearOrder
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Actual finite sign cells for real polynomial families

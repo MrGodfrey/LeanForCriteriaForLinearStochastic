@@ -1,5 +1,9 @@
-import LinearStochastic.RealTimeBridge
-import Mathlib.MeasureTheory.Measure.OpenPos
+module
+
+public import LinearStochastic.RealTimeBridge
+public import Mathlib.MeasureTheory.Measure.OpenPos
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.CommonContinuousUniqueness

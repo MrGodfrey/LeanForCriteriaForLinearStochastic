@@ -1,5 +1,9 @@
-import LinearStochastic.BSDELocal
-import LinearStochastic.HilbertLocalSolution
+module
+
+public import LinearStochastic.BSDELocal
+public import LinearStochastic.HilbertLocalSolution
+
+@[expose] public section
 
 /-! The matrix backward driver is exactly the Hilbert adjoint driver after
 orthonormal reconstruction; its signs and transposes are proved explicitly. -/

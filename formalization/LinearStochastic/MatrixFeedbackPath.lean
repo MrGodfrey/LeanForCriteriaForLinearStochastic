@@ -1,6 +1,10 @@
-import LinearStochastic.HilbertBrownianPath
-import LinearStochastic.MatrixPrefixDecay
-import LinearStochastic.ExpectedStateEnergy
+module
+
+public import LinearStochastic.HilbertBrownianPath
+public import LinearStochastic.MatrixPrefixDecay
+public import LinearStochastic.ExpectedStateEnergy
+
+@[expose] public section
 
 /-! Actual construction of a constant-feedback S² state on any finite
 interval, with its original control equation, all-time mean-square decay and

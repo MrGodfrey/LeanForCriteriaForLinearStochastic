@@ -1,4 +1,8 @@
-import LinearStochastic.CommonPicardHorizon
+module
+
+public import LinearStochastic.CommonPicardHorizon
+
+@[expose] public section
 
 /-! A common genuinely positive Picard horizon for two actual coefficient
 families, even when their state dimensions differ. -/

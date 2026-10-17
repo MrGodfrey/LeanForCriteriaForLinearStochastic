@@ -1,5 +1,9 @@
-import LinearStochastic.SwitchingFeedbackIdentity
-import LinearStochastic.VectorH2Orthogonality
+module
+
+public import LinearStochastic.SwitchingFeedbackIdentity
+public import LinearStochastic.VectorH2Orthogonality
+
+@[expose] public section
 
 /-! The converse actual feedback bridge: an ordinary raw feedback identity
 implies the genuine translated predictable L² class equation on each interval. -/

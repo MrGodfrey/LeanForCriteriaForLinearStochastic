@@ -1,8 +1,12 @@
-import LinearStochastic.HilbertEndpointBound
-import LinearStochastic.SectionDriverTransport
-import LinearStochastic.HilbertGlobalSolution
-import LinearStochastic.ActualControlProperties
-import LinearStochastic.TerminalObservationBound
+module
+
+public import LinearStochastic.HilbertEndpointBound
+public import LinearStochastic.SectionDriverTransport
+public import LinearStochastic.HilbertGlobalSolution
+public import LinearStochastic.ActualControlProperties
+public import LinearStochastic.TerminalObservationBound
+
+@[expose] public section
 
 /-! The bounded terminal control operator is constructed from the actual
 original Brownian SDE. Its domain and target are the genuine predictable H²

@@ -1,4 +1,8 @@
-import LinearStochastic.FeedbackIntervalRestart
+module
+
+public import LinearStochastic.FeedbackIntervalRestart
+
+@[expose] public section
 
 /-! Countably many genuine feedback solutions are recursively constructed on
 the same probability space, retaining the original past at every restart.

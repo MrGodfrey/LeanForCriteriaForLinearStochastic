@@ -1,6 +1,10 @@
-import LinearStochastic.CommonSolutionFixedPoint
-import LinearStochastic.CommonUniformHorizon
-import LinearStochastic.BSDEProcessLift
+module
+
+public import LinearStochastic.CommonSolutionFixedPoint
+public import LinearStochastic.CommonUniformHorizon
+public import LinearStochastic.BSDEProcessLift
+
+@[expose] public section
 
 /-! Genuine quantitative dependence of the controlled forward Picard solution
 on its initial random variable and control. All constants use literal matrix

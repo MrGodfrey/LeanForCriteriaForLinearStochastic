@@ -1,8 +1,12 @@
-import LinearStochastic.BrownianInitialTrivial
-import LinearStochastic.ExactDiffusionAlgebra
-import LinearStochastic.ExactTerminalProperties
-import LinearStochastic.BSDEHilbertGlobal
-import LinearStochastic.BrownianGlobalBSDE
+module
+
+public import LinearStochastic.BrownianInitialTrivial
+public import LinearStochastic.ExactDiffusionAlgebra
+public import LinearStochastic.ExactTerminalProperties
+public import LinearStochastic.BSDEHilbertGlobal
+public import LinearStochastic.BrownianGlobalBSDE
+
+@[expose] public section
 
 /-! Surjective joint diffusion yields exact terminal controllability on the
 original usual Brownian filtration. The initial value is proved deterministic

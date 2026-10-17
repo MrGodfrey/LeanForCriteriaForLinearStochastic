@@ -1,6 +1,10 @@
-import LinearStochastic.CoordinatePathSolution
-import LinearStochastic.CommonGlobalExistence
-import LinearStochastic.SectionTerminalSpace
+module
+
+public import LinearStochastic.CoordinatePathSolution
+public import LinearStochastic.CommonGlobalExistence
+public import LinearStochastic.SectionTerminalSpace
+
+@[expose] public section
 
 /-! Arbitrary finite-horizon existence for the original Hilbert coefficient
 maps, obtained from actual globally pasted coordinate SDE solutions. -/

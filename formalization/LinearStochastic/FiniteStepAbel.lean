@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -6,7 +8,9 @@ Authors: Raphael Coelho
 The finite-grid Abel argument is adapted from MathFin WienerExponentialTotality
 and separated as a purely algebraic vector-valued time-grid statement.
 -/
-import MathFin.Foundations.WienerExponentialTotality
+public import MathFin.Foundations.WienerExponentialTotality
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.FiniteStepAbel

@@ -1,4 +1,8 @@
-import LinearStochastic.RawRankCriteria
+module
+
+public import LinearStochastic.RawRankCriteria
+
+@[expose] public section
 
 /-! Named paper properties retain their actual raw-control meaning. This
 finite index is only an interface for statements about all four properties;

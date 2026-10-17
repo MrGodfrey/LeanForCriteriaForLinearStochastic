@@ -1,3 +1,5 @@
+module
+
 /-
 Copyright (c) 2026 Raphael Coelho. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
@@ -8,7 +10,9 @@ finite real random coordinates with explicit, genuine L² exponential moments.
 The same sample space and measure are retained; no Brownian natural-filtration
 surjectivity is assumed here.
 -/
-import MathFin.Foundations.WienerExponentialTotality
+public import MathFin.Foundations.WienerExponentialTotality
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.FiniteExponentialTotality
@@ -81,7 +85,7 @@ theorem setIntegral_eq_zero_of_iSup_comap {ι : Type*} [Fintype ι]
   have hfaeneg : AEMeasurable (fun ω ↦ -f ω) μ := hfae.neg
   have hfint : Integrable f μ := memLp_one_iff_integrable.mp (hfL2.mono_exponent one_le_two)
   have hXmeas : Measurable fun (ω : Ω) (i : ι) ↦ X i ω :=
-    measurable_pi_lambda _ fun i ↦ hXm i
+    measurable_pi_lambda fun i ↦ hXm i
   obtain ⟨G, hGmeas, hGA⟩ :
       ∃ G : Set (ι → ℝ), MeasurableSet G ∧ (fun (ω : Ω) (i : ι) ↦ X i ω) ⁻¹' G = A := by
     rw [← MeasurableSpace.comap_process_pi fun i ↦ X i] at hA

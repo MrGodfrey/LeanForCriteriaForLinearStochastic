@@ -1,5 +1,9 @@
-import LinearStochastic.BSDETerminal
-import LinearStochastic.VectorItoProduct
+module
+
+public import LinearStochastic.BSDETerminal
+public import LinearStochastic.VectorItoProduct
+
+@[expose] public section
 
 /-! Genuine deterministic constants in the predictable H² space, with exact
 norm and coefficient action. These will provide normalized terminal spikes. -/

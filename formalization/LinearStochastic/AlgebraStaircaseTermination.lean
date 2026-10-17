@@ -1,4 +1,8 @@
-import LinearStochastic.AlgebraStaircase
+module
+
+public import LinearStochastic.AlgebraStaircase
+
+@[expose] public section
 
 noncomputable section
 namespace LinearStochastic.Staircase

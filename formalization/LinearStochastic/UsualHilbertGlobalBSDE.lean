@@ -1,5 +1,9 @@
-import LinearStochastic.BSDEHilbertGlobal
-import LinearStochastic.UsualGlobalBSDE
+module
+
+public import LinearStochastic.BSDEHilbertGlobal
+public import LinearStochastic.UsualGlobalBSDE
+
+@[expose] public section
 
 /-! Actual arbitrary-horizon Hilbert adjoint existence on the original usual
 Brownian filtration. All scalar martingale representation and backward SDE

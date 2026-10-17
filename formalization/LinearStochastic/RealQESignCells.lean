@@ -1,8 +1,12 @@
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Analysis.Calculus.Deriv.Polynomial
-import Mathlib.Topology.Order.IntermediateValue
-import Mathlib.Analysis.Polynomial.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Analysis.Calculus.Deriv.Polynomial
+public import Mathlib.Topology.Order.IntermediateValue
+public import Mathlib.Analysis.Polynomial.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Polynomial sign-cell reconstruction primitives

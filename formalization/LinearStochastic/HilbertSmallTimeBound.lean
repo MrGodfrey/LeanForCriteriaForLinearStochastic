@@ -1,5 +1,9 @@
-import LinearStochastic.CommonSmallTimeBound
-import LinearStochastic.HilbertEndpointBound
+module
+
+public import LinearStochastic.CommonSmallTimeBound
+public import LinearStochastic.HilbertEndpointBound
+
+@[expose] public section
 
 /-! Actual additive-noise vector SDE state estimates on shrinking horizons.
 All constants are computed from the original orthonormal matrix coefficients. -/

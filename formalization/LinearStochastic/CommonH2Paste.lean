@@ -1,4 +1,8 @@
-import LinearStochastic.CommonPastedClasses
+module
+
+public import LinearStochastic.CommonPastedClasses
+
+@[expose] public section
 
 /-! Actual predictable L² concatenation on the original sample space. The second
 piece uses the shifted filtration F(a+·). No path continuity is needed. -/
@@ -55,9 +59,9 @@ theorem raw_memLp (a δ : ℝ≥0) (R S : ℝ≥0 → Ω → ℝ)
     filter_upwards [Measure.quasiMeasurePreserving_fst.ae ht] with z ht
     exact (if_neg ht).symm
   rw [time_split,Measure.add_prod]
-  apply (memLp_two_iff_integrable_sq (hl.1.add_measure hr.1)).mpr
-  exact (memLp_two_iff_integrable_sq hl.1).mp hl |>.add_measure
-    ((memLp_two_iff_integrable_sq hr.1).mp hr)
+  apply (memLp_two_iff_integrable_sq (hl.aestronglyMeasurable.add_measure hr.aestronglyMeasurable)).mpr
+  exact (memLp_two_iff_integrable_sq hl.aestronglyMeasurable).mp hl |>.add_measure
+    ((memLp_two_iff_integrable_sq hr.aestronglyMeasurable).mp hr)
 
 /-- An actual predictable class representing the raw two-piece process. -/
 def pasteH2 (a δ : ℝ≥0) (f : H2 𝓕 μ a)

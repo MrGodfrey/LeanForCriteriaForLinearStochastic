@@ -1,5 +1,9 @@
-import LinearStochastic.SquareSVD
-import LinearStochastic.TallQRElimination
+module
+
+public import LinearStochastic.SquareSVD
+public import LinearStochastic.TallQRElimination
+
+@[expose] public section
 
 /-! Literal selected singular rows and the full O0/O1 staircase subspaces. -/
 noncomputable section

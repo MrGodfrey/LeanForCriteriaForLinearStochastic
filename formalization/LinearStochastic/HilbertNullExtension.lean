@@ -1,7 +1,11 @@
-import LinearStochastic.HilbertPrefixUniqueness
-import LinearStochastic.HilbertRestartUniqueness
-import LinearStochastic.HilbertBrownianPath
-import LinearStochastic.SectionSolutionLinearity
+module
+
+public import LinearStochastic.HilbertPrefixUniqueness
+public import LinearStochastic.HilbertRestartUniqueness
+public import LinearStochastic.HilbertBrownianPath
+public import LinearStochastic.SectionSolutionLinearity
+
+@[expose] public section
 
 /-! A real null control on a terminal time window extends by zero to a real
 null control on the original full horizon. The restart initial value is the

@@ -1,7 +1,11 @@
-import LinearStochastic.CommonClosedLoopSolution
-import LinearStochastic.SwitchingTimeMesh
-import LinearStochastic.SwitchingGain
-import LinearStochastic.CommonSolutionRestriction
+module
+
+public import LinearStochastic.CommonClosedLoopSolution
+public import LinearStochastic.SwitchingTimeMesh
+public import LinearStochastic.SwitchingGain
+public import LinearStochastic.CommonSolutionRestriction
+
+@[expose] public section
 
 /-! Actual uniqueness for the singular switching closed loop. Controls of two
 solutions may differ; on each interval their proved state-feedback class

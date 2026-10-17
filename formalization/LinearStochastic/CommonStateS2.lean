@@ -1,6 +1,10 @@
-import LinearStochastic.CommonDriftS2
-import LinearStochastic.CommonLocalSolution
-import LinearStochastic.CommonFiltrationCompletion
+module
+
+public import LinearStochastic.CommonDriftS2
+public import LinearStochastic.CommonLocalSolution
+public import LinearStochastic.CommonFiltrationCompletion
+
+@[expose] public section
 
 /-! Whole-path square integrability of the actual local state representative.
 The deterministic drift is estimated by Cauchy–Schwarz, and only the actual

@@ -1,6 +1,10 @@
-import BrownianMotion.Gaussian.BrownianMotion
-import LinearStochastic.FilteredIto
-import Mathlib
+module
+
+public import BrownianMotion.Gaussian.BrownianMotion
+public import LinearStochastic.FilteredIto
+public import Mathlib
+
+@[expose] public section
 
 /-!
 A concrete finite family of independent continuous Brownian coordinates on the
@@ -33,8 +37,8 @@ theorem indepFun_pi_pair {ι Ω X Y : Type*} [Fintype ι]
     funext i
     exact (hind i).map_prod_eq_prod_map_map (hf i).aemeasurable (hg i).aemeasurable
   apply (indepFun_iff_map_prod_eq_prod_map_map
-    (measurable_pi_lambda _ (fun i ↦ (hf i).comp (measurable_pi_apply i))).aemeasurable
-    (measurable_pi_lambda _ (fun i ↦ (hg i).comp (measurable_pi_apply i))).aemeasurable).mpr
+    (measurable_pi_lambda (fun i ↦ (hf i).comp (measurable_pi_apply i))).aemeasurable
+    (measurable_pi_lambda (fun i ↦ (hg i).comp (measurable_pi_apply i))).aemeasurable).mpr
   simp only [Function.comp_apply]
   rw [Measure.pi_map_pi (fun i ↦ (hf i).aemeasurable),
     Measure.pi_map_pi (fun i ↦ (hg i).aemeasurable)]
@@ -64,7 +68,7 @@ theorem process_measurable (i : ι) (t : ℝ≥0) : Measurable (process ι i t) 
 omit [Fintype ι] in
 @[fun_prop]
 theorem pastPath_measurable (t : ℝ≥0) : Measurable (pastPath ι t) := by
-  exact measurable_pi_lambda _ (fun i ↦ measurable_pi_lambda _ (fun u ↦ process_measurable ι i u))
+  exact measurable_pi_lambda (fun i ↦ measurable_pi_lambda (fun u ↦ process_measurable ι i u))
 
 /-- Every coordinate really is Brownian with continuous sample paths. -/
 theorem process_isBrownian (i : ι) : IsBrownianReal (process ι i) (law ι) := by
@@ -81,7 +85,7 @@ theorem joint_past_independent_increment (s t : ℝ≥0) (hst : s ≤ t) :
   apply indepFun_pi_pair (fun _ : ι ↦ gaussianLimit)
     (fun _ ω (u : Set.Iic s) ↦ brownian u ω)
     (fun _ ω ↦ brownian t ω - brownian s ω)
-    (fun _ ↦ measurable_pi_lambda _ (fun u ↦ measurable_brownian u))
+    (fun _ ↦ measurable_pi_lambda (fun u ↦ measurable_brownian u))
     (fun _ ↦ (measurable_brownian t).sub (measurable_brownian s))
   intro i
   have h := isBrownianReal_brownian.toIsPreBrownianReal.indepFun_shift s

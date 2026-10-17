@@ -1,5 +1,9 @@
-import LinearStochastic.PositiveCone
-import LinearStochastic.ConeCertificate
+module
+
+public import LinearStochastic.PositiveCone
+public import LinearStochastic.ConeCertificate
+
+@[expose] public section
 noncomputable section
 namespace LinearStochastic.PositiveDual
 open InnerProductSpace
