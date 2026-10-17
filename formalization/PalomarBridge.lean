@@ -9,6 +9,34 @@ namespace LinearStochastic.Palomar
 open MeasureTheory ProbabilityTheory CommonItoCLM CommonItoL2
 open scoped NNReal
 
+section Algebra
+variable {n r m : ℕ}
+  (A : Matrix (Fin n) (Fin n) ℝ) (B : Matrix (Fin n) (Fin r) ℝ)
+  (C : Fin m → Matrix (Fin n) (Fin n) ℝ) (D : Fin m → Matrix (Fin n) (Fin r) ℝ)
+
+/-- The explicit set recursion is exactly the carrier of the original submodule flag. -/
+theorem flag_eq_original (k : ℕ) :
+    flag A B C D k = ((AdjointCoefficients.fromMatrices A B C D).flag k : Set (Fin n → ℝ)) := by
+  induction k with
+  | zero => rfl
+  | succ k ih =>
+    change obstruction A B C D (flag A B C D k) =
+      ((AdjointCoefficients.fromMatrices A B C D).obstruction
+        ((AdjointCoefficients.fromMatrices A B C D).flag k) : Set (Fin n → ℝ))
+    rw [ih]
+    rfl
+
+/-- Vanishing of the independent flag has precisely the original algebraic meaning. -/
+theorem flag_zero_iff : flag A B C D n = {0} ↔
+    (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥ := by
+  rw [flag_eq_original]
+  change (((AdjointCoefficients.fromMatrices A B C D).flag n : Submodule ℝ (Fin n → ℝ)) :
+    Set (Fin n → ℝ)) = (↑(⊥ : Submodule ℝ (Fin n → ℝ)) : Set (Fin n → ℝ)) ↔ _
+  exact SetLike.coe_injective.eq_iff
+/-- The independent stacked matrix has the same entries as the original one. -/
+theorem stack_eq_original : stack D = SurjectiveMatrices.stack D := rfl
+end Algebra
+
 variable {Ω : Type*} [mΩ : MeasurableSpace Ω] {μ : Measure Ω}
   [IsProbabilityMeasure μ] {𝓕 : Filtration ℝ≥0 mΩ}
   {W : ℝ≥0 → Ω → ℝ}

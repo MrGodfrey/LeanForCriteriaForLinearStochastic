@@ -23,11 +23,11 @@ theorem classification (hn : 0 < n) (hm : 0 < m) (T : ℝ≥0) (hT : 0 < T)
     (C : Fin m → Matrix (Fin n) (Fin n) ℝ) (D : Fin m → Matrix (Fin n) (Fin r) ℝ) :
     ∃ I : Fin m → Lp ℝ 2 (spacetime (usual (μ := μ) W hWm) μ T) →L[ℝ] Lp ℝ 2 μ,
       (∀ i, IsIto (usual (μ := μ) W hWm) (W i) T (I i)) ∧
-      (AC (usual (μ := μ) W hWm) T I A B C D ↔ (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥) ∧
-      (ANC (usual (μ := μ) W hWm) T I A B C D ↔ (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥) ∧
-      (ENC (usual (μ := μ) W hWm) T I A B C D ↔ (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥) ∧
+      (AC (usual (μ := μ) W hWm) T I A B C D ↔ flag A B C D n = {0}) ∧
+      (ANC (usual (μ := μ) W hWm) T I A B C D ↔ flag A B C D n = {0}) ∧
+      (ENC (usual (μ := μ) W hWm) T I A B C D ↔ flag A B C D n = {0}) ∧
       (EC (usual (μ := μ) W hWm) T I A B C D ↔
-        (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥ ∧ (SurjectiveMatrices.stack D).rank = m*n) := by
+        flag A B C D n = {0} ∧ (stack D).rank = m*n) := by
   letI : ∀ i, CommonItoIsometry.ForwardIndependent (W i) (usual (μ := μ) W hWm) μ :=
     JointUsualBrownianGlobal.coordinateForward hW hWm hInd
   letI : (usual (μ := μ) W hWm).IsComplete μ :=
@@ -35,7 +35,7 @@ theorem classification (hn : 0 < n) (hm : 0 < m) (T : ℝ≥0) (hT : 0 < T)
   refine ⟨integrals (𝓕 := usual (μ := μ) W hWm) hW hWm T,
     (fun i => original_isIto (𝓕 := usual (μ := μ) W hWm) (hW i).toIsPreBrownianReal (hWm i) T), ?_⟩
   have result := RawCompleteClassification.classification hW hWm hInd hn hm T hT A B C D
-  simpa only [AC, ANC, ENC, EC, reachApprox_iff_raw, reachExact_iff_raw,
+  simpa only [AC, ANC, ENC, EC, flag_zero_iff, stack_eq_original, reachApprox_iff_raw, reachExact_iff_raw,
     RawControlProperties.Approximate, RawControlProperties.ApproximateNull,
     RawExactProperties.ExactNull, RawExactProperties.Exact, matrixMap,
     ZeroObservationMatrices.matrixMap] using result

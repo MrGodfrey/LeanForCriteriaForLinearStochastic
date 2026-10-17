@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-17T08:03:42.475663+00:00",
+  "checked_at": "2026-10-17T08:32:28.091788+00:00",
   "status": "passed_local_checks",
   "scope": "local build and named transitive axiom inspection; not Palomar verification",
   "toolchain": "Lean (version 4.35.0-rc2, arm64-apple-darwin24.6.0, commit 11acb17ec6b07a8f9e9173e6845197929540936b, Release)",
@@ -56,7 +56,7 @@
   ],
   "build_passed": true,
   "input_sha256": {
-    "Challenge.lean": "671d4bb022f9580ebde1cf7911d3a5de4d05b6a5d877e4dff14d158837897e72",
+    "Challenge.lean": "6e17993822b287b3514ac1298e48d8ca42a8b6f5a4842cc02d27c85a36b584c1",
     "LinearStochastic/ActualAdjointIdentity.lean": "4cf42f65d5ad8118f0d769decc56a704cfa6e42031d1f4ce6697f8597467bdb9",
     "LinearStochastic/ActualApproximation.lean": "a486fc74427f27efdc634457e9ee2ad3f175382af19768ec2baec5e6e9a2421c",
     "LinearStochastic/ActualControlProperties.lean": "28fdc7aa399e3eb9e08ea270482fde6df164e4564ac91685c7ca9b2bb664a62b",
@@ -442,9 +442,9 @@
     "LinearStochastic/ZeroObservationMatrices.lean": "3cb560de4b7b2051f188e9d4ca0693c01aa2607f5f8c5fd6e625af53a8104b4e",
     "LinearStochastic/ZeroObservationSeparation.lean": "94352d50f349e9f0946f5f94f5f88b9acee31462277573b27d5cbe7e50a209b9",
     "LinearStochastic.lean": "4224bad9ec3fd7d87f8300f16f2c1217d6e25971420361fd1f71490cf50bc75b",
-    "PalomarBridge.lean": "24f1733506ce409159650a649ae13b2b8744f3e1269823d24f6b23e465ed5192",
-    "PalomarDefinitions.lean": "4b3b503c90defcf6e40537ab59f64b7df5dc4566e63bca3b2a736e99ae69ebcc",
-    "Solution.lean": "ea9ecac8e8c77ea6697f83f642cae7c9b1e1beae233318c5eddef04c047869a3",
+    "PalomarBridge.lean": "8965b530aeace8203ffea796bba2b4f412defc4dd32f3521496f19a7f301cf7e",
+    "PalomarDefinitions.lean": "71b5caadeeb3df594dc47dd7d3c651ee61737253a7f882de748b398d78706e0a",
+    "Solution.lean": "c059b277125419b356099476e1834d021d9b2f9ba041f250577a6b6d3b9ea86b",
     "comparator.json": "0083c4ebf689cd90209395fe845975801731d108f63f892be8afeaa6012ac6e6",
     "lake-manifest.json": "a44c495c58460685b9d8e5e927a94a531703bc0e1c80ba76e1c7c4f3b5cb6d05",
     "lakefile.toml": "cc1d31d7b544696843317dedaf450ecf1738d5f76486f0e1bf5b13d6550ca40d",

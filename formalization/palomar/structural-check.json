@@ -86,7 +86,7 @@
           "notes": "Historical model identities, costs, and prompt logs are not reconstructed. Human authors retain responsibility. Automated review is not human peer review."
         },
         "fidelity": {
-          "divergences": "The claim mapping concerns the revised manuscript, including its five disclosed revisions. Controls are ordinary progressive finite-energy processes and states are actual continuous square-integrable paths on the usual augmented joint Brownian filtration. Positive state and noise dimensions and a positive horizon are required. Exact-arithmetic factorization results do not certify floating-point numerical software. PalomarBridge proves correspondence with the original raw SDE predicates. The scalar Ito maps are characterized by their values on every bounded predictable step process; classification proves existence and ito_unique proves uniqueness. The sorry count includes two intentional Challenge theorem holes and eight inherited holes in the vendored stochastic dependency closure. There are no definition holes or new solution holes. Source occurrence counts do not establish whether a theorem depends on a hole; transitive axiom inspection is recorded separately in formalization/palomar/local-check.json and the official preflight report."
+          "divergences": "The claim mapping concerns the revised manuscript, including its five disclosed revisions. Controls are ordinary progressive finite-energy processes and states are actual continuous square-integrable paths on the usual augmented joint Brownian filtration. Positive state and noise dimensions and a positive horizon are required. Exact-arithmetic factorization results do not certify floating-point numerical software. PalomarBridge proves that the explicit set recursion is the carrier of the original submodule flag, and proves correspondence with the original raw SDE predicates. The scalar Ito maps are characterized by their values on every bounded predictable step process; classification proves existence and ito_unique proves uniqueness. The sorry count includes two intentional Challenge theorem holes and eight inherited holes in the vendored stochastic dependency closure. There are no definition holes or new solution holes. Source occurrence counts do not establish whether a theorem depends on a hole; transitive axiom inspection is recorded separately in formalization/palomar/local-check.json and the official preflight report."
         },
         "review": {
           "status": "agent-reviewed",
@@ -213,15 +213,15 @@
       "status": "pass",
       "result": {
         "path": "formalization/Challenge.lean",
-        "bytes": 13138,
-        "lines": 256
+        "bytes": 11459,
+        "lines": 211
       }
     },
     "solution_module": {
       "status": "pass",
       "result": {
         "path": "formalization/Solution.lean",
-        "bytes": 3287,
+        "bytes": 3162,
         "lines": 55
       }
     }

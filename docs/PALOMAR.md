@@ -26,7 +26,7 @@ The verifier source is authoritative when explanatory pages lag behind it.
 | Fixed dependencies | Canonical Mathlib closure locked; 92 required stochastic modules vendored with original commits, licenses, file hashes and a complete patch |
 | Module headers and file limits | All 485 Lean source files use the module system; no file exceeds 10,000 lines |
 | Local build and axiom inspection | Passed: 9,415 build tasks; all 2,559 reference declarations and both advertised entries use only `propext`, `Quot.sound`, and `Classical.choice`; [report](../formalization/palomar/local-check.json) |
-| Independent Challenge | Imports only `Mathlib`; 256 lines / 13,138 bytes; compilation passed |
+| Independent Challenge | Imports only `Mathlib`; 211 lines / 11,459 bytes; compilation passed |
 | Proved Solution and exact comparison | Bridge and Solution compile; exact sandboxed Comparator correspondence pending Linux preflight |
 | Root SPDX licence | Apache-2.0 `LICENSE`, with scope and third-party notices in `NOTICE`; independent Licensee detection remains part of the Linux workflow |
 | Structured provenance | `formalization/formalization.yaml` passed the official metadata parser |
@@ -69,8 +69,11 @@ and `energy_iff_memLp` now state an `SFinite` measure assumption required by
 the new product-measure API. All their probability-space callers satisfy it;
 the main classification's hypotheses are unchanged.
 
-The independently stated definitions are connected by proved equivalences
-in `PalomarBridge.lean`. This is an agent-prepared interface and remains open
+The algebraic criterion is an explicit recursion of sets of state vectors,
+with no structure-proof fields in the Challenge. `flag_eq_original` and
+`flag_zero_iff` prove that it is precisely the carrier and vanishing criterion
+of the original submodule flag. The remaining independently stated definitions
+are connected by proved equivalences in `PalomarBridge.lean`. This is an agent-prepared interface and remains open
 to mathematical and editorial review. The local check is evidence about
 specified source hashes, not a renewed claim-by-claim review of all 80 paper
 claims. The two Challenge holes are intentional specifications. The eight

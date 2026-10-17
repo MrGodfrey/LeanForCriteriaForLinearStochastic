@@ -4,83 +4,38 @@ public import Mathlib
 /-!
 # Independent stochastic controllability statement
 
-Only Mathlib is imported. The definitions below specify the algebraic flag,
-usual Brownian filtration, the standard Itô integral by continuous extension
-of elementary increment sums, and the four ordinary SDE control properties.
+Only Mathlib is imported. The definitions specify the matrix obstruction
+as an explicit set recursion, the usual Brownian filtration, the standard
+Itô integral by its elementary increment sums, and four SDE control properties.
 The only deliberate proof holes are the two advertised theorems.
 -/
 
 @[expose] public section
-namespace LinearStochastic
-open Module
-open scoped BigOperators
-variable {𝕜 E U ι : Type*} [Field 𝕜]
-  [AddCommGroup E] [Module 𝕜 E] [AddCommGroup U] [Module 𝕜 U] [Fintype ι]
-
-structure AdjointCoefficients where
-  A : E →ₗ[𝕜] E
-  B : E →ₗ[𝕜] U
-  C : ι → E →ₗ[𝕜] E
-  D : ι → E →ₗ[𝕜] U
-
-namespace AdjointCoefficients
-variable (s : AdjointCoefficients (𝕜 := 𝕜) (E := E) (U := U) (ι := ι))
-
-/-- Exactly the existential conditions in manuscript (eq:map). -/
-def obstruction (V : Submodule 𝕜 E) : Submodule 𝕜 E where
-  carrier := {v | v ∈ V ∧ ∃ w : ι → E,
-    (∀ i, w i ∈ V) ∧ s.B v + ∑ i, s.D i (w i) = 0 ∧
-    s.A v + ∑ i, s.C i (w i) ∈ V}
-  zero_mem' := by
-    refine ⟨V.zero_mem, fun _ => 0, ?_, ?_, ?_⟩ <;> simp
-  add_mem' := by
-    rintro v v' ⟨hv, w, hw, hB, hA⟩ ⟨hv', w', hw', hB', hA'⟩
-    refine ⟨V.add_mem hv hv', fun i => w i + w' i,
-      fun i => V.add_mem (hw i) (hw' i), ?_, ?_⟩
-    · simpa only [map_add, Finset.sum_add_distrib, add_add_add_comm, add_zero] using congrArg₂ (· + ·) hB hB'
-    · simpa only [map_add, Finset.sum_add_distrib, add_add_add_comm] using V.add_mem hA hA'
-  smul_mem' := by
-    rintro a v ⟨hv, w, hw, hB, hA⟩
-    refine ⟨V.smul_mem a hv, fun i => a • w i,
-      fun i => V.smul_mem a (hw i), ?_, ?_⟩
-    · simp only [map_smul, ← Finset.smul_sum, ← smul_add, hB, smul_zero]
-    · simpa only [map_smul, ← Finset.smul_sum, ← smul_add] using V.smul_mem a hA
-
-/-- V₀ = E, Vₖ₊₁ = R(Vₖ), with no truncation built into the definition. -/
-def flag (k : ℕ) : Submodule 𝕜 E := Nat.rec ⊤ (fun _ V => s.obstruction V) k
-
-
-end AdjointCoefficients
-end LinearStochastic
-namespace LinearStochastic
-namespace AdjointCoefficients
-
-/-- Literal real matrix input convention of the manuscript. -/
-def fromMatrices {n r m : ℕ}
-    (A : Matrix (Fin n) (Fin n) ℝ) (B : Matrix (Fin n) (Fin r) ℝ)
-    (C : Fin m → Matrix (Fin n) (Fin n) ℝ)
-    (D : Fin m → Matrix (Fin n) (Fin r) ℝ) :
-    AdjointCoefficients (𝕜 := ℝ) (E := Fin n → ℝ) (U := Fin r → ℝ) (ι := Fin m) where
-  A := A.transpose.toLin'
-  B := B.transpose.toLin'
-  C := fun i => (C i).transpose.toLin'
-  D := fun i => (D i).transpose.toLin'
-
-
-end AdjointCoefficients
-end LinearStochastic
-
-namespace LinearStochastic.SurjectiveMatrices
-/-- Vertically stack the original diffusion-control matrices. -/
-def stack {n r m : ℕ} (D : Fin m → Matrix (Fin n) (Fin r) ℝ) :
-    Matrix (Fin m × Fin n) (Fin r) ℝ := fun p j => D p.1 p.2 j
-end LinearStochastic.SurjectiveMatrices
-
 noncomputable section
 open MeasureTheory ProbabilityTheory Set
 open scoped NNReal BigOperators InnerProductSpace
 
 namespace LinearStochastic.Palomar
+
+/-- The literal existential predecessor conditions on state vectors. -/
+def obstruction {n r m : ℕ}
+    (A : Matrix (Fin n) (Fin n) ℝ) (B : Matrix (Fin n) (Fin r) ℝ)
+    (C : Fin m → Matrix (Fin n) (Fin n) ℝ) (D : Fin m → Matrix (Fin n) (Fin r) ℝ)
+    (V : Set (Fin n → ℝ)) : Set (Fin n → ℝ) :=
+  {v | v ∈ V ∧ ∃ w : Fin m → Fin n → ℝ,
+    (∀ i, w i ∈ V) ∧ B.transpose.mulVec v + ∑ i, (D i).transpose.mulVec (w i) = 0 ∧
+    A.transpose.mulVec v + ∑ i, (C i).transpose.mulVec (w i) ∈ V}
+
+/-- V₀ is the whole state space and Vₖ₊₁ is its existential predecessor. -/
+def flag {n r m : ℕ}
+    (A : Matrix (Fin n) (Fin n) ℝ) (B : Matrix (Fin n) (Fin r) ℝ)
+    (C : Fin m → Matrix (Fin n) (Fin n) ℝ) (D : Fin m → Matrix (Fin n) (Fin r) ℝ)
+    (k : ℕ) : Set (Fin n → ℝ) :=
+  Nat.rec Set.univ (fun _ V => obstruction A B C D V) k
+
+/-- Vertically stack the original diffusion-control matrices. -/
+def stack {n r m : ℕ} (D : Fin m → Matrix (Fin n) (Fin r) ℝ) :
+    Matrix (Fin m × Fin n) (Fin r) ℝ := fun p j => D p.1 p.2 j
 
 variable {Ω : Type*} [mΩ : MeasurableSpace Ω] {μ : Measure Ω}
 
@@ -236,11 +191,11 @@ theorem classification (hn : 0 < n) (hm : 0 < m) (T : ℝ≥0) (hT : 0 < T)
     (C : Fin m → Matrix (Fin n) (Fin n) ℝ) (D : Fin m → Matrix (Fin n) (Fin r) ℝ) :
     ∃ I : Fin m → Lp ℝ 2 (spacetime (usual (μ := μ) W hWm) μ T) →L[ℝ] Lp ℝ 2 μ,
       (∀ i, IsIto (usual (μ := μ) W hWm) (W i) T (I i)) ∧
-      (AC (usual (μ := μ) W hWm) T I A B C D ↔ (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥) ∧
-      (ANC (usual (μ := μ) W hWm) T I A B C D ↔ (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥) ∧
-      (ENC (usual (μ := μ) W hWm) T I A B C D ↔ (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥) ∧
+      (AC (usual (μ := μ) W hWm) T I A B C D ↔ flag A B C D n = {0}) ∧
+      (ANC (usual (μ := μ) W hWm) T I A B C D ↔ flag A B C D n = {0}) ∧
+      (ENC (usual (μ := μ) W hWm) T I A B C D ↔ flag A B C D n = {0}) ∧
       (EC (usual (μ := μ) W hWm) T I A B C D ↔
-        (AdjointCoefficients.fromMatrices A B C D).flag n = ⊥ ∧ (SurjectiveMatrices.stack D).rank = m*n) := by
+        flag A B C D n = {0} ∧ (stack D).rank = m*n) := by
   sorry
 
 include hW hInd in

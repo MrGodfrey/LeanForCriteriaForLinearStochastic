@@ -79,7 +79,9 @@ fidelity:
     usual augmented joint Brownian filtration. Positive state and noise
     dimensions and a positive horizon are required. Exact-arithmetic
     factorization results do not certify floating-point numerical software.
-    PalomarBridge proves correspondence with the original raw SDE predicates.
+    PalomarBridge proves that the explicit set recursion is the carrier of
+    the original submodule flag, and proves correspondence with the original
+    raw SDE predicates.
     The scalar Ito maps are characterized by their values on every bounded
     predictable step process; classification proves existence and ito_unique
     proves uniqueness. The sorry count includes two intentional Challenge
