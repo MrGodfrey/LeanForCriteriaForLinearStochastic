@@ -15,8 +15,9 @@ The verified candidate was **submitted to Palomar on 2026-10-17**, as submission
 `bag3afqazkiq`. Palomar accepted the repository-write proof and started its
 [official verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717).
 The [public submission record](../formalization/palomar/submission.json) records
-the exact source and paths without access credentials. Verification and review
-are in progress; submission is not registration. The private status link is
+the exact source and paths without access credentials. At the last status check
+on 2026-10-17, official mechanical verification had passed and the submission
+was awaiting review; submission is not registration. The private status link is
 stored only in local Git metadata and must not be committed or published.
 
 The complete sandboxed mechanical preflight **passed** for the public candidate
@@ -53,8 +54,8 @@ The verifier source is authoritative when explanatory pages lag behind it.
 | Structured provenance | `formalization/formalization.yaml` passed the official metadata parser |
 | Full mechanical preflight | Passed for `c088eb9943197e88c4b046223239d4c4f0180513`: exact comparison and con-ron, NanoDa, and Lean kernel acceptance |
 | Public immutable snapshot | Preparation merged into `main`; the submitted candidate SHA is recorded above and in the mechanical report |
-| Official submission | Accepted as `bag3afqazkiq` on 2026-10-17; official verification and review in progress |
-| Registration | Not yet registered; the eventual review and registration decision are separate from submission |
+| Official submission | Accepted as `bag3afqazkiq` on 2026-10-17; official mechanical verification passed; awaiting review at the last recorded check |
+| Registration | No registration recorded here; the eventual review and registration decision are separate from submission |
 
 The manuscript, `autart.cls`, and third-party material retain their existing
 rights. The software licence does not relicense those materials.

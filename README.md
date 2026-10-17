@@ -1,10 +1,51 @@
 # Lean formalization of stochastic controllability criteria
 
-This repository is the Lean 4 companion to **A Unified Kalman-Type Classification of Controllability for Linear Stochastic Systems**, by **Qi Lü and Yu Wang**.
+Lean 4 companion to **A Unified Kalman-Type Classification of Controllability for Linear Stochastic Systems**, by **Qi Lü and Yu Wang**.
 
-It contains the manuscript and formal proofs of its mathematical claims, including the stochastic analysis, finite-dimensional algebra, semialgebraic arguments, feedback construction, and elimination algorithm needed for the main results.
+Alongside the manuscript and its controllability proofs, this repository provides reusable Lean components for stochastic integration, linear SDEs and BSDEs, finite-dimensional linear algebra, semialgebraic geometry, and feedback control.
 
-**Read the [paper](main.pdf), explore the [English verification report](formalization/report.html), browse the [Lean sources](formalization/LinearStochastic), or start with the [formalization guide](docs/FORMALIZATION.md).**
+**[Paper](main.pdf) · [Reuse guide for researchers and AI agents](docs/REUSE.md) · [Theorem map](docs/FORMALIZATION.md#principal-theorem-entry-points) · [Verification and Palomar submission](docs/PALOMAR.md)**
+
+## What you can reuse
+
+The Lake project is in [`formalization/`](formalization), and project declarations generally live in the `LinearStochastic` namespace. Start with a specific module below; inspect its theorem signatures before reconstructing a result from scratch. These are proof-library components, with hypotheses to satisfy, rather than a general-purpose numerical SDE solver.
+
+| If you need… | Start here | Available building blocks |
+| --- | --- | --- |
+| Itô integration and process measurability | [CommonItoCLM](formalization/LinearStochastic/CommonItoCLM.lean), [CommonItoMultichannel](formalization/LinearStochastic/CommonItoMultichannel.lean), [ProgressivePredictable](formalization/LinearStochastic/ProgressivePredictable.lean) | Scalar L² integral maps, multichannel isometry, predictable representatives of progressive processes. |
+| Brownian representation and linear SDE/BSDE solutions | [JointUsualRepresentation](formalization/LinearStochastic/JointUsualRepresentation.lean), [JointUsualBrownianGlobal](formalization/LinearStochastic/JointUsualBrownianGlobal.lean), [RawBSDEUniqueness](formalization/LinearStochastic/RawBSDEUniqueness.lean) | Representation on the usual Brownian filtration; finite-dimensional, constant-coefficient forward/backward existence and uniqueness. |
+| Energy estimates and stochastic duality | [HilbertS2Energy](formalization/LinearStochastic/HilbertS2Energy.lean), [BrownianRawDuality](formalization/LinearStochastic/BrownianRawDuality.lean) | Full-path S² estimates and forward/backward pairing identities. |
+| Invariant subspaces and algebraic rank tests | [AlgebraFlag](formalization/LinearStochastic/AlgebraFlag.lean), [AlgebraCoordinates](formalization/LinearStochastic/AlgebraCoordinates.lean), [AlgebraSurjective](formalization/LinearStochastic/AlgebraSurjective.lean) | Decreasing subspace flags, finite stabilization, rank/codimension identities, and surjective-diffusion reduction. |
+| Semialgebraic projection and growth | [RealQEFiniteProjection](formalization/LinearStochastic/RealQEFiniteProjection.lean), [SemialgebraicCoordinates](formalization/LinearStochastic/SemialgebraicCoordinates.lean) | Finite real quantifier elimination and polynomial growth bounds for continuous semialgebraic functions on a ray. |
+| Feedback, LMI feasibility, and elimination | [NullFeedbackTheorem](formalization/LinearStochastic/NullFeedbackTheorem.lean), [LMIMatrixCoordinates](formalization/LinearStochastic/LMIMatrixCoordinates.lean), [StaircaseFirstStop](formalization/LinearStochastic/StaircaseFirstStop.lean) | Null controls on positive horizons, strict matrix LMI feasibility, and finite staircase termination. |
+
+The [reuse guide](docs/REUSE.md) gives exact declaration names, import examples, representation conventions, and integration constraints. Many constructions are `noncomputable`; exact QR/SVD and rank results do not certify floating-point implementations. A Hilbert-space module name alone does not imply an infinite-dimensional or SPDE theorem.
+
+## Build and inspect
+
+Install Lean's `elan` toolchain manager and Git. From the repository root:
+
+```sh
+cd formalization
+lake exe cache get
+lake build
+```
+
+The project selects **Lean `v4.35.0-rc2`** and pins Mathlib to `065356127b1dc0016f66b7283ce0ce2c4055aa55`. Keep the [Lake manifest](formalization/lake-manifest.json) and the [vendored stochastic dependencies](formalization/vendor/stochastic/README.md) together. The latter contain 92 compatibility modules with recorded upstream provenance, not complete copies of their upstream libraries.
+
+For example, save this as `formalization/Inspect.lean` and run `lake env lean Inspect.lean` from `formalization/`:
+
+```lean
+module
+import LinearStochastic.AlgebraFlag
+import LinearStochastic.SemialgebraicCoordinates
+
+#check @LinearStochastic.AdjointCoefficients.matrix_flag_lemma
+#check @LinearStochastic.SemialgebraicCoordinates.continuous_semialgebraic_growth
+#print axioms LinearStochastic.AdjointCoefficients.matrix_flag_lemma
+```
+
+For proof reuse, import the relevant `LinearStochastic.*` module. `Challenge.lean` is an isolated submission specification with intentional theorem holes; it is not a proved library entry point. See the [reuse guide](docs/REUSE.md#imports-and-project-layout) for the separate role of `Solution.lean`.
 
 ## Main result
 
@@ -32,77 +73,22 @@ Here AC and ANC mean approximate controllability and approximate null controllab
 
 The central entry point is [`LinearStochastic.RawCompleteClassification.classification`](formalization/LinearStochastic/RawCompleteClassification.lean). Further results provide explicit rank tests, deterministic time-dependent null feedback with polynomial small-time energy cost, and an equivalent orthogonal elimination procedure.
 
-## Verification status
+## Verification and submission
 
-The table below records the reference release at
-[`6a7eebe7311a`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/6a7eebe7311a0bd52c1e59c0b1b7150c7bee6137),
-checked with Lean `v4.33.0-rc1`. Its frozen reports do not certify a later
-migration or a Palomar registration. See the [Palomar preparation record](docs/PALOMAR.md)
-for the current toolchain, independent statement interface, and preflight status.
+- **Current port:** all 384 core modules build, and the 2,559 reference declarations plus the two Palomar entries passed the [local axiom check](formalization/palomar/local-check.json), using only `propext`, `Classical.choice`, and `Quot.sound`. Evidence is tied to the source hashes in each report.
+- **Palomar:** submitted on 2026-10-17 as `bag3afqazkiq`, at commit [`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513). The [official mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717) passed. The last recorded status was awaiting review; no registration is claimed here. [Submission details](docs/PALOMAR.md).
+- **Manuscript coverage:** the [reference report](formalization/report.html) and [claim-to-proof index](formalization/audit/claims.en.json) record 80/80 claims at [`6a7eebe7311a`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/6a7eebe7311a0bd52c1e59c0b1b7150c7bee6137). They are historical evidence, not a new audit of every later commit.
 
-The current Palomar candidate, commit
-[`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513),
-passed the [complete official mechanical preflight](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/actions/runs/39017801590)
-on 2026-10-17: exact Comparator correspondence and acceptance by Lean, NanoDa,
-and con-ron. The [saved report](formalization/palomar/mechanical-report.json)
-is bound to that SHA. This preflight does not constitute Palomar registration.
+Eight inherited dependency proof placeholders remain disclosed and are absent from the inspected declarations' transitive axiom closures. The two deliberate Challenge holes are separate specifications discharged by Solution. See [verification procedures](docs/PALOMAR.md#reproduce-the-checks) and [trust boundaries](docs/FORMALIZATION.md#trust-boundary-and-ai-assisted-review) for the scope of these checks.
 
-**Submitted to the [Palomar Registry](https://palomar-registry.org/) on
-2026-10-17**, as submission `bag3afqazkiq`, for the same immutable candidate
-`c088eb9943197e88c4b046223239d4c4f0180513`. The
-[official verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717)
-and [submission record](formalization/palomar/submission.json) identify the
-submitted snapshot. Verification and review are in progress; the result has
-not yet been registered.
+## AI use disclosure
 
-The reference verification of the accompanying revised manuscript passed:
+**AI agents generated and iteratively revised this project's Lean formalization and proof scripts under Yu Wang's direction**, working from the manuscript and existing mathematical libraries. AI agents also performed statement-correspondence reviews. OpenAI Codex was used for the toolchain migration, the Palomar statement/solution interface, repository preparation, and documentation.
 
-| Check | Result |
-|---|---:|
-| Inventoried mathematical claims | 80 / 80 covered |
-| Named manuscript statements | 18 / 18 covered |
-| Project modules built and individually replayed through Lean's kernel | 384 / 384 |
-| Explicitly named declarations checked | 2,559 |
-| Of these, theorems and lemmas | 2,015 |
-| Unapproved axioms in their transitive dependencies | 0 |
+This disclosure concerns the project's formalization work; it does not attribute the manuscript or upstream Lean, Mathlib, MathFin, BrownianMotion, and KolmogorovExtension4 contributions to these agents. Original and adapted third-party code retains its authorship and notices. The formalization process also led to [five disclosed manuscript revisions](docs/FORMALIZATION.md#manuscript-revisions).
 
-Coverage is determined by a claim-by-claim comparison with the manuscript, not by the number of Lean declarations. The reference project proof sources contain no `sorry`, `admit`, or project-defined axioms. Their audited declaration dependencies use only `propext`, `Classical.choice`, and `Quot.sound`.
+Proof acceptance comes from the recorded kernel checks. AI generation and AI review do not by themselves establish that a formal statement captures the intended mathematics, and are not independent human peer review. Yu Wang is the responsible maintainer. Historical model identities, costs, and complete prompt logs are not reconstructed; the available disclosures are in [formalization.yaml](formalization/formalization.yaml) and the [formalization guide](docs/FORMALIZATION.md#trust-boundary-and-ai-assisted-review).
 
-The [English claim-to-proof index](formalization/audit/claims.en.json) preserves the exact manuscript excerpts and proof bindings. The [release verification result](formalization/verification/verification.json) records the checks for that reference release; the [HTML report](formalization/report.html) presents that release evidence.
+## License and attribution
 
-The reference imported upstream source closure contains **eight unused proof placeholders**. None occurs in the transitive axiom dependencies of the reference audited named project declarations. The Palomar `Challenge.lean` separately contains the two intentional theorem holes that `Solution.lean` must discharge; these are statement specifications, not completed proofs. The [trust-boundary discussion](docs/FORMALIZATION.md#trust-boundary-and-ai-assisted-review) explains this distinction, the role of AI-assisted review, and what the kernel check guarantees.
-
-The verified manuscript incorporates [five disclosed revisions](docs/FORMALIZATION.md#manuscript-revisions). The coverage claim concerns this revised text, not the superseded proof passages.
-
-## Build and check
-
-Install Lean's `elan` toolchain manager, Git, and Python 3.11 or later. From the repository root:
-
-```sh
-cd formalization
-lake exe cache get
-lake build
-```
-
-The project selects its pinned Lean toolchain automatically. The [Palomar guide](docs/PALOMAR.md#reproduce-the-checks) gives the source checks and official Linux preflight; `lake build` alone does not certify a Palomar submission. The frozen `verify_release.py` and [reference release instructions](docs/FORMALIZATION.md#reproducing-the-checks) apply only to commit `6a7eebe7311a0bd52c1e59c0b1b7150c7bee6137`. Run them in a separate checkout of that commit to reproduce historical evidence.
-
-| Dependency | Pinned version |
-|---|---|
-| Lean | `leanprover/lean4:v4.35.0-rc2` |
-| Mathlib | `065356127b1dc0016f66b7283ce0ce2c4055aa55` |
-| Stochastic dependencies | 92 compatibility modules with [fixed upstream provenance](formalization/vendor/stochastic/provenance.json) |
-
-The complete dependency graph is recorded in [`lake-manifest.json`](formalization/lake-manifest.json).
-
-## Repository contents
-
-- [`main.pdf`](main.pdf) and [`main.tex`](main.tex): the accompanying manuscript.
-- [`references.bib`](references.bib) and [`autart.cls`](autart.cls): bibliography and manuscript class.
-- [`formalization/LinearStochastic/`](formalization/LinearStochastic): Lean proof modules.
-- [`formalization/Challenge.lean`](formalization/Challenge.lean) and [`Solution.lean`](formalization/Solution.lean): independent Palomar statement and its proof.
-- [`formalization/LinearStochastic.lean`](formalization/LinearStochastic.lean): aggregate import of all project modules.
-- [`docs/FORMALIZATION.md`](docs/FORMALIZATION.md): theorem entry points, module map, conventions, and verification scope.
-
-The public companion presents reproducible proofs and release evidence. Internal development snapshots and machine-specific review paths are not part of the public layout.
-
-Original software is licensed under [Apache-2.0](LICENSE); see [NOTICE](NOTICE) for scope and attribution. Dependencies and redistributed third-party material retain their respective licenses and notices. In particular, MathFin's Apache 2.0 terms and attribution notices remain applicable to reused or adapted MathFin material; this documentation does not relicense the manuscript, journal class, or dependencies.
+Original software is licensed under [Apache-2.0](LICENSE). Preserve the attribution and license notices in [NOTICE](NOTICE), including those for adapted MathFin material. The manuscript, journal class, and third-party materials retain their respective rights. When reusing a theorem, cite its declaration name and the exact repository commit, and retain the upstream provenance where applicable.
