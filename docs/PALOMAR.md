@@ -1,4 +1,4 @@
-# Palomar submission and verification
+# Palomar registration and verification
 
 This work targets the **full stochastic controllability classification** in
 manuscript Theorem `thm:geometry`. The reference release is commit
@@ -15,10 +15,14 @@ The verified candidate was **submitted to Palomar on 2026-10-17**, as submission
 `bag3afqazkiq`. Palomar accepted the repository-write proof and started its
 [official verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717).
 The [public submission record](../formalization/palomar/submission.json) records
-the exact source and paths without access credentials. At the last status check
-on 2026-10-17, official mechanical verification had passed and the submission
-was awaiting review; submission is not registration. The private status link is
-stored only in local Git metadata and must not be committed or published.
+the exact source and paths without access credentials. Official mechanical
+verification passed on 2026-10-17. The candidate was **registered on 2026-10-19**
+as [**PALOMAR-2026-10-19-000002, version 1**](https://palomar-registry.org/entry?id=PALOMAR-2026-10-19-000002&version=1).
+The [official public record](https://data.palomar-registry.org/entries/PALOMAR-2026-10-19-000002-v1.json)
+reports `status: registered`, review outcome `neutral`, and no review warnings.
+It records the two theorems listed below at the candidate SHA; later commits
+are not automatically covered by this registration. The private submission
+status link remains only in local Git metadata and must not be published.
 
 The complete sandboxed mechanical preflight **passed** for the public candidate
 [`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513).
@@ -54,8 +58,8 @@ The verifier source is authoritative when explanatory pages lag behind it.
 | Structured provenance | `formalization/formalization.yaml` passed the official metadata parser |
 | Full mechanical preflight | Passed for `c088eb9943197e88c4b046223239d4c4f0180513`: exact comparison and con-ron, NanoDa, and Lean kernel acceptance |
 | Public immutable snapshot | Preparation merged into `main`; the submitted candidate SHA is recorded above and in the mechanical report |
-| Official submission | Accepted as `bag3afqazkiq` on 2026-10-17; official mechanical verification passed; awaiting review at the last recorded check |
-| Registration | No registration recorded here; the eventual review and registration decision are separate from submission |
+| Official submission | Accepted as `bag3afqazkiq` on 2026-10-17; official mechanical verification passed on 2026-10-17 |
+| Registration | Registered on 2026-10-19 as [PALOMAR-2026-10-19-000002, version 1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-19-000002&version=1), for the submitted candidate SHA |
 
 The manuscript, `autart.cls`, and third-party material retain their existing
 rights. The software licence does not relicense those materials.

@@ -4,7 +4,7 @@ Lean 4 companion to **A Unified Kalman-Type Classification of Controllability fo
 
 Alongside the manuscript and its controllability proofs, this repository provides reusable Lean components for stochastic integration, linear SDEs and BSDEs, finite-dimensional linear algebra, semialgebraic geometry, and feedback control.
 
-**[Paper](main.pdf) · [Reuse guide for researchers and AI agents](docs/REUSE.md) · [Theorem map](docs/FORMALIZATION.md#principal-theorem-entry-points) · [Verification and Palomar submission](docs/PALOMAR.md)**
+**[Paper](main.pdf) · [Reuse guide for researchers and AI agents](docs/REUSE.md) · [Theorem map](docs/FORMALIZATION.md#principal-theorem-entry-points) · [Palomar registration](https://palomar-registry.org/entry?id=PALOMAR-2026-10-19-000002&version=1) · [Verification details](docs/PALOMAR.md)**
 
 ## What you can reuse
 
@@ -73,10 +73,10 @@ Here AC and ANC mean approximate controllability and approximate null controllab
 
 The central entry point is [`LinearStochastic.RawCompleteClassification.classification`](formalization/LinearStochastic/RawCompleteClassification.lean). Further results provide explicit rank tests, deterministic time-dependent null feedback with polynomial small-time energy cost, and an equivalent orthogonal elimination procedure.
 
-## Verification and submission
+## Verification and registration
 
 - **Current port:** all 384 core modules build, and the 2,559 reference declarations plus the two Palomar entries passed the [local axiom check](formalization/palomar/local-check.json), using only `propext`, `Classical.choice`, and `Quot.sound`. Evidence is tied to the source hashes in each report.
-- **Palomar:** submitted on 2026-10-17 as `bag3afqazkiq`, at commit [`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513). The [official mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717) passed. The last recorded status was awaiting review; no registration is claimed here. [Submission details](docs/PALOMAR.md).
+- **Palomar registration:** registered on **2026-10-19** as [**PALOMAR-2026-10-19-000002, version 1**](https://palomar-registry.org/entry?id=PALOMAR-2026-10-19-000002&version=1). The entry covers `LinearStochastic.Palomar.classification` and `LinearStochastic.Palomar.ito_unique` at commit [`c088eb9943197e88c4b046223239d4c4f0180513`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/c088eb9943197e88c4b046223239d4c4f0180513), with [passed official mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/39019880717). Registration and verification apply to that fixed source snapshot. [Verification details](docs/PALOMAR.md).
 - **Manuscript coverage:** the [reference report](formalization/report.html) and [claim-to-proof index](formalization/audit/claims.en.json) record 80/80 claims at [`6a7eebe7311a`](https://github.com/MrGodfrey/LeanForCriteriaForLinearStochastic/tree/6a7eebe7311a0bd52c1e59c0b1b7150c7bee6137). They are historical evidence, not a new audit of every later commit.
 
 Eight inherited dependency proof placeholders remain disclosed and are absent from the inspected declarations' transitive axiom closures. The two deliberate Challenge holes are separate specifications discharged by Solution. See [verification procedures](docs/PALOMAR.md#reproduce-the-checks) and [trust boundaries](docs/FORMALIZATION.md#trust-boundary-and-ai-assisted-review) for the scope of these checks.
